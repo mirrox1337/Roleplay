@@ -6,6 +6,6 @@ INSERT INTO `items` (name, label, `limit`) VALUES
 	('vicodin','Alvedon', 5),
 	('hydrocodone','Hydrokodon', 5),
 	('morphine','Morfin', 5),
-    ('adrenaline','Adrenalin', 5)
+    ('adrenaline','Adrenalin', 5),
 	('patch','Plåster', 20)
 ;
