@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+#wrapper {
+  display: none;
+  margin-top: 100px;
+}
+.inner {
+  float: left;
+  display: inline-block;
+  margin-left: 25%;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+form {
+  width: 90%;
+  padding: 80px 20px 20px 20px;
+}
+.input-field input, .select-wrapper input {
+  color: #ffffff !important;
+}
+#register {
+  width: 100%;
+  background: #6b2175 !important;
+}
+.caret {
+  display: none;
+}
+.dropdown-content {
+  top: 0 !important;
+}
+.select-wrapper li {
+  background: #b5a795 !important;
+}
+.select-wrapper li span {
+  color: #ffffff !important;
+}
+.select-wrapper .disabled {
+  background: #897d6e !important;
+}
+.select-wrapper .selected {
+  background: #d6c7b3 !important;
+}
+.datepicker-date-display {
+  background: #392c34;
+}
+.datepicker-container button {
+  color: #fff;
+}
+.datepicker-container button:focus {
+  background: none;
+}
+.datepicker-container .is-selected {
+  background: #7a5f70 !important;
+}
+.dropdown-content li > a, .dropdown-content li > span  {
+  color: #fff !important;
+}
+.datepicker-container input {
+  color: #fff !important;
+}
+label {
+ color: #fff !important;
+ text-shadow: -1px 0 rgba(0, 0, 0, 0.2), 0 1px rgba(0, 0, 0, 0.2), 1px 0 rgba(0, 0, 0, 0.2), 0 -1px rgba(0, 0, 0, 0.2);
+ font-size: 20px;
+}
+.input-field input[type=text] {
+ border-bottom: 1px solid #820094 !important;
+ box-shadow: 0 1px 0 0 #820094 !important;
+}
+.input-field input[type=text]:focus + label {
+ color: #fff !important;
+}
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #820094 !important;
+ box-shadow: 0 1px 0 0 #820094 !important;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+@media only screen and (max-width: 1250px) {
+  .container {
+    width: 100% !important;
+  }
+}
