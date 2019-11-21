@@ -43,11 +43,16 @@ end
 ESX.SetPlayerData = function(key, val)
 	ESX.PlayerData[key] = val
 end
-
+--[[
 ESX.ShowNotification = function(msg)
 	AddTextEntry('esxNotification', msg)
 	SetNotificationTextEntry('esxNotification')
 	DrawNotification(false, true)
+end
+]]
+
+ESX.ShowNotification = function(msg)
+	TriggerEvent('notification', msg)
 end
 
 ESX.ShowAdvancedNotification = function(title, subject, msg, icon, iconType)
@@ -717,6 +722,9 @@ ESX.Game.GetVehicleProperties = function(vehicle)
 		modTank           = GetVehicleMod(vehicle, 45),
 		modWindows        = GetVehicleMod(vehicle, 46),
 		modLivery         = GetVehicleLivery(vehicle)
+		fuelLevel         = GetVehicleFuelLevel(vehicle),
+		bodyHealth        = GetVehicleBodyHealth(vehicle),
+		engineHealth      = GetVehicleEngineHealth(vehicle)
 	}
 end
 
@@ -982,33 +990,56 @@ ESX.Game.SetVehicleProperties = function(vehicle, props)
 	end
 end
 
-ESX.Game.Utils.DrawText3D = function(coords, text, size, font)
-	coords = vector3(coords.x, coords.y, coords.z)
+ESX.Game.Utils.DrawText3D = function(coords, text, size)
+	local onScreen, x, y = World3dToScreen2d(coords.x, coords.y, coords.z)
+	local camCoords      = GetGameplayCamCoords()
+	local dist           = GetDistanceBetweenCoords(camCoords, coords.x, coords.y, coords.z, true)
+	local size           = size
 
-	local camCoords = GetGameplayCamCoords()
-	local distance = #(coords - camCoords)
+	if size == nil then
+		size = 1
+	end
 
-	if not size then size = 1 end
-	if not font then font = 0 end
-	
-	local scale = (size / distance) * 2
-	local fov = (1 / GetGameplayCamFov()) * 100
-	scale = scale * fov
+	local scale = (size / dist) * 2
+	local fov   = (1 / GetGameplayCamFov()) * 100
+	local scale = scale * fov
 
-	SetTextScale(0.0 * scale, 0.55 * scale)
-	SetTextFont(font)
-	SetTextColour(255, 255, 255, 255)
-	SetTextDropshadow(0, 0, 0, 0, 255)
-	SetTextDropShadow()
-	SetTextOutline()
-	SetTextCentre(true)
-
-	SetDrawOrigin(coords, 0)
-	BeginTextCommandDisplayText('STRING')
-	AddTextComponentSubstringPlayerName(text)
-	EndTextCommandDisplayText(0.0, 0.0)
-	ClearDrawOrigin()
+	if onScreen then
+		--SetTextScale(0.0 * scale, 0.55 * scale)
+		SetTextFont(4)
+		SetTextProportional(1)
+		SetTextScale(0.35, 0.35)
+		SetTextColour(255, 255, 255, 255)
+		SetTextDropshadow(0, 0, 0, 0, 255)
+		SetTextEdge(2, 0, 0, 0, 150)
+		SetTextDropShadow()
+		SetTextEntry("STRING")
+		SetTextCentre(true)
+		AddTextComponentString(text)
+		DrawText(x, y)
+		local factor = (string.len(text)) / 370
+	DrawRect(x, y + 0.0125, 0.015 + factor, 0.03, 0, 0, 0, 125)
+	end
 end
+
+	function DrawText3D(x, y, z, text)
+		local onScreen, _x, _y = World3dToScreen2d(x, y, z)
+		local pX, pY, pZ = table.unpack(GetGameplayCamCoords())
+			 
+		SetTextScale(0.35, 0.35)
+		SetTextFont(4)
+		SetTextProportional(1)
+		SetTextEntry("STRING")
+		SetTextCentre(1)
+		SetTextColour(255, 255, 255, 255)
+			 
+		AddTextComponentString(text)
+		DrawText(_x, _y)
+			 
+		local factor = (string.len(text)) / 370
+			 
+		DrawRect(_x, _y + 0.0125, 0.015 + factor, 0.03, 0, 0, 0, 125)
+	end
 
 ESX.ShowInventory = function()
 	local playerPed = PlayerPedId()
