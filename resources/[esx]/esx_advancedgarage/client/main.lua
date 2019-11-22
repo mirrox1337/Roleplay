@@ -856,47 +856,47 @@ end
 AddEventHandler('esx_advancedgarage:hasEnteredMarker', function(zone)
 	if zone == 'car_garage_point' then
 		CurrentAction     = 'car_garage_point'
-		CurrentActionMsg  = _U('press_to_enter')
+		--CurrentActionMsg  = _U('press_to_enter')
 		CurrentActionData = {}
 	elseif zone == 'boat_garage_point' then
 		CurrentAction     = 'boat_garage_point'
-		CurrentActionMsg  = _U('press_to_enter')
+		--CurrentActionMsg  = _U('press_to_enter')
 		CurrentActionData = {}
 	elseif zone == 'aircraft_garage_point' then
 		CurrentAction     = 'aircraft_garage_point'
-		CurrentActionMsg  = _U('press_to_enter')
+		--CurrentActionMsg  = _U('press_to_enter')
 		CurrentActionData = {}
 	elseif zone == 'car_store_point' then
 		CurrentAction     = 'car_store_point'
-		CurrentActionMsg  = _U('press_to_delete')
+		--CurrentActionMsg  = _U('press_to_delete')
 		CurrentActionData = {}
 	elseif zone == 'boat_store_point' then
 		CurrentAction     = 'boat_store_point'
-		CurrentActionMsg  = _U('press_to_delete')
+		--CurrentActionMsg  = _U('press_to_delete')
 		CurrentActionData = {}
 	elseif zone == 'aircraft_store_point' then
 		CurrentAction     = 'aircraft_store_point'
-		CurrentActionMsg  = _U('press_to_delete')
+		--CurrentActionMsg  = _U('press_to_delete')
 		CurrentActionData = {}
 	elseif zone == 'car_pound_point' then
 		CurrentAction     = 'car_pound_point'
-		CurrentActionMsg  = _U('press_to_impound')
+		--CurrentActionMsg  = _U('press_to_impound')
 		CurrentActionData = {}
 	elseif zone == 'boat_pound_point' then
 		CurrentAction     = 'boat_pound_point'
-		CurrentActionMsg  = _U('press_to_impound')
+		--CurrentActionMsg  = _U('press_to_impound')
 		CurrentActionData = {}
 	elseif zone == 'aircraft_pound_point' then
 		CurrentAction     = 'aircraft_pound_point'
-		CurrentActionMsg  = _U('press_to_impound')
+		--CurrentActionMsg  = _U('press_to_impound')
 		CurrentActionData = {}
 	elseif zone == 'policing_pound_point' then
 		CurrentAction     = 'policing_pound_point'
-		CurrentActionMsg  = _U('press_to_impound')
+		--CurrentActionMsg  = _U('press_to_impound')
 		CurrentActionData = {}
 	elseif zone == 'ambulance_pound_point' then
 		CurrentAction     = 'ambulance_pound_point'
-		CurrentActionMsg  = _U('press_to_impound')
+		--CurrentActionMsg  = _U('press_to_impound')
 		CurrentActionData = {}
 	end
 end)
@@ -920,15 +920,18 @@ Citizen.CreateThread(function()
 			for k,v in pairs(Config.CarGarages) do
 				if (GetDistanceBetweenCoords(coords, v.GaragePoint.x, v.GaragePoint.y, v.GaragePoint.z, true) < Config.DrawDistance) then
 					canSleep = false
-					DrawMarker(Config.MarkerType, v.GaragePoint.x, v.GaragePoint.y, v.GaragePoint.z + 0.5, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.PointMarker.x, Config.PointMarker.y, Config.PointMarker.z, Config.PointMarker.r, Config.PointMarker.g, Config.PointMarker.b, 100, false, true, 2, false, false, false, false)	
-					DrawMarker(Config.MarkerType, v.DeletePoint.x, v.DeletePoint.y, v.DeletePoint.z + 0.5, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.DeleteMarker.x, Config.DeleteMarker.y, Config.DeleteMarker.z, Config.DeleteMarker.r, Config.DeleteMarker.g, Config.DeleteMarker.b, 100, false, true, 2, false, false, false, false)	
+					--DrawMarker(Config.MarkerType, v.GaragePoint.x, v.GaragePoint.y, v.GaragePoint.z + 0.5, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.PointMarker.x, Config.PointMarker.y, Config.PointMarker.z, Config.PointMarker.r, Config.PointMarker.g, Config.PointMarker.b, 100, false, true, 2, false, false, false, false)	
+					Marker("~w~[~p~E~w~] ~g~För att öppna garage", 27, v.GaragePoint.x, v.GaragePoint.y, v.GaragePoint.z)
+					--DrawMarker(Config.MarkerType, v.DeletePoint.x, v.DeletePoint.y, v.DeletePoint.z + 0.5, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.DeleteMarker.x, Config.DeleteMarker.y, Config.DeleteMarker.z, Config.DeleteMarker.r, Config.DeleteMarker.g, Config.DeleteMarker.b, 100, false, true, 2, false, false, false, false)	
+					Marker("~w~[~p~E~w~] ~r~För att parkera fordon", 27, v.DeletePoint.x, v.DeletePoint.y, v.DeletePoint.z)
 				end
 			end
 			
 			for k,v in pairs(Config.CarPounds) do
 				if (GetDistanceBetweenCoords(coords, v.PoundPoint.x, v.PoundPoint.y, v.PoundPoint.z, true) < Config.DrawDistance) then
 					canSleep = false
-					DrawMarker(Config.MarkerType, v.PoundPoint.x, v.PoundPoint.y, v.PoundPoint.z + 0.5, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.PoundMarker.x, Config.PoundMarker.y, Config.PoundMarker.z, Config.PoundMarker.r, Config.PoundMarker.g, Config.PoundMarker.b, 100, false, true, 2, false, false, false, false)
+					--DrawMarker(Config.MarkerType, v.PoundPoint.x, v.PoundPoint.y, v.PoundPoint.z + 0.5, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.PoundMarker.x, Config.PoundMarker.y, Config.PoundMarker.z, Config.PoundMarker.r, Config.PoundMarker.g, Config.PoundMarker.b, 100, false, true, 2, false, false, false, false)
+					Marker("~w~[~p~E~w~] ~y~För att lösa ut ditt fordon ~p~" ..Config.CarPoundPrice.. "kr", 27, v.PoundPoint.x, v.PoundPoint.y, v.PoundPoint.z)
 				end
 			end
 		end

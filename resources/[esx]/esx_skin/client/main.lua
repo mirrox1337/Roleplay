@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
 end)
 
 function OpenMenu(submitCb, cancelCb, restrict)
-
+  print('OpenMenu')
   local playerPed = GetPlayerPed(-1)
 
   TriggerEvent('skinchanger:getSkin', function(skin)
@@ -118,6 +118,7 @@ function OpenMenu(submitCb, cancelCb, restrict)
       function(data, menu)
 
         TriggerEvent('skinchanger:getSkin', function(skin)
+          print('skinchanger:getSkin')
 
           zoomOffset = data.current.zoomOffset
           camOffset = data.current.camOffset
@@ -296,7 +297,7 @@ function OpenSaveableMenu(submitCb, cancelCb, restrict)
   end)
 
   OpenMenu(function(data, menu)
-
+    print('OpenSaveableMenu')
     menu.close()
 
     DeleteSkinCam()
@@ -315,6 +316,7 @@ function OpenSaveableMenu(submitCb, cancelCb, restrict)
 
 end
 
+
 AddEventHandler('playerSpawned', function()
 
   Citizen.CreateThread(function()
@@ -326,6 +328,7 @@ AddEventHandler('playerSpawned', function()
     if FirstSpawn then
 
       ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+        print('playerSpawned:FirstSpawn')
 
         if skin == nil then
           TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
@@ -342,6 +345,7 @@ AddEventHandler('playerSpawned', function()
   end)
 end)
 
+
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
   PlayerLoaded = true
@@ -349,36 +353,43 @@ end)
 
 AddEventHandler('esx_skin:getLastSkin', function(cb)
   cb(LastSkin)
+  print('getLastSkin')
 end)
 
 AddEventHandler('esx_skin:setLastSkin', function(skin)
   LastSkin = skin
+  print('setLastSkin')
 end)
 
 RegisterNetEvent('esx_skin:openMenu')
 AddEventHandler('esx_skin:openMenu', function(submitCb, cancelCb)
   OpenMenu(submitCb, cancelCb, nil)
+  print('openMenu')
 end)
 
 RegisterNetEvent('esx_skin:openRestrictedMenu')
 AddEventHandler('esx_skin:openRestrictedMenu', function(submitCb, cancelCb, restrict)
   OpenMenu(submitCb, cancelCb, restrict)
+  print('openRestrictedMenu')
 end)
 
 RegisterNetEvent('esx_skin:openSaveableMenu')
 AddEventHandler('esx_skin:openSaveableMenu', function(submitCb, cancelCb)
   OpenSaveableMenu(submitCb, cancelCb, nil)
+  print('openSaveableMenu')
 end)
 
 RegisterNetEvent('esx_skin:openSaveableRestrictedMenu')
 AddEventHandler('esx_skin:openSaveableRestrictedMenu', function(submitCb, cancelCb, restrict)
   OpenSaveableMenu(submitCb, cancelCb, restrict)
+  print('openSaveableRestrictedMenu')
 end)
 
 RegisterNetEvent('esx_skin:requestSaveSkin')
 AddEventHandler('esx_skin:requestSaveSkin', function()
   TriggerEvent('skinchanger:getSkin', function(skin)
     TriggerServerEvent('esx_skin:responseSaveSkin', skin)
+    print('requestSaveSkin')
   end)
 end)
 

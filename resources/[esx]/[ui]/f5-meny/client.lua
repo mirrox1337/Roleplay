@@ -68,7 +68,7 @@ function openMenu()
 		},
 		function(data, menu)
 			if data.current.value == 'animations' then
-				TriggerEvent('esx_animations:openMenu')
+				TriggerEvent('esx_animations')
 			elseif data.current.value == 'pee' then
 				TriggerEvent('pee')
 			elseif data.current.value == 'poop' then
