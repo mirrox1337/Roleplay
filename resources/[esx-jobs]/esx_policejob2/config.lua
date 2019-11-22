@@ -1,6 +1,6 @@
 Config                            = {}
 
-Config.DrawDistance               = 100.0
+Config.DrawDistance               = 10.0
 Config.MarkerType                 = 1
 Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 1.0 }
 Config.MarkerColor                = { r = 50, g = 50, b = 204 }
@@ -22,7 +22,7 @@ Config.Locale                     = 'sv'
 
 Config.PoliceStations = {
 
-	LSPD1 = {
+	LSPD = {
 
 		Blip = {
 			Pos     = { x = 425.130, y = -979.558, z = 30.711 },
@@ -357,7 +357,241 @@ Config.PoliceStations = {
 	
 		BossActions = {
 		  {x = 1851.0972900391, y = 3683.7622070313, z = 33.26708984375 }, --state pd
-		}
-	
-	  },
+    }
+  },
 }
+    
+    -- CHECK SKINCHANGER CLIENT MAIN.LUA for matching elements
+    
+    Config.Uniforms = {
+      recruit_wear = {
+        male = {
+          ['tshirt_1'] = 53, ['tshirt_2'] = 0,
+          ['torso_1'] = 193, ['torso_2'] = 0,
+		  ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 12,
+          ['pants_1'] = 59, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+		  ['glasses_1'] = -1, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 13, ['bproof_2'] = 0,
+        },
+        female = {
+          ['tshirt_1'] = 27, ['tshirt_2'] = 0,
+          ['torso_1'] = 163, ['torso_2'] = 0,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 40,
+          ['pants_1'] = 61, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+          ['glasses_1'] = 5, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 14, ['bproof_2'] = 0,
+        }
+      },
+      officer_wear = {
+        male = {
+          ['tshirt_1'] = 53, ['tshirt_2'] = 0,
+          ['torso_1'] = 193, ['torso_2'] = 1,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 12,
+          ['pants_1'] = 59, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+		  ['glasses_1'] = -1, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 13, ['bproof_2'] = 0,
+        },
+        female = {
+          ['tshirt_1'] = 27, ['tshirt_2'] = 0,
+          ['torso_1'] = 163, ['torso_2'] = 1,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 40,
+          ['pants_1'] = 61, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+          ['glasses_1'] = 5, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 14, ['bproof_2'] = 0,
+        }
+      },
+      sergeant_wear = {
+        male = {
+          ['tshirt_1'] = 53, ['tshirt_2'] = 0,
+          ['torso_1'] = 193, ['torso_2'] = 2,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 12,
+          ['pants_1'] = 59, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+		  ['glasses_1'] = -1, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 13, ['bproof_2'] = 0,
+        },
+        female = {
+          ['tshirt_1'] = 27, ['tshirt_2'] = 0,
+          ['torso_1'] = 163, ['torso_2'] = 2,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 40,
+          ['pants_1'] = 61, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+          ['glasses_1'] = 5, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 14, ['bproof_2'] = 0,
+        }
+      },
+      insats_wear = {
+        male = {
+          ['tshirt_1'] = 15, ['tshirt_2'] = 0,
+          ['torso_1'] = 49, ['torso_2'] = 0,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 33,
+          ['pants_1'] = 31, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+	      ['glasses_1'] = -1, ['glasses_2'] = 0,
+          ['chain_1'] = 8, ['chain_2'] = 0,
+          ['mask_1'] = 0, ['mask_2'] = 0,
+		  ['bags_1'] = 0, ['bags_2'] = 0,
+          ['bproof_1'] = 16, ['bproof_2'] = 0,
+        },
+        female = {
+          ['tshirt_1'] = 34, ['tshirt_2'] = 0,
+          ['torso_1'] = 42, ['torso_2'] = 0,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 18,
+          ['pants_1'] = 30, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+	      ['glasses_1'] = -1, ['glasses_2'] = 0,
+          ['chain_1'] = 8, ['chain_2'] = 0,
+          ['mask_1'] = 0, ['mask_2'] = 0,
+		  ['bags_1'] = 0, ['bags_2'] = 0,
+          ['bproof_1'] = 18, ['bproof_2'] = 0,
+        }
+      },
+      lieutenant_wear = { -- currently the same as intendent_wear
+        male = {
+          ['tshirt_1'] = 53, ['tshirt_2'] = 0,
+          ['torso_1'] = 193, ['torso_2'] = 3,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 12,
+          ['pants_1'] = 59, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+	      ['glasses_1'] = -1, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 13, ['bproof_2'] = 0,
+        },
+        female = {
+          ['tshirt_1'] = 27, ['tshirt_2'] = 0,
+          ['torso_1'] = 163, ['torso_2'] = 3,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 40,
+          ['pants_1'] = 61, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+          ['glasses_1'] = 5, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 14, ['bproof_2'] = 0,
+        }
+      },
+      chef_wear = {
+        male = {
+          ['tshirt_1'] = 53, ['tshirt_2'] = 0,
+          ['torso_1'] = 193, ['torso_2'] = 4,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 12,
+          ['pants_1'] = 59, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+		  ['glasses_1'] = -1, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 13, ['bproof_2'] = 0,
+        },
+        female = {
+          ['tshirt_1'] = 27, ['tshirt_2'] = 0,
+          ['torso_1'] = 163, ['torso_2'] = 4,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 40,
+          ['pants_1'] = 61, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+          ['glasses_1'] = 5, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 14, ['bproof_2'] = 0,
+        }
+      },
+      boss_wear = { -- currently the same as chef_wear
+        male = {
+          ['tshirt_1'] = 53, ['tshirt_2'] = 0,
+          ['torso_1'] = 193, ['torso_2'] = 4,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 12,
+          ['pants_1'] = 59, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+		  ['glasses_1'] = -1, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 13, ['bproof_2'] = 0,
+        },
+        female = {
+          ['tshirt_1'] = 27, ['tshirt_2'] = 0,
+          ['torso_1'] = 163, ['torso_2'] = 4,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 40,
+          ['pants_1'] = 61, ['pants_2'] = 0,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 0,
+          ['glasses_1'] = 5, ['glasses_2'] = 0,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 14, ['bproof_2'] = 0,
+        }
+      },
+      bulletsvart_wear = {
+        male = {
+          ['bags_1'] = 4, ['bags_2'] = 0
+        },
+        female = {
+          ['bags_1'] = 2, ['bags_2'] = 0
+        }
+      },
+      gilet_wear = {
+        male = {
+          ['tshirt_1'] = 0,  ['tshirt_2'] = 0
+        },
+        female = {
+          ['tshirt_1'] = 0,  ['tshirt_2'] = 0
+        }
+      },
+	  befel_vast = {
+        male = {
+          ['bproof_1'] = 15, ['bproof_2'] = 2
+        },
+        female = {
+          ['bproof_1'] = 2, ['bproof_2'] = 0
+        }
+      },
+	  insats_vast = {
+        male = {
+          ['bproof_1'] = 4, ['bproof_2'] = 0
+        },
+        female = {
+          ['bproof_1'] = 13, ['bproof_2'] = 1
+        }
+      }
+    }

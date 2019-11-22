@@ -90,6 +90,22 @@ AddEventHandler('esx_policejob:OutVehicle', function(target)
 	end
 end)
 
+ESX.RegisterServerCallback('esx_policejob:buylockpick', function(source, cb)
+  local amount = 500
+  TriggerEvent('esx_addonaccount:getSharedAccount', 'society_police', function(account)
+    if account.money >= amount then
+      account.removeMoney(amount)
+      local xPlayer = ESX.GetPlayerFromId(source)
+      xPlayer.addInventoryItem('lockpick', 1)
+      cb(true)
+    else
+      cb(false)
+      local xPlayer = ESX.GetPlayerFromId(source)
+      TriggerClientEvent('esx:showNotification', xPlayer.source, 'Du köpte ett dyrksett' )
+    end
+  end)
+end)
+
 RegisterServerEvent('esx_policejob:getStockItem')
 AddEventHandler('esx_policejob:getStockItem', function(itemName, count)
 	local _source = source
