@@ -52,9 +52,6 @@ Citizen.CreateThread(function ()
 						--ESX.ShowHelpNotification(_U('press_wash'))
 					end
 					if IsControlJustPressed(1, 51) then
-						ESX.ShowNotification('Vänligen Vänta.')
-						exports['t0sic_loadingbar']:loadingbar ('Tvättar bil...', 2500)
-          				Citizen.Wait(2500)
 						WashVehicle()
 					end
 				end
@@ -72,7 +69,7 @@ Citizen.CreateThread(function()
         local coords = GetEntityCoords(PlayerPedId(), true)
         for k in pairs(Config.Zones) do
             if GetDistanceBetweenCoords(Config.Zones[k].x, Config.Zones[k].y, Config.Zones[k].z, coords) < 10 then
-                Marker("~w~[~r~E~w~] Tvätta bil för ~r~" ..Config.Price.. "kr", 27, Config.Zones[k].x, Config.Zones[k].y, Config.Zones[k].z - 0.99)
+                Marker("~w~[~p~E~w~] Tvätta bil för ~p~" ..Config.Price.. "kr", 27, Config.Zones[k].x, Config.Zones[k].y, Config.Zones[k].z - 0.99)
             end
         end
     end

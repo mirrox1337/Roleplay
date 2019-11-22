@@ -17,6 +17,7 @@ client_scripts {
 	'@es_extended/locale.lua',
 	'locales/en.lua',
 	'locales/sv.lua',
+	'client/utils.lua',
 	'config.lua',
 	'client/main.lua',
 	'client/vehicle_names.lua'

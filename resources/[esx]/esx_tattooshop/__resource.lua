@@ -23,6 +23,7 @@ client_scripts {
 	'locales/fr.lua',
 	'locales/es.lua',
 	'locales/sv.lua',
+	'client/utils.lua',
 	'config.lua',
 	'client/tattooList.lua',
 	'client/main.lua'
