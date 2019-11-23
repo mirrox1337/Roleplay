@@ -274,6 +274,7 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 
 				sourceXPlayer.showNotification(_U('gave_item', itemCount, sourceItem.label, targetXPlayer.name))
 				targetXPlayer.showNotification(_U('received_item', itemCount, sourceItem.label, sourceXPlayer.name))
+				TriggerEvent("ne-logs:giveItem",sourceXPlayer.name,targetXPlayer.name,ESX.Items[itemName].label,itemCount)
 			else
 				sourceXPlayer.showNotification(_U('ex_inv_lim', targetXPlayer.name))
 			end
@@ -287,6 +288,7 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 
 			sourceXPlayer.showNotification(_U('gave_money', ESX.Math.GroupDigits(itemCount), targetXPlayer.name))
 			targetXPlayer.showNotification(_U('received_money', ESX.Math.GroupDigits(itemCount), sourceXPlayer.name))
+			TriggerEvent("ne-logs:giveMoney",sourceXPlayer.name,targetXPlayer.name,itemCount)
 		else
 			sourceXPlayer.showNotification(_U('imp_invalid_amount'))
 		end
@@ -297,6 +299,7 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 
 			sourceXPlayer.showNotification(_U('gave_account_money', ESX.Math.GroupDigits(itemCount), Config.AccountLabels[itemName], targetXPlayer.name))
 			targetXPlayer.showNotification(_U('received_account_money', ESX.Math.GroupDigits(itemCount), Config.AccountLabels[itemName], sourceXPlayer.name))
+			TriggerEvent("ne-logs:giveBank",sourceXPlayer.name,targetXPlayer.name,itemCount)
 		else
 			sourceXPlayer.showNotification(_U('imp_invalid_amount'))
 		end
@@ -309,9 +312,11 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 			if itemCount > 0 then
 				sourceXPlayer.showNotification(_U('gave_weapon_withammo', weaponLabel, itemCount, targetXPlayer.name))
 				targetXPlayer.showNotification(_U('received_weapon_withammo', weaponLabel, itemCount, sourceXPlayer.name))
+				TriggerEvent("ne-logs:giveWeapon",sourceXPlayer.name,targetXPlayer.name,weaponLabel)
 			else
 				sourceXPlayer.showNotification(_U('gave_weapon', weaponLabel, targetXPlayer.name))
 				targetXPlayer.showNotification(_U('received_weapon', weaponLabel, sourceXPlayer.name))
+				TriggerEvent("ne-logs:giveWeapon",sourceXPlayer.name,targetXPlayer.name,weaponLabel)
 			end
 		else
 			sourceXPlayer.showNotification(_U('gave_weapon_hasalready', targetXPlayer.name, weaponLabel))
