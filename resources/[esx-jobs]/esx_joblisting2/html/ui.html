@@ -1,0 +1,122 @@
+<style>
+
+	.app {
+		display: none;
+		background-image: url('img/tablet.png');
+		background-size: 100%;
+
+		position:absolute;
+		left:0; right:0;
+		top:0; bottom:0;
+		margin: auto;
+	
+		height: 843px;
+		width: 566px;
+		overflow: hidden;
+	
+	}
+	
+	#screen {
+	
+		position:absolute;
+		left:0; right:0;
+		top:11; bottom:0;
+		margin: auto;
+	
+		height: 685px;
+		width: 425px;
+		overflow:auto;
+	}
+
+    #banner {
+        background-image: url('img/header.png');
+        background-color: red;
+        height: 132px;
+    }
+	
+	body {
+		
+		height: 100%;
+	}
+	
+	textarea {
+		
+		width: 100%;
+		
+	}
+	
+	.editor {
+		
+		width: 100%;
+		
+	}
+	
+	
+	</style>
+	
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="scripts.js" type="text/javascript"></script>
+		<script src="debounce.min.js" type="text/javascript"></script>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="styles.css" type="text/css">
+	</head>
+	
+	<body>
+		<div class = "app">
+		
+				
+				<div class = "w3-w" id = "screen">
+				
+					<div class = "w3-container" id = "banner">
+					</div>
+					
+					<div class = "editor w3-container w3-white">
+
+						<br>
+                        <div class "radiolife w3-white">
+                            <b>Yrke:</b><br>
+                            <input id="police" type="radio" name="type" value="police" checked> Polismyndigheten <br>
+                            <input id="securitas" type="radio" name="type" value="securitas" checked> Securitas <br>
+                            <input id="ambulance" type="radio" name="type" value="ambulance" checked> Sjukvården <br>
+                            <input id="cardealer" type="radio" name="type" value="cardealer" checked> Bil Center <br>
+                            <input id="mechanic" type="radio" name="type" value="mechanic" checked> Mekonomen <br>
+                            <input id="bennys" type="radio" name="type" value="bennys" checked> Bennys <br>
+                            <input id="taxi" type="radio" name="type" value="taxi" checked> Uber <br>
+                            <input id="galaxy" type="radio" name="type" value="galaxy" checked> Club-Galaxy <br>
+                            <input id="journalist" type="radio" name="type" value="journalist" checked> NE-Nyheter <br>
+                            <!--<input id = "delivery" type="radio" name="type" value="delivery" checked> Delivery <br> -->
+                            <br>
+                        </div>
+						
+						<b>Telefon*</b>
+						<textarea class = "phone w3-white" rows="1" placeholder="073-#######"></textarea>
+						<br>
+						<br>
+						
+						<b>E-Post*</b>
+						<textarea class = "mail w3-white" rows="1" placeholder="mirrox#3037@discord.com "></textarea>
+						<br>
+						<br>
+						
+						<b>Skriv om dig själv</b>
+						<textarea class = "exp w3-white" rows="20" placeholder="Varför ska vi anställa just dig?"></textarea>
+						<br>
+						<br>
+
+                        <b>Körkort*</b>
+						<textarea class = "licenses w3-white" rows="1" placeholder="Vad har du för behörigheter (A, B, C, etc) "></textarea>
+						<br>
+						<br>
+
+						<b>Din IP-adress och inloggningsnamn lagras automatiskt för att bekräfta din identitet. Genom att skicka in en ansökan kan du få dina kriminalregister sökt</b><br>
+						<br>
+						
+						<button class="w3-button w3-green w3-left btnSend">Apply</button>
+						<button class="w3-button w3-red w3-left btnClose">Cancel</button>
+						
+					</div>
+					
+					
+				</div></div>	
+	</body>
