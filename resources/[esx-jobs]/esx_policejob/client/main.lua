@@ -255,7 +255,7 @@ function OpenArmoryMenu(station)
 		table.insert(elements, {label = _U('put_weapon'),     value = 'put_weapon'})
 		--table.insert(elements, {label = _U('remove_object'),  value = 'get_stock'})
 		table.insert(elements, {label = _U('deposit_object'), value = 'put_stock'})
-
+	end
 
 	if PlayerData.job.grade_name == 'boss' then
 		table.insert(elements, {label = _U('buy_weapons'), value = 'buy_weapons'})
@@ -318,7 +318,7 @@ function OpenVehicleSpawnerMenu(type, station, part, partNum)
 				if #Config.AuthorizedVehicles.Shared > 0 then
 					for k,vehicle in ipairs(Config.AuthorizedVehicles.Shared) do
 						table.insert(shopElements, {
-							label = ('%s - <span style="color:green;">%s</span>'):format(vehicle.label, _U('shop_item', ESX.Math.GroupDigits(vehicle.price))),
+							label = ('%s - <span style="color: #771282;">%s</span>'):format(vehicle.label, _U('shop_item', ESX.Math.GroupDigits(vehicle.price))),
 							name  = vehicle.label,
 							model = vehicle.model,
 							price = vehicle.price,
@@ -330,7 +330,7 @@ function OpenVehicleSpawnerMenu(type, station, part, partNum)
 				if #authorizedVehicles > 0 then
 					for k,vehicle in ipairs(authorizedVehicles) do
 						table.insert(shopElements, {
-							label = ('%s - <span style="color:green;">%s</span>'):format(vehicle.label, _U('shop_item', ESX.Math.GroupDigits(vehicle.price))),
+							label = ('%s - <span style="color: #771282;">%s</span>'):format(vehicle.label, _U('shop_item', ESX.Math.GroupDigits(vehicle.price))),
 							name  = vehicle.label,
 							model = vehicle.model,
 							price = vehicle.price,
@@ -349,7 +349,7 @@ function OpenVehicleSpawnerMenu(type, station, part, partNum)
 				if #authorizedHelicopters > 0 then
 					for k,vehicle in ipairs(authorizedHelicopters) do
 						table.insert(shopElements, {
-							label = ('%s - <span style="color:green;">%s</span>'):format(vehicle.label, _U('shop_item', ESX.Math.GroupDigits(vehicle.price))),
+							label = ('%s - <span style="color: #771282;">%s</span>'):format(vehicle.label, _U('shop_item', ESX.Math.GroupDigits(vehicle.price))),
 							name  = vehicle.label,
 							model = vehicle.model,
 							price = vehicle.price,
@@ -372,12 +372,12 @@ function OpenVehicleSpawnerMenu(type, station, part, partNum)
 					for k,v in ipairs(jobVehicles) do
 						local props = json.decode(v.vehicle)
 						local vehicleName = GetLabelText(GetDisplayNameFromVehicleModel(props.model))
-						local label = ('%s - <span style="color:darkgoldenrod;">%s</span>: '):format(vehicleName, props.plate)
+						local label = ('%s - <span style="color: #771282;">%s</span>: '):format(vehicleName, props.plate)
 
 						if v.stored then
 							label = label .. ('<span style="color:green;">%s</span>'):format(_U('garage_stored'))
 						else
-							label = label .. ('<span style="color:darkred;">%s</span>'):format(_U('garage_notstored'))
+							label = label .. ('<span style="color:red;">%s</span>'):format(_U('garage_notstored'))
 						end
 
 						table.insert(garage, {
@@ -643,18 +643,30 @@ function OpenPoliceActionsMenu()
 		elements = {
 			{label = _U('citizen_interaction'), value = 'citizen_interaction'},
 			{label = _U('vehicle_interaction'), value = 'vehicle_interaction'},
-			{label = _U('object_spawner'), value = 'object_spawner'}
+			{label = _U('object_spawner'),      value = 'object_spawner'},
+			{label = _U('Västar'),		          value = 'vestmenu'},
+			{label = _U('larm'),		            value = 'larm'},
 	}}, function(data, menu)
 		if data.current.value == 'citizen_interaction' then
 			local elements = {
-				{label = _U('id_card'), value = 'identity_card'},
-				{label = _U('search'), value = 'body_search'},
-				{label = _U('handcuff'), value = 'handcuff'},
-				{label = _U('drag'), value = 'drag'},
-				{label = _U('put_in_vehicle'), value = 'put_in_vehicle'},
-				{label = _U('out_the_vehicle'), value = 'out_the_vehicle'},
-				{label = _U('fine'), value = 'fine'},
-				{label = _U('unpaid_bills'), value = 'unpaid_bills'}
+				{label = _U('id_card'),         value = 'identity_card'},
+				{label = _U('search'),          value = 'body_search'},
+				{label = 'Sätt På Handbojor',   value = 'handcuff'},
+			    {label = 'Ta Av Handbojor',		value = 'unhandcuff'},
+                {label = _U('drag'),      		value = 'drag'},
+                {label = 'Brottsregister',      value = 'criminalrecords'},
+                {label = _U('put_in_vehicle'),  value = 'put_in_vehicle'},
+                {label = _U('out_the_vehicle'), value = 'out_the_vehicle'},
+                --{label = 'Kolla efter krut',    value = 'pistol_krut'},
+                {label = _U('fine'),            value = 'fine'},
+				{label = _U('unpaid_bills'),	value = 'unpaid_bills'},
+                {label = 'Ta DNA-Prov',			value = 'dna'},            
+			    --{label = _U('codedmv'),			value = 'codedmv'},
+			    --{label = _U('codedrive'),       value = 'codedrive'},
+			    --{label = _U('codedrivebike'),   value = 'codedrivebike'},
+			    --{label = _U('codedrivetruck'),  value = 'codedrivetruck'},
+				--{label = ('HLR'),				value = 'revive'},
+				{label = ('Fängsla'),			value = 'jail'}
 			}
 
 			if Config.EnableLicenses then
@@ -676,7 +688,22 @@ function OpenPoliceActionsMenu()
 						TriggerServerEvent('esx_policejob:message', GetPlayerServerId(closestPlayer), _U('being_searched'))
 						OpenBodySearchMenu(closestPlayer)
 					elseif action == 'handcuff' then
+						RequestAnimDict('missheistfbisetup1')
+
+						TaskPlayAnim(GetPlayerPed(-1), 'missheistfbisetup1' ,'unlock_loop_janitor' ,8.0, -8.0, -1, 0, 0, false, false, false )
+						Citizen.Wait(2900)
+						ClearPedTasksImmediately(GetPlayerPed(-1))
 						TriggerServerEvent('esx_policejob:handcuff', GetPlayerServerId(closestPlayer))
+						TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 5, "cuffs", 0.5)
+						TriggerServerEvent('esx_policejob:handcuff', GetPlayerServerId(closestPlayer))
+					elseif action == 'unhandcuff' then
+						RequestAnimDict('missheistfbisetup1')
+                
+						TaskPlayAnim(PlayerPedId(), 'mp_arresting', 'a_uncuff', 8.0, -8.0, -1, 1, 0, false, false, false)
+						Citizen.Wait(2900)
+						ClearPedTasksImmediately(GetPlayerPed(-1))
+						TriggerServerEvent('esx_policejob:unhandcuff', GetPlayerServerId(closestPlayer))
+						TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 5, "cuffs", 0.5)
 					elseif action == 'drag' then
 						TriggerServerEvent('esx_policejob:drag', GetPlayerServerId(closestPlayer))
 					elseif action == 'put_in_vehicle' then
@@ -689,9 +716,14 @@ function OpenPoliceActionsMenu()
 						ShowPlayerLicense(closestPlayer)
 					elseif action == 'unpaid_bills' then
 						OpenUnpaidBillsMenu(closestPlayer)
+					--elseif action == 'pistol_krut' then
+						--TriggerEvent('esx_guntest:checkGun', source)
+					elseif action == 'jail' then
+						openJailMenu(GetPlayerServerId(closestPlayer))
 					end
 				else
-					ESX.ShowNotification(_U('no_players_nearby'))
+					--ESX.ShowNotification(_U('no_players_nearby'))
+					exports['mythic_notify']:DoHudText('inform', (_U('no_players_nearby')), { ['background-color'] = '#b00000', ['color'] = '#fff' })
 				end
 			end, function(data2, menu2)
 				menu2.close()
@@ -703,8 +735,8 @@ function OpenPoliceActionsMenu()
 
 			if DoesEntityExist(vehicle) then
 				table.insert(elements, {label = _U('vehicle_info'), value = 'vehicle_infos'})
-				table.insert(elements, {label = _U('pick_lock'), value = 'hijack_vehicle'})
-				table.insert(elements, {label = _U('impound'), value = 'impound'})
+				table.insert(elements, {label = _U('pick_lock'), 	value = 'hijack_vehicle'})
+				--table.insert(elements, {label = _U('impound'), value = 'impound'})
 			end
 
 			table.insert(elements, {label = _U('search_database'), value = 'search_database'})
@@ -732,7 +764,8 @@ function OpenPoliceActionsMenu()
 
 							SetVehicleDoorsLocked(vehicle, 1)
 							SetVehicleDoorsLockedForAllPlayers(vehicle, false)
-							ESX.ShowNotification(_U('vehicle_unlocked'))
+							--ESX.ShowNotification(_U('vehicle_unlocked'))
+							exports['mythic_notify']:DoHudText('inform', (_U('vehicle_unlocked')), { ['background-color'] = '#b00000', ['color'] = '#fff' })
 						end
 					elseif action == 'impound' then
 						-- is the script busy?
@@ -767,7 +800,8 @@ function OpenPoliceActionsMenu()
 						end)
 					end
 				else
-					ESX.ShowNotification(_U('no_vehicles_nearby'))
+					--ESX.ShowNotification(_U('no_vehicles_nearby'))
+					exports['mythic_notify']:DoHudText('inform', (_U('no_vehicles_nearby')), { ['background-color'] = '#b00000', ['color'] = '#fff' })
 				end
 
 			end, function(data2, menu2)
@@ -781,8 +815,8 @@ function OpenPoliceActionsMenu()
 					{label = _U('cone'), model = 'prop_roadcone02a'},
 					{label = _U('barrier'), model = 'prop_barrier_work05'},
 					{label = _U('spikestrips'), model = 'p_ld_stinger_s'},
-					{label = _U('box'), model = 'prop_boxpile_07d'},
-					{label = _U('cash'), model = 'hei_prop_cash_crate_half_full'}
+					--{label = _U('box'), model = 'prop_boxpile_07d'},
+					--{label = _U('cash'), model = 'hei_prop_cash_crate_half_full'}
 			}}, function(data2, menu2)
 				local playerPed = PlayerPedId()
 				local coords    = GetEntityCoords(playerPed)
@@ -810,13 +844,13 @@ function OpenIdentityCardMenu(player)
 	ESX.TriggerServerCallback('esx_policejob:getOtherPlayerData', function(data)
 		local elements = {}
 		local nameLabel = _U('name', data.name)
-		local jobLabel, sexLabel, dobLabel, heightLabel, idLabel
+		local --[[jobLabel,--]] sexLabel, dobLabel, heightLabel, idLabel
 
-		if data.job.grade_label and  data.job.grade_label ~= '' then
-			jobLabel = _U('job', data.job.label .. ' - ' .. data.job.grade_label)
-		else
-			jobLabel = _U('job', data.job.label)
-		end
+--		if data.job.grade_label and  data.job.grade_label ~= '' then
+--			jobLabel = _U('job', data.job.label .. ' - ' .. data.job.grade_label)
+--		else
+--			jobLabel = _U('job', data.job.label)
+--		end
 
 		if Config.EnableESXIdentity then
 			nameLabel = _U('name', data.firstname .. ' ' .. data.lastname)
@@ -884,6 +918,7 @@ function OpenIdentityCardMenu(player)
 	end, GetPlayerServerId(player))
 end
 
+--[[
 function OpenBodySearchMenu(player)
 	ESX.TriggerServerCallback('esx_policejob:getOtherPlayerData', function(data)
 		local elements = {}
@@ -939,6 +974,16 @@ function OpenBodySearchMenu(player)
 		end)
 	end, GetPlayerServerId(player))
 end
+--]]
+
+function OpenBodySearchMenu(player)
+
+	RequestAnimDict("anim@gangops@morgue@table@")
+	ESX.TriggerServerCallback('esx_policejob:getOtherPlayerData', function(data)
+	TaskPlayAnim(GetPlayerPed(-1),"anim@gangops@morgue@table@","player_search", 1.0, -1.0, 10000, 1, 1, false, false, false)
+	TriggerEvent("esx_inventoryhud:openPlayerInventory", GetPlayerServerId(player), GetPlayerName(player))
+end)
+end
 
 function OpenFineMenu(player)
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'fine', {
@@ -962,7 +1007,7 @@ function OpenFineCategoryMenu(player, category)
 
 		for k,fine in ipairs(fines) do
 			table.insert(elements, {
-				label     = ('%s <span style="color:green;">%s</span>'):format(fine.label, _U('armory_item', ESX.Math.GroupDigits(fine.amount))),
+				label     = ('%s <span style="color: #771282;">%s</span>'):format(fine.label, _U('armory_item', ESX.Math.GroupDigits(fine.amount))),
 				value     = fine.id,
 				amount    = fine.amount,
 				fineLabel = fine.label
@@ -1173,12 +1218,12 @@ function OpenBuyWeaponsMenu()
 					local hasComponent = HasPedGotWeaponComponent(playerPed, GetHashKey(v.weapon), component.hash)
 
 					if hasComponent then
-						label = ('%s: <span style="color:green;">%s</span>'):format(component.label, _U('armory_owned'))
+						label = ('%s: <span style="color: #771282;">%s</span>'):format(component.label, _U('armory_owned'))
 					else
 						if v.components[i] > 0 then
-							label = ('%s: <span style="color:green;">%s</span>'):format(component.label, _U('armory_item', ESX.Math.GroupDigits(v.components[i])))
+							label = ('%s: <span style="color: #771282;">%s</span>'):format(component.label, _U('armory_item', ESX.Math.GroupDigits(v.components[i])))
 						else
-							label = ('%s: <span style="color:green;">%s</span>'):format(component.label, _U('armory_free'))
+							label = ('%s: <span style="color: #771282;">%s</span>'):format(component.label, _U('armory_free'))
 						end
 					end
 
@@ -1196,14 +1241,14 @@ function OpenBuyWeaponsMenu()
 		end
 
 		if hasWeapon and v.components then
-			label = ('%s: <span style="color:green;">></span>'):format(weapon.label)
+			label = ('%s: <span style="color: #771282;">></span>'):format(weapon.label)
 		elseif hasWeapon and not v.components then
-			label = ('%s: <span style="color:green;">%s</span>'):format(weapon.label, _U('armory_owned'))
+			label = ('%s: <span style="color: #771282;">%s</span>'):format(weapon.label, _U('armory_owned'))
 		else
 			if v.price > 0 then
-				label = ('%s: <span style="color:green;">%s</span>'):format(weapon.label, _U('armory_item', ESX.Math.GroupDigits(v.price)))
+				label = ('%s: <span style="color: #771282;">%s</span>'):format(weapon.label, _U('armory_item', ESX.Math.GroupDigits(v.price)))
 			else
-				label = ('%s: <span style="color:green;">%s</span>'):format(weapon.label, _U('armory_free'))
+				label = ('%s: <span style="color: #771282;">%s</span>'):format(weapon.label, _U('armory_free'))
 			end
 		end
 
@@ -1701,7 +1746,8 @@ Citizen.CreateThread(function()
 					local distance = GetDistanceBetweenCoords(coords, v.Cloakrooms[i], true)
 
 					if distance < Config.DrawDistance then
-						DrawMarker(20, v.Cloakrooms[i], 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						--DrawMarker(20, v.Cloakrooms[i], 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						Marker("~w~[~p~E~w~] Omklädningsrum", 27, v.Cloakrooms[i].x, v.Cloakrooms[i].y, v.Cloakrooms[i].z - 0.95)
 						letSleep = false
 					end
 
@@ -1714,7 +1760,8 @@ Citizen.CreateThread(function()
 					local distance = GetDistanceBetweenCoords(coords, v.Armories[i], true)
 
 					if distance < Config.DrawDistance then
-						DrawMarker(21, v.Armories[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						--DrawMarker(21, v.Armories[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						Marker("~w~[~p~E~w~] Förråd", 27, v.Armories[i].x, v.Armories[i].y, v.Armories[i].z - 0.95)
 						letSleep = false
 					end
 
@@ -1727,7 +1774,8 @@ Citizen.CreateThread(function()
 					local distance = GetDistanceBetweenCoords(coords, v.Vehicles[i].Spawner, true)
 
 					if distance < Config.DrawDistance then
-						DrawMarker(36, v.Vehicles[i].Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						--DrawMarker(36, v.Vehicles[i].Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						Marker("~w~[~p~E~w~] Garage", 27, v.Vehicles[i].Spawner.x, v.Vehicles[i].Spawner.y, v.Vehicles[i].Spawner.z - 0.95)
 						letSleep = false
 					end
 
@@ -1740,7 +1788,8 @@ Citizen.CreateThread(function()
 					local distance =  GetDistanceBetweenCoords(coords, v.Helicopters[i].Spawner, true)
 
 					if distance < Config.DrawDistance then
-						DrawMarker(34, v.Helicopters[i].Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						--DrawMarker(34, v.Helicopters[i].Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						Marker("~w~[~p~E~w~] Helikopter", 27, v.Helicopters[i].Spawner.x, v.Helicopters[i].Spawner.y, v.Helicopters[i].Spawner.z - 0.95)
 						letSleep = false
 					end
 
@@ -1754,7 +1803,8 @@ Citizen.CreateThread(function()
 						local distance = GetDistanceBetweenCoords(coords, v.BossActions[i], true)
 
 						if distance < Config.DrawDistance then
-							DrawMarker(22, v.BossActions[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+							--DrawMarker(22, v.BossActions[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+							Marker("~w~[~p~E~w~] Chefsmeny", 27, v.BossActions[i].x, v.BossActions[i].y, v.BossActions[i].z - 0.95)
 							letSleep = false
 						end
 
