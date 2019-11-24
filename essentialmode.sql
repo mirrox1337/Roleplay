@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.addon_account_data: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `height` varchar(128) COLLATE utf8mb4_bin NOT NULL,
   `lastdigits` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.characters: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
@@ -155,11 +155,11 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.jobs: ~1 rows (ungefär)
+-- Dumpar data för tabell essentialmode.jobs: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
 INSERT INTO `jobs` (`name`, `label`) VALUES
 	('cardealer', 'Bilförsäljare'),
-	('unemployed', 'Unemployed');
+	('unemployed', 'Arbetslös');
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.job_grades
@@ -173,15 +173,15 @@ CREATE TABLE IF NOT EXISTS `job_grades` (
   `skin_male` longtext COLLATE utf8mb4_bin NOT NULL,
   `skin_female` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.job_grades: ~5 rows (ungefär)
 /*!40000 ALTER TABLE `job_grades` DISABLE KEYS */;
 INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
-	(1, 'unemployed', 0, 'unemployed', 'Unemployed', 200, '{}', '{}'),
-	(2, 'cardealer', 0, 'recruit', 'Provanställd', 10, '{}', '{}'),
-	(3, 'cardealer', 1, 'novice', 'Anställd', 25, '{}', '{}'),
-	(4, 'cardealer', 2, 'experienced', 'VD', 40, '{}', '{}'),
+	(1, 'unemployed', 0, 'unemployed', 'Unemployed', 30, '{}', '{}'),
+	(2, 'cardealer', 0, 'recruit', 'Provanställd', 60, '{}', '{}'),
+	(3, 'cardealer', 1, 'novice', 'Anställd', 75, '{}', '{}'),
+	(4, 'cardealer', 2, 'experienced', 'VD', 80, '{}', '{}'),
 	(5, 'cardealer', 3, 'boss', 'Chef', 0, '{}', '{}');
 /*!40000 ALTER TABLE `job_grades` ENABLE KEYS */;
 
@@ -196,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   PRIMARY KEY (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.owned_vehicles: ~1 rows (ungefär)
+-- Dumpar data för tabell essentialmode.owned_vehicles: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `owned_vehicles` DISABLE KEYS */;
 /*!40000 ALTER TABLE `owned_vehicles` ENABLE KEYS */;
 
@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `user_accounts` (
   `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `money` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.user_accounts: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `user_accounts` DISABLE KEYS */;
