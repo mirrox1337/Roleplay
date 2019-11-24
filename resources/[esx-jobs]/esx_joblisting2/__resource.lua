@@ -6,7 +6,8 @@ files {
 	'html/scripts.js',
 	'html/debounce.min.js',
 	'html/img/header.png',
-    'html/img/tablet.png'
+    'html/img/tablet.png',
+	'html/img/computer_frame.png',
 }
 
 server_scripts {
