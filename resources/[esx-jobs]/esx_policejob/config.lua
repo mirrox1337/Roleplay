@@ -143,14 +143,14 @@ Config.AuthorizedWeapons = {
 
 Config.AuthorizedVehicles = {
 	Shared = {
-		{ model = 'police', label = 'Volvo XC70', price = 10000 },
-		{ model = 'police2', label = 'Volvo V90 CC', price = 10000 },
-		{ model = 'police3', label = 'Volkswagen Buss', price = 10000 },
-		{ model = 'policeb', label = 'BMW 1200R', price = 10000 },
-		{ model = 'policevw', label = 'Volkswagen Transport', price = 10000 },
-		{ model = 'police4', label = 'Volkswagen Golf - Civil', price = 10000 },
-		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 10000 },
-		{ model = 'policeold2', label = 'Volkswagen Buss - Civil', price = 10000 }
+		{ model = 'police', label = 'Volvo XC70', price = 100 },
+		{ model = 'police2', label = 'Volvo V90 CC', price = 100 },
+		{ model = 'police3', label = 'Volkswagen Buss', price = 100 },
+		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
+		{ model = 'policevw', label = 'Volkswagen Transport', price = 100 },
+		{ model = 'police4', label = 'Volkswagen Golf - Civil', price = 100 },
+		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
+		{ model = 'policeold2', label = 'Volkswagen Buss - Civil', price = 100 }
 	},
 
 	recruit = {
@@ -158,21 +158,47 @@ Config.AuthorizedVehicles = {
 	},
 
 	officer = {
-		{ model = 'police3', label = 'Police Interceptor', price = 20000 }
+		{ model = 'police', label = 'Volvo XC70', price = 100 },
+		{ model = 'police2', label = 'Volvo V90 CC', price = 100 },
+		{ model = 'police3', label = 'Volkswagen Buss', price = 100 },
+		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
+		{ model = 'policevw', label = 'Volkswagen Transport', price = 100 },
+		{ model = 'police4', label = 'Volkswagen Golf - Civil', price = 100 },
+		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
+		{ model = 'policeold2', label = 'Volkswagen Buss - Civil', price = 100 }
 	},
 
 	sergeant = {
-		{ model = 'policet', label = 'Police Transporter', price = 18500 },
-		{ model = 'policeb', label = 'Police Bike', price = 30500 }
+		{ model = 'police', label = 'Volvo XC70', price = 100 },
+		{ model = 'police2', label = 'Volvo V90 CC', price = 100 },
+		{ model = 'police3', label = 'Volkswagen Buss', price = 100 },
+		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
+		{ model = 'policevw', label = 'Volkswagen Transport', price = 100 },
+		{ model = 'police4', label = 'Volkswagen Golf - Civil', price = 100 },
+		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
+		{ model = 'policeold2', label = 'Volkswagen Buss - Civil', price = 100 }
 	},
 
 	intendent = {
-
+		{ model = 'police', label = 'Volvo XC70', price = 100 },
+		{ model = 'police2', label = 'Volvo V90 CC', price = 100 },
+		{ model = 'police3', label = 'Volkswagen Buss', price = 100 },
+		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
+		{ model = 'policevw', label = 'Volkswagen Transport', price = 100 },
+		{ model = 'police4', label = 'Volkswagen Golf - Civil', price = 100 },
+		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
+		{ model = 'policeold2', label = 'Volkswagen Buss - Civil', price = 100 }
 	},
 
 	lieutenant = {
-		{ model = 'riot', label = 'Police Riot', price = 70000 },
-		{ model = 'fbi2', label = 'FIB SUV', price = 60000 }
+		{ model = 'police', label = 'Volvo XC70', price = 100 },
+		{ model = 'police2', label = 'Volvo V90 CC', price = 100 },
+		{ model = 'police3', label = 'Volkswagen Buss', price = 100 },
+		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
+		{ model = 'policevw', label = 'Volkswagen Transport', price = 100 },
+		{ model = 'police4', label = 'Volkswagen Golf - Civil', price = 100 },
+		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
+		{ model = 'policeold2', label = 'Volkswagen Buss - Civil', price = 100 }
 	},
 
 	chef = {
