@@ -1,8 +1,8 @@
 Config                 = {}
-Config.DrawDistance    = 100.0
+Config.DrawDistance    = 10.0
 Config.MaxErrors       = 5
 Config.SpeedMultiplier = 3.6
-Config.Locale          = 'fr'
+Config.Locale          = 'sv'
 
 Config.Prices = {
 	dmv         = 500,
@@ -12,7 +12,7 @@ Config.Prices = {
 }
 
 Config.VehicleModels = {
-	drive       = 'blista',
+	drive       = 'dilettante',
 	drive_bike  = 'sanchez',
 	drive_truck = 'mule3'
 }
@@ -26,7 +26,7 @@ Config.SpeedLimits = {
 Config.Zones = {
 
 	DMVSchool = {
-		Pos   = {x = 239.471, y = -1380.960, z = 32.741},
+		Pos   = {x = 239.471, y = -1380.960, z = 32.75},
 		Size  = {x = 1.5, y = 1.5, z = 1.0},
 		Color = {r = 204, g = 204, b = 0},
 		Type  = 1

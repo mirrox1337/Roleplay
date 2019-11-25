@@ -203,9 +203,10 @@ end)
 Citizen.CreateThread(function()
 	local blip = AddBlipForCoord(Config.Zones.DMVSchool.Pos.x, Config.Zones.DMVSchool.Pos.y, Config.Zones.DMVSchool.Pos.z)
 
-	SetBlipSprite (blip, 408)
+	SetBlipSprite (blip, 607)
 	SetBlipDisplay(blip, 4)
-	SetBlipScale  (blip, 1.2)
+	SetBlipScale  (blip, 0.8)
+	SetBlipColour (blip, 59)
 	SetBlipAsShortRange(blip, true)
 
 	BeginTextCommandSetBlipName("STRING")
@@ -217,13 +218,14 @@ end)
 Citizen.CreateThread(function()
 	while true do
 
-		Citizen.Wait(10)
+		Citizen.Wait(5)
 
 		local coords = GetEntityCoords(PlayerPedId())
 
 		for k,v in pairs(Config.Zones) do
 			if(v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance) then
-				DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, false, false, false)
+				--DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, false, false, false)
+				Marker("~w~[~p~E~w~] För att ta förarprov", 27, v.Pos.x, v.Pos.y, v.Pos.z)
 			end
 		end
 
@@ -305,7 +307,7 @@ end)
 Citizen.CreateThread(function()
 	while true do
 
-		Citizen.Wait(10)
+		Citizen.Wait(5)
 
 		if CurrentTest == 'drive' then
 			local playerPed      = PlayerPedId()
@@ -342,8 +344,9 @@ Citizen.CreateThread(function()
 
 				local distance = GetDistanceBetweenCoords(coords, Config.CheckPoints[nextCheckPoint].Pos.x, Config.CheckPoints[nextCheckPoint].Pos.y, Config.CheckPoints[nextCheckPoint].Pos.z, true)
 
-				if distance <= 100.0 then
-					DrawMarker(1, Config.CheckPoints[nextCheckPoint].Pos.x, Config.CheckPoints[nextCheckPoint].Pos.y, Config.CheckPoints[nextCheckPoint].Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1.5, 102, 204, 102, 100, false, true, 2, false, false, false, false)
+				if distance <= 35.0 then
+					--DrawMarker(1, Config.CheckPoints[nextCheckPoint].Pos.x, Config.CheckPoints[nextCheckPoint].Pos.y, Config.CheckPoints[nextCheckPoint].Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1.5, 102, 204, 102, 100, false, true, 2, false, false, false, false)
+					Marker("~w~[~p~Navigera hit~w~]", -1, Config.CheckPoints[nextCheckPoint].Pos.x, Config.CheckPoints[nextCheckPoint].Pos.y, Config.CheckPoints[nextCheckPoint].Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1.5, 102, 204, 102, 100, false, true, 2, false, false, false, false)
 				end
 
 				if distance <= 3.0 then

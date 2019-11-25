@@ -1,91 +1,91 @@
 var tableauQuestion = [
 	{
-		question: "Si vous conduisez à 80km/h, que vous approchez d'un lieu de résidence, cela veut dire que :",
-		propositionA: "Vous devez accélérer",
-		propositionB: "Vous pouvez garder votre vitesse, si vous ne croisez pas d'autres véhicules",
-		propositionC: "Vous devez ralentir",
-		propositionD: "Vous pouvez garder votre vitesse",
+		question: "Vilket alternativ beskriver defensiv körning?",
+		propositionA: "Motorbromsningar, överhopp av växlar och användande av motorvärmare.",
+		propositionB: "Försvarande av den egna positionen genom att exempelvis inte låta någon annan köra om.",
+		propositionC: "Lugn, säker och planerad körning utan stress.",
+		propositionD: "Då flera fordon kör i någon typ av följe.",
 		reponse: "C"
 	},
 
 	{
-		question: "Vous vous apprétez à tourner à droite au feu vert, mais vous voyez un piéton qui traverse :",
-		propositionA: "Vous passez avant le piéton",
-		propositionB: "Vous vérifiez qu'il n'y a pas d'autre véhicule et vous passez",
-		propositionC: "Vous attendez que le piéton est terminé",
-		propositionD: "Vous shoutez le piéton pour passer",
+		question: "Vad har katalysatorn för uppgift?",
+		propositionA: "Dämpar motorljudet (ljuddämpare).",
+		propositionB: "Underlättar kallstarter.",
+		propositionC: "Omvandlar över 80 % av de skadliga ämnena i avgaserna till vatten och koldioxid.",
+		propositionD: "Reducerar bilens koldioxidutsläpp med över 80 %.",
 		reponse: "C"
 	},
 
 	{
-		question: "Sans aucune indication : La vitesse dans une zone résidentielle est de : __ km/h",
-		propositionA: "50",
-		propositionB: "55",
-		propositionC: "65",
-		propositionD: "70",
+		question: "Vad betyder den svarta 30-skylten?",
+		propositionA: "Rekommenderad högsta hastighet.",
+		propositionB: "Vägarbetet upphör den 30:e samma månad.",
+		propositionC: "Rekommenderad lägsta hastighet.",
+		propositionD: "Skylten är inget vägmärke, utan är till för vägarbetarna.",
 		reponse: "A"
 	},
 
 	{
-		question: "Avant chaque changement de file vous devez :",
-		propositionA: "Vérifiez vos rétroviseurs",
-		propositionB: "Vérifiez vos angles morts",
-		propositionC: "Signalez vos intentions",
-		propositionD: "Tout cela",
-		reponse: "D"
+		question: "Vad är ett reversibelt körfält?",
+		propositionA: "Ett körfält där trafik i båda färdriktningarna tillåts samtidigt.",
+		propositionB: "Ett vändbart körfält vars färdriktning bestäms av trafiksignaler.",
+		propositionC: "Ett körfält som endast får användas av utryckningsfordon.",
+		propositionD: "Ett körfält där man måste se upp för älgar.",
+		reponse: "B"
 	},
 
 	{
-		question: "What blood alcohol level is classified as driving while intoxicated?",
-		propositionA: "0.05%",
-		propositionB: "0.18%",
-		propositionC: "0.08%",
-		propositionD: "0.06%",
+		question: "Vilket alternativ ger ett exempel på miljövänlig körning?",
+		propositionA: "Körning på så låga växlar som möjligt.",
+		propositionB: "Mycket långsam fartökning.",
+		propositionC: "Hoppa över växlar.",
+		propositionD: "Hålla motorns varvtal på minst 3 000 varv/minut.",
 		reponse: "C"
 	},
 
 	{
-		question: "A quel moment vous pouvez passer aux feux ?",
-		propositionA: "Quand il est vert",
-		propositionB: "Quand il n'y a personne sur l'intersection",
-		propositionC: "Vous êtes dans une zone d'école",
-		propositionD: "Quand il est vert et/ou rouge et que je tourne à droite",
+		question: "Vad är sant för unga män med körkort?",
+		propositionA: "Unga män har en tendens att överskatta sin körförmåga mer när de precis har fått körkort än när de har haft körkort i något år.",
+		propositionB: "Unga män löper 5–6 gånger större risk att råka ut för en trafikolycka jämfört med de över 75 år.",
+		propositionC: "Unga män har bäst reaktionstid i trafiken.",
+		propositionD: "Unga män har en tendens att överskatta sin körförmåga mer när de har haft körkort i något år än när de precis har fått körkort.",
 		reponse: "D"
 	},
 
 	{
-		question: "Un piéton est au feu rouge pour les piétons",
-		propositionA: "Vous le laissez passer",
-		propositionB: "Vous observez avant de continuer",
-		propositionC: "Vous lui faite un signe de la main",
-		propositionD: "Vous continuez votre chemin car votre feu est vert",
-		reponse: "D"
+		question: "Var går gränsen för rattfylleri?",
+		propositionA: "0,1 promille alkohol i blodet.",
+		propositionB: "0,2 promille alkohol i blodet.",
+		propositionC: "1,0 promille alkohol i blodet.",
+		propositionD: "1,2 promille alkohol i blodet.",
+		reponse: "B"
 	},
 
 	{
-		question: "Qu'est ce qui est permit quand vous dépassez un autre véhicule",
-		propositionA: "Le suivre de près pour le doubler plus vite",
-		propositionB: "Le doubler en quittant la route",
-		propositionC: "Conduire sur la route opposé pour le dépasser",
-		propositionD: "Dépasser la vitesse limite",
-		reponse: "C"
+		question: "Vad är reaktionssträckan?",
+		propositionA: "Sträckan du förflyttas från det att du upptäckt hindret tills dess att du börjar bromsa.",
+		propositionB: "Reaktionstiden + bromssträckan.",
+		propositionC: "Bromssträckan + stoppsträckan.",
+		propositionD: "Sträckan du förflyttas från det att du upptäckt hindret tills dess att du står stilla.",
+		reponse: "A"
 	},
 
 	{
-		question: "Vous conduisez sur une rocade qui indique une vitesse maximum de 110 km/h. La plupart du traffic roule à 120 km/h, alors vous ne devriez pas conduire plus vite que :",
-		propositionA: "80 kmh",
-		propositionB: "40 kmh",
-		propositionC: "50 kmh",
-		propositionD: "110 kmh",
-		reponse: "D"
+		question: "Du ökar hastigheten från 30 km/h till 90 km/h. Hur påverkas bromssträckan?",
+		propositionA: "Den blir 9 gånger längre.",
+		propositionB: "Den blir 3 gånger längre.",
+		propositionC: "Den blir 2 gånger längre.",
+		propositionD: "Den förblir oförändrad.",
+		reponse: "A"
 	},
 
 	{
-		question: "Quand vous êtes dépassé par un autre véhicule il est important de ne PAS :",
-		propositionA: "Ralentir",
-		propositionB: "Vérifiez vos rétroviseurs",
-		propositionC: "Regarder les autres conducteurs",
-		propositionD: "Augmenter votre vitesse",
+		question: "Hur stor del av människans synfält utgörs av periferiseendet?",
+		propositionA: "1-2 %",
+		propositionB: "25 %",
+		propositionC: "50 %",
+		propositionD: "98-99 %",
 		reponse: "D"
 	},
 ]
