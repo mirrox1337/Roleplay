@@ -19,8 +19,8 @@ $(document).ready(function(){
   function updateStatus(status){
     var hunger = status[0]
     var thirst = status[1]
-    var drunk = status[3]
-    var drug = status[2]
+    var drunk = status[2]
+    var drug = status[3]
     setProgress(hunger.percent,'.progress-hunger');
     setProgress(thirst.percent,'.progress-thirst');
     setProgress(drunk.percent,'.progress-drunk');
