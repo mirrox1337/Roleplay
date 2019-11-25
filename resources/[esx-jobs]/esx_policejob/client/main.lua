@@ -22,7 +22,7 @@ function SetVehicleMaxMods(vehicle)
 		modEngine       = 4,
 		modBrakes       = 3,
 		modTransmission = 3,
-		modSuspension   = 3,
+		modSuspension   = 1,
 		modXenon        = 1,
 		modTurbo        = true
 	}
