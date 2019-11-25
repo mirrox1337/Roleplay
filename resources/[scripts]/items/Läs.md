@@ -1,1 +1,0 @@
-Samla item functioner här?

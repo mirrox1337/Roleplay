@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
--- Värd:                         localhost
--- Serverversion:                10.1.40-MariaDB - mariadb.org binary distribution
--- Server OS:                    Win64
--- HeidiSQL Version:             9.5.0.5196
+-- Värd:                         127.0.0.1
+-- Serverversion:                10.1.38-MariaDB - mariadb.org binary distribution
+-- Server-OS:                    Win64
+-- HeidiSQL Version:             10.1.0.5464
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -12,11 +12,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Dumping database structure for essentialmode
+-- Dumpar databasstruktur för essentialmode
 CREATE DATABASE IF NOT EXISTS `essentialmode` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */;
 USE `essentialmode`;
 
--- Dumping structure for tabell essentialmode.addon_account
+-- Dumpar struktur för tabell essentialmode.addon_account
 CREATE TABLE IF NOT EXISTS `addon_account` (
   `name` varchar(60) COLLATE utf8mb4_bin NOT NULL,
   `label` varchar(100) COLLATE utf8mb4_bin NOT NULL,
@@ -26,11 +26,12 @@ CREATE TABLE IF NOT EXISTS `addon_account` (
 
 -- Dumpar data för tabell essentialmode.addon_account: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `addon_account` DISABLE KEYS */;
-INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
-	('society_cardealer', 'Bilförsäljare', 1);
+INSERT IGNORE INTO `addon_account` (`name`, `label`, `shared`) VALUES
+	('society_cardealer', 'Bilförsäljare', 1),
+	('society_police', 'Polis', 1);
 /*!40000 ALTER TABLE `addon_account` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.addon_account_data
+-- Dumpar struktur för tabell essentialmode.addon_account_data
 CREATE TABLE IF NOT EXISTS `addon_account_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_name` varchar(100) COLLATE utf8mb4_bin DEFAULT NULL,
@@ -41,13 +42,13 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   KEY `index_addon_account_data_account_name` (`account_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.addon_account_data: ~1 rows (ungefär)
+-- Dumpar data för tabell essentialmode.addon_account_data: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
-INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
+INSERT IGNORE INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(1, 'society_cardealer', 4005, NULL);
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.addon_inventory
+-- Dumpar struktur för tabell essentialmode.addon_inventory
 CREATE TABLE IF NOT EXISTS `addon_inventory` (
   `name` varchar(60) COLLATE utf8mb4_bin NOT NULL,
   `label` varchar(100) COLLATE utf8mb4_bin NOT NULL,
@@ -57,11 +58,12 @@ CREATE TABLE IF NOT EXISTS `addon_inventory` (
 
 -- Dumpar data för tabell essentialmode.addon_inventory: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `addon_inventory` DISABLE KEYS */;
-INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
-	('society_cardealer', 'Bilförsäljare', 1);
+INSERT IGNORE INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
+	('society_cardealer', 'Bilförsäljare', 1),
+	('society_police', 'Polis', 1);
 /*!40000 ALTER TABLE `addon_inventory` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.addon_inventory_items
+-- Dumpar struktur för tabell essentialmode.addon_inventory_items
 CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `inventory_name` varchar(100) COLLATE utf8mb4_bin NOT NULL,
@@ -78,7 +80,23 @@ CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
 /*!40000 ALTER TABLE `addon_inventory_items` DISABLE KEYS */;
 /*!40000 ALTER TABLE `addon_inventory_items` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.cardealer_vehicles
+-- Dumpar struktur för tabell essentialmode.billing
+CREATE TABLE IF NOT EXISTS `billing` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `sender` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `target_type` varchar(50) COLLATE utf8mb4_bin NOT NULL,
+  `target` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `label` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `amount` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- Dumpar data för tabell essentialmode.billing: ~0 rows (ungefär)
+/*!40000 ALTER TABLE `billing` DISABLE KEYS */;
+/*!40000 ALTER TABLE `billing` ENABLE KEYS */;
+
+-- Dumpar struktur för tabell essentialmode.cardealer_vehicles
 CREATE TABLE IF NOT EXISTS `cardealer_vehicles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `vehicle` varchar(255) COLLATE utf8mb4_bin NOT NULL,
@@ -90,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `cardealer_vehicles` (
 /*!40000 ALTER TABLE `cardealer_vehicles` DISABLE KEYS */;
 /*!40000 ALTER TABLE `cardealer_vehicles` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.characters
+-- Dumpar struktur för tabell essentialmode.characters
 CREATE TABLE IF NOT EXISTS `characters` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) COLLATE utf8mb4_bin NOT NULL,
@@ -101,13 +119,15 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `height` varchar(128) COLLATE utf8mb4_bin NOT NULL,
   `lastdigits` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.characters: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
+INSERT IGNORE INTO `characters` (`id`, `identifier`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`) VALUES
+	(3, 'steam:110000109c2ddf3', 'Hen', 'Tai', '1990-01-22', 'F', '123', '4987');
 /*!40000 ALTER TABLE `characters` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.datastore
+-- Dumpar struktur för tabell essentialmode.datastore
 CREATE TABLE IF NOT EXISTS `datastore` (
   `name` varchar(60) COLLATE utf8mb4_bin NOT NULL,
   `label` varchar(100) COLLATE utf8mb4_bin NOT NULL,
@@ -115,11 +135,17 @@ CREATE TABLE IF NOT EXISTS `datastore` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.datastore: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.datastore: ~5 rows (ungefär)
 /*!40000 ALTER TABLE `datastore` DISABLE KEYS */;
+INSERT IGNORE INTO `datastore` (`name`, `label`, `shared`) VALUES
+	('society_police', 'Polis', 1),
+	('user_ears', 'Ears', 0),
+	('user_glasses', 'Glasses', 0),
+	('user_helmet', 'Helmet', 0),
+	('user_mask', 'Mask', 0);
 /*!40000 ALTER TABLE `datastore` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.datastore_data
+-- Dumpar struktur för tabell essentialmode.datastore_data
 CREATE TABLE IF NOT EXISTS `datastore_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(60) COLLATE utf8mb4_bin NOT NULL,
@@ -134,7 +160,86 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.items
+-- Dumpar struktur för tabell essentialmode.favoriteanimation
+CREATE TABLE IF NOT EXISTS `favoriteanimation` (
+  `identifier` varchar(60) COLLATE utf8mb4_bin NOT NULL,
+  `lib` varchar(255) COLLATE utf8mb4_bin DEFAULT 'mini@strip_club@idles@bouncer@base',
+  `animation` varchar(255) COLLATE utf8mb4_bin DEFAULT 'base',
+  `scenario` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`identifier`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- Dumpar data för tabell essentialmode.favoriteanimation: ~0 rows (ungefär)
+/*!40000 ALTER TABLE `favoriteanimation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `favoriteanimation` ENABLE KEYS */;
+
+-- Dumpar struktur för tabell essentialmode.fine_types
+CREATE TABLE IF NOT EXISTS `fine_types` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `label` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `category` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- Dumpar data för tabell essentialmode.fine_types: ~52 rows (ungefär)
+/*!40000 ALTER TABLE `fine_types` DISABLE KEYS */;
+INSERT IGNORE INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
+	(1, 'Missbruk av tuta', 30, 0),
+	(2, 'Köra över heldragen linje', 40, 0),
+	(3, 'Kört i motsatt riktning i rondell', 250, 0),
+	(4, 'Olaglig u-sväng', 250, 0),
+	(5, 'Olovlig körning i terräng', 170, 0),
+	(6, 'Kört för nära bil framför', 30, 0),
+	(7, 'Trafikfarlig stopp', 150, 0),
+	(8, 'Olaglig parkering', 70, 0),
+	(9, 'Använder inte högerregeln', 70, 0),
+	(10, 'Aktar sig inte för tjänstefordon i utryckning', 90, 0),
+	(11, 'Kört förbi stoppskylt', 105, 0),
+	(12, 'Kört mot rött', 130, 0),
+	(13, 'Farlig omkörning', 100, 0),
+	(14, 'Fordon i dåligt skick', 100, 0),
+	(15, 'Kört utan körkort', 1500, 0),
+	(16, 'Smitning från olycka', 800, 0),
+	(17, 'Kört för fort < 5 kmh', 90, 0),
+	(18, 'Kört för fort 5-15 kmh', 120, 0),
+	(19, 'Kört för fort 15-30 kmh', 180, 0),
+	(20, 'Kört för fort > 30 kmh', 300, 0),
+	(21, 'Blockerar trafiken', 110, 1),
+	(22, 'Förstört allmän egendom', 90, 1),
+	(23, 'Olaga diskriminering', 90, 1),
+	(24, 'förhindrar polisens verksamhet', 130, 1),
+	(25, 'Hets mot folkgrupp', 75, 1),
+	(26, 'Dåligt beteende mot tjänsteman', 110, 1),
+	(27, 'Verbalt hot mot annan person', 90, 1),
+	(28, 'Verbalt hot mot en tjänsteman', 150, 1),
+	(29, 'Olaglig protest', 250, 1),
+	(30, 'Försök till mutning', 1500, 1),
+	(31, 'Icke livshotande vapen på allmän plats ex. Hammare', 120, 2),
+	(32, 'Dödligt vapen på allmän plats', 300, 2),
+	(33, 'Vapen på allmän plats med licens (Licens Fel)', 600, 2),
+	(34, 'Innehaft olaga vapen', 700, 2),
+	(35, 'Försökt bryta sig in', 300, 2),
+	(36, 'Bilstöld', 1800, 2),
+	(37, 'Försäljning av droger', 1500, 2),
+	(38, 'Tillverkning av droger', 1500, 2),
+	(39, 'Innehav av droger', 650, 2),
+	(40, 'Hålla gisslan/Hålla person mot dess vilja', 1500, 2),
+	(41, 'Kidnappa en tjänsteman', 2000, 2),
+	(42, 'Rån', 650, 2),
+	(43, 'Butiksrån', 650, 2),
+	(44, 'Bankrån', 1500, 2),
+	(45, 'Skjutit en person', 2000, 3),
+	(46, 'Skjutit en tjänsteman', 2500, 3),
+	(47, 'Mordförsök', 3000, 3),
+	(48, 'Mordförsök på tjänsteman', 6000, 3),
+	(49, 'Mord', 10000, 3),
+	(50, 'Mord på tjänsteman', 30000, 3),
+	(51, 'Dråp', 1800, 3),
+	(52, 'Olagliga aktiviteter inom ett företag', 2000, 2);
+/*!40000 ALTER TABLE `fine_types` ENABLE KEYS */;
+
+-- Dumpar struktur för tabell essentialmode.items
 CREATE TABLE IF NOT EXISTS `items` (
   `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `label` varchar(50) COLLATE utf8mb4_bin NOT NULL,
@@ -144,25 +249,44 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.items: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.items: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
+INSERT IGNORE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
+	('bread', 'Bröd', 1, 0, 1),
+	('water', 'Vatten', 1, 0, 1);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.jobs
+-- Dumpar struktur för tabell essentialmode.jail
+CREATE TABLE IF NOT EXISTS `jail` (
+  `identifier` varchar(100) NOT NULL,
+  `isjailed` tinyint(1) DEFAULT NULL,
+  `J_Time` datetime NOT NULL,
+  `J_Cell` varchar(20) NOT NULL,
+  `Jailer` varchar(100) NOT NULL,
+  `Jailer_ID` varchar(100) NOT NULL,
+  PRIMARY KEY (`identifier`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumpar data för tabell essentialmode.jail: ~0 rows (ungefär)
+/*!40000 ALTER TABLE `jail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `jail` ENABLE KEYS */;
+
+-- Dumpar struktur för tabell essentialmode.jobs
 CREATE TABLE IF NOT EXISTS `jobs` (
   `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `label` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.jobs: ~2 rows (ungefär)
+-- Dumpar data för tabell essentialmode.jobs: ~3 rows (ungefär)
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
-INSERT INTO `jobs` (`name`, `label`) VALUES
+INSERT IGNORE INTO `jobs` (`name`, `label`) VALUES
 	('cardealer', 'Bilförsäljare'),
+	('police', 'Polis'),
 	('unemployed', 'Arbetslös');
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.job_grades
+-- Dumpar struktur för tabell essentialmode.job_grades
 CREATE TABLE IF NOT EXISTS `job_grades` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `job_name` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
@@ -173,19 +297,40 @@ CREATE TABLE IF NOT EXISTS `job_grades` (
   `skin_male` longtext COLLATE utf8mb4_bin NOT NULL,
   `skin_female` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.job_grades: ~5 rows (ungefär)
+-- Dumpar data för tabell essentialmode.job_grades: ~10 rows (ungefär)
 /*!40000 ALTER TABLE `job_grades` DISABLE KEYS */;
-INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
+INSERT IGNORE INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
 	(1, 'unemployed', 0, 'unemployed', 'Unemployed', 30, '{}', '{}'),
 	(2, 'cardealer', 0, 'recruit', 'Provanställd', 60, '{}', '{}'),
 	(3, 'cardealer', 1, 'novice', 'Anställd', 75, '{}', '{}'),
 	(4, 'cardealer', 2, 'experienced', 'VD', 80, '{}', '{}'),
-	(5, 'cardealer', 3, 'boss', 'Chef', 0, '{}', '{}');
+	(5, 'cardealer', 3, 'boss', 'Chef', 0, '{}', '{}'),
+	(11, 'police', 0, 'recruit', 'Aspirant', 20, '{}', '{}'),
+	(12, 'police', 1, 'officer', 'Biträdande Rikspolischef', 40, '{}', '{}'),
+	(13, 'police', 2, 'sergeant', 'Assistent', 60, '{}', '{}'),
+	(14, 'police', 3, 'lieutenant', 'Inspektör', 85, '{}', '{}'),
+	(15, 'police', 4, 'boss', 'Rikspolischef', 100, '{}', '{}');
 /*!40000 ALTER TABLE `job_grades` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.owned_vehicles
+-- Dumpar struktur för tabell essentialmode.licenses
+CREATE TABLE IF NOT EXISTS `licenses` (
+  `type` varchar(60) COLLATE utf8mb4_bin NOT NULL,
+  `label` varchar(60) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- Dumpar data för tabell essentialmode.licenses: ~4 rows (ungefär)
+/*!40000 ALTER TABLE `licenses` DISABLE KEYS */;
+INSERT IGNORE INTO `licenses` (`type`, `label`) VALUES
+	('dmv', 'Teoriprov'),
+	('drive', 'B-Körkort'),
+	('drive_bike', 'A-Körkort'),
+	('drive_truck', 'C-Körkort');
+/*!40000 ALTER TABLE `licenses` ENABLE KEYS */;
+
+-- Dumpar struktur för tabell essentialmode.owned_vehicles
 CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   `owner` varchar(22) COLLATE utf8mb4_bin NOT NULL,
   `plate` varchar(12) COLLATE utf8mb4_bin NOT NULL,
@@ -200,7 +345,7 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
 /*!40000 ALTER TABLE `owned_vehicles` DISABLE KEYS */;
 /*!40000 ALTER TABLE `owned_vehicles` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.rented_vehicles
+-- Dumpar struktur för tabell essentialmode.rented_vehicles
 CREATE TABLE IF NOT EXISTS `rented_vehicles` (
   `vehicle` varchar(60) COLLATE utf8mb4_bin NOT NULL,
   `plate` varchar(12) COLLATE utf8mb4_bin NOT NULL,
@@ -215,7 +360,7 @@ CREATE TABLE IF NOT EXISTS `rented_vehicles` (
 /*!40000 ALTER TABLE `rented_vehicles` DISABLE KEYS */;
 /*!40000 ALTER TABLE `rented_vehicles` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.society_moneywash
+-- Dumpar struktur för tabell essentialmode.society_moneywash
 CREATE TABLE IF NOT EXISTS `society_moneywash` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(60) COLLATE utf8mb4_bin NOT NULL,
@@ -228,7 +373,21 @@ CREATE TABLE IF NOT EXISTS `society_moneywash` (
 /*!40000 ALTER TABLE `society_moneywash` DISABLE KEYS */;
 /*!40000 ALTER TABLE `society_moneywash` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.users
+-- Dumpar struktur för tabell essentialmode.trunk_inventory
+CREATE TABLE IF NOT EXISTS `trunk_inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `plate` varchar(8) COLLATE utf8mb4_bin NOT NULL,
+  `data` text COLLATE utf8mb4_bin NOT NULL,
+  `owned` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `plate` (`plate`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- Dumpar data för tabell essentialmode.trunk_inventory: ~0 rows (ungefär)
+/*!40000 ALTER TABLE `trunk_inventory` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trunk_inventory` ENABLE KEYS */;
+
+-- Dumpar struktur för tabell essentialmode.users
 CREATE TABLE IF NOT EXISTS `users` (
   `identifier` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `license` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
@@ -249,27 +408,32 @@ CREATE TABLE IF NOT EXISTS `users` (
   `height` varchar(5) COLLATE utf8mb4_bin DEFAULT '',
   `lastdigits` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   `is_dead` tinyint(1) DEFAULT '0',
+  `status` longtext COLLATE utf8mb4_bin,
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.users: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT IGNORE INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`, `is_dead`, `status`) VALUES
+	('steam:110000109c2ddf3', 'license:44be92faf675f784f2128ac35340fb9a172cefa3', 0, 'Mirrox', NULL, 'unemployed', 0, '[]', '{"z":13.7,"y":-2709.8,"x":-1055.8}', 0, 0, 'user', 'Hen', 'Tai', '1990-01-22', 'F', '123', '4987', 0, NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.user_accounts
+-- Dumpar struktur för tabell essentialmode.user_accounts
 CREATE TABLE IF NOT EXISTS `user_accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(22) COLLATE utf8mb4_bin NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `money` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.user_accounts: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `user_accounts` DISABLE KEYS */;
+INSERT IGNORE INTO `user_accounts` (`id`, `identifier`, `name`, `money`) VALUES
+	(3, 'steam:110000109c2ddf3', 'black_money', 0);
 /*!40000 ALTER TABLE `user_accounts` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.user_inventory
+-- Dumpar struktur för tabell essentialmode.user_inventory
 CREATE TABLE IF NOT EXISTS `user_inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(22) COLLATE utf8mb4_bin NOT NULL,
@@ -282,7 +446,7 @@ CREATE TABLE IF NOT EXISTS `user_inventory` (
 /*!40000 ALTER TABLE `user_inventory` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user_inventory` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.user_lastcharacter
+-- Dumpar struktur för tabell essentialmode.user_lastcharacter
 CREATE TABLE IF NOT EXISTS `user_lastcharacter` (
   `steamid` varchar(255) NOT NULL,
   `charid` int(11) NOT NULL
@@ -290,9 +454,23 @@ CREATE TABLE IF NOT EXISTS `user_lastcharacter` (
 
 -- Dumpar data för tabell essentialmode.user_lastcharacter: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `user_lastcharacter` DISABLE KEYS */;
+INSERT IGNORE INTO `user_lastcharacter` (`steamid`, `charid`) VALUES
+	('steam:110000109c2ddf3', 1);
 /*!40000 ALTER TABLE `user_lastcharacter` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.vehicles
+-- Dumpar struktur för tabell essentialmode.user_licenses
+CREATE TABLE IF NOT EXISTS `user_licenses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(60) COLLATE utf8mb4_bin NOT NULL,
+  `owner` varchar(60) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- Dumpar data för tabell essentialmode.user_licenses: ~0 rows (ungefär)
+/*!40000 ALTER TABLE `user_licenses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_licenses` ENABLE KEYS */;
+
+-- Dumpar struktur för tabell essentialmode.vehicles
 CREATE TABLE IF NOT EXISTS `vehicles` (
   `name` varchar(60) COLLATE utf8mb4_bin NOT NULL,
   `model` varchar(60) COLLATE utf8mb4_bin NOT NULL,
@@ -303,7 +481,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
 
 -- Dumpar data för tabell essentialmode.vehicles: ~240 rows (ungefär)
 /*!40000 ALTER TABLE `vehicles` DISABLE KEYS */;
-INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
+INSERT IGNORE INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Akuma', 'AKUMA', 7500, 'motorcycles'),
 	('Adder', 'adder', 900000, 'super'),
 	('Alpha', 'alpha', 60000, 'sports'),
@@ -546,7 +724,7 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Z-Type', 'ztype', 220000, 'sportsclassics');
 /*!40000 ALTER TABLE `vehicles` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.vehicles_for_sale
+-- Dumpar struktur för tabell essentialmode.vehicles_for_sale
 CREATE TABLE IF NOT EXISTS `vehicles_for_sale` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `seller` varchar(50) NOT NULL,
@@ -559,7 +737,7 @@ CREATE TABLE IF NOT EXISTS `vehicles_for_sale` (
 /*!40000 ALTER TABLE `vehicles_for_sale` DISABLE KEYS */;
 /*!40000 ALTER TABLE `vehicles_for_sale` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.vehicle_categories
+-- Dumpar struktur för tabell essentialmode.vehicle_categories
 CREATE TABLE IF NOT EXISTS `vehicle_categories` (
   `name` varchar(60) COLLATE utf8mb4_bin NOT NULL,
   `label` varchar(60) COLLATE utf8mb4_bin NOT NULL,
@@ -568,7 +746,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_categories` (
 
 -- Dumpar data för tabell essentialmode.vehicle_categories: ~11 rows (ungefär)
 /*!40000 ALTER TABLE `vehicle_categories` DISABLE KEYS */;
-INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
+INSERT IGNORE INTO `vehicle_categories` (`name`, `label`) VALUES
 	('compacts', 'Kompakt'),
 	('coupes', 'Coupé'),
 	('motorcycles', 'Motorcykel'),
@@ -582,7 +760,7 @@ INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 	('vans', 'Skåpbil');
 /*!40000 ALTER TABLE `vehicle_categories` ENABLE KEYS */;
 
--- Dumping structure for tabell essentialmode.vehicle_sold
+-- Dumpar struktur för tabell essentialmode.vehicle_sold
 CREATE TABLE IF NOT EXISTS `vehicle_sold` (
   `client` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `model` varchar(50) COLLATE utf8mb4_bin NOT NULL,
