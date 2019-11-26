@@ -33,7 +33,7 @@ bleedMoveNotifId = 'MHOS_BLEEDMOVE'
 BodyParts = {
     ['HEAD'] = { label = 'Huvudet', causeLimp = false, isDamaged = false, severity = 0 },
     ['NECK'] = { label = 'Nacken', causeLimp = false, isDamaged = false, severity = 0 },
-    ['SPINE'] = { label = 'Ryggrad', causeLimp = true, isDamaged = false, severity = 0 },
+    ['SPINE'] = { label = 'Ryggraden', causeLimp = true, isDamaged = false, severity = 0 },
     ['UPPER_BODY'] = { label = 'Bröstet', causeLimp = false, isDamaged = false, severity = 0 },
     ['LOWER_BODY'] = { label = 'Magen', causeLimp = true, isDamaged = false, severity = 0 },
     ['LARM'] = { label = 'Vänster Arm', causeLimp = false, isDamaged = false, severity = 0 },

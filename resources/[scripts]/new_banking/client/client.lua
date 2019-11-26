@@ -121,19 +121,39 @@ if bankMenu then
 			DisplayHelpText("~INPUT_PICKUP~ för att bli betjänad ~b~")
 
 		if IsControlJustPressed(1, 38) then
-			local dict = "mp_common"		
-			RequestAnimDict(dict)
-			while not HasAnimDictLoaded(dict) do
-				Citizen.Wait(0)
-			end
-			TaskPlayAnim(GetPlayerPed(-1), dict, "givetake1_a", 8.0, 8.0, -1, 48, 1, false, false, false)
-			exports['t0sic_loadingbar']:loadingbar ('Stoppar in kort...', 2000)
-			Citizen.Wait(2000)
-			inMenu = true
-			SetNuiFocus(true, true)
-			SendNUIMessage({type = 'openGeneral'})
-			TriggerServerEvent('bank:balance')
-			local ped = GetPlayerPed(-1)
+			
+			exports['mythic_progbar']:Progress({
+				name = "take",
+				duration = 1500,
+				label = "Stoppar in kortet...",
+				useWhileDead = false,
+				canCancel = true,
+				controlDisables = {
+					disableMovement = true,
+					disableCarMovement = false,
+					disableMouse = false,
+					disableCombat = true,
+				},
+				animation = {
+					animDict = "amb@prop_human_atm@female@enter",
+					anim = "enter",
+					flags = 49,
+				},
+				prop = {
+					model = "prop_cs_credit_card",
+					bone = 64113,
+					coords = { x = 0.0, y = 0.0, z = 0.0 },
+					rotation = { x = 270.0, y = 220.0, z = 22.0 },
+				},
+			}, function(cancelled)
+				if not cancelled then
+					inMenu = true
+					SetNuiFocus(true, true)
+					SendNUIMessage({type = 'openGeneral'})
+					TriggerServerEvent('bank:balance')
+					local ped = GetPlayerPed(-1)
+				end
+			end)
 		end
 	end
 
@@ -246,16 +266,34 @@ end)
 --==               NUIFocusoff                 ==
 --===============================================
 RegisterNUICallback('NUIFocusOff', function()
-	inMenu = false
-	SetNuiFocus(false, false)
-	SendNUIMessage({type = 'closeAll'})
-	local dict = "mp_common"		
-			RequestAnimDict(dict)
-			while not HasAnimDictLoaded(dict) do
-				Citizen.Wait(0)
-			end
-			TaskPlayAnim(GetPlayerPed(-1), dict, "givetake1_a", 8.0, 8.0, -1, 48, 1, false, false, false)
-			exports['t0sic_loadingbar']:loadingbar ('Tar kortet...', 2000)
+	
+	exports['mythic_progbar']:Progress({
+        name = "take",
+        duration = 1500,
+        label = "Tar kortet...",
+        useWhileDead = false,
+        canCancel = true,
+        controlDisables = {
+            disableMovement = true,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        },
+        animation = {
+            animDict = "amb@prop_human_atm@female@exit",
+            anim = "exit",
+            flags = 49,
+        },
+        prop = {
+			
+        }
+    }, function(cancelled)
+		if not cancelled then
+			inMenu = false
+			SetNuiFocus(false, false)
+			SendNUIMessage({type = 'closeAll'})
+        end
+    end)
 end)
 
 

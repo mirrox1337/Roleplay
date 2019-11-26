@@ -17,17 +17,17 @@ Config.WeaponClasses = {
 }
 
 Config.WoundStates = {
-    'irriterad',
-    'Ganska smärtsam',
-    'extremt smärtsam',
-    'outhärdligt smärtsam',
+    'Verker',
+    'Måttlig Smärta',
+    'Extrem Smärta',
+    'Outhärdligt Smärta',
 }
 
 Config.BleedingStates = {
-    'blöder lätt 🩸',
-    'blöder betydligt 🩸🩸',
-    'blöder kraftigt 🩸🩸🩸',
-    'blodet sprutar 🩸🩸🩸🩸',
+    'Blöder Lätt',
+    'Blöder Måttligt',
+    'Blöder Extremt',
+    'Blodet Forsar',
 }
 
 Config.MovementRate = {
