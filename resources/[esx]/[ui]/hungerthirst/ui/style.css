@@ -31,8 +31,8 @@ body {
 
 .hud {
   position: absolute;
-  bottom: 7%;
-  right: 0%;
+  bottom: 4%;
+  right: -0.5%;
   width: 0px; }
   .hud .profile {
     position: absolute;
