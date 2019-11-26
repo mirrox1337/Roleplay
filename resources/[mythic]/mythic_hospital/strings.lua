@@ -19,7 +19,7 @@ Config.Strings = {
     UseAdrenaline = 'Du kan ignorera att din kropp kollapsar',
     AdrenalineExpired = 'Adrenalinet slutar värka',
 
-    LimbAlert = 'Din %s känns %s',
+    LimbAlert = '%s : %s',
     LimbAlertSeperator = ' | ',
     LimbAlertMultiple = 'Du känner ett flertal smärtor',
 
