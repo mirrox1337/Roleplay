@@ -477,6 +477,7 @@ Citizen.CreateThread(function()
 	end
 end)
 
+--[[
 -- Menu interactions
 Citizen.CreateThread(function()
 	while true do
@@ -487,6 +488,7 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+--]]
 
 -- Disable wanted level
 if Config.DisableWantedLevel then
