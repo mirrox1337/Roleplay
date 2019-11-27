@@ -38,7 +38,7 @@ function StartNPCJob()
 	Blips['NPCTargetTowableZone'] = AddBlipForCoord(zone.Pos.x,  zone.Pos.y,  zone.Pos.z)
 	SetBlipRoute(Blips['NPCTargetTowableZone'], true)
 
-	ESX.ShowNotification(_U('drive_to_indicated'))
+	exports['mythic_notify']:SendAlert('inform', (_U('drive_to_indicated')))
 end
 
 function StopNPCJob(cancel)
@@ -61,110 +61,11 @@ function StopNPCJob(cancel)
 	NPCHasBeenNextToTowable = false
 
 	if cancel then
-		ESX.ShowNotification(_U('mission_canceled'))
+		exports['mythic_notify']:SendAlert('error', (_U('mission_canceled')))
 	else
 		--TriggerServerEvent('esx_mechanicjob:onNPCJobCompleted')
 	end
 end
-
-function repairMotor()
-	local playerPed = PlayerPedId()
-	local vehicle   = ESX.Game.GetVehicleInDirection()
-	local coords    = GetEntityCoords(playerPed)
-
-	if DoesEntityExist(vehicle) then
-		SetVehicleDoorOpen(vehicle,4,0,0)
-		exports['mythic_progbar']:Progress({
-			name = "mechanicRepair",
-			duration = 6000,
-			label = "Reparerar Motorn",
-			useWhileDead = false,
-			canCancel = true,
-			controlDisables = {
-				disableMovement = true,
-				disableCarMovement = true,
-				disableMouse = false,
-				disableCombat = true,
-			},
-			animation = {
-				animDict = "mini@repair",
-				anim = "fixing_a_ped",
-			},
-			prop = {
-				model = "prop_tool_screwdvr03",
-				bone = 58870,
-				coords = { x = 0.00, y = 0.05, z = 0.15 },
-				rotation = { x = 180.0, y = 0.0, z = 0.0 },
-			}
-		}, function(status)
-			if not status then
-				SetVehicleEngineHealth(vehicle, 1000.0)
-				SetVehicleUndriveable(vehicle, false)
-				ClearPedTasks(playerPed)
-				SetVehicleDoorShut(vehicle,4,0)
-
-			ESX.ShowNotification(_U('vehicle_repaired'))
-			end
-		end)
-	else
-		ESX.ShowNotification(_U('no_vehicle_nearby'))
-	end
-end
-
-function repairBody()
-	local playerPed = PlayerPedId()
-	local vehicle   = ESX.Game.GetVehicleInDirection()
-	local coords    = GetEntityCoords(playerPed)
-	
-	if DoesEntityExist(vehicle) then
-		exports['mythic_progbar']:Progress({
-			name = "mechanicRepair",
-			duration = 6000,
-			label = "Reparerar Kaross",
-			useWhileDead = false,
-			canCancel = true,
-			controlDisables = {
-				disableMovement = true,
-				disableCarMovement = true,
-				disableMouse = false,
-				disableCombat = true,
-			},
-			animation = {
-				animDict = "mini@repair",
-				anim = "fixing_a_ped",
-			},
-			prop = {
-				model = "prop_tool_screwdvr01",
-				bone = 58870,
-				coords = { x = 0.00, y = 0.05, z = 0.15 },
-				rotation = { x = 180.0, y = 0.0, z = 0.0 },
-			}
-		}, function(status)
-			if not status then
-				SetVehicleDeformationFixed(vehicle)
-				FixVehicleWindow(vehicle, 0)
-				FixVehicleWindow(vehicle, 1)
-				FixVehicleWindow(vehicle, 2)
-				FixVehicleWindow(vehicle, 3)
-				FixVehicleWindow(vehicle, 4)
-				FixVehicleWindow(vehicle, 5)
-				FixVehicleWindow(vehicle, 6)
-				FixVehicleWindow(vehicle, 7)
-				FixVehicleWindow(vehicle, 8)
-				FixVehicleWindow(vehicle, 9)
-				FixVehicleWindow(vehicle, 10)
-				FixVehicleWindow(vehicle, 11)
-				FixVehicleWindow(vehicle, 12)
-				FixVehicleWindow(vehicle, 13)
-				ClearPedTasks(playerPed)
-			ESX.ShowNotification(_U('vehicle_repaired'))
-			end
-		end)
-	else
-		ESX.ShowNotification(_U('no_vehicle_nearby'))
-	end
-end
-
 
 function OpenMechanicActionsMenu()
 	local elements = {
@@ -183,7 +84,7 @@ function OpenMechanicActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_actions', {
 		title    = _U('mechanic'),
-		align    = 'top-left',
+		align    = 'right',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'vehicle_list' then
@@ -201,7 +102,7 @@ function OpenMechanicActionsMenu()
 
 					ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_spawner', {
 						title    = _U('service_vehicle'),
-						align    = 'top-left',
+						align    = 'right',
 						elements = elements
 					}, function(data, menu)
 						menu.close()
@@ -234,7 +135,7 @@ function OpenMechanicActionsMenu()
 
 				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'spawn_vehicle', {
 					title    = _U('service_vehicle'),
-					align    = 'top-left',
+					align    = 'right',
 					elements = elements
 				}, function(data, menu)
 					if Config.MaxInService == -1 then
@@ -250,7 +151,7 @@ function OpenMechanicActionsMenu()
 									TaskWarpPedIntoVehicle(playerPed,  vehicle, -1)
 								end)
 							else
-								ESX.ShowNotification(_U('service_full') .. inServiceCount .. '/' .. maxInService)
+								exports['mythic_notify']:SendAlert('error', (_U('service_full')) .. inServiceCount .. '/' .. maxInService)
 							end
 						end, 'mechanic')
 					end
@@ -306,7 +207,7 @@ function OpenMechanicHarvestMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_harvest', {
 			title    = _U('harvest'),
-			align    = 'top-left',
+			align    = 'right',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -325,7 +226,7 @@ function OpenMechanicHarvestMenu()
 			CurrentActionData = {}
 		end)
 	else
-		ESX.ShowNotification(_U('not_experienced_enough'))
+		exports['mythic_notify']:SendAlert('error', (_U('not_experienced_enough')))
 	end
 end
 
@@ -341,7 +242,7 @@ function OpenMechanicCraftMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_craft', {
 			title    = _U('craft'),
-			align    = 'top-left',
+			align    = 'right',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -361,7 +262,7 @@ function OpenMechanicCraftMenu()
 			CurrentActionData = {}
 		end)
 	else
-		ESX.ShowNotification(_U('not_experienced_enough'))
+		exports['mythic_notify']:SendAlert('error',(_U('not_experienced_enough')))
 	end
 end
 
@@ -370,11 +271,11 @@ function OpenMobileMechanicActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_mechanic_actions', {
 		title    = _U('mechanic'),
-		align    = 'top-left',
+		align    = 'right',
 		elements = {
 			{label = _U('billing'),       value = 'billing'},
 			{label = _U('hijack'),        value = 'hijack_vehicle'},
-			{label = ('Reparera fordon'),        value = 'repair_meny'},
+			{label = ('Reparera fordon'), value = 'repair_meny'},
 			{label = _U('clean'),         value = 'clean_vehicle'},
 			{label = _U('imp_veh'),       value = 'del_vehicle'},
 			{label = _U('flat_bed'),      value = 'dep_vehicle'},
@@ -382,49 +283,18 @@ function OpenMobileMechanicActionsMenu()
 	}}, function(data, menu)
 		if isBusy then return end
 
-		if data.current.value == 'repair_meny' then
-			local elements = {
-				{label = ('Reparera Motorn'),        value = 'fix_motor'},
-				{label = ('Reparera Kaross'),        value = 'fix_body'},
-			}
-
-		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'repair_meny', {
-				title    = ('repair_meny'),
-				align    = 'right',
-				elements = elements
-			}, function(data2, menu2)
-				local playerPed = PlayerPedId()
-				local vehicle   = ESX.Game.GetVehicleInDirection()
-				local coords    = GetEntityCoords(playerPed)
-
-				if IsPedSittingInAnyVehicle(playerPed) then
-					ESX.ShowNotification(_U('inside_vehicle'))
-					return
-				end
-				
-				if action == 'fix_motor' then
-					repairMotor(vehicle)
-				elseif action == 'fix_body' then
-					repairBody(vehicle)
-				else
-					ESX.ShowNotification(_U('no_vehicle_nearby'))
-				end
-			end, function(data2, menu2)
-				menu2.close()
-			end)
-
-		elseif data.current.value == 'billing' then
+		if data.current.value == 'billing' then
 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'billing', {
 				title = _U('invoice_amount')
 			}, function(data, menu)
 				local amount = tonumber(data.value)
 
 				if amount == nil or amount < 0 then
-					ESX.ShowNotification(_U('amount_invalid'))
+					exports['mythic_notify']:SendAlert('error',(_U('amount_invalid')))
 				else
 					local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 					if closestPlayer == -1 or closestDistance > 3.0 then
-						ESX.ShowNotification(_U('no_players_nearby'))
+						exports['mythic_notify']:SendAlert('error', (_U('no_players_nearby')))
 					else
 						menu.close()
 						TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_mechanic', _U('mechanic'), amount)
@@ -439,7 +309,7 @@ function OpenMobileMechanicActionsMenu()
 			local coords    = GetEntityCoords(playerPed)
 
 			if IsPedSittingInAnyVehicle(playerPed) then
-				ESX.ShowNotification(_U('inside_vehicle'))
+				exports['mythic_notify']:SendAlert('error', (_U('inside_vehicle')))
 				return
 			end
 
@@ -453,12 +323,15 @@ function OpenMobileMechanicActionsMenu()
 					SetVehicleDoorsLockedForAllPlayers(vehicle, false)
 					ClearPedTasksImmediately(playerPed)
 
-					ESX.ShowNotification(_U('vehicle_unlocked'))
+					exports['mythic_notify']:SendAlert('success', (_U('vehicle_unlocked')))
 					isBusy = false
 				end)
 			else
-				ESX.ShowNotification(_U('no_vehicle_nearby'))
+				exports['mythic_notify']:SendAlert('error', (_U('no_vehicle_nearby')))
 			end
+
+		elseif data.current.value == 'repair_meny' then
+			OpenRepairMenu()
 		
 		elseif data.current.value == 'clean_vehicle' then
 			local playerPed = PlayerPedId()
@@ -466,7 +339,7 @@ function OpenMobileMechanicActionsMenu()
 			local coords    = GetEntityCoords(playerPed)
 
 			if IsPedSittingInAnyVehicle(playerPed) then
-				ESX.ShowNotification(_U('inside_vehicle'))
+				exports['mythic_notify']:SendAlert('error', (_U('inside_vehicle')))
 				return
 			end
 
@@ -498,11 +371,11 @@ function OpenMobileMechanicActionsMenu()
 						SetVehicleDirtLevel(vehicle, 0)
 					ClearPedTasksImmediately(playerPed)
 
-					ESX.ShowNotification(_U('vehicle_cleaned'))
+					exports['mythic_notify']:SendAlert('success', (_U('vehicle_cleaned')))
 					end
 				end)
 			else
-				ESX.ShowNotification(_U('no_vehicle_nearby'))
+				exports['mythic_notify']:SendAlert('error', (_U('no_vehicle_nearby')))
 			end
 		elseif data.current.value == 'del_vehicle' then
 			local playerPed = PlayerPedId()
@@ -511,19 +384,19 @@ function OpenMobileMechanicActionsMenu()
 				local vehicle = GetVehiclePedIsIn(playerPed, false)
 
 				if GetPedInVehicleSeat(vehicle, -1) == playerPed then
-					ESX.ShowNotification(_U('vehicle_impounded'))
+					exports['mythic_notify']:SendAlert('success', (_U('vehicle_impounded')))
 					ESX.Game.DeleteVehicle(vehicle)
 				else
-					ESX.ShowNotification(_U('must_seat_driver'))
+					exports['mythic_notify']:SendAlert('error', (_U('must_seat_driver')))
 				end
 			else
 				local vehicle = ESX.Game.GetVehicleInDirection()
 
 				if DoesEntityExist(vehicle) then
-					ESX.ShowNotification(_U('vehicle_impounded'))
+					exports['mythic_notify']:SendAlert('success', (_U('vehicle_impounded')))
 					ESX.Game.DeleteVehicle(vehicle)
 				else
-					ESX.ShowNotification(_U('must_near'))
+					exports['mythic_notify']:SendAlert('error', (_U('must_near')))
 				end
 			end
 		elseif data.current.value == 'dep_vehicle' then
@@ -542,11 +415,11 @@ function OpenMobileMechanicActionsMenu()
 							if vehicle ~= targetVehicle then
 								AttachEntityToEntity(targetVehicle, vehicle, 20, -0.5, -5.0, 1.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
 								CurrentlyTowedVehicle = targetVehicle
-								ESX.ShowNotification(_U('vehicle_success_attached'))
+								exports['mythic_notify']:SendAlert('success', (_U('vehicle_success_attached')))
 
 								if NPCOnJob then
 									if NPCTargetTowable == targetVehicle then
-										ESX.ShowNotification(_U('please_drop_off'))
+										exports['mythic_notify']:SendAlert('inform', (_U('please_drop_off')))
 										Config.Zones.VehicleDelivery.Type = 1
 
 										if Blips['NPCTargetTowableZone'] then
@@ -559,11 +432,11 @@ function OpenMobileMechanicActionsMenu()
 									end
 								end
 							else
-								ESX.ShowNotification(_U('cant_attach_own_tt'))
+								exports['mythic_notify']:SendAlert('error', (_U('cant_attach_own_tt')))
 							end
 						end
 					else
-						ESX.ShowNotification(_U('no_veh_att'))
+						exports['mythic_notify']:SendAlert('error', (_U('no_veh_att')))
 					end
 				else
 					AttachEntityToEntity(CurrentlyTowedVehicle, vehicle, 20, -0.5, -12.0, 1.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
@@ -578,31 +451,31 @@ function OpenMobileMechanicActionsMenu()
 								StopNPCJob()
 								NPCTargetDeleterZone = false
 							else
-								ESX.ShowNotification(_U('not_right_veh'))
+								exports['mythic_notify']:SendAlert('error', (_U('not_right_veh')))
 							end
 
 						else
-							ESX.ShowNotification(_U('not_right_place'))
+							exports['mythic_notify']:SendAlert('error', (_U('not_right_place')))
 						end
 					end
 
 					CurrentlyTowedVehicle = nil
-					ESX.ShowNotification(_U('veh_det_succ'))
+					exports['mythic_notify']:SendAlert('success', (_U('veh_det_succ')))
 				end
 			else
-				ESX.ShowNotification(_U('imp_flatbed'))
+				exports['mythic_notify']:SendAlert('error', (_U('imp_flatbed')))
 			end
 		elseif data.current.value == 'object_spawner' then
 			local playerPed = PlayerPedId()
 
 			if IsPedSittingInAnyVehicle(playerPed) then
-				ESX.ShowNotification(_U('inside_vehicle'))
+				exports['mythic_notify']:SendAlert('error', (_U('inside_vehicle')))
 				return
 			end
 
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_mechanic_actions_spawn', {
 				title    = _U('objects'),
-				align    = 'top-left',
+				align    = 'right',
 				elements = {
 					{label = _U('roadcone'), value = 'prop_roadcone02a'},
 					{label = _U('toolbox'),  value = 'prop_toolchest_01'}
@@ -631,6 +504,29 @@ function OpenMobileMechanicActionsMenu()
 	end)
 end
 
+function OpenRepairMenu()
+	local elements = {
+		{label = ('Motor'), value = 'fix_motor'},
+		{label = ('Body'), value = 'fix_body'}
+	}
+
+	ESX.UI.Menu.CloseAll()
+
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'repair_actions', {
+		title    = ('Repair'),
+		align    = 'right',
+		elements = elements
+	}, function(data, menu)
+		if data.current.value == 'fix_motor' then
+			repairMotor()
+		elseif data.current.value == 'fix_body' then
+			repairBody()
+		end
+	end, function(data, menu)
+		menu.close()
+	end)
+end
+
 function OpenGetStocksMenu()
 	ESX.TriggerServerCallback('esx_mechanicjob:getStockItems', function(items)
 		local elements = {}
@@ -644,7 +540,7 @@ function OpenGetStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('mechanic_stock'),
-			align    = 'top-left',
+			align    = 'right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -655,7 +551,7 @@ function OpenGetStocksMenu()
 				local count = tonumber(data2.value)
 
 				if count == nil then
-					ESX.ShowNotification(_U('invalid_quantity'))
+					exports['mythic_notify']:SendAlert('error',(_U('invalid_quantity')))
 				else
 					menu2.close()
 					menu.close()
@@ -691,7 +587,7 @@ function OpenPutStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('inventory'),
-			align    = 'top-left',
+			align    = 'right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -702,7 +598,7 @@ function OpenPutStocksMenu()
 				local count = tonumber(data2.value)
 
 				if count == nil then
-					ESX.ShowNotification(_U('invalid_quantity'))
+					exports['mythic_notify']:SendAlert('error', (_U('invalid_quantity')))
 				else
 					menu2.close()
 					menu.close()
@@ -718,6 +614,119 @@ function OpenPutStocksMenu()
 			menu.close()
 		end)
 	end)
+end
+
+function repairMotor()
+	local playerPed = PlayerPedId()
+	local vehicle   = ESX.Game.GetVehicleInDirection()
+	local coords    = GetEntityCoords(playerPed)
+	
+	if IsPedSittingInAnyVehicle(playerPed) then
+		exports['mythic_notify']:SendAlert('error', (_U('inside_vehicle')))
+		return
+	end
+
+	if DoesEntityExist(vehicle) then
+		isBusy = true
+		SetVehicleDoorOpen(vehicle,4,0,0)
+		exports['mythic_progbar']:Progress({
+			name = "mechanicRepair",
+			duration = 6000,
+			label = "Reparerar Motorn",
+			useWhileDead = false,
+			canCancel = true,
+			controlDisables = {
+				disableMovement = true,
+				disableCarMovement = true,
+				disableMouse = false,
+				disableCombat = true,
+			},
+			animation = {
+				animDict = "mini@repair",
+				anim = "fixing_a_ped",
+			},
+			prop = {
+				model = "prop_tool_screwdvr03",
+				bone = 58870,
+				coords = { x = 0.00, y = 0.05, z = 0.15 },
+				rotation = { x = 180.0, y = 0.0, z = 0.0 },
+			}
+		}, function(status)
+			if not status then
+				SetVehicleEngineHealth(vehicle, 1000.0)
+				SetVehicleUndriveable(vehicle, false)
+				ClearPedTasks(playerPed)
+				SetVehicleDoorShut(vehicle,4,0)
+
+			exports['mythic_notify']:SendAlert('Success', (_U('vehicle_repaired')))
+			isBusy = false
+			end
+		end)
+	else
+		exports['mythic_notify']:SendAlert('error',(_U('no_vehicle_nearby')))
+	end
+end
+
+function repairBody()
+	local playerPed = PlayerPedId()
+	local vehicle   = ESX.Game.GetVehicleInDirection()
+	local coords    = GetEntityCoords(playerPed)
+
+	if IsPedSittingInAnyVehicle(playerPed) then
+		exports['mythic_notify']:SendAlert('error', (_U('inside_vehicle')))
+		return
+	end
+
+	if DoesEntityExist(vehicle) then
+	isBusy = true
+	
+		exports['mythic_progbar']:Progress({
+			name = "mechanicRepair",
+			duration = 6000,
+			label = "Reparerar Kaross",
+			useWhileDead = false,
+			canCancel = true,
+			controlDisables = {
+				disableMovement = true,
+				disableCarMovement = true,
+				disableMouse = false,
+				disableCombat = true,
+			},
+			animation = {
+				animDict = "mini@repair",
+				anim = "fixing_a_ped",
+			},
+			prop = {
+				model = "prop_tool_screwdvr01",
+				bone = 58870,
+				coords = { x = 0.00, y = 0.05, z = 0.15 },
+				rotation = { x = 180.0, y = 0.0, z = 0.0 },
+			}
+		}, function(status)
+			if not status then
+				SetVehicleDeformationFixed(vehicle)
+				FixVehicleWindow(vehicle, 0)
+				FixVehicleWindow(vehicle, 1)
+				FixVehicleWindow(vehicle, 2)
+				FixVehicleWindow(vehicle, 3)
+				FixVehicleWindow(vehicle, 4)
+				FixVehicleWindow(vehicle, 5)
+				FixVehicleWindow(vehicle, 6)
+				FixVehicleWindow(vehicle, 7)
+				FixVehicleWindow(vehicle, 8)
+				FixVehicleWindow(vehicle, 9)
+				FixVehicleWindow(vehicle, 10)
+				FixVehicleWindow(vehicle, 11)
+				FixVehicleWindow(vehicle, 12)
+				FixVehicleWindow(vehicle, 13)
+				ClearPedTasks(playerPed)
+				exports['mythic_notify']:SendAlert('Success', (_U('vehicle_repaired')))
+			isBusy = false
+			end
+		end)
+	else
+		exports['mythic_notify']:SendAlert('error',(_U('no_vehicle_nearby')))
+	end
 end
 
 RegisterNetEvent('esx_mechanicjob:onHijack')
@@ -751,9 +760,9 @@ AddEventHandler('esx_mechanicjob:onHijack', function()
 					SetVehicleDoorsLocked(vehicle, 1)
 					SetVehicleDoorsLockedForAllPlayers(vehicle, false)
 					ClearPedTasksImmediately(playerPed)
-					ESX.ShowNotification(_U('veh_unlocked'))
+					exports['mythic_notify']:SendAlert('success',(_U('veh_unlocked')))
 				else
-					ESX.ShowNotification(_U('hijack_failed'))
+					exports['mythic_notify']:SendAlert('error',(_U('hijack_failed')))
 					ClearPedTasksImmediately(playerPed)
 				end
 			end)
@@ -782,7 +791,7 @@ AddEventHandler('esx_mechanicjob:onCarokit', function()
 				SetVehicleFixed(vehicle)
 				SetVehicleDeformationFixed(vehicle)
 				ClearPedTasksImmediately(playerPed)
-				ESX.ShowNotification(_U('body_repaired'))
+				exports['mythic_notify']:SendAlert('success', (_U('body_repaired')))
 			end)
 		end
 	end
@@ -810,7 +819,7 @@ AddEventHandler('esx_mechanicjob:onFixkit', function()
 				SetVehicleDeformationFixed(vehicle)
 				SetVehicleUndriveable(vehicle, false)
 				ClearPedTasksImmediately(playerPed)
-				ESX.ShowNotification(_U('veh_repaired'))
+				exports['mythic_notify']:SendAlert('success',(_U('veh_repaired')))
 			end)
 		end
 	end
@@ -925,7 +934,7 @@ Citizen.CreateThread(function()
 			local zone   = Config.Zones[NPCTargetTowableZone]
 
 			if GetDistanceBetweenCoords(coords, zone.Pos.x, zone.Pos.y, zone.Pos.z, true) < Config.NPCNextToDistance then
-				ESX.ShowNotification(_U('please_tow'))
+				exports['mythic_notify']:SendAlert('inform', (_U('please_tow')))
 				NPCHasBeenNextToTowable = true
 			end
 		end
@@ -957,7 +966,8 @@ Citizen.CreateThread(function()
 
 			for k,v in pairs(Config.Zones) do
 				if v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance then
-					DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, nil, nil, false)
+					--DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, nil, nil, false)
+					Marker("", 27, v.Pos.x, v.Pos.y, v.Pos.z)
 					letSleep = false
 				end
 			end
@@ -1102,7 +1112,7 @@ Citizen.CreateThread(function()
 					StopNPCJob(true)
 					NPCLastCancel = GetGameTimer()
 				else
-					ESX.ShowNotification(_U('wait_five'))
+					exports['mythic_notify']:SendAlert('inform',(_U('wait_five')))
 				end
 			else
 				local playerPed = PlayerPedId()
@@ -1110,7 +1120,7 @@ Citizen.CreateThread(function()
 				if IsPedInAnyVehicle(playerPed, false) and IsVehicleModel(GetVehiclePedIsIn(playerPed, false), GetHashKey('flatbed')) then
 					StartNPCJob()
 				else
-					ESX.ShowNotification(_U('must_in_flatbed'))
+					exports['mythic_notify']:SendAlert('error',(_U('must_in_flatbed')))
 				end
 			end
 		end
