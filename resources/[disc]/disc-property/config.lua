@@ -1,6 +1,6 @@
 Config = {}
 
-Config.Locale = 'en'
+Config.Locale = 'sv'
 Config.BuyPercentage = 1.0
 Config.ResellPercentage = 0.7
 Config.FoodItem = 'bread'

@@ -11,6 +11,7 @@ client_scripts {
     'client/property.lua',
     'locales/cs.lua',
     'locales/en.lua',
+    'locales/sv.lua',
 }
 
 server_scripts {
@@ -24,4 +25,5 @@ server_scripts {
     'server/inventory.lua',
     'locales/cs.lua',
     'locales/en.lua',
+    'locales/sv.lua',
 }

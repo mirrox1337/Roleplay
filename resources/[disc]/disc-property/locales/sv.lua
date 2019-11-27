@@ -1,0 +1,53 @@
+Locales['sv'] = {
+-- Buy menu
+    ['view'] = "Fastighets visning",
+    ['buy'] = "Köp fastighet för ",
+-- Kitchen
+    ['kitchen'] = "Kök",
+    ['givekeys'] = "Ge fastighets-nyckel",
+    ['takekeys'] = "Ta fastighets-nyckel",
+    ['sell'] = "Sälj fastighet",
+    ['manage'] = "Hantera fastighet",
+    ['sold'] = "Fastighet såld!",
+    ['tookkeys'] = "Tog fastighets-nycklar från ",
+    ['name'] = "Skriv förnamn och efternamn",
+    ['nobodyfound'] = "Ingen person hittad",
+    ['cook'] = "Laga en måltid",
+    ['gavekeys'] = "Tog fastighets-nycklar till ",
+    ['bought'] = "Fastighet köpt!",
+    ['select'] = "Välj person",
+-- General
+    ['yes'] = "Ja",
+    ['no'] = "Nej",
+    ['confirm'] = "Bekräfta",
+    ['notenough'] = "Du har inte tillräckligt med pengar",
+-- Controls
+    ['visitkey'] = "Tryck ~INPUT_CONTEXT~ för att ~p~Visa ",
+    ['enterkey'] = "Tryck ~INPUT_CONTEXT~ för att ~p~Gå In ",
+    ['leavekey'] = "Tryck ~INPUT_CONTEXT~ för att ~p~Gå Ut ",
+    ['kitchenkey'] = "Tryck ~INPUT_CONTEXT~ för att öppna ~p~Köket",
+    ['keygarage'] = "Tryck ~INPUT_CONTEXT~ för att öppna ~p~Garage",
+    ['clotheskey'] = "Tryck ~INPUT_CONTEXT~ för att byta ~p~Kläder",
+    ['keyroom'] = "Tryck ~INPUT_CONTEXT~ för att öppna ~p~Förråd",
+-- Cupboard
+    ['cupboard'] = "Förråd",
+-- Garage
+    ['noveh'] = "Inget fordon att Parkera",
+    ['garage'] = "Garage",
+    ['nospace'] = "Ingen plats på Garageuppfarten!",
+    ['saving'] = "Parkerar ",
+    ['notowned'] = "Du äger inte det här Fordonet",
+    ['exceed'] = "Ditt garage är Fullt",
+    ['spawned'] = "Körde ut ",
+    ['parked'] = "Parkera fordon",
+    ['takeveh'] = "Kör ut Fordon",
+-- Clothes
+    ['changec'] = "Byt Kläder",
+    ['savec'] = "Spara Kläder",
+    ['removec'] = "Släng Kläder",
+    ['clothes'] = "Kläder",
+    ['remc'] = "Slängde Kläder: ",
+    ['savc'] = "Sparade Kläder: ",
+    ['changc'] = "Byte Kläder: ",
+    ['nameout'] = "Namnge Outfit",
+} 

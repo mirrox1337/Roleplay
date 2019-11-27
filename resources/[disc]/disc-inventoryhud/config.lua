@@ -5,54 +5,170 @@ Config.TrunkOpenControl = 47
 Config.DeleteDropsOnStart = false
 
 Config.Shops = {
-    ['My Shop Of Awesome Things'] = {
+    ['Aladdins Fiskebutik'] = {
         coords = {
-            vector3(44.38, -1746.76, 29.5),
-            vector3(44.38, -1742.76, 29.5),
+            vector3(814.59, -93.13, 79.7),
         },
         items = {
-            { name = "bread", price = 100, count = 10 },
-            { name = "water", price = 100, count = 10 },
-            { name = "disc_ammo_pistol", price = 100, count = 10} ,
-            { name = "disc_ammo_pistol_large", price = 1000, count = 10 },
-            { name = "WEAPON_SNSPISTOL", price = 100, count = 10 },
+            { name = "fishingrod", price = 100, count = 1 },
+            { name = "fishbait", price = 5, count = 10 },
         },
-        markerType = 1,
-        markerColour = { r = 255, g = 255, b = 255 },
-        blipColour = 2,
-        blipSprite = 52,
-        msg = 'Open Shop ~INPUT_CONTEXT~',
+        blipSprite = 68,
+        blipColour = 1,
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
         enableBlip = true,
+        rotate = true,
+        msg = '~INPUT_CONTEXT~ för att handla på ~p~Aladdins Fiskebutik~s~',
+        job = 'all'
+    },
+    ['Mohammeds Livs'] = {
+        coords = {
+            vector3(-1172.07, -1571.93, 3.70),
+        },
+        items = {
+            { name = "cigarett", price = 60, count = 20 },
+            { name = "lighter", price = 10, count = 1 },
+            { name = "rizla", price = 15, count = 1 },
+        },
+        blipSprite = 106,
+        blipColour = 38,
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        enableBlip = true,
+        rotate = true,
+        msg = '~INPUT_CONTEXT~ för att handla på ~p~Mohammeds Livs~s~',
+        job = 'all'
+    },
+    ['UrbicusBar'] = {
+        coords = {
+            vector3(-562.07, 288.27, 81.28),
+        },
+        items = {
+            { name = "ol", price = 65, count = 1 },
+            { name = "whisky", price = 105, count = 1 },
+        },
+        blipSprite = 52,
+        blipColour = 4,
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        enableBlip = false,
+        rotate = true,
+        msg = '~INPUT_CONTEXT~ för att handla på ~p~Urbicus Bar~s~',
+        job = 'all'
+    },
+    ['Sjukhus Kiosken'] = {
+        coords = {
+            vector3(316.88, -588.64, 42.32),
+        },
+        items = {
+            { name = "bread", price = 25, count = 1 },
+            { name = "varmkorv", price = 25, count = 1 },
+            { name = "water", price = 20, count = 1 },
+            { name = "cola", price = 20, count = 1 },
+        },
+        blipSprite = 52,
+        blipColour = 4,
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        enableBlip = false,
+        rotate = true,
+        msg = '~INPUT_CONTEXT~ för att handla på ~p~Sjukhus Kiosken~s~',
+        job = 'all'
+    },
+    ['Dealer'] = {
+        coords = {
+            vector3(-1207.59, -240.18, 36.97),
+        },
+        items = {
+            {name = 'silencieux', price = 7500, count = 1},
+			{name = 'flashlight', price = 4000, count = 1},
+			{name = 'seed', price = 5000, count = 1},
+			{name = 'rizla', price = 30, count = 30},
+			{name = 'kaustiksoda', price = 50, count = 1},
+			{name = 'cement', price = 50, count = 1},
+			{name = 'bensin', price = 600, count = 1},
+			{name = 'clip', price = 600, count = 1},
+			{name = 'Våg', price = 500, count = 1},
+			{name = 'grinder', price = 500, count = 1},
+			{name = 'plasticbag', price = 15, count = 10},
+			{name = 'lockpick', price = 200, count = 1},
+			{name = 'radio', price = 900, count = 1},
+			{name = 'buntband', price = 20, count = 1},
+			{name = 'chemicals', price = 400, count = 1},
+			{name = 'jumelles', price = 450, count = 1},
+			{name = 'turtlebait', price = 25, count = 1},
+			{name = 'methlab', price = 2300, count = 1},
+			{name = 'acetone', price = 90, count = 1},
+			{name = 'lithium', price = 25, count = 1},
+			{name = 'bulletproof_vest', price = 1500, count = 1}
+        },
+        blipSprite = 52,
+        blipColour = 4,
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        enableBlip = false,
+        rotate = true,
+        msg = '~INPUT_CONTEXT~ för att handla hos ~r~Dealer~s~',
         job = 'all'
     }
 }
 
 Config.Stash = {
-    ['Police'] = {
-        coords = vector3(457.76, -981.05, 30.69),
+    ['Polis Förråd'] = {
+        coords = vector3(455.31, -985.42, 29.75),
         size = vector3(1.0, 1.0, 1.0),
         job = 'police',
-        markerType = 2,
-        markerColour = { r = 255, g = 255, b = 255 },
-        msg = 'Open Stash ~INPUT_CONTEXT~'
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        rotate = true,
+        msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
     },
-    ['Police Stash'] = {
-        coords = vector3(456.76, -981.05, 30.69),
+    ['Sjukvård Förråd'] = {
+        coords = vector3(342.25, -586.19, 42.35),
         size = vector3(1.0, 1.0, 1.0),
-        job = 'police',
-        markerType = 2,
-        markerColour = { r = 255, g = 255, b = 255 },
-        msg = 'Open Stash ~INPUT_CONTEXT~'
+        job = 'ambulance',
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        rotate = true,
+        msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
+    },
+    ['Mekonomen Förråd'] = {
+        coords = vector3(-321.26, -138.01, 38.05),
+        size = vector3(1.0, 1.0, 1.0),
+        job = 'mecano',
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        rotate = true,
+        msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
+    },
+    ['Bennys Förråd'] = {
+        coords = vector3(-224.21, -1320.18, 29.95),
+        size = vector3(1.0, 1.0, 1.0),
+        job = 'bennys',
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        rotate = true,
+        msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
+    },
+    ['NE Bilcenter'] = {
+        coords = vector3(-30.82, -1110.94, 25.50),
+        size = vector3(1.0, 1.0, 1.0),
+        job = 'cardealer',
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        rotate = true,
+        msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
     }
 }
 
 Config.Steal = {
-    black_money = true,
+    black_money = false,
     cash = true
 }
 
 Config.Seize = {
-    black_money = true,
+    black_money = false,
     cash = true
 }
 

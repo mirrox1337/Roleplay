@@ -54,6 +54,7 @@ files {
     -- JS langs
     'html/locales/cs.js',
     'html/locales/en.js',
+    'html/locales/sv.js',
     -- IMAGES
     'html/img/*.png',
     'html/success.wav',

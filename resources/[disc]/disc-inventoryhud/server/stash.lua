@@ -1,7 +1,7 @@
 Citizen.CreateThread(function()
     TriggerEvent('disc-inventoryhud:RegisterInventory', {
         name = 'stash',
-        label = 'Stash',
+        label = 'Förråd',
         slots = 100
     })
 end)
