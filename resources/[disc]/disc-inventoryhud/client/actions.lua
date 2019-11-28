@@ -1,8 +1,8 @@
+isHotKeyCoolDown = false
 RegisterNUICallback('UseItem', function(data)
     if isWeapon(data.item.id) then
         currentWeaponSlot = data.slot
     end
-    print('Stäng ' .. tostring(data.item.closeUi))
     TriggerServerEvent('disc-inventoryhud:notifyImpendingRemoval', data.item, 1)
     TriggerServerEvent("esx:useItem", data.item.id)
     TriggerEvent('disc-inventoryhud:refreshInventory')
@@ -43,6 +43,14 @@ Citizen.CreateThread(function()
 end)
 
 function UseItem(slot)
+    if isHotKeyCoolDown then
+        return
+    end
+    Citizen.CreateThread(function()
+        isHotKeyCoolDown = true
+        Citizen.Wait(Config.HotKeyCooldown)
+        isHotKeyCoolDown = false
+    end)
     ESX.TriggerServerCallback('disc-inventoryhud:UseItemFromSlot', function(item)
         if item then
             if isWeapon(item.id) then
@@ -50,7 +58,8 @@ function UseItem(slot)
             end
             TriggerServerEvent('disc-inventoryhud:notifyImpendingRemoval', item, 1)
             TriggerServerEvent("esx:useItem", item.id)
-            item.msg = 'Föremål Använt'
+            item.msg = 'Använt'
+            item.qty = 1
             TriggerEvent('disc-inventoryhud:showItemUse', {
                 item,
             })

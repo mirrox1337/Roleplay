@@ -20,7 +20,7 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-    while ESX == nil or ESX.PlayerData == nil or ESX.PlayerData.job == nil do
+    while not ESXLoaded do
         Citizen.Wait(10)
     end
     for k, v in pairs(Config.Shops) do
@@ -38,7 +38,7 @@ Citizen.CreateThread(function()
                 shouldDraw = function()
                     return ESX.PlayerData.job.name == v.job or v.job == 'all'
                 end,
-                msg = v.msg or 'Tryck ~INPUT_CONTEXT~ för att Handla',
+                msg = v.msg or 'Tryck ~INPUT_CONTEXT~ fï¿½r att Handla',
             }
             TriggerEvent('disc-base:registerMarker', marker)
         end

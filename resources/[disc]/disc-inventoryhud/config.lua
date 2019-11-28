@@ -3,6 +3,7 @@ Config = {}
 Config.OpenControl = 289
 Config.TrunkOpenControl = 47
 Config.DeleteDropsOnStart = false
+Config.HotKeyCooldown = 1000
 
 Config.Shops = {
     ['Aladdins Fiskebutik'] = {
