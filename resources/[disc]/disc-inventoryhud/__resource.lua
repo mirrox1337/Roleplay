@@ -66,5 +66,9 @@ files {
 }
 
 dependencies {
-    'es_extended'
+    'es_extended',
+}
+
+exports {
+    'inventoryhudSearch'
 }

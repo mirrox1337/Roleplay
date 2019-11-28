@@ -93,7 +93,7 @@ end)
 AddEventHandler('esx:onRemoveInventoryItem', function(source, item, count)
     local player = ESX.GetPlayerFromId(source)
     TriggerClientEvent('disc-inventoryhud:showItemUse', source, {
-        { id = item.name, label = item.label, qty = count, msg = 'Item Removed' }
+        { id = item.name, label = item.label, qty = count, msg = 'Föremål Användes' }
     })
     applyToInventory(player.identifier, 'player', function(inventory)
         if impendingRemovals[source] then
@@ -118,7 +118,7 @@ end)
 AddEventHandler('esx:onAddInventoryItem', function(source, esxItem, count)
     local player = ESX.GetPlayerFromId(source)
     TriggerClientEvent('disc-inventoryhud:showItemUse', source, {
-        { id = esxItem.name, label = esxItem.label, qty = count, msg = 'Item Added' }
+        { id = esxItem.name, label = esxItem.label, qty = count, msg = 'Plockade upp Föremål' }
     })
     applyToInventory(player.identifier, 'player', function(inventory)
         if impendingAdditions[source] then

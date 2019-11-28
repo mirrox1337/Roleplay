@@ -29,7 +29,7 @@ Citizen.CreateThread(function()
                 name = k .. val,
                 coords = coords,
                 type = v.markerType or 1,
-                colour = v.markerColour or { r = 55, b = 255, g = 55 },
+                colour = v.markerColour or { r = 119, b = 18, g = 130 },
                 size = v.size or vector3(1.0, 1.0, 1.0),
                 action = function()
                     shopSecondaryInventory.owner = k
@@ -38,7 +38,7 @@ Citizen.CreateThread(function()
                 shouldDraw = function()
                     return ESX.PlayerData.job.name == v.job or v.job == 'all'
                 end,
-                msg = v.msg or 'Press ~INPUT_CONTEXT~ to open Shop',
+                msg = v.msg or 'Tryck ~INPUT_CONTEXT~ för att Handla',
             }
             TriggerEvent('disc-base:registerMarker', marker)
         end

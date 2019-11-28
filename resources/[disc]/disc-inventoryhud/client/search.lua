@@ -9,6 +9,23 @@ local secondaryStealInventory = {
     steal = true
 }
 
+function inventoryhudSearch()
+    local player = ESX.GetPlayerData()
+    if player.job.name == 'police' then
+        local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+        if closestPlayer ~= -1 and closestDistance <= 3.0 then
+            local searchPlayerPed = GetPlayerPed(closestPlayer)
+
+                ESX.TriggerServerCallback('disc-inventoryhud:getIdentifier', function(identifier)
+                    secondarySearchInventory.owner = identifier
+                    openInventory(secondarySearchInventory)
+					print('openInventory')
+                end, GetPlayerServerId(closestPlayer))
+            end
+            else
+                exports['mythic_notify']:SendAlert('error', ('Det finns ingen i närheten'))
+    end
+end
 
 
 RegisterNetEvent('disc-inventoryhud:search')
@@ -22,6 +39,7 @@ AddEventHandler('disc-inventoryhud:search', function()
                 ESX.TriggerServerCallback('disc-inventoryhud:getIdentifier', function(identifier)
                     secondarySearchInventory.owner = identifier
                     openInventory(secondarySearchInventory)
+					print('openInventory')
                 end, GetPlayerServerId(closestPlayer))
             end
         end

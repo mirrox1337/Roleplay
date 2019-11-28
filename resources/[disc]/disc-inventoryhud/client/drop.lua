@@ -29,7 +29,7 @@ Citizen.CreateThread(function()
                     type = 2,
                     coords = vector3(x, y, z + 1.0),
                     rotate = false,
-                    colour = { r = 255, b = 255, g = 255 },
+                    colour = { r = 119, b = 18, g = 130 },
                     size = vector3(0.5, 0.5, 0.5),
                 }
                 drops[k].active = false

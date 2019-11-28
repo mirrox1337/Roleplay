@@ -685,8 +685,7 @@ function OpenPoliceActionsMenu()
 					if action == 'identity_card' then
 						OpenIdentityCardMenu(closestPlayer)
 					elseif action == 'body_search' then
-						TriggerServerEvent('esx_policejob:message', GetPlayerServerId(closestPlayer), _U('being_searched'))
-						OpenBodySearchMenu(closestPlayer)
+						exports['disc-inventoryhud']:inventoryhudSearch(closestPlayer)
 					elseif action == 'handcuff' then
 						RequestAnimDict('missheistfbisetup1')
 
@@ -723,7 +722,7 @@ function OpenPoliceActionsMenu()
 					end
 				else
 					--ESX.ShowNotification(_U('no_players_nearby'))
-					exports['mythic_notify']:DoHudText('inform', (_U('no_players_nearby')), { ['background-color'] = '#b00000', ['color'] = '#fff' })
+					exports['mythic_notify']:SendAlert('error', (_U('no_players_nearby')))
 				end
 			end, function(data2, menu2)
 				menu2.close()
@@ -765,7 +764,7 @@ function OpenPoliceActionsMenu()
 							SetVehicleDoorsLocked(vehicle, 1)
 							SetVehicleDoorsLockedForAllPlayers(vehicle, false)
 							--ESX.ShowNotification(_U('vehicle_unlocked'))
-							exports['mythic_notify']:DoHudText('inform', (_U('vehicle_unlocked')), { ['background-color'] = '#b00000', ['color'] = '#fff' })
+							exports['mythic_notify']:SendAlert('success', (_U('vehicle_unlocked')))
 						end
 					elseif action == 'impound' then
 						-- is the script busy?
@@ -801,7 +800,7 @@ function OpenPoliceActionsMenu()
 					end
 				else
 					--ESX.ShowNotification(_U('no_vehicles_nearby'))
-					exports['mythic_notify']:DoHudText('inform', (_U('no_vehicles_nearby')), { ['background-color'] = '#b00000', ['color'] = '#fff' })
+					exports['mythic_notify']:SendAlert('error', (_U('no_vehicles_nearby')))
 				end
 
 			end, function(data2, menu2)

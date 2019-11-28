@@ -104,7 +104,7 @@ function EndDragging() {
 }
 
 function closeInventory() {
-    InventoryLog('Closing');
+    InventoryLog('Stänger Inventory');
     EndDragging();
     $('.near-players-wrapper').fadeOut();
     $.post("http://disc-inventoryhud/NUIFocusOff", JSON.stringify({}));
@@ -293,7 +293,7 @@ $(document).ready(function () {
         if (dragging) {
             itemData = $(draggingItem).find('.item').data("item");
             if (itemData.usable) {
-                InventoryLog('Using ' + itemData.label + ' and Close ' + itemData.closeUi);
+                InventoryLog('Använder ' + itemData.label + ' och stänger ' + itemData.closeUi);
                 $.post("http://disc-inventoryhud/UseItem", JSON.stringify({
                     owner: $(draggingItem).parent().data('invOwner'),
                     slot: $(draggingItem).data('slot'),
@@ -369,7 +369,7 @@ $(document).ready(function () {
     }).mouseleave(function () {
         $(this).removeClass('hover');
     }).click(function (event, ui) {
-        InventoryLog('Seizing Cash from ' + destinationOwner);
+        InventoryLog('Beslagtar pengar från ' + destinationOwner);
         $.post("http://disc-inventoryhud/SeizeCash", JSON.stringify({
             target: destinationOwner
         }));
@@ -383,7 +383,7 @@ $(document).ready(function () {
     }).mouseleave(function () {
         $(this).removeClass('hover');
     }).click(function (event, ui) {
-        InventoryLog('Stealing Cash from ' + destinationOwner);
+        InventoryLog('Stjäl pengar från ' + destinationOwner);
         $.post("http://disc-inventoryhud/StealCash", JSON.stringify({
             target: destinationOwner
         }));
@@ -399,7 +399,7 @@ $(document).ready(function () {
             }
 
             if (itemData.canRemove) {
-                InventoryLog('Dropping ' + dropCount + ' ' + itemData.label + ' On Ground');
+                InventoryLog('Kastar ' + dropCount + ' ' + itemData.label + ' On Ground');
                 $.post("http://disc-inventoryhud/DropItem", JSON.stringify({
                     item: itemData,
                     qty: dropCount
@@ -427,22 +427,22 @@ $(document).ready(function () {
 
             if (!itemData.unique) {
                 if (itemData.stackable) {
-                    $('.tooltip-div').find('.tooltip-uniqueness').html("Not Unique - Stack Max (" + itemData.max + ")");
+                    $('.tooltip-div').find('.tooltip-uniqueness').html("Inte Unik - Max Stack (" + itemData.max + ")");
                 } else {
-                    $('.tooltip-div').find('.tooltip-uniqueness').html("Not Unique - Not Stackable");
+                    $('.tooltip-div').find('.tooltip-uniqueness').html("Inte Unik - Inte Stackable");
                 }
             } else {
-                $('.tooltip-div').find('.tooltip-uniqueness').html("Unique (" + itemData.max + ")");
+                $('.tooltip-div').find('.tooltip-uniqueness').html("Unik (" + itemData.max + ")");
             }
 
             if (itemData.description !== undefined) {
-                $('.tooltip-div').find('.tooltip-desc').html('Description: ' + itemData.description);
+                $('.tooltip-div').find('.tooltip-desc').html('Beskrivning: ' + itemData.description);
             } else {
-                $('.tooltip-div').find('.tooltip-desc').html("This Item Has No Information");
+                $('.tooltip-div').find('.tooltip-desc').html("Detta f�rem�l har ingen Beskrivning");
             }
 
             if (itemData.weight !== undefined) {
-                $('.tooltip-div').find('.tooltip-weight').html('Weight: ' + itemData.weight * itemData.qty);
+                $('.tooltip-div').find('.tooltip-weight').html('Vikt: ' + itemData.weight * itemData.qty);
             } else {
                 $('.tooltip-div').find('.tooltip-weight').hide()
             }
@@ -518,7 +518,7 @@ function AttemptDropInEmptySlot(origin, destination, moveQty) {
             AddItemToSlot(destination, item);
             successAudio.play();
 
-            InventoryLog('1Moving ' + item.qty + ' ' + item.label + ' ' + ' From ' + origin.data('invOwner') + ' Slot ' + origin.data('slot') + ' To ' + destination.parent().data('invOwner') + ' Slot ' + item.slot);
+            InventoryLog('1Flyttar ' + item.qty + ' ' + item.label + ' ' + ' Från ' + origin.data('invOwner') + ' Slot ' + origin.data('slot') + ' Till ' + destination.parent().data('invOwner') + ' Slot ' + item.slot);
             $.post("http://disc-inventoryhud/MoveToEmpty", JSON.stringify({
                 originOwner: origin.parent().data('invOwner'),
                 originSlot: origin.data('slot'),
@@ -540,7 +540,7 @@ function AttemptDropInEmptySlot(origin, destination, moveQty) {
             AddItemToSlot(destination, item2);
             successAudio.play();
 
-            InventoryLog('Empty: Moving ' + moveQty + ' ' + item.label + ' From ' + origin.data('invOwner') + ' Slot ' + item.slot + ' To ' + destination.parent().data('invOwner') + ' Slot ' + item2.slot);
+            InventoryLog('Tom: Flyttar ' + moveQty + ' ' + item.label + ' Från ' + origin.data('invOwner') + ' Slot ' + item.slot + ' Till ' + destination.parent().data('invOwner') + ' Slot ' + item2.slot);
             $.post("http://disc-inventoryhud/EmptySplitStack", JSON.stringify({
                 originOwner: origin.parent().data('invOwner'),
                 originSlot: origin.data('slot'),
@@ -565,7 +565,7 @@ function AttemptDropInEmptySlot(origin, destination, moveQty) {
             setTimeout(function () {
                 destination.removeClass('error');
             }, 1000);
-            InventoryLog("Destination Inventory Owner Was Undefined");
+            InventoryLog("Destination Inventory Ägare var inte definierad");
         }
     }
 }
@@ -594,7 +594,7 @@ function AttemptDropInOccupiedSlot(origin, destination, moveQty) {
                 AddItemToSlot(destination, destinationItem);
 
                 successAudio.play();
-                InventoryLog('Non-Empty: Moving ' + moveQty + ' ' + originItem.label + ' In ' + origin.data('invOwner') + ' Slot ' + originItem.slot + ' To ' + destination.parent().data('invOwner') + ' Slot' + destinationItem.slot);
+                InventoryLog('Non-Empty: Flyttar ' + moveQty + ' ' + originItem.label + ' I ' + origin.data('invOwner') + ' Slot ' + originItem.slot + ' Till ' + destination.parent().data('invOwner') + ' Slot' + destinationItem.slot);
                 $.post("http://disc-inventoryhud/SplitStack", JSON.stringify({
                     originOwner: origin.parent().data('invOwner'),
                     originTier: origin.parent().data('invTier'),
@@ -617,7 +617,7 @@ function AttemptDropInOccupiedSlot(origin, destination, moveQty) {
                     AddItemToSlot(destination, originItem);
                     successAudio.play();
 
-                    InventoryLog('Swapping ' + originItem.label + ' In  ' + destination.parent().data('invOwner') + ' Slot ' + originItem.slot + ' With ' + destinationItem.label + ' In ' + origin.data('invOwner') + ' Slot ' + destinationItem.slot);
+                    InventoryLog('Swappar ' + originItem.label + ' I  ' + destination.parent().data('invOwner') + ' Slot ' + originItem.slot + ' Med ' + destinationItem.label + ' I ' + origin.data('invOwner') + ' Slot ' + destinationItem.slot);
                     $.post("http://disc-inventoryhud/SwapItems", JSON.stringify({
                         originOwner: origin.parent().data('invOwner'),
                         originItem: origin.find('.item').data('item'),
@@ -635,7 +635,7 @@ function AttemptDropInOccupiedSlot(origin, destination, moveQty) {
                     AddItemToSlot(destination, destinationItem);
 
                     successAudio.play();
-                    InventoryLog('Merging Stack Of ' + originItem.label + ' In ' + origin.data('invOwner') + ' Slot ' + originItem.slot + ' To ' + destination.parent().data('invOwner') + ' Slot' + destinationItem.slot);
+                    InventoryLog('Slår ihop bunt av ' + originItem.label + ' I ' + origin.data('invOwner') + ' Slot ' + originItem.slot + ' Till ' + destination.parent().data('invOwner') + ' Slot' + destinationItem.slot);
                     $.post("http://disc-inventoryhud/CombineStack", JSON.stringify({
                         originOwner: origin.parent().data('invOwner'),
                         originSlot: origin.data('slot'),
@@ -687,7 +687,7 @@ function AttemptDropInOccupiedSlot(origin, destination, moveQty) {
             AddItemToSlot(destination, originItem);
             successAudio.play();
 
-            InventoryLog('Swapping ' + originItem.label + ' In ' + destination.parent().data('invOwner') + ' Slot ' + originItem.slot + ' With ' + destinationItem.label + ' In ' + origin.data('invOwner') + ' Slot ' + destinationItem.slot);
+            InventoryLog('Swappar ' + originItem.label + ' I ' + destination.parent().data('invOwner') + ' Slot ' + originItem.slot + ' Med ' + destinationItem.label + ' I ' + origin.data('invOwner') + ' Slot ' + destinationItem.slot);
             //InventoryLog("SwapItems2 : Origin: " + origin.data('invOwner') + " Origin Slot: " + origin.data('slot') + " Destination: " + destination.parent().data('invOwner') + " Destination Slot: " + destination.data('slot'));
             $.post("http://disc-inventoryhud/SwapItems", JSON.stringify({
                 originOwner: origin.parent().data('invOwner'),
@@ -715,7 +715,7 @@ function AttemptDropInOccupiedSlot(origin, destination, moveQty) {
             setTimeout(function () {
                 destination.removeClass('error');
             }, 1000);
-            InventoryLog("Destination Inventory Owner Was Undefined");
+            InventoryLog("Destination Inventory Ägare var inte definierad");
         }
     }
 }
@@ -801,7 +801,7 @@ $('.popup-body').on('click', '.player', function () {
             if (count === 0 || count > givingItem.qty) {
                 count = givingItem.qty
             }
-            InventoryLog(`Giving ${count} ${givingItem.label} To Nearby Player With Server ID ${target}`);
+            InventoryLog(`Ger ${count} ${givingItem.label} Till nära spelare med Server ID ${target}`);
             $.post("http://disc-inventoryhud/GiveItem", JSON.stringify({
                 target: target,
                 originItem: givingItem,
@@ -819,7 +819,7 @@ $('.popup-body').on('click', '.player', function () {
             });
         }
     } else if (action === "nearPlayersPay") {
-        InventoryLog(`Giving ${count} ${givingItem} To Nearby Player With Server ID ${target}`);
+        InventoryLog(`Ger ${count} ${givingItem} Till nära spelare med Server ID ${target}`);
         $.post("http://disc-inventoryhud/GiveCash", JSON.stringify({
             target: target,
             item: givingItem,
@@ -836,11 +836,12 @@ var alertTimer = null;
 
 function ItemUsed(alerts) {
     clearTimeout(alertTimer);
-    $('#use-alert').hide('slide', {direction: 'left'}, 500, function () {
+    $('#use-alert').fadeOut( function () {
         $('#use-alert .slot').remove();
 
         $.each(alerts, function (index, data) {
-            $('#use-alert').append(`<div class="slot alert-${index}""><div class="item"><div class="item-count">${data.qty}</div><div class="item-name">${data.item.label}</div></div><div class="alert-text">${data.message}</div></div>`)
+        //    $('#use-alert').append(`<div class="slot alert-${index}""><div class="item"><div class="item-count">${data.qty}</div><div class="item-name">${data.item.label}</div></div><div class="alert-text">${data.message}</div></div>`)
+        $('#use-alert').append(`<div class="slot alert-${index}""><div class="item"><div class="item-name">${data.item.label}</div></div><div class="alert-text">${data.message}</div></div>`)
                 .ready(function () {
                     $(`.alert-${index}`).find('.item').css('background-image', 'url(\'img/items/' + data.item.itemId + '.png\')');
                     if (data.item.slot <= 5) {
@@ -850,10 +851,10 @@ function ItemUsed(alerts) {
         });
     });
 
-    $('#use-alert').show('slide', {direction: 'left'}, 500, function () {
+    $('#use-alert').fadeIn( function () {
         alertTimer = setTimeout(function () {
             $('#use-alert .slot').addClass('expired');
-            $('#use-alert').hide('slide', {direction: 'left'}, 500, function () {
+            $('#use-alert').fadeOut( function () {
                 $('#use-alert .slot.expired').remove();
             });
         }, 2500);
@@ -882,7 +883,7 @@ function ActionBar(items, timer) {
 
             actionBarTimer = setTimeout(function () {
                 $('#action-bar .slot').addClass('expired');
-                $('#action-bar').hide('slide', {direction: 'down'}, 500, function () {
+                $('#action-bar').fadeOut( function () {
                     $('#action-bar .slot.expired').remove();
                 });
             }, timer == null ? 2500 : timer);
@@ -899,10 +900,10 @@ function ActionBar(items, timer) {
             }
         }
 
-        $('#action-bar').show('slide', {direction: 'down'}, 500, function () {
+        $('#action-bar').fadeIn( function () {
             actionBarTimer = setTimeout(function () {
                 $('#action-bar .slot').addClass('expired');
-                $('#action-bar').hide('slide', {direction: 'down'}, 500, function () {
+                $('#action-bar').fadeOut( function () {
                     $('#action-bar .slot.expired').remove();
                 });
             }, timer == null ? 2500 : timer);

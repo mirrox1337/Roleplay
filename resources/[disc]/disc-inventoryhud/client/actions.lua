@@ -2,11 +2,11 @@ RegisterNUICallback('UseItem', function(data)
     if isWeapon(data.item.id) then
         currentWeaponSlot = data.slot
     end
-    print('Close ' .. tostring(data.item.closeUi))
+    print('Stäng ' .. tostring(data.item.closeUi))
     TriggerServerEvent('disc-inventoryhud:notifyImpendingRemoval', data.item, 1)
     TriggerServerEvent("esx:useItem", data.item.id)
     TriggerEvent('disc-inventoryhud:refreshInventory')
-    data.item.msg = 'Item Used'
+    data.item.msg = 'Föremål Använt'
     data.item.qty = 1
     TriggerEvent('disc-inventoryhud:showItemUse', {
         data.item
@@ -50,7 +50,7 @@ function UseItem(slot)
             end
             TriggerServerEvent('disc-inventoryhud:notifyImpendingRemoval', item, 1)
             TriggerServerEvent("esx:useItem", item.id)
-            item.msg = 'Item Used'
+            item.msg = 'Föremål Använt'
             TriggerEvent('disc-inventoryhud:showItemUse', {
                 item,
             })

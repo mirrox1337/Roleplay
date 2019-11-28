@@ -1,5 +1,5 @@
 Config = Config or {}
-Config.Debug = true
+Config.Debug = false
 
 -- Keys
 Config.Keys = {}
@@ -38,7 +38,7 @@ Config.AlertShowInfo = 2
 ]]
 Config.Hospital = {
     Location = { x = 308.06161499023, y = -595.19683837891, z = 43.291839599609, h = 180.4409942627 },
-    ShowBlip = false,
+    ShowBlip = true,
 }
 Config.Hospital.Blip = { name = "Pillbox Medical Center", color = 38, id = 153, scale = 1.0, short = false, x = Config.Hospital.Location.x, y = Config.Hospital.Location.y, z = Config.Hospital.Location.z }
 
@@ -48,7 +48,7 @@ Config.Hospital.Blip = { name = "Pillbox Medical Center", color = 38, id = 153, 
 
 Config.Hidden = {
     Location = { x = 1969.2971191406, y = 3815.6735839844, z = 33.428680419922 },
-    ShowBlip = true,
+    ShowBlip = false,
 }
 Config.Hidden.Blip = { name = 'Hidden Medic', color = 12, id = 153, scale = 1.0, short = false, x = Config.Hidden.Location.x, y = Config.Hidden.Location.y, z = Config.Hidden.Location.z }
 

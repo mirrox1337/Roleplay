@@ -32,7 +32,8 @@ INSERT IGNORE INTO `addon_account` (`name`, `label`, `shared`) VALUES
 	('society_ambulance', 'Ambulance', 1),
 	('society_cardealer', 'Bilförsäljare', 1),
 	('society_mechanic', 'Mekaniker', 1),
-	('society_police', 'Polis', 1);
+	('society_police', 'Polis', 1),
+	('society_taxi', 'Taxi', 1);
 /*!40000 ALTER TABLE `addon_account` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.addon_account_data
@@ -44,17 +45,18 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.addon_account_data: ~6 rows (ungefär)
+-- Dumpar data för tabell essentialmode.addon_account_data: ~7 rows (ungefär)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
 INSERT IGNORE INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(1, 'society_cardealer', 4005, NULL),
 	(3, 'society_police', 0, NULL),
-	(4, 'motels_bed_black_money', 0, 'steam:110000109c2ddf3'),
-	(5, 'motels_black_money', 0, 'steam:110000109c2ddf3'),
 	(6, 'society_ambulance', 0, NULL),
-	(7, 'society_mechanic', 0, NULL);
+	(7, 'society_mechanic', 0, NULL),
+	(10, 'society_taxi', 0, NULL),
+	(11, 'motels_bed_black_money', 0, 'steam:110000109c2ddf3'),
+	(12, 'motels_black_money', 0, 'steam:110000109c2ddf3');
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.addon_inventory
@@ -72,7 +74,8 @@ INSERT IGNORE INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
 	('motels_bed', 'Motels Bed Inventory', 0),
 	('society_cardealer', 'Bilförsäljare', 1),
 	('society_mechanic', 'Mekaniker', 1),
-	('society_police', 'Polis', 1);
+	('society_police', 'Polis', 1),
+	('society_taxi', 'Taxi', 1);
 /*!40000 ALTER TABLE `addon_inventory` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.addon_inventory_items
@@ -102,10 +105,12 @@ CREATE TABLE IF NOT EXISTS `billing` (
   `label` varchar(255) COLLATE utf8mb4_bin NOT NULL,
   `amount` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.billing: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `billing` DISABLE KEYS */;
+INSERT IGNORE INTO `billing` (`id`, `identifier`, `sender`, `target_type`, `target`, `label`, `amount`) VALUES
+	(1, 'steam:110000105dbc118', 'steam:110000109c2ddf3', 'society', 'society_police', 'Böter: Missbruk av tuta', 30);
 /*!40000 ALTER TABLE `billing` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.cardealer_vehicles
@@ -131,13 +136,13 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `height` varchar(128) COLLATE utf8mb4_bin NOT NULL,
   `lastdigits` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.characters: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
 INSERT IGNORE INTO `characters` (`id`, `identifier`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`) VALUES
-	(3, 'steam:110000109c2ddf3', 'Hen', 'Tai', '1990-01-22', 'F', '123', '4987'),
-	(4, 'steam:110000109c2ddf3', 'Hen', 'Tai', '1990-01-01', 'F', '123', '4987');
+	(5, 'steam:110000105dbc118', 'HEHE', 'HEHE', '1990-01-01', 'M', '188', '1711'),
+	(6, 'steam:110000109c2ddf3', 'Hen', 'Tai', '1990-01-01', 'F', '123', '9872');
 /*!40000 ALTER TABLE `characters` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.datastore
@@ -154,6 +159,7 @@ INSERT IGNORE INTO `datastore` (`name`, `label`, `shared`) VALUES
 	('motels', 'Motels Datastore', 0),
 	('motels_bed', 'Motels Bed Datastore', 0),
 	('society_police', 'Polis', 1),
+	('society_taxi', 'Taxi', 1),
 	('user_ears', 'Ears', 0),
 	('user_glasses', 'Glasses', 0),
 	('user_helmet', 'Helmet', 0),
@@ -169,9 +175,9 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   KEY `index_datastore_data_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.datastore_data: ~7 rows (ungefär)
+-- Dumpar data för tabell essentialmode.datastore_data: ~14 rows (ungefär)
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
 INSERT IGNORE INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(1, 'society_police', NULL, '{}'),
@@ -180,7 +186,14 @@ INSERT IGNORE INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(4, 'user_mask', 'steam:110000109c2ddf3', '{}'),
 	(5, 'user_helmet', 'steam:110000109c2ddf3', '{}'),
 	(6, 'motels', 'steam:110000109c2ddf3', '{}'),
-	(7, 'motels_bed', 'steam:110000109c2ddf3', '{}');
+	(7, 'motels_bed', 'steam:110000109c2ddf3', '{}'),
+	(8, 'motels', 'steam:110000105dbc118', '{}'),
+	(9, 'user_mask', 'steam:110000105dbc118', '{}'),
+	(10, 'user_ears', 'steam:110000105dbc118', '{}'),
+	(11, 'user_helmet', 'steam:110000105dbc118', '{}'),
+	(12, 'user_glasses', 'steam:110000105dbc118', '{}'),
+	(13, 'motels_bed', 'steam:110000105dbc118', '{}'),
+	(14, 'society_taxi', NULL, '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.disc_ammo
@@ -191,13 +204,12 @@ CREATE TABLE IF NOT EXISTS `disc_ammo` (
   `count` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.disc_ammo: ~2 rows (ungefär)
+-- Dumpar data för tabell essentialmode.disc_ammo: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `disc_ammo` DISABLE KEYS */;
 INSERT IGNORE INTO `disc_ammo` (`id`, `owner`, `hash`, `count`) VALUES
-	(1, 'steam:110000109c2ddf3', '-1716189206', 0),
-	(2, 'steam:110000109c2ddf3', '453432689', 30);
+	(8, 'steam:110000109c2ddf3', '-1357824103', 0);
 /*!40000 ALTER TABLE `disc_ammo` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.disc_inventory
@@ -207,14 +219,13 @@ CREATE TABLE IF NOT EXISTS `disc_inventory` (
   `type` text COLLATE utf8mb4_bin,
   `data` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.disc_inventory: ~3 rows (ungefär)
+-- Dumpar data för tabell essentialmode.disc_inventory: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `disc_inventory` DISABLE KEYS */;
 INSERT IGNORE INTO `disc_inventory` (`id`, `owner`, `type`, `data`) VALUES
-	(2, 'x373y408z145', 'drop', '{"6":{"name":"bread","count":4}}'),
-	(3, 'x-686y605z143', 'drop', '{"6":{"count":1,"name":"WEAPON_PISTOL"}}'),
-	(4, 'steam:110000109c2ddf3', 'player', '{"19":{"count":22,"name":"bread"},"2":{"count":1,"name":"WEAPON_PISTOL"},"1":{"count":1,"name":"WEAPON_KNIFE"},"20":{"count":1,"name":"phone"}}');
+	(11, 'x-1048y-2709z13', 'drop', '{"1":{"name":"WEAPON_ADVANCEDRIFLE","count":1}}'),
+	(12, 'steam:110000109c2ddf3', 'player', '{"1":{"name":"WEAPON_ADVANCEDRIFLE","count":1}}');
 /*!40000 ALTER TABLE `disc_inventory` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.disc_inventory_itemdata
@@ -226,10 +237,13 @@ CREATE TABLE IF NOT EXISTS `disc_inventory_itemdata` (
   `closeonuse` tinyint(1) NOT NULL DEFAULT '0',
   `max` int(11) NOT NULL DEFAULT '100',
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.disc_inventory_itemdata: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.disc_inventory_itemdata: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `disc_inventory_itemdata` DISABLE KEYS */;
+INSERT IGNORE INTO `disc_inventory_itemdata` (`id`, `name`, `description`, `weight`, `closeonuse`, `max`) VALUES
+	(1, 'bread', 'Ät mig', 1, 0, 10),
+	(2, 'WEAPON_ADVANCEDRIFLE', 'Konstruktionen skapades av Zalmen Shebs och Bor Erez, Amnon Shiloni, Motti Rosen med det uttalade syftet att göra ett gevär mer anpassat till stadskrigföring. Utvecklingen skedde ca 1991-2001, tillverkning började 2000. TAR-21 är vattentätt och lätt, jämfört med t.ex. M-16. Som standard har den inbyggt rödpunktssikte, men kan utökas med mörkersikte, ITL Mini N/SEAS och M203 granatkastare. Vapnet använder STANAG magasin och picatinnyskena. Därtill är det MILES 2000-anpassat. MTAR accepterar ljuddämpare. En integrerad granatkastare håller på att utvecklas för MTAR. Skalet tillverkas i höghållfasta polymerer och lättmetall.', 0, 0, 1);
 /*!40000 ALTER TABLE `disc_inventory_itemdata` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.disc_property
@@ -252,7 +266,7 @@ INSERT IGNORE INTO `disc_property` (`id`, `name`, `sold`, `price`, `locked`) VAL
 	(4, '2862 Hillcrest Avenue', 1, 265000, 1),
 	(5, '2868 Hillcrest Avenue', 0, 200000, 1),
 	(6, '2045 North Conker Avenue', 1, 235000, 1),
-	(7, '2677 Whispymound Drive', 0, 150000, 1),
+	(7, '2677 Whispymound Drive', 1, 150000, 1),
 	(8, '2133 Mad Wayne Thunder Drive', 0, 125000, 1),
 	(9, '1052 Grove Street', 0, 65000, 1),
 	(10, '3092 West Mirror Park Drive', 1, 105000, 1);
@@ -266,7 +280,7 @@ CREATE TABLE IF NOT EXISTS `disc_property_garage_vehicles` (
   `props` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.disc_property_garage_vehicles: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `disc_property_garage_vehicles` DISABLE KEYS */;
@@ -294,15 +308,10 @@ CREATE TABLE IF NOT EXISTS `disc_property_owners` (
   `owner` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.disc_property_owners: ~4 rows (ungefär)
+-- Dumpar data för tabell essentialmode.disc_property_owners: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `disc_property_owners` DISABLE KEYS */;
-INSERT IGNORE INTO `disc_property_owners` (`id`, `name`, `identifier`, `active`, `owner`) VALUES
-	(1, '3092 West Mirror Park Drive', 'steam:110000109c2ddf3', 1, 1),
-	(2, '2045 North Conker Avenue', 'steam:110000109c2ddf3', 1, 1),
-	(3, '3655 Wild Oats Drive', 'steam:110000109c2ddf3', 1, 1),
-	(5, '2862 Hillcrest Avenue', 'steam:110000109c2ddf3', 1, 1);
 /*!40000 ALTER TABLE `disc_property_owners` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.favoriteanimation
@@ -314,7 +323,7 @@ CREATE TABLE IF NOT EXISTS `favoriteanimation` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.favoriteanimation: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.favoriteanimation: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `favoriteanimation` DISABLE KEYS */;
 INSERT IGNORE INTO `favoriteanimation` (`identifier`, `lib`, `animation`, `scenario`) VALUES
 	('steam:110000109c2ddf3', 'mini@strip_club@idles@bouncer@base', 'base', 0);
@@ -396,105 +405,105 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.items: ~107 rows (ungefär)
+-- Dumpar data för tabell essentialmode.items: ~96 rows (ungefär)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
 INSERT IGNORE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
-	('WEAPON_ADVANCEDRIFLE', 'Advanced Rifle', 1, 0, 1),
-	('WEAPON_APPISTOL', 'AP Pistol', 1, 0, 1),
-	('WEAPON_ASSAULTRIFLE', 'Assault Rifle', 1, 0, 1),
-	('WEAPON_ASSAULTSHOTGUN', 'Assault Shotgun', 1, 0, 1),
-	('WEAPON_ASSAULTSMG', 'Assault SMG', 1, 0, 1),
-	('WEAPON_AUTOSHOTGUN', 'Auto Shotgun', 1, 0, 1),
-	('WEAPON_BALL', 'Ball', 1, 0, 1),
-	('WEAPON_BAT', 'Bat', 1, 0, 1),
-	('WEAPON_BATTLEAXE', 'Battle Axe', 1, 0, 1),
-	('WEAPON_BOTTLE', 'Bottle', 1, 0, 1),
-	('WEAPON_BULLPUPRIFLE', 'Bullpup Rifle', 1, 0, 1),
-	('WEAPON_BULLPUPSHOTGUN', 'Bullpup Shotgun', 1, 0, 1),
-	('WEAPON_BZGAS', 'BZ Gas', 1, 0, 1),
-	('WEAPON_CARBINERIFLE', 'Carbine Rifle', 1, 0, 1),
-	('WEAPON_COMBATMG', 'Combat MG', 1, 0, 1),
-	('WEAPON_COMBATPDW', 'Combat PDW', 1, 0, 1),
-	('WEAPON_COMBATPISTOL', 'Combat Pistol', 1, 0, 1),
-	('WEAPON_COMPACTLAUNCHER', 'Compact Launcher', 1, 0, 1),
-	('WEAPON_COMPACTRIFLE', 'Compact Rifle', 1, 0, 1),
-	('WEAPON_CROWBAR', 'Crowbar', 1, 0, 1),
-	('WEAPON_DAGGER', 'Dagger', 1, 0, 1),
-	('WEAPON_DBSHOTGUN', 'Double Barrel Shotgun', 1, 0, 1),
+	('WEAPON_ADVANCEDRIFLE', 'CTAR-21', 1, 0, 1),
+	('WEAPON_APPISTOL', 'Colt SCAMP', 1, 0, 1),
+	('WEAPON_ASSAULTRIFLE', 'Armi Jager ap-80', 1, 0, 1),
+	('WEAPON_ASSAULTSHOTGUN', 'UTAS UTS-15', 1, 0, 1),
+	('WEAPON_ASSAULTSMG', 'Magpul PDR-C', 1, 0, 1),
+	('WEAPON_AUTOSHOTGUN', 'Armsel Protecta', 1, 0, 1),
+	('WEAPON_BALL', 'Boll', 1, 0, 1),
+	('WEAPON_BAT', 'Slagträ', 1, 0, 1),
+	('WEAPON_BATTLEAXE', 'Stridsyxa', 1, 0, 1),
+	('WEAPON_BOTTLE', 'Flaska', 1, 0, 1),
+	('WEAPON_BULLPUPRIFLE', 'Norinco QBZ-95', 1, 0, 1),
+	('WEAPON_BULLPUPSHOTGUN', 'Kel-Tec KSG', 1, 0, 1),
+	('WEAPON_BZGAS', 'M18 Rökgranat', 1, 0, 1),
+	('WEAPON_CARBINERIFLE', 'M4A1', 1, 0, 1),
+	('WEAPON_COMBATMG', 'FN Mk 48 Mod 1', 1, 0, 1),
+	('WEAPON_COMBATPDW', 'SIG-Sauer MPX-SD', 1, 0, 1),
+	('WEAPON_COMBATPISTOL', 'H&K P226 Sig Sauer', 1, 0, 1),
+	('WEAPON_COMPACTLAUNCHER', 'M79 grenade launcher', 1, 0, 1),
+	('WEAPON_COMPACTRIFLE', 'Micro Draco AK Pistol', 1, 0, 1),
+	('WEAPON_CROWBAR', 'Kofot', 1, 0, 1),
+	('WEAPON_DAGGER', 'Dolk', 1, 0, 1),
+	('WEAPON_DBSHOTGUN', 'Zabala Short Barreled Shotgun', 1, 0, 1),
 	('WEAPON_DIGISCANNER', 'Digiscanner', 1, 0, 1),
-	('WEAPON_DOUBLEACTION', 'Double Action Revolver', 1, 0, 1),
-	('WEAPON_FIREEXTINGUISHER', 'Fire Extinguisher', 1, 0, 1),
-	('WEAPON_FIREWORK', 'Firework Launcher', 1, 0, 1),
-	('WEAPON_FLARE', 'Flare', 1, 0, 1),
-	('WEAPON_FLAREGUN', 'Flare Gun', 1, 0, 1),
-	('WEAPON_FLASHLIGHT', 'Flashlight', 1, 0, 1),
-	('WEAPON_GARBAGEBAG', 'Garbage Bag', 1, 0, 1),
-	('WEAPON_GOLFCLUB', 'Golf Club', 1, 0, 1),
-	('WEAPON_GRENADE', 'Gernade', 1, 0, 1),
-	('WEAPON_GRENADELAUNCHER', 'Gernade Launcher', 1, 0, 1),
-	('WEAPON_GUSENBERG', 'Gusenberg', 1, 0, 1),
-	('WEAPON_HAMMER', 'Hammer', 1, 0, 1),
-	('WEAPON_HANDCUFFS', 'Handcuffs', 1, 0, 1),
-	('WEAPON_HATCHET', 'Hatchet', 1, 0, 1),
-	('WEAPON_HEAVYPISTOL', 'Heavy Pistol', 1, 0, 1),
-	('WEAPON_HEAVYSHOTGUN', 'Heavy Shotgun', 1, 0, 1),
-	('WEAPON_HEAVYSNIPER', 'Heavy Sniper', 1, 0, 1),
-	('WEAPON_HOMINGLAUNCHER', 'Homing Launcher', 1, 0, 1),
-	('WEAPON_KNIFE', 'Knife', 1, 0, 1),
-	('WEAPON_KNUCKLE', 'Knuckle Dusters ', 1, 0, 1),
+	('WEAPON_DOUBLEACTION', '.44 Magnum', 1, 0, 1),
+	('WEAPON_FIREEXTINGUISHER', 'Brandsläckare', 1, 0, 1),
+	('WEAPON_FIREWORK', 'Panzerschreck', 1, 0, 1),
+	('WEAPON_FLARE', 'Bengal', 1, 0, 1),
+	('WEAPON_FLAREGUN', 'Signalpistol', 1, 0, 1),
+	('WEAPON_FLASHLIGHT', 'Ficklampa', 1, 0, 1),
+	('WEAPON_GARBAGEBAG', 'Soppåse', 1, 0, 1),
+	('WEAPON_GOLFCLUB', 'Golfklubba', 1, 0, 1),
+	('WEAPON_GRENADE', 'M61 Granat', 1, 0, 1),
+	('WEAPON_GRENADELAUNCHER', 'Milkor Mark 14 MGL', 1, 0, 1),
+	('WEAPON_GUSENBERG', 'Thompson M1928A1', 1, 0, 1),
+	('WEAPON_HAMMER', 'Hammare', 1, 0, 1),
+	('WEAPON_HANDCUFFS', 'Handklovar', 1, 0, 1),
+	('WEAPON_HATCHET', 'Yxa', 1, 0, 1),
+	('WEAPON_HEAVYPISTOL', 'EAWB 1911', 1, 0, 1),
+	('WEAPON_HEAVYSHOTGUN', 'Saiga 12', 1, 0, 1),
+	('WEAPON_HEAVYSNIPER', 'Barrett M107', 1, 0, 1),
+	('WEAPON_HOMINGLAUNCHER', 'FIM-92 Stinger', 1, 0, 1),
+	('WEAPON_KNIFE', 'Kniv', 1, 0, 1),
+	('WEAPON_KNUCKLE', 'Knogjärn', 1, 0, 1),
 	('WEAPON_MACHETE', 'Machete', 1, 0, 1),
-	('WEAPON_MACHINEPISTOL', 'Machine Pistol', 1, 0, 1),
-	('WEAPON_MARKSMANPISTOL', 'Marksman Pistol', 1, 0, 1),
-	('WEAPON_MARKSMANRIFLE', 'Marksman Rifle', 1, 0, 1),
-	('WEAPON_MG', 'MG', 1, 0, 1),
-	('WEAPON_MICROSMG', 'Micro SMG', 1, 0, 1),
-	('WEAPON_MINIGUN', 'Minigun', 1, 0, 1),
-	('WEAPON_MINISMG', 'Mini SMG', 1, 0, 1),
-	('WEAPON_MOLOTOV', 'Molotov', 1, 0, 1),
-	('WEAPON_MUSKET', 'Musket', 1, 0, 1),
-	('WEAPON_NIGHTSTICK', 'Police Baton', 1, 0, 1),
-	('WEAPON_PETROLCAN', 'Petrol Can', 1, 0, 1),
-	('WEAPON_PIPEBOMB', 'Pipe Bomb', 1, 0, 1),
-	('WEAPON_PISTOL', 'Pistol', 1, 0, 1),
-	('WEAPON_PISTOL50', 'Police .50', 1, 0, 1),
-	('WEAPON_POOLCUE', 'Pool Cue', 1, 0, 1),
+	('WEAPON_MACHINEPISTOL', 'TEC-9', 1, 0, 1),
+	('WEAPON_MARKSMANPISTOL', 'Thompson Center Arms Contender', 1, 0, 1),
+	('WEAPON_MARKSMANRIFLE', 'Ruger Mini-30', 1, 0, 1),
+	('WEAPON_MG', 'PKM', 1, 0, 1),
+	('WEAPON_MICROSMG', 'Mini Uzi', 1, 0, 1),
+	('WEAPON_MINIGUN', 'GE M134 Minigun', 1, 0, 1),
+	('WEAPON_MINISMG', 'Skorpion', 1, 0, 1),
+	('WEAPON_MOLOTOV', 'Brandbomb', 1, 0, 1),
+	('WEAPON_MUSKET', 'Musköt', 1, 0, 1),
+	('WEAPON_NIGHTSTICK', 'Teleskop Batong', 1, 0, 1),
+	('WEAPON_PETROLCAN', 'Bensindunk', 1, 0, 1),
+	('WEAPON_PIPEBOMB', 'Rörbomb', 1, 0, 1),
+	('WEAPON_PISTOL', 'Taurus PT92AF', 1, 0, 1),
+	('WEAPON_PISTOL50', 'Desert Eagle', 1, 0, 1),
+	('WEAPON_POOLCUE', 'Biljardkö', 1, 0, 1),
 	('WEAPON_PROXMINE', 'Proximity Mine', 1, 0, 1),
-	('WEAPON_PUMPSHOTGUN', 'Pump Shotgun', 1, 0, 1),
+	('WEAPON_PUMPSHOTGUN', 'Mossberg 590', 1, 0, 1),
 	('WEAPON_RAILGUN', 'Rail Gun', 1, 0, 1),
-	('WEAPON_REVOLVER', 'Revolver', 1, 0, 1),
-	('WEAPON_RPG', 'RPG', 1, 0, 1),
-	('WEAPON_SAWNOFFSHOTGUN', 'Sawn Off Shotgun', 1, 0, 1),
-	('WEAPON_SMG', 'SMG', 1, 0, 1),
-	('WEAPON_SMOKEGRENADE', 'Smoke Gernade', 1, 0, 1),
-	('WEAPON_SNIPERRIFLE', 'Sniper Rifle', 1, 0, 1),
-	('WEAPON_SNOWBALL', 'Snow Ball', 1, 0, 1),
-	('WEAPON_SNSPISTOL', 'SNS Pistol', 1, 0, 1),
-	('WEAPON_SPECIALCARBINE', 'Special Rifle', 1, 0, 1),
-	('WEAPON_STICKYBOMB', 'Sticky Bombs', 1, 0, 1),
+	('WEAPON_REVOLVER', 'Colt M1909', 1, 0, 1),
+	('WEAPON_RPG', 'RPG-7', 1, 0, 1),
+	('WEAPON_SAWNOFFSHOTGUN', 'Mossberg 500', 1, 0, 1),
+	('WEAPON_SMG', 'MP5N', 1, 0, 1),
+	('WEAPON_SMOKEGRENADE', 'Rökgranat', 1, 0, 1),
+	('WEAPON_SNIPERRIFLE', 'AW-F', 1, 0, 1),
+	('WEAPON_SNOWBALL', 'Snöboll', 1, 0, 1),
+	('WEAPON_SNSPISTOL', 'H&K P7M10', 1, 0, 1),
+	('WEAPON_SPECIALCARBINE', 'H&K G36C', 1, 0, 1),
+	('WEAPON_STICKYBOMB', 'M112 C4', 1, 0, 1),
 	('WEAPON_STINGER', 'Stinger', 1, 0, 1),
-	('WEAPON_STUNGUN', 'Police Taser', 1, 0, 1),
-	('WEAPON_SWITCHBLADE', 'Switch Blade', 1, 0, 1),
-	('WEAPON_VINTAGEPISTOL', 'Vintage Pistol', 1, 0, 1),
-	('WEAPON_WRENCH', 'Wrench', 1, 0, 1),
+	('WEAPON_STUNGUN', 'Stinger S-200', 1, 0, 1),
+	('WEAPON_SWITCHBLADE', 'Stilett', 1, 0, 1),
+	('WEAPON_VINTAGEPISTOL', 'PRO LASER III', 1, 0, 1),
+	('WEAPON_WRENCH', 'Rörtång', 1, 0, 1),
 	('beer', 'Öl', 1, 0, 1),
-	('blowpipe', 'Blåslampa', 2, 0, 1),
+	('blowpipe', 'Blåslampa', 1, 0, 1),
 	('bread', 'Bröd', 1, 0, 1),
-	('carokit', 'Karosskit', 3, 0, 1),
-	('carotool', 'Verktyg', 2, 0, 1),
+	('carokit', 'Karosskit', 1, 0, 1),
+	('carotool', 'Verktyg', 1, 0, 1),
 	('coke', 'Kokain', 1, 0, 1),
-	('disc_ammo_pistol', 'Pistol Ammo', 10, 0, 1),
-	('disc_ammo_pistol_large', 'Pistol Ammo Large', -10, 0, 1),
-	('disc_ammo_rifle', 'Rifle Ammo', 10, 0, 1),
-	('disc_ammo_rifle_large', 'Rifle Ammo Large', 10, 0, 1),
-	('disc_ammo_shotgun', 'Shotgun Shells', 10, 0, 1),
-	('disc_ammo_shotgun_large', 'Shotgun Shells Large', 10, 0, 1),
-	('disc_ammo_smg', 'SMG Ammo', 10, 0, 1),
-	('disc_ammo_smg_large', 'SMG Ammo Large', 10, 0, 1),
-	('disc_ammo_snp', 'Sniper Ammo', 10, 0, 1),
-	('disc_ammo_snp_large', 'Sniper Ammo Large', 10, 0, 1),
-	('fixkit', 'Reparationssats', 3, 0, 1),
-	('fixtool', 'Reparationsverktyg', 2, 0, 1),
-	('gazbottle', 'Gas Flaska', 2, 0, 1),
+	('disc_ammo_pistol', 'Pistol Ammo', 1, 0, 1),
+	('disc_ammo_pistol_large', 'Pistol Ammo Large', 1, 0, 1),
+	('disc_ammo_rifle', 'Rifle Ammo', 1, 0, 1),
+	('disc_ammo_rifle_large', 'Rifle Ammo Large', 1, 0, 1),
+	('disc_ammo_shotgun', 'Shotgun Shells', 1, 0, 1),
+	('disc_ammo_shotgun_large', 'Shotgun Shells Large', 1, 0, 1),
+	('disc_ammo_smg', 'SMG Ammo', 1, 0, 1),
+	('disc_ammo_smg_large', 'SMG Ammo Large', 1, 0, 1),
+	('disc_ammo_snp', 'Sniper Ammo', 1, 0, 1),
+	('disc_ammo_snp_large', 'Sniper Ammo Large', 1, 0, 1),
+	('fixkit', 'Reparationssats', 1, 0, 1),
+	('fixtool', 'Reparationsverktyg', 1, 0, 1),
+	('gazbottle', 'Gas Flaska', 1, 0, 1),
 	('jager', 'Jägermeister', 1, 0, 1),
 	('jagerbomb', 'Jäger Bomb', 1, 0, 1),
 	('martini', 'Martini', 1, 0, 1),
@@ -538,6 +547,7 @@ INSERT IGNORE INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('cardealer', 'Bilförsäljare', 0),
 	('mechanic', 'Mekaniker', 0),
 	('police', 'Polis', 0),
+	('taxi', 'Taxi', 0),
 	('unemployed', 'Arbetslös', 0);
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 
@@ -552,9 +562,9 @@ CREATE TABLE IF NOT EXISTS `job_grades` (
   `skin_male` longtext COLLATE utf8mb4_bin NOT NULL,
   `skin_female` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.job_grades: ~19 rows (ungefär)
+-- Dumpar data för tabell essentialmode.job_grades: ~24 rows (ungefär)
 /*!40000 ALTER TABLE `job_grades` DISABLE KEYS */;
 INSERT IGNORE INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
 	(1, 'unemployed', 0, 'unemployed', 'Unemployed', 30, '{}', '{}'),
@@ -575,7 +585,12 @@ INSERT IGNORE INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `sa
 	(21, 'mechanic', 1, 'novice', 'Nyanställd', 24, '{}', '{}'),
 	(22, 'mechanic', 2, 'experimente', 'Erfaren', 36, '{}', '{}'),
 	(23, 'mechanic', 3, 'chief', 'Chef', 48, '{}', '{}'),
-	(24, 'mechanic', 4, 'boss', 'Ägare', 0, '{}', '{}');
+	(24, 'mechanic', 4, 'boss', 'Ägare', 0, '{}', '{}'),
+	(25, 'taxi', 0, 'recrue', 'Taxi', 50, '{"hair_2":0,"hair_color_2":0,"torso_1":32,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":0,"age_2":0,"glasses_2":0,"ears_2":0,"arms":27,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(26, 'taxi', 1, 'novice', 'Taxi', 55, '{"hair_2":0,"hair_color_2":0,"torso_1":32,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":0,"age_2":0,"glasses_2":0,"ears_2":0,"arms":27,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(27, 'taxi', 2, 'experimente', 'Taxi', 60, '{"hair_2":0,"hair_color_2":0,"torso_1":26,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":57,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":11,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(28, 'taxi', 3, 'uber', 'Personal Chef', 62, '{"hair_2":0,"hair_color_2":0,"torso_1":26,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":57,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":11,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(29, 'taxi', 4, 'boss', 'VD', 65, '{"hair_2":0,"hair_color_2":0,"torso_1":29,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":1,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":4,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}');
 /*!40000 ALTER TABLE `job_grades` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.licenses
@@ -619,12 +634,8 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   PRIMARY KEY (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.owned_vehicles: ~3 rows (ungefär)
+-- Dumpar data för tabell essentialmode.owned_vehicles: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `owned_vehicles` DISABLE KEYS */;
-INSERT IGNORE INTO `owned_vehicles` (`owner`, `plate`, `vehicle`, `type`, `job`, `stored`) VALUES
-	('steam:110000109c2ddf3', 'JQO 440', '{"bodyHealth":1000.0,"modTransmission":-1,"modHydrolic":-1,"wheelColor":156,"modSmokeEnabled":false,"plate":"JQO 440","modSpeakers":-1,"modExhaust":-1,"modSpoilers":-1,"modSideSkirt":-1,"modFrontWheels":-1,"modBackWheels":-1,"windowTint":-1,"model":2046537925,"modEngine":-1,"fuelLevel":64.2,"neonEnabled":[false,false,false,false],"modWindows":-1,"wheels":1,"modTrunk":-1,"modFrontBumper":-1,"modBrakes":-1,"modTank":-1,"modArmor":-1,"modFender":-1,"modDashboard":-1,"modTrimB":-1,"modSuspension":-1,"modTrimA":-1,"tyreSmokeColor":[255,255,255],"modAerials":-1,"plateIndex":4,"modFrame":-1,"modRearBumper":-1,"modRoof":-1,"modEngineBlock":-1,"engineHealth":1000.0,"modSeats":-1,"modHorns":-1,"color1":134,"color2":134,"pearlescentColor":0,"modDoorSpeaker":-1,"modRightFender":-1,"dirtLevel":8.7,"modXenon":false,"modVanityPlate":-1,"modGrille":-1,"modOrnaments":-1,"modArchCover":-1,"modShifterLeavers":-1,"modAPlate":-1,"extras":{"2":false,"1":true},"neonColor":[255,0,255],"modSteeringWheel":-1,"modTurbo":false,"modDial":-1,"modStruts":-1,"modAirFilter":-1,"modHood":-1,"modPlateHolder":-1,"modLivery":5}', 'car', 'police', 1),
-	('steam:110000109c2ddf3', 'KKM 686', '{"modDoorSpeaker":-1,"extras":[],"modAPlate":-1,"modExhaust":-1,"modShifterLeavers":-1,"model":-998177792,"modRearBumper":-1,"modFender":-1,"neonEnabled":[false,false,false,false],"modBackWheels":-1,"plate":"KKM 686","modFrame":-1,"modEngineBlock":-1,"modSideSkirt":-1,"modDial":-1,"modAirFilter":-1,"modTrimB":-1,"modTurbo":false,"modPlateHolder":-1,"modHydrolic":-1,"color2":1,"pearlescentColor":158,"modFrontBumper":-1,"modOrnaments":-1,"windowTint":-1,"modSuspension":-1,"modSpeakers":-1,"modTransmission":-1,"wheelColor":1,"tyreSmokeColor":[255,255,255],"modVanityPlate":-1,"dirtLevel":9.6,"modSmokeEnabled":false,"modSpoilers":-1,"modLivery":-1,"modSteeringWheel":-1,"modRightFender":-1,"modArmor":-1,"modAerials":-1,"modHorns":-1,"modGrille":-1,"modEngine":-1,"modTrimA":-1,"modArchCover":-1,"wheels":7,"modSeats":-1,"neonColor":[255,0,255],"color1":34,"fuelLevel":58.3,"bodyHealth":998.9,"modXenon":false,"modRoof":-1,"modHood":-1,"modStruts":-1,"engineHealth":1000.0,"modTank":-1,"modTrunk":-1,"modDashboard":-1,"modBrakes":-1,"modFrontWheels":-1,"modWindows":-1,"plateIndex":0}', 'car', NULL, 1),
-	('steam:110000109c2ddf3', 'YIE 303', '{"modTank":-1,"dirtLevel":8.0,"modAPlate":-1,"modFrame":-1,"modStruts":-1,"wheelColor":112,"modHydrolic":-1,"modTurbo":false,"modWindows":-1,"modEngineBlock":-1,"modLivery":-1,"model":159274291,"modArchCover":-1,"modTrimB":-1,"modAerials":-1,"modEngine":-1,"modShifterLeavers":-1,"modFender":-1,"modAirFilter":-1,"modBrakes":-1,"fuelLevel":60.0,"modDoorSpeaker":-1,"modArmor":-1,"engineHealth":1000.0,"modFrontWheels":-1,"modDial":-1,"modRightFender":-1,"modSmokeEnabled":false,"modXenon":false,"modTrimA":-1,"modVanityPlate":-1,"modFrontBumper":-1,"modSeats":-1,"plate":"YIE 303","modHorns":-1,"bodyHealth":1000.0,"neonEnabled":[false,false,false,false],"color1":88,"modRoof":-1,"modSteeringWheel":-1,"modDashboard":-1,"tyreSmokeColor":[255,255,255],"modGrille":-1,"modHood":-1,"modRearBumper":-1,"wheels":1,"modSpoilers":-1,"modTransmission":-1,"windowTint":-1,"modBackWheels":-1,"modExhaust":-1,"modTrunk":-1,"modSideSkirt":-1,"modSpeakers":-1,"modPlateHolder":-1,"modSuspension":-1,"neonColor":[255,0,255],"color2":0,"pearlescentColor":87,"plateIndex":0,"extras":[],"modOrnaments":-1}', 'car', NULL, 1);
 /*!40000 ALTER TABLE `owned_vehicles` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.phone_app_chat
@@ -634,7 +645,7 @@ CREATE TABLE IF NOT EXISTS `phone_app_chat` (
   `message` varchar(255) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Dumpar data för tabell essentialmode.phone_app_chat: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `phone_app_chat` DISABLE KEYS */;
@@ -649,7 +660,7 @@ CREATE TABLE IF NOT EXISTS `phone_calls` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `accepts` int(11) NOT NULL COMMENT 'Appels accepter ou pas',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Dumpar data för tabell essentialmode.phone_calls: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `phone_calls` DISABLE KEYS */;
@@ -734,7 +745,7 @@ CREATE TABLE IF NOT EXISTS `twitter_accounts` (
   `avatar_url` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.twitter_accounts: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `twitter_accounts` DISABLE KEYS */;
@@ -750,7 +761,7 @@ CREATE TABLE IF NOT EXISTS `twitter_likes` (
   KEY `FK_twitter_likes_twitter_tweets` (`tweetId`),
   CONSTRAINT `FK_twitter_likes_twitter_accounts` FOREIGN KEY (`authorId`) REFERENCES `twitter_accounts` (`id`),
   CONSTRAINT `FK_twitter_likes_twitter_tweets` FOREIGN KEY (`tweetId`) REFERENCES `twitter_tweets` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.twitter_likes: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `twitter_likes` DISABLE KEYS */;
@@ -767,7 +778,7 @@ CREATE TABLE IF NOT EXISTS `twitter_tweets` (
   PRIMARY KEY (`id`),
   KEY `FK_twitter_tweets_twitter_accounts` (`authorId`),
   CONSTRAINT `FK_twitter_tweets_twitter_accounts` FOREIGN KEY (`authorId`) REFERENCES `twitter_accounts` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumpar data för tabell essentialmode.twitter_tweets: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `twitter_tweets` DISABLE KEYS */;
@@ -805,7 +816,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumpar data för tabell essentialmode.users: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT IGNORE INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`, `is_dead`, `status`, `last_motel`, `last_motel_room`, `tattoos`, `phone_number`) VALUES
-	('steam:110000109c2ddf3', 'license:44be92faf675f784f2128ac35340fb9a172cefa3', 95710500, 'Mirrox', '{"decals_2":0,"sun_2":0,"torso_2":0,"arms_2":0,"lipstick_2":0,"decals_1":0,"skin":0,"makeup_4":0,"eyebrows_4":0,"blemishes_1":0,"lipstick_1":0,"arms":1,"chain_2":0,"mask_1":0,"mask_2":0,"beard_3":0,"chest_3":0,"helmet_1":-1,"bodyb_2":0,"pants_1":2,"blemishes_2":0,"sex":1,"beard_4":0,"pants_2":2,"ears_2":0,"helmet_2":0,"hair_color_1":34,"ears_1":-1,"beard_1":0,"eyebrows_2":10,"moles_2":0,"beard_2":0,"tshirt_2":0,"moles_1":0,"hair_2":0,"bproof_2":0,"blush_3":0,"makeup_3":0,"hair_color_2":0,"lipstick_4":0,"chain_1":0,"tshirt_1":15,"shoes_2":9,"watches_1":-1,"glasses_1":5,"age_1":0,"makeup_1":0,"age_2":0,"blush_2":0,"chest_2":0,"bracelets_1":-1,"bracelets_2":0,"bodyb_1":0,"watches_2":0,"torso_1":55,"sun_1":0,"complexion_2":0,"chest_1":0,"hair_1":4,"makeup_2":0,"glasses_2":0,"eyebrows_3":0,"bags_1":0,"eye_color":0,"eyebrows_1":0,"bags_2":0,"shoes_1":1,"face":21,"lipstick_3":0,"complexion_1":0,"blush_1":0,"bproof_1":0}', 'mechanic', 4, '[{"ammo":8,"components":["clip_default"],"label":"Pistol","name":"WEAPON_PISTOL"},{"ammo":0,"components":["clip_default"],"label":"Smg","name":"WEAPON_SMG"}]', '{"z":27.0,"y":-1044.2,"x":-266.5}', 103328, 4, 'superadmin', 'Hen', 'Tai', '1990-01-01', 'F', '123', '4987', 1, '[{"percent":93.45,"name":"hunger","val":934500},{"percent":92.92,"name":"thirst","val":929200},{"percent":0.0,"name":"drunk","val":0},{"percent":0.0,"name":"drug","val":0}]', NULL, NULL, NULL, NULL);
+	('steam:110000109c2ddf3', 'license:44be92faf675f784f2128ac35340fb9a172cefa3', 0, 'Mirrox', '{"blush_1":0,"pants_2":2,"torso_1":79,"beard_2":0,"chest_1":0,"lipstick_4":0,"age_1":0,"beard_3":0,"hair_1":4,"decals_2":0,"mask_1":0,"sex":1,"blemishes_1":0,"bracelets_1":-1,"makeup_2":0,"eye_color":0,"tshirt_1":15,"sun_1":0,"makeup_3":0,"bodyb_2":0,"tshirt_2":0,"watches_2":0,"beard_4":0,"skin":0,"blush_2":0,"arms":1,"face":21,"glasses_2":0,"bodyb_1":0,"beard_1":0,"hair_2":0,"glasses_1":5,"blush_3":0,"ears_1":-1,"helmet_2":0,"moles_1":0,"bproof_2":0,"shoes_1":3,"arms_2":0,"age_2":0,"bproof_1":0,"helmet_1":-1,"makeup_4":0,"lipstick_2":0,"chest_3":0,"torso_2":0,"shoes_2":10,"decals_1":0,"chest_2":0,"eyebrows_4":0,"chain_1":0,"complexion_1":0,"hair_color_1":0,"hair_color_2":0,"bags_1":0,"sun_2":0,"lipstick_3":0,"pants_1":2,"eyebrows_2":10,"ears_2":0,"watches_1":-1,"bags_2":0,"eyebrows_1":0,"chain_2":0,"blemishes_2":0,"makeup_1":0,"lipstick_1":0,"moles_2":0,"bracelets_2":0,"complexion_2":0,"eyebrows_3":0,"mask_2":0}', 'unemployed', 0, '[]', '{"x":-144.0,"y":-1153.7,"z":24.6}', 30, 4, 'superadmin', 'Hen', 'Tai', '1990-01-01', 'F', '123', '9872', 0, '[{"val":974200,"percent":97.42,"name":"hunger"},{"val":980650,"percent":98.065,"name":"thirst"},{"val":0,"percent":0.0,"name":"drunk"},{"val":0,"percent":0.0,"name":"drug"}]', NULL, NULL, NULL, '0734152526');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.user_accounts
@@ -815,12 +826,12 @@ CREATE TABLE IF NOT EXISTS `user_accounts` (
   `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `money` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.user_accounts: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.user_accounts: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `user_accounts` DISABLE KEYS */;
 INSERT IGNORE INTO `user_accounts` (`id`, `identifier`, `name`, `money`) VALUES
-	(3, 'steam:110000109c2ddf3', 'black_money', 1396);
+	(5, 'steam:110000109c2ddf3', 'black_money', 0);
 /*!40000 ALTER TABLE `user_accounts` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.user_inventory
@@ -830,118 +841,118 @@ CREATE TABLE IF NOT EXISTS `user_inventory` (
   `item` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=536 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.user_inventory: ~107 rows (ungefär)
 /*!40000 ALTER TABLE `user_inventory` DISABLE KEYS */;
 INSERT IGNORE INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
-	(1, 'steam:110000109c2ddf3', 'bread', 25),
-	(2, 'steam:110000109c2ddf3', 'water', 0),
-	(3, 'steam:110000109c2ddf3', 'rhum', 0),
-	(4, 'steam:110000109c2ddf3', 'beer', 0),
-	(5, 'steam:110000109c2ddf3', 'coke', 0),
-	(6, 'steam:110000109c2ddf3', 'martini', 0),
-	(7, 'steam:110000109c2ddf3', 'jager', 0),
-	(8, 'steam:110000109c2ddf3', 'whisky', 0),
-	(9, 'steam:110000109c2ddf3', 'jagerbomb', 0),
-	(10, 'steam:110000109c2ddf3', 'opium', 0),
-	(11, 'steam:110000109c2ddf3', 'tequilla', 0),
-	(12, 'steam:110000109c2ddf3', 'meth', 0),
-	(13, 'steam:110000109c2ddf3', 'weed', 0),
-	(14, 'steam:110000109c2ddf3', 'carotool', 0),
-	(15, 'steam:110000109c2ddf3', 'fixkit', 0),
-	(16, 'steam:110000109c2ddf3', 'gazbottle', 0),
-	(17, 'steam:110000109c2ddf3', 'blowpipe', 0),
-	(18, 'steam:110000109c2ddf3', 'fixtool', 0),
-	(19, 'steam:110000109c2ddf3', 'carokit', 0),
-	(20, 'steam:110000109c2ddf3', 'WEAPON_GUSENBERG', 0),
-	(21, 'steam:110000109c2ddf3', 'WEAPON_DBSHOTGUN', 0),
-	(22, 'steam:110000109c2ddf3', 'WEAPON_MARKSMANPISTOL', 0),
-	(23, 'steam:110000109c2ddf3', 'WEAPON_COMPACTRIFLE', 0),
-	(24, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTSMG', 0),
-	(25, 'steam:110000109c2ddf3', 'WEAPON_FLASHLIGHT', 0),
-	(26, 'steam:110000109c2ddf3', 'WEAPON_KNUCKLE', 0),
-	(27, 'steam:110000109c2ddf3', 'WEAPON_MACHETE', 0),
-	(28, 'steam:110000109c2ddf3', 'WEAPON_HATCHET', 0),
-	(29, 'steam:110000109c2ddf3', 'WEAPON_BAT', 0),
-	(30, 'steam:110000109c2ddf3', 'WEAPON_HOMINGLAUNCHER', 0),
-	(31, 'steam:110000109c2ddf3', 'WEAPON_MG', 0),
-	(32, 'steam:110000109c2ddf3', 'WEAPON_BOTTLE', 0),
-	(33, 'steam:110000109c2ddf3', 'WEAPON_BATTLEAXE', 0),
-	(34, 'steam:110000109c2ddf3', 'WEAPON_MACHINEPISTOL', 0),
-	(35, 'steam:110000109c2ddf3', 'WEAPON_BALL', 0),
-	(36, 'steam:110000109c2ddf3', 'WEAPON_HAMMER', 0),
-	(37, 'steam:110000109c2ddf3', 'WEAPON_HEAVYSNIPER', 0),
-	(38, 'steam:110000109c2ddf3', 'WEAPON_FIREWORK', 0),
-	(39, 'steam:110000109c2ddf3', 'WEAPON_MOLOTOV', 0),
-	(40, 'steam:110000109c2ddf3', 'WEAPON_PISTOL', 2),
-	(41, 'steam:110000109c2ddf3', 'WEAPON_PROXMINE', 0),
-	(42, 'steam:110000109c2ddf3', 'WEAPON_CARBINERIFLE', 0),
-	(43, 'steam:110000109c2ddf3', 'WEAPON_ADVANCEDRIFLE', 0),
-	(44, 'steam:110000109c2ddf3', 'WEAPON_FLARE', 0),
-	(45, 'steam:110000109c2ddf3', 'WEAPON_APPISTOL', 0),
-	(46, 'steam:110000109c2ddf3', 'WEAPON_HEAVYSHOTGUN', 0),
-	(47, 'steam:110000109c2ddf3', 'WEAPON_COMBATPDW', 0),
-	(48, 'steam:110000109c2ddf3', 'WEAPON_FLAREGUN', 0),
-	(49, 'steam:110000109c2ddf3', 'WEAPON_VINTAGEPISTOL', 0),
-	(50, 'steam:110000109c2ddf3', 'WEAPON_MUSKET', 0),
-	(51, 'steam:110000109c2ddf3', 'WEAPON_DOUBLEACTION', 0),
-	(52, 'steam:110000109c2ddf3', 'WEAPON_SWITCHBLADE', 0),
-	(53, 'steam:110000109c2ddf3', 'WEAPON_SNSPISTOL', 0),
-	(54, 'steam:110000109c2ddf3', 'WEAPON_GRENADE', 0),
-	(55, 'steam:110000109c2ddf3', 'WEAPON_STICKYBOMB', 0),
-	(56, 'steam:110000109c2ddf3', 'WEAPON_REVOLVER', 0),
-	(57, 'steam:110000109c2ddf3', 'WEAPON_DIGISCANNER', 0),
-	(58, 'steam:110000109c2ddf3', 'WEAPON_HANDCUFFS', 0),
-	(59, 'steam:110000109c2ddf3', 'WEAPON_FIREEXTINGUISHER', 0),
-	(60, 'steam:110000109c2ddf3', 'WEAPON_BZGAS', 0),
-	(61, 'steam:110000109c2ddf3', 'WEAPON_RAILGUN', 0),
-	(62, 'steam:110000109c2ddf3', 'WEAPON_MINIGUN', 0),
-	(63, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTRIFLE', 0),
-	(64, 'steam:110000109c2ddf3', 'WEAPON_COMBATMG', 0),
-	(65, 'steam:110000109c2ddf3', 'WEAPON_PUMPSHOTGUN', 0),
-	(66, 'steam:110000109c2ddf3', 'WEAPON_MARKSMANRIFLE', 0),
-	(67, 'steam:110000109c2ddf3', 'WEAPON_SNIPERRIFLE', 0),
-	(68, 'steam:110000109c2ddf3', 'WEAPON_MICROSMG', 0),
-	(69, 'steam:110000109c2ddf3', 'WEAPON_BULLPUPSHOTGUN', 0),
-	(70, 'steam:110000109c2ddf3', 'WEAPON_POOLCUE', 0),
-	(71, 'steam:110000109c2ddf3', 'WEAPON_SMG', 0),
-	(72, 'steam:110000109c2ddf3', 'WEAPON_WRENCH', 0),
-	(73, 'steam:110000109c2ddf3', 'WEAPON_PISTOL50', 0),
-	(74, 'steam:110000109c2ddf3', 'WEAPON_STUNGUN', 0),
-	(75, 'steam:110000109c2ddf3', 'WEAPON_STINGER', 0),
-	(76, 'steam:110000109c2ddf3', 'WEAPON_SPECIALCARBINE', 0),
-	(77, 'steam:110000109c2ddf3', 'WEAPON_GARBAGEBAG', 0),
-	(78, 'steam:110000109c2ddf3', 'WEAPON_SMOKEGRENADE', 0),
-	(79, 'steam:110000109c2ddf3', 'WEAPON_KNIFE', 1),
-	(80, 'steam:110000109c2ddf3', 'WEAPON_MINISMG', 0),
-	(81, 'steam:110000109c2ddf3', 'WEAPON_CROWBAR', 0),
-	(82, 'steam:110000109c2ddf3', 'WEAPON_PIPEBOMB', 0),
-	(83, 'steam:110000109c2ddf3', 'WEAPON_BULLPUPRIFLE', 0),
-	(84, 'steam:110000109c2ddf3', 'WEAPON_RPG', 0),
-	(85, 'steam:110000109c2ddf3', 'WEAPON_SNOWBALL', 0),
-	(86, 'steam:110000109c2ddf3', 'WEAPON_SAWNOFFSHOTGUN', 0),
-	(87, 'steam:110000109c2ddf3', 'WEAPON_HEAVYPISTOL', 0),
-	(88, 'steam:110000109c2ddf3', 'WEAPON_PETROLCAN', 0),
-	(89, 'steam:110000109c2ddf3', 'WEAPON_COMBATPISTOL', 0),
-	(90, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTSHOTGUN', 0),
-	(91, 'steam:110000109c2ddf3', 'WEAPON_GOLFCLUB', 0),
-	(92, 'steam:110000109c2ddf3', 'WEAPON_AUTOSHOTGUN', 0),
-	(93, 'steam:110000109c2ddf3', 'WEAPON_GRENADELAUNCHER', 0),
-	(94, 'steam:110000109c2ddf3', 'WEAPON_DAGGER', 0),
-	(95, 'steam:110000109c2ddf3', 'WEAPON_COMPACTLAUNCHER', 0),
-	(96, 'steam:110000109c2ddf3', 'WEAPON_NIGHTSTICK', 0),
-	(97, 'steam:110000109c2ddf3', 'phone', 1),
-	(98, 'steam:110000109c2ddf3', 'disc_ammo_pistol', 0),
-	(99, 'steam:110000109c2ddf3', 'disc_ammo_smg_large', 0),
-	(100, 'steam:110000109c2ddf3', 'disc_ammo_shotgun_large', 0),
-	(101, 'steam:110000109c2ddf3', 'disc_ammo_rifle_large', 0),
-	(102, 'steam:110000109c2ddf3', 'disc_ammo_shotgun', 0),
-	(103, 'steam:110000109c2ddf3', 'disc_ammo_snp', 0),
-	(104, 'steam:110000109c2ddf3', 'disc_ammo_rifle', 0),
-	(105, 'steam:110000109c2ddf3', 'disc_ammo_pistol_large', 0),
-	(106, 'steam:110000109c2ddf3', 'disc_ammo_smg', 0),
-	(107, 'steam:110000109c2ddf3', 'disc_ammo_snp_large', 0);
+	(429, 'steam:110000109c2ddf3', 'disc_ammo_shotgun', 0),
+	(430, 'steam:110000109c2ddf3', 'WEAPON_MINIGUN', 0),
+	(431, 'steam:110000109c2ddf3', 'weed', 0),
+	(432, 'steam:110000109c2ddf3', 'WEAPON_PUMPSHOTGUN', 0),
+	(433, 'steam:110000109c2ddf3', 'WEAPON_PISTOL50', 0),
+	(434, 'steam:110000109c2ddf3', 'WEAPON_MARKSMANRIFLE', 0),
+	(435, 'steam:110000109c2ddf3', 'WEAPON_HATCHET', 0),
+	(436, 'steam:110000109c2ddf3', 'jager', 0),
+	(437, 'steam:110000109c2ddf3', 'WEAPON_SMG', 0),
+	(438, 'steam:110000109c2ddf3', 'WEAPON_POOLCUE', 0),
+	(439, 'steam:110000109c2ddf3', 'WEAPON_RAILGUN', 0),
+	(440, 'steam:110000109c2ddf3', 'disc_ammo_snp', 0),
+	(441, 'steam:110000109c2ddf3', 'WEAPON_STICKYBOMB', 0),
+	(442, 'steam:110000109c2ddf3', 'WEAPON_MINISMG', 0),
+	(443, 'steam:110000109c2ddf3', 'WEAPON_AUTOSHOTGUN', 0),
+	(444, 'steam:110000109c2ddf3', 'WEAPON_HOMINGLAUNCHER', 0),
+	(445, 'steam:110000109c2ddf3', 'WEAPON_PETROLCAN', 0),
+	(446, 'steam:110000109c2ddf3', 'WEAPON_NIGHTSTICK', 0),
+	(447, 'steam:110000109c2ddf3', 'WEAPON_GOLFCLUB', 0),
+	(448, 'steam:110000109c2ddf3', 'WEAPON_FIREEXTINGUISHER', 0),
+	(449, 'steam:110000109c2ddf3', 'WEAPON_BALL', 0),
+	(450, 'steam:110000109c2ddf3', 'WEAPON_DOUBLEACTION', 0),
+	(451, 'steam:110000109c2ddf3', 'WEAPON_MUSKET', 0),
+	(452, 'steam:110000109c2ddf3', 'WEAPON_APPISTOL', 0),
+	(453, 'steam:110000109c2ddf3', 'WEAPON_MARKSMANPISTOL', 0),
+	(454, 'steam:110000109c2ddf3', 'beer', 0),
+	(455, 'steam:110000109c2ddf3', 'WEAPON_FLAREGUN', 0),
+	(456, 'steam:110000109c2ddf3', 'WEAPON_COMBATPISTOL', 0),
+	(457, 'steam:110000109c2ddf3', 'WEAPON_KNUCKLE', 0),
+	(458, 'steam:110000109c2ddf3', 'whisky', 0),
+	(459, 'steam:110000109c2ddf3', 'WEAPON_DIGISCANNER', 0),
+	(460, 'steam:110000109c2ddf3', 'WEAPON_HANDCUFFS', 0),
+	(461, 'steam:110000109c2ddf3', 'water', 0),
+	(462, 'steam:110000109c2ddf3', 'carokit', 0),
+	(463, 'steam:110000109c2ddf3', 'disc_ammo_pistol_large', 0),
+	(464, 'steam:110000109c2ddf3', 'tequilla', 0),
+	(465, 'steam:110000109c2ddf3', 'WEAPON_DAGGER', 0),
+	(466, 'steam:110000109c2ddf3', 'rhum', 0),
+	(467, 'steam:110000109c2ddf3', 'phone', 0),
+	(468, 'steam:110000109c2ddf3', 'WEAPON_CROWBAR', 0),
+	(469, 'steam:110000109c2ddf3', 'opium', 0),
+	(470, 'steam:110000109c2ddf3', 'meth', 0),
+	(471, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTSMG', 0),
+	(472, 'steam:110000109c2ddf3', 'martini', 0),
+	(473, 'steam:110000109c2ddf3', 'WEAPON_STUNGUN', 0),
+	(474, 'steam:110000109c2ddf3', 'WEAPON_COMPACTLAUNCHER', 0),
+	(475, 'steam:110000109c2ddf3', 'WEAPON_FLARE', 0),
+	(476, 'steam:110000109c2ddf3', 'WEAPON_FLASHLIGHT', 0),
+	(477, 'steam:110000109c2ddf3', 'gazbottle', 0),
+	(478, 'steam:110000109c2ddf3', 'fixtool', 0),
+	(479, 'steam:110000109c2ddf3', 'WEAPON_HEAVYSHOTGUN', 0),
+	(480, 'steam:110000109c2ddf3', 'WEAPON_SWITCHBLADE', 0),
+	(481, 'steam:110000109c2ddf3', 'WEAPON_GRENADE', 0),
+	(482, 'steam:110000109c2ddf3', 'disc_ammo_rifle', 0),
+	(483, 'steam:110000109c2ddf3', 'WEAPON_VINTAGEPISTOL', 0),
+	(484, 'steam:110000109c2ddf3', 'WEAPON_SNOWBALL', 0),
+	(485, 'steam:110000109c2ddf3', 'disc_ammo_smg_large', 0),
+	(486, 'steam:110000109c2ddf3', 'disc_ammo_snp_large', 0),
+	(487, 'steam:110000109c2ddf3', 'WEAPON_PROXMINE', 0),
+	(488, 'steam:110000109c2ddf3', 'WEAPON_HEAVYSNIPER', 0),
+	(489, 'steam:110000109c2ddf3', 'fixkit', 0),
+	(490, 'steam:110000109c2ddf3', 'disc_ammo_smg', 0),
+	(491, 'steam:110000109c2ddf3', 'WEAPON_HAMMER', 0),
+	(492, 'steam:110000109c2ddf3', 'WEAPON_ADVANCEDRIFLE', 1),
+	(493, 'steam:110000109c2ddf3', 'WEAPON_REVOLVER', 0),
+	(494, 'steam:110000109c2ddf3', 'WEAPON_MOLOTOV', 0),
+	(495, 'steam:110000109c2ddf3', 'disc_ammo_rifle_large', 0),
+	(496, 'steam:110000109c2ddf3', 'WEAPON_COMBATPDW', 0),
+	(497, 'steam:110000109c2ddf3', 'carotool', 0),
+	(498, 'steam:110000109c2ddf3', 'WEAPON_FIREWORK', 0),
+	(499, 'steam:110000109c2ddf3', 'coke', 0),
+	(500, 'steam:110000109c2ddf3', 'disc_ammo_pistol', 0),
+	(501, 'steam:110000109c2ddf3', 'WEAPON_MACHETE', 0),
+	(502, 'steam:110000109c2ddf3', 'bread', 0),
+	(503, 'steam:110000109c2ddf3', 'WEAPON_COMBATMG', 0),
+	(504, 'steam:110000109c2ddf3', 'WEAPON_BULLPUPSHOTGUN', 0),
+	(505, 'steam:110000109c2ddf3', 'WEAPON_MACHINEPISTOL', 0),
+	(506, 'steam:110000109c2ddf3', 'blowpipe', 0),
+	(507, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTSHOTGUN', 0),
+	(508, 'steam:110000109c2ddf3', 'WEAPON_PISTOL', 0),
+	(509, 'steam:110000109c2ddf3', 'WEAPON_GARBAGEBAG', 0),
+	(510, 'steam:110000109c2ddf3', 'WEAPON_PIPEBOMB', 0),
+	(511, 'steam:110000109c2ddf3', 'jagerbomb', 0),
+	(512, 'steam:110000109c2ddf3', 'WEAPON_COMPACTRIFLE', 0),
+	(513, 'steam:110000109c2ddf3', 'WEAPON_BZGAS', 0),
+	(514, 'steam:110000109c2ddf3', 'WEAPON_HEAVYPISTOL', 0),
+	(515, 'steam:110000109c2ddf3', 'WEAPON_MICROSMG', 0),
+	(516, 'steam:110000109c2ddf3', 'WEAPON_SPECIALCARBINE', 0),
+	(517, 'steam:110000109c2ddf3', 'WEAPON_SNSPISTOL', 0),
+	(518, 'steam:110000109c2ddf3', 'WEAPON_SMOKEGRENADE', 0),
+	(519, 'steam:110000109c2ddf3', 'WEAPON_GUSENBERG', 0),
+	(520, 'steam:110000109c2ddf3', 'WEAPON_SAWNOFFSHOTGUN', 0),
+	(521, 'steam:110000109c2ddf3', 'WEAPON_RPG', 0),
+	(522, 'steam:110000109c2ddf3', 'WEAPON_BAT', 0),
+	(523, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTRIFLE', 0),
+	(524, 'steam:110000109c2ddf3', 'disc_ammo_shotgun_large', 0),
+	(525, 'steam:110000109c2ddf3', 'WEAPON_STINGER', 0),
+	(526, 'steam:110000109c2ddf3', 'WEAPON_MG', 0),
+	(527, 'steam:110000109c2ddf3', 'WEAPON_WRENCH', 0),
+	(528, 'steam:110000109c2ddf3', 'WEAPON_DBSHOTGUN', 0),
+	(529, 'steam:110000109c2ddf3', 'WEAPON_KNIFE', 0),
+	(530, 'steam:110000109c2ddf3', 'WEAPON_BOTTLE', 0),
+	(531, 'steam:110000109c2ddf3', 'WEAPON_SNIPERRIFLE', 0),
+	(532, 'steam:110000109c2ddf3', 'WEAPON_BULLPUPRIFLE', 0),
+	(533, 'steam:110000109c2ddf3', 'WEAPON_CARBINERIFLE', 0),
+	(534, 'steam:110000109c2ddf3', 'WEAPON_GRENADELAUNCHER', 0),
+	(535, 'steam:110000109c2ddf3', 'WEAPON_BATTLEAXE', 0);
 /*!40000 ALTER TABLE `user_inventory` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.user_lastcharacter
@@ -1245,6 +1256,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_categories` (
 -- Dumpar data för tabell essentialmode.vehicle_categories: ~11 rows (ungefär)
 /*!40000 ALTER TABLE `vehicle_categories` DISABLE KEYS */;
 INSERT IGNORE INTO `vehicle_categories` (`name`, `label`) VALUES
+	('addons', 'Addons'),
 	('compacts', 'Kompakt'),
 	('coupes', 'Coupé'),
 	('motorcycles', 'Motorcykel'),
@@ -1281,7 +1293,7 @@ CREATE TABLE IF NOT EXISTS `yellow_tweets` (
   `message` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=456 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumpar data för tabell essentialmode.yellow_tweets: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `yellow_tweets` DISABLE KEYS */;

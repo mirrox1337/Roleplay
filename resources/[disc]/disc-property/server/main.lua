@@ -16,7 +16,7 @@ end)
 Citizen.CreateThread(function()
     Citizen.Wait(0)
     while true do
-        Citizen.Wait(1000)
+        Citizen.Wait(10000)
         MySQL.Async.fetchAll('SELECT * FROM disc_property', {}, function(propertyData)
             MySQL.Async.fetchAll('SELECT * FROM disc_property_owners where active', {}, function(ownerData)
                 TriggerClientEvent('disc-property:updatePropertyData', -1, propertyData, ownerData)

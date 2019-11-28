@@ -1,8 +1,8 @@
 #use-alert {
     display: none;
     position: absolute;
-    left: 0;
-    bottom: 25%;
+    right: 50%;
+    bottom: 15%;
     width: fit-content;
     height: fit-content;
     overflow: hidden;
@@ -11,10 +11,10 @@
         max-width: 120px;
         opacity: 0.75;
         display: inline-block;
-        background-color: $slot;
+/*        background-color: $slot; */
         margin: 3px;
         position: relative;
-        border: 1px solid $border;
+/*        border: 1px solid $border;  */
 
         .item {
             width: 100%;
@@ -29,14 +29,14 @@
                 text-align: center;
                 font-size: 15px;
                 line-height: 0px;
-                color: $hotkey-text;
+/*                color: $hotkey-text;  */
                 width: fit-content;
                 top: 0;
                 z-index: 999;
-                background: $hotkey-background;
+/*                background: $hotkey-background; */
                 padding: 10px;
-                border-right: 1px solid $border;
-                border-bottom: 1px solid $border;
+/*                border-right: 1px solid $border;
+                border-bottom: 1px solid $border; */
             }
             
             .item-name {
@@ -49,9 +49,9 @@
                 min-height: 30px;
                 z-index: 500;
                 font-size: 12px;
-                background-color: $item-name-background;
+/*                background-color: $item-name-background;
                 border-top: 1px solid $border;
-                color: $item-name-text;
+                color: $item-name-text; */
                 font-weight: 200;
             }
             
@@ -69,7 +69,7 @@
     .alert-text {
         text-align: center;
         text-transform: none !important;
-        border-top: 1px solid $border;
-        background: #000000;
+/*        border-top: 1px solid $border; */
+        background: transparent;
     }
 }
