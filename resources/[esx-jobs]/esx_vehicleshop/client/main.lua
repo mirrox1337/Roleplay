@@ -109,7 +109,7 @@ function ReturnVehicleProvider()
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'return_provider_menu',
 		{
 			title    = _U('return_provider_menu'),
-			align    = 'top-left',
+			align    = 'right',
 			elements = elements
 		}, function (data, menu)
 			TriggerServerEvent('esx_vehicleshop:returnProvider', data.current.value)
@@ -191,14 +191,14 @@ function OpenShopMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_shop',
 	{
 		title    = _U('car_dealer'),
-		align    = 'top-left',
+		align    = 'right',
 		elements = elements
 	}, function (data, menu)
 		local vehicleData = vehiclesByCategory[data.current.name][data.current.value + 1]
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop_confirm', {
 			title = _U('buy_vehicle_shop', vehicleData.name, ESX.Math.GroupDigits(vehicleData.price)),
-			align = 'top-left',
+			align = 'right',
 			elements = {
 				{label = _U('no'),  value = 'no'},
 				{label = _U('yes'), value = 'yes'}
@@ -239,7 +239,7 @@ function OpenShopMenu()
 
 						ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop_confirm_buy_type', {
 							title = _U('purchase_type'),
-							align = 'top-left',
+							align = 'right',
 							elements = {
 								{label = _U('staff_type'),   value = 'personnal'},
 								{label = _U('society_type'), value = 'society'}
@@ -411,7 +411,7 @@ function OpenResellerMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'reseller',
 	{
 		title    = _U('car_dealer'),
-		align    = 'top-left',
+		align    = 'right',
 		elements = {
 			{label = _U('buy_vehicle'),                    value = 'buy_vehicle'},
 			{label = _U('pop_vehicle'),                    value = 'pop_vehicle'},
@@ -599,7 +599,7 @@ function OpenPersonnalVehicleMenu()
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'personnal_vehicle',
 		{
 			title    = _U('personal_vehicle'),
-			align    = 'top-left',
+			align    = 'right',
 			elements = elements,
 		}, function (data, menu)
 			local playerPed   = PlayerPedId()
@@ -637,7 +637,7 @@ function OpenPopVehicleMenu()
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'commercial_vehicles',
 		{
 			title    = _U('vehicle_dealer'),
-			align    = 'top-left',
+			align    = 'right',
 			elements = elements
 		}, function (data, menu)
 			local model = data.current.value
@@ -673,7 +673,7 @@ function OpenRentedVehiclesMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'rented_vehicles', {
 			title    = _U('rent_vehicle'),
-			align    = 'top-left',
+			align    = 'right',
 			elements = elements
 		}, nil, function (data, menu)
 			menu.close()
@@ -686,7 +686,7 @@ function OpenBossActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'reseller',{
 		title    = _U('dealer_boss'),
-		align    = 'top-left',
+		align    = 'right',
 		elements = {
 			{label = _U('boss_actions'), value = 'boss_actions'}
 		}
@@ -720,7 +720,7 @@ function OpenGetStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('dealership_stock'),
-			align    = 'top-left',
+			align    = 'right',
 			elements = elements
 		}, function (data, menu)
 			local itemName = data.current.value
@@ -767,7 +767,7 @@ function OpenPutStocksMenu()
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu',
 		{
 			title    = _U('inventory'),
-			align    = 'top-left',
+			align    = 'right',
 			elements = elements
 		}, function (data, menu)
 			local itemName = data.current.value

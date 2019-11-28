@@ -129,7 +129,7 @@ function OpenSellMenu(veh, price, buyVehicle, owner)
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'sell_veh',
 		{
 			title    = "Vehicle Menu",
-			align    = 'top-right',
+			align    = 'right',
 			elements = elements
 		},
 	function(data, menu)

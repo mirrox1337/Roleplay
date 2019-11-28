@@ -70,7 +70,7 @@ function OpenBennysActionsMenu()
                 'default', GetCurrentResourceName(), 'vehicle_spawner',
                 {
                   title    = _U('service_vehicle'),
-                  align    = 'top-left',
+                  align    = 'right',
                   elements = elements,
                 },
                 function(data, menu)
@@ -277,7 +277,7 @@ function OpenMobileBennysActionsMenu()
           'default', GetCurrentResourceName(), 'mobile_bennys_actions_spawn',
           {
             title    = _U('objects'),
-            align    = 'top-left',
+            align    = 'right',
             elements = {
               --{label = _U('roadcone'),     value = 'prop_roadcone02a'},
              -- {label = _U('toolbox'), value = 'prop_toolchest_01'},
@@ -328,7 +328,7 @@ function OpenFineMenu(player)
     'default', GetCurrentResourceName(), 'fine',
     {
       title    = _U('fine'),
-      align    = 'top-left',
+      align    = 'right',
       elements = {
         {label = _U('traffic_offense'),   value = 0},
       },
@@ -364,7 +364,7 @@ function OpenFineCategoryMenu(player, category)
       'default', GetCurrentResourceName(), 'fine_category',
       {
         title    = _U('fine'),
-        align    = 'top-left',
+        align    = 'right',
         elements = elements,
       },
       function(data, menu)

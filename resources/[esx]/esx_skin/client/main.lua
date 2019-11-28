@@ -90,7 +90,7 @@ function OpenMenu(submitCb, cancelCb, restrict)
       'default', GetCurrentResourceName(), 'skin',
       {
         title = _U('skin_menu'),
-        align = 'top-right',
+        align = 'right',
         elements = elements
       },
       function(data, menu)

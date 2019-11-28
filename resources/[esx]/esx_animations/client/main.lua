@@ -57,7 +57,7 @@ function OpenAnimationsMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'animations',
 	{
 		title    = 'Animations',
-		align    = 'top-right',
+		align    = 'right',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'favorite' then
@@ -131,7 +131,7 @@ function OpenSyncedMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'animations_sub',
 	{
 		title    = title,
-		align    = 'top-right',
+		align    = 'right',
 		elements = elements
 	}, function(data, menu)
 		local lib  = data.current.value.lib
@@ -167,7 +167,7 @@ function OpenFavoriteMenu()
 	'default', GetCurrentResourceName(), 'favorite',
 	{
 		title    = 'Favorit',
-		align = 'top-right',
+		align = 'right',
 		elements = elements
 	},
 	function(data, menu)
@@ -208,7 +208,7 @@ function OpenFavoriteSubMenu(menu)
 		'default', GetCurrentResourceName(), 'favorite_submemu',
 		{
 			title = title,
-			align = 'top-right',
+			align = 'right',
 			elements = elements
 		},
 		function(data, menu)
@@ -258,7 +258,7 @@ function OpenAnimationsSubMenu(menu)
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'animations_sub',
 	{
 		title    = title,
-		align    = 'top-right',
+		align    = 'right',
 		elements = elements
 	}, function(data, menu)
 		local type = data.current.type
