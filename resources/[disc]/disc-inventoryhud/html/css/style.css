@@ -4,7 +4,7 @@
   font-family: 'Signika', sans-serif;
   text-transform: none;
   color: white;
-  text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+  text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
 }
 
 body {
@@ -31,13 +31,14 @@ body .ui .inv-log {
   bottom: 1%;
   right: 2.5%;
   text-align: right;
-  box-shadow: 1px 1px 57px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 1px 1px 57px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 57px rgba(0, 0, 0, 0.4);
   background-color: rgba(0, 0, 0, 0.29);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: 10px;
-  color: #9d9d9d;
+  color: #771282;
   font-size: 10px;
 }
 
@@ -49,7 +50,9 @@ body .ui .close-ui {
 }
 
 body .ui .close-ui:hover {
-  filter: brightness(0.75);
+  -webkit-filter: brightness(0.75);
+          filter: brightness(0.75);
+  -webkit-transition: all ease-in 0.15s;
   transition: all ease-in 0.15s;
 }
 
@@ -57,12 +60,16 @@ body .ui .inventory {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   min-width: 95%;
   max-width: 95%;
   height: 65%;
-  box-shadow: 1px 1px 57px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 1px 1px 57px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 57px rgba(0, 0, 0, 0.4);
   background-color: rgba(0, 0, 0, 0.29);
 }
 
@@ -84,8 +91,10 @@ body .ui .inventory .inventory-wrapper #inventoryOne, body .ui .inventory .inven
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 19.35% 19.35% 19.35% 19.35% 19.35%;
+  -ms-grid-columns: 19.35% 19.35% 19.35% 19.35% 19.35%;
+      grid-template-columns: 19.35% 19.35% 19.35% 19.35% 19.35%;
   grid-gap: 0.7%;
   width: 100.5%;
   min-width: 100.5%;
@@ -93,8 +102,12 @@ body .ui .inventory .inventory-wrapper #inventoryOne, body .ui .inventory .inven
 }
 
 body .ui .inventory .inventory-wrapper #inventoryOne.disabled, body .ui .inventory .inventory-wrapper #inventoryTwo.disabled {
-  filter: brightness(0.25);
+  -webkit-filter: brightness(0.25);
+          filter: brightness(0.25);
+  -webkit-transition: -webkit-filter ease-in 0.15s;
+  transition: -webkit-filter ease-in 0.15s;
   transition: filter ease-in 0.15s;
+  transition: filter ease-in 0.15s, -webkit-filter ease-in 0.15s;
 }
 
 body .ui .inventory .inventory-wrapper .inv-label {
@@ -114,14 +127,22 @@ body .ui .inventory .inventory-wrapper .inv-slots {
 
 body .ui .inventory .inventory-wrapper .left-data {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   top: -60px;
   padding-left: 5px;
   text-transform: none !important;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 body .ui .inventory .inventory-wrapper .left-data .inv-id {
@@ -138,15 +159,23 @@ body .ui .inventory .inventory-wrapper .left-data .inv-weight {
 
 body .ui .inventory .inventory-wrapper .right-data {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   top: -60px;
   padding-left: 5px;
   text-transform: none !important;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   right: 0;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 body .ui .inventory .inventory-wrapper .right-data .inv-label {
@@ -177,7 +206,8 @@ body .ui .inventory #controls .info-div {
   position: absolute;
   left: 50%;
   top: 15%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border: 2px solid #666666;
   border-radius: 5px;
 }
@@ -200,7 +230,8 @@ body .ui .inventory #controls .controls-div {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 50%;
 }
 
@@ -221,12 +252,15 @@ body .ui .inventory #controls .controls-div .control:last-child {
 }
 
 body .ui .inventory #controls .controls-div .control.hover {
+  -webkit-transition: all ease-in 0.15s;
   transition: all ease-in 0.15s;
-  filter: brightness(60%);
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
 }
 
 body .ui .inventory #controls .controls-div .control.disabled {
   background-color: rgba(150, 54, 54, 0.81) !important;
+  -webkit-transition: all ease-in 0.15s;
   transition: all ease-in 0.15s;
 }
 
@@ -244,7 +278,8 @@ body .ui .inventory #controls .tooltip-div, body .ui .inventory #controls .weigh
   position: absolute;
   left: 50%;
   bottom: 0;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border: 2px solid #666666;
   border-radius: 5px;
 }
@@ -290,7 +325,10 @@ body .ui .slot {
   background-color: rgba(50, 50, 50, 0.38);
   position: relative;
   border: 1px solid #666666;
+  -webkit-transition: -webkit-filter ease-in 0.15s;
+  transition: -webkit-filter ease-in 0.15s;
   transition: filter ease-in 0.15s;
+  transition: filter ease-in 0.15s, -webkit-filter ease-in 0.15s;
   overflow: hidden;
 }
 
@@ -299,7 +337,8 @@ body .ui .slot.slot-template {
 }
 
 body .ui .slot:hover {
-  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
 }
 
 body .ui .slot.temporary {
@@ -369,6 +408,8 @@ body .ui .slot .item-other .item-keybind {
   font-size: 15px;
   line-height: 0px;
   color: #ffffff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   top: 0;
   z-index: 999;
@@ -470,6 +511,8 @@ body .near-players-wrapper {
 
 body .near-players-wrapper .near-players-list {
   width: 500px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   background: #2c2c2c;
   position: absolute;
@@ -495,17 +538,21 @@ body .near-players-wrapper .near-players-list .popup-header .popup-header-text {
 
 body .near-players-wrapper .near-players-list .popup-header .exit-popup {
   display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
   padding: 10px;
   width: 10%;
   text-align: right;
-  color: #9d9d9d;
+  color: #771282;
 }
 
 body .near-players-wrapper .near-players-list .popup-header .exit-popup:hover {
+  -webkit-transition: all ease-in 0.15s;
   transition: all ease-in 0.15s;
-  filter: brightness(0.7);
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
 }
 
 body .near-players-wrapper .near-players-list .popup-body {
@@ -541,7 +588,9 @@ body .near-players-wrapper .near-players-list .popup-body .player, body .near-pl
 }
 
 body .near-players-wrapper .near-players-list .popup-body .player:hover, body .near-players-wrapper .near-players-list .popup-body .cashchoice:hover {
-  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
+  -webkit-transition: all ease-in 0.15s;
   transition: all ease-in 0.15s;
 }
 
@@ -554,7 +603,11 @@ body .near-players-wrapper .near-players-list .popup-body .player:last-child, bo
   position: absolute;
   left: 0;
   bottom: 25%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   overflow: hidden;
 }
@@ -584,6 +637,8 @@ body .near-players-wrapper .near-players-list .popup-body .player:last-child, bo
   font-size: 15px;
   line-height: 0px;
   color: #ffffff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   top: 0;
   z-index: 999;
@@ -632,7 +687,11 @@ body .near-players-wrapper .near-players-list .popup-body .player:last-child, bo
   right: 0;
   bottom: 0;
   margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   overflow: hidden;
   z-index: 999;
@@ -645,6 +704,7 @@ body .near-players-wrapper .near-players-list .popup-body .player:last-child, bo
   margin: 3px;
   position: relative;
   border: 1px solid #666666;
+  -webkit-transition: background-color ease-in 0.15s;
   transition: background-color ease-in 0.15s;
 }
 
@@ -671,6 +731,8 @@ body .near-players-wrapper .near-players-list .popup-body .player:last-child, bo
   font-size: 15px;
   line-height: 0px;
   color: #ffffff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   top: 0;
   z-index: 999;
@@ -704,3 +766,4 @@ body .near-players-wrapper .near-players-list .popup-body .player:last-child, bo
   height: 20px;
   z-index: 500;
 }
+/*# sourceMappingURL=style.css.map */
