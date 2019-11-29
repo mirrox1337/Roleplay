@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
 INSERT IGNORE INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(1, 'society_cardealer', 4005, NULL),
-	(3, 'society_police', 0, NULL),
+	(3, 'society_police', 99200, NULL),
 	(6, 'society_ambulance', 0, NULL),
 	(7, 'society_mechanic', 0, NULL),
 	(10, 'society_taxi', 0, NULL),
@@ -89,10 +89,15 @@ CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
   KEY `index_addon_inventory_items_inventory_name_name` (`inventory_name`,`name`),
   KEY `index_addon_inventory_items_inventory_name_name_owner` (`inventory_name`,`name`,`owner`),
   KEY `index_addon_inventory_inventory_name` (`inventory_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.addon_inventory_items: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.addon_inventory_items: ~4 rows (ungefär)
 /*!40000 ALTER TABLE `addon_inventory_items` DISABLE KEYS */;
+INSERT IGNORE INTO `addon_inventory_items` (`id`, `inventory_name`, `name`, `count`, `owner`) VALUES
+	(1, 'society_police', 'WEAPON_COMBATPISTOL', 0, NULL),
+	(2, 'society_police', 'WEAPON_NIGHTSTICK', 0, NULL),
+	(3, 'society_police', 'WEAPON_ADVANCEDRIFLE', 0, NULL),
+	(4, 'society_police', 'bread', 0, NULL);
 /*!40000 ALTER TABLE `addon_inventory_items` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.billing
@@ -204,12 +209,19 @@ CREATE TABLE IF NOT EXISTS `disc_ammo` (
   `count` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.disc_ammo: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.disc_ammo: ~6 rows (ungefär)
 /*!40000 ALTER TABLE `disc_ammo` DISABLE KEYS */;
 INSERT IGNORE INTO `disc_ammo` (`id`, `owner`, `hash`, `count`) VALUES
-	(8, 'steam:110000109c2ddf3', '-1357824103', 0);
+	(9, 'steam:110000109c2ddf3', '-1357824103', 0),
+	(10, 'steam:110000109c2ddf3', '1737195953', 0),
+	(11, 'steam:110000109c2ddf3', '1593441988', 104),
+	(12, 'steam:110000109c2ddf3', '-1063057011', 65),
+	(13, 'steam:110000109c2ddf3', '736523883', 0),
+	(14, 'steam:110000109c2ddf3', '453432689', 21),
+	(15, 'steam:110000109c2ddf3', '487013001', 0),
+	(16, 'steam:110000109c2ddf3', '2017895192', 0);
 /*!40000 ALTER TABLE `disc_ammo` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.disc_inventory
@@ -219,13 +231,15 @@ CREATE TABLE IF NOT EXISTS `disc_inventory` (
   `type` text COLLATE utf8mb4_bin,
   `data` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.disc_inventory: ~2 rows (ungefär)
+-- Dumpar data för tabell essentialmode.disc_inventory: ~4 rows (ungefär)
 /*!40000 ALTER TABLE `disc_inventory` DISABLE KEYS */;
 INSERT IGNORE INTO `disc_inventory` (`id`, `owner`, `type`, `data`) VALUES
-	(11, 'x-1048y-2709z13', 'drop', '{"1":{"name":"WEAPON_ADVANCEDRIFLE","count":1}}'),
-	(12, 'steam:110000109c2ddf3', 'player', '{"1":{"name":"WEAPON_ADVANCEDRIFLE","count":1}}');
+	(15, 'Polis Förråd', 'stash', '{"2":{"count":1,"name":"WEAPON_PUMPSHOTGUN"},"1":{"count":1,"name":"WEAPON_STUNGUN"},"4":{"count":2,"name":"WEAPON_COMBATPISTOL"},"3":{"count":1,"name":"WEAPON_ASSAULTSMG"},"9":{"count":1,"name":"WEAPON_SMG"},"10":{"count":2,"name":"WEAPON_SPECIALCARBINE"},"6":{"count":1,"name":"WEAPON_FLASHLIGHT"},"5":{"count":1,"name":"WEAPON_NIGHTSTICK"},"8":{"count":1,"name":"WEAPON_FIREEXTINGUISHER"},"7":{"count":1,"name":"WEAPON_FLAREGUN"}}'),
+	(17, 'x342y-964z28', 'drop', '{"4":{"count":1,"name":"disc_ammo_smg_large"},"5":{"count":1,"name":"disc_ammo_pistol_large"},"2":{"count":1,"name":"disc_ammo_rifle_large"},"3":{"count":1,"name":"disc_ammo_shotgun_large"},"1":{"count":1,"name":"disc_ammo_snp_large"},"6":{"count":1,"name":"WEAPON_ADVANCEDRIFLE"}}'),
+	(18, 'x393y-961z28', 'drop', '{"1":{"name":"bread","count":1}}'),
+	(19, 'steam:110000109c2ddf3', 'player', '{"10":{"name":"WEAPON_NIGHTSTICK","count":1},"6":{"name":"WEAPON_COMBATPISTOL","count":1},"9":{"name":"WEAPON_SAWNOFFSHOTGUN","count":1},"8":{"name":"WEAPON_PUMPSHOTGUN","count":1},"7":{"name":"WEAPON_PISTOL","count":1},"1":{"name":"WEAPON_SPECIALCARBINE","count":1}}');
 /*!40000 ALTER TABLE `disc_inventory` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.disc_inventory_itemdata
@@ -243,7 +257,7 @@ CREATE TABLE IF NOT EXISTS `disc_inventory_itemdata` (
 /*!40000 ALTER TABLE `disc_inventory_itemdata` DISABLE KEYS */;
 INSERT IGNORE INTO `disc_inventory_itemdata` (`id`, `name`, `description`, `weight`, `closeonuse`, `max`) VALUES
 	(1, 'bread', 'Ät mig', 1, 0, 10),
-	(2, 'WEAPON_ADVANCEDRIFLE', 'Konstruktionen skapades av Zalmen Shebs och Bor Erez, Amnon Shiloni, Motti Rosen med det uttalade syftet att göra ett gevär mer anpassat till stadskrigföring. Utvecklingen skedde ca 1991-2001, tillverkning började 2000. TAR-21 är vattentätt och lätt, jämfört med t.ex. M-16. Som standard har den inbyggt rödpunktssikte, men kan utökas med mörkersikte, ITL Mini N/SEAS och M203 granatkastare. Vapnet använder STANAG magasin och picatinnyskena. Därtill är det MILES 2000-anpassat. MTAR accepterar ljuddämpare. En integrerad granatkastare håller på att utvecklas för MTAR. Skalet tillverkas i höghållfasta polymerer och lättmetall.', 0, 0, 1);
+	(2, 'WEAPON_ADVANCEDRIFLE', 'Kompatibel med Gevärs Ammo', 3270, 0, 10);
 /*!40000 ALTER TABLE `disc_inventory_itemdata` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.disc_property
@@ -468,11 +482,11 @@ INSERT IGNORE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VAL
 	('WEAPON_PISTOL50', 'Desert Eagle', 1, 0, 1),
 	('WEAPON_POOLCUE', 'Biljardkö', 1, 0, 1),
 	('WEAPON_PROXMINE', 'Proximity Mine', 1, 0, 1),
-	('WEAPON_PUMPSHOTGUN', 'Mossberg 590', 1, 0, 1),
+	('WEAPON_PUMPSHOTGUN', 'Remington M870', 1, 0, 1),
 	('WEAPON_RAILGUN', 'Rail Gun', 1, 0, 1),
 	('WEAPON_REVOLVER', 'Colt M1909', 1, 0, 1),
 	('WEAPON_RPG', 'RPG-7', 1, 0, 1),
-	('WEAPON_SAWNOFFSHOTGUN', 'Mossberg 500', 1, 0, 1),
+	('WEAPON_SAWNOFFSHOTGUN', 'Remington M870 Avsågad', 1, 0, 1),
 	('WEAPON_SMG', 'MP5N', 1, 0, 1),
 	('WEAPON_SMOKEGRENADE', 'Rökgranat', 1, 0, 1),
 	('WEAPON_SNIPERRIFLE', 'AW-F', 1, 0, 1),
@@ -493,14 +507,14 @@ INSERT IGNORE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VAL
 	('coke', 'Kokain', 1, 0, 1),
 	('disc_ammo_pistol', 'Pistol Ammo', 1, 0, 1),
 	('disc_ammo_pistol_large', 'Pistol Ammo Large', 1, 0, 1),
-	('disc_ammo_rifle', 'Rifle Ammo', 1, 0, 1),
-	('disc_ammo_rifle_large', 'Rifle Ammo Large', 1, 0, 1),
-	('disc_ammo_shotgun', 'Shotgun Shells', 1, 0, 1),
-	('disc_ammo_shotgun_large', 'Shotgun Shells Large', 1, 0, 1),
+	('disc_ammo_rifle', 'Gevär Ammo', 1, 0, 1),
+	('disc_ammo_rifle_large', 'Gevär Ammo Large', 1, 0, 1),
+	('disc_ammo_shotgun', 'Hagelpatroner', 1, 0, 1),
+	('disc_ammo_shotgun_large', 'Hagelpatroner Large', 1, 0, 1),
 	('disc_ammo_smg', 'SMG Ammo', 1, 0, 1),
 	('disc_ammo_smg_large', 'SMG Ammo Large', 1, 0, 1),
-	('disc_ammo_snp', 'Sniper Ammo', 1, 0, 1),
-	('disc_ammo_snp_large', 'Sniper Ammo Large', 1, 0, 1),
+	('disc_ammo_snp', 'Prickskyttegevär Ammo', 1, 0, 1),
+	('disc_ammo_snp_large', 'Prickskyttegevär Ammo Large', 1, 0, 1),
 	('fixkit', 'Reparationssats', 1, 0, 1),
 	('fixtool', 'Reparationsverktyg', 1, 0, 1),
 	('gazbottle', 'Gas Flaska', 1, 0, 1),
@@ -816,7 +830,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumpar data för tabell essentialmode.users: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT IGNORE INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`, `is_dead`, `status`, `last_motel`, `last_motel_room`, `tattoos`, `phone_number`) VALUES
-	('steam:110000109c2ddf3', 'license:44be92faf675f784f2128ac35340fb9a172cefa3', 0, 'Mirrox', '{"blush_1":0,"pants_2":2,"torso_1":79,"beard_2":0,"chest_1":0,"lipstick_4":0,"age_1":0,"beard_3":0,"hair_1":4,"decals_2":0,"mask_1":0,"sex":1,"blemishes_1":0,"bracelets_1":-1,"makeup_2":0,"eye_color":0,"tshirt_1":15,"sun_1":0,"makeup_3":0,"bodyb_2":0,"tshirt_2":0,"watches_2":0,"beard_4":0,"skin":0,"blush_2":0,"arms":1,"face":21,"glasses_2":0,"bodyb_1":0,"beard_1":0,"hair_2":0,"glasses_1":5,"blush_3":0,"ears_1":-1,"helmet_2":0,"moles_1":0,"bproof_2":0,"shoes_1":3,"arms_2":0,"age_2":0,"bproof_1":0,"helmet_1":-1,"makeup_4":0,"lipstick_2":0,"chest_3":0,"torso_2":0,"shoes_2":10,"decals_1":0,"chest_2":0,"eyebrows_4":0,"chain_1":0,"complexion_1":0,"hair_color_1":0,"hair_color_2":0,"bags_1":0,"sun_2":0,"lipstick_3":0,"pants_1":2,"eyebrows_2":10,"ears_2":0,"watches_1":-1,"bags_2":0,"eyebrows_1":0,"chain_2":0,"blemishes_2":0,"makeup_1":0,"lipstick_1":0,"moles_2":0,"bracelets_2":0,"complexion_2":0,"eyebrows_3":0,"mask_2":0}', 'unemployed', 0, '[]', '{"x":-144.0,"y":-1153.7,"z":24.6}', 30, 4, 'superadmin', 'Hen', 'Tai', '1990-01-01', 'F', '123', '9872', 0, '[{"val":974200,"percent":97.42,"name":"hunger"},{"val":980650,"percent":98.065,"name":"thirst"},{"val":0,"percent":0.0,"name":"drunk"},{"val":0,"percent":0.0,"name":"drug"}]', NULL, NULL, NULL, '0734152526');
+	('steam:110000109c2ddf3', 'license:44be92faf675f784f2128ac35340fb9a172cefa3', 99765734, 'Mirrox', '{"blush_1":0,"pants_2":2,"torso_1":79,"beard_2":0,"chest_1":0,"lipstick_4":0,"age_1":0,"beard_3":0,"hair_1":4,"decals_2":0,"mask_1":0,"sex":1,"blemishes_1":0,"bracelets_1":-1,"makeup_2":0,"eye_color":0,"tshirt_1":15,"sun_1":0,"makeup_3":0,"bodyb_2":0,"tshirt_2":0,"watches_2":0,"beard_4":0,"skin":0,"blush_2":0,"arms":1,"face":21,"glasses_2":0,"bodyb_1":0,"beard_1":0,"hair_2":0,"glasses_1":5,"blush_3":0,"ears_1":-1,"helmet_2":0,"moles_1":0,"bproof_2":0,"shoes_1":3,"arms_2":0,"age_2":0,"bproof_1":0,"helmet_1":-1,"makeup_4":0,"lipstick_2":0,"chest_3":0,"torso_2":0,"shoes_2":10,"decals_1":0,"chest_2":0,"eyebrows_4":0,"chain_1":0,"complexion_1":0,"hair_color_1":0,"hair_color_2":0,"bags_1":0,"sun_2":0,"lipstick_3":0,"pants_1":2,"eyebrows_2":10,"ears_2":0,"watches_1":-1,"bags_2":0,"eyebrows_1":0,"chain_2":0,"blemishes_2":0,"makeup_1":0,"lipstick_1":0,"moles_2":0,"bracelets_2":0,"complexion_2":0,"eyebrows_3":0,"mask_2":0}', 'mechanic', 4, '[{"ammo":0,"name":"WEAPON_SPECIALCARBINE","components":["clip_default"],"label":"Special carbine"}]', '{"x":292.2,"y":-1032.2,"z":29.2}', 1000000800, 4, 'superadmin', 'Hen', 'Tai', '1990-01-01', 'F', '123', '9872', 0, '[{"name":"hunger","percent":89.62,"val":896200},{"name":"thirst","percent":90.6175,"val":906175},{"name":"drunk","percent":0.0,"val":0},{"name":"drug","percent":0.0,"val":0}]', NULL, NULL, NULL, '0734152526');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.user_accounts
@@ -841,118 +855,118 @@ CREATE TABLE IF NOT EXISTS `user_inventory` (
   `item` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=536 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=643 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.user_inventory: ~107 rows (ungefär)
 /*!40000 ALTER TABLE `user_inventory` DISABLE KEYS */;
 INSERT IGNORE INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
-	(429, 'steam:110000109c2ddf3', 'disc_ammo_shotgun', 0),
-	(430, 'steam:110000109c2ddf3', 'WEAPON_MINIGUN', 0),
-	(431, 'steam:110000109c2ddf3', 'weed', 0),
-	(432, 'steam:110000109c2ddf3', 'WEAPON_PUMPSHOTGUN', 0),
-	(433, 'steam:110000109c2ddf3', 'WEAPON_PISTOL50', 0),
-	(434, 'steam:110000109c2ddf3', 'WEAPON_MARKSMANRIFLE', 0),
-	(435, 'steam:110000109c2ddf3', 'WEAPON_HATCHET', 0),
-	(436, 'steam:110000109c2ddf3', 'jager', 0),
-	(437, 'steam:110000109c2ddf3', 'WEAPON_SMG', 0),
-	(438, 'steam:110000109c2ddf3', 'WEAPON_POOLCUE', 0),
-	(439, 'steam:110000109c2ddf3', 'WEAPON_RAILGUN', 0),
-	(440, 'steam:110000109c2ddf3', 'disc_ammo_snp', 0),
-	(441, 'steam:110000109c2ddf3', 'WEAPON_STICKYBOMB', 0),
-	(442, 'steam:110000109c2ddf3', 'WEAPON_MINISMG', 0),
-	(443, 'steam:110000109c2ddf3', 'WEAPON_AUTOSHOTGUN', 0),
-	(444, 'steam:110000109c2ddf3', 'WEAPON_HOMINGLAUNCHER', 0),
-	(445, 'steam:110000109c2ddf3', 'WEAPON_PETROLCAN', 0),
-	(446, 'steam:110000109c2ddf3', 'WEAPON_NIGHTSTICK', 0),
-	(447, 'steam:110000109c2ddf3', 'WEAPON_GOLFCLUB', 0),
-	(448, 'steam:110000109c2ddf3', 'WEAPON_FIREEXTINGUISHER', 0),
-	(449, 'steam:110000109c2ddf3', 'WEAPON_BALL', 0),
-	(450, 'steam:110000109c2ddf3', 'WEAPON_DOUBLEACTION', 0),
-	(451, 'steam:110000109c2ddf3', 'WEAPON_MUSKET', 0),
-	(452, 'steam:110000109c2ddf3', 'WEAPON_APPISTOL', 0),
-	(453, 'steam:110000109c2ddf3', 'WEAPON_MARKSMANPISTOL', 0),
-	(454, 'steam:110000109c2ddf3', 'beer', 0),
-	(455, 'steam:110000109c2ddf3', 'WEAPON_FLAREGUN', 0),
-	(456, 'steam:110000109c2ddf3', 'WEAPON_COMBATPISTOL', 0),
-	(457, 'steam:110000109c2ddf3', 'WEAPON_KNUCKLE', 0),
-	(458, 'steam:110000109c2ddf3', 'whisky', 0),
-	(459, 'steam:110000109c2ddf3', 'WEAPON_DIGISCANNER', 0),
-	(460, 'steam:110000109c2ddf3', 'WEAPON_HANDCUFFS', 0),
-	(461, 'steam:110000109c2ddf3', 'water', 0),
-	(462, 'steam:110000109c2ddf3', 'carokit', 0),
-	(463, 'steam:110000109c2ddf3', 'disc_ammo_pistol_large', 0),
-	(464, 'steam:110000109c2ddf3', 'tequilla', 0),
-	(465, 'steam:110000109c2ddf3', 'WEAPON_DAGGER', 0),
-	(466, 'steam:110000109c2ddf3', 'rhum', 0),
-	(467, 'steam:110000109c2ddf3', 'phone', 0),
-	(468, 'steam:110000109c2ddf3', 'WEAPON_CROWBAR', 0),
-	(469, 'steam:110000109c2ddf3', 'opium', 0),
-	(470, 'steam:110000109c2ddf3', 'meth', 0),
-	(471, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTSMG', 0),
-	(472, 'steam:110000109c2ddf3', 'martini', 0),
-	(473, 'steam:110000109c2ddf3', 'WEAPON_STUNGUN', 0),
-	(474, 'steam:110000109c2ddf3', 'WEAPON_COMPACTLAUNCHER', 0),
-	(475, 'steam:110000109c2ddf3', 'WEAPON_FLARE', 0),
-	(476, 'steam:110000109c2ddf3', 'WEAPON_FLASHLIGHT', 0),
-	(477, 'steam:110000109c2ddf3', 'gazbottle', 0),
-	(478, 'steam:110000109c2ddf3', 'fixtool', 0),
-	(479, 'steam:110000109c2ddf3', 'WEAPON_HEAVYSHOTGUN', 0),
-	(480, 'steam:110000109c2ddf3', 'WEAPON_SWITCHBLADE', 0),
-	(481, 'steam:110000109c2ddf3', 'WEAPON_GRENADE', 0),
-	(482, 'steam:110000109c2ddf3', 'disc_ammo_rifle', 0),
-	(483, 'steam:110000109c2ddf3', 'WEAPON_VINTAGEPISTOL', 0),
-	(484, 'steam:110000109c2ddf3', 'WEAPON_SNOWBALL', 0),
-	(485, 'steam:110000109c2ddf3', 'disc_ammo_smg_large', 0),
-	(486, 'steam:110000109c2ddf3', 'disc_ammo_snp_large', 0),
-	(487, 'steam:110000109c2ddf3', 'WEAPON_PROXMINE', 0),
-	(488, 'steam:110000109c2ddf3', 'WEAPON_HEAVYSNIPER', 0),
-	(489, 'steam:110000109c2ddf3', 'fixkit', 0),
-	(490, 'steam:110000109c2ddf3', 'disc_ammo_smg', 0),
-	(491, 'steam:110000109c2ddf3', 'WEAPON_HAMMER', 0),
-	(492, 'steam:110000109c2ddf3', 'WEAPON_ADVANCEDRIFLE', 1),
-	(493, 'steam:110000109c2ddf3', 'WEAPON_REVOLVER', 0),
-	(494, 'steam:110000109c2ddf3', 'WEAPON_MOLOTOV', 0),
-	(495, 'steam:110000109c2ddf3', 'disc_ammo_rifle_large', 0),
-	(496, 'steam:110000109c2ddf3', 'WEAPON_COMBATPDW', 0),
-	(497, 'steam:110000109c2ddf3', 'carotool', 0),
-	(498, 'steam:110000109c2ddf3', 'WEAPON_FIREWORK', 0),
-	(499, 'steam:110000109c2ddf3', 'coke', 0),
-	(500, 'steam:110000109c2ddf3', 'disc_ammo_pistol', 0),
-	(501, 'steam:110000109c2ddf3', 'WEAPON_MACHETE', 0),
-	(502, 'steam:110000109c2ddf3', 'bread', 0),
-	(503, 'steam:110000109c2ddf3', 'WEAPON_COMBATMG', 0),
-	(504, 'steam:110000109c2ddf3', 'WEAPON_BULLPUPSHOTGUN', 0),
-	(505, 'steam:110000109c2ddf3', 'WEAPON_MACHINEPISTOL', 0),
-	(506, 'steam:110000109c2ddf3', 'blowpipe', 0),
-	(507, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTSHOTGUN', 0),
-	(508, 'steam:110000109c2ddf3', 'WEAPON_PISTOL', 0),
-	(509, 'steam:110000109c2ddf3', 'WEAPON_GARBAGEBAG', 0),
-	(510, 'steam:110000109c2ddf3', 'WEAPON_PIPEBOMB', 0),
-	(511, 'steam:110000109c2ddf3', 'jagerbomb', 0),
-	(512, 'steam:110000109c2ddf3', 'WEAPON_COMPACTRIFLE', 0),
-	(513, 'steam:110000109c2ddf3', 'WEAPON_BZGAS', 0),
-	(514, 'steam:110000109c2ddf3', 'WEAPON_HEAVYPISTOL', 0),
-	(515, 'steam:110000109c2ddf3', 'WEAPON_MICROSMG', 0),
-	(516, 'steam:110000109c2ddf3', 'WEAPON_SPECIALCARBINE', 0),
-	(517, 'steam:110000109c2ddf3', 'WEAPON_SNSPISTOL', 0),
-	(518, 'steam:110000109c2ddf3', 'WEAPON_SMOKEGRENADE', 0),
-	(519, 'steam:110000109c2ddf3', 'WEAPON_GUSENBERG', 0),
-	(520, 'steam:110000109c2ddf3', 'WEAPON_SAWNOFFSHOTGUN', 0),
-	(521, 'steam:110000109c2ddf3', 'WEAPON_RPG', 0),
-	(522, 'steam:110000109c2ddf3', 'WEAPON_BAT', 0),
-	(523, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTRIFLE', 0),
-	(524, 'steam:110000109c2ddf3', 'disc_ammo_shotgun_large', 0),
-	(525, 'steam:110000109c2ddf3', 'WEAPON_STINGER', 0),
-	(526, 'steam:110000109c2ddf3', 'WEAPON_MG', 0),
-	(527, 'steam:110000109c2ddf3', 'WEAPON_WRENCH', 0),
-	(528, 'steam:110000109c2ddf3', 'WEAPON_DBSHOTGUN', 0),
-	(529, 'steam:110000109c2ddf3', 'WEAPON_KNIFE', 0),
-	(530, 'steam:110000109c2ddf3', 'WEAPON_BOTTLE', 0),
-	(531, 'steam:110000109c2ddf3', 'WEAPON_SNIPERRIFLE', 0),
-	(532, 'steam:110000109c2ddf3', 'WEAPON_BULLPUPRIFLE', 0),
-	(533, 'steam:110000109c2ddf3', 'WEAPON_CARBINERIFLE', 0),
-	(534, 'steam:110000109c2ddf3', 'WEAPON_GRENADELAUNCHER', 0),
-	(535, 'steam:110000109c2ddf3', 'WEAPON_BATTLEAXE', 0);
+	(536, 'steam:110000109c2ddf3', 'WEAPON_PUMPSHOTGUN', 1),
+	(537, 'steam:110000109c2ddf3', 'opium', 0),
+	(538, 'steam:110000109c2ddf3', 'WEAPON_BAT', 0),
+	(539, 'steam:110000109c2ddf3', 'WEAPON_BATTLEAXE', 0),
+	(540, 'steam:110000109c2ddf3', 'WEAPON_APPISTOL', 0),
+	(541, 'steam:110000109c2ddf3', 'WEAPON_PISTOL50', 0),
+	(542, 'steam:110000109c2ddf3', 'coke', 0),
+	(543, 'steam:110000109c2ddf3', 'WEAPON_MARKSMANPISTOL', 0),
+	(544, 'steam:110000109c2ddf3', 'WEAPON_HOMINGLAUNCHER', 0),
+	(545, 'steam:110000109c2ddf3', 'WEAPON_GARBAGEBAG', 0),
+	(546, 'steam:110000109c2ddf3', 'WEAPON_SNOWBALL', 0),
+	(547, 'steam:110000109c2ddf3', 'WEAPON_SNIPERRIFLE', 0),
+	(548, 'steam:110000109c2ddf3', 'WEAPON_GOLFCLUB', 0),
+	(549, 'steam:110000109c2ddf3', 'bread', 0),
+	(550, 'steam:110000109c2ddf3', 'WEAPON_SNSPISTOL', 0),
+	(551, 'steam:110000109c2ddf3', 'WEAPON_DAGGER', 0),
+	(552, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTRIFLE', 0),
+	(553, 'steam:110000109c2ddf3', 'WEAPON_BULLPUPRIFLE', 0),
+	(554, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTSMG', 0),
+	(555, 'steam:110000109c2ddf3', 'WEAPON_COMBATMG', 0),
+	(556, 'steam:110000109c2ddf3', 'WEAPON_BALL', 0),
+	(557, 'steam:110000109c2ddf3', 'WEAPON_COMBATPDW', 0),
+	(558, 'steam:110000109c2ddf3', 'WEAPON_ADVANCEDRIFLE', 0),
+	(559, 'steam:110000109c2ddf3', 'WEAPON_CROWBAR', 0),
+	(560, 'steam:110000109c2ddf3', 'WEAPON_GRENADELAUNCHER', 0),
+	(561, 'steam:110000109c2ddf3', 'WEAPON_KNIFE', 0),
+	(562, 'steam:110000109c2ddf3', 'WEAPON_MG', 0),
+	(563, 'steam:110000109c2ddf3', 'WEAPON_AUTOSHOTGUN', 0),
+	(564, 'steam:110000109c2ddf3', 'WEAPON_RAILGUN', 0),
+	(565, 'steam:110000109c2ddf3', 'WEAPON_DIGISCANNER', 0),
+	(566, 'steam:110000109c2ddf3', 'WEAPON_DBSHOTGUN', 0),
+	(567, 'steam:110000109c2ddf3', 'water', 0),
+	(568, 'steam:110000109c2ddf3', 'WEAPON_MACHINEPISTOL', 0),
+	(569, 'steam:110000109c2ddf3', 'WEAPON_KNUCKLE', 0),
+	(570, 'steam:110000109c2ddf3', 'WEAPON_PISTOL', 1),
+	(571, 'steam:110000109c2ddf3', 'WEAPON_MOLOTOV', 0),
+	(572, 'steam:110000109c2ddf3', 'WEAPON_COMPACTRIFLE', 0),
+	(573, 'steam:110000109c2ddf3', 'WEAPON_MINIGUN', 0),
+	(574, 'steam:110000109c2ddf3', 'WEAPON_MARKSMANRIFLE', 0),
+	(575, 'steam:110000109c2ddf3', 'whisky', 0),
+	(576, 'steam:110000109c2ddf3', 'WEAPON_BULLPUPSHOTGUN', 0),
+	(577, 'steam:110000109c2ddf3', 'WEAPON_PIPEBOMB', 0),
+	(578, 'steam:110000109c2ddf3', 'WEAPON_SMOKEGRENADE', 0),
+	(579, 'steam:110000109c2ddf3', 'tequilla', 0),
+	(580, 'steam:110000109c2ddf3', 'WEAPON_VINTAGEPISTOL', 0),
+	(581, 'steam:110000109c2ddf3', 'phone', 0),
+	(582, 'steam:110000109c2ddf3', 'WEAPON_HEAVYSNIPER', 0),
+	(583, 'steam:110000109c2ddf3', 'WEAPON_REVOLVER', 0),
+	(584, 'steam:110000109c2ddf3', 'disc_ammo_smg_large', 0),
+	(585, 'steam:110000109c2ddf3', 'WEAPON_PETROLCAN', 0),
+	(586, 'steam:110000109c2ddf3', 'WEAPON_WRENCH', 0),
+	(587, 'steam:110000109c2ddf3', 'martini', 0),
+	(588, 'steam:110000109c2ddf3', 'jagerbomb', 0),
+	(589, 'steam:110000109c2ddf3', 'jager', 0),
+	(590, 'steam:110000109c2ddf3', 'WEAPON_DOUBLEACTION', 0),
+	(591, 'steam:110000109c2ddf3', 'fixtool', 0),
+	(592, 'steam:110000109c2ddf3', 'fixkit', 0),
+	(593, 'steam:110000109c2ddf3', 'disc_ammo_shotgun_large', 0),
+	(594, 'steam:110000109c2ddf3', 'WEAPON_MACHETE', 0),
+	(595, 'steam:110000109c2ddf3', 'disc_ammo_snp', 0),
+	(596, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTSHOTGUN', 0),
+	(597, 'steam:110000109c2ddf3', 'meth', 0),
+	(598, 'steam:110000109c2ddf3', 'blowpipe', 0),
+	(599, 'steam:110000109c2ddf3', 'disc_ammo_smg', 0),
+	(600, 'steam:110000109c2ddf3', 'WEAPON_RPG', 0),
+	(601, 'steam:110000109c2ddf3', 'disc_ammo_shotgun', 0),
+	(602, 'steam:110000109c2ddf3', 'WEAPON_HEAVYPISTOL', 0),
+	(603, 'steam:110000109c2ddf3', 'WEAPON_FLARE', 0),
+	(604, 'steam:110000109c2ddf3', 'carokit', 0),
+	(605, 'steam:110000109c2ddf3', 'WEAPON_COMPACTLAUNCHER', 0),
+	(606, 'steam:110000109c2ddf3', 'WEAPON_PROXMINE', 0),
+	(607, 'steam:110000109c2ddf3', 'WEAPON_BZGAS', 0),
+	(608, 'steam:110000109c2ddf3', 'disc_ammo_pistol_large', 0),
+	(609, 'steam:110000109c2ddf3', 'disc_ammo_pistol', 0),
+	(610, 'steam:110000109c2ddf3', 'WEAPON_HAMMER', 0),
+	(611, 'steam:110000109c2ddf3', 'carotool', 0),
+	(612, 'steam:110000109c2ddf3', 'WEAPON_BOTTLE', 0),
+	(613, 'steam:110000109c2ddf3', 'disc_ammo_rifle_large', 0),
+	(614, 'steam:110000109c2ddf3', 'beer', 0),
+	(615, 'steam:110000109c2ddf3', 'rhum', 0),
+	(616, 'steam:110000109c2ddf3', 'WEAPON_SWITCHBLADE', 0),
+	(617, 'steam:110000109c2ddf3', 'WEAPON_STUNGUN', 0),
+	(618, 'steam:110000109c2ddf3', 'WEAPON_STINGER', 0),
+	(619, 'steam:110000109c2ddf3', 'gazbottle', 0),
+	(620, 'steam:110000109c2ddf3', 'WEAPON_STICKYBOMB', 0),
+	(621, 'steam:110000109c2ddf3', 'WEAPON_SMG', 0),
+	(622, 'steam:110000109c2ddf3', 'WEAPON_COMBATPISTOL', 1),
+	(623, 'steam:110000109c2ddf3', 'WEAPON_NIGHTSTICK', 1),
+	(624, 'steam:110000109c2ddf3', 'WEAPON_SAWNOFFSHOTGUN', 1),
+	(625, 'steam:110000109c2ddf3', 'WEAPON_MUSKET', 0),
+	(626, 'steam:110000109c2ddf3', 'WEAPON_HATCHET', 0),
+	(627, 'steam:110000109c2ddf3', 'WEAPON_GRENADE', 0),
+	(628, 'steam:110000109c2ddf3', 'WEAPON_SPECIALCARBINE', 1),
+	(629, 'steam:110000109c2ddf3', 'disc_ammo_rifle', 0),
+	(630, 'steam:110000109c2ddf3', 'WEAPON_MICROSMG', 0),
+	(631, 'steam:110000109c2ddf3', 'WEAPON_HEAVYSHOTGUN', 0),
+	(632, 'steam:110000109c2ddf3', 'WEAPON_POOLCUE', 0),
+	(633, 'steam:110000109c2ddf3', 'WEAPON_FIREWORK', 0),
+	(634, 'steam:110000109c2ddf3', 'weed', 0),
+	(635, 'steam:110000109c2ddf3', 'WEAPON_CARBINERIFLE', 0),
+	(636, 'steam:110000109c2ddf3', 'disc_ammo_snp_large', 0),
+	(637, 'steam:110000109c2ddf3', 'WEAPON_MINISMG', 0),
+	(638, 'steam:110000109c2ddf3', 'WEAPON_FIREEXTINGUISHER', 0),
+	(639, 'steam:110000109c2ddf3', 'WEAPON_GUSENBERG', 0),
+	(640, 'steam:110000109c2ddf3', 'WEAPON_FLAREGUN', 0),
+	(641, 'steam:110000109c2ddf3', 'WEAPON_HANDCUFFS', 0),
+	(642, 'steam:110000109c2ddf3', 'WEAPON_FLASHLIGHT', 0);
 /*!40000 ALTER TABLE `user_inventory` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.user_lastcharacter
