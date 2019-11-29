@@ -273,10 +273,9 @@ function OpenMobileMechanicActionsMenu()
 		title    = _U('mechanic'),
 		align    = 'right',
 		elements = {
+			{label = ('Reparera fordon'), value = 'repair_meny'},
 			{label = _U('billing'),       value = 'billing'},
 			{label = _U('hijack'),        value = 'hijack_vehicle'},
-			{label = ('Reparera fordon'), value = 'repair_meny'},
-			{label = _U('clean'),         value = 'clean_vehicle'},
 			{label = _U('imp_veh'),       value = 'del_vehicle'},
 			{label = _U('flat_bed'),      value = 'dep_vehicle'},
 			{label = _U('place_objects'), value = 'object_spawner'}
@@ -333,50 +332,6 @@ function OpenMobileMechanicActionsMenu()
 		elseif data.current.value == 'repair_meny' then
 			OpenRepairMenu()
 		
-		elseif data.current.value == 'clean_vehicle' then
-			local playerPed = PlayerPedId()
-			local vehicle   = ESX.Game.GetVehicleInDirection()
-			local coords    = GetEntityCoords(playerPed)
-
-			if IsPedSittingInAnyVehicle(playerPed) then
-				exports['mythic_notify']:SendAlert('error', (_U('inside_vehicle')))
-				return
-			end
-
-			if DoesEntityExist(vehicle) then
-				exports['mythic_progbar']:Progress({
-					name = "mechanicRepair",
-					duration = 60000,
-					label = "reparerar Motorn",
-					useWhileDead = false,
-					canCancel = true,
-					controlDisables = {
-						disableMovement = true,
-						disableCarMovement = true,
-						disableMouse = false,
-						disableCombat = true,
-					},
-					animation = {
-						animDict = "amb@world_human_maid_clean@base",
-						anim = "base",
-					},
-					prop = {
-						model = "prop_tool_screwdvr03",
-						bone = 58870,
-						coords = { x = 0.00, y = 0.05, z = 0.15 },
-						rotation = { x = 180.0, y = 0.0, z = 0.0 },
-					}
-				}, function(status)
-					if not status then
-						SetVehicleDirtLevel(vehicle, 0)
-					ClearPedTasksImmediately(playerPed)
-
-					exports['mythic_notify']:SendAlert('success', (_U('vehicle_cleaned')))
-					end
-				end)
-			else
-				exports['mythic_notify']:SendAlert('error', (_U('no_vehicle_nearby')))
-			end
 		elseif data.current.value == 'del_vehicle' then
 			local playerPed = PlayerPedId()
 
@@ -506,8 +461,10 @@ end
 
 function OpenRepairMenu()
 	local elements = {
-		{label = ('Motor'), value = 'fix_motor'},
-		{label = ('Body'), value = 'fix_body'}
+		{label = ('Reparera Motor'), value = 'fix_motor'},
+		{label = ('Reparera Kaross'), value = 'fix_body'},
+		{label = ('Byt Däck'), value = 'fix_tyre'},
+		{label = _U('clean'), value = 'wash'}
 	}
 
 	ESX.UI.Menu.CloseAll()
@@ -521,6 +478,10 @@ function OpenRepairMenu()
 			repairMotor()
 		elseif data.current.value == 'fix_body' then
 			repairBody()
+		elseif data.current.value == 'wash' then
+			Wash()
+		elseif data.current.value == 'fix_tyre' then
+			fixTyre()
 		end
 	end, function(data, menu)
 		menu.close()
@@ -631,7 +592,7 @@ function repairMotor()
 		SetVehicleDoorOpen(vehicle,4,0,0)
 		exports['mythic_progbar']:Progress({
 			name = "mechanicRepair",
-			duration = 6000,
+			duration = 60000,
 			label = "Reparerar Motorn",
 			useWhileDead = false,
 			canCancel = true,
@@ -682,7 +643,7 @@ function repairBody()
 	
 		exports['mythic_progbar']:Progress({
 			name = "mechanicRepair",
-			duration = 6000,
+			duration = 60000,
 			label = "Reparerar Kaross",
 			useWhileDead = false,
 			canCancel = true,
@@ -693,14 +654,14 @@ function repairBody()
 				disableCombat = true,
 			},
 			animation = {
-				animDict = "mini@repair",
-				anim = "fixing_a_ped",
+				animDict = "amb@world_human_hammering@male@base",
+				anim = "base",
 			},
 			prop = {
-				model = "prop_tool_screwdvr01",
+				model = "prop_tool_hammer",
 				bone = 58870,
 				coords = { x = 0.00, y = 0.05, z = 0.15 },
-				rotation = { x = 180.0, y = 0.0, z = 0.0 },
+				rotation = { x = 0.0, y = 0.0, z = 0.0 },
 			}
 		}, function(status)
 			if not status then
@@ -728,6 +689,105 @@ function repairBody()
 		exports['mythic_notify']:SendAlert('error',(_U('no_vehicle_nearby')))
 	end
 end
+
+function Wash()
+	local playerPed = PlayerPedId()
+	local vehicle   = ESX.Game.GetVehicleInDirection()
+	local coords    = GetEntityCoords(playerPed)
+
+		if IsPedSittingInAnyVehicle(playerPed) then
+			exports['mythic_notify']:SendAlert('error', (_U('inside_vehicle')))
+			return
+		end
+
+		if DoesEntityExist(vehicle) then
+			exports['mythic_progbar']:Progress({
+				name = "mechanicWash",
+				duration = 60000,
+				label = "Tvättar",
+				useWhileDead = false,
+				canCancel = true,
+				controlDisables = {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				},
+					animation = {
+						animDict = "amb@world_human_maid_clean@base",
+						anim = "base",
+					},
+					prop = {
+						model = "prop_cs_bandana",
+						bone = 58870,
+						coords = { x = 0.00, y = 0.05, z = 0.15 },
+						rotation = { x = 180.0, y = 0.0, z = 0.0 },
+					}
+				}, function(status)
+					if not status then
+						SetVehicleDirtLevel(vehicle, 0)
+					ClearPedTasksImmediately(playerPed)
+
+					exports['mythic_notify']:SendAlert('success', (_U('vehicle_cleaned')))
+					end
+				end)
+			else
+				exports['mythic_notify']:SendAlert('error', (_U('no_vehicle_nearby')))
+			end
+		end
+
+function fixTyre()
+	local playerPed = PlayerPedId()
+	local vehicle   = ESX.Game.GetVehicleInDirection()
+	local coords    = GetEntityCoords(playerPed)
+
+		if IsPedSittingInAnyVehicle(playerPed) then
+			exports['mythic_notify']:SendAlert('error', (_U('inside_vehicle')))
+			return
+		end
+
+		if DoesEntityExist(vehicle) then
+			exports['mythic_progbar']:Progress({
+				name = "mechanicTyre",
+				duration = 60000,
+				label = "Byter Däck",
+				useWhileDead = false,
+				canCancel = true,
+				controlDisables = {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				},
+					animation = {
+						animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
+						anim = "machinic_loop_mechandplayer",
+					},
+					prop = {
+						model = "prop_tool_spanner02",
+						bone = 58870,
+						coords = { x = 0.00, y = 0.0, z = 0.05 },
+						rotation = { x = 0.0, y = 0.0, z = 0.0 },
+					}
+				}, function(status)
+					if not status then
+						SetVehicleTyreFixed(vehicle, 0)
+						SetVehicleTyreFixed(vehicle, 1)
+						SetVehicleTyreFixed(vehicle, 2)
+						SetVehicleTyreFixed(vehicle, 3)
+						SetVehicleTyreFixed(vehicle, 4)
+						SetVehicleTyreFixed(vehicle, 5)
+						SetVehicleTyreFixed(vehicle, 45)
+						SetVehicleTyreFixed(vehicle, 47)
+					ClearPedTasksImmediately(playerPed)
+
+					exports['mythic_notify']:SendAlert('success', (_U('vehicle_cleaned')))
+					end
+				end)
+			else
+				exports['mythic_notify']:SendAlert('error', (_U('no_vehicle_nearby')))
+			end
+		end
 
 RegisterNetEvent('esx_mechanicjob:onHijack')
 AddEventHandler('esx_mechanicjob:onHijack', function()

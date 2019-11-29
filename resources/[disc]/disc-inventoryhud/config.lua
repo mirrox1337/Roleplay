@@ -135,9 +135,9 @@ Config.Stash = {
         msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
     },
     ['Mekonomen Förråd'] = {
-        coords = vector3(-321.26, -138.01, 38.05),
+        coords = vector3(-344.38, -128.11, 38.05),
         size = vector3(1.0, 1.0, 1.0),
-        job = 'mecano',
+        job = 'mechanic',
         markerType = 27,
         markerColour = { r = 196, g = 42, b = 190 },
         rotate = true,
