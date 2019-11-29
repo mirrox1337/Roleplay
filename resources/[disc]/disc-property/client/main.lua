@@ -181,7 +181,7 @@ Citizen.CreateThread(function()
             id = property.name,
             name = property.name,
             coords = property.outside.coords,
-            scale = 0.8,
+            scale = 0.6,
             color = 0,
             sprite = 40
         }

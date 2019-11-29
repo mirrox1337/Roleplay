@@ -32,7 +32,7 @@ Citizen.CreateThread(function()
 		garageCoords = vehicleWashStation[i]
 		stationBlip = AddBlipForCoord(garageCoords[1], garageCoords[2], garageCoords[3])
 		SetBlipSprite(stationBlip, 100)
-		SetBlipScale  (Blip, 0.65)
+		SetBlipScale  (Blip, 0.6)
 		AddTextComponentString("Bil tvätt")
 		SetBlipAsShortRange(stationBlip, true)
 	end

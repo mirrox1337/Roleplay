@@ -1,4 +1,4 @@
 Config = {}
 
-Config.DrawDistance = 30
+Config.DrawDistance = 10
 Config.Draw3DDistance = 5

@@ -9,7 +9,7 @@ Citizen.CreateThread(function()
     TriggerEvent('disc-inventoryhud:RegisterInventory', {
         name = 'player',
         label = 'Spelare',
-        slots = 20,
+        slots = 25,
         getInventory = function(identifier, cb)
             getInventory(identifier, 'player', cb)
         end,

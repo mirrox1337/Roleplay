@@ -117,7 +117,7 @@ Config.Shops = {
 
 Config.Stash = {
     ['Polis Förråd'] = {
-        coords = vector3(455.31, -985.42, 29.75),
+        coords = vector3(461.17, -982.5, 30.69),
         size = vector3(1.0, 1.0, 1.0),
         job = 'police',
         markerType = 27,

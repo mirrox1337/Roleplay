@@ -49,8 +49,8 @@ AddEventHandler('esx_policejob:confiscatePlayerItem', function(target, itemType,
 
 	elseif itemType == 'item_weapon' then
 		if amount == nil then amount = 0 end
-		targetXPlayer.removeWeapon(itemName, amount)
-		sourceXPlayer.addWeapon   (itemName, amount)
+		targetXPlayer.removeInventoryItem(itemName, amount)
+		sourceXPlayer.addInventoryItem   (itemName, amount)
 
 		TriggerClientEvent('esx:showNotification', _source, _U('you_confiscated_weapon', ESX.GetWeaponLabel(itemName), targetXPlayer.name, amount))
 		TriggerClientEvent('esx:showNotification', target,  _U('got_confiscated_weapon', ESX.GetWeaponLabel(itemName), amount, sourceXPlayer.name))
@@ -321,7 +321,7 @@ end)
 
 ESX.RegisterServerCallback('esx_policejob:removeArmoryWeapon', function(source, cb, weaponName)
 	local xPlayer = ESX.GetPlayerFromId(source)
-	xPlayer.addWeapon(weaponName, 500)
+	xPlayer.addInventoryItem(weaponName, 1)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', 'society_police', function(store)
 
@@ -372,7 +372,7 @@ ESX.RegisterServerCallback('esx_policejob:buyWeapon', function(source, cb, weapo
 		if type == 1 then
 			if xPlayer.getMoney() >= selectedWeapon.price then
 				xPlayer.removeMoney(selectedWeapon.price)
-				xPlayer.addWeapon(weaponName, 100)
+				xPlayer.addInventoryItem(weaponName, 1)
 
 				cb(true)
 			else
@@ -496,6 +496,31 @@ function getPriceFromHash(hashKey, jobGrade, type)
 
 	return 0
 end
+
+ESX.RegisterServerCallback('esx_policejob:buypistolammo', function(source, cb, weaponName)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.addInventoryItem('disc_ammo_pistol_large', 1)
+end)
+
+ESX.RegisterServerCallback('esx_policejob:buysmgammo', function(source, cb, weaponName)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.addInventoryItem('disc_ammo_smg_large', 1)
+end)
+
+ESX.RegisterServerCallback('esx_policejob:buyshotgunammo', function(source, cb, weaponName)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.addInventoryItem('disc_ammo_shotgun_large', 1)
+end)
+
+ESX.RegisterServerCallback('esx_policejob:buyrifleammo', function(source, cb, weaponName)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.addInventoryItem('disc_ammo_rifle_large', 1)
+end)
+
+ESX.RegisterServerCallback('esx_policejob:buysnpammo', function(source, cb, weaponName)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.addInventoryItem('disc_ammo_snp_large', 1)
+end)
 
 ESX.RegisterServerCallback('esx_policejob:getStockItems', function(source, cb)
 	TriggerEvent('esx_addoninventory:getSharedInventory', 'society_police', function(inventory)

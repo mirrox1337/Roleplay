@@ -1,5 +1,5 @@
 Locales['sv'] = {
-  ['mechanic']                  = 'mekaniker',
+  ['mechanic']                  = 'Mekonomen',
   ['drive_to_indicated']        = 'Vänligen ~y~kör~s~ till den angivna platsen.',
   ['mission_canceled']          = '~r~Uppdraget har avbrutits~s~',
   ['vehicle_list']              = 'Fordon',

@@ -945,9 +945,9 @@ end)
 Citizen.CreateThread(function()
 	local blip = AddBlipForCoord(Config.Zones.MechanicActions.Pos.x, Config.Zones.MechanicActions.Pos.y, Config.Zones.MechanicActions.Pos.z)
 
-	SetBlipSprite (blip, 446)
+	SetBlipSprite (blip, 124)
 	SetBlipDisplay(blip, 4)
-	SetBlipScale  (blip, 1.8)
+	SetBlipScale  (blip, 0.6)
 	SetBlipColour (blip, 5)
 	SetBlipAsShortRange(blip, true)
 

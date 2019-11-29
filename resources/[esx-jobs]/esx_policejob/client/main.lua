@@ -250,17 +250,22 @@ function OpenArmoryMenu(station)
 		--{label = _U('buy_weapons'), value = 'buy_weapons'}
 	}
 
-	if Config.EnableArmoryManagement then
-		table.insert(elements, {label = _U('get_weapon'),     value = 'get_weapon'})
-		table.insert(elements, {label = _U('put_weapon'),     value = 'put_weapon'})
-		--table.insert(elements, {label = _U('remove_object'),  value = 'get_stock'})
-		table.insert(elements, {label = _U('deposit_object'), value = 'put_stock'})
-	end
-
 	if PlayerData.job.grade_name == 'boss' then
 		table.insert(elements, {label = _U('buy_weapons'), value = 'buy_weapons'})
-		table.insert(elements, {label = ('Plocka ut från förrådet'), value = 'get_stock'})
+		--table.insert(elements, {label = ('Plocka ut från förrådet'), value = 'get_stock'})
 		table.insert(elements, {label = ('Köp dyrkset'), value = 'buy_lockpick'})
+	end
+
+	if Config.EnableArmoryManagement then
+		--table.insert(elements, {label = _U('get_weapon'),     value = 'get_weapon'})
+		--table.insert(elements, {label = _U('put_weapon'),     value = 'put_weapon'})
+		--table.insert(elements, {label = _U('remove_object'),  value = 'get_stock'})
+		--table.insert(elements, {label = _U('deposit_object'), value = 'put_stock'})
+		table.insert(elements, {label = ('Köp pistol ammo'), value = 'pistol_ammo'})
+		table.insert(elements, {label = ('Köp smg ammo'), value = 'smg_ammo'})
+		table.insert(elements, {label = ('Köp shotgun ammo'), value = 'shotgun_ammo'})
+		table.insert(elements, {label = ('Köp rifle ammo'), value = 'rifle_ammo'})
+		table.insert(elements, {label = ('Köp sniper ammo'), value = 'snp_ammo'})
 	end
 
 	ESX.UI.Menu.CloseAll()
@@ -283,6 +288,16 @@ function OpenArmoryMenu(station)
 			OpenGetStocksMenu()
 		elseif data.current.value == 'buy_lockpick' then
 			ESX.TriggerServerCallback('esx_policejob:buylockpick')
+		elseif data.current.value == 'pistol_ammo' then
+			ESX.TriggerServerCallback('esx_policejob:buypistolammo')
+		elseif data.current.value == 'smg_ammo' then
+			ESX.TriggerServerCallback('esx_policejob:buysmgammo')
+		elseif data.current.value == 'shotgun_ammo' then
+			ESX.TriggerServerCallback('esx_policejob:buyshotgunammo')
+		elseif data.current.value == 'rifle_ammo' then
+			ESX.TriggerServerCallback('esx_policejob:buyrifleammo')
+		elseif data.current.value == 'snp_ammo' then
+			ESX.TriggerServerCallback('esx_policejob:buysnpammo')
 		end
 
 	end, function(data, menu)
@@ -1760,7 +1775,7 @@ Citizen.CreateThread(function()
 
 					if distance < Config.DrawDistance then
 						--DrawMarker(21, v.Armories[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
-						Marker("~w~[~p~E~w~] Förråd", 27, v.Armories[i].x, v.Armories[i].y, v.Armories[i].z - 0.95)
+						Marker("~w~[~p~E~w~] Vapenförråd", 27, v.Armories[i].x, v.Armories[i].y, v.Armories[i].z - 0.95)
 						letSleep = false
 					end
 
@@ -1979,7 +1994,7 @@ function createBlip(id)
 		ShowHeadingIndicatorOnBlip(blip, true) -- Player Blip indicator
 		SetBlipRotation(blip, math.ceil(GetEntityHeading(ped))) -- update rotation
 		SetBlipNameToPlayerName(blip, id) -- update blip name
-		SetBlipScale(blip, 0.85) -- set scale
+		SetBlipScale(blip, 0.6) -- set scale
 		SetBlipAsShortRange(blip, true)
 
 		table.insert(blipsCops, blip) -- add blip to array so we can remove it later

@@ -36,7 +36,7 @@ Config.PoliceStations = {
 		},
 
 		Armories = {
-			vector3(456.39144897461, -982.91027832031, 30.69)
+			vector3(452.09, -973.32, 30.69)
 		},
 
 		Vehicles = {
@@ -95,7 +95,7 @@ Config.AuthorizedWeapons = {
 
 	sergeant = {
 		{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
-		{ weapon = 'WEAPON_ADVANCEDRIFLE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
+		{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
 		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 500 },
@@ -104,7 +104,7 @@ Config.AuthorizedWeapons = {
 
 	intendent = {
 		{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
-		{ weapon = 'WEAPON_ADVANCEDRIFLE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
+		{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
 		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 500 },
@@ -113,7 +113,7 @@ Config.AuthorizedWeapons = {
 
 	lieutenant = {
 		{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
-		{ weapon = 'WEAPON_ADVANCEDRIFLE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
+		{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
 		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 500 },
@@ -122,7 +122,7 @@ Config.AuthorizedWeapons = {
 
 	chef = {
 		{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
-		{ weapon = 'WEAPON_ADVANCEDRIFLE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
+		{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
 		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 500 },
@@ -132,8 +132,9 @@ Config.AuthorizedWeapons = {
 	boss = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 690},
 		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 9199 },
-		{ weapon = 'WEAPON_ASSAULTSMG', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 15899 },
-		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 12499 },
+		{ weapon = 'WEAPON_SMG', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 15899 },
+    { weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 12499 },
+    { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
 		{ weapon = 'WEAPON_STUNGUN', price = 4999 },
 		{ weapon = 'WEAPON_FLASHLIGHT', price = 999 },
 		{ weapon = 'WEAPON_FIREEXTINGUISHER', price = 495 },
