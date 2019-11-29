@@ -577,7 +577,7 @@ function OpenGetStocksMenu()
     ESX.UI.Menu.Open(
       'default', GetCurrentResourceName(), 'stocks_menu',
       {
-        title    = 'Ambulanssk�p',
+        title    = 'Ambulansskåp',
         elements = elements
       },
       function(data, menu)
@@ -587,7 +587,7 @@ function OpenGetStocksMenu()
         ESX.UI.Menu.Open(
           'dialog', GetCurrentResourceName(), 'stocks_menu_get_item_count',
           {
-            title = 'Hur m�nga?'
+            title = 'Hur många?'
           },
           function(data2, menu2)
 
@@ -638,7 +638,7 @@ function OpenPutStocksMenu()
     ESX.UI.Menu.Open(
       'default', GetCurrentResourceName(), 'stocks_menu',
       {
-        title    = 'Din Ryggs�ck',
+        title    = 'Din Ryggsäck',
         elements = elements
       },
       function(data, menu)
@@ -690,7 +690,7 @@ function OpenMobileAmbulanceActionsMenu()
 			title    = _U('ambulance'),
 			elements = {
 				{label = 'EMS Meny', value = 'citizen_interaction'},
-				{label = '�verfallslarm', value = 'larm'},
+				{label = 'Överfallslarm', value = 'larm'},
 			}
 		},
 		function(data, menu)
@@ -702,15 +702,21 @@ function OpenMobileAmbulanceActionsMenu()
 					{
 						title    = _U('ems_menu_title'),
 						elements = {
-					  	{label = _U('ems_menu_revive'),     value = 'revive'},
+						{label = ('Undersök Skador'),      value = 'getinjuries'},
 						{label = _U('ems_menu_small'),      value = 'small'},
-						{label = _U('drag'),                value = 'drag'},
 						{label = _U('ems_menu_big'),        value = 'big'},
+						{label = _U('ems_menu_revive'),     value = 'revive'},
+						{label = _U('drag'),                value = 'drag'},
 						{label = _U('ems_menu_putincar'),   value = 'put_in_vehicle'},
 						{label = _U('fine'),                value = 'fine'},
 						}
 					},
 					function(data, menu)
+
+						if data.current.value == 'getinjuries' then
+							local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+							exports['mythic_hospital']:GetCharsInjuries(closestPlayer)
+						end
 
 						if data.current.value == 'larm' then
 							local x,y,z = table.unpack(GetEntityCoords(GetPlayerPed(-1), false))
@@ -781,7 +787,28 @@ function OpenMobileAmbulanceActionsMenu()
 						  end
 
 						  if data.current.value == 'small' then
-                            menu.close()
+							menu.close()
+                            exports['mythic_progbar']:Progress({
+								name = "medicSmall",
+								duration = 10000,
+								label = "Behandlar Skador",
+								useWhileDead = false,
+								canCancel = true,
+								controlDisables = {
+									disableMovement = true,
+									disableCarMovement = true,
+									disableMouse = false,
+									disableCombat = true,
+								},
+								animation = {
+									animDict = "amb@medic@standing@kneel@base",
+									anim = "base",
+								},
+								prop = {
+									model = "prop_paper_bag_small",
+								}
+							}, function(status)
+								if not status then
                             local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
                             if closestPlayer == -1 or closestDistance > 3.0 then
                                 ESX.ShowNotification(_U('no_players'))
@@ -791,20 +818,20 @@ function OpenMobileAmbulanceActionsMenu()
                                         local playerPed = GetPlayerPed(-1)
                                         Citizen.CreateThread(function()
                                             ESX.ShowNotification(_U('heal_inprogress'))
-                                            TaskStartScenarioInPlace(playerPed, 'CODE_HUMAN_MEDIC_TEND_TO_DEAD', 0, true)
-                                            Wait(10000)
                                             ClearPedTasks(playerPed)
                                             TriggerServerEvent('esx_ambulancejob:removeItem', 'bandage')
                                             TriggerServerEvent('esx_ambulancejob:heal', GetPlayerServerId(closestPlayer), 'small')
                                             ESX.ShowNotification(_U('heal_complete'))
-											exports['mythic_hospital']:ResetAll()
+											exports['mythic_hospital']:ResetAll(closestPlayer)
                                         end)
                                     else
                                         ESX.ShowNotification(_U('not_enough_bandage'))
                                     end
                                 end, 'bandage')
                             end
-                        end
+						end
+					end)
+				end
 
 						if data.current.value == 'handcuff' then
 							TriggerServerEvent('esx_policejob:handcuff', GetPlayerServerId(player))
@@ -815,7 +842,28 @@ function OpenMobileAmbulanceActionsMenu()
 						end
 
 						if data.current.value == 'big' then
-                            menu.close()
+							menu.close()
+							exports['mythic_progbar']:Progress({
+								name = "medicBig",
+								duration = 15000,
+								label = "Behandlar Skador",
+								useWhileDead = false,
+								canCancel = true,
+								controlDisables = {
+									disableMovement = true,
+									disableCarMovement = true,
+									disableMouse = false,
+									disableCombat = true,
+								},
+								animation = {
+									animDict = "amb@medic@standing@kneel@base",
+									anim = "base",
+								},
+								prop = {
+									model = "prop_paper_bag_small",
+								}
+							}, function(status)
+								if not status then
                             local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
                             if closestPlayer == -1 or closestDistance > 3.0 then
                                 ESX.ShowNotification(_U('no_players'))
@@ -838,7 +886,9 @@ function OpenMobileAmbulanceActionsMenu()
                                     end
                                 end, 'medkit')
                             end
-                        end
+						end
+					end)
+				end
 						if distance ~= -1 and distance <= 3.0 then
 						if data.current.value == 'put_in_vehicle' then
 							menu.close()
