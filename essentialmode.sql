@@ -54,9 +54,7 @@ INSERT IGNORE INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`)
 	(3, 'society_police', 99200, NULL),
 	(6, 'society_ambulance', 0, NULL),
 	(7, 'society_mechanic', 0, NULL),
-	(10, 'society_taxi', 0, NULL),
-	(11, 'motels_bed_black_money', 0, 'steam:110000109c2ddf3'),
-	(12, 'motels_black_money', 0, 'steam:110000109c2ddf3');
+	(10, 'society_taxi', 0, NULL);
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.addon_inventory
@@ -93,11 +91,6 @@ CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
 
 -- Dumpar data för tabell essentialmode.addon_inventory_items: ~4 rows (ungefär)
 /*!40000 ALTER TABLE `addon_inventory_items` DISABLE KEYS */;
-INSERT IGNORE INTO `addon_inventory_items` (`id`, `inventory_name`, `name`, `count`, `owner`) VALUES
-	(1, 'society_police', 'WEAPON_COMBATPISTOL', 0, NULL),
-	(2, 'society_police', 'WEAPON_NIGHTSTICK', 0, NULL),
-	(3, 'society_police', 'WEAPON_ADVANCEDRIFLE', 0, NULL),
-	(4, 'society_police', 'bread', 0, NULL);
 /*!40000 ALTER TABLE `addon_inventory_items` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.billing
@@ -114,8 +107,6 @@ CREATE TABLE IF NOT EXISTS `billing` (
 
 -- Dumpar data för tabell essentialmode.billing: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `billing` DISABLE KEYS */;
-INSERT IGNORE INTO `billing` (`id`, `identifier`, `sender`, `target_type`, `target`, `label`, `amount`) VALUES
-	(1, 'steam:110000105dbc118', 'steam:110000109c2ddf3', 'society', 'society_police', 'Böter: Missbruk av tuta', 30);
 /*!40000 ALTER TABLE `billing` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.cardealer_vehicles
@@ -145,9 +136,6 @@ CREATE TABLE IF NOT EXISTS `characters` (
 
 -- Dumpar data för tabell essentialmode.characters: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
-INSERT IGNORE INTO `characters` (`id`, `identifier`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`) VALUES
-	(5, 'steam:110000105dbc118', 'HEHE', 'HEHE', '1990-01-01', 'M', '188', '1711'),
-	(6, 'steam:110000109c2ddf3', 'Hen', 'Tai', '1990-01-01', 'F', '123', '9872');
 /*!40000 ALTER TABLE `characters` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.datastore
@@ -186,18 +174,6 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
 INSERT IGNORE INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(1, 'society_police', NULL, '{}'),
-	(2, 'user_ears', 'steam:110000109c2ddf3', '{}'),
-	(3, 'user_glasses', 'steam:110000109c2ddf3', '{}'),
-	(4, 'user_mask', 'steam:110000109c2ddf3', '{}'),
-	(5, 'user_helmet', 'steam:110000109c2ddf3', '{}'),
-	(6, 'motels', 'steam:110000109c2ddf3', '{}'),
-	(7, 'motels_bed', 'steam:110000109c2ddf3', '{}'),
-	(8, 'motels', 'steam:110000105dbc118', '{}'),
-	(9, 'user_mask', 'steam:110000105dbc118', '{}'),
-	(10, 'user_ears', 'steam:110000105dbc118', '{}'),
-	(11, 'user_helmet', 'steam:110000105dbc118', '{}'),
-	(12, 'user_glasses', 'steam:110000105dbc118', '{}'),
-	(13, 'motels_bed', 'steam:110000105dbc118', '{}'),
 	(14, 'society_taxi', NULL, '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
@@ -209,19 +185,10 @@ CREATE TABLE IF NOT EXISTS `disc_ammo` (
   `count` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.disc_ammo: ~6 rows (ungefär)
+-- Dumpar data för tabell essentialmode.disc_ammo: ~9 rows (ungefär)
 /*!40000 ALTER TABLE `disc_ammo` DISABLE KEYS */;
-INSERT IGNORE INTO `disc_ammo` (`id`, `owner`, `hash`, `count`) VALUES
-	(9, 'steam:110000109c2ddf3', '-1357824103', 0),
-	(10, 'steam:110000109c2ddf3', '1737195953', 0),
-	(11, 'steam:110000109c2ddf3', '1593441988', 104),
-	(12, 'steam:110000109c2ddf3', '-1063057011', 65),
-	(13, 'steam:110000109c2ddf3', '736523883', 0),
-	(14, 'steam:110000109c2ddf3', '453432689', 21),
-	(15, 'steam:110000109c2ddf3', '487013001', 0),
-	(16, 'steam:110000109c2ddf3', '2017895192', 0);
 /*!40000 ALTER TABLE `disc_ammo` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.disc_inventory
@@ -231,15 +198,10 @@ CREATE TABLE IF NOT EXISTS `disc_inventory` (
   `type` text COLLATE utf8mb4_bin,
   `data` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.disc_inventory: ~4 rows (ungefär)
+-- Dumpar data för tabell essentialmode.disc_inventory: ~5 rows (ungefär)
 /*!40000 ALTER TABLE `disc_inventory` DISABLE KEYS */;
-INSERT IGNORE INTO `disc_inventory` (`id`, `owner`, `type`, `data`) VALUES
-	(15, 'Polis Förråd', 'stash', '{"2":{"count":1,"name":"WEAPON_PUMPSHOTGUN"},"1":{"count":1,"name":"WEAPON_STUNGUN"},"4":{"count":2,"name":"WEAPON_COMBATPISTOL"},"3":{"count":1,"name":"WEAPON_ASSAULTSMG"},"9":{"count":1,"name":"WEAPON_SMG"},"10":{"count":2,"name":"WEAPON_SPECIALCARBINE"},"6":{"count":1,"name":"WEAPON_FLASHLIGHT"},"5":{"count":1,"name":"WEAPON_NIGHTSTICK"},"8":{"count":1,"name":"WEAPON_FIREEXTINGUISHER"},"7":{"count":1,"name":"WEAPON_FLAREGUN"}}'),
-	(17, 'x342y-964z28', 'drop', '{"4":{"count":1,"name":"disc_ammo_smg_large"},"5":{"count":1,"name":"disc_ammo_pistol_large"},"2":{"count":1,"name":"disc_ammo_rifle_large"},"3":{"count":1,"name":"disc_ammo_shotgun_large"},"1":{"count":1,"name":"disc_ammo_snp_large"},"6":{"count":1,"name":"WEAPON_ADVANCEDRIFLE"}}'),
-	(18, 'x393y-961z28', 'drop', '{"1":{"name":"bread","count":1}}'),
-	(19, 'steam:110000109c2ddf3', 'player', '{"10":{"name":"WEAPON_NIGHTSTICK","count":1},"6":{"name":"WEAPON_COMBATPISTOL","count":1},"9":{"name":"WEAPON_SAWNOFFSHOTGUN","count":1},"8":{"name":"WEAPON_PUMPSHOTGUN","count":1},"7":{"name":"WEAPON_PISTOL","count":1},"1":{"name":"WEAPON_SPECIALCARBINE","count":1}}');
 /*!40000 ALTER TABLE `disc_inventory` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.disc_inventory_itemdata
@@ -251,13 +213,37 @@ CREATE TABLE IF NOT EXISTS `disc_inventory_itemdata` (
   `closeonuse` tinyint(1) NOT NULL DEFAULT '0',
   `max` int(11) NOT NULL DEFAULT '100',
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.disc_inventory_itemdata: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `disc_inventory_itemdata` DISABLE KEYS */;
 INSERT IGNORE INTO `disc_inventory_itemdata` (`id`, `name`, `description`, `weight`, `closeonuse`, `max`) VALUES
-	(1, 'bread', 'Ät mig', 1, 0, 10),
-	(2, 'WEAPON_ADVANCEDRIFLE', 'Kompatibel med Gevärs Ammo', 3270, 0, 10);
+	(3, 'adrenaline', 'En adrenalinpenna för vuxna', 0, 0, 100),
+	(4, 'bandage', 'Hjälper när du är skadad', 0, 0, 100),
+	(5, 'beer', 'Sötma, fyllighet och färg från malten. Beska och aromer från humlen', 0, 0, 100),
+	(6, 'bread', 'Stillar hungern', 0, 0, 100),
+	(7, 'coke', 'påverkar hela ditt centrala nervsystem. Små doser kan göra att du får ökad energi, ökad vakenhet och medvetenhet.', 0, 0, 100),
+	(8, 'disc_ammo_pistol', 'Ammunition för pistoler', 0, 0, 100),
+	(9, 'disc_ammo_pistol_large', 'Ammunition för pistoler', 0, 0, 100),
+	(10, 'disc_ammo_smg', 'Ammunition för smg', 0, 0, 100),
+	(11, 'disc_ammo_smg_large', 'Ammunition för smg', 0, 0, 100),
+	(12, 'disc_ammo_rifle', 'Ammunition för gevär', 0, 0, 100),
+	(13, 'disc_ammo_rifle_large', 'Ammunition för gevär', 0, 0, 100),
+	(14, 'disc_ammo_shotgun', 'Ammunition för hagelgevär', 0, 0, 100),
+	(15, 'disc_ammo_shotgun_large', 'Ammunition för hagelgevär', 0, 0, 100),
+	(16, 'disc_ammo_snp', 'Ammunition för prickskyttegevär', 0, 0, 100),
+	(17, 'disc_ammo_snp_large', 'Ammunition för prickskyttegevär', 0, 0, 100),
+	(18, 'firstaid', 'Hjälper när du är skadad', 0, 0, 100),
+	(19, 'gauze', 'Stoppar blödning', 0, 0, 100),
+	(20, 'hydrocodone', 'Smärtstillande', 0, 0, 100),
+	(21, 'medkit', 'Stoppar frakturer', 0, 0, 100),
+	(22, 'meth', 'påverkar hela ditt centrala nervsystem. Små doser kan göra att du får ökad energi, ökad vakenhet och medvetenhet.', 0, 0, 100),
+	(23, 'morphine', 'Smärtstillande', 0, 0, 100),
+	(24, 'patch', 'Lindrar blödningar', 0, 0, 100),
+	(25, 'phone', 'Hallå någon där?', 0, 0, 100),
+	(26, 'vicodin', 'Smärtstillande', 0, 0, 100),
+	(27, 'water', 'Släcker törsten', 0, 0, 100),
+	(28, 'weed', 'Cannabisruset kan ge positiva upplevelser såsom: en större känsla av lugn och avslappning, större känslighet i sociala sammanhang, högre självmedvetenhet, bättre insikt och tolerans, bättre förståelse av en själv, högre kreativitet eller ett positivare synsätt.', 0, 0, 100);
 /*!40000 ALTER TABLE `disc_inventory_itemdata` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.disc_property
@@ -339,8 +325,6 @@ CREATE TABLE IF NOT EXISTS `favoriteanimation` (
 
 -- Dumpar data för tabell essentialmode.favoriteanimation: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `favoriteanimation` DISABLE KEYS */;
-INSERT IGNORE INTO `favoriteanimation` (`identifier`, `lib`, `animation`, `scenario`) VALUES
-	('steam:110000109c2ddf3', 'mini@strip_club@idles@bouncer@base', 'base', 0);
 /*!40000 ALTER TABLE `favoriteanimation` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.fine_types
@@ -499,6 +483,8 @@ INSERT IGNORE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VAL
 	('WEAPON_SWITCHBLADE', 'Stilett', 1, 0, 1),
 	('WEAPON_VINTAGEPISTOL', 'PRO LASER III', 1, 0, 1),
 	('WEAPON_WRENCH', 'Rörtång', 1, 0, 1),
+	('adrenaline', 'EpiPen', 1, 0, 1),
+	('bandage', 'Bandage', 1, 0, 1),
 	('beer', 'Öl', 1, 0, 1),
 	('blowpipe', 'Blåslampa', 1, 0, 1),
 	('bread', 'Bröd', 1, 0, 1),
@@ -515,17 +501,24 @@ INSERT IGNORE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VAL
 	('disc_ammo_smg_large', 'SMG Ammo Large', 1, 0, 1),
 	('disc_ammo_snp', 'Prickskyttegevär Ammo', 1, 0, 1),
 	('disc_ammo_snp_large', 'Prickskyttegevär Ammo Large', 1, 0, 1),
+	('firstaid', 'Första Hjälpen Kit', 1, 0, 1),
 	('fixkit', 'Reparationssats', 1, 0, 1),
 	('fixtool', 'Reparationsverktyg', 1, 0, 1),
+	('gauze', 'Gasbinda', 1, 0, 1),
 	('gazbottle', 'Gas Flaska', 1, 0, 1),
+	('hydrocodone', 'Hydrokodon', 1, 0, 1),
 	('jager', 'Jägermeister', 1, 0, 1),
 	('jagerbomb', 'Jäger Bomb', 1, 0, 1),
 	('martini', 'Martini', 1, 0, 1),
+	('medkit', 'Medicinlåda', 1, 0, 1),
 	('meth', 'Amfetamin', 1, 0, 1),
+	('morphine', 'Morfin', 1, 0, 1),
 	('opium', 'Opium', 1, 0, 1),
+	('patch', 'Plåster', 1, 0, 1),
 	('phone', 'Telefon', 1, 0, 1),
 	('rhum', 'Rom', 1, 0, 1),
 	('tequilla', 'Tequilla', 1, 0, 1),
+	('vicodin', 'Vicodin', 1, 0, 1),
 	('water', 'Vatten', 1, 0, 1),
 	('weed', 'Cannabis', 1, 0, 1),
 	('whisky', 'Whisky', 1, 0, 1);
@@ -829,8 +822,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 -- Dumpar data för tabell essentialmode.users: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT IGNORE INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`, `is_dead`, `status`, `last_motel`, `last_motel_room`, `tattoos`, `phone_number`) VALUES
-	('steam:110000109c2ddf3', 'license:44be92faf675f784f2128ac35340fb9a172cefa3', 99765734, 'Mirrox', '{"blush_1":0,"pants_2":2,"torso_1":79,"beard_2":0,"chest_1":0,"lipstick_4":0,"age_1":0,"beard_3":0,"hair_1":4,"decals_2":0,"mask_1":0,"sex":1,"blemishes_1":0,"bracelets_1":-1,"makeup_2":0,"eye_color":0,"tshirt_1":15,"sun_1":0,"makeup_3":0,"bodyb_2":0,"tshirt_2":0,"watches_2":0,"beard_4":0,"skin":0,"blush_2":0,"arms":1,"face":21,"glasses_2":0,"bodyb_1":0,"beard_1":0,"hair_2":0,"glasses_1":5,"blush_3":0,"ears_1":-1,"helmet_2":0,"moles_1":0,"bproof_2":0,"shoes_1":3,"arms_2":0,"age_2":0,"bproof_1":0,"helmet_1":-1,"makeup_4":0,"lipstick_2":0,"chest_3":0,"torso_2":0,"shoes_2":10,"decals_1":0,"chest_2":0,"eyebrows_4":0,"chain_1":0,"complexion_1":0,"hair_color_1":0,"hair_color_2":0,"bags_1":0,"sun_2":0,"lipstick_3":0,"pants_1":2,"eyebrows_2":10,"ears_2":0,"watches_1":-1,"bags_2":0,"eyebrows_1":0,"chain_2":0,"blemishes_2":0,"makeup_1":0,"lipstick_1":0,"moles_2":0,"bracelets_2":0,"complexion_2":0,"eyebrows_3":0,"mask_2":0}', 'mechanic', 4, '[{"ammo":0,"name":"WEAPON_SPECIALCARBINE","components":["clip_default"],"label":"Special carbine"}]', '{"x":292.2,"y":-1032.2,"z":29.2}', 1000000800, 4, 'superadmin', 'Hen', 'Tai', '1990-01-01', 'F', '123', '9872', 0, '[{"name":"hunger","percent":89.62,"val":896200},{"name":"thirst","percent":90.6175,"val":906175},{"name":"drunk","percent":0.0,"val":0},{"name":"drug","percent":0.0,"val":0}]', NULL, NULL, NULL, '0734152526');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.user_accounts
@@ -844,8 +835,6 @@ CREATE TABLE IF NOT EXISTS `user_accounts` (
 
 -- Dumpar data för tabell essentialmode.user_accounts: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `user_accounts` DISABLE KEYS */;
-INSERT IGNORE INTO `user_accounts` (`id`, `identifier`, `name`, `money`) VALUES
-	(5, 'steam:110000109c2ddf3', 'black_money', 0);
 /*!40000 ALTER TABLE `user_accounts` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.user_inventory
@@ -855,118 +844,10 @@ CREATE TABLE IF NOT EXISTS `user_inventory` (
   `item` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=643 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=652 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.user_inventory: ~107 rows (ungefär)
 /*!40000 ALTER TABLE `user_inventory` DISABLE KEYS */;
-INSERT IGNORE INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
-	(536, 'steam:110000109c2ddf3', 'WEAPON_PUMPSHOTGUN', 1),
-	(537, 'steam:110000109c2ddf3', 'opium', 0),
-	(538, 'steam:110000109c2ddf3', 'WEAPON_BAT', 0),
-	(539, 'steam:110000109c2ddf3', 'WEAPON_BATTLEAXE', 0),
-	(540, 'steam:110000109c2ddf3', 'WEAPON_APPISTOL', 0),
-	(541, 'steam:110000109c2ddf3', 'WEAPON_PISTOL50', 0),
-	(542, 'steam:110000109c2ddf3', 'coke', 0),
-	(543, 'steam:110000109c2ddf3', 'WEAPON_MARKSMANPISTOL', 0),
-	(544, 'steam:110000109c2ddf3', 'WEAPON_HOMINGLAUNCHER', 0),
-	(545, 'steam:110000109c2ddf3', 'WEAPON_GARBAGEBAG', 0),
-	(546, 'steam:110000109c2ddf3', 'WEAPON_SNOWBALL', 0),
-	(547, 'steam:110000109c2ddf3', 'WEAPON_SNIPERRIFLE', 0),
-	(548, 'steam:110000109c2ddf3', 'WEAPON_GOLFCLUB', 0),
-	(549, 'steam:110000109c2ddf3', 'bread', 0),
-	(550, 'steam:110000109c2ddf3', 'WEAPON_SNSPISTOL', 0),
-	(551, 'steam:110000109c2ddf3', 'WEAPON_DAGGER', 0),
-	(552, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTRIFLE', 0),
-	(553, 'steam:110000109c2ddf3', 'WEAPON_BULLPUPRIFLE', 0),
-	(554, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTSMG', 0),
-	(555, 'steam:110000109c2ddf3', 'WEAPON_COMBATMG', 0),
-	(556, 'steam:110000109c2ddf3', 'WEAPON_BALL', 0),
-	(557, 'steam:110000109c2ddf3', 'WEAPON_COMBATPDW', 0),
-	(558, 'steam:110000109c2ddf3', 'WEAPON_ADVANCEDRIFLE', 0),
-	(559, 'steam:110000109c2ddf3', 'WEAPON_CROWBAR', 0),
-	(560, 'steam:110000109c2ddf3', 'WEAPON_GRENADELAUNCHER', 0),
-	(561, 'steam:110000109c2ddf3', 'WEAPON_KNIFE', 0),
-	(562, 'steam:110000109c2ddf3', 'WEAPON_MG', 0),
-	(563, 'steam:110000109c2ddf3', 'WEAPON_AUTOSHOTGUN', 0),
-	(564, 'steam:110000109c2ddf3', 'WEAPON_RAILGUN', 0),
-	(565, 'steam:110000109c2ddf3', 'WEAPON_DIGISCANNER', 0),
-	(566, 'steam:110000109c2ddf3', 'WEAPON_DBSHOTGUN', 0),
-	(567, 'steam:110000109c2ddf3', 'water', 0),
-	(568, 'steam:110000109c2ddf3', 'WEAPON_MACHINEPISTOL', 0),
-	(569, 'steam:110000109c2ddf3', 'WEAPON_KNUCKLE', 0),
-	(570, 'steam:110000109c2ddf3', 'WEAPON_PISTOL', 1),
-	(571, 'steam:110000109c2ddf3', 'WEAPON_MOLOTOV', 0),
-	(572, 'steam:110000109c2ddf3', 'WEAPON_COMPACTRIFLE', 0),
-	(573, 'steam:110000109c2ddf3', 'WEAPON_MINIGUN', 0),
-	(574, 'steam:110000109c2ddf3', 'WEAPON_MARKSMANRIFLE', 0),
-	(575, 'steam:110000109c2ddf3', 'whisky', 0),
-	(576, 'steam:110000109c2ddf3', 'WEAPON_BULLPUPSHOTGUN', 0),
-	(577, 'steam:110000109c2ddf3', 'WEAPON_PIPEBOMB', 0),
-	(578, 'steam:110000109c2ddf3', 'WEAPON_SMOKEGRENADE', 0),
-	(579, 'steam:110000109c2ddf3', 'tequilla', 0),
-	(580, 'steam:110000109c2ddf3', 'WEAPON_VINTAGEPISTOL', 0),
-	(581, 'steam:110000109c2ddf3', 'phone', 0),
-	(582, 'steam:110000109c2ddf3', 'WEAPON_HEAVYSNIPER', 0),
-	(583, 'steam:110000109c2ddf3', 'WEAPON_REVOLVER', 0),
-	(584, 'steam:110000109c2ddf3', 'disc_ammo_smg_large', 0),
-	(585, 'steam:110000109c2ddf3', 'WEAPON_PETROLCAN', 0),
-	(586, 'steam:110000109c2ddf3', 'WEAPON_WRENCH', 0),
-	(587, 'steam:110000109c2ddf3', 'martini', 0),
-	(588, 'steam:110000109c2ddf3', 'jagerbomb', 0),
-	(589, 'steam:110000109c2ddf3', 'jager', 0),
-	(590, 'steam:110000109c2ddf3', 'WEAPON_DOUBLEACTION', 0),
-	(591, 'steam:110000109c2ddf3', 'fixtool', 0),
-	(592, 'steam:110000109c2ddf3', 'fixkit', 0),
-	(593, 'steam:110000109c2ddf3', 'disc_ammo_shotgun_large', 0),
-	(594, 'steam:110000109c2ddf3', 'WEAPON_MACHETE', 0),
-	(595, 'steam:110000109c2ddf3', 'disc_ammo_snp', 0),
-	(596, 'steam:110000109c2ddf3', 'WEAPON_ASSAULTSHOTGUN', 0),
-	(597, 'steam:110000109c2ddf3', 'meth', 0),
-	(598, 'steam:110000109c2ddf3', 'blowpipe', 0),
-	(599, 'steam:110000109c2ddf3', 'disc_ammo_smg', 0),
-	(600, 'steam:110000109c2ddf3', 'WEAPON_RPG', 0),
-	(601, 'steam:110000109c2ddf3', 'disc_ammo_shotgun', 0),
-	(602, 'steam:110000109c2ddf3', 'WEAPON_HEAVYPISTOL', 0),
-	(603, 'steam:110000109c2ddf3', 'WEAPON_FLARE', 0),
-	(604, 'steam:110000109c2ddf3', 'carokit', 0),
-	(605, 'steam:110000109c2ddf3', 'WEAPON_COMPACTLAUNCHER', 0),
-	(606, 'steam:110000109c2ddf3', 'WEAPON_PROXMINE', 0),
-	(607, 'steam:110000109c2ddf3', 'WEAPON_BZGAS', 0),
-	(608, 'steam:110000109c2ddf3', 'disc_ammo_pistol_large', 0),
-	(609, 'steam:110000109c2ddf3', 'disc_ammo_pistol', 0),
-	(610, 'steam:110000109c2ddf3', 'WEAPON_HAMMER', 0),
-	(611, 'steam:110000109c2ddf3', 'carotool', 0),
-	(612, 'steam:110000109c2ddf3', 'WEAPON_BOTTLE', 0),
-	(613, 'steam:110000109c2ddf3', 'disc_ammo_rifle_large', 0),
-	(614, 'steam:110000109c2ddf3', 'beer', 0),
-	(615, 'steam:110000109c2ddf3', 'rhum', 0),
-	(616, 'steam:110000109c2ddf3', 'WEAPON_SWITCHBLADE', 0),
-	(617, 'steam:110000109c2ddf3', 'WEAPON_STUNGUN', 0),
-	(618, 'steam:110000109c2ddf3', 'WEAPON_STINGER', 0),
-	(619, 'steam:110000109c2ddf3', 'gazbottle', 0),
-	(620, 'steam:110000109c2ddf3', 'WEAPON_STICKYBOMB', 0),
-	(621, 'steam:110000109c2ddf3', 'WEAPON_SMG', 0),
-	(622, 'steam:110000109c2ddf3', 'WEAPON_COMBATPISTOL', 1),
-	(623, 'steam:110000109c2ddf3', 'WEAPON_NIGHTSTICK', 1),
-	(624, 'steam:110000109c2ddf3', 'WEAPON_SAWNOFFSHOTGUN', 1),
-	(625, 'steam:110000109c2ddf3', 'WEAPON_MUSKET', 0),
-	(626, 'steam:110000109c2ddf3', 'WEAPON_HATCHET', 0),
-	(627, 'steam:110000109c2ddf3', 'WEAPON_GRENADE', 0),
-	(628, 'steam:110000109c2ddf3', 'WEAPON_SPECIALCARBINE', 1),
-	(629, 'steam:110000109c2ddf3', 'disc_ammo_rifle', 0),
-	(630, 'steam:110000109c2ddf3', 'WEAPON_MICROSMG', 0),
-	(631, 'steam:110000109c2ddf3', 'WEAPON_HEAVYSHOTGUN', 0),
-	(632, 'steam:110000109c2ddf3', 'WEAPON_POOLCUE', 0),
-	(633, 'steam:110000109c2ddf3', 'WEAPON_FIREWORK', 0),
-	(634, 'steam:110000109c2ddf3', 'weed', 0),
-	(635, 'steam:110000109c2ddf3', 'WEAPON_CARBINERIFLE', 0),
-	(636, 'steam:110000109c2ddf3', 'disc_ammo_snp_large', 0),
-	(637, 'steam:110000109c2ddf3', 'WEAPON_MINISMG', 0),
-	(638, 'steam:110000109c2ddf3', 'WEAPON_FIREEXTINGUISHER', 0),
-	(639, 'steam:110000109c2ddf3', 'WEAPON_GUSENBERG', 0),
-	(640, 'steam:110000109c2ddf3', 'WEAPON_FLAREGUN', 0),
-	(641, 'steam:110000109c2ddf3', 'WEAPON_HANDCUFFS', 0),
-	(642, 'steam:110000109c2ddf3', 'WEAPON_FLASHLIGHT', 0);
 /*!40000 ALTER TABLE `user_inventory` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.user_lastcharacter
@@ -977,8 +858,6 @@ CREATE TABLE IF NOT EXISTS `user_lastcharacter` (
 
 -- Dumpar data för tabell essentialmode.user_lastcharacter: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `user_lastcharacter` DISABLE KEYS */;
-INSERT IGNORE INTO `user_lastcharacter` (`steamid`, `charid`) VALUES
-	('steam:110000109c2ddf3', 1);
 /*!40000 ALTER TABLE `user_lastcharacter` ENABLE KEYS */;
 
 -- Dumpar struktur för tabell essentialmode.user_licenses

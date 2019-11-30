@@ -23,8 +23,8 @@ files {
 
 -- Client Scripts
 client_scripts {
+	'cinemamode.lua',
 	'client.lua',
-	'MINIANCHOR.lua'
 }
 
 -- Server Scripts

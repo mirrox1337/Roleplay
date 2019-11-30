@@ -79,6 +79,22 @@ AddEventHandler('esx_status:loaded', function(status)
 				end
 			end)
 
+			TriggerEvent('esx_status:getStatus', 'hunger', function(status)
+				if status.val == 100000 then
+					ESX.ShowNotification('~o~Jag är hungrig')
+				elseif status.val == 50000 then
+					ESX.ShowNotification('~o~Jag är extremt hungrig')
+				end
+			end)
+
+			TriggerEvent('esx_status:getStatus', 'thirst', function(status)
+				if status.val == 100000 then
+					ESX.ShowNotification('~b~Jag är törstig')
+				elseif status.val == 50000 then
+					ESX.ShowNotification('~b~Jag är extremt törstig')
+				end
+			end)
+
 			if health ~= prevHealth then
 				SetEntityHealth(playerPed, health)
 			end

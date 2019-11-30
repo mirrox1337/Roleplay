@@ -76,6 +76,18 @@ Citizen.CreateThread(function()
 	end
 end)
 
+if not cinema then
+	SendNUIMessage({
+		showhud = true,
+	})
+end
+
+if cinema then
+	SendNUIMessage({
+		showhud = false,
+	})
+end
+
 -- Consume fuel factor
 Citizen.CreateThread(function()
 	while true do
