@@ -494,7 +494,7 @@ function roomMarkers()
             if roomOwner == playerIdent then
             DrawText3D(v.BedStash.x, v.BedStash.y, v.BedStash.z + 0.1, 'Tryck [~p~E~s~] för att kolla under madrassen.')
                 if IsControlJustReleased(0, Keys['E']) then
-                    OpenStash()
+                    OpenCupboard()
                 end
             end
         end
@@ -660,4 +660,12 @@ DrawText3D = function(x, y, z, text)
         local factor = (string.len(text)) / 470
         --DrawRect(_x, _y + 0.0125, 0.015 + factor, 0.03, 0, 0, 0, 125)
     end
+end
+
+
+function OpenCupboard(room)
+    TriggerEvent('disc-inventoryhud:openInventory', {
+        type = ('Motell'),
+        owner = room
+    })
 end

@@ -179,7 +179,7 @@ function ListOwnedCarsMenu()
 					local hashVehicule = v.vehicle.model
 					local vehicleName  = GetDisplayNameFromVehicleModel(hashVehicule)
 					local plate        = v.plate
-					local vehDamage	   = math.floor(v.vehicle.health/10)
+					--local vehDamage	   = math.floor(v.vehicle.health/10)
 					local labelvehicle
 					
 					if Config.ShowVehicleLocation then
