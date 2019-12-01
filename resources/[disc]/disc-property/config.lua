@@ -410,5 +410,36 @@ Config.Properties = {
                 }
             }
         }
-    }
+    },
+    {
+        name = 'Mission Row Street',
+        price = 120000,
+        view = {
+            coords = vector3(265.845, -1007.152, -102.002),
+        },
+        inside = {
+            coords = vector3(265.845, -1007.152, -102.002),
+            heading = 0.15
+        },
+        outside = {
+            coords = vector3(254.98, -1013.31, 29.27),
+            heading = 251.4
+        },
+        kitchen = {
+            coords = vector3(265.53, -996.66, -99.01)
+        },
+        garage = {
+            coords = vector3(391.32, 430.66, 143.55)
+        },
+        rooms = {
+            {
+                clothes = {
+                    coords = vector3(259.79, -1003.8, -99.01)
+                },
+                cupboard = {
+                    coords = vector3(265.6, -999.53, -99.01)
+                }
+            }
+        }
+    },
 }

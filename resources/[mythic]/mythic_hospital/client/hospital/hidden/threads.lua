@@ -7,7 +7,7 @@ Citizen.CreateThread(function()
             local plyCoords = GetEntityCoords(PlayerPedId(), 0)
             local distance = #(vector3(Config.Hidden.Location.x, Config.Hidden.Location.y, Config.Hidden.Location.z) - plyCoords)
             if distance < 10 then
-                DrawMarker(25, Config.Hidden.Location.x, Config.Hidden.Location.y, Config.Hidden.Location.z - 0.99, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 1.0, 139, 16, 20, 250, false, false, 2, false, false, false, false)
+                --DrawMarker(25, Config.Hidden.Location.x, Config.Hidden.Location.y, Config.Hidden.Location.z - 0.99, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 1.0, 139, 16, 20, 250, false, false, 2, false, false, false, false)
     
                 if not IsPedInAnyVehicle(PlayerPedId(), true) then
                     if distance < 3 then

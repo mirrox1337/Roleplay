@@ -40,6 +40,7 @@ local isPropTwo = false
 local prop_net = nil
 local propTwo_net = nil
 local runProgThread = false
+local playerPed = PlayerPedId()
 
 function Progress(action, finish)
 	Process(action, nil, nil, finish)
@@ -203,6 +204,7 @@ end
 function Cancel()
     isDoingAction = false
     wasCancelled = true
+    ClearPedTasks(playerPed)
 
     ActionCleanup()
 
