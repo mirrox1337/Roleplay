@@ -21,7 +21,7 @@ Citizen.CreateThread(function()
             shouldDraw = function()
                 return ESX.PlayerData.job.name == v.job or v.job == 'all'
             end,
-            msg = v.msg or 'Tryck ~INPUT_CONTEXT~ f�r att �ppna F�rr�d',
+            msg = v.msg or _U('keystash'),
         }
         TriggerEvent('disc-base:registerMarker', marker)
     end

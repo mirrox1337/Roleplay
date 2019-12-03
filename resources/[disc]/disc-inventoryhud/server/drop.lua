@@ -3,7 +3,7 @@ local drops = {}
 Citizen.CreateThread(function()
     TriggerEvent('disc-inventoryhud:RegisterInventory', {
         name = 'drop',
-        label = 'Marken',
+        label = _U('drop'),
         slots = 10
     })
 end)

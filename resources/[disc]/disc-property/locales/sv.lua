@@ -29,6 +29,7 @@ Locales['sv'] = {
     ['keygarage'] = "Tryck ~INPUT_CONTEXT~ för att öppna ~p~Garage",
     ['clotheskey'] = "Tryck ~INPUT_CONTEXT~ för att byta ~p~Kläder",
     ['keyroom'] = "Tryck ~INPUT_CONTEXT~ för att öppna ~p~Förråd",
+	['showroom'] = "Tryck ~INPUT_CONTEXT~ för att ta en dusch",
 -- Cupboard
     ['cupboard'] = "Förråd",
 -- Garage
@@ -50,4 +51,8 @@ Locales['sv'] = {
     ['savc'] = "Sparade Kläder: ",
     ['changc'] = "Byte Kläder: ",
     ['nameout'] = "Namnge Outfit",
+-- Showers
+    ['commanderr'] = "Nemuzes se uspinit prikazem!",
+    ['smell'] = "Du luktar illa",
+    ['smell1'] = "~r~Du är smutsig",
 } 

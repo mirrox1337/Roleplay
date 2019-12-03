@@ -637,12 +637,22 @@ ESX.RegisterServerCallback('disc-inventoryhud:canOpenInventory', function(source
 end)
 
 ESX.RegisterServerCallback('disc-inventoryhud:getSecondaryInventory', function(source, cb, type, identifier)
+    if InvType[type] == nil then
+        print('ERROR FINDING INVENTORY TYPE:' .. type)
+        return
+    end
     InvType[type].getDisplayInventory(identifier, cb, source)
 end)
 
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(5 * 60 * 1000)
+        saveInventories()
+    end
+end)
+
+RegisterCommand('saveInventories', function(src, args, raw)
+    if src == 0 then
         saveInventories()
     end
 end)
@@ -717,13 +727,25 @@ function getDisplayInventory(identifier, type, cb, source)
             end
         end
 
-        local inv = {
-            invId = identifier,
-            invTier = InvType[type],
-            inventory = itemsObject,
-			cash = inventory['cash'] or 0,
-            black_money = inventory['black_money'] or 0
-        }
+        local inv
+        if type == 'player' then
+            local targetPlayer = ESX.GetPlayerFromIdentifier(identifier)
+            inv = {
+                invId = identifier,
+                invTier = InvType[type],
+                inventory = itemsObject,
+                cash = targetPlayer.getMoney(),
+                black_money = targetPlayer.getAccount('black_money').money
+            }
+        else
+            inv = {
+                invId = identifier,
+                invTier = InvType[type],
+                inventory = itemsObject,
+                cash = inventory['cash'] or 0,
+                black_money = inventory['black_money'] or 0
+            }
+        end
         cb(inv)
     end)
 end

@@ -1,5 +1,6 @@
 Config = {}
 
+Config.Locale = 'en'
 Config.OpenControl = 289
 Config.TrunkOpenControl = 47
 Config.DeleteDropsOnStart = false
@@ -221,6 +222,12 @@ Config.Seize = {
     cash = true
 }
 
+Config.VehicleLimit = {
+    ['Zentorno'] = 10,
+    ['Panto'] = 1,
+    ['Zion'] = 5
+}
+
 --Courtesy DoctorTwitch
 Config.VehicleSlot = {
     [0] = 10, --Compact
@@ -246,3 +253,15 @@ Config.VehicleSlot = {
     [20] = 0, --Commercial
     [21] = 0 --Trains
 }
+
+Config.Throwables = {
+    WEAPON_MOLOTOV = 615608432,
+    WEAPON_GRENADE = -1813897027,
+    WEAPON_STICKYBOMB = 741814745,
+    WEAPON_PROXMINE = -1420407917,
+    WEAPON_SMOKEGRENADE = -37975472,
+    WEAPON_PIPEBOMB = -1169823560,
+    WEAPON_SNOWBALL = 126349499
+}
+
+Config.FuelCan = 883325847
