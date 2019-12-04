@@ -124,7 +124,7 @@ RegisterNetEvent('esx_ambulancejob:useItem')
 AddEventHandler('esx_ambulancejob:useItem', function(itemName)
 	ESX.UI.Menu.CloseAll()
 
-	if itemName == 'medikit' then
+	if itemName == 'medkit' then
 		local lib, anim = 'anim@heists@narcotics@funding@gang_idle', 'gang_chatting_idle01' -- TODO better animations
 		local playerPed = PlayerPedId()
 
@@ -138,7 +138,7 @@ AddEventHandler('esx_ambulancejob:useItem', function(itemName)
 			end
 	
 			TriggerEvent('esx_ambulancejob:heal', 'big', true)
-			ESX.ShowNotification(_U('used_medikit'))
+			ESX.ShowNotification(_U('used_medkit'))
 		end)
 
 	elseif itemName == 'bandage' then
