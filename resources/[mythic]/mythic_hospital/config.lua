@@ -38,7 +38,7 @@ Config.AlertShowInfo = 2
 ]]
 Config.Hospital = {
     Location = { x = 308.06161499023, y = -595.19683837891, z = 43.291839599609, h = 180.4409942627 },
-    ShowBlip = true,
+    ShowBlip = false,
 }
 Config.Hospital.Blip = { name = "Pillbox Medical Center", color = 38, id = 153, scale = 1.0, short = false, x = Config.Hospital.Location.x, y = Config.Hospital.Location.y, z = Config.Hospital.Location.z }
 

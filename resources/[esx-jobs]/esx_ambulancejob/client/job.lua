@@ -84,8 +84,9 @@ function OpenMobileAmbulanceActionsMenu()
 										end)
 									end
 
-									TriggerServerEvent('esx_ambulancejob:removeItem', 'medikit')
+									TriggerServerEvent('esx_ambulancejob:removeItem', 'medkit')
 									TriggerServerEvent('esx_ambulancejob:revive', GetPlayerServerId(closestPlayer))
+									exports['mythic_hospital']:ResetAll(closestPlayer)
 
 									-- Show revive award?
 									if Config.ReviveReward > 0 then
@@ -97,12 +98,12 @@ function OpenMobileAmbulanceActionsMenu()
 									ESX.ShowNotification(_U('player_not_unconscious'))
 								end
 							else
-								ESX.ShowNotification(_U('not_enough_medikit'))
+								ESX.ShowNotification(_U('not_enough_medkit'))
 							end
 
 							isBusy = false
 
-						end, 'medikit')
+						end, 'medkit')
 
 					elseif data.current.value == 'small' then
 
@@ -123,6 +124,7 @@ function OpenMobileAmbulanceActionsMenu()
 									TriggerServerEvent('esx_ambulancejob:removeItem', 'bandage')
 									TriggerServerEvent('esx_ambulancejob:heal', GetPlayerServerId(closestPlayer), 'small')
 									ESX.ShowNotification(_U('heal_complete', GetPlayerName(closestPlayer)))
+									exports['mythic_hospital']:ResetAll(closestPlayer)
 									isBusy = false
 								else
 									ESX.ShowNotification(_U('player_not_conscious'))
@@ -148,17 +150,18 @@ function OpenMobileAmbulanceActionsMenu()
 									Citizen.Wait(10000)
 									ClearPedTasks(playerPed)
 
-									TriggerServerEvent('esx_ambulancejob:removeItem', 'medikit')
+									TriggerServerEvent('esx_ambulancejob:removeItem', 'medkit')
 									TriggerServerEvent('esx_ambulancejob:heal', GetPlayerServerId(closestPlayer), 'big')
 									ESX.ShowNotification(_U('heal_complete', GetPlayerName(closestPlayer)))
+									exports['mythic_hospital']:ResetAll(closestPlayer)
 									isBusy = false
 								else
 									ESX.ShowNotification(_U('player_not_conscious'))
 								end
 							else
-								ESX.ShowNotification(_U('not_enough_medikit'))
+								ESX.ShowNotification(_U('not_enough_medkit'))
 							end
-						end, 'medikit')
+						end, 'medkit')
 
 					elseif data.current.value == 'put_in_vehicle' then
 						TriggerServerEvent('esx_ambulancejob:putInVehicle', GetPlayerServerId(closestPlayer))
@@ -900,7 +903,7 @@ function OpenPharmacyMenu()
 		title    = _U('pharmacy_menu_title'),
 		align    = 'right',
 		elements = {
-			{label = _U('pharmacy_take', _U('medikit')), item = 'medkit', type = 'slider', value = 1, min = 1, max = 100},
+			{label = _U('pharmacy_take', _U('medkit')), item = 'medkit', type = 'slider', value = 1, min = 1, max = 100},
 			{label = _U('pharmacy_take', ('Första Hjälpen Kit')), item = 'firstaid', type = 'slider', value = 1, min = 1, max = 100},
 			{label = _U('pharmacy_take', _U('bandage')), item = 'bandage', type = 'slider', value = 1, min = 1, max = 100},
 			{label = _U('pharmacy_take', ('Gasbinda')), item = 'gauze', type = 'slider', value = 1, min = 1, max = 100},

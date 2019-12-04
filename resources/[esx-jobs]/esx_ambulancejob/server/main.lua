@@ -206,8 +206,8 @@ AddEventHandler('esx_ambulancejob:removeItem', function(item)
 
 	if item == 'bandage' then
 		xPlayer.showNotification(_U('used_bandage'))
-	elseif item == 'medikit' then
-		xPlayer.showNotification(_U('used_medikit'))
+	elseif item == 'medkit' then
+		xPlayer.showNotification(_U('used_medkit'))
 	end
 end)
 
@@ -243,13 +243,13 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, { help = _U('revive_help'), params = {{ name = 'id' }} })
 --[[
-ESX.RegisterUsableItem('medikit', function(source)
+ESX.RegisterUsableItem('medkit', function(source)
 	if not playersHealing[source] then
 		local xPlayer = ESX.GetPlayerFromId(source)
-		xPlayer.removeInventoryItem('medikit', 1)
+		xPlayer.removeInventoryItem('medkit', 1)
 
 		playersHealing[source] = true
-		TriggerClientEvent('esx_ambulancejob:useItem', source, 'medikit')
+		TriggerClientEvent('esx_ambulancejob:useItem', source, 'medkit')
 
 		Citizen.Wait(10000)
 		playersHealing[source] = nil
