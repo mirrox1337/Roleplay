@@ -48,12 +48,13 @@ form {
 }
 .datepicker-date-display {
   background: #392c34;
+  color: #000;
 }
 .datepicker-container button {
-  color: #fff;
+  color: #000;
 }
 .datepicker-container button:focus {
-  background: none;
+  background: #cecece;
 }
 .datepicker-container .is-selected {
   background: #7a5f70 !important;
@@ -62,7 +63,7 @@ form {
   color: #fff !important;
 }
 .datepicker-container input {
-  color: #fff !important;
+  color: #252525 !important;
 }
 label {
  color: #fff !important;
