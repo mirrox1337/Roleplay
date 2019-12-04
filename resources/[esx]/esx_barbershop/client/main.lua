@@ -108,6 +108,7 @@ Citizen.CreateThread(function()
 		SetBlipSprite (blip, 71)
 		SetBlipColour (blip, 51)
 		SetBlipAsShortRange(blip, true)
+		SetBlipScale(blip, 0.8)
 
 		BeginTextCommandSetBlipName('STRING')
 		AddTextComponentSubstringPlayerName(_U('barber_blip'))

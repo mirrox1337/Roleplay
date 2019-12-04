@@ -62,15 +62,15 @@ Config.BlipGaragePrivate = {
 }
 
 Config.BlipPound = {
-	Sprite = 67,
-	Color = 64,
+	Sprite = 380,
+	Color = 22,
 	Display = 2,
 	Scale = 0.65
 }
 
 Config.BlipJobPound = {
-	Sprite = 67,
-	Color = 49,
+	Sprite = 380,
+	Color = 22,
 	Display = 2,
 	Scale = 0.65
 }
