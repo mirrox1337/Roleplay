@@ -165,10 +165,11 @@ INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
 	('motels_bed', 'Motels Bed Datastore', 0),
 	('society_police', 'Polis', 1),
 	('society_taxi', 'Taxi', 1),
-	('user_ears', 'Ears', 0),
-	('user_glasses', 'Glasses', 0),
-	('user_helmet', 'Helmet', 0),
-	('user_mask', 'Mask', 0);
+	('user_ears', 'Öronsmycken', 0),
+	('user_glasses', 'Glasögon', 0),
+	('user_helmet', 'Hjälmar', 0),
+	('user_mask', 'Masker', 0),
+	('user_watches', 'Klockor', 0);
 /*!40000 ALTER TABLE `datastore` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.datastore_data
@@ -200,11 +201,12 @@ INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(25, 'user_glasses', 'Char1:110000105dbc118', '{}'),
 	(26, 'user_helmet', 'Char1:110000105dbc118', '{}'),
 	(27, 'motels', 'steam:110000105dbc118', '{}'),
-	(28, 'user_ears', 'steam:110000105dbc118', '{}'),
+	(28, 'user_ears', 'steam:110000105dbc118', '{"hasEars":true,"skin":{"ears_2":0,"ears_1":3}}'),
 	(29, 'motels_bed', 'steam:110000105dbc118', '{}'),
 	(30, 'user_glasses', 'steam:110000105dbc118', '{}'),
 	(31, 'user_mask', 'steam:110000105dbc118', '{}'),
-	(32, 'user_helmet', 'steam:110000105dbc118', '{}');
+	(32, 'user_helmet', 'steam:110000105dbc118', '{}'),
+	(33, 'user_watches', 'steam:110000105dbc118', '{"skin":{"watches_1":6,"watches_2":1},"hasWatches":true}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.disc_ammo
@@ -234,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `disc_inventory` (
 /*!40000 ALTER TABLE `disc_inventory` DISABLE KEYS */;
 INSERT INTO `disc_inventory` (`id`, `owner`, `type`, `data`) VALUES
 	(22, 'Polis Förråd', 'stash', '{"1":{"name":"bread","count":12},"2":{"count":6,"name":"WEAPON_PISTOL50"}}'),
-	(24, 'steam:110000105dbc118', 'player', '{"1":{"name":"cocaineleaf","count":100},"2":{"name":"cocaineleaf","count":100},"3":{"name":"cocaineleaf","count":100},"4":{"name":"cocaineleaf","count":100}}');
+	(24, 'steam:110000105dbc118', 'player', '{"7":{"price":200,"count":1,"usable":false,"name":"fuel"},"6":{"price":100,"count":1,"usable":false,"name":"chemicals"},"9":{"price":15,"count":1,"usable":false,"name":"plasticbag"},"8":{"price":150,"count":1,"usable":false,"name":"grinder"},"11":{"price":450,"count":1,"usable":false,"name":"seed"},"10":{"price":200,"count":1,"usable":false,"name":"scale"},"1":{"name":"cocaineleaf","count":100},"3":{"name":"cocaineleaf","count":100},"12":{"price":100,"count":1,"usable":false,"name":"chemicals"},"5":{"name":"cocaineleaf","count":100},"4":{"name":"cocaineleaf","count":100}}');
 /*!40000 ALTER TABLE `disc_inventory` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.disc_inventory_itemdata
@@ -699,11 +701,14 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   PRIMARY KEY (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.owned_vehicles: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.owned_vehicles: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `owned_vehicles` DISABLE KEYS */;
 INSERT INTO `owned_vehicles` (`owner`, `plate`, `vehicle`, `type`, `job`, `stored`) VALUES
 	('steam:110000105dbc118', 'ARM 942', '{"modTank":-1,"modAPlate":-1,"modTrimB":-1,"modSeats":-1,"modFender":-1,"windowTint":-1,"color2":0,"modAerials":-1,"engineHealth":1000.0,"modAirFilter":-1,"modSteeringWheel":-1,"modOrnaments":-1,"modFrontWheels":-1,"modPlateHolder":-1,"modDashboard":-1,"modSpeakers":-1,"pearlescentColor":111,"modSideSkirt":-1,"modBackWheels":-1,"plateIndex":0,"neonEnabled":[false,false,false,false],"extras":{"12":true,"10":false},"modTrimA":-1,"modDoorSpeaker":-1,"neonColor":[255,0,255],"modFrame":-1,"modSmokeEnabled":false,"modHorns":-1,"modArchCover":-1,"modTransmission":-1,"wheels":0,"modShifterLeavers":-1,"modGrille":-1,"modXenon":false,"modVanityPlate":-1,"modLivery":-1,"modRearBumper":-1,"color1":6,"modSpoilers":-1,"dirtLevel":5.1,"modDial":-1,"modTrunk":-1,"modSuspension":-1,"modHydrolic":-1,"modStruts":-1,"modTurbo":false,"modFrontBumper":-1,"bodyHealth":1000.0,"model":-344943009,"modRightFender":-1,"modExhaust":-1,"modBrakes":-1,"plate":"ARM 942","modWindows":-1,"wheelColor":156,"modEngineBlock":-1,"fuelLevel":64.6,"modRoof":-1,"modArmor":-1,"tyreSmokeColor":[255,255,255],"modHood":-1,"modEngine":-1}', 'car', NULL, 1),
-	('steam:110000109c2ddf3', 'JQO 440', '{"bodyHealth":1000.0,"modTransmission":-1,"modHydrolic":-1,"wheelColor":156,"modSmokeEnabled":false,"plate":"JQO 440","modSpeakers":-1,"modExhaust":-1,"modSpoilers":-1,"modSideSkirt":-1,"modFrontWheels":-1,"modBackWheels":-1,"windowTint":-1,"model":2046537925,"modEngine":-1,"fuelLevel":64.2,"neonEnabled":[false,false,false,false],"modWindows":-1,"wheels":1,"modTrunk":-1,"modFrontBumper":-1,"modBrakes":-1,"modTank":-1,"modArmor":-1,"modFender":-1,"modDashboard":-1,"modTrimB":-1,"modSuspension":-1,"modTrimA":-1,"tyreSmokeColor":[255,255,255],"modAerials":-1,"plateIndex":4,"modFrame":-1,"modRearBumper":-1,"modRoof":-1,"modEngineBlock":-1,"engineHealth":1000.0,"modSeats":-1,"modHorns":-1,"color1":134,"color2":134,"pearlescentColor":0,"modDoorSpeaker":-1,"modRightFender":-1,"dirtLevel":8.7,"modXenon":false,"modVanityPlate":-1,"modGrille":-1,"modOrnaments":-1,"modArchCover":-1,"modShifterLeavers":-1,"modAPlate":-1,"extras":{"2":false,"1":true},"neonColor":[255,0,255],"modSteeringWheel":-1,"modTurbo":false,"modDial":-1,"modStruts":-1,"modAirFilter":-1,"modHood":-1,"modPlateHolder":-1,"modLivery":5}', 'car', 'police', 1);
+	('steam:110000105dbc118', 'GPC 545', '{"modRoof":-1,"extras":{"12":false,"10":true},"modLivery":-1,"model":2072687711,"engineHealth":1000.0,"modGrille":-1,"modAerials":-1,"modBrakes":-1,"tyreSmokeColor":[255,255,255],"plateIndex":0,"modRightFender":-1,"modSeats":-1,"modTank":-1,"wheels":7,"modSideSkirt":-1,"modShifterLeavers":-1,"modDial":-1,"bodyHealth":1000.0,"plate":"GPC 545","modBackWheels":-1,"dirtLevel":6.1,"modHood":-1,"modStruts":-1,"modSteeringWheel":-1,"neonEnabled":[false,false,false,false],"modArchCover":-1,"modFrame":-1,"modEngine":-1,"modPlateHolder":-1,"modSuspension":-1,"modWindows":-1,"modOrnaments":-1,"modEngineBlock":-1,"fuelLevel":64.4,"modExhaust":-1,"modSpeakers":-1,"modAirFilter":-1,"pearlescentColor":30,"modTrimB":-1,"wheelColor":156,"modRearBumper":-1,"modSmokeEnabled":false,"neonColor":[255,0,255],"modHorns":-1,"modHydrolic":-1,"modFrontBumper":-1,"modXenon":false,"color1":33,"modAPlate":-1,"modDoorSpeaker":-1,"modTransmission":-1,"color2":0,"modSpoilers":-1,"modVanityPlate":-1,"windowTint":-1,"modTrunk":-1,"modTrimA":-1,"modFrontWheels":-1,"modArmor":-1,"modFender":-1,"modDashboard":-1,"modTurbo":false}', 'car', NULL, 1),
+	('steam:110000109c2ddf3', 'JQO 440', '{"bodyHealth":1000.0,"modTransmission":-1,"modHydrolic":-1,"wheelColor":156,"modSmokeEnabled":false,"plate":"JQO 440","modSpeakers":-1,"modExhaust":-1,"modSpoilers":-1,"modSideSkirt":-1,"modFrontWheels":-1,"modBackWheels":-1,"windowTint":-1,"model":2046537925,"modEngine":-1,"fuelLevel":64.2,"neonEnabled":[false,false,false,false],"modWindows":-1,"wheels":1,"modTrunk":-1,"modFrontBumper":-1,"modBrakes":-1,"modTank":-1,"modArmor":-1,"modFender":-1,"modDashboard":-1,"modTrimB":-1,"modSuspension":-1,"modTrimA":-1,"tyreSmokeColor":[255,255,255],"modAerials":-1,"plateIndex":4,"modFrame":-1,"modRearBumper":-1,"modRoof":-1,"modEngineBlock":-1,"engineHealth":1000.0,"modSeats":-1,"modHorns":-1,"color1":134,"color2":134,"pearlescentColor":0,"modDoorSpeaker":-1,"modRightFender":-1,"dirtLevel":8.7,"modXenon":false,"modVanityPlate":-1,"modGrille":-1,"modOrnaments":-1,"modArchCover":-1,"modShifterLeavers":-1,"modAPlate":-1,"extras":{"2":false,"1":true},"neonColor":[255,0,255],"modSteeringWheel":-1,"modTurbo":false,"modDial":-1,"modStruts":-1,"modAirFilter":-1,"modHood":-1,"modPlateHolder":-1,"modLivery":5}', 'car', 'police', 1),
+	('steam:110000105dbc118', 'OWG 990', '{"modRoof":-1,"extras":{"12":false,"1":false},"modLivery":7,"model":-1627000575,"engineHealth":1000.0,"modGrille":-1,"modAerials":-1,"modBrakes":-1,"tyreSmokeColor":[255,255,255],"plateIndex":4,"modRightFender":-1,"modSeats":-1,"modTank":-1,"wheels":0,"modSideSkirt":-1,"modShifterLeavers":-1,"modDial":-1,"bodyHealth":1000.0,"plate":"OWG 990","modBackWheels":-1,"dirtLevel":1.1,"modHood":-1,"modStruts":-1,"modSteeringWheel":-1,"neonEnabled":[false,false,false,false],"modArchCover":-1,"modFrame":-1,"modEngine":-1,"modPlateHolder":-1,"modSuspension":-1,"modWindows":-1,"modOrnaments":-1,"modEngineBlock":-1,"fuelLevel":64.3,"modExhaust":-1,"modSpeakers":-1,"modAirFilter":-1,"pearlescentColor":0,"modTrimB":-1,"wheelColor":156,"modRearBumper":-1,"modSmokeEnabled":false,"neonColor":[255,0,255],"modHorns":-1,"modHydrolic":-1,"modFrontBumper":-1,"modXenon":false,"color1":134,"modAPlate":-1,"modDoorSpeaker":-1,"modTransmission":-1,"color2":0,"modSpoilers":-1,"modVanityPlate":-1,"windowTint":-1,"modTrunk":-1,"modTrimA":-1,"modFrontWheels":-1,"modArmor":-1,"modFender":-1,"modDashboard":-1,"modTurbo":false}', 'car', 'police', 1),
+	('steam:110000105dbc118', 'PLC 142', '{"modRoof":-1,"extras":[],"modLivery":-1,"model":-2140431165,"engineHealth":1000.0,"modGrille":-1,"modAerials":-1,"modBrakes":-1,"tyreSmokeColor":[255,255,255],"plateIndex":3,"modRightFender":-1,"modSeats":-1,"modTank":-1,"wheels":6,"modSideSkirt":-1,"modShifterLeavers":-1,"modDial":-1,"bodyHealth":1000.0,"plate":"PLC 142","modBackWheels":-1,"dirtLevel":5.1,"modHood":-1,"modStruts":-1,"modSteeringWheel":-1,"neonEnabled":[false,false,false,false],"modArchCover":-1,"modFrame":-1,"modEngine":-1,"modPlateHolder":-1,"modSuspension":-1,"modWindows":-1,"modOrnaments":-1,"modEngineBlock":-1,"fuelLevel":64.4,"modExhaust":-1,"modSpeakers":-1,"modAirFilter":-1,"pearlescentColor":33,"modTrimB":-1,"wheelColor":156,"modRearBumper":-1,"modSmokeEnabled":false,"neonColor":[255,0,255],"modHorns":-1,"modHydrolic":-1,"modFrontBumper":-1,"modXenon":false,"color1":33,"modAPlate":-1,"modDoorSpeaker":-1,"modTransmission":-1,"color2":0,"modSpoilers":-1,"modVanityPlate":-1,"windowTint":-1,"modTrunk":-1,"modTrimA":-1,"modFrontWheels":-1,"modArmor":-1,"modFender":-1,"modDashboard":-1,"modTurbo":false}', 'car', NULL, 1);
 /*!40000 ALTER TABLE `owned_vehicles` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.phone_app_chat
@@ -884,7 +889,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`, `is_dead`, `status`, `last_motel`, `last_motel_room`, `tattoos`) VALUES
 	('Char1:110000105dbc118', 'license:4f3d30d5ce73246ea1e6742b5495d7a32c051f58', 0, 'chrono', '{"sun_2":0,"eyebrows_2":0,"lipstick_1":0,"bodyb_1":0,"hair_color_2":0,"glasses_2":0,"torso_1":0,"makeup_3":0,"chain_1":0,"hair_1":3,"helmet_2":0,"chest_2":0,"makeup_1":0,"blemishes_1":0,"beard_1":0,"blush_1":0,"arms":0,"decals_2":0,"bracelets_2":0,"mask_1":0,"watches_1":-1,"makeup_2":0,"chain_2":0,"hair_2":0,"face":5,"ears_1":-1,"hair_color_1":0,"lipstick_2":0,"complexion_2":0,"ears_2":0,"eyebrows_3":0,"eyebrows_4":0,"glasses_1":0,"lipstick_4":0,"bproof_2":0,"decals_1":0,"pants_1":0,"lipstick_3":0,"bodyb_2":0,"helmet_1":-1,"torso_2":0,"moles_1":0,"sex":0,"moles_2":0,"beard_4":0,"bags_2":0,"bags_1":0,"sun_1":0,"age_1":0,"eye_color":0,"mask_2":0,"complexion_1":0,"watches_2":0,"eyebrows_1":0,"age_2":0,"tshirt_2":0,"skin":3,"arms_2":0,"makeup_4":0,"blush_3":0,"bracelets_1":-1,"tshirt_1":0,"blemishes_2":0,"beard_2":0,"pants_2":0,"shoes_1":0,"bproof_1":0,"blush_2":0,"chest_3":0,"beard_3":0,"chest_1":0,"shoes_2":0}', 'police', 3, '[]', '{"z":48.0,"y":5178.5,"x":1945.1}', 1000000, 0, 'superadmin', 'Test', 'Tester', '1990-01-01', 'M', '188', '7531', 0, '[{"name":"hunger","percent":67.5,"val":675000},{"name":"thirst","percent":75.625,"val":756250},{"name":"drunk","percent":0.0,"val":0},{"name":"drug","percent":0.0,"val":0}]', NULL, NULL, NULL),
-	('steam:110000105dbc118', 'license:4f3d30d5ce73246ea1e6742b5495d7a32c051f58', 4968515, 'chrono', '{"eyebrows_4":0,"lipstick_2":0,"beard_3":0,"bracelets_2":0,"helmet_2":0,"blush_1":0,"beard_2":0,"blemishes_1":0,"age_1":0,"complexion_1":0,"bags_1":0,"arms_2":0,"hair_color_2":0,"beard_4":0,"helmet_1":-1,"shoes_2":0,"complexion_2":0,"torso_1":0,"ears_2":0,"lipstick_1":0,"sun_1":0,"moles_1":0,"tshirt_2":0,"blemishes_2":0,"glasses_2":0,"bodyb_2":0,"torso_2":0,"pants_2":0,"eye_color":0,"sun_2":0,"eyebrows_2":0,"chest_2":0,"makeup_2":0,"bproof_1":0,"moles_2":0,"arms":0,"eyebrows_1":0,"face":2,"bracelets_1":-1,"tshirt_1":0,"hair_color_1":0,"chest_1":0,"decals_1":0,"chest_3":0,"hair_2":0,"chain_1":0,"shoes_1":0,"bproof_2":0,"skin":2,"age_2":0,"lipstick_3":0,"sex":0,"watches_2":0,"makeup_1":0,"mask_2":0,"beard_1":0,"blush_2":0,"ears_1":-1,"makeup_4":0,"mask_1":0,"bodyb_1":0,"hair_1":3,"watches_1":-1,"pants_1":0,"lipstick_4":0,"bags_2":0,"blush_3":0,"decals_2":0,"glasses_1":0,"makeup_3":0,"eyebrows_3":0,"chain_2":0}', 'police', 4, '[]', '{"y":-2732.3,"x":666.5,"z":6.1}', 30, 0, 'superadmin', 'Aide', 'Aide', '1990-01-01', 'M', '188', '4987', 0, '[{"percent":38.97,"val":389700,"name":"hunger"},{"percent":54.2275,"val":542275,"name":"thirst"},{"percent":0.0,"val":0,"name":"drunk"},{"percent":0.0,"val":0,"name":"drug"}]', NULL, NULL, NULL);
+	('steam:110000105dbc118', 'license:4f3d30d5ce73246ea1e6742b5495d7a32c051f58', 4875700, 'chrono', '{"eyebrows_4":0,"lipstick_2":0,"beard_3":0,"bracelets_2":0,"helmet_2":0,"blush_1":0,"beard_2":0,"blemishes_1":0,"age_1":0,"complexion_1":0,"bags_1":0,"arms_2":0,"hair_color_2":0,"beard_4":0,"helmet_1":-1,"shoes_2":0,"complexion_2":0,"torso_1":0,"ears_2":0,"lipstick_1":0,"sun_1":0,"moles_1":0,"tshirt_2":0,"blemishes_2":0,"glasses_2":0,"bodyb_2":0,"torso_2":0,"pants_2":0,"eye_color":0,"sun_2":0,"eyebrows_2":0,"chest_2":0,"makeup_2":0,"bproof_1":0,"moles_2":0,"arms":0,"eyebrows_1":0,"face":2,"bracelets_1":-1,"tshirt_1":0,"hair_color_1":0,"chest_1":0,"decals_1":0,"chest_3":0,"hair_2":0,"chain_1":0,"shoes_1":0,"bproof_2":0,"skin":2,"age_2":0,"lipstick_3":0,"sex":0,"watches_2":0,"makeup_1":0,"mask_2":0,"beard_1":0,"blush_2":0,"ears_1":-1,"makeup_4":0,"mask_1":0,"bodyb_1":0,"hair_1":3,"watches_1":-1,"pants_1":0,"lipstick_4":0,"bags_2":0,"blush_3":0,"decals_2":0,"glasses_1":0,"makeup_3":0,"eyebrows_3":0,"chain_2":0}', 'bennys', 4, '[]', '{"x":-621.5,"y":-230.5,"z":38.1}', 30, 0, 'superadmin', 'Aide', 'Aide', '1990-01-01', 'M', '188', '4987', 0, '[{"val":714900,"percent":71.49,"name":"hunger"},{"val":786175,"percent":78.6175,"name":"thirst"},{"val":0,"percent":0.0,"name":"drunk"},{"val":0,"percent":0.0,"name":"drug"}]', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.user_accounts
@@ -918,10 +923,10 @@ CREATE TABLE IF NOT EXISTS `user_drugs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
--- Dumpar data för tabell essentialmode.user_drugs: ~8 rows (ungefär)
+-- Dumpar data för tabell essentialmode.user_drugs: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `user_drugs` DISABLE KEYS */;
 INSERT INTO `user_drugs` (`id`, `identifier`, `drugnumber`, `water`, `time`, `x`, `y`, `z`) VALUES
-	(15, 'steam:110000105dbc118', 38, 2, 14, '1060.84', '-3187.57', '-39.14');
+	(15, 'steam:110000105dbc118', 38, 2, 0, '1060.84', '-3187.57', '-39.14');
 /*!40000 ALTER TABLE `user_drugs` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.user_inventory
@@ -1202,7 +1207,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 	(382, 'Char1:110000105dbc118', 'rawcocaine', 0),
 	(383, 'steam:110000105dbc118', 'water', -1),
 	(384, 'steam:110000105dbc118', 'carokit', 0),
-	(385, 'steam:110000105dbc118', 'grinder', 0),
+	(385, 'steam:110000105dbc118', 'grinder', 1),
 	(386, 'steam:110000105dbc118', 'WEAPON_COMPACTRIFLE', 0),
 	(387, 'steam:110000105dbc118', 'cannabis', 0),
 	(388, 'steam:110000105dbc118', 'WEAPON_ASSAULTSMG', 0),
@@ -1239,7 +1244,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 	(419, 'steam:110000105dbc118', 'disc_ammo_rifle_large', 0),
 	(420, 'steam:110000105dbc118', 'rhum', 0),
 	(421, 'steam:110000105dbc118', 'fixkit', 0),
-	(422, 'steam:110000105dbc118', 'chemicals', 0),
+	(422, 'steam:110000105dbc118', 'chemicals', 2),
 	(423, 'steam:110000105dbc118', 'WEAPON_GUSENBERG', 0),
 	(424, 'steam:110000105dbc118', 'WEAPON_SWITCHBLADE', 0),
 	(425, 'steam:110000105dbc118', 'WEAPON_ASSAULTRIFLE', 0),
@@ -1283,9 +1288,9 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 	(463, 'steam:110000105dbc118', 'WEAPON_PIPEBOMB', 0),
 	(464, 'steam:110000105dbc118', 'WEAPON_COMBATPISTOL', 0),
 	(465, 'steam:110000105dbc118', 'WEAPON_DIGISCANNER', 0),
-	(466, 'steam:110000105dbc118', 'plasticbag', 0),
+	(466, 'steam:110000105dbc118', 'plasticbag', 1),
 	(467, 'steam:110000105dbc118', 'WEAPON_KNUCKLE', 0),
-	(468, 'steam:110000105dbc118', 'fuel', 3),
+	(468, 'steam:110000105dbc118', 'fuel', 4),
 	(469, 'steam:110000105dbc118', 'WEAPON_BULLPUPRIFLE', 0),
 	(470, 'steam:110000105dbc118', 'WEAPON_ASSAULTSHOTGUN', 0),
 	(471, 'steam:110000105dbc118', 'WEAPON_PISTOL50', 0),
@@ -1299,10 +1304,10 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 	(479, 'steam:110000105dbc118', 'WEAPON_GOLFCLUB', 0),
 	(480, 'steam:110000105dbc118', 'WEAPON_POOLCUE', 0),
 	(481, 'steam:110000105dbc118', 'medkit', 0),
-	(482, 'steam:110000105dbc118', 'seed', 0),
+	(482, 'steam:110000105dbc118', 'seed', 1),
 	(483, 'steam:110000105dbc118', 'WEAPON_SMOKEGRENADE', 0),
 	(484, 'steam:110000105dbc118', 'disc_ammo_shotgun_large', 0),
-	(485, 'steam:110000105dbc118', 'scale', 2),
+	(485, 'steam:110000105dbc118', 'scale', 3),
 	(486, 'steam:110000105dbc118', 'safetyhammer', 0),
 	(487, 'steam:110000105dbc118', 'gauze', 0),
 	(488, 'steam:110000105dbc118', 'WEAPON_PUMPSHOTGUN', 0),
@@ -1649,7 +1654,6 @@ CREATE TABLE IF NOT EXISTS `vehicle_categories` (
 -- Dumpar data för tabell essentialmode.vehicle_categories: ~12 rows (ungefär)
 /*!40000 ALTER TABLE `vehicle_categories` DISABLE KEYS */;
 INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
-	('addons', 'Addons'),
 	('compacts', 'Kompakt'),
 	('coupes', 'Coupé'),
 	('motorcycles', 'Motorcykel'),
