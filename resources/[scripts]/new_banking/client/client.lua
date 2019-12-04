@@ -116,7 +116,7 @@ end)
 if bankMenu then
 	Citizen.CreateThread(function()
 	while true do
-		Wait(0)
+		Wait(50)
 	if nearBank() or nearATM() then
 			DisplayHelpText("~INPUT_PICKUP~ för att bli betjänad ~p~")
 
