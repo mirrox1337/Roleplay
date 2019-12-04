@@ -239,11 +239,11 @@ ESX.RegisterUsableItem('meth', function(source)
 	TriggerClientEvent('esx_drugeffects:onMeth', source)
 end)
 
-ESX.RegisterUsableItem('coke', function(source)
+ESX.RegisterUsableItem('cocaine', function(source)
         
         local _source = source
 	local xPlayer = ESX.GetPlayerFromId(source)
-	xPlayer.removeInventoryItem('coke', 1)
+	xPlayer.removeInventoryItem('cocaine', 1)
 
 	TriggerClientEvent('esx_status:add', _source, 'drug', 499000)
 	TriggerClientEvent('esx_drugeffects:onCoke', source)

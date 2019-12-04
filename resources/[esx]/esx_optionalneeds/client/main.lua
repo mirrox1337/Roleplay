@@ -229,7 +229,7 @@ function Normal()
     ClearTimecycleModifier()
     ResetScenarioTypesEnabled()
     --ResetPedMovementClipset(playerPed, 0) <- it might cause the push of the vehicles
-    SetPedIsDrug(playerPed, false)
+    SetPedIsDrunk(playerPed, false)
     SetPedMotionBlur(playerPed, false)
   end)
 
@@ -246,7 +246,7 @@ function overdose()
     ClearTimecycleModifier()
     ResetScenarioTypesEnabled()
     ResetPedMovementClipset(playerPed, 0)
-    SetPedIsDrug(playerPed, false)
+    SetPedIsDrunk(playerPed, false)
     SetPedMotionBlur(playerPed, false)
 
   end)
@@ -272,7 +272,7 @@ AddEventHandler('esx_drugeffects:onWeed', function()
     SetTimecycleModifier("spectator5")
     SetPedMotionBlur(playerPed, true)
     SetPedMovementClipset(playerPed, "move_m@hipster@a", true)
-    SetPedIsDrug(playerPed, true)
+    SetPedIsDrunk(playerPed, true)
     
     --Efects
     local player = PlayerId()
@@ -300,7 +300,7 @@ AddEventHandler('esx_drugeffects:onOpium', function()
     SetTimecycleModifier("spectator5")
     SetPedMotionBlur(playerPed, true)
     SetPedMovementClipset(playerPed, "move_m@drunk@moderatedrunk", true)
-    SetPedIsDrug(playerPed, true)
+    SetPedIsDrunk(playerPed, true)
     
     --Efects
     local player = PlayerId()
@@ -331,7 +331,7 @@ AddEventHandler('esx_drugeffects:onMeth', function()
     SetTimecycleModifier("spectator5")
     SetPedMotionBlur(playerPed, true)
     SetPedMovementClipset(playerPed, "move_injured_generic", true)
-    SetPedIsDrug(playerPed, true)
+    SetPedIsDrunk(playerPed, true)
     
    --Efects
     local player = PlayerId()  
@@ -348,18 +348,19 @@ AddEventHandler('esx_drugeffects:onCoke', function()
   local playerPed = GetPlayerPed(-1)
   local maxHealth = GetEntityMaxHealth(playerPed)
 
-        RequestAnimSet("move_m@hurry_butch@a") 
-    while not HasAnimSetLoaded("move_m@hurry_butch@a") do
-      Citizen.Wait(0)
-    end    
 
-    TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_SMOKING_POT", 0, 1)
-    Citizen.Wait(3000)
+    RequestAnimDict('missfbi3_party')
+    FreezeEntityPosition(playerPed, true)
+    TaskPlayAnim(PlayerPedId(), 'missfbi3_party', 'snort_coke_a_male3', 8.0, 8.0, -1, 50, 0, false, false, false)
+    Citizen.Wait(1500)
+    TaskPlayAnim(PlayerPedId(), 'missfbi3_party', 'snort_coke_b_male3', 8.0, 8.0, -1, 50, 0, false, false, false)
+    Citizen.Wait(5000)
+    FreezeEntityPosition(playerPed, false)
     ClearPedTasksImmediately(playerPed)
     SetTimecycleModifier("spectator5")
     SetPedMotionBlur(playerPed, true)
     SetPedMovementClipset(playerPed, "move_m@hurry_butch@a", true)
-    SetPedIsDrug(playerPed, true)
+    SetPedIsDrunk(playerPed, true)
     
     --Efects
     local player = PlayerId()
