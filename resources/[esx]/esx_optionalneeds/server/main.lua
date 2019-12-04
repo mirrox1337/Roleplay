@@ -209,11 +209,11 @@ ESX.RegisterUsableItem('jagercerbere', function(source)
 end)
 
 --Drug
-ESX.RegisterUsableItem('weed', function(source)
+ESX.RegisterUsableItem('joint', function(source)
         
         local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	xPlayer.removeInventoryItem('weed', 1)
+	xPlayer.removeInventoryItem('joint', 1)
 
 	TriggerClientEvent('esx_status:add', _source, 'drug', 166000)
 	TriggerClientEvent('esx_drugeffects:onWeed', source)
@@ -239,11 +239,11 @@ ESX.RegisterUsableItem('meth', function(source)
 	TriggerClientEvent('esx_drugeffects:onMeth', source)
 end)
 
-ESX.RegisterUsableItem('coke', function(source)
+ESX.RegisterUsableItem('cocaine', function(source)
         
         local _source = source
 	local xPlayer = ESX.GetPlayerFromId(source)
-	xPlayer.removeInventoryItem('coke', 1)
+	xPlayer.removeInventoryItem('cocaine', 1)
 
 	TriggerClientEvent('esx_status:add', _source, 'drug', 499000)
 	TriggerClientEvent('esx_drugeffects:onCoke', source)

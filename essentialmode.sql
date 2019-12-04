@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.addon_account_data: ~10 rows (ungefär)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
@@ -59,8 +59,10 @@ INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(10, 'society_taxi', 0, NULL),
 	(11, 'society_ambulance', 0, NULL),
 	(12, 'society_mechanic', 0, NULL),
-	(15, 'motels_bed_black_money', 0, 'steam:110000105dbc118'),
-	(16, 'motels_black_money', 0, 'steam:110000105dbc118');
+	(15, 'motels_bed_black_money', 0, 'Char1:110000105dbc118'),
+	(16, 'motels_black_money', 0, 'Char1:110000105dbc118'),
+	(17, 'motels_bed_black_money', 0, 'steam:110000105dbc118'),
+	(18, 'motels_black_money', 0, 'steam:110000105dbc118');
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.addon_inventory
@@ -139,12 +141,13 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `height` varchar(128) COLLATE utf8mb4_bin NOT NULL,
   `lastdigits` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.characters: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
 INSERT INTO `characters` (`id`, `identifier`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`) VALUES
-	(7, 'steam:110000105dbc118', 'Test', 'Tester', '1990-01-01', 'M', '188', '7531');
+	(7, 'Char1:110000105dbc118', 'Test', 'Tester', '1990-01-01', 'M', '188', '7531'),
+	(8, 'steam:110000105dbc118', 'Aide', 'Aide', '1990-01-01', 'M', '188', '4987');
 /*!40000 ALTER TABLE `characters` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.datastore
@@ -177,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   KEY `index_datastore_data_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.datastore_data: ~14 rows (ungefär)
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
@@ -190,12 +193,18 @@ INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(6, 'motels', 'steam:110000109c2ddf3', '{}'),
 	(7, 'motels_bed', 'steam:110000109c2ddf3', '{}'),
 	(14, 'society_taxi', NULL, '{}'),
-	(21, 'user_mask', 'steam:110000105dbc118', '{}'),
-	(22, 'motels', 'steam:110000105dbc118', '{}'),
-	(23, 'motels_bed', 'steam:110000105dbc118', '{}'),
-	(24, 'user_ears', 'steam:110000105dbc118', '{}'),
-	(25, 'user_glasses', 'steam:110000105dbc118', '{}'),
-	(26, 'user_helmet', 'steam:110000105dbc118', '{}');
+	(21, 'user_mask', 'Char1:110000105dbc118', '{}'),
+	(22, 'motels', 'Char1:110000105dbc118', '{}'),
+	(23, 'motels_bed', 'Char1:110000105dbc118', '{}'),
+	(24, 'user_ears', 'Char1:110000105dbc118', '{}'),
+	(25, 'user_glasses', 'Char1:110000105dbc118', '{}'),
+	(26, 'user_helmet', 'Char1:110000105dbc118', '{}'),
+	(27, 'motels', 'steam:110000105dbc118', '{}'),
+	(28, 'user_ears', 'steam:110000105dbc118', '{}'),
+	(29, 'motels_bed', 'steam:110000105dbc118', '{}'),
+	(30, 'user_glasses', 'steam:110000105dbc118', '{}'),
+	(31, 'user_mask', 'steam:110000105dbc118', '{}'),
+	(32, 'user_helmet', 'steam:110000105dbc118', '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.disc_ammo
@@ -219,12 +228,13 @@ CREATE TABLE IF NOT EXISTS `disc_inventory` (
   `type` text COLLATE utf8mb4_bin,
   `data` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.disc_inventory: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.disc_inventory: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `disc_inventory` DISABLE KEYS */;
 INSERT INTO `disc_inventory` (`id`, `owner`, `type`, `data`) VALUES
-	(22, 'Polis Förråd', 'stash', '{"1":{"name":"bread","count":12},"2":{"count":6,"name":"WEAPON_PISTOL50"}}');
+	(22, 'Polis Förråd', 'stash', '{"1":{"name":"bread","count":12},"2":{"count":6,"name":"WEAPON_PISTOL50"}}'),
+	(23, 'steam:110000105dbc118', 'player', '{"13":{"count":80,"name":"cocainepowder"},"14":{"count":4,"name":"fuel"},"15":{"count":100,"name":"rawcocaine"},"7":{"count":2,"name":"chemicals"},"6":{"count":2,"name":"cement"},"5":{"count":1,"name":"plasticbag"},"4":{"count":2,"name":"scale"},"9":{"count":21,"name":"cocainepowder"},"2":{"count":2,"name":"causticsoda"},"1":{"count":3,"name":"joint"}}');
 /*!40000 ALTER TABLE `disc_inventory` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.disc_inventory_itemdata
@@ -429,7 +439,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.items: ~118 rows (ungefär)
+-- Dumpar data för tabell essentialmode.items: ~122 rows (ungefär)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
 INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('WEAPON_ADVANCEDRIFLE', 'CTAR-21', 1, 0, 1),
@@ -514,9 +524,15 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('beer', 'Öl', 1, 0, 1),
 	('blowpipe', 'Blåslampa', 1, 0, 1),
 	('bread', 'Bröd', 1, 0, 1),
+	('cannabis', 'Cannabis', 1, 0, 1),
 	('carokit', 'Karosskit', 1, 0, 1),
 	('carotool', 'Verktyg', 1, 0, 1),
-	('coke', 'Kokain', 1, 0, 1),
+	('causticsoda', 'Kaustiksoda', 1, 0, 1),
+	('cement', 'Cement', 1, 0, 1),
+	('chemicals', 'Kemikalier', 1, 0, 1),
+	('cocaine', 'Pakterad Kokain', 1, 0, 1),
+	('cocaineleaf', 'Kokablad', 1, 0, 1),
+	('cocainepowder', 'Kokainpulver', 1, 0, 1),
 	('disc_ammo_pistol', 'Pistol Ammo', 1, 0, 1),
 	('disc_ammo_pistol_large', 'Pistol Ammo Large', 1, 0, 1),
 	('disc_ammo_rifle', 'Gevär Ammo', 1, 0, 1),
@@ -530,12 +546,15 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('firstaid', 'Första Hjälpen Kit', 1, 0, 1),
 	('fixkit', 'Reparationssats', 1, 0, 1),
 	('fixtool', 'Reparationsverktyg', 1, 0, 1),
+	('fuel', 'Bensin', 1, 0, 1),
 	('gauze', 'Gasbinda', 1, 0, 1),
 	('gazbottle', 'Gas Flaska', 1, 0, 1),
+	('grinder', 'Grinder', 1, 0, 1),
 	('hydrocodone', 'Hydrokodon', 1, 0, 1),
 	('jager', 'Jägermeister', 1, 0, 1),
 	('jagerbomb', 'Jäger Bomb', 1, 0, 1),
 	('jewels', 'Juvel', 1, 0, 1),
+	('joint', 'Joint', 1, 0, 1),
 	('martini', 'Martini', 1, 0, 1),
 	('medkit', 'Medicinlåda', 1, 0, 1),
 	('meth', 'Amfetamin', 1, 0, 1),
@@ -543,8 +562,13 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('opium', 'Opium', 1, 0, 1),
 	('patch', 'Plåster', 1, 0, 1),
 	('phone', 'Telefon', 1, 0, 1),
+	('plasticbag', 'Zip-påse', 1, 0, 1),
+	('rawcocaine', 'Kokain', 1, 0, 1),
 	('rhum', 'Rom', 1, 0, 1),
+	('rizla', 'Rizla', 1, 0, 1),
 	('safetyhammer', 'Busshammare', 100, 0, 1),
+	('scale', 'Bordsvåg', 1, 0, 1),
+	('seed', 'Cannabisfrön', 1, 0, 1),
 	('tequilla', 'Tequilla', 1, 0, 1),
 	('vicodin', 'Vicodin', 1, 0, 1),
 	('water', 'Vatten', 1, 0, 1),
@@ -658,7 +682,7 @@ CREATE TABLE IF NOT EXISTS `motell` (
   PRIMARY KEY (`id`),
   KEY `motel_id` (`motel_id`),
   KEY `ident` (`ident`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 -- Dumpar data för tabell essentialmode.motell: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `motell` DISABLE KEYS */;
@@ -859,7 +883,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumpar data för tabell essentialmode.users: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`, `is_dead`, `status`, `last_motel`, `last_motel_room`, `tattoos`) VALUES
-	('steam:110000105dbc118', 'license:4f3d30d5ce73246ea1e6742b5495d7a32c051f58', 0, 'chrono', '{"sun_2":0,"eyebrows_2":0,"lipstick_1":0,"bodyb_1":0,"hair_color_2":0,"glasses_2":0,"torso_1":0,"makeup_3":0,"chain_1":0,"hair_1":3,"helmet_2":0,"chest_2":0,"makeup_1":0,"blemishes_1":0,"beard_1":0,"blush_1":0,"arms":0,"decals_2":0,"bracelets_2":0,"mask_1":0,"watches_1":-1,"makeup_2":0,"chain_2":0,"hair_2":0,"face":5,"ears_1":-1,"hair_color_1":0,"lipstick_2":0,"complexion_2":0,"ears_2":0,"eyebrows_3":0,"eyebrows_4":0,"glasses_1":0,"lipstick_4":0,"bproof_2":0,"decals_1":0,"pants_1":0,"lipstick_3":0,"bodyb_2":0,"helmet_1":-1,"torso_2":0,"moles_1":0,"sex":0,"moles_2":0,"beard_4":0,"bags_2":0,"bags_1":0,"sun_1":0,"age_1":0,"eye_color":0,"mask_2":0,"complexion_1":0,"watches_2":0,"eyebrows_1":0,"age_2":0,"tshirt_2":0,"skin":3,"arms_2":0,"makeup_4":0,"blush_3":0,"bracelets_1":-1,"tshirt_1":0,"blemishes_2":0,"beard_2":0,"pants_2":0,"shoes_1":0,"bproof_1":0,"blush_2":0,"chest_3":0,"beard_3":0,"chest_1":0,"shoes_2":0}', 'police', 3, '[]', '{"x":314.5,"z":54.1,"y":-205.1}', 1000000, 0, 'superadmin', 'Test', 'Tester', '1990-01-01', 'M', '188', '7531', 0, '[{"val":1000000,"percent":100.0,"name":"hunger"},{"val":1000000,"percent":100.0,"name":"thirst"},{"val":0,"percent":0.0,"name":"drunk"},{"val":0,"percent":0.0,"name":"drug"}]', NULL, NULL, NULL);
+	('Char1:110000105dbc118', 'license:4f3d30d5ce73246ea1e6742b5495d7a32c051f58', 0, 'chrono', '{"sun_2":0,"eyebrows_2":0,"lipstick_1":0,"bodyb_1":0,"hair_color_2":0,"glasses_2":0,"torso_1":0,"makeup_3":0,"chain_1":0,"hair_1":3,"helmet_2":0,"chest_2":0,"makeup_1":0,"blemishes_1":0,"beard_1":0,"blush_1":0,"arms":0,"decals_2":0,"bracelets_2":0,"mask_1":0,"watches_1":-1,"makeup_2":0,"chain_2":0,"hair_2":0,"face":5,"ears_1":-1,"hair_color_1":0,"lipstick_2":0,"complexion_2":0,"ears_2":0,"eyebrows_3":0,"eyebrows_4":0,"glasses_1":0,"lipstick_4":0,"bproof_2":0,"decals_1":0,"pants_1":0,"lipstick_3":0,"bodyb_2":0,"helmet_1":-1,"torso_2":0,"moles_1":0,"sex":0,"moles_2":0,"beard_4":0,"bags_2":0,"bags_1":0,"sun_1":0,"age_1":0,"eye_color":0,"mask_2":0,"complexion_1":0,"watches_2":0,"eyebrows_1":0,"age_2":0,"tshirt_2":0,"skin":3,"arms_2":0,"makeup_4":0,"blush_3":0,"bracelets_1":-1,"tshirt_1":0,"blemishes_2":0,"beard_2":0,"pants_2":0,"shoes_1":0,"bproof_1":0,"blush_2":0,"chest_3":0,"beard_3":0,"chest_1":0,"shoes_2":0}', 'police', 3, '[]', '{"z":48.0,"y":5178.5,"x":1945.1}', 1000000, 0, 'superadmin', 'Test', 'Tester', '1990-01-01', 'M', '188', '7531', 0, '[{"name":"hunger","percent":67.5,"val":675000},{"name":"thirst","percent":75.625,"val":756250},{"name":"drunk","percent":0.0,"val":0},{"name":"drug","percent":0.0,"val":0}]', NULL, NULL, NULL),
+	('steam:110000105dbc118', 'license:4f3d30d5ce73246ea1e6742b5495d7a32c051f58', 0, 'chrono', '{"eyebrows_4":0,"lipstick_2":0,"beard_3":0,"bracelets_2":0,"helmet_2":0,"blush_1":0,"beard_2":0,"blemishes_1":0,"age_1":0,"complexion_1":0,"bags_1":0,"arms_2":0,"hair_color_2":0,"beard_4":0,"helmet_1":-1,"shoes_2":0,"complexion_2":0,"torso_1":0,"ears_2":0,"lipstick_1":0,"sun_1":0,"moles_1":0,"tshirt_2":0,"blemishes_2":0,"glasses_2":0,"bodyb_2":0,"torso_2":0,"pants_2":0,"eye_color":0,"sun_2":0,"eyebrows_2":0,"chest_2":0,"makeup_2":0,"bproof_1":0,"moles_2":0,"arms":0,"eyebrows_1":0,"face":2,"bracelets_1":-1,"tshirt_1":0,"hair_color_1":0,"chest_1":0,"decals_1":0,"chest_3":0,"hair_2":0,"chain_1":0,"shoes_1":0,"bproof_2":0,"skin":2,"age_2":0,"lipstick_3":0,"sex":0,"watches_2":0,"makeup_1":0,"mask_2":0,"beard_1":0,"blush_2":0,"ears_1":-1,"makeup_4":0,"mask_1":0,"bodyb_1":0,"hair_1":3,"watches_1":-1,"pants_1":0,"lipstick_4":0,"bags_2":0,"blush_3":0,"decals_2":0,"glasses_1":0,"makeup_3":0,"eyebrows_3":0,"chain_2":0}', 'unemployed', 0, '[]', '{"z":44.8,"y":5133.2,"x":1917.3}', 30, 0, 'superadmin', 'Aide', 'Aide', '1990-01-01', 'M', '188', '4987', 0, '[{"name":"hunger","val":913400,"percent":91.34},{"name":"thirst","val":935050,"percent":93.505},{"name":"drunk","val":0,"percent":0.0},{"name":"drug","val":1000000,"percent":100.0}]', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.user_accounts
@@ -869,15 +894,42 @@ CREATE TABLE IF NOT EXISTS `user_accounts` (
   `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `money` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumpar data för tabell essentialmode.user_accounts: ~3 rows (ungefär)
 /*!40000 ALTER TABLE `user_accounts` DISABLE KEYS */;
 INSERT INTO `user_accounts` (`id`, `identifier`, `name`, `money`) VALUES
 	(3, 'steam:110000109c2ddf3', 'black_money', 0),
 	(5, 'Char3:110000105dbc118', 'black_money', 0),
-	(6, 'steam:110000105dbc118', 'black_money', 0);
+	(6, 'Char1:110000105dbc118', 'black_money', 0),
+	(7, 'steam:110000105dbc118', 'black_money', 0);
 /*!40000 ALTER TABLE `user_accounts` ENABLE KEYS */;
+
+-- Dumping structure for tabell essentialmode.user_drugs
+CREATE TABLE IF NOT EXISTS `user_drugs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(50) NOT NULL,
+  `drugnumber` int(11) NOT NULL,
+  `water` int(11) NOT NULL DEFAULT '2',
+  `time` int(11) NOT NULL DEFAULT '15',
+  `x` varchar(255) NOT NULL,
+  `y` varchar(255) NOT NULL,
+  `z` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+-- Dumpar data för tabell essentialmode.user_drugs: ~8 rows (ungefär)
+/*!40000 ALTER TABLE `user_drugs` DISABLE KEYS */;
+INSERT INTO `user_drugs` (`id`, `identifier`, `drugnumber`, `water`, `time`, `x`, `y`, `z`) VALUES
+	(6, 'steam:110000105dbc118', 39, 2, 0, '1063.02', '-3187.5', '-39.11'),
+	(7, 'steam:110000105dbc118', 38, 2, 0, '1060.84', '-3187.57', '-39.14'),
+	(8, 'steam:110000105dbc118', 36, 2, 0, '1061.06', '-3189.77', '-39.15'),
+	(9, 'steam:110000105dbc118', 33, 2, 0, '1052.18', '-3204.02', '-39.13'),
+	(10, 'steam:110000105dbc118', 32, 2, 0, '1050.13', '-3203.98', '-39.14'),
+	(11, 'steam:110000105dbc118', 34, 2, 0, '1052.99', '-3202.02', '-39.15'),
+	(12, 'steam:110000105dbc118', 35, 2, 0, '1050.8', '-3201.83', '-39.15'),
+	(14, 'steam:110000105dbc118', 40, 2, 0, '1064.38', '-3189.23', '-39.15');
+/*!40000 ALTER TABLE `user_drugs` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.user_inventory
 CREATE TABLE IF NOT EXISTS `user_inventory` (
@@ -886,9 +938,9 @@ CREATE TABLE IF NOT EXISTS `user_inventory` (
   `item` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=368 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=515 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.user_inventory: ~249 rows (ungefär)
+-- Dumpar data för tabell essentialmode.user_inventory: ~253 rows (ungefär)
 /*!40000 ALTER TABLE `user_inventory` DISABLE KEYS */;
 INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 	(1, 'steam:110000109c2ddf3', 'bread', 0),
@@ -1022,124 +1074,271 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 	(247, 'Char3:110000105dbc118', 'WEAPON_MACHETE', 0),
 	(248, 'Char3:110000105dbc118', 'WEAPON_COMPACTRIFLE', 0),
 	(249, 'Char3:110000105dbc118', 'WEAPON_HEAVYPISTOL', 0),
-	(250, 'steam:110000105dbc118', 'WEAPON_SNSPISTOL', 0),
-	(251, 'steam:110000105dbc118', 'vicodin', 0),
-	(252, 'steam:110000105dbc118', 'WEAPON_HAMMER', 0),
-	(253, 'steam:110000105dbc118', 'WEAPON_MUSKET', 0),
-	(254, 'steam:110000105dbc118', 'WEAPON_HANDCUFFS', 0),
-	(255, 'steam:110000105dbc118', 'water', 0),
-	(256, 'steam:110000105dbc118', 'rhum', 0),
-	(257, 'steam:110000105dbc118', 'disc_ammo_snp_large', 0),
-	(258, 'steam:110000105dbc118', 'opium', 0),
-	(259, 'steam:110000105dbc118', 'WEAPON_DOUBLEACTION', 0),
-	(260, 'steam:110000105dbc118', 'weed', 0),
-	(261, 'steam:110000105dbc118', 'WEAPON_SMG', 0),
-	(262, 'steam:110000105dbc118', 'WEAPON_BULLPUPRIFLE', 0),
-	(263, 'steam:110000105dbc118', 'WEAPON_GOLFCLUB', 0),
-	(264, 'steam:110000105dbc118', 'WEAPON_MINISMG', 0),
-	(265, 'steam:110000105dbc118', 'WEAPON_FIREWORK', 0),
-	(266, 'steam:110000105dbc118', 'whisky', 0),
-	(267, 'steam:110000105dbc118', 'morphine', 0),
-	(268, 'steam:110000105dbc118', 'patch', 0),
-	(269, 'steam:110000105dbc118', 'WEAPON_MACHINEPISTOL', 0),
-	(270, 'steam:110000105dbc118', 'tequilla', 0),
-	(271, 'steam:110000105dbc118', 'WEAPON_GUSENBERG', 0),
-	(272, 'steam:110000105dbc118', 'phone', 0),
-	(273, 'steam:110000105dbc118', 'WEAPON_GARBAGEBAG', 0),
-	(274, 'steam:110000105dbc118', 'fixkit', 0),
-	(275, 'steam:110000105dbc118', 'WEAPON_HOMINGLAUNCHER', 0),
-	(276, 'steam:110000105dbc118', 'WEAPON_POOLCUE', 0),
-	(277, 'steam:110000105dbc118', 'WEAPON_COMPACTLAUNCHER', 0),
-	(278, 'steam:110000105dbc118', 'meth', 0),
-	(279, 'steam:110000105dbc118', 'safetyhammer', 0),
-	(280, 'steam:110000105dbc118', 'jager', 0),
-	(281, 'steam:110000105dbc118', 'WEAPON_BALL', 0),
-	(282, 'steam:110000105dbc118', 'WEAPON_HEAVYSHOTGUN', 0),
-	(283, 'steam:110000105dbc118', 'WEAPON_ASSAULTSHOTGUN', 0),
-	(284, 'steam:110000105dbc118', 'WEAPON_COMBATMG', 0),
-	(285, 'steam:110000105dbc118', 'WEAPON_BATTLEAXE', 0),
-	(286, 'steam:110000105dbc118', 'WEAPON_RPG', 0),
-	(287, 'steam:110000105dbc118', 'jagerbomb', 0),
-	(288, 'steam:110000105dbc118', 'WEAPON_MINIGUN', 0),
-	(289, 'steam:110000105dbc118', 'WEAPON_MOLOTOV', 0),
-	(290, 'steam:110000105dbc118', 'WEAPON_DAGGER', 0),
-	(291, 'steam:110000105dbc118', 'WEAPON_REVOLVER', 0),
-	(292, 'steam:110000105dbc118', 'jewels', 0),
-	(293, 'steam:110000105dbc118', 'carokit', 0),
-	(294, 'steam:110000105dbc118', 'hydrocodone', 0),
-	(295, 'steam:110000105dbc118', 'medkit', 0),
-	(296, 'steam:110000105dbc118', 'WEAPON_AUTOSHOTGUN', 0),
-	(297, 'steam:110000105dbc118', 'gazbottle', 0),
-	(298, 'steam:110000105dbc118', 'WEAPON_GRENADELAUNCHER', 0),
-	(299, 'steam:110000105dbc118', 'WEAPON_GRENADE', 0),
-	(300, 'steam:110000105dbc118', 'gauze', 0),
-	(301, 'steam:110000105dbc118', 'disc_ammo_smg', 0),
-	(302, 'steam:110000105dbc118', 'firstaid', 0),
-	(303, 'steam:110000105dbc118', 'disc_ammo_snp', 0),
-	(304, 'steam:110000105dbc118', 'WEAPON_PETROLCAN', 0),
-	(305, 'steam:110000105dbc118', 'disc_ammo_rifle', 0),
-	(306, 'steam:110000105dbc118', 'WEAPON_PISTOL', 0),
-	(307, 'steam:110000105dbc118', 'disc_ammo_rifle_large', 0),
-	(308, 'steam:110000105dbc118', 'WEAPON_SMOKEGRENADE', 0),
-	(309, 'steam:110000105dbc118', 'disc_ammo_smg_large', 0),
-	(310, 'steam:110000105dbc118', 'fixtool', 0),
-	(311, 'steam:110000105dbc118', 'blowpipe', 0),
-	(312, 'steam:110000105dbc118', 'WEAPON_FLARE', 0),
-	(313, 'steam:110000105dbc118', 'WEAPON_STICKYBOMB', 0),
-	(314, 'steam:110000105dbc118', 'disc_ammo_shotgun_large', 0),
-	(315, 'steam:110000105dbc118', 'disc_ammo_shotgun', 0),
-	(316, 'steam:110000105dbc118', 'WEAPON_CARBINERIFLE', 0),
-	(317, 'steam:110000105dbc118', 'WEAPON_DIGISCANNER', 0),
-	(318, 'steam:110000105dbc118', 'disc_ammo_pistol_large', 0),
-	(319, 'steam:110000105dbc118', 'WEAPON_MACHETE', 0),
-	(320, 'steam:110000105dbc118', 'carotool', 0),
-	(321, 'steam:110000105dbc118', 'WEAPON_PIPEBOMB', 0),
-	(322, 'steam:110000105dbc118', 'WEAPON_VINTAGEPISTOL', 0),
-	(323, 'steam:110000105dbc118', 'beer', 0),
-	(324, 'steam:110000105dbc118', 'WEAPON_ASSAULTSMG', 0),
-	(325, 'steam:110000105dbc118', 'adrenaline', 0),
-	(326, 'steam:110000105dbc118', 'WEAPON_HATCHET', 0),
-	(327, 'steam:110000105dbc118', 'bandage', 0),
-	(328, 'steam:110000105dbc118', 'WEAPON_WRENCH', 0),
-	(329, 'steam:110000105dbc118', 'WEAPON_COMBATPISTOL', 0),
-	(330, 'steam:110000105dbc118', 'WEAPON_MG', 0),
-	(331, 'steam:110000105dbc118', 'bread', -12),
-	(332, 'steam:110000105dbc118', 'WEAPON_SWITCHBLADE', 0),
-	(333, 'steam:110000105dbc118', 'WEAPON_PUMPSHOTGUN', 0),
-	(334, 'steam:110000105dbc118', 'WEAPON_ADVANCEDRIFLE', 0),
-	(335, 'steam:110000105dbc118', 'WEAPON_SPECIALCARBINE', 0),
-	(336, 'steam:110000105dbc118', 'WEAPON_STINGER', 0),
-	(337, 'steam:110000105dbc118', 'WEAPON_PROXMINE', 0),
-	(338, 'steam:110000105dbc118', 'WEAPON_BOTTLE', 0),
-	(339, 'steam:110000105dbc118', 'WEAPON_BZGAS', 0),
-	(340, 'steam:110000105dbc118', 'WEAPON_BAT', 0),
-	(341, 'steam:110000105dbc118', 'WEAPON_SNIPERRIFLE', 0),
-	(342, 'steam:110000105dbc118', 'WEAPON_SNOWBALL', 0),
-	(343, 'steam:110000105dbc118', 'WEAPON_SAWNOFFSHOTGUN', 0),
-	(344, 'steam:110000105dbc118', 'WEAPON_COMPACTRIFLE', 0),
-	(345, 'steam:110000105dbc118', 'WEAPON_ASSAULTRIFLE', 0),
-	(346, 'steam:110000105dbc118', 'WEAPON_MARKSMANPISTOL', 0),
-	(347, 'steam:110000105dbc118', 'WEAPON_DBSHOTGUN', 0),
-	(348, 'steam:110000105dbc118', 'martini', 0),
-	(349, 'steam:110000105dbc118', 'WEAPON_RAILGUN', 0),
-	(350, 'steam:110000105dbc118', 'WEAPON_MARKSMANRIFLE', 0),
-	(351, 'steam:110000105dbc118', 'WEAPON_COMBATPDW', 0),
-	(352, 'steam:110000105dbc118', 'WEAPON_FLASHLIGHT', 0),
-	(353, 'steam:110000105dbc118', 'WEAPON_KNUCKLE', 0),
-	(354, 'steam:110000105dbc118', 'WEAPON_CROWBAR', 0),
-	(355, 'steam:110000105dbc118', 'WEAPON_NIGHTSTICK', 0),
-	(356, 'steam:110000105dbc118', 'WEAPON_PISTOL50', 0),
-	(357, 'steam:110000105dbc118', 'WEAPON_FIREEXTINGUISHER', 0),
-	(358, 'steam:110000105dbc118', 'coke', 0),
-	(359, 'steam:110000105dbc118', 'WEAPON_KNIFE', 0),
-	(360, 'steam:110000105dbc118', 'WEAPON_HEAVYPISTOL', 0),
-	(361, 'steam:110000105dbc118', 'WEAPON_BULLPUPSHOTGUN', 0),
-	(362, 'steam:110000105dbc118', 'WEAPON_APPISTOL', 0),
-	(363, 'steam:110000105dbc118', 'WEAPON_MICROSMG', 0),
-	(364, 'steam:110000105dbc118', 'WEAPON_STUNGUN', 0),
-	(365, 'steam:110000105dbc118', 'WEAPON_FLAREGUN', 0),
-	(366, 'steam:110000105dbc118', 'disc_ammo_pistol', 0),
-	(367, 'steam:110000105dbc118', 'WEAPON_HEAVYSNIPER', 0);
+	(250, 'Char1:110000105dbc118', 'WEAPON_SNSPISTOL', 0),
+	(251, 'Char1:110000105dbc118', 'vicodin', 0),
+	(252, 'Char1:110000105dbc118', 'WEAPON_HAMMER', 0),
+	(253, 'Char1:110000105dbc118', 'WEAPON_MUSKET', 0),
+	(254, 'Char1:110000105dbc118', 'WEAPON_HANDCUFFS', 0),
+	(255, 'Char1:110000105dbc118', 'water', 0),
+	(256, 'Char1:110000105dbc118', 'rhum', 0),
+	(257, 'Char1:110000105dbc118', 'disc_ammo_snp_large', 0),
+	(258, 'Char1:110000105dbc118', 'opium', 0),
+	(259, 'Char1:110000105dbc118', 'WEAPON_DOUBLEACTION', 0),
+	(260, 'Char1:110000105dbc118', 'weed', 0),
+	(261, 'Char1:110000105dbc118', 'WEAPON_SMG', 0),
+	(262, 'Char1:110000105dbc118', 'WEAPON_BULLPUPRIFLE', 0),
+	(263, 'Char1:110000105dbc118', 'WEAPON_GOLFCLUB', 0),
+	(264, 'Char1:110000105dbc118', 'WEAPON_MINISMG', 0),
+	(265, 'Char1:110000105dbc118', 'WEAPON_FIREWORK', 0),
+	(266, 'Char1:110000105dbc118', 'whisky', 0),
+	(267, 'Char1:110000105dbc118', 'morphine', 0),
+	(268, 'Char1:110000105dbc118', 'patch', 0),
+	(269, 'Char1:110000105dbc118', 'WEAPON_MACHINEPISTOL', 0),
+	(270, 'Char1:110000105dbc118', 'tequilla', 0),
+	(271, 'Char1:110000105dbc118', 'WEAPON_GUSENBERG', 0),
+	(272, 'Char1:110000105dbc118', 'phone', 0),
+	(273, 'Char1:110000105dbc118', 'WEAPON_GARBAGEBAG', 0),
+	(274, 'Char1:110000105dbc118', 'fixkit', 0),
+	(275, 'Char1:110000105dbc118', 'WEAPON_HOMINGLAUNCHER', 0),
+	(276, 'Char1:110000105dbc118', 'WEAPON_POOLCUE', 0),
+	(277, 'Char1:110000105dbc118', 'WEAPON_COMPACTLAUNCHER', 0),
+	(278, 'Char1:110000105dbc118', 'meth', 0),
+	(279, 'Char1:110000105dbc118', 'safetyhammer', 0),
+	(280, 'Char1:110000105dbc118', 'jager', 0),
+	(281, 'Char1:110000105dbc118', 'WEAPON_BALL', 0),
+	(282, 'Char1:110000105dbc118', 'WEAPON_HEAVYSHOTGUN', 0),
+	(283, 'Char1:110000105dbc118', 'WEAPON_ASSAULTSHOTGUN', 0),
+	(284, 'Char1:110000105dbc118', 'WEAPON_COMBATMG', 0),
+	(285, 'Char1:110000105dbc118', 'WEAPON_BATTLEAXE', 0),
+	(286, 'Char1:110000105dbc118', 'WEAPON_RPG', 0),
+	(287, 'Char1:110000105dbc118', 'jagerbomb', 0),
+	(288, 'Char1:110000105dbc118', 'WEAPON_MINIGUN', 0),
+	(289, 'Char1:110000105dbc118', 'WEAPON_MOLOTOV', 0),
+	(290, 'Char1:110000105dbc118', 'WEAPON_DAGGER', 0),
+	(291, 'Char1:110000105dbc118', 'WEAPON_REVOLVER', 0),
+	(292, 'Char1:110000105dbc118', 'jewels', 0),
+	(293, 'Char1:110000105dbc118', 'carokit', 0),
+	(294, 'Char1:110000105dbc118', 'hydrocodone', 0),
+	(295, 'Char1:110000105dbc118', 'medkit', 0),
+	(296, 'Char1:110000105dbc118', 'WEAPON_AUTOSHOTGUN', 0),
+	(297, 'Char1:110000105dbc118', 'gazbottle', 0),
+	(298, 'Char1:110000105dbc118', 'WEAPON_GRENADELAUNCHER', 0),
+	(299, 'Char1:110000105dbc118', 'WEAPON_GRENADE', 0),
+	(300, 'Char1:110000105dbc118', 'gauze', 0),
+	(301, 'Char1:110000105dbc118', 'disc_ammo_smg', 0),
+	(302, 'Char1:110000105dbc118', 'firstaid', 0),
+	(303, 'Char1:110000105dbc118', 'disc_ammo_snp', 0),
+	(304, 'Char1:110000105dbc118', 'WEAPON_PETROLCAN', 0),
+	(305, 'Char1:110000105dbc118', 'disc_ammo_rifle', 0),
+	(306, 'Char1:110000105dbc118', 'WEAPON_PISTOL', 0),
+	(307, 'Char1:110000105dbc118', 'disc_ammo_rifle_large', 0),
+	(308, 'Char1:110000105dbc118', 'WEAPON_SMOKEGRENADE', 0),
+	(309, 'Char1:110000105dbc118', 'disc_ammo_smg_large', 0),
+	(310, 'Char1:110000105dbc118', 'fixtool', 0),
+	(311, 'Char1:110000105dbc118', 'blowpipe', 0),
+	(312, 'Char1:110000105dbc118', 'WEAPON_FLARE', 0),
+	(313, 'Char1:110000105dbc118', 'WEAPON_STICKYBOMB', 0),
+	(314, 'Char1:110000105dbc118', 'disc_ammo_shotgun_large', 0),
+	(315, 'Char1:110000105dbc118', 'disc_ammo_shotgun', 0),
+	(316, 'Char1:110000105dbc118', 'WEAPON_CARBINERIFLE', 0),
+	(317, 'Char1:110000105dbc118', 'WEAPON_DIGISCANNER', 0),
+	(318, 'Char1:110000105dbc118', 'disc_ammo_pistol_large', 0),
+	(319, 'Char1:110000105dbc118', 'WEAPON_MACHETE', 0),
+	(320, 'Char1:110000105dbc118', 'carotool', 0),
+	(321, 'Char1:110000105dbc118', 'WEAPON_PIPEBOMB', 0),
+	(322, 'Char1:110000105dbc118', 'WEAPON_VINTAGEPISTOL', 0),
+	(323, 'Char1:110000105dbc118', 'beer', 0),
+	(324, 'Char1:110000105dbc118', 'WEAPON_ASSAULTSMG', 0),
+	(325, 'Char1:110000105dbc118', 'adrenaline', 0),
+	(326, 'Char1:110000105dbc118', 'WEAPON_HATCHET', 0),
+	(327, 'Char1:110000105dbc118', 'bandage', 0),
+	(328, 'Char1:110000105dbc118', 'WEAPON_WRENCH', 0),
+	(329, 'Char1:110000105dbc118', 'WEAPON_COMBATPISTOL', 0),
+	(330, 'Char1:110000105dbc118', 'WEAPON_MG', 0),
+	(331, 'Char1:110000105dbc118', 'bread', -12),
+	(332, 'Char1:110000105dbc118', 'WEAPON_SWITCHBLADE', 0),
+	(333, 'Char1:110000105dbc118', 'WEAPON_PUMPSHOTGUN', 0),
+	(334, 'Char1:110000105dbc118', 'WEAPON_ADVANCEDRIFLE', 0),
+	(335, 'Char1:110000105dbc118', 'WEAPON_SPECIALCARBINE', 0),
+	(336, 'Char1:110000105dbc118', 'WEAPON_STINGER', 0),
+	(337, 'Char1:110000105dbc118', 'WEAPON_PROXMINE', 0),
+	(338, 'Char1:110000105dbc118', 'WEAPON_BOTTLE', 0),
+	(339, 'Char1:110000105dbc118', 'WEAPON_BZGAS', 0),
+	(340, 'Char1:110000105dbc118', 'WEAPON_BAT', 0),
+	(341, 'Char1:110000105dbc118', 'WEAPON_SNIPERRIFLE', 0),
+	(342, 'Char1:110000105dbc118', 'WEAPON_SNOWBALL', 0),
+	(343, 'Char1:110000105dbc118', 'WEAPON_SAWNOFFSHOTGUN', 0),
+	(344, 'Char1:110000105dbc118', 'WEAPON_COMPACTRIFLE', 0),
+	(345, 'Char1:110000105dbc118', 'WEAPON_ASSAULTRIFLE', 0),
+	(346, 'Char1:110000105dbc118', 'WEAPON_MARKSMANPISTOL', 0),
+	(347, 'Char1:110000105dbc118', 'WEAPON_DBSHOTGUN', 0),
+	(348, 'Char1:110000105dbc118', 'martini', 0),
+	(349, 'Char1:110000105dbc118', 'WEAPON_RAILGUN', 0),
+	(350, 'Char1:110000105dbc118', 'WEAPON_MARKSMANRIFLE', 0),
+	(351, 'Char1:110000105dbc118', 'WEAPON_COMBATPDW', 0),
+	(352, 'Char1:110000105dbc118', 'WEAPON_FLASHLIGHT', 0),
+	(353, 'Char1:110000105dbc118', 'WEAPON_KNUCKLE', 0),
+	(354, 'Char1:110000105dbc118', 'WEAPON_CROWBAR', 0),
+	(355, 'Char1:110000105dbc118', 'WEAPON_NIGHTSTICK', 0),
+	(356, 'Char1:110000105dbc118', 'WEAPON_PISTOL50', 0),
+	(357, 'Char1:110000105dbc118', 'WEAPON_FIREEXTINGUISHER', 0),
+	(358, 'Char1:110000105dbc118', 'coke', 0),
+	(359, 'Char1:110000105dbc118', 'WEAPON_KNIFE', 0),
+	(360, 'Char1:110000105dbc118', 'WEAPON_HEAVYPISTOL', 0),
+	(361, 'Char1:110000105dbc118', 'WEAPON_BULLPUPSHOTGUN', 0),
+	(362, 'Char1:110000105dbc118', 'WEAPON_APPISTOL', 0),
+	(363, 'Char1:110000105dbc118', 'WEAPON_MICROSMG', 0),
+	(364, 'Char1:110000105dbc118', 'WEAPON_STUNGUN', 0),
+	(365, 'Char1:110000105dbc118', 'WEAPON_FLAREGUN', 0),
+	(366, 'Char1:110000105dbc118', 'disc_ammo_pistol', 0),
+	(367, 'Char1:110000105dbc118', 'WEAPON_HEAVYSNIPER', 0),
+	(368, 'Char1:110000105dbc118', 'cannabis', 0),
+	(369, 'Char1:110000105dbc118', 'joint', 0),
+	(370, 'Char1:110000105dbc118', 'rizla', 0),
+	(371, 'Char1:110000105dbc118', 'seed', 0),
+	(372, 'Char1:110000105dbc118', 'fuel', 0),
+	(373, 'Char1:110000105dbc118', 'plasticbag', 0),
+	(374, 'Char1:110000105dbc118', 'grinder', 0),
+	(375, 'Char1:110000105dbc118', 'cocaineleaf', 0),
+	(376, 'Char1:110000105dbc118', 'cocainepowder', 0),
+	(377, 'Char1:110000105dbc118', 'causticsoda', 0),
+	(378, 'Char1:110000105dbc118', 'cocaine', 0),
+	(379, 'Char1:110000105dbc118', 'scale', 0),
+	(380, 'Char1:110000105dbc118', 'cement', 0),
+	(381, 'Char1:110000105dbc118', 'chemicals', 0),
+	(382, 'Char1:110000105dbc118', 'rawcocaine', 0),
+	(383, 'steam:110000105dbc118', 'water', 0),
+	(384, 'steam:110000105dbc118', 'carokit', 0),
+	(385, 'steam:110000105dbc118', 'grinder', 0),
+	(386, 'steam:110000105dbc118', 'WEAPON_COMPACTRIFLE', 0),
+	(387, 'steam:110000105dbc118', 'cannabis', 0),
+	(388, 'steam:110000105dbc118', 'WEAPON_ASSAULTSMG', 0),
+	(389, 'steam:110000105dbc118', 'WEAPON_COMBATPDW', 0),
+	(390, 'steam:110000105dbc118', 'WEAPON_HEAVYSNIPER', 0),
+	(391, 'steam:110000105dbc118', 'WEAPON_SMG', 0),
+	(392, 'steam:110000105dbc118', 'WEAPON_NIGHTSTICK', 0),
+	(393, 'steam:110000105dbc118', 'WEAPON_BOTTLE', 0),
+	(394, 'steam:110000105dbc118', 'rizla', 0),
+	(395, 'steam:110000105dbc118', 'fixtool', 0),
+	(396, 'steam:110000105dbc118', 'WEAPON_VINTAGEPISTOL', 0),
+	(397, 'steam:110000105dbc118', 'disc_ammo_snp_large', 0),
+	(398, 'steam:110000105dbc118', 'morphine', 0),
+	(399, 'steam:110000105dbc118', 'disc_ammo_smg', 0),
+	(400, 'steam:110000105dbc118', 'whisky', 0),
+	(401, 'steam:110000105dbc118', 'WEAPON_HAMMER', 0),
+	(402, 'steam:110000105dbc118', 'rawcocaine', 0),
+	(403, 'steam:110000105dbc118', 'hydrocodone', 0),
+	(404, 'steam:110000105dbc118', 'bread', 0),
+	(405, 'steam:110000105dbc118', 'WEAPON_FLAREGUN', 0),
+	(406, 'steam:110000105dbc118', 'WEAPON_BALL', 0),
+	(407, 'steam:110000105dbc118', 'WEAPON_HANDCUFFS', 0),
+	(408, 'steam:110000105dbc118', 'WEAPON_MARKSMANRIFLE', 0),
+	(409, 'steam:110000105dbc118', 'WEAPON_DBSHOTGUN', 0),
+	(410, 'steam:110000105dbc118', 'joint', 3),
+	(411, 'steam:110000105dbc118', 'WEAPON_RAILGUN', 0),
+	(412, 'steam:110000105dbc118', 'WEAPON_CARBINERIFLE', 0),
+	(413, 'steam:110000105dbc118', 'WEAPON_MG', 0),
+	(414, 'steam:110000105dbc118', 'gazbottle', 0),
+	(415, 'steam:110000105dbc118', 'disc_ammo_pistol', 0),
+	(416, 'steam:110000105dbc118', 'causticsoda', 0),
+	(417, 'steam:110000105dbc118', 'WEAPON_HEAVYSHOTGUN', 0),
+	(418, 'steam:110000105dbc118', 'cocainepowder', 1),
+	(419, 'steam:110000105dbc118', 'disc_ammo_rifle_large', 0),
+	(420, 'steam:110000105dbc118', 'rhum', 0),
+	(421, 'steam:110000105dbc118', 'fixkit', 0),
+	(422, 'steam:110000105dbc118', 'chemicals', 0),
+	(423, 'steam:110000105dbc118', 'WEAPON_GUSENBERG', 0),
+	(424, 'steam:110000105dbc118', 'WEAPON_SWITCHBLADE', 0),
+	(425, 'steam:110000105dbc118', 'WEAPON_ASSAULTRIFLE', 0),
+	(426, 'steam:110000105dbc118', 'WEAPON_FLARE', 0),
+	(427, 'steam:110000105dbc118', 'WEAPON_HOMINGLAUNCHER', 0),
+	(428, 'steam:110000105dbc118', 'WEAPON_MARKSMANPISTOL', 0),
+	(429, 'steam:110000105dbc118', 'WEAPON_MOLOTOV', 0),
+	(430, 'steam:110000105dbc118', 'WEAPON_PISTOL', 0),
+	(431, 'steam:110000105dbc118', 'WEAPON_HEAVYPISTOL', 0),
+	(432, 'steam:110000105dbc118', 'blowpipe', 0),
+	(433, 'steam:110000105dbc118', 'meth', 0),
+	(434, 'steam:110000105dbc118', 'weed', 0),
+	(435, 'steam:110000105dbc118', 'WEAPON_GARBAGEBAG', 0),
+	(436, 'steam:110000105dbc118', 'WEAPON_SNSPISTOL', 0),
+	(437, 'steam:110000105dbc118', 'WEAPON_AUTOSHOTGUN', 0),
+	(438, 'steam:110000105dbc118', 'WEAPON_COMBATMG', 0),
+	(439, 'steam:110000105dbc118', 'WEAPON_WRENCH', 0),
+	(440, 'steam:110000105dbc118', 'firstaid', 0),
+	(441, 'steam:110000105dbc118', 'WEAPON_SAWNOFFSHOTGUN', 0),
+	(442, 'steam:110000105dbc118', 'opium', 0),
+	(443, 'steam:110000105dbc118', 'WEAPON_STINGER', 0),
+	(444, 'steam:110000105dbc118', 'WEAPON_SNIPERRIFLE', 0),
+	(445, 'steam:110000105dbc118', 'WEAPON_HATCHET', 0),
+	(446, 'steam:110000105dbc118', 'WEAPON_FLASHLIGHT', 0),
+	(447, 'steam:110000105dbc118', 'WEAPON_SPECIALCARBINE', 0),
+	(448, 'steam:110000105dbc118', 'adrenaline', 0),
+	(449, 'steam:110000105dbc118', 'WEAPON_GRENADELAUNCHER', 0),
+	(450, 'steam:110000105dbc118', 'WEAPON_REVOLVER', 0),
+	(451, 'steam:110000105dbc118', 'WEAPON_FIREEXTINGUISHER', 0),
+	(452, 'steam:110000105dbc118', 'cocaine', 15),
+	(453, 'steam:110000105dbc118', 'WEAPON_DAGGER', 0),
+	(454, 'steam:110000105dbc118', 'beer', 0),
+	(455, 'steam:110000105dbc118', 'disc_ammo_snp', 0),
+	(456, 'steam:110000105dbc118', 'jagerbomb', 0),
+	(457, 'steam:110000105dbc118', 'carotool', 0),
+	(458, 'steam:110000105dbc118', 'WEAPON_MUSKET', 0),
+	(459, 'steam:110000105dbc118', 'disc_ammo_pistol_large', 0),
+	(460, 'steam:110000105dbc118', 'WEAPON_DOUBLEACTION', 0),
+	(461, 'steam:110000105dbc118', 'disc_ammo_shotgun', 0),
+	(462, 'steam:110000105dbc118', 'WEAPON_MACHINEPISTOL', 0),
+	(463, 'steam:110000105dbc118', 'WEAPON_PIPEBOMB', 0),
+	(464, 'steam:110000105dbc118', 'WEAPON_COMBATPISTOL', 0),
+	(465, 'steam:110000105dbc118', 'WEAPON_DIGISCANNER', 0),
+	(466, 'steam:110000105dbc118', 'plasticbag', 0),
+	(467, 'steam:110000105dbc118', 'WEAPON_KNUCKLE', 0),
+	(468, 'steam:110000105dbc118', 'fuel', 3),
+	(469, 'steam:110000105dbc118', 'WEAPON_BULLPUPRIFLE', 0),
+	(470, 'steam:110000105dbc118', 'WEAPON_ASSAULTSHOTGUN', 0),
+	(471, 'steam:110000105dbc118', 'WEAPON_PISTOL50', 0),
+	(472, 'steam:110000105dbc118', 'WEAPON_FIREWORK', 0),
+	(473, 'steam:110000105dbc118', 'WEAPON_BULLPUPSHOTGUN', 0),
+	(474, 'steam:110000105dbc118', 'WEAPON_PROXMINE', 0),
+	(475, 'steam:110000105dbc118', 'WEAPON_RPG', 0),
+	(476, 'steam:110000105dbc118', 'vicodin', 0),
+	(477, 'steam:110000105dbc118', 'tequilla', 0),
+	(478, 'steam:110000105dbc118', 'phone', 0),
+	(479, 'steam:110000105dbc118', 'WEAPON_GOLFCLUB', 0),
+	(480, 'steam:110000105dbc118', 'WEAPON_POOLCUE', 0),
+	(481, 'steam:110000105dbc118', 'medkit', 0),
+	(482, 'steam:110000105dbc118', 'seed', 0),
+	(483, 'steam:110000105dbc118', 'WEAPON_SMOKEGRENADE', 0),
+	(484, 'steam:110000105dbc118', 'disc_ammo_shotgun_large', 0),
+	(485, 'steam:110000105dbc118', 'scale', 2),
+	(486, 'steam:110000105dbc118', 'safetyhammer', 0),
+	(487, 'steam:110000105dbc118', 'gauze', 0),
+	(488, 'steam:110000105dbc118', 'WEAPON_PUMPSHOTGUN', 0),
+	(489, 'steam:110000105dbc118', 'WEAPON_BATTLEAXE', 0),
+	(490, 'steam:110000105dbc118', 'disc_ammo_rifle', 0),
+	(491, 'steam:110000105dbc118', 'WEAPON_STUNGUN', 0),
+	(492, 'steam:110000105dbc118', 'patch', 0),
+	(493, 'steam:110000105dbc118', 'WEAPON_BAT', 0),
+	(494, 'steam:110000105dbc118', 'WEAPON_MACHETE', 0),
+	(495, 'steam:110000105dbc118', 'WEAPON_MINIGUN', 0),
+	(496, 'steam:110000105dbc118', 'WEAPON_MICROSMG', 0),
+	(497, 'steam:110000105dbc118', 'WEAPON_CROWBAR', 0),
+	(498, 'steam:110000105dbc118', 'martini', 0),
+	(499, 'steam:110000105dbc118', 'cocaineleaf', 0),
+	(500, 'steam:110000105dbc118', 'jewels', 0),
+	(501, 'steam:110000105dbc118', 'WEAPON_APPISTOL', 0),
+	(502, 'steam:110000105dbc118', 'jager', 0),
+	(503, 'steam:110000105dbc118', 'disc_ammo_smg_large', 0),
+	(504, 'steam:110000105dbc118', 'WEAPON_SNOWBALL', 0),
+	(505, 'steam:110000105dbc118', 'WEAPON_MINISMG', 0),
+	(506, 'steam:110000105dbc118', 'WEAPON_KNIFE', 0),
+	(507, 'steam:110000105dbc118', 'cement', 1),
+	(508, 'steam:110000105dbc118', 'WEAPON_ADVANCEDRIFLE', 0),
+	(509, 'steam:110000105dbc118', 'WEAPON_STICKYBOMB', 0),
+	(510, 'steam:110000105dbc118', 'WEAPON_COMPACTLAUNCHER', 0),
+	(511, 'steam:110000105dbc118', 'WEAPON_GRENADE', 0),
+	(512, 'steam:110000105dbc118', 'WEAPON_BZGAS', 0),
+	(513, 'steam:110000105dbc118', 'WEAPON_PETROLCAN', 0),
+	(514, 'steam:110000105dbc118', 'bandage', 0);
 /*!40000 ALTER TABLE `user_inventory` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.user_lastcharacter
@@ -1152,7 +1351,7 @@ CREATE TABLE IF NOT EXISTS `user_lastcharacter` (
 /*!40000 ALTER TABLE `user_lastcharacter` DISABLE KEYS */;
 INSERT INTO `user_lastcharacter` (`steamid`, `charid`) VALUES
 	('steam:110000109c2ddf3', 1),
-	('steam:110000105dbc118', 1);
+	('steam:110000105dbc118', 2);
 /*!40000 ALTER TABLE `user_lastcharacter` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.user_licenses
