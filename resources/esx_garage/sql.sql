@@ -1,0 +1,1 @@
+ALTER TABLE `billing` ADD `original` INT(11) NOT NULL ;
