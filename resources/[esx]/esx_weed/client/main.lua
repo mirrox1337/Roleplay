@@ -57,6 +57,7 @@ AddEventHandler('esx:setJob', function(job)
     PlayerData.job = job
 end)
 
+
 RegisterNetEvent('esx_weed:plant')
 AddEventHandler('esx_weed:plant', function(x,y,z)
     RequestModel("bkr_prop_weed_01_small_01a")
@@ -205,8 +206,8 @@ Citizen.CreateThread(function()
         Wait(7500)
         local coords = GetEntityCoords(GetPlayerPed(-1))
         for k,v in pairs(Config.DrugLocations) do
-            if(GetDistanceBetweenCoords(coords, v.x, v.y, v.z, true) < 15.0)then
-                plant = GetClosestObjectOfType( coords.x, coords.y,  coords.z, 15.0, GetHashKey('prop_weed_01'), 0, 0, 0)
+            if(GetDistanceBetweenCoords(coords, v.x, v.y, v.z, true) < 5.0)then
+                plant = GetClosestObjectOfType( coords.x, coords.y,  coords.z, 5.0, GetHashKey('prop_weed_01'), 0, 0, 0)
                 if plant == 0 then
                     Wait(100)
                     ESX.TriggerServerCallback('esx_weed:getDrugs', function(plants)

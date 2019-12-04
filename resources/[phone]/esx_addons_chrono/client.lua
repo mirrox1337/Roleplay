@@ -140,7 +140,7 @@ Citizen.CreateThread(function()
 
 
   while true do
-    Citizen.Wait(10)
+    Citizen.Wait(0)
     if #alerts ~= 0 then
       local alert = alerts[currentAlert]
       DrawRect(0.12, 0.10, 0.35, 0.16, 0, 0, 0, 178)
@@ -252,7 +252,7 @@ Citizen.CreateThread(function()
         SetTextEdge(0, 0, 0, 0, 0)
         SetTextColour(255, 255, 255, 255)
         SetTextEntry("STRING")
-        --AddTextComponentString('~g~Nummer: ~b~' .. alert.numero)
+        AddTextComponentString('~g~Nummer: ~b~' .. alert.numero)
         DrawText(0.17, 0.14)
       else 
         SetTextFont(0)
