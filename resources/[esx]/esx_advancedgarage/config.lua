@@ -45,7 +45,7 @@ Config.ShowPoundSpacer2 = false -- If true it shows Spacer 2 in the List | Don't
 Config.ShowPoundSpacer3 = false -- If true it shows Spacer 3 in the List | Don't use if Spacer2 is set to true.
 
 Config.MarkerType   = 36
-Config.DrawDistance = 35.0
+Config.DrawDistance = 10.0
 
 Config.BlipGarage = {
 	Sprite = 290,
