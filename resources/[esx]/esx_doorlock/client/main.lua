@@ -103,6 +103,7 @@ Citizen.CreateThread(function()
 				ESX.Game.Utils.DrawText3D(doorID.textCoords, displayText, size)
 
 				if IsControlJustReleased(0, 38) then
+					print(doorID.objCoords)
 					if isAuthorized then
 						doorID.locked = not doorID.locked
 

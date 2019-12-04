@@ -1,7 +1,7 @@
 Locales['en'] = {
 	['by_default'] = 'fabrik',
 	['installed'] = 'installerad',
-	['already_own'] = 'du har redan en: ~b~',
+	['already_own'] = 'du har redan en: ~p~',
 	['not_enough_money'] = 'företaget har inte råd med detta!',
 	['purchased'] = 'företaget har beställt delen!',
 	['press_custom'] = 'Tryck ~INPUT_PICKUP~ för att modifiera bilen.',

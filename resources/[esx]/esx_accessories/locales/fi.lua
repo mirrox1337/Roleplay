@@ -15,5 +15,5 @@ Locales ['fi'] = {
   ['no_glasses'] = 'sinulla ei ole laseja',
   ['no_helmet'] = 'sinulla ei ole kypäriä',
   ['no_mask'] = 'sinulla ei ole maskeja',
-  ['you_paid'] = 'sinä maksoit ~g~$%s~s~',
+  ['you_paid'] = 'sinä maksoit ~p~$%s~s~',
 }

@@ -1,5 +1,5 @@
 Locales ['sv'] = {
-  ['unlocked'] = '~g~Olåst~s~',
+  ['unlocked'] = '~p~Olåst~s~',
   ['locked'] = '~r~Låst~s~',
-  ['press_button'] = '[E] %s',
+  ['press_button'] = '[~p~E~w~] %s',
 }

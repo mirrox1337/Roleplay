@@ -52,7 +52,7 @@ Citizen.CreateThread(function()
 
             local busCoords = GetEntityCoords(entity)
 
-            ESX.Game.Utils.DrawText3D(busCoords + vector3(0.0, 0.0, 0.5), "[~g~E~s~] Sök efter föremål", 0.4)
+            ESX.Game.Utils.DrawText3D(busCoords + vector3(0.0, 0.0, 0.5), "[~p~E~s~] Sök efter föremål", 0.4)
 
             if IsControlJustReleased(0, 38) then
                 if not cachedBus[entity] then
@@ -225,7 +225,7 @@ Citizen.CreateThread(function()
 			if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 15.0)then
 				if not holdingup then
 					--DrawMarker(27, v.position.x, v.position.y, v.position.z-0.9, 0, 0, 0, 0, 0, 0, 2.001, 2.0001, 0.5001, 255, 0, 0, 200, 0, 0, 0, 0)
-					DrawMarker(27, v.position.x, v.position.y, v.position.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1, 119, 18, 130, 100, false, true, 2, true, false, false, false)
+					DrawMarker(27, v.position.x, v.position.y, v.position.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1, 119, 18, 130, 225, false, true, 2, true, false, false, false)
 
 					if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 1.0)then
 						if (incircle == false) then
@@ -279,7 +279,7 @@ Citizen.CreateThread(function()
 			drawTxt(0.3, 1.4, 0.45, _U('smash_case') .. ' :~r~ ' .. vetrineRotte .. '/' .. Config.MaxWindows, 185, 185, 185, 255)
 			for i,v in pairs(vetrine) do 
 				if(GetDistanceBetweenCoords(pos, v.x, v.y, v.z, true) < 1.25) and not v.isOpen then 
-					DrawText3D(v.x, v.y, v.z, '~w~[~g~E~w~] ' .. _U('press_to_collect'), 0.6)
+					DrawText3D(v.x, v.y, v.z, '~w~[~p~E~w~] ' .. _U('press_to_collect'), 0.6)
 					if IsControlJustPressed(0, 38) then
 						animazione = true
 					    SetEntityCoords(GetPlayerPed(-1), v.x, v.y, v.z-0.95)

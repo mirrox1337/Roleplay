@@ -74,7 +74,7 @@ function LoadSellPlace()
 						if IsPedInAnyVehicle(ped, false) then
 							OpenSellMenu(GetVehiclePedIsUsing(ped))
 						else
-							ESX.ShowNotification("Du måste sitta i ett ~g~fordon")
+							ESX.ShowNotification("Du måste sitta i ett ~p~fordon")
 						end
 					end
 				end
@@ -96,7 +96,7 @@ function LoadSellPlace()
 							if IsPedInVehicle(ped, Config.VehiclePositions[i]["entityId"], false) then
 								OpenSellMenu(Config.VehiclePositions[i]["entityId"], Config.VehiclePositions[i]["price"], true, Config.VehiclePositions[i]["owner"])
 							else
-								ESX.ShowNotification("Du måste sitta i ~g~fordonet~s~!")
+								ESX.ShowNotification("Du måste sitta i ~p~fordonet~s~!")
 							end
 						end
 					end
@@ -158,10 +158,10 @@ function OpenSellMenu(veh, price, buyVehicle, owner)
 
 				if valid then
 					DeleteVehicle(veh)
-					ESX.ShowNotification("Du satte ut ~g~fordonet~s~ till salu - " .. price .. " :-")
+					ESX.ShowNotification("Du satte ut ~p~fordonet~s~ till salu - " .. price .. " :-")
 					menu.close()
 				else
-					ESX.ShowNotification("Du måste ~r~äga~s~ ~g~fordonet!~s~ / det ~r~finns redan~s~ " .. #Config.VehiclePositions .. " fordon till salu!")
+					ESX.ShowNotification("Du måste ~r~äga~s~ ~p~fordonet!~s~ / det ~r~finns redan~s~ " .. #Config.VehiclePositions .. " fordon till salu!")
 				end
 	
 			end, vehProps, price)
@@ -169,7 +169,7 @@ function OpenSellMenu(veh, price, buyVehicle, owner)
 			ESX.TriggerServerCallback("esx-qalle-sellvehicles:buyVehicle", function(isPurchasable, totalMoney)
 				if isPurchasable then
 					DeleteVehicle(veh)
-					ESX.ShowNotification("Du ~g~köpte~s~ fordonet för " .. price .. " :-")
+					ESX.ShowNotification("Du ~p~köpte~s~ fordonet för " .. price .. " :-")
 					menu.close()
 				else
 					ESX.ShowNotification("Du har ~r~inte~s~ råd, det saknas " .. price - totalMoney .. " :-")
@@ -179,7 +179,7 @@ function OpenSellMenu(veh, price, buyVehicle, owner)
 			ESX.TriggerServerCallback("esx-qalle-sellvehicles:buyVehicle", function(isPurchasable, totalMoney)
 				if isPurchasable then
 					DeleteVehicle(veh)
-					ESX.ShowNotification("Du ~g~tog bort~s~ fordonet")
+					ESX.ShowNotification("Du ~p~tog bort~s~ fordonet")
 					menu.close()
 				end
 			end, ESX.Game.GetVehicleProperties(veh), 0)

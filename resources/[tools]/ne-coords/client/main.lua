@@ -21,7 +21,7 @@ Citizen.CreateThread(function()
 	    	roundy = tonumber(string.format("%.2f", y))
 	    	roundz = tonumber(string.format("%.2f", z))
 			roundh = tonumber(string.format("%.2f", heading))
-			Text("~b~X~w~: " ..roundx.." ~b~Y~w~: " ..roundy.." ~b~Z~w~: " ..roundz.." ~b~H~w~: " ..roundh.."")
+			Text("~p~X~w~: " ..roundx.." ~p~Y~w~: " ..roundy.." ~p~Z~w~: " ..roundz.." ~p~H~w~: " ..roundh.."")
 		end
 		
 	end

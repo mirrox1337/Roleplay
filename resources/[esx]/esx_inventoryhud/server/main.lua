@@ -515,7 +515,7 @@ AddEventHandler("suku:SellItemToPlayer",function(source, type, item, count)
 					if xPlayer.getMoney() >= totalPrice then
 						xPlayer.removeMoney(totalPrice)
 						xPlayer.addInventoryItem(item, count)
-						--TriggerClientEvent('esx:showNotification', source, 'Du har köpt ~g~'..count..' ~w~st ~y~'..list[i].label )
+						--TriggerClientEvent('esx:showNotification', source, 'Du har köpt ~p~'..count..' ~w~st ~y~'..list[i].label )
 						TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'success', text = 'Du har köpt ' .. count.. 'st '..list[i].label })
 					else
 						--TriggerClientEvent('esx:showNotification', source, '~r~Köp medges ej' )

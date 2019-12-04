@@ -19,7 +19,7 @@ function SetWeaponDrops()
     end
 end
 
---Inga Vapen Pickup från bilar
+--Inga Vapen Pickup frï¿½n bilar
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)      
@@ -35,4 +35,13 @@ Citizen.CreateThread(function()
 			EnableDispatchService(i, false)
 		end
 	end
+end)
+
+-- inga npc snutar
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(0)
+        local myCoords = GetEntityCoords(GetPlayerPed(-1))
+        ClearAreaOfCops(myCoords.x, myCoords.y, myCoords.z, 100.0, 0)
+    end
 end)

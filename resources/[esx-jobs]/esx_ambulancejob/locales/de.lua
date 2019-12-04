@@ -35,12 +35,12 @@ Locales['de'] = {
 	-- Death
 		['respawn_at_hospital'] = 'Willst du ins Krankenhaus gebracht werden?',
 		['yes'] = 'ja',
-		['please_wait'] = 'bitte warte ~b~',
+		['please_wait'] = 'bitte warte ~p~',
 		['minutes'] = ' minuten ',
-		['seconds_fine'] = ' sekunden ~w~zum respawnen\nRespawn jetzt für ~g~$',
+		['seconds_fine'] = ' sekunden ~w~zum respawnen\nRespawn jetzt für ~p~$',
 		['seconds'] = ' sekunden ~w~bis zum respawn.',
-		['press_respawn_fine'] = '~w~ [Drücke ~b~E~w~]',
-		['press_respawn'] = 'Drücke [~b~E~w~] zum respawnen.',
+		['press_respawn_fine'] = '~w~ [Drücke ~p~E~w~]',
+		['press_respawn'] = 'Drücke [~p~E~w~] zum respawnen.',
 	-- Revive
 		['revive_help'] = 'Spieler wiederbeleben',
 }

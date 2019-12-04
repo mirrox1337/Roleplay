@@ -118,7 +118,7 @@ if bankMenu then
 	while true do
 		Wait(0)
 	if nearBank() or nearATM() then
-			DisplayHelpText("~INPUT_PICKUP~ för att bli betjänad ~b~")
+			DisplayHelpText("~INPUT_PICKUP~ för att bli betjänad ~p~")
 
 		if IsControlJustPressed(1, 38) then
 			
