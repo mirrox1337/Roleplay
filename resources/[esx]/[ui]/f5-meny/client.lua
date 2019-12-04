@@ -77,8 +77,8 @@ function openMenu()
 		                elements = {
 		                	{label = 'Arbete: ' .. PlayerData.job.label .. ' - ' .. PlayerData.job.grade_label, value = 'work'},
 		                    {label = 'Kolla på din legitimation', value = 'check'},
-		                    {label = 'Visa legitimation', value = 'show'},
-		                    {label = 'Kolla dina nycklar', value = 'keys'}
+		                    {label = 'Visa legitimation', value = 'show'}
+		                    --{label = 'Kolla dina nycklar', value = 'keys'}
 		                }
 		            },
 		            function(data2, menu2)
@@ -243,12 +243,12 @@ function openMenu()
 							title    = 'Accessoarer',
 							align    = 'right',
 							elements = {
-							    {label = 'Hjälm/Hatt På/Av', value = 'Helmet'},
-							    {label = 'Mask På/Av', value = 'Mask'},
-							    {label = 'Glasögon På/Av', value = 'Glasses'},
-							    {label = 'Skottsäkervest På/Av', value = 'bulletproof'},
-								{label = 'Armaccessoarer På/Av', value = 'Watches'},
-								{label = 'Örhänge(n) På/Av', value = 'Ears'}
+							    {label = 'Huvudbonad [På/Av]', value = 'Helmet'},
+							    {label = 'Maskering [På/Av]', value = 'Mask'},
+							    {label = 'Glasögon [På/Av]', value = 'Glasses'},
+							    {label = 'Skottsäkervest [På/Av]', value = 'bulletproof'},
+								{label = 'Armaccessoarer [På/Av]', value = 'Watches'},
+								{label = 'Örhängen [På/Av]', value = 'Ears'}
 						    }
 						},
 						function(data2, menu2)
@@ -337,9 +337,9 @@ function openMenu()
 							align    = 'right',
 							elements = {
 							    {label = 'Sök Igenom', value = 'search'},
-									--{label = ('Lyft upp person'), value = 'lift'},
-							    {label = 'Ögonbindel På/Av', value = 'blind'},
-							    {label = ('Eskotera'),    value = 'drag'},
+								--{label = ('Lyft upp person'), value = 'lift'},
+							    --{label = 'Ögonbindel', value = 'blind'},
+							    {label = ('Eskotera person'),    value = 'drag'},
 								{label = ('Knyt på buntband'),    value = 'handcuff'},
  								{label = ('Skär av buntband'),    value = 'unhandcuff'},
 						    }
@@ -525,11 +525,11 @@ function openMenu()
 							title    = 'CEO Meny',
 							align    = 'right',
 							elements = {
-							    {label = 'Företagspengar', value = 'society_money'},
-								{label = 'Rekrytera (Närmsta Spelare)',     value = 'recruit_player'},
-								{label = 'Sparka (Närmsta Spelare)',              value = 'kick_player'},
-								{label = 'Höj Rang (Närmsta Spelare)', value = 'promote_player'},
-								{label = 'Sänk Rang (Närmsta Spelare)',  value = 'demote_player'}
+							    {label = 'Företagskassan', 				value = 'society_money'},
+								{label = 'Rekrytera [Närmaste person]', value = 'recruit_player'},
+								{label = 'Sparka [Närmaste person]', 	value = 'kick_player'},
+								{label = 'Befodra [Närmaste person]', 	value = 'promote_player'},
+								{label = 'Degradera [Närmaste person]', value = 'demote_player'}
 						    }
 						},
 						function(data2, menu2)

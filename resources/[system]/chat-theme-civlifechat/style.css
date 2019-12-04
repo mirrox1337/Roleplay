@@ -1,3 +1,4 @@
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
 .color-0{color: #ffffff;}
 .color-1{color: #ff4444;}
 .color-2{color: #99cc00;}
@@ -7,11 +8,13 @@
 .color-6{color: #aa66cc;}
 .color-8{color: #cc0000;}
 .color-9{color: #cc0068;}
+    src: url("../BarlowCondensed.ttf");
 
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 0.9rem;
 }
 
 .no-grow {
@@ -23,29 +26,28 @@ em {
 }
 
 #app {
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
+  background-color: transparent;
 }
 
 .chat-window {
   position: absolute;
-  top: 15px;
   left: 15px;
   width: 38%;
-  height: 240px;
-
- 
+  height: 530px;
+  background-color: rgba(255, 255, 255, 0);
   -webkit-animation-duration: 2s;
 }
+
 
 
 .chat-messages {
   position: relative;
   height: 95%;
-  font-size: 1.2rem;
-  margin: 10px;
+  font-size: 1.0rem;
 
   overflow-x: hidden;
   overflow-y: hidden;
@@ -53,11 +55,11 @@ em {
 
 
 .chat-input {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   position: absolute;
 
-  top: 257px;
-  left: 15px;
+  top: 30%;
+  left: 19px;
   width: 38%;
 
   box-sizing: border-box;
@@ -66,20 +68,19 @@ em {
 .prefix {
   position: absolute;
   margin-top: 2px;
-  left: 4px;
+  left: -10px;
 }
 
 textarea {
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   display: block;
   box-sizing: border-box;
   padding: 5px;
-  padding-left: 27px;
   color: white;
-  background-color: rgba(44, 62, 80, 0.0);
-  width: 100%;
+  background-color: rgba(207, 227, 114, 0);
+  width: 50%;
   border-width: 0;
-  height: 34px;
+  height: 30%;
   overflow: hidden;
 }
 
@@ -88,7 +89,16 @@ textarea:focus, input:focus {
 }
 
 .msg {
-  margin-bottom: 3px;
+  margin-bottom: 5px;
+}
+
+.twitter
+{
+  height: 10%;
+  width: 90%;
+  background: #ffbb33;
+  border-radius: 5px;
+  color: #0000;
 }
 
 .multiline {
@@ -101,10 +111,10 @@ textarea:focus, input:focus {
   list-style-type: none;
   padding: 5px;
   padding-left: 27px;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   box-sizing: border-box;
   color: white;
-  background-color: rgba(44, 62, 80, 0.0);
+  background-color: rgba(207, 227, 114, 0);
   width: 100%;
 }
 

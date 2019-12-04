@@ -9,8 +9,16 @@ local IdentifierTables = {
 	{table = "society_moneywash", column = "identifier"},
 	{table = "user_accounts", column = "identifier"},
 	{table = "user_inventory", column = "identifier"},
-	{table = "characters", column = "identifier"},
-	{table = "users", column = "identifier"}
+    {table = "characters", column = "identifier"},
+    {table = "phone_calls", column = "owner"},
+    {table = "phone_messages", column = "owner"},
+    {table = "users", column = "identifier"},
+    {table = "owned_vehicles", column = "owner"},
+    {table = "disc_inventory", column = "owner"},
+    {table = "disc_property_owners", column = "identifier"},
+    {table = "phone_users_contacts", column = "identifier"},
+    {table = "billing", column = "identifier"},
+    {table = "user_licenses", column = "owner"},
 }
 
 RegisterServerEvent("kashactersS:SetupCharacters")

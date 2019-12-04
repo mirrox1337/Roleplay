@@ -33,6 +33,8 @@ AddEventHandler('__cfx_internal:commandFallback', function(command)
     CancelEvent()
 end)
 
+--[[
+
 -- player join messages
 AddEventHandler('chat:init', function()
     TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) .. ' joined.')
@@ -77,3 +79,4 @@ AddEventHandler('onServerResourceStart', function(resName)
         refreshCommands(player)
     end
 end)
+--]]
