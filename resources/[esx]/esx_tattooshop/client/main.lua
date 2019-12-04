@@ -95,6 +95,7 @@ Citizen.CreateThread(function()
 		SetBlipSprite(blip, 75)
 		SetBlipColour(blip, 1)
 		SetBlipAsShortRange(blip, true)
+		SetBlipScale(blip, 0.8)
 
 		BeginTextCommandSetBlipName('STRING')
 		AddTextComponentString(_U('tattoo_shop'))

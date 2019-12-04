@@ -55,9 +55,9 @@ Config.Shops = {
         msg = '~INPUT_CONTEXT~ för att handla på ~p~Test Butiken~s~',
         job = 'all'
     },
-    ['Aladdins Fiskebutik'] = {
+    ['Barracuda Fiskeshop'] = {
         coords = {
-            vector3(814.59, -93.13, 79.7),
+            vector3(-3275.48, 969.75, 7.45),
         },
         items = {
             { name = "fishingrod", price = 100, count = 1 },
@@ -69,42 +69,23 @@ Config.Shops = {
         markerColour = { r = 196, g = 42, b = 190 },
         enableBlip = true,
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att handla på ~p~Aladdins Fiskebutik~s~',
+        msg = '~INPUT_CONTEXT~ för att handla på ~p~Barracuda Fiskeshop~s~',
         job = 'all'
     },
-    ['Mohammeds Livs'] = {
+    ['Amirs Livs'] = {
         coords = {
             vector3(-1172.07, -1571.93, 3.70),
         },
         items = {
-            { name = "cigarett", price = 60, count = 20 },
-            { name = "lighter", price = 10, count = 1 },
-            { name = "rizla", price = 15, count = 1 },
+            { name = "rizla", price = 15, count = 1 }
         },
-        blipSprite = 106,
-        blipColour = 38,
+        blipSprite = 52,
+        blipColour = 51,
         markerType = 27,
         markerColour = { r = 196, g = 42, b = 190 },
         enableBlip = true,
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att handla på ~p~Mohammeds Livs~s~',
-        job = 'all'
-    },
-    ['UrbicusBar'] = {
-        coords = {
-            vector3(-562.07, 288.27, 81.28),
-        },
-        items = {
-            { name = "ol", price = 65, count = 1 },
-            { name = "whisky", price = 105, count = 1 },
-        },
-        blipSprite = 52,
-        blipColour = 4,
-        markerType = 27,
-        markerColour = { r = 196, g = 42, b = 190 },
-        enableBlip = false,
-        rotate = true,
-        msg = '~INPUT_CONTEXT~ för att handla på ~p~Urbicus Bar~s~',
+        msg = '~INPUT_CONTEXT~ för att handla på ~p~Amirs Livs~s~',
         job = 'all'
     },
     ['Sjukhus Kiosken'] = {
@@ -131,27 +112,12 @@ Config.Shops = {
             vector3(-1207.59, -240.18, 36.97),
         },
         items = {
-            {name = 'silencieux', price = 7500, count = 1},
-			{name = 'flashlight', price = 4000, count = 1},
-			{name = 'seed', price = 5000, count = 1},
-			{name = 'rizla', price = 30, count = 30},
-			{name = 'kaustiksoda', price = 50, count = 1},
-			{name = 'cement', price = 50, count = 1},
-			{name = 'bensin', price = 600, count = 1},
-			{name = 'clip', price = 600, count = 1},
-			{name = 'Våg', price = 500, count = 1},
-			{name = 'grinder', price = 500, count = 1},
-			{name = 'plasticbag', price = 15, count = 10},
-			{name = 'lockpick', price = 200, count = 1},
-			{name = 'radio', price = 900, count = 1},
-			{name = 'buntband', price = 20, count = 1},
-			{name = 'chemicals', price = 400, count = 1},
-			{name = 'jumelles', price = 450, count = 1},
-			{name = 'turtlebait', price = 25, count = 1},
-			{name = 'methlab', price = 2300, count = 1},
-			{name = 'acetone', price = 90, count = 1},
-			{name = 'lithium', price = 25, count = 1},
-			{name = 'bulletproof_vest', price = 1500, count = 1}
+            {name = 'chemicals', price = 100, count = 1},
+            {name = 'fuel', price = 200, count = 1},
+            {name = 'grinder', price = 150, count = 1},
+            {name = 'plasticbag', price = 15, count = 1},
+            {name = 'scale', price = 200, count = 1},
+            {name = 'seed', price = 450, count = 1}
         },
         blipSprite = 52,
         blipColour = 4,
@@ -159,7 +125,7 @@ Config.Shops = {
         markerColour = { r = 196, g = 42, b = 190 },
         enableBlip = false,
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att handla hos ~r~Dealer~s~',
+        msg = '~INPUT_CONTEXT~ för att handla på den ~r~svarta marknaden~s~',
         job = 'all'
     }
 }

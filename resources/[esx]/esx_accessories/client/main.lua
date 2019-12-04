@@ -22,6 +22,7 @@ function OpenAccessoryMenu()
 			{label = _U('helmet'), value = 'Helmet'},
 			{label = _U('ears'), value = 'Ears'},
 			{label = _U('mask'), value = 'Mask'},
+			{label = _U('watches'), value = 'Watches'},
 			{label = _U('glasses'), value = 'Glasses'}
 		}
 	}, function(data, menu)
@@ -112,6 +113,8 @@ function OpenShopMenu(accessory)
 					ClearPedProp(player, 0)
 				elseif accessory == "Glasses" then
 					SetPedPropIndex(player, 1, -1, 0, 0)
+				elseif accessory == "Watches" then
+					SetPedPropIndex(player, 6, -1, 0, 0)
 				end
 			end
 			CurrentAction     = 'shop_menu'

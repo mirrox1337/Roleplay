@@ -143,9 +143,9 @@ AddEventHandler('disc-base:registerBlip', function(blip)
     SetBlipAsShortRange(_blip, true)
     SetBlipDisplay(_blip, getOrElse(blip.display, 4))
 
-    if blip.scale then
-        SetBlipScale(_blip, getOrElse(blip.scale, 0.5))
-    end
+    --if blip.scale then
+        SetBlipScale(_blip, getOrElse(blip.scale, 0.8))
+    --end
     SetBlipColour(_blip, getOrElse(blip.colour, 1))
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentString(getOrElse(blip.name, "Blip Missing Name"))
