@@ -1,8 +1,7 @@
---Multiplier för trafik
+--Multiplier fï¿½r trafik
 Citizen.CreateThread(function()
-	while true
-		Citizen.Wait(100)
-			do				
+	while true do
+		Citizen.Wait(100)		
 			SetVehicleDensityMultiplierThisFrame(0.1)
 			SetRandomVehicleDensityMultiplierThisFrame(0.1)
 			SetParkedVehicleDensityMultiplierThisFrame(0.1)

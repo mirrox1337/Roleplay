@@ -452,4 +452,103 @@ Config.Properties = {
             }
         }
     },
+	{
+        name = '1054 Grove Street',
+        price = 75000,
+        view = {
+            coords = vector3(89.63, -1952.31, 20.74),
+        },
+        inside = {
+            coords = vector3(86.83, -1960.85, 21.12),
+            heading = 134.35
+        },
+        outside = {
+            coords = vector3(85.11, -1958.77, 21.12),
+            heading = 323.95
+        },
+        garage = {
+            coords = vector3(92.08, -1963.61, 20.75)
+        },
+        rooms = {
+            {
+                clothes = {
+                    coords = vector3(75.45, -1966.78, 21.12)
+                },
+                cupboard = {
+                    coords = vector3(78.09, -1968.58, 21.12)
+                }
+            }
+        }
+    },
+		{
+        name = 'THE LOST MC',
+        price = 175000,
+        view = {
+            coords = vector3(983.94, -105.96, 74.35),
+        },
+        inside = {
+            coords = vector3(980.62, -101.84, 74.85),
+            heading = 314.71
+        },
+        outside = {
+            coords = vector3(982.36, -103.5, 74.85),
+            heading = 42.84
+        },
+        garage = {
+            coords = vector3(965.23, -108.32, 74.36)
+        },
+        rooms = {
+            {
+                clothes = {
+                    coords = vector3(986.63, -92.74, 74.85)
+                },
+                cupboard = {
+                    coords = vector3(977.02, -104.08, 74.85)
+                }
+            }
+        }
+    },
+	{
+        name = 'Playboy Mansion',
+        price = 535000,
+        view = {
+            coords = vector3(-1491.52, 95.32, 55.01),
+        },
+        inside = {
+            coords = vector3(-1502.41, 104.79, 55.66),
+            heading = 47.07
+        },
+        outside = {
+            coords = vector3(-1499.97, 102.97, 55.62),
+            heading = 46.91
+        },
+        kitchen = {
+            coords = vector3(-1510.75, 103.51, 55.66)
+        },
+        garage = {
+            coords = vector3(-1533.81, 81.15, 56.77)
+        },
+		shower = {
+            coords = vector3(-1512.83, 108.73, 51.88),
+            heading = 327.41
+        },
+        rooms = {
+            {
+                clothes = {
+                    coords = vector3(-1515.1, 109.75, 51.85)
+                },
+                cupboard = {
+                    coords = vector3(-1512.68, 112.46, 55.45)
+                }
+            },
+            {
+                clothes = {
+                    coords = vector3(-1505.53, 109.2, 48.05)
+                },
+                cupboard = {
+                    coords = vector3(-1505.58, 111.21, 48.05)
+                }
+            }
+        }
+    },
 }

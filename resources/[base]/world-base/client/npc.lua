@@ -40,8 +40,8 @@ end)
 -- inga npc snutar
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(100)
+        Citizen.Wait(500)
         local myCoords = GetEntityCoords(GetPlayerPed(-1))
-        ClearAreaOfCops(myCoords.x, myCoords.y, myCoords.z, 100.0, 0)
+        ClearAreaOfCops(myCoords.x, myCoords.y, myCoords.z, 150.0, 0)
     end
 end)
