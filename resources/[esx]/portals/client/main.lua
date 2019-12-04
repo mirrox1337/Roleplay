@@ -127,5 +127,6 @@ end
 
 function DrawM(hint, type, x, y, z)
 	ESX.Game.Utils.DrawText3D({x = x, y = y, z = z + 1.0}, hint, 0.4)
-	DrawMarker(type, x, y, z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1.5, 255, 255, 255, 100, false, true, 2, false, false, false, false)
+	--DrawMarker(type, x, y, z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1.5, 255, 255, 255, 100, false, true, 2, false, false, false, false)
+    DrawMarker(6, x, y, z, 0, 0, 0, -1, 0, 0, 1.5, 1.5, 1.5, 119, 18, 130, 50, 0, 0, 0, 0)
 end

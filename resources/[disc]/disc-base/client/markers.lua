@@ -69,7 +69,8 @@ Citizen.CreateThread(function()
                         ESX.Game.Utils.DrawText3D(v.coords, v.msg, 0.5)
                     end
                 elseif v.type ~= -1 then
-                    DrawMarker(v.type, v.coords, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.size.x, v.size.y, v.size.z, v.colour.r, v.colour.g, v.colour.b, 100, getOrElse(v.bob, false), true, 2, getOrElse(v.rotate, true), false, false, false)
+                    --DrawMarker(v.type, v.coords, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.size.x, v.size.y, v.size.z, v.colour.r, v.colour.g, v.colour.b, 100, getOrElse(v.bob, false), true, 2, getOrElse(v.rotate, true), false, false, false)
+                    DrawMarker(6, v.coords, 0, 0, 0, -1, 0, 0, v.size.x, v.size.y, v.size.z, v.colour.r, v.colour.g, v.colour.b, 50, 0, 0, 0, 0)
                 end
                 if distance < v.size.x then
                     if v.enableE then
