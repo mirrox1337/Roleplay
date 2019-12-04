@@ -44,7 +44,7 @@ function notifyAlertSMS (number, alert)
   if PhoneNumbers[number] ~= nil then
     for k,v in pairs(PhoneNumbers[number].sources) do
       getPhoneNumber(tonumber(k), function (n)
-        TriggerEvent('esx_addons_chrono:_internalAddMessage', number, n, 'Larm (' .. alert.numero  .. '): ' .. alert.message, 0, function (smsMess)
+        TriggerEvent('esx_addons_chrono:_internalAddMessage', number, n, 'Larm: ' .. alert.message, 0, function (smsMess)
           TriggerClientEvent("esx_addons_chrono:receiveMessage", tonumber(k), smsMess)
         end)
         if alert.coords ~= nil then

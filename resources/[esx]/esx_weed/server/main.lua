@@ -63,7 +63,7 @@ AddEventHandler('esx_weed:water', function(drugnumber)
                     Wait(5500) --waits for notifications
 
                     if waternumber == 1 then
-                        TriggerClientEvent('notification', _source, 'Du vattnade plantan, nu behöver du bara vattna ' ..waternumber .. ' gånger till', "success")
+                        TriggerClientEvent('notification', _source, 'Du vattnade plantan, nu behöver du bara vattna ' ..waternumber .. ' gång(er) till', "success")
                     elseif waternumber == 2 then
                         TriggerClientEvent('notification', _source, "Du vattnade plantan.")
                     end
@@ -179,7 +179,7 @@ ESX.RegisterServerCallback('esx_weed:getDrugs', function(source, cb)
         else
         end
     end)
-    Citizen.Wait(3000)
+    Citizen.Wait(6000)
 end)
 
 ESX.RegisterServerCallback('esx_weed:getTime', function(source, cb)
