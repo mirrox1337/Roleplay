@@ -34,7 +34,7 @@ Config.Scenarios = {
 		SpawnPoint = { x = 989.1, y = -2973.38, z = 5.9, h = 357.76 }, 
 		DeliveryPoint = 6.0,
 		VehicleName = "burrito3",
-		MinCopsOnline = 0,
+		MinCopsOnline = 4,
 		CargoCost = 7500,
 		CargoReward = 200
 	
@@ -44,7 +44,7 @@ Config.Scenarios = {
 		SpawnPoint = { x = 989.1, y = -2973.38, z = 5.9, h = 357.76 }, 
 		DeliveryPoint = 6.0,
 		VehicleName = "boxville",
-		MinCopsOnline = 0,
+		MinCopsOnline = 5,
 		CargoCost = 18000,
 		CargoReward = 400
 	
@@ -53,7 +53,7 @@ Config.Scenarios = {
 		SpawnPoint = { x = 989.1, y = -2973.38, z = 5.9, h = 357.76 },  
 		DeliveryPoint = 6.0,
 		VehicleName = "mule",
-		MinCopsOnline = 0,
+		MinCopsOnline = 6,
 		CargoCost = 40000,
 		CargoReward = 750
 	
