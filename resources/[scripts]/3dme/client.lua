@@ -37,7 +37,7 @@ function Display(mePlayer, text, offset)
         local dist = Vdist2(coordsMe, coords)
         if dist < 50 then
             TriggerEvent('chat:addMessage', {
-                template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(255, 5, 5, 0.6); border-radius: 3px;"><i class="fas fa-exclamation"></i> Me<br> {0}</div>',
+                template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(255, 5, 5, 0.6); border-radius: 3px;"></i><strong> /ME</strong><br> {0}</div>',
                 args = { text}
             })
         end
