@@ -3,7 +3,7 @@ Config = {}
 Config.Locale = 'en'
 Config.OpenControl = 289
 Config.TrunkOpenControl = 47
-Config.DeleteDropsOnStart = false
+Config.DeleteDropsOnStart = true
 Config.HotKeyCooldown = 1000
 
 Config.Shops = {
