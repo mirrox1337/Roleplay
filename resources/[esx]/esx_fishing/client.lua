@@ -201,32 +201,7 @@ function GetFishingItems()
     
     return hasRod, hasBait
 
-end
-             
-function OpenFishMenu()
-    ESX.UI.Menu.CloseAll()
-
-    ESX.UI.Menu.Open(
-        'default', GetCurrentResourceName(), 'fish_menu',
-        {
-            title    = 'Fiskeutrustning',
-            elements = {
-				{label = 'Fiskespö x 1 [1500 SEK]', item = 'fishingrod', price = 1500, amount = 1},
-				{label = 'Fiskebete x 1 [5 SEK]', item = 'bait', price = 5, amount = 1},
-				{label = 'Fiskebete x 25 [100 SEK]', item = 'bait', price = 100, amount = 25},
-            }
-        },
-        function(data, menu)
-            local item = data.current.item
-            local price = data.current.price
-			local amount = data.current.amount
-            TriggerServerEvent('esx_fishing:buy', item, price, amount)
-        end,
-    function(data, menu)
-        menu.close()
-    end)
-end
-
+end          
 
 function Draw3DText(x, y, z, text)
       local onScreen, _x, _y = World3dToScreen2d(x, y, z)
@@ -249,9 +224,4 @@ function Draw3DText(x, y, z, text)
           AddTextComponentString(text)
           DrawText(_x,_y)
       end
-end
-
-function DrawM(hint, type, x, y, z)
-	ESX.Game.Utils.DrawText3D({x = x, y = y, z = z + 1.0}, hint, 0.4)
-	DrawMarker(type, x, y, z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 2.0, 2.0, 2.0, 255, 255, 255, 100, false, true, 2, false, false, false, false)
 end
