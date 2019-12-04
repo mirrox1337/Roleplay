@@ -60,8 +60,8 @@ Config.Shops = {
             vector3(-3275.48, 969.75, 7.45),
         },
         items = {
-            { name = "fishingrod", price = 100, count = 1 },
-            { name = "fishbait", price = 5, count = 10 },
+            { name = "fishingrod", price = 125, count = 1 },
+            { name = "bait", price = 50, count = 10 },
         },
         blipSprite = 68,
         blipColour = 1,
