@@ -921,7 +921,7 @@ Citizen.CreateThread(function()
 				if (GetDistanceBetweenCoords(coords, v.GaragePoint.x, v.GaragePoint.y, v.GaragePoint.z, true) < Config.DrawDistance) then
 					canSleep = false
 					--DrawMarker(Config.MarkerType, v.GaragePoint.x, v.GaragePoint.y, v.GaragePoint.z + 0.5, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.PointMarker.x, Config.PointMarker.y, Config.PointMarker.z, Config.PointMarker.r, Config.PointMarker.g, Config.PointMarker.b, 100, false, true, 2, false, false, false, false)	
-					Marker("~w~[~p~E~w~] ~g~För att öppna garage", 27, v.GaragePoint.x, v.GaragePoint.y, v.GaragePoint.z)
+					Marker("~w~[~p~E~w~] ~p~För att öppna garage", 27, v.GaragePoint.x, v.GaragePoint.y, v.GaragePoint.z)
 					--DrawMarker(Config.MarkerType, v.DeletePoint.x, v.DeletePoint.y, v.DeletePoint.z + 0.5, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.DeleteMarker.x, Config.DeleteMarker.y, Config.DeleteMarker.z, Config.DeleteMarker.r, Config.DeleteMarker.g, Config.DeleteMarker.b, 100, false, true, 2, false, false, false, false)	
 					Marker("~w~[~p~E~w~] ~r~För att parkera fordon", 27, v.DeletePoint.x, v.DeletePoint.y, v.DeletePoint.z)
 				end

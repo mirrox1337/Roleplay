@@ -33,7 +33,7 @@ Locales['sv'] = {
 	['jewelsblipmap'] = 'Juvelaren',
 	['press_to_collect'] = 'för att plocka juveler',
 	['smash_case'] = 'Glasmontrar',
-	['press_to_sell'] = 'Tryck [~g~E~w~] för att sälja juveler.',
+	['press_to_sell'] = 'Tryck [~p~E~w~] för att sälja juveler.',
 	['need_bag'] = 'Du behöver ha en väska.'
 
 }

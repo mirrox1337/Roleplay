@@ -25,7 +25,7 @@ function openJailMenu(playerid)
 			maxLength = 4
 			AddTextEntry('FMMC_KEY_TIP8', "Antal timmar i fängelse")
 			DisplayOnscreenKeyboard(1, "FMMC_KEY_TIP8", "", "", "", "", "", maxLength)
-			ESX.ShowNotification("~b~Ange antalet timmar du vill sätta personen i fängelse.")
+			ESX.ShowNotification("~p~Ange antalet timmar du vill sätta personen i fängelse.")
 			blockinput = true
 
 			while UpdateOnscreenKeyboard() ~= 1 and UpdateOnscreenKeyboard() ~= 2 do

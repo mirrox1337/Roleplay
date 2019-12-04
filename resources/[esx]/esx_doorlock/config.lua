@@ -1,5 +1,5 @@
 Config = {}
-Config.Locale = 'en'
+Config.Locale = 'sv'
 
 Config.DoorList = {
 
@@ -270,4 +270,101 @@ Config.DoorList = {
 		size = 2
 	}
 	--]]
+	-- Double doors for extended PD
+	{
+		textCoords = vector3(465.55, -990.00, 25.00),
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 4,
+		doors = {
+	{
+	objName = 'v_ilev_ph_gendoor005',
+	objYaw = 90.0,
+	objCoords = vector3(465.55, -989.45, 24.91)
+	},
+
+	{
+	objName = 'v_ilev_ph_gendoor005',
+	objYaw = -90.0,
+	objCoords = vector3(465.60, -990.63, 24.91)
+	}
+}
+},
+
+-- Cell 4 (Left 1)
+{
+	objName = 'v_ilev_ph_cellgate',
+	objYaw = 90.0,
+	objCoords  = vector3(466.03, -998.55, 24.9149),
+	textCoords = vector3(466.02, -998.75, 25.064),
+	authorizedJobs = { 'police' },
+	locked = true
+},
+
+-- Cell 5 (Left 2)
+{
+	objName = 'v_ilev_ph_cellgate',
+	objYaw = 90.0,
+	objCoords  = vector3(466.12, -1002.16, 24.9149),
+	textCoords = vector3(466.02, -1002.35, 25.064),
+	authorizedJobs = { 'police' },
+	locked = true
+},
+
+-- Interrogation wing cell left
+{
+	objName = 'v_ilev_ph_cellgate',
+	objYaw = -0.0,
+	objCoords  = vector3(482.02, -988.35, 24.91),
+	textCoords = vector3(481.6, -988.35, 25.064),
+	authorizedJobs = { 'police' },
+	locked = true
+},
+
+-- Interrogation wing cell right
+{
+	objName = 'v_ilev_ph_cellgate',
+	objYaw = -0.0,
+	objCoords  = vector3(481.86, -991.61, 24.91),
+	textCoords = vector3(481.46, -991.61, 25.064),
+	authorizedJobs = { 'police' },
+	locked = true
+},
+
+-- To interrogation observation room left
+{
+	objName = 'v_ilev_ph_gendoor005',
+	objYaw = -0.0,
+	objCoords  = vector3(472.01, -988.3, 24.91),
+	textCoords = vector3(472.01, -988.3, 24.91),
+	authorizedJobs = { 'police' },
+	locked = true
+},
+-- To interrogation room left
+{
+	objName = 'v_ilev_ph_gendoor005',
+	objYaw = -0.0,
+	objCoords  = vector3(477.52, -988.44, 24.91),
+	textCoords = vector3(477.52, -988.44, 24.91),
+	authorizedJobs = { 'police' },
+	locked = true
+},
+-- To interrogation observation room right
+{
+	objName = 'v_ilev_ph_gendoor005',
+	objYaw = -0.0,
+	objCoords  = vector3(472.02, -991.62, 24.91),
+	textCoords = vector3(472.02, -991.62, 24.91),
+	authorizedJobs = { 'police' },
+	locked = true
+},
+-- To interrogation room right
+{
+	objName = 'v_ilev_ph_gendoor005',
+	objYaw = -0.0,
+	objCoords  = vector3(477.56, -991.56, 24.91),
+	textCoords = vector3(477.56, -991.56, 24.91),
+	authorizedJobs = { 'police' },
+	locked = true
+},
 }

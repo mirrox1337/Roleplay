@@ -535,7 +535,7 @@ else
             
             if (distance < 0.5) then
 				if  Config.LockRentedRooms == false or motelTaken == false then			
-				DrawText3D(vm.entry.x, vm.entry.y, vm.entry.z + 0.35, '[~p~E~s~] för att hyra rum nummer: ~b~~p~'..vm.number..'~s~ på ~b~~p~'..v.Name..' ~w~för ~g~'..Config.PriceRental .. ' Sek')
+				DrawText3D(vm.entry.x, vm.entry.y, vm.entry.z + 0.35, '[~p~E~s~] för att hyra rum nummer: ~p~~p~'..vm.number..'~s~ på ~p~~p~'..v.Name..' ~w~för ~p~'..Config.PriceRental .. ' Sek')
 				if IsControlJustReleased(0, Keys['E']) then
 				    TriggerEvent('lsrp-motels:rentRoom', vm.instancename)
 				end

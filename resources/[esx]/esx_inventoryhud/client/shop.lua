@@ -401,13 +401,13 @@ Citizen.CreateThread(function()
 --[[
         for k, v in pairs(Config.Shops.InetShop.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.InetShop.Locations[k].x, Config.Shops.InetShop.Locations[k].y, Config.Shops.InetShop.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.InetShop.Locations[k].x, Config.Shops.InetShop.Locations[k].y, Config.Shops.InetShop.Locations[k].z), "Tryck ~g~[E]~w~ för att handla", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.InetShop.Locations[k].x, Config.Shops.InetShop.Locations[k].y, Config.Shops.InetShop.Locations[k].z), "Tryck ~p~[E]~w~ för att handla", 0.6)
             end
         end
 
         for k, v in pairs(Config.Shops.SexShop.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.SexShop.Locations[k].x, Config.Shops.SexShop.Locations[k].y, Config.Shops.SexShop.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.SexShop.Locations[k].x, Config.Shops.SexShop.Locations[k].y, Config.Shops.SexShop.Locations[k].z), "Tryck ~g~[E]~w~ för att handla", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.SexShop.Locations[k].x, Config.Shops.SexShop.Locations[k].y, Config.Shops.SexShop.Locations[k].z), "Tryck ~p~[E]~w~ för att handla", 0.6)
             end
         end
 --]]
@@ -437,7 +437,7 @@ Citizen.CreateThread(function()
 --[[
         for k, v in pairs(Config.Shops.Vending.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.Vending.Locations[k].x, Config.Shops.Vending.Locations[k].y, Config.Shops.Vending.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Vending.Locations[k].x, Config.Shops.Vending.Locations[k].y, Config.Shops.Vending.Locations[k].z), "Tryck ~g~[E]~w~ för att handla", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Vending.Locations[k].x, Config.Shops.Vending.Locations[k].y, Config.Shops.Vending.Locations[k].z), "Tryck ~p~[E]~w~ för att handla", 0.6)
             end
         end
 --]]

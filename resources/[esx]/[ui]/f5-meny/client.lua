@@ -1241,7 +1241,7 @@ function OpenCloseVehicle()
 			  TaskPlayAnim(PlayerPedId(), dict, "fob_click_fp", 8.0, 8.0, -1, 48, 1, false, false, false)
 		  end	
 		  exports['mythic_notify']:SendAlert('inform', 'Du har låst upp fordonet.', { ['background-color'] = '#009c10', ['color'] = '#fff' })
-			--ESX.ShowNotification('Du har ~g~låst upp~w~ ditt fordon')
+			--ESX.ShowNotification('Du har ~p~låst upp~w~ ditt fordon')
 		  if not IsPedInAnyVehicle(playerPed,  false) then
 			SetPedIntoVehicle(playerPed, vehicle, -1)
 			TaskLeaveVehicle(playerPed, vehicle, 16)
