@@ -363,9 +363,15 @@ AddEventHandler('esx_drugeffects:onCoke', function()
     
     --Efects
     local player = PlayerId()
-    AddArmourToPed(playerPed, 100)
+    --AddArmourToPed(playerPed, 100)
     local health = GetEntityHealth(playerPed)
     local newHealth = math.min(maxHealth , math.floor(health + maxHealth/6))
     SetEntityHealth(playerPed, newHealth)
+
+    SetRunSprintMultiplierForPlayer(player, 1.5)
+        
+    Wait(300000)
+
+    SetRunSprintMultiplierForPlayer(player, 1.0)  
     
 end)

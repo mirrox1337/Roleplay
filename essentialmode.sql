@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.characters: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.characters: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
 INSERT INTO `characters` (`id`, `identifier`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`) VALUES
 	(7, 'steam:110000105dbc118', 'Test', 'Tester', '1990-01-01', 'M', '188', '7531');
@@ -219,12 +219,13 @@ CREATE TABLE IF NOT EXISTS `disc_inventory` (
   `type` text COLLATE utf8mb4_bin,
   `data` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.disc_inventory: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.disc_inventory: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `disc_inventory` DISABLE KEYS */;
 INSERT INTO `disc_inventory` (`id`, `owner`, `type`, `data`) VALUES
-	(22, 'Polis Förråd', 'stash', '{"1":{"name":"bread","count":12},"2":{"count":6,"name":"WEAPON_PISTOL50"}}');
+	(22, 'Polis Förråd', 'stash', '{"1":{"name":"bread","count":12},"2":{"count":6,"name":"WEAPON_PISTOL50"}}'),
+	(23, 'steam:110000105dbc118', 'player', '{"2":{"name":"cannabis","count":2},"1":{"name":"water","count":4},"4":{"name":"rizla","count":3},"3":{"name":"phone","count":1},"6":{"name":"safetyhammer","count":2},"5":{"name":"joint","count":9}}');
 /*!40000 ALTER TABLE `disc_inventory` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.disc_inventory_itemdata
@@ -429,7 +430,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.items: ~118 rows (ungefär)
+-- Dumpar data för tabell essentialmode.items: ~122 rows (ungefär)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
 INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('WEAPON_ADVANCEDRIFLE', 'CTAR-21', 1, 0, 1),
@@ -514,6 +515,7 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('beer', 'Öl', 1, 0, 1),
 	('blowpipe', 'Blåslampa', 1, 0, 1),
 	('bread', 'Bröd', 1, 0, 1),
+	('cannabis', 'Cannabis', 1, 0, 1),
 	('carokit', 'Karosskit', 1, 0, 1),
 	('carotool', 'Verktyg', 1, 0, 1),
 	('coke', 'Kokain', 1, 0, 1),
@@ -536,6 +538,7 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('jager', 'Jägermeister', 1, 0, 1),
 	('jagerbomb', 'Jäger Bomb', 1, 0, 1),
 	('jewels', 'Juvel', 1, 0, 1),
+	('joint', 'Joint', 1, 0, 1),
 	('martini', 'Martini', 1, 0, 1),
 	('medkit', 'Medicinlåda', 1, 0, 1),
 	('meth', 'Amfetamin', 1, 0, 1),
@@ -544,7 +547,9 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('patch', 'Plåster', 1, 0, 1),
 	('phone', 'Telefon', 1, 0, 1),
 	('rhum', 'Rom', 1, 0, 1),
+	('rizla', 'Rizla', 1, 0, 1),
 	('safetyhammer', 'Busshammare', 100, 0, 1),
+	('seed', 'Cannabisfrön', 1, 0, 1),
 	('tequilla', 'Tequilla', 1, 0, 1),
 	('vicodin', 'Vicodin', 1, 0, 1),
 	('water', 'Vatten', 1, 0, 1),
@@ -658,7 +663,7 @@ CREATE TABLE IF NOT EXISTS `motell` (
   PRIMARY KEY (`id`),
   KEY `motel_id` (`motel_id`),
   KEY `ident` (`ident`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 -- Dumpar data för tabell essentialmode.motell: ~0 rows (ungefär)
 /*!40000 ALTER TABLE `motell` DISABLE KEYS */;
@@ -675,7 +680,7 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   PRIMARY KEY (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.owned_vehicles: ~0 rows (ungefär)
+-- Dumpar data för tabell essentialmode.owned_vehicles: ~2 rows (ungefär)
 /*!40000 ALTER TABLE `owned_vehicles` DISABLE KEYS */;
 INSERT INTO `owned_vehicles` (`owner`, `plate`, `vehicle`, `type`, `job`, `stored`) VALUES
 	('steam:110000105dbc118', 'ARM 942', '{"modTank":-1,"modAPlate":-1,"modTrimB":-1,"modSeats":-1,"modFender":-1,"windowTint":-1,"color2":0,"modAerials":-1,"engineHealth":1000.0,"modAirFilter":-1,"modSteeringWheel":-1,"modOrnaments":-1,"modFrontWheels":-1,"modPlateHolder":-1,"modDashboard":-1,"modSpeakers":-1,"pearlescentColor":111,"modSideSkirt":-1,"modBackWheels":-1,"plateIndex":0,"neonEnabled":[false,false,false,false],"extras":{"12":true,"10":false},"modTrimA":-1,"modDoorSpeaker":-1,"neonColor":[255,0,255],"modFrame":-1,"modSmokeEnabled":false,"modHorns":-1,"modArchCover":-1,"modTransmission":-1,"wheels":0,"modShifterLeavers":-1,"modGrille":-1,"modXenon":false,"modVanityPlate":-1,"modLivery":-1,"modRearBumper":-1,"color1":6,"modSpoilers":-1,"dirtLevel":5.1,"modDial":-1,"modTrunk":-1,"modSuspension":-1,"modHydrolic":-1,"modStruts":-1,"modTurbo":false,"modFrontBumper":-1,"bodyHealth":1000.0,"model":-344943009,"modRightFender":-1,"modExhaust":-1,"modBrakes":-1,"plate":"ARM 942","modWindows":-1,"wheelColor":156,"modEngineBlock":-1,"fuelLevel":64.6,"modRoof":-1,"modArmor":-1,"tyreSmokeColor":[255,255,255],"modHood":-1,"modEngine":-1}', 'car', NULL, 1),
@@ -859,7 +864,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumpar data för tabell essentialmode.users: ~1 rows (ungefär)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `lastdigits`, `is_dead`, `status`, `last_motel`, `last_motel_room`, `tattoos`) VALUES
-	('steam:110000105dbc118', 'license:4f3d30d5ce73246ea1e6742b5495d7a32c051f58', 0, 'chrono', '{"sun_2":0,"eyebrows_2":0,"lipstick_1":0,"bodyb_1":0,"hair_color_2":0,"glasses_2":0,"torso_1":0,"makeup_3":0,"chain_1":0,"hair_1":3,"helmet_2":0,"chest_2":0,"makeup_1":0,"blemishes_1":0,"beard_1":0,"blush_1":0,"arms":0,"decals_2":0,"bracelets_2":0,"mask_1":0,"watches_1":-1,"makeup_2":0,"chain_2":0,"hair_2":0,"face":5,"ears_1":-1,"hair_color_1":0,"lipstick_2":0,"complexion_2":0,"ears_2":0,"eyebrows_3":0,"eyebrows_4":0,"glasses_1":0,"lipstick_4":0,"bproof_2":0,"decals_1":0,"pants_1":0,"lipstick_3":0,"bodyb_2":0,"helmet_1":-1,"torso_2":0,"moles_1":0,"sex":0,"moles_2":0,"beard_4":0,"bags_2":0,"bags_1":0,"sun_1":0,"age_1":0,"eye_color":0,"mask_2":0,"complexion_1":0,"watches_2":0,"eyebrows_1":0,"age_2":0,"tshirt_2":0,"skin":3,"arms_2":0,"makeup_4":0,"blush_3":0,"bracelets_1":-1,"tshirt_1":0,"blemishes_2":0,"beard_2":0,"pants_2":0,"shoes_1":0,"bproof_1":0,"blush_2":0,"chest_3":0,"beard_3":0,"chest_1":0,"shoes_2":0}', 'police', 3, '[]', '{"x":314.5,"z":54.1,"y":-205.1}', 1000000, 0, 'superadmin', 'Test', 'Tester', '1990-01-01', 'M', '188', '7531', 0, '[{"val":1000000,"percent":100.0,"name":"hunger"},{"val":1000000,"percent":100.0,"name":"thirst"},{"val":0,"percent":0.0,"name":"drunk"},{"val":0,"percent":0.0,"name":"drug"}]', NULL, NULL, NULL);
+	('steam:110000105dbc118', 'license:4f3d30d5ce73246ea1e6742b5495d7a32c051f58', 0, 'chrono', '{"sun_2":0,"eyebrows_2":0,"lipstick_1":0,"bodyb_1":0,"hair_color_2":0,"glasses_2":0,"torso_1":0,"makeup_3":0,"chain_1":0,"hair_1":3,"helmet_2":0,"chest_2":0,"makeup_1":0,"blemishes_1":0,"beard_1":0,"blush_1":0,"arms":0,"decals_2":0,"bracelets_2":0,"mask_1":0,"watches_1":-1,"makeup_2":0,"chain_2":0,"hair_2":0,"face":5,"ears_1":-1,"hair_color_1":0,"lipstick_2":0,"complexion_2":0,"ears_2":0,"eyebrows_3":0,"eyebrows_4":0,"glasses_1":0,"lipstick_4":0,"bproof_2":0,"decals_1":0,"pants_1":0,"lipstick_3":0,"bodyb_2":0,"helmet_1":-1,"torso_2":0,"moles_1":0,"sex":0,"moles_2":0,"beard_4":0,"bags_2":0,"bags_1":0,"sun_1":0,"age_1":0,"eye_color":0,"mask_2":0,"complexion_1":0,"watches_2":0,"eyebrows_1":0,"age_2":0,"tshirt_2":0,"skin":3,"arms_2":0,"makeup_4":0,"blush_3":0,"bracelets_1":-1,"tshirt_1":0,"blemishes_2":0,"beard_2":0,"pants_2":0,"shoes_1":0,"bproof_1":0,"blush_2":0,"chest_3":0,"beard_3":0,"chest_1":0,"shoes_2":0}', 'police', 3, '[]', '{"z":43.6,"y":-453.7,"x":316.0}', 1000000, 0, 'superadmin', 'Test', 'Tester', '1990-01-01', 'M', '188', '7531', 0, '[{"name":"hunger","percent":29.19,"val":291900},{"name":"thirst","percent":46.8925,"val":468925},{"name":"drunk","percent":0.0,"val":0},{"name":"drug","percent":0.85,"val":8500}]', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.user_accounts
@@ -879,6 +884,32 @@ INSERT INTO `user_accounts` (`id`, `identifier`, `name`, `money`) VALUES
 	(6, 'steam:110000105dbc118', 'black_money', 0);
 /*!40000 ALTER TABLE `user_accounts` ENABLE KEYS */;
 
+-- Dumping structure for tabell essentialmode.user_drugs
+CREATE TABLE IF NOT EXISTS `user_drugs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(50) NOT NULL,
+  `drugnumber` int(11) NOT NULL,
+  `water` int(11) NOT NULL DEFAULT '2',
+  `time` int(11) NOT NULL DEFAULT '15',
+  `x` varchar(255) NOT NULL,
+  `y` varchar(255) NOT NULL,
+  `z` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+-- Dumpar data för tabell essentialmode.user_drugs: ~8 rows (ungefär)
+/*!40000 ALTER TABLE `user_drugs` DISABLE KEYS */;
+INSERT INTO `user_drugs` (`id`, `identifier`, `drugnumber`, `water`, `time`, `x`, `y`, `z`) VALUES
+	(6, 'steam:110000105dbc118', 39, 2, 0, '1063.02', '-3187.5', '-39.11'),
+	(7, 'steam:110000105dbc118', 38, 2, 0, '1060.84', '-3187.57', '-39.14'),
+	(8, 'steam:110000105dbc118', 36, 2, 0, '1061.06', '-3189.77', '-39.15'),
+	(9, 'steam:110000105dbc118', 33, 2, 0, '1052.18', '-3204.02', '-39.13'),
+	(10, 'steam:110000105dbc118', 32, 2, 0, '1050.13', '-3203.98', '-39.14'),
+	(11, 'steam:110000105dbc118', 34, 2, 0, '1052.99', '-3202.02', '-39.15'),
+	(12, 'steam:110000105dbc118', 35, 2, 0, '1050.8', '-3201.83', '-39.15'),
+	(14, 'steam:110000105dbc118', 40, 2, 14, '1064.38', '-3189.23', '-39.15');
+/*!40000 ALTER TABLE `user_drugs` ENABLE KEYS */;
+
 -- Dumping structure for tabell essentialmode.user_inventory
 CREATE TABLE IF NOT EXISTS `user_inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -886,9 +917,9 @@ CREATE TABLE IF NOT EXISTS `user_inventory` (
   `item` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=368 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=372 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumpar data för tabell essentialmode.user_inventory: ~249 rows (ungefär)
+-- Dumpar data för tabell essentialmode.user_inventory: ~253 rows (ungefär)
 /*!40000 ALTER TABLE `user_inventory` DISABLE KEYS */;
 INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 	(1, 'steam:110000109c2ddf3', 'bread', 0),
@@ -1027,7 +1058,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 	(252, 'steam:110000105dbc118', 'WEAPON_HAMMER', 0),
 	(253, 'steam:110000105dbc118', 'WEAPON_MUSKET', 0),
 	(254, 'steam:110000105dbc118', 'WEAPON_HANDCUFFS', 0),
-	(255, 'steam:110000105dbc118', 'water', 0),
+	(255, 'steam:110000105dbc118', 'water', 4),
 	(256, 'steam:110000105dbc118', 'rhum', 0),
 	(257, 'steam:110000105dbc118', 'disc_ammo_snp_large', 0),
 	(258, 'steam:110000105dbc118', 'opium', 0),
@@ -1044,14 +1075,14 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 	(269, 'steam:110000105dbc118', 'WEAPON_MACHINEPISTOL', 0),
 	(270, 'steam:110000105dbc118', 'tequilla', 0),
 	(271, 'steam:110000105dbc118', 'WEAPON_GUSENBERG', 0),
-	(272, 'steam:110000105dbc118', 'phone', 0),
+	(272, 'steam:110000105dbc118', 'phone', 1),
 	(273, 'steam:110000105dbc118', 'WEAPON_GARBAGEBAG', 0),
 	(274, 'steam:110000105dbc118', 'fixkit', 0),
 	(275, 'steam:110000105dbc118', 'WEAPON_HOMINGLAUNCHER', 0),
 	(276, 'steam:110000105dbc118', 'WEAPON_POOLCUE', 0),
 	(277, 'steam:110000105dbc118', 'WEAPON_COMPACTLAUNCHER', 0),
 	(278, 'steam:110000105dbc118', 'meth', 0),
-	(279, 'steam:110000105dbc118', 'safetyhammer', 0),
+	(279, 'steam:110000105dbc118', 'safetyhammer', 2),
 	(280, 'steam:110000105dbc118', 'jager', 0),
 	(281, 'steam:110000105dbc118', 'WEAPON_BALL', 0),
 	(282, 'steam:110000105dbc118', 'WEAPON_HEAVYSHOTGUN', 0),
@@ -1139,7 +1170,11 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 	(364, 'steam:110000105dbc118', 'WEAPON_STUNGUN', 0),
 	(365, 'steam:110000105dbc118', 'WEAPON_FLAREGUN', 0),
 	(366, 'steam:110000105dbc118', 'disc_ammo_pistol', 0),
-	(367, 'steam:110000105dbc118', 'WEAPON_HEAVYSNIPER', 0);
+	(367, 'steam:110000105dbc118', 'WEAPON_HEAVYSNIPER', 0),
+	(368, 'steam:110000105dbc118', 'cannabis', 2),
+	(369, 'steam:110000105dbc118', 'joint', 9),
+	(370, 'steam:110000105dbc118', 'rizla', 3),
+	(371, 'steam:110000105dbc118', 'seed', 0);
 /*!40000 ALTER TABLE `user_inventory` ENABLE KEYS */;
 
 -- Dumping structure for tabell essentialmode.user_lastcharacter
