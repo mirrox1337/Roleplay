@@ -91,7 +91,7 @@ AddEventHandler('kashactersC:SpawnCharacter', function(spawn, isnew)
     DestroyCam(cam, true)
     IsChoosing = false
     DisplayHud(true)
-    DisplayRadar(true)
+    --DisplayRadar(true)
 end)
 
 RegisterNetEvent('kashactersC:ReloadCharacters')
