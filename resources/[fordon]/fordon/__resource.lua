@@ -8,7 +8,13 @@ files {
     'carcols.meta',
     'materials.dat',
 --  ELS VCF  --
-    'VCF/POLICE4.xml'
+    'VCF/POLICE.xml',
+    'VCF/police2.xml',
+    'VCF/POLICE3.xml',
+    'VCF/POLICE4.xml',
+    'VCF/fbi.xml',
+    'VCF/SHERIFF.xml',
+    'VCF/policeold2.xml',
 }
 
 data_file 'HANDLING_FILE' 'handling.meta'
