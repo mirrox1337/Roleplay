@@ -21,6 +21,17 @@ AddEventHandler('esx_fishing:sellFish', function()
 
 end)
 
+RegisterServerEvent('esx_fishing:useBait')
+AddEventHandler('esx_fishing:useBait', function()
+
+    local _source = source
+    local xPlayer = ESX.GetPlayerFromId(_source)
+
+	xPlayer.removeInventoryItem('bait', 1)
+
+end)
+
+
 RegisterServerEvent('esx_fishing:giveFish')
 AddEventHandler('esx_fishing:giveFish', function()
 
@@ -31,7 +42,6 @@ AddEventHandler('esx_fishing:giveFish', function()
 	
 	if fishQuantity <= 200 then
 
-		xPlayer.removeInventoryItem('bait', 1)
 		xPlayer.addInventoryItem('fish', 1)
 	end
 

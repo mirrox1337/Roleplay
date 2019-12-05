@@ -11,7 +11,9 @@ local Keys = {
   
 ESX                           = nil
 
-local Fishing = false
+Fishing = false
+onCircle = false
+disableNotify = false
 
 Citizen.CreateThread(function ()
     while ESX == nil do
@@ -84,7 +86,7 @@ Citizen.CreateThread(function()
 
     while true do
       
-        local sleep = 500
+        local sleep = 1
         
         local ped = PlayerPedId()
         local coords = GetEntityCoords(ped)
@@ -96,14 +98,21 @@ Citizen.CreateThread(function()
                 local dstCheck = GetDistanceBetweenCoords(coords, v["x"], v["y"], v["z"], true)
 
                 if dstCheck <= 5.0 then
-                    sleep = 5
+
+                    onCircle = true
+
+                    sleep = 1
                     --DrawM(v["Info"], 27, v["x"], v["y"], v["z"])
                     Marker(v["Info"], 27, v["x"], v["y"], v["z"])
                     if dstCheck <= 1.5 then
+
                         if IsControlJustPressed(0, Keys["E"]) then
                             print(place)
                             StartAction(place)
                         end
+                    
+                    else
+                        FishOnBait = False
                     end
                 end
             end
@@ -126,20 +135,74 @@ function StartAction(currentAction)
     end
 end 
 
+
+
+
+Citizen.CreateThread(function()
+
+    while true do
+      
+        Citizen.Wait(5)  
+
+        local ped = PlayerPedId()
+        local coords = GetEntityCoords(ped)
+
+        if Fishing then
+
+            for place, v in pairs(Locations["Markers"]) do
+
+                local dstCheck2 = GetDistanceBetweenCoords(coords, v["x"], v["y"], v["z"], true)
+
+                if dstCheck2 <= 5.5 then
+                    if IsControlJustPressed(0, Keys["X"]) then
+
+                    exports['mythic_notify']:PersistentAlert('end', notifyFishEnd)
+                    exports['mythic_notify']:PersistentAlert('end', notifyFish)
+
+                    Citizen.Wait(50)
+
+                    exports['mythic_notify']:PersistentAlert('start', notifyFishEndInfo, 'inform', 'Du har slutat att fiska.', { ['background-color'] = '#0d5491' })
+
+                    DeleteEntity(fishingRod)
+
+                    Fishing = false
+                    FishOnBait = false
+                    onCircle = false
+                    disableNotify = true
+                    end
+                end
+            end
+        end
+    end
+
+end)
+
 function StartFishing()
+
+
     Fishing = true
+    disableNotify = false
+
+    if disableNotify == false then
+        exports['mythic_notify']:PersistentAlert('start', notifyFishEnd, 'inform', 'Tryck [X] för att sluta fiska.', { ['background-color'] = '#0d5491' })
+    end
+
     local FishOnBait = false
 
     local hasRod, hasBait = GetFishingItems()
 
     if hasRod and hasBait then
+
+        TriggerServerEvent('esx_fishing:useBait')
+
         Citizen.CreateThread(function()
+
+            Citizen.Wait(5)
         
             local coords = GetEntityCoords(PlayerPedId())
-            local randomTime = math.random(15000, 35000)
+            local randomTime = math.random(10000, 15000)
             
             while Fishing do
-            
                 Citizen.Wait(0)
 
                 if not IsPedActiveInScenario(PlayerPedId()) then
@@ -151,21 +214,31 @@ function StartFishing()
                     FishOnBait = true
                 end
 
-                if FishOnBait then
-                    exports['mythic_notify']:PersistentAlert('start', notifyFish, 'inform', 'Tryck [SPACE] för att fånga fisken.', { ['background-color'] = '#0d5491' })
+                if FishOnBait and onCircle then
+                    exports['mythic_notify']:PersistentAlert('end', notifyFishEnd)
+                    Citizen.Wait(100)
+                    if disableNotify == false then
+                         exports['mythic_notify']:PersistentAlert('start', notifyFish, 'inform', 'Tryck [SPACE] för att rela in fisken.', { ['background-color'] = '#0d5491' })
+                    end
+
                     if IsControlPressed(0, Keys['SPACE']) then
                         ClearPedTasksImmediately(PlayerPedId())
 
                         local fishingRod = GetClosestObjectOfType(coords, 10.0, GetHashKey("prop_fishing_rod_01"), false, false, false)
 
                         if fishingRod ~= 0 and fishingRod ~= nil then
-                            exports['mythic_notify']:PersistentAlert('end', notifyFish)
+
                             TriggerServerEvent('esx_fishing:giveFish')
+
                             Fishing = false
 
+                            exports['mythic_notify']:PersistentAlert('end', notifyFish)
+                            exports['mythic_notify']:PersistentAlert('end', notifyFishEnd)
+                            exports['mythic_notify']:PersistentAlert('end', notifyFishEndInfo)
                             Citizen.Wait(0)
                             SetEntityAsMissionEntity(fishingRod, true, true)
                             DeleteEntity(fishingRod)
+                            disableNotify = true
                         end
                     end
                 end
@@ -178,7 +251,7 @@ function StartFishing()
         return
     end
 end
-  
+
 function GetFishingItems()
     local Inventory = ESX.GetPlayerData().inventory
 
