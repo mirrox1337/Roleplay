@@ -2,7 +2,7 @@ Config                            = {}
 
 Config.DrawDistance               = 15.0
 
-Config.Marker                     = { type = 27, x = 1.5, y = 1.5, z = 1, r = 119, g = 18, b = 130, a = 225, rotate = true }
+Config.Marker                     = { type = 27, x = 1.5, y = 1.5, z = 1, r = 0, g = 119, b = 119, a = 225, rotate = true }
 
 Config.ReviveReward               = 700  -- revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = true -- enable anti-combat logging?
