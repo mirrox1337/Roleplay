@@ -39,7 +39,7 @@ Citizen.CreateThread(function()
 
 			DisplayRadar(false)
 		end
-  end
+	end
 end)
 
 --Ingen HUD
@@ -47,7 +47,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
-    HideHudComponentThisFrame(1)
+    	HideHudComponentThisFrame(1)
 		HideHudComponentThisFrame(2)
 		HideHudComponentThisFrame(3)
 		HideHudComponentThisFrame(4)
