@@ -4,7 +4,7 @@ Config.Locale = 'sv'
 
 Config.Price = 250
 
-Config.EnableControls = true
+Config.EnableControls = false
 
 Config.DrawDistance = 10.0
 Config.Size   = {x = 1.5, y = 1.5, z = 1.0}
