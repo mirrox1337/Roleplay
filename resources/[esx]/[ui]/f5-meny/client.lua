@@ -1181,10 +1181,10 @@ function OpenCloseVehicle()
     vehicle = GetClosestVehicle(coords.x, coords.y, coords.z, 7.0, 0, 71 )
   end
 
-  --print(vehicle)
+  print(vehicle)
 
   if vehicle == 0 then
-      local coordA = GetEntityCoords(GetPlayerPed(-1), 1)
+    local coordA = GetEntityCoords(GetPlayerPed(-1), 1)
     local coordB = GetOffsetFromEntityInWorldCoords(GetPlayerPed(-1), 0.0, 20.0, 0.0)
     local targetVehicle = getVehicleInDirection(coordA, coordB)
         if targetVehicle ~= nil then
@@ -1193,12 +1193,12 @@ function OpenCloseVehicle()
   end
 
 
-  ESX.TriggerServerCallback('esx_qalle:requestPlayerCars', function(isOwnedVehicle)
+  ESX.TriggerServerCallback('esx_advancedgarage:getOwnedCars', function(ownedCars)
 
   
 	local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
 	print (vehicleProps.plate)
-	  if isOwnedVehicle or (PlayerData.job.name == 'police' and vehicleProps.plate == 'ALIPOLIS' or PlayerData.job.name == 'mecano' and vehicleProps.plate == 'ALIMEKAN' or PlayerData.job.name == 'ambulance' and vehicleProps.plate == 'ALIAMBU' or PlayerData.job.name == 'taxi' and vehicleProps.plate == 'ALITAXI' or PlayerData.job.name == 'Securitas' and vehicleProps.plate == 'SECURITA') then
+	  if ownedCars then
 		local locked = GetVehicleDoorLockStatus(vehicle)
 		local heading = GetEntityHeading(playerPed)
 		if locked == 1 then -- if unlocked
@@ -1210,7 +1210,7 @@ function OpenCloseVehicle()
 					  while not HasAnimDictLoaded(dict) do
 						Citizen.Wait(0)
 					  end		  
-					  exports['mythic_notify']:SendAlert('inform', 'Du har låst fordonet.', { ['background-color'] = '#b00000', ['color'] = '#fff' })
+					  exports['mythic_notify']:SendAlert('inform', 'Du har låst fordonet.')
 					  --ESX.ShowNotification('Du har ~r~låst~w~ ditt fordon')
 				  if not IsPedInAnyVehicle(PlayerPedId(), true) then
 					  TaskPlayAnim(PlayerPedId(), dict, "fob_click_fp", 8.0, 8.0, -1, 48, 1, false, false, false)
@@ -1240,7 +1240,7 @@ function OpenCloseVehicle()
 		  if not IsPedInAnyVehicle(PlayerPedId(), true) then
 			  TaskPlayAnim(PlayerPedId(), dict, "fob_click_fp", 8.0, 8.0, -1, 48, 1, false, false, false)
 		  end	
-		  exports['mythic_notify']:SendAlert('inform', 'Du har låst upp fordonet.', { ['background-color'] = '#009c10', ['color'] = '#fff' })
+		  exports['mythic_notify']:SendAlert('inform', 'Du har låst upp fordonet.')
 			--ESX.ShowNotification('Du har ~p~låst upp~w~ ditt fordon')
 		  if not IsPedInAnyVehicle(playerPed,  false) then
 			SetPedIntoVehicle(playerPed, vehicle, -1)
@@ -1266,7 +1266,7 @@ function OpenCloseVehicle()
 		end
 	  else
 		  --sendNotification('Du har inga NYCKLAR till denna bil', 'error', 3500)
-		  exports['mythic_notify']:SendAlert('inform', 'Du har inga nycklar till fordonet.', { ['background-color'] = '#b00000', ['color'] = '#fff' })
+		  exports['mythic_notify']:SendAlert('error', 'Du har inga nycklar till fordonet.')
 		  --ESX.ShowNotification('~r~Du har inga nycklar till fordonet.')
 		  
 	  end
