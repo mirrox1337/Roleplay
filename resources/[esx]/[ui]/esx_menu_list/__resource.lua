@@ -20,7 +20,10 @@ files {
 	'html/js/app.js',
 
 	'html/fonts/pdown.ttf',
-	'html/fonts/bankgothic.ttf'
+	'html/fonts/bankgothic.ttf',
+	"html/fonts/Circular-Bold.ttf",
+	"html/fonts/Circular-Bold.ttf",
+	"html/fonts/Circular-Regular.ttf",
 }
 
 dependency 'es_extended'

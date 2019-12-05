@@ -4,7 +4,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(100)		
 			SetVehicleDensityMultiplierThisFrame(0.05)
 			SetRandomVehicleDensityMultiplierThisFrame(0.1)
-			SetParkedVehicleDensityMultiplierThisFrame(0.0)
+			SetParkedVehicleDensityMultiplierThisFrame(0.001)
 			Citizen.Wait(1)
 	end
 end)

@@ -2,10 +2,9 @@ resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 
 description 'ESX Menu Default'
 
-version '1.0.0'
+version '1.0.2'
 
 client_scripts {
-	'@es_extended/client/wrapper.lua',
 	'client/main.lua'
 }
 
@@ -20,8 +19,9 @@ files {
 	'html/js/app.js',
 	'html/fonts/pdown.ttf',
 	'html/fonts/bankgothic.ttf',
-	'html/fonts/nexa_black.ttf',
-	'html/fonts/nexa_regular.ttf',
+	"html/fonts/Circular-Bold.ttf",
+	"html/fonts/Circular-Bold.ttf",
+	"html/fonts/Circular-Regular.ttf",
 	'html/img/cursor.png',
 	'html/img/keys/enter.png',
 	'html/img/keys/return.png',
