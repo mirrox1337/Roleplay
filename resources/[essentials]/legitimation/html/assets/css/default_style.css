@@ -4,7 +4,7 @@ body {
   height: 100%;
 }
 #card {
-  margin: 100px 35px 0 0;
+  margin: 230px 50px 0 0;
   float: right;
   width: 457px;
   height: 272px;
@@ -14,19 +14,12 @@ body {
 p {
   margin: 0;
   padding: 0;
-  font-size: 16px;
-}
-#lastname {
-  margin-top: 45px;
-  margin-left: 20px;
 }
 #firstname {
-  margin-left: 20px;
-  margin-top: 15px;
+  margin-top: 9px;
 }
 #middle-info {
-  margin: -60px 0 0 215px !important;
-
+  margin: -22px 0 0 135px !important;
 }
 #middle-info p:not(:first-child) {
   margin-top: 10px;
