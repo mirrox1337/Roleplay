@@ -46,7 +46,6 @@ end)
 
 Citizen.CreateThread(function()
     for propertyIndex, property in pairs(Config.Properties) do
-
         local marker = {
             name = property.name .. '_prop_enter' .. propertyIndex,
             type = -1,

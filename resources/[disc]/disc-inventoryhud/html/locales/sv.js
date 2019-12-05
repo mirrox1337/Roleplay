@@ -5,3 +5,5 @@ invLocale.giveItem = "Ge";
 invLocale.label = "Inventory Label";
 invLocale.stealmoney = "Stjäl pengar";
 invLocale.seizemoney = "Beslagta pengar";
+invLocale.takemoney = "Ta";
+invLocale.storemoney = "Lagra";
