@@ -15,6 +15,7 @@ files {
     'VCF/fbi.xml',
     'VCF/SHERIFF.xml',
     'VCF/policeold2.xml',
+    'VCF/ambulance.xml',
 }
 
 data_file 'HANDLING_FILE' 'handling.meta'
