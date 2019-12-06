@@ -16,5 +16,5 @@ Locales ['sv'] = {
   ['no_glasses'] = 'du har inga glasögon',
   ['no_helmet'] = 'du har ingen hjälm',
   ['no_mask'] = 'du har inte någon mask',
-  ['you_paid'] = 'du har betalat ~p~%s SEK~s~',
+  ['you_paid'] = 'du har betalat ~g~%s SEK~s~',
 }

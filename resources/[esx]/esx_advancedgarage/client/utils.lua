@@ -39,9 +39,12 @@ function Draw3DText(x, y, z, text)
 end
 
 function Marker(hint, type, x, y, z)
+    local playerPed = PlayerPedId()
+	local coords    = GetEntityCoords(playerPed)
    --ESX.Game.Utils.DrawText3D({x = x, y = y, z = z + 1.0}, hint, 0.4)
-    Draw3DText(x, y, z + 1.0, hint)
 	--DrawMarker(type, x, y, z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1, 64, 224, 208, 225, false, true, 2, true, false, false, false)
     DrawMarker(6, x, y, z, 0, 0, 0, -1, 0, 0, 1.5, 1.5, 1.5, 0, 119, 119, 50, 0, 0, 0, 0)
+    if (GetDistanceBetweenCoords(coords) < 1.5) then
+    Draw3DText(x, y, z + 1.0, hint)
 end
-
+end

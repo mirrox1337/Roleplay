@@ -69,7 +69,7 @@ Citizen.CreateThread(function()
         local coords = GetEntityCoords(PlayerPedId(), true)
         for k in pairs(Config.Zones) do
             if GetDistanceBetweenCoords(Config.Zones[k].x, Config.Zones[k].y, Config.Zones[k].z, coords) < 10 then
-                Marker("~w~[~p~E~w~] Tvätta bil för ~p~" ..Config.Price.. "kr", 27, Config.Zones[k].x, Config.Zones[k].y, Config.Zones[k].z - 0.99)
+                Marker("~w~[~g~E~w~] Tvätta bil för ~g~" ..Config.Price.. "kr", 27, Config.Zones[k].x, Config.Zones[k].y, Config.Zones[k].z - 0.99)
             end
         end
     end

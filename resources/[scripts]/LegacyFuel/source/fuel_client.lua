@@ -158,13 +158,13 @@ AddEventHandler('fuel:refuelFromPump', function(pumpObject, ped, vehicle)
 			local extraString = ""
 
 			if Config.UseESX then
-				extraString = "\n" .. Config.Strings.TotalCost .. ": ~p~SEK" .. Round(currentCost, 1)
+				extraString = "\n" .. Config.Strings.TotalCost .. ": ~g~SEK" .. Round(currentCost, 1)
 			end
 
 			DrawText3Ds(stringCoords.x, stringCoords.y, stringCoords.z + 1.2, Config.Strings.CancelFuelingPump .. extraString)
 			DrawText3Ds(vehicleCoords.x, vehicleCoords.y, vehicleCoords.z + 0.5, Round(currentFuel, 1) .. "%")
 		else
-			DrawText3Ds(vehicleCoords.x, vehicleCoords.y, vehicleCoords.z + 0.5, Config.Strings.CancelFuelingJerryCan .. "\nBensindunk: ~p~" .. Round(GetAmmoInPedWeapon(ped, 883325847) / 4500 * 100, 1) .. "% | Fordon: " .. Round(currentFuel, 1) .. "%")
+			DrawText3Ds(vehicleCoords.x, vehicleCoords.y, vehicleCoords.z + 0.5, Config.Strings.CancelFuelingJerryCan .. "\nBensindunk: ~g~" .. Round(GetAmmoInPedWeapon(ped, 883325847) / 4500 * 100, 1) .. "% | Fordon: " .. Round(currentFuel, 1) .. "%")
 		end
 
 		if not IsEntityPlayingAnim(ped, "timetable@gardener@filling_can", "gar_ig_5_filling_can", 3) then
@@ -371,7 +371,7 @@ if Config.EnableHUD then
 				--DrawAdvancedText(0.130 - x, 0.77 - y, 0.005, 0.0028, 0.6, mph, 255, 255, 255, 255, 6, 1)
 				--DrawAdvancedText(0.174 - x, 0.77 - y, 0.005, 0.0028, 0.6, kmh, 255, 255, 255, 255, 6, 1)
 				DrawAdvancedText(0.2195 - x, 0.778 - y, -0.036, 0.0198, 0.47, fuel, 255, 255, 255, 255, 6, 1)
-				DrawAdvancedText(0.2195 - x, 0.778 - y, -0.023, 0.0208, 0.45, "~p~%", 153, 51, 51, 255, 6, 1)
+				DrawAdvancedText(0.2195 - x, 0.778 - y, -0.023, 0.0208, 0.45, "~g~%", 153, 51, 51, 255, 6, 1)
 			else
 				Citizen.Wait(750)
 			end

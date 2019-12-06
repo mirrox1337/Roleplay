@@ -88,7 +88,7 @@ Config.Garages = {
 
 Config.Labels = {
     ["menu"] = "~INPUT_CONTEXT~ Öppna garage %s.",
-    ["vehicle"] = "~INPUT_CONTEXT~ Parkera ~p~%s~w~ i ditt garage."
+    ["vehicle"] = "~INPUT_CONTEXT~ Parkera ~g~%s~w~ i ditt garage."
 }
 
 Config.Trim = function(value)

@@ -303,7 +303,7 @@ function showFixePhoneHelper (coords)
       coords.x, coords.y, coords.z, 1)
     if dist <= 2.0 then
       SetTextComponentFormat("STRING")
-      AddTextComponentString("~p~" .. data.name .. ' ~o~' .. number .. '~n~~INPUT_PICKUP~~w~ för att använda')
+      AddTextComponentString("~g~" .. data.name .. ' ~o~' .. number .. '~n~~INPUT_PICKUP~~w~ för att använda')
       DisplayHelpTextFromStringLabel(0, 0, 0, -1)
       if IsControlJustPressed(1, KeyTakeCall) then
         startFixeCall(number)
@@ -835,14 +835,14 @@ RegisterNetEvent('chrono:stopDispatch')
 AddEventHandler('chrono:stopDispatch', function(dispatchRequestId, playerName, policeDispatch)
   if CurrentDispatchRequestId == dispatchRequestId then
     CurrentAction = nil
-    --ESX.ShowNotification('~p~'.. playerName.firstname .. ' tar det samtalet')
+    --ESX.ShowNotification('~g~'.. playerName.firstname .. ' tar det samtalet')
     exports['mythic_notify']:SendAlert('success', playerName.firstname .. " tar det samtalet. ", 3500, { ['background-color'] = '#119100', ['color'] = '#fff' })
   end
 end)
 RegisterNetEvent('chrono:stopDispatch2')
 AddEventHandler('chrono:stopDispatch2', function(dispatchRequestId, playerName, policeDispatch)
   if CurrentDispatchRequestId == dispatchRequestId then
-    --ESX.ShowNotification('~p~'.. playerName.firstname .. '~w~ åker på det larmet.')
+    --ESX.ShowNotification('~g~'.. playerName.firstname .. '~w~ åker på det larmet.')
     exports['mythic_notify']:SendAlert('success', playerName.firstname .. " åker på det larmet. ", 3500, { ['background-color'] = '#119100', ['color'] = '#fff' })
   end
 end)

@@ -49,7 +49,7 @@ function jailing(Station, JailTime)
 				end
 				if JailTime % 10 == 0 then
 					if JailTime % 30 == 0 then
-						ESX.ShowNotification("Du har ~p~"..math.floor(jaildays).."~s~ Dagar ~p~"..math.floor(jailhours).."~s~ Timmar ~p~"..math.floor(jailminutes).."~s~ Minuter ~p~"..math.floor(jailseconds).."~s~ sekunder kvar i fängelse!.")
+						ESX.ShowNotification("Du har ~g~"..math.floor(jaildays).."~s~ Dagar ~g~"..math.floor(jailhours).."~s~ Timmar ~g~"..math.floor(jailminutes).."~s~ Minuter ~g~"..math.floor(jailseconds).."~s~ sekunder kvar i fängelse!.")
 						--exports['mythic_notify']:DoHudText('inform', "Du har"..math.floor(jaildays).." Dagar"..math.floor(jailhours).." Timmar"..math.floor(jailminutes).." Minuter"..math.floor(jailseconds).." sekunder kvar i fängelse!.")
 					end
 				end

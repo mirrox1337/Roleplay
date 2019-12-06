@@ -1761,7 +1761,7 @@ Citizen.CreateThread(function()
 
 					if distance < Config.DrawDistance then
 						--DrawMarker(20, v.Cloakrooms[i], 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
-						Marker("~w~[~p~E~w~] Omklädningsrum", 27, v.Cloakrooms[i].x, v.Cloakrooms[i].y, v.Cloakrooms[i].z - 0.95)
+						Marker("~w~[~g~E~w~] Omklädningsrum", 27, v.Cloakrooms[i].x, v.Cloakrooms[i].y, v.Cloakrooms[i].z - 0.95)
 						letSleep = false
 					end
 
@@ -1775,7 +1775,7 @@ Citizen.CreateThread(function()
 
 					if distance < Config.DrawDistance then
 						--DrawMarker(21, v.Armories[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
-						Marker("~w~[~p~E~w~] Vapenförråd", 27, v.Armories[i].x, v.Armories[i].y, v.Armories[i].z - 0.95)
+						Marker("~w~[~g~E~w~] Vapenförråd", 27, v.Armories[i].x, v.Armories[i].y, v.Armories[i].z - 0.95)
 						letSleep = false
 					end
 
@@ -1789,7 +1789,7 @@ Citizen.CreateThread(function()
 
 					if distance < Config.DrawDistance then
 						--DrawMarker(36, v.Vehicles[i].Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
-						Marker("~w~[~p~E~w~] Garage", 27, v.Vehicles[i].Spawner.x, v.Vehicles[i].Spawner.y, v.Vehicles[i].Spawner.z - 0.95)
+						Marker("~w~[~g~E~w~] Garage", 27, v.Vehicles[i].Spawner.x, v.Vehicles[i].Spawner.y, v.Vehicles[i].Spawner.z - 0.95)
 						letSleep = false
 					end
 
@@ -1803,7 +1803,7 @@ Citizen.CreateThread(function()
 
 					if distance < Config.DrawDistance then
 						--DrawMarker(34, v.Helicopters[i].Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
-						Marker("~w~[~p~E~w~] Helikopter", 27, v.Helicopters[i].Spawner.x, v.Helicopters[i].Spawner.y, v.Helicopters[i].Spawner.z - 0.95)
+						Marker("~w~[~g~E~w~] Helikopter", 27, v.Helicopters[i].Spawner.x, v.Helicopters[i].Spawner.y, v.Helicopters[i].Spawner.z - 0.95)
 						letSleep = false
 					end
 
@@ -1818,7 +1818,7 @@ Citizen.CreateThread(function()
 
 						if distance < Config.DrawDistance then
 							--DrawMarker(22, v.BossActions[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
-							Marker("~w~[~p~E~w~] Chefsmeny", 27, v.BossActions[i].x, v.BossActions[i].y, v.BossActions[i].z - 0.95)
+							Marker("~w~[~g~E~w~] Chefsmeny", 27, v.BossActions[i].x, v.BossActions[i].y, v.BossActions[i].z - 0.95)
 							letSleep = false
 						end
 

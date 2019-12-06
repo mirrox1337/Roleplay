@@ -45,7 +45,7 @@ Config.ShowPoundSpacer2 = false -- If true it shows Spacer 2 in the List | Don't
 Config.ShowPoundSpacer3 = false -- If true it shows Spacer 3 in the List | Don't use if Spacer2 is set to true.
 
 Config.MarkerType   = 36
-Config.DrawDistance = 25.0
+Config.DrawDistance = 30.0
 
 Config.BlipGarage = {
 	Sprite = 290,
@@ -77,7 +77,7 @@ Config.BlipJobPound = {
 
 Config.PointMarker = {
 	r = 0, g = 255, b = 0,     -- Green Color
-	x = 3.5, y = 3.5, z = 1.0  -- Standard Size Circle
+	x = 1.3, y = 1.3, z = 1.3  -- Standard Size Circle
 }
 
 Config.DeleteMarker = {

@@ -56,11 +56,11 @@ local Locations = {
     },
 
     ["Markers"] = {
-        ["FishingLocation1"] = { ["x"] = -1733.0, ["y"] = -1123.29, ["z"] = 12.17, ["Info"] = "~p~[E] ~g~Fiska" },
-        ["FishingLocation2"] = { ["x"] = -1730.11, ["y"] = -1125.75, ["z"] = 12.17, ["Info"] = "~p~[E] ~g~Fiska" },
-        ["FishingLocation3"] = { ["x"] = -1727.96, ["y"] = -1127.63, ["z"] = 12.17, ["Info"] = "~p~[E] ~g~Fiska" },
-        ["FishingLocation4"] = { ["x"] = -1725.17, ["y"] = -1129.89, ["z"] = 12.17, ["Info"] = "~p~[E] ~g~Fiska" },
-        ["SellFish"] = { ["x"] = 180.88, ["y"] = 2793.54, ["z"] = 44.70, ["Info"] = "~p~[E] ~g~Sälj Fiskar" }
+        ["FishingLocation1"] = { ["x"] = -1733.0, ["y"] = -1123.29, ["z"] = 12.17, ["Info"] = "~g~[E] ~g~Fiska" },
+        ["FishingLocation2"] = { ["x"] = -1730.11, ["y"] = -1125.75, ["z"] = 12.17, ["Info"] = "~g~[E] ~g~Fiska" },
+        ["FishingLocation3"] = { ["x"] = -1727.96, ["y"] = -1127.63, ["z"] = 12.17, ["Info"] = "~g~[E] ~g~Fiska" },
+        ["FishingLocation4"] = { ["x"] = -1725.17, ["y"] = -1129.89, ["z"] = 12.17, ["Info"] = "~g~[E] ~g~Fiska" },
+        ["SellFish"] = { ["x"] = 180.88, ["y"] = 2793.54, ["z"] = 44.70, ["Info"] = "~g~[E] ~g~Sälj Fiskar" }
     }
 }
 

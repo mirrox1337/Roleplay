@@ -15,5 +15,5 @@ Locales ['cs'] = {
   ['no_glasses'] = 'nemáte brýle',
   ['no_helmet'] = 'nemáte helmu',
   ['no_mask'] = 'nemáte masku',
-  ['you_paid'] = 'zaplatili jste ~p~$%s~s~',
+  ['you_paid'] = 'zaplatili jste ~g~$%s~s~',
 }

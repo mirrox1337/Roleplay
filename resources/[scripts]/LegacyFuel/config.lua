@@ -26,22 +26,22 @@ Config.CostMultiplier = 1.0
 -- Configure the strings as you wish here.
 Config.Strings = {
 	ExitVehicle = "Gå ur fordonet för att tanka",
-	EToRefuel = "Tryck på ~p~E ~w~för att tanka fordonet",
+	EToRefuel = "Tryck på ~g~E ~w~för att tanka fordonet",
 	JerryCanEmpty = "Bensindunken är tom",
 	FullTank = "Tanken är full",
-	PurchaseJerryCan = "Tryck på ~p~E ~w~för att köpa en bensindunk för ~p~$" .. Config.JerryCanCost,
-	CancelFuelingPump = "Tryck på ~p~E ~w~för att avbryta tankningen",
-	CancelFuelingJerryCan = "Tryck på ~p~E ~w~för att avbryta tankningen",
+	PurchaseJerryCan = "Tryck på ~g~E ~w~för att köpa en bensindunk för ~g~$" .. Config.JerryCanCost,
+	CancelFuelingPump = "Tryck på ~g~E ~w~för att avbryta tankningen",
+	CancelFuelingJerryCan = "Tryck på ~g~E ~w~för att avbryta tankningen",
 	NotEnoughCash = "Inte tillräckligt med pengar",
-	RefillJerryCan = "Tryck på ~p~E ~w~ för att fylla på bensindunken till ",
+	RefillJerryCan = "Tryck på ~g~E ~w~ för att fylla på bensindunken till ",
 	NotEnoughCashJerryCan = "Inte tillräckligt med pengar för att fylla på bensindunken",
 	JerryCanFull = "Bensindunken är full",
 	TotalCost = "Kostnad",
 }
 
 if not Config.UseESX then
-	Config.Strings.PurchaseJerryCan = "Tryck på ~p~E ~w~för att ta en bensindunk"
-	Config.Strings.RefillJerryCan = "Tryck på ~p~E ~w~för att fylla på bensindunken"
+	Config.Strings.PurchaseJerryCan = "Tryck på ~g~E ~w~för att ta en bensindunk"
+	Config.Strings.RefillJerryCan = "Tryck på ~g~E ~w~för att fylla på bensindunken"
 end
 
 Config.PumpModels = {

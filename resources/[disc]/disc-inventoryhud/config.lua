@@ -52,7 +52,7 @@ Config.Shops = {
         markerColour = { r = 196, g = 42, b = 190 },
         enableBlip = true,
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att handla på ~p~Test Butiken~s~',
+        msg = '~INPUT_CONTEXT~ för att handla på ~g~Test Butiken~s~',
         job = 'all'
     },
     ['Barracuda Fiskeshop'] = {
@@ -69,7 +69,7 @@ Config.Shops = {
         markerColour = { r = 196, g = 42, b = 190 },
         enableBlip = true,
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att handla på ~p~Barracuda Fiskeshop~s~',
+        msg = '~INPUT_CONTEXT~ för att handla på ~g~Barracuda Fiskeshop~s~',
         job = 'all'
     },
     ['Amirs Livs'] = {
@@ -85,7 +85,7 @@ Config.Shops = {
         markerColour = { r = 196, g = 42, b = 190 },
         enableBlip = true,
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att handla på ~p~Amirs Livs~s~',
+        msg = '~INPUT_CONTEXT~ för att handla på ~g~Amirs Livs~s~',
         job = 'all'
     },
     ['Sjukhus Kiosken'] = {
@@ -104,7 +104,7 @@ Config.Shops = {
         markerColour = { r = 196, g = 42, b = 190 },
         enableBlip = false,
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att handla på ~p~Sjukhus Kiosken~s~',
+        msg = '~INPUT_CONTEXT~ för att handla på ~g~Sjukhus Kiosken~s~',
         job = 'all'
     },
     ['Dealer'] = {
@@ -138,7 +138,7 @@ Config.Stash = {
         markerType = 27,
         markerColour = { r = 196, g = 42, b = 190 },
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
+        msg = '~INPUT_CONTEXT~ för att öppna ~g~Förråd~s~'
     },
     ['Sjukvård Förråd'] = {
         coords = vector3(342.25, -586.19, 42.35),
@@ -147,7 +147,7 @@ Config.Stash = {
         markerType = 27,
         markerColour = { r = 196, g = 42, b = 190 },
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
+        msg = '~INPUT_CONTEXT~ för att öppna ~g~Förråd~s~'
     },
     ['Mekonomen Förråd'] = {
         coords = vector3(-344.38, -128.11, 38.05),
@@ -156,7 +156,7 @@ Config.Stash = {
         markerType = 27,
         markerColour = { r = 196, g = 42, b = 190 },
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
+        msg = '~INPUT_CONTEXT~ för att öppna ~g~Förråd~s~'
     },
     ['Bennys Förråd'] = {
         coords = vector3(-224.21, -1320.18, 29.95),
@@ -165,7 +165,7 @@ Config.Stash = {
         markerType = 27,
         markerColour = { r = 196, g = 42, b = 190 },
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
+        msg = '~INPUT_CONTEXT~ för att öppna ~g~Förråd~s~'
     },
     ['NE Bilcenter'] = {
         coords = vector3(-30.82, -1110.94, 25.50),
@@ -174,7 +174,7 @@ Config.Stash = {
         markerType = 27,
         markerColour = { r = 196, g = 42, b = 190 },
         rotate = true,
-        msg = '~INPUT_CONTEXT~ för att öppna ~p~Förråd~s~'
+        msg = '~INPUT_CONTEXT~ för att öppna ~g~Förråd~s~'
     }
 }
 

@@ -15,5 +15,5 @@ Locales ['en'] = {
   ['no_glasses'] = 'you do not have glasses',
   ['no_helmet'] = 'you do not have a helmet',
   ['no_mask'] = 'you do not have a mask',
-  ['you_paid'] = 'you paid ~p~$%s~s~',
+  ['you_paid'] = 'you paid ~g~$%s~s~',
 }

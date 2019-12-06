@@ -1,10 +1,10 @@
 Config = Config or {}
 
 Config.Strings = {
-    HospitalCheckIn = '[~p~E~s~] To Check In',
+    HospitalCheckIn = '[~g~E~s~] To Check In',
     HospitalCheckInAction = 'Skrivs in',
-    HiddenCheckIn = '[~p~E~s~] To Revive',
-    HiddenCheckInAction = '[~p~E~s~] To Revive',
+    HiddenCheckIn = '[~g~E~s~] To Revive',
+    HiddenCheckInAction = '[~g~E~s~] To Revive',
     HiddenCooldown = 'Det finns ingen sjukvårdare här',
     NotHurt = 'Du är nekad vård, Du har inga skador',
     BeingTreated = 'Läkarna vårdar dig',

@@ -370,74 +370,74 @@ Citizen.CreateThread(function()
 
         for k, v in pairs(Config.Shops.AladdinFiskebutik.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.AladdinFiskebutik.Locations[k].x, Config.Shops.AladdinFiskebutik.Locations[k].y, Config.Shops.AladdinFiskebutik.Locations[k].z, true) < 1.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.AladdinFiskebutik.Locations[k].x, Config.Shops.AladdinFiskebutik.Locations[k].y, Config.Shops.AladdinFiskebutik.Locations[k].z + 1), "~p~[E]~w~ för att handla på ~p~Aladdins Fiskebutik~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.AladdinFiskebutik.Locations[k].x, Config.Shops.AladdinFiskebutik.Locations[k].y, Config.Shops.AladdinFiskebutik.Locations[k].z + 1), "~g~[E]~w~ för att handla på ~g~Aladdins Fiskebutik~s~", 0.6)
             elseif GetDistanceBetweenCoords(coords, Config.Shops.AladdinFiskebutik.Locations[k].x, Config.Shops.AladdinFiskebutik.Locations[k].y, Config.Shops.AladdinFiskebutik.Locations[k].z, true) < 3.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.AladdinFiskebutik.Locations[k].x, Config.Shops.AladdinFiskebutik.Locations[k].y, Config.Shops.AladdinFiskebutik.Locations[k].z + 1), "~p~Aladdins Fiskebutik~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.AladdinFiskebutik.Locations[k].x, Config.Shops.AladdinFiskebutik.Locations[k].y, Config.Shops.AladdinFiskebutik.Locations[k].z + 1), "~g~Aladdins Fiskebutik~s~", 0.6)
             end
         end
 
 
         for k, v in pairs(Config.Shops.Dealer.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.Dealer.Locations[k].x, Config.Shops.Dealer.Locations[k].y, Config.Shops.Dealer.Locations[k].z, true) < 1.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Dealer.Locations[k].x, Config.Shops.Dealer.Locations[k].y, Config.Shops.Dealer.Locations[k].z + 1), "~p~[E]~w~ för att handla", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Dealer.Locations[k].x, Config.Shops.Dealer.Locations[k].y, Config.Shops.Dealer.Locations[k].z + 1), "~g~[E]~w~ för att handla", 0.6)
             end
         end
 
         for k, v in pairs(Config.Shops.MohammedsLivs.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.MohammedsLivs.Locations[k].x, Config.Shops.MohammedsLivs.Locations[k].y, Config.Shops.MohammedsLivs.Locations[k].z, true) < 1.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.MohammedsLivs.Locations[k].x, Config.Shops.MohammedsLivs.Locations[k].y, Config.Shops.MohammedsLivs.Locations[k].z + 1), "Tryck ~p~[E]~w~ för att handla på ~p~Mohammeds Livs~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.MohammedsLivs.Locations[k].x, Config.Shops.MohammedsLivs.Locations[k].y, Config.Shops.MohammedsLivs.Locations[k].z + 1), "Tryck ~g~[E]~w~ för att handla på ~g~Mohammeds Livs~s~", 0.6)
             elseif GetDistanceBetweenCoords(coords, Config.Shops.MohammedsLivs.Locations[k].x, Config.Shops.MohammedsLivs.Locations[k].y, Config.Shops.MohammedsLivs.Locations[k].z, true) < 3.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.MohammedsLivs.Locations[k].x, Config.Shops.MohammedsLivs.Locations[k].y, Config.Shops.MohammedsLivs.Locations[k].z + 1), "~p~Mohammeds Livs~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.MohammedsLivs.Locations[k].x, Config.Shops.MohammedsLivs.Locations[k].y, Config.Shops.MohammedsLivs.Locations[k].z + 1), "~g~Mohammeds Livs~s~", 0.6)
             end
         end
 
         for k, v in pairs(Config.Shops.PrisonShop.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.PrisonShop.Locations[k].x, Config.Shops.PrisonShop.Locations[k].y, Config.Shops.PrisonShop.Locations[k].z, true) < 1.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.PrisonShop.Locations[k].x, Config.Shops.PrisonShop.Locations[k].y, Config.Shops.PrisonShop.Locations[k].z + 1), "Tryck ~p~[E]~w~ för att handla ~p~Fängelsemat~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.PrisonShop.Locations[k].x, Config.Shops.PrisonShop.Locations[k].y, Config.Shops.PrisonShop.Locations[k].z + 1), "Tryck ~g~[E]~w~ för att handla ~g~Fängelsemat~s~", 0.6)
             elseif GetDistanceBetweenCoords(coords, Config.Shops.PrisonShop.Locations[k].x, Config.Shops.PrisonShop.Locations[k].y, Config.Shops.PrisonShop.Locations[k].z, true) < 15.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.PrisonShop.Locations[k].x, Config.Shops.PrisonShop.Locations[k].y, Config.Shops.PrisonShop.Locations[k].z + 1), "~p~Fängelsemat~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.PrisonShop.Locations[k].x, Config.Shops.PrisonShop.Locations[k].y, Config.Shops.PrisonShop.Locations[k].z + 1), "~g~Fängelsemat~s~", 0.6)
             end
         end
 --[[
         for k, v in pairs(Config.Shops.InetShop.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.InetShop.Locations[k].x, Config.Shops.InetShop.Locations[k].y, Config.Shops.InetShop.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.InetShop.Locations[k].x, Config.Shops.InetShop.Locations[k].y, Config.Shops.InetShop.Locations[k].z), "Tryck ~p~[E]~w~ för att handla", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.InetShop.Locations[k].x, Config.Shops.InetShop.Locations[k].y, Config.Shops.InetShop.Locations[k].z), "Tryck ~g~[E]~w~ för att handla", 0.6)
             end
         end
 
         for k, v in pairs(Config.Shops.SexShop.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.SexShop.Locations[k].x, Config.Shops.SexShop.Locations[k].y, Config.Shops.SexShop.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.SexShop.Locations[k].x, Config.Shops.SexShop.Locations[k].y, Config.Shops.SexShop.Locations[k].z), "Tryck ~p~[E]~w~ för att handla", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.SexShop.Locations[k].x, Config.Shops.SexShop.Locations[k].y, Config.Shops.SexShop.Locations[k].z), "Tryck ~g~[E]~w~ för att handla", 0.6)
             end
         end
 --]]
         for k, v in pairs(Config.Shops.UrbicusBar.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.UrbicusBar.Locations[k].x, Config.Shops.UrbicusBar.Locations[k].y, Config.Shops.UrbicusBar.Locations[k].z, true) < 1.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.UrbicusBar.Locations[k].x, Config.Shops.UrbicusBar.Locations[k].y, Config.Shops.UrbicusBar.Locations[k].z + 1), "Tryck ~p~[E]~w~ för att handla på ~p~Urbicus Bar~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.UrbicusBar.Locations[k].x, Config.Shops.UrbicusBar.Locations[k].y, Config.Shops.UrbicusBar.Locations[k].z + 1), "Tryck ~g~[E]~w~ för att handla på ~g~Urbicus Bar~s~", 0.6)
             elseif GetDistanceBetweenCoords(coords, Config.Shops.UrbicusBar.Locations[k].x, Config.Shops.UrbicusBar.Locations[k].y, Config.Shops.UrbicusBar.Locations[k].z, true) < 3.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.UrbicusBar.Locations[k].x, Config.Shops.UrbicusBar.Locations[k].y, Config.Shops.UrbicusBar.Locations[k].z + 1), "~p~Urbicus Bar~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.UrbicusBar.Locations[k].x, Config.Shops.UrbicusBar.Locations[k].y, Config.Shops.UrbicusBar.Locations[k].z + 1), "~g~Urbicus Bar~s~", 0.6)
             end
         end
 
         for k, v in pairs(Config.Shops.Sjukhus.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.Sjukhus.Locations[k].x, Config.Shops.Sjukhus.Locations[k].y, Config.Shops.Sjukhus.Locations[k].z, true) < 1.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Sjukhus.Locations[k].x, Config.Shops.Sjukhus.Locations[k].y, Config.Shops.Sjukhus.Locations[k].z + 1), "Tryck ~p~[E]~w~ för att handla på ~p~Sjukhus Kiosken~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Sjukhus.Locations[k].x, Config.Shops.Sjukhus.Locations[k].y, Config.Shops.Sjukhus.Locations[k].z + 1), "Tryck ~g~[E]~w~ för att handla på ~g~Sjukhus Kiosken~s~", 0.6)
             elseif GetDistanceBetweenCoords(coords, Config.Shops.Sjukhus.Locations[k].x, Config.Shops.Sjukhus.Locations[k].y, Config.Shops.Sjukhus.Locations[k].z, true) < 3.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Sjukhus.Locations[k].x, Config.Shops.Sjukhus.Locations[k].y, Config.Shops.Sjukhus.Locations[k].z + 1), "~p~Sjukhus Kiosk~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Sjukhus.Locations[k].x, Config.Shops.Sjukhus.Locations[k].y, Config.Shops.Sjukhus.Locations[k].z + 1), "~g~Sjukhus Kiosk~s~", 0.6)
             end
         end
 
         for k, v in pairs(Config.Shops.Gym.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.Gym.Locations[k].x, Config.Shops.Gym.Locations[k].y, Config.Shops.Gym.Locations[k].z, true) < 1.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Gym.Locations[k].x, Config.Shops.Gym.Locations[k].y, Config.Shops.Gym.Locations[k].z + 1), "Tryck ~p~[E]~w~ för att handla på ~p~Gym Kiosken~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Gym.Locations[k].x, Config.Shops.Gym.Locations[k].y, Config.Shops.Gym.Locations[k].z + 1), "Tryck ~g~[E]~w~ för att handla på ~g~Gym Kiosken~s~", 0.6)
             elseif GetDistanceBetweenCoords(coords, Config.Shops.Gym.Locations[k].x, Config.Shops.Gym.Locations[k].y, Config.Shops.Gym.Locations[k].z, true) < 3.5 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Gym.Locations[k].x, Config.Shops.Gym.Locations[k].y, Config.Shops.Gym.Locations[k].z + 1), "~p~Gym Kiosken~s~", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Gym.Locations[k].x, Config.Shops.Gym.Locations[k].y, Config.Shops.Gym.Locations[k].z + 1), "~g~Gym Kiosken~s~", 0.6)
             end
         end
 --[[
         for k, v in pairs(Config.Shops.Vending.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.Vending.Locations[k].x, Config.Shops.Vending.Locations[k].y, Config.Shops.Vending.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Vending.Locations[k].x, Config.Shops.Vending.Locations[k].y, Config.Shops.Vending.Locations[k].z), "Tryck ~p~[E]~w~ för att handla", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.Vending.Locations[k].x, Config.Shops.Vending.Locations[k].y, Config.Shops.Vending.Locations[k].z), "Tryck ~g~[E]~w~ för att handla", 0.6)
             end
         end
 --]]

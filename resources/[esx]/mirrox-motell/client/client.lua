@@ -450,7 +450,7 @@ function roomMarkers()
             distance = GetDistanceBetweenCoords(coords, v.roomExit.x, v.roomExit.y, v.roomExit.z, true)
             if (distance < 0.5) then
                 if curRoom ~= nil then
-                    DrawText3D(v.roomExit.x, v.roomExit.y, v.roomExit.z + 0.35, 'Tryck [~p~E~s~] för att gå ut')
+                    DrawText3D(v.roomExit.x, v.roomExit.y, v.roomExit.z + 0.35, 'Tryck [~g~E~s~] för att gå ut')
                     if IsControlJustReleased(0, Keys['E']) then
                         ESX.UI.Menu.CloseAll()
                         TriggerEvent('lsrp-motels:exitRoom', curMotel, curRoom)
@@ -464,7 +464,7 @@ function roomMarkers()
     for k,v in pairs(Config.Zones) do
         distance = GetDistanceBetweenCoords(coords, v.Menu.x, v.Menu.y, v.Menu.z, true)
         if distance < 0.5 then
-            DrawText3D(v.Menu.x, v.Menu.y, v.Menu.z + 0.35, 'Tryck [~p~E~s~] för att öppna menyn.')
+            DrawText3D(v.Menu.x, v.Menu.y, v.Menu.z + 0.35, 'Tryck [~g~E~s~] för att öppna menyn.')
                 if IsControlJustReleased(0, Keys['E']) then
                     TriggerEvent('lsrp-motels:roomMenu', curRoom, curMotel)
                 end
@@ -479,7 +479,7 @@ function roomMarkers()
             end
         if distance < 0.5 then
             if roomOwner == playerIdent then
-            DrawText3D(v.Inventory.x, v.Inventory.y, v.Inventory.z + 0.35, 'Tryck [~p~E~s~] för att byta om.')
+            DrawText3D(v.Inventory.x, v.Inventory.y, v.Inventory.z + 0.35, 'Tryck [~g~E~s~] för att byta om.')
                 if IsControlJustReleased(0, Keys['E']) then
                     PlayerDressings()
                 end
@@ -492,7 +492,7 @@ function roomMarkers()
         distance = GetDistanceBetweenCoords(coords, v.BedStash.x, v.BedStash.y, v.BedStash.z, true)
         if distance < 0.5 then
             if roomOwner == playerIdent then
-            DrawText3D(v.BedStash.x, v.BedStash.y, v.BedStash.z + 0.1, 'Tryck [~p~E~s~] för att kolla under madrassen.')
+            DrawText3D(v.BedStash.x, v.BedStash.y, v.BedStash.z + 0.1, 'Tryck [~g~E~s~] för att kolla under madrassen.')
                 if IsControlJustReleased(0, Keys['E']) then
                     OpenCupboard()
                 end
@@ -514,7 +514,7 @@ if myMotel then
             if vm.instancename == myMotel then
                 distance = GetDistanceBetweenCoords(coords, vm.entry.x, vm.entry.y, vm.entry.z, true)
                 if (distance < 0.5) then
-                    DrawText3D(vm.entry.x, vm.entry.y, vm.entry.z + 0.35, 'Tryck [~p~E~s~] för alternativ.')
+                    DrawText3D(vm.entry.x, vm.entry.y, vm.entry.z + 0.35, 'Tryck [~g~E~s~] för alternativ.')
                     if IsControlJustReleased(0, Keys['E']) then
                         TriggerEvent("lsrp-motels:roomOptions", vm.instancename, k)
                     end
@@ -535,7 +535,7 @@ else
             
             if (distance < 0.5) then
 				if  Config.LockRentedRooms == false or motelTaken == false then			
-				DrawText3D(vm.entry.x, vm.entry.y, vm.entry.z + 0.35, '[~p~E~s~] för att hyra rum nummer: ~p~~p~'..vm.number..'~s~ på ~p~~p~'..v.Name..' ~w~för ~p~'..Config.PriceRental .. ' Sek')
+				DrawText3D(vm.entry.x, vm.entry.y, vm.entry.z + 0.35, '[~g~E~s~] för att hyra rum nummer: ~g~~g~'..vm.number..'~s~ på ~g~~g~'..v.Name..' ~w~för ~g~'..Config.PriceRental .. ' Sek')
 				if IsControlJustReleased(0, Keys['E']) then
 				    TriggerEvent('lsrp-motels:rentRoom', vm.instancename)
 				end

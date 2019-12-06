@@ -113,7 +113,7 @@ Citizen.CreateThread(function()
 		for i=1, #Config.Zones, 1 do
 			if(GetDistanceBetweenCoords(coords, Config.Zones[i].x, Config.Zones[i].y, Config.Zones[i].z, true) < Config.DrawDistance) then
 				--DrawMarker(Config.MarkerType, Config.Zones[i].x, Config.Zones[i].y, Config.Zones[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.ZoneSize.x, Config.ZoneSize.y, Config.ZoneSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-				Marker("~w~[~p~E~w~] Platsbanken", 27, Config.Zones[i].x, Config.Zones[i].y, Config.Zones[i].z - 0.95)
+				Marker("~w~[~g~E~w~] Platsbanken", 27, Config.Zones[i].x, Config.Zones[i].y, Config.Zones[i].z - 0.95)
 			end
 		end
 	end

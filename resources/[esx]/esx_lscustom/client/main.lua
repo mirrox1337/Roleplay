@@ -394,7 +394,7 @@ Citizen.CreateThread(function()
 						isInLSMarker  = true
 
 						drawText = true
-						Draw3DText(v.Pos.x,v.Pos.y,v.Pos.z+1.35, "Tryck ~p~[E]~w~ för att modifiera fordonet.")
+						Draw3DText(v.Pos.x,v.Pos.y,v.Pos.z+1.35, "Tryck ~g~[E]~w~ för att modifiera fordonet.")
 
 						ESX.ShowHelpNotification(v.Hint)
 						break
@@ -450,7 +450,7 @@ Citizen.CreateThread(function()
 						isInLSMarker  = true
 
 						drawText = true
-						Draw3DText(v.Pos.x,v.Pos.y,v.Pos.z+1.35, "Tryck ~p~[E]~w~ för att plocka upp delen.")
+						Draw3DText(v.Pos.x,v.Pos.y,v.Pos.z+1.35, "Tryck ~g~[E]~w~ för att plocka upp delen.")
 						break
 					else
 						isInLSMarker  = false

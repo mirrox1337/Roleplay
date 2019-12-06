@@ -15,7 +15,7 @@ AddEventHandler("esx_phone3:togglePhone", function()
         xPlayer.addInventoryItem('phoneoff', phoneQ)
         xPlayer.removeInventoryItem('phone', phoneQ)
     elseif phoneOffQ > 0 then
-        TriggerClientEvent("esx:showNotification", src, "Du ~p~satte~s~ på telefonen")
+        TriggerClientEvent("esx:showNotification", src, "Du ~g~satte~s~ på telefonen")
         xPlayer.addInventoryItem('phone', phoneOffQ)
         xPlayer.removeInventoryItem('phoneoff', phoneOffQ)
     end

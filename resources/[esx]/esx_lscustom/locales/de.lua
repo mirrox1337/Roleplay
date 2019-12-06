@@ -2,7 +2,7 @@ Locales['de'] = {
 
 	['by_default'] = 'default',
 	['installed'] = 'installiert',
-	['already_own'] = 'du besitzt bereits: ~p~',
+	['already_own'] = 'du besitzt bereits: ~g~',
 	['not_enough_money'] = 'du hast nicht genug Geld!',
 	['purchased'] = 'gekauft!',
 	['press_custom'] = 'Drücke ~INPUT_PICKUP~ um dein Fahrzeug zu modifizieren.',

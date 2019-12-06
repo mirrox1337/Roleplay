@@ -930,7 +930,7 @@ Citizen.CreateThread(function ()
 		for k,v in pairs(Config.Zones) do
 			if(v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance) then
 				--DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-				Marker("~w~[~p~E~w~] För att öppna menyn", 27, v.Pos.x, v.Pos.y, v.Pos.z)
+				Marker("~w~[~g~E~w~] För att öppna menyn", 27, v.Pos.x, v.Pos.y, v.Pos.z)
 			end
 		end
 	end

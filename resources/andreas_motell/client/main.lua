@@ -84,7 +84,7 @@ Citizen.CreateThread(function()
 		-- Buymenu
         for k, v in pairs(Config.BuyMenu) do
 			if(GetDistanceBetweenCoords(coords, v.x, v.y, v.z, true) < 2.0) then
-				Draw3DText(v.x, v.y, v.z, '~p~[E]~w~ För att köpa ett rum', 1.0)
+				Draw3DText(v.x, v.y, v.z, '~g~[E]~w~ För att köpa ett rum', 1.0)
 				DrawMarker(25, v.x, v.y, v.z - 0.99, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, 0, 255, 100, false, true, 2, false, false, false, false)
 				if IsControlJustPressed(0, Keys['E']) then
 					--ESX.TriggerServerCallback('andreas_motell:checkRoom', function(hasRoom)
@@ -102,7 +102,7 @@ Citizen.CreateThread(function()
 		-- Entreable doors
         for k, v in pairs(Config.Doors) do
 			if(GetDistanceBetweenCoords(coords, v.x, v.y, v.z, true) < 1.0) then
-				Draw3DText(v.x, v.y, v.z + 0.3, '~p~[E]~w~ Gå in ~p~(Rum: ' .. v.number .. ')', 1.0)
+				Draw3DText(v.x, v.y, v.z + 0.3, '~g~[E]~w~ Gå in ~g~(Rum: ' .. v.number .. ')', 1.0)
 				DrawMarker(25, v.x, v.y, v.z - 0.99, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, 0, 255, 100, false, true, 2, false, false, false, false)
 				if IsControlJustPressed(0, Keys['E']) then
 					getData(v.number)
@@ -115,7 +115,7 @@ Citizen.CreateThread(function()
 		
 		-- Exit
         if(GetDistanceBetweenCoords(coords, 151.37, -1007.94, -99.0, true) < 2.0) then
-			Draw3DText( 151.37, -1007.94, -99.0, '~p~[E]~w~ Gå ut ur rummet', 2.0)
+			Draw3DText( 151.37, -1007.94, -99.0, '~g~[E]~w~ Gå ut ur rummet', 2.0)
 			DrawMarker(25, 151.37, -1007.94, -99.0 - 0.99, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, 0, 255, 100, false, true, 2, false, false, false, false)
 			if IsControlJustPressed(0, Keys['E']) then
 				SetEntityCoords(GetPlayerPed(-1), MotelDoorEntered)
@@ -126,7 +126,7 @@ Citizen.CreateThread(function()
 
 		-- Warderobe
 		if(GetDistanceBetweenCoords(coords, 151.72, -1001.32, -98.99, true) < 0.8) then
-			Draw3DText(151.72, -1001.32, -98.99, '~p~[E]~w~ Öppna garderob')
+			Draw3DText(151.72, -1001.32, -98.99, '~g~[E]~w~ Öppna garderob')
 			if IsControlJustPressed(0, Keys[('E')]) then
 				OpenWarderobeMenu()
 			end
@@ -134,7 +134,7 @@ Citizen.CreateThread(function()
 
 		-- Bed
 		if(GetDistanceBetweenCoords(coords, 154.14, -1005.89, -98.99, true) < 0.8) then
-			Draw3DText(154.14, -1005.89, -98.99, '~p~[E]~w~ Ligg i sängen')
+			Draw3DText(154.14, -1005.89, -98.99, '~g~[E]~w~ Ligg i sängen')
 			if IsControlJustPressed(0, Keys[('E')]) then
 				SetEntityCoords(pP, 154.31, -1004.58, -99.31)
 				SetEntityHeading(pP, 275.68)
@@ -144,7 +144,7 @@ Citizen.CreateThread(function()
 
 		-- Storage
 		if(GetDistanceBetweenCoords(coords, 151.28, -1003.18, -98.99, true) < 0.8) then
-			Draw3DText(151.28, -1003.18, -98.99, '~p~[E]~w~ Öppna byrå')
+			Draw3DText(151.28, -1003.18, -98.99, '~g~[E]~w~ Öppna byrå')
 			if IsControlJustPressed(0, Keys[('E')]) then
 				OpenStorageMenu()
 			end
@@ -152,7 +152,7 @@ Citizen.CreateThread(function()
 
 		-- Shower
 		--if(GetDistanceBetweenCoords(coords, 154.96, -1000.23, -98.99, true) < 1.2) then
-		--	Draw3DText(154.96, -1000.23, -98.99, '~p~[E]~w~ Ta en dusch')
+		--	Draw3DText(154.96, -1000.23, -98.99, '~g~[E]~w~ Ta en dusch')
 		--	if IsControlJustPressed(0, Keys[('E')]) then
 		--		TakeShower()
 		--	end
