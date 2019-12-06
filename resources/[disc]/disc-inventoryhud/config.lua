@@ -26,7 +26,7 @@ Config.Shops = {
     },
     ['Amirs Livs'] = {
         coords = {
-            vector3(-1172.07, -1571.93, 3.70),
+            vector3(-1172.36, -1572.19, 3.70),
         },
         items = {
             { name = "rizla", price = 15, count = 1 },
@@ -64,7 +64,7 @@ Config.Shops = {
     },
     ['Dealer'] = {
         coords = {
-            vector3(-1207.59, -240.18, 36.97),
+            vector3(-2.82, -1821.54, 28.60),
         },
         items = {
             {name = 'chemicals', price = 100, count = 1},
@@ -72,7 +72,10 @@ Config.Shops = {
             {name = 'grinder', price = 150, count = 1},
             {name = 'plasticbag', price = 15, count = 1},
             {name = 'scale', price = 200, count = 1},
-            {name = 'seed', price = 450, count = 1}
+            {name = 'seed', price = 450, count = 1},
+            {name = 'causticsoda', price = 100, count = 1},
+            {name = 'cement', price = 125, count = 1},
+            {name = 'radio', price = 750, count = 1},
         },
         blipSprite = 52,
         blipColour = 4,
