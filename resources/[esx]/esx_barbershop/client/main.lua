@@ -37,7 +37,8 @@ function OpenShopMenu()
 							TriggerEvent('skinchanger:loadSkin', skin) 
 						end)
 
-						ESX.ShowNotification(_U('not_enough_money'))
+						--ESX.ShowNotification(_U('not_enough_money'))
+						exports['mythic_notify']:SendAlert('error', _U('not_enough_money'))
 					end
 				end)
 			elseif data.current.value == 'no' then

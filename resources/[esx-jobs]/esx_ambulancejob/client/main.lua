@@ -4,7 +4,8 @@ function SendDistressSignal()
 	
 	local PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z }
   
-	ESX.ShowNotification(_U('distress_sent'))
+	--ESX.ShowNotification(_U('distress_sent'))
+	exports['mythic_notify']:SendAlert('inform', (_U('distress_sent')))
   
 	  TriggerServerEvent('esx_addons_gcphone:startCall', 'ambulance', _U('distress_message'), PlayerCoords, {
   
@@ -67,7 +68,8 @@ AddEventHandler('playerSpawned', function()
 					Citizen.Wait(1000)
 				end
 
-				ESX.ShowNotification(_U('combatlog_message'))
+				--ESX.ShowNotification(_U('combatlog_message'))
+				exports['mythic_notify']:SendAlert('inform', (_U('combatlog_message')))
 				RemoveItemsAfterRPDeath()
 			end
 		end)
@@ -199,7 +201,8 @@ function SendDistressSignal()
 	local playerPed = PlayerPedId()
 	local coords = GetEntityCoords(playerPed)
 
-	ESX.ShowNotification(_U('distress_sent'))
+	--ESX.ShowNotification(_U('distress_sent'))
+	exports['mythic_notify']:SendAlert('inform', (_U('distress_sent')))
 	TriggerServerEvent('esx_phone:send', 'ambulance', _U('distress_message'), false, {
 		x = coords.x,
 		y = coords.y,

@@ -62,7 +62,8 @@ function ShowJobListingMenu(data)
 			},
 			function(data, menu)
 				TriggerServerEvent('esx_joblisting:setJob', data.current.value)
-				ESX.ShowNotification(_U('new_job'))
+				--ESX.ShowNotification(_U('new_job'))
+				exports['mythic_notify']:SendAlert('inform', _U('new_job'))
 				menu.close()
 			end,
 			function(data, menu)

@@ -134,7 +134,8 @@ function OpenBennysActionsMenu()
                           TaskWarpPedIntoVehicle(playerPed,  vehicle, -1)
                         end)
                       else
-                        ESX.ShowNotification(_U('service_full') .. inServiceCount .. '/' .. maxInService)
+                        --ESX.ShowNotification(_U('service_full') .. inServiceCount .. '/' .. maxInService)
+                        exports['mythic_notify']:SendAlert('inform', _U('service_full') .. inServiceCount .. '/' .. maxInService)
                       end
                     end, 'bennys')
                     break
@@ -234,7 +235,8 @@ function OpenMobileBennysActionsMenu()
       if data.current.value == 'fine' then
         local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
         if closestPlayer == -1 or closestDistance > 3.0 then
-          ESX.ShowNotification('Ingen nära, blind eller?')
+          --ESX.ShowNotification('Ingen nära, blind eller?')
+          exports['mythic_notify']:SendAlert('inform', 'Ingen nära, blind eller?')
         else
           OpenFineMenu(closestPlayer)
         end
@@ -252,14 +254,16 @@ function OpenMobileBennysActionsMenu()
             local amount = tonumber(data2.value)
 
             if amount == nil then
-              ESX.ShowNotification(_U('invoice_amount'))
+              --ESX.ShowNotification(_U('invoice_amount'))
+              exports['mythic_notify']:SendAlert('inform', _U('invoice_amount'))
             else
               menu.close()
 
               local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 
               if closestPlayer == -1 or closestDistance > 3.0 then
-                ESX.ShowNotification(_U('invoice_amount'))
+                --ESX.ShowNotification(_U('invoice_amount'))
+                exports['mythic_notify']:SendAlert('inform', _U('invoice_amount'))
               else
                 TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_bennys', 'Bennys', tonumber(data2.value))
               end
@@ -426,7 +430,8 @@ function OpenGetStocksMenu()
             local count = tonumber(data2.value)
 
             if count == nil then
-              ESX.ShowNotification(_U('invalid_quantity'))
+              --ESX.ShowNotification(_U('invalid_quantity'))
+              exports['mythic_notify']:SendAlert('inform', _U('invalid_quantity'))
             else
               menu2.close()
               menu.close()
@@ -487,7 +492,8 @@ ESX.TriggerServerCallback('esx_bennysjob:getPlayerInventory', function(inventory
             local count = tonumber(data2.value)
 
             if count == nil then
-              ESX.ShowNotification(_U('invalid_quantity'))
+              --ESX.ShowNotification(_U('invalid_quantity'))
+              exports['mythic_notify']:SendAlert('inform', _U('invalid_quantity'))
             else
               menu2.close()
               menu.close()
@@ -737,7 +743,8 @@ Citizen.CreateThread(function()
               StopNPCJob(true)
               NPCLastCancel = GetGameTimer()
             else
-              ESX.ShowNotification(_U('wait_five'))
+              --ESX.ShowNotification(_U('wait_five'))
+              exports['mythic_notify']:SendAlert('inform', _U('wait_five'))
             end
 
           else
@@ -747,7 +754,8 @@ Citizen.CreateThread(function()
             if IsPedInAnyVehicle(playerPed,  false) and IsVehicleModel(GetVehiclePedIsIn(playerPed,  false), GetHashKey("flatbed")) then
               StartNPCJob()
             else
-              ESX.ShowNotification(_U('must_in_flatbed'))
+              --ESX.ShowNotification(_U('must_in_flatbed'))
+              exports['mythic_notify']:SendAlert('inform', _U('must_in_flatbed'))
             end
 
           end

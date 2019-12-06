@@ -155,7 +155,8 @@ end)
 RegisterNetEvent('chrono-jewelry:toofarlocal')
 AddEventHandler('chrono-jewelry:toofarlocal', function(robb)
 	holdingup = false
-	ESX.ShowNotification(_U('robbery_cancelled'))
+	--ESX.ShowNotification(_U('robbery_cancelled'))
+	exports['mythic_notify']:SendAlert('inform', _U('robbery_cancelled'))
 	robbingName = ""
 	incircle = false
 end)
@@ -164,7 +165,8 @@ end)
 RegisterNetEvent('chrono-jewelry:robberycomplete')
 AddEventHandler('chrono-jewelry:robberycomplete', function(robb)
 	holdingup = false
-	ESX.ShowNotification(_U('robbery_complete'))
+	--ESX.ShowNotification(_U('robbery_complete'))
+	exports['mythic_notify']:SendAlert('success', _U('robbery_complete'))
 	store = ""
 	incircle = false
 end)

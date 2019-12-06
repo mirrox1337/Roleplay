@@ -172,7 +172,8 @@ function ListOwnedCarsMenu()
 	
 	ESX.TriggerServerCallback('esx_advancedgarage:getOwnedCars', function(ownedCars)
 		if #ownedCars == 0 then
-			ESX.ShowNotification(_U('garage_nocars'))
+			--ESX.ShowNotification(_U('garage_nocars'))
+			exports['mythic_notify']:SendAlert('inform', _U('garage_nocars'))
 		else
 			for _,v in pairs(ownedCars) do
 				if Config.UseVehicleNamesLua then
@@ -232,7 +233,8 @@ function ListOwnedCarsMenu()
 				menu.close()
 				SpawnVehicle(data.current.value.vehicle, data.current.value.plate)
 			else
-				ESX.ShowNotification(_U('car_is_impounded'))
+				--ESX.ShowNotification(_U('car_is_impounded'))
+				exports['mythic_notify']:SendAlert('inform', _U('car_is_impounded'))
 			end
 		end, function(data, menu)
 			menu.close()
@@ -258,7 +260,8 @@ function ListOwnedBoatsMenu()
 	
 	ESX.TriggerServerCallback('esx_advancedgarage:getOwnedBoats', function(ownedBoats)
 		if #ownedBoats == 0 then
-			ESX.ShowNotification(_U('garage_noboats'))
+			--ESX.ShowNotification(_U('garage_noboats'))
+			exports['mythic_notify']:SendAlert('inform', _U('garage_noboats'))
 		else
 			for _,v in pairs(ownedBoats) do
 				if Config.UseVehicleNamesLua then
@@ -317,7 +320,8 @@ function ListOwnedBoatsMenu()
 				menu.close()
 				SpawnVehicle(data.current.value.vehicle, data.current.value.plate)
 			else
-				ESX.ShowNotification(_U('boat_is_impounded'))
+				--ESX.ShowNotification(_U('boat_is_impounded'))
+				exports['mythic_notify']:SendAlert('inform', _U('boat_is_impounded'))
 			end
 		end, function(data, menu)
 			menu.close()
@@ -343,7 +347,9 @@ function ListOwnedAircraftsMenu()
 	
 	ESX.TriggerServerCallback('esx_advancedgarage:getOwnedAircrafts', function(ownedAircrafts)
 		if #ownedAircrafts == 0 then
-			ESX.ShowNotification(_U('garage_noaircrafts'))
+			--ESX.ShowNotification(_U('garage_noaircrafts'))
+			exports['mythic_notify']:SendAlert('inform', _U('garage_noaircrafts'))
+			
 		else
 			for _,v in pairs(ownedAircrafts) do
 				if Config.UseVehicleNamesLua then
@@ -402,7 +408,8 @@ function ListOwnedAircraftsMenu()
 				menu.close()
 				SpawnVehicle(data.current.value.vehicle, data.current.value.plate)
 			else
-				ESX.ShowNotification(_U('aircraft_is_impounded'))
+				--ESX.ShowNotification(_U('aircraft_is_impounded'))
+				exports['mythic_notify']:SendAlert('inform', _U('aircraft_is_impounded'))
 			end
 		end, function(data, menu)
 			menu.close()
@@ -436,11 +443,13 @@ function StoreOwnedCarsMenu()
 					putaway(vehicle, vehicleProps)
 				end	
 			else
-				ESX.ShowNotification(_U('cannot_store_vehicle'))
+				--ESX.ShowNotification(_U('cannot_store_vehicle'))
+				exports['mythic_notify']:SendAlert('inform', _U('cannot_store_vehicle'))
 			end
 		end, vehicleProps)
 	else
-		ESX.ShowNotification(_U('no_vehicle_to_enter'))
+		--ESX.ShowNotification(_U('no_vehicle_to_enter'))
+		exports['mythic_notify']:SendAlert('inform', _U('no_vehicle_to_enter'))
 	end
 end
 
@@ -470,11 +479,13 @@ function StoreOwnedBoatsMenu()
 					putaway(vehicle, vehicleProps)
 				end	
 			else
-				ESX.ShowNotification(_U('cannot_store_vehicle'))
+				--ESX.ShowNotification(_U('cannot_store_vehicle'))
+				exports['mythic_notify']:SendAlert('inform', _U('cannot_store_vehicle'))
 			end
 		end, vehicleProps)
 	else
-		ESX.ShowNotification(_U('no_vehicle_to_enter'))
+		--ESX.ShowNotification(_U('no_vehicle_to_enter'))
+		exports['mythic_notify']:SendAlert('inform', _U('no_vehicle_to_enter'))
 	end
 end
 
@@ -504,11 +515,13 @@ function StoreOwnedAircraftsMenu()
 					putaway(vehicle, vehicleProps)
 				end	
 			else
-				ESX.ShowNotification(_U('cannot_store_vehicle'))
+				--ESX.ShowNotification(_U('cannot_store_vehicle'))
+				exports['mythic_notify']:SendAlert('inform', _U('cannot_store_vehicle'))
 			end
 		end, vehicleProps)
 	else
-		ESX.ShowNotification(_U('no_vehicle_to_enter'))
+		--ESX.ShowNotification(_U('no_vehicle_to_enter'))
+		exports['mythic_notify']:SendAlert('inform', _U('no_vehicle_to_enter'))
 	end
 end
 
@@ -558,7 +571,8 @@ function ReturnOwnedCarsMenu()
 					TriggerServerEvent('esx_advancedgarage:payCar')
 					SpawnPoundedVehicle(data.current.value, data.current.value.plate)
 				else
-					ESX.ShowNotification(_U('not_enough_money'))
+					--ESX.ShowNotification(_U('not_enough_money'))
+					exports['mythic_notify']:SendAlert('error', _U('not_enough_money'))
 				end
 			end)
 		end, function(data, menu)
@@ -613,7 +627,8 @@ function ReturnOwnedBoatsMenu()
 					TriggerServerEvent('esx_advancedgarage:payBoat')
 					SpawnPoundedVehicle(data.current.value, data.current.value.plate)
 				else
-					ESX.ShowNotification(_U('not_enough_money'))
+					--ESX.ShowNotification(_U('not_enough_money'))
+					exports['mythic_notify']:SendAlert('error', _U('not_enough_money'))
 				end
 			end)
 		end, function(data, menu)
@@ -668,7 +683,8 @@ function ReturnOwnedAircraftsMenu()
 					TriggerServerEvent('esx_advancedgarage:payAircraft')
 					SpawnPoundedVehicle(data.current.value, data.current.value.plate)
 				else
-					ESX.ShowNotification(_U('not_enough_money'))
+					--ESX.ShowNotification(_U('not_enough_money'))
+					exports['mythic_notify']:SendAlert('error', _U('not_enough_money'))
 				end
 			end)
 		end, function(data, menu)
@@ -723,7 +739,8 @@ function ReturnOwnedPolicingMenu()
 					TriggerServerEvent('esx_advancedgarage:payPolicing')
 					SpawnPoundedVehicle(data.current.value, data.current.value.plate)
 				else
-					ESX.ShowNotification(_U('not_enough_money'))
+					--ESX.ShowNotification(_U('not_enough_money'))
+					exports['mythic_notify']:SendAlert('error', _U('not_enough_money'))
 				end
 			end)
 		end, function(data, menu)
@@ -778,7 +795,8 @@ function ReturnOwnedAmbulanceMenu()
 					TriggerServerEvent('esx_advancedgarage:payAmbulance')
 					SpawnPoundedVehicle(data.current.value, data.current.value.plate)
 				else
-					ESX.ShowNotification(_U('not_enough_money'))
+					--ESX.ShowNotification(_U('not_enough_money'))
+					exports['mythic_notify']:SendAlert('error', _U('not_enough_money'))
 				end
 			end)
 		end, function(data, menu)
@@ -808,7 +826,8 @@ function reparation(apprasial, vehicle, vehicleProps)
 			putaway(vehicle, vehicleProps)
 		end
 		if(data.current.value == 'no') then
-			ESX.ShowNotification('Låt mekanikern laga bilen')
+			--ESX.ShowNotification('Låt mekanikern laga bilen')
+			exports['mythic_notify']:SendAlert('inform', ('Låt mekanikern laga bilen'))
 		end
 	end, function(data, menu)
 		menu.close()
@@ -819,7 +838,8 @@ end
 function putaway(vehicle, vehicleProps)
 	ESX.Game.DeleteVehicle(vehicle)
 	TriggerServerEvent('esx_advancedgarage:setVehicleState', vehicleProps.plate, true)
-	ESX.ShowNotification(_U('vehicle_in_garage'))
+	--ESX.ShowNotification(_U('vehicle_in_garage'))
+	exports['mythic_notify']:SendAlert('inform', _U('vehicle_in_garage'))
 end
 
 -- Spawn Cars

@@ -146,7 +146,8 @@ function OpenSyncedMenu()
 
 			TriggerServerEvent('esx_animations:sync', GetPlayerServerId(closestPlayer), lib, anim1, anim2, distans, distans2, height)
 		else
-			ESX.ShowNotification('~r~Ingen spelare i närheten!')
+			--ESX.ShowNotification('~r~Ingen spelare i närheten!')
+			exports['mythic_notify']:SendAlert('error', ('Ingen spelare i närheten!'))
 		end
 	end, function(data, menu)
 		menu.close()

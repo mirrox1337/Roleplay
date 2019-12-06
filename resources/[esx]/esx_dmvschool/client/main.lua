@@ -65,9 +65,11 @@ function StopTheoryTest(success)
 
 	if success then
 		TriggerServerEvent('esx_dmvschool:addLicense', 'dmv')
-		ESX.ShowNotification(_U('passed_test'))
+		--ESX.ShowNotification(_U('passed_test'))
+		exports['mythic_notify']:SendAlert('success', _U('passed_test'))
 	else
-		ESX.ShowNotification(_U('failed_test'))
+		--ESX.ShowNotification(_U('failed_test'))
+		exports['mythic_notify']:SendAlert('error', _U('failed_test'))
 	end
 end
 
@@ -93,9 +95,11 @@ end
 function StopDriveTest(success)
 	if success then
 		TriggerServerEvent('esx_dmvschool:addLicense', CurrentTestType)
-		ESX.ShowNotification(_U('passed_test'))
+		--ESX.ShowNotification(_U('passed_test'))
+		exports['mythic_notify']:SendAlert('success', _U('passed_test'))
 	else
-		ESX.ShowNotification(_U('failed_test'))
+		--ESX.ShowNotification(_U('failed_test'))
+		exports['mythic_notify']:SendAlert('error', _U('failed_test'))
 	end
 
 	CurrentTest     = nil
@@ -321,7 +325,8 @@ Citizen.CreateThread(function()
 
 				CurrentTest = nil
 
-				ESX.ShowNotification(_U('driving_test_complete'))
+				--ESX.ShowNotification(_U('driving_test_complete'))
+				exports['mythic_notify']:SendAlert('success', _U('driving_test_complete'))
 
 				if DriveErrors < Config.MaxErrors then
 					StopDriveTest(true)
@@ -384,8 +389,10 @@ Citizen.CreateThread(function()
 							DriveErrors       = DriveErrors + 1
 							IsAboveSpeedLimit = true
 
-							ESX.ShowNotification(_U('driving_too_fast', v))
-							ESX.ShowNotification(_U('errors', DriveErrors, Config.MaxErrors))
+							--ESX.ShowNotification(_U('driving_too_fast', v))
+							exports['mythic_notify']:SendAlert('error', _U('driving_too_fast', v))
+							--ESX.ShowNotification(_U('errors', DriveErrors, Config.MaxErrors))
+							exports['mythic_notify']:SendAlert('error', _U('errors', DriveErrors, Config.MaxErrors))
 						end
 					end
 				end
@@ -399,8 +406,10 @@ Citizen.CreateThread(function()
 
 					DriveErrors = DriveErrors + 1
 
-					ESX.ShowNotification(_U('you_damaged_veh'))
-					ESX.ShowNotification(_U('errors', DriveErrors, Config.MaxErrors))
+					--ESX.ShowNotification(_U('you_damaged_veh'))
+					exports['mythic_notify']:SendAlert('error', _U('you_damaged_veh'))
+					--ESX.ShowNotification(_U('errors', DriveErrors, Config.MaxErrors))
+					exports['mythic_notify']:SendAlert('error', _U('errors', DriveErrors, Config.MaxErrors))
 
 					-- avoid stacking faults
 					LastVehicleHealth = health

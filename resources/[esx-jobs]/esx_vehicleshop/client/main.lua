@@ -226,9 +226,11 @@ function OpenShopMenu()
 							menu2.close()
 							menu.close()
 
-							ESX.ShowNotification(_U('vehicle_purchased'))
+							--ESX.ShowNotification(_U('vehicle_purchased'))
+							exports['mythic_notify']:SendAlert('inform', _U('vehicle_purchased'))
 						else
-							ESX.ShowNotification(_U('broke_company'))
+							--ESX.ShowNotification(_U('broke_company'))
+							exports['mythic_notify']:SendAlert('inform', _U('broke_company'))
 						end
 
 					end, 'cardealer', vehicleData.model)
@@ -271,13 +273,15 @@ function OpenShopMenu()
 												TriggerServerEvent('esx_vehicleshop:setVehicleOwned', vehicleProps)
 											end
 
-											ESX.ShowNotification(_U('vehicle_purchased'))
+											--ESX.ShowNotification(_U('vehicle_purchased'))
+											exports['mythic_notify']:SendAlert('inform', _U('vehicle_purchased'))
 										end)
 
 										FreezeEntityPosition(playerPed, false)
 										SetEntityVisible(playerPed, true)
 									else
-										ESX.ShowNotification(_U('not_enough_money'))
+										--ESX.ShowNotification(_U('not_enough_money'))
+										exports['mythic_notify']:SendAlert('error', _U('not_enough_money'))
 									end
 
 								end, vehicleData.model)
@@ -305,13 +309,15 @@ function OpenShopMenu()
 
 											TriggerServerEvent('esx_vehicleshop:setVehicleOwnedSociety', playerData.job.name, vehicleProps)
 
-											ESX.ShowNotification(_U('vehicle_purchased'))
+											--ESX.ShowNotification(_U('vehicle_purchased'))
+											exports['mythic_notify']:SendAlert('inform', _U('vehicle_purchased'))
 										end)
 
 										FreezeEntityPosition(playerPed, false)
 										SetEntityVisible(playerPed, true)
 									else
-										ESX.ShowNotification(_U('broke_company'))
+										--ESX.ShowNotification(_U('broke_company'))
+										exports['mythic_notify']:SendAlert('inform', _U('broke_company'))
 									end
 
 								end, playerData.job.name, vehicleData.model)
@@ -343,13 +349,15 @@ function OpenShopMenu()
 										TriggerServerEvent('esx_vehicleshop:setVehicleOwned', vehicleProps)
 									end
 
-									ESX.ShowNotification(_U('vehicle_purchased'))
+									--ESX.ShowNotification(_U('vehicle_purchased'))
+									exports['mythic_notify']:SendAlert('inform', _U('vehicle_purchased'))
 								end)
 
 								FreezeEntityPosition(playerPed, false)
 								SetEntityVisible(playerPed, true)
 							else
-								ESX.ShowNotification(_U('not_enough_money'))
+								--ESX.ShowNotification(_U('not_enough_money'))
+								exports['mythic_notify']:SendAlert('error', _U('not_enough_money'))
 							end
 
 						end, vehicleData.model)
@@ -444,7 +452,8 @@ function OpenResellerMenu()
 
 			local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 			if closestPlayer == -1 or closestDistance > 3.0 then
-				ESX.ShowNotification(_U('no_players'))
+				--ESX.ShowNotification(_U('no_players'))
+				exports['mythic_notify']:SendAlert('error', _U('no_players'))
 				return
 			end
 
@@ -454,14 +463,16 @@ function OpenResellerMenu()
 				local amount = tonumber(data2.value)
 
 				if amount == nil then
-					ESX.ShowNotification(_U('invalid_amount'))
+					--ESX.ShowNotification(_U('invalid_amount'))
+					exports['mythic_notify']:SendAlert('error', _U('invalid_amount'))
 				else
 					menu2.close()
 
 					local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 
 					if closestPlayer == -1 or closestDistance > 3.0 then
-						ESX.ShowNotification(_U('no_players'))
+						--ESX.ShowNotification(_U('no_players'))
+						exports['mythic_notify']:SendAlert('error', _U('no_players'))
 					else
 						TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_cardealer', _U('car_dealer'), tonumber(data2.value))
 					end
@@ -477,7 +488,8 @@ function OpenResellerMenu()
 			local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 
 			if closestPlayer == -1 or closestDistance > 3.0 then
-				ESX.ShowNotification(_U('no_players'))
+				--ESX.ShowNotification(_U('no_players'))
+				exports['mythic_notify']:SendAlert('error', _U('no_players'))
 			else
 
 				local newPlate     = GeneratePlate()
@@ -490,9 +502,11 @@ function OpenResellerMenu()
 
 				if Config.EnableOwnedVehicles then
 					TriggerServerEvent('esx_vehicleshop:setVehicleOwnedPlayerId', GetPlayerServerId(closestPlayer), vehicleProps)
-					ESX.ShowNotification(_U('vehicle_set_owned', vehicleProps.plate, GetPlayerName(closestPlayer)))
+					--ESX.ShowNotification(_U('vehicle_set_owned', vehicleProps.plate, GetPlayerName(closestPlayer)))
+					exports['mythic_notify']:SendAlert('inform', _U('vehicle_set_owned', vehicleProps.plate, GetPlayerName(closestPlayer)))
 				else
-					ESX.ShowNotification(_U('vehicle_sold_to', vehicleProps.plate, GetPlayerName(closestPlayer)))
+					--ESX.ShowNotification(_U('vehicle_sold_to', vehicleProps.plate, GetPlayerName(closestPlayer)))
+					exports['mythic_notify']:SendAlert('inform', _U('vehicle_sold_to', vehicleProps.plate, GetPlayerName(closestPlayer)))
 				end
 
 			end
@@ -502,7 +516,8 @@ function OpenResellerMenu()
 			local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 
 			if closestPlayer == -1 or closestDistance > 3.0 then
-				ESX.ShowNotification(_U('no_players'))
+				--ESX.ShowNotification(_U('no_players'))
+				exports['mythic_notify']:SendAlert('error', _U('no_players'))
 			else
 				ESX.TriggerServerCallback('esx:getOtherPlayerData', function (xPlayer)
 
@@ -516,9 +531,11 @@ function OpenResellerMenu()
 
 					if Config.EnableSocietyOwnedVehicles then
 						TriggerServerEvent('esx_vehicleshop:setVehicleOwnedSociety', xPlayer.job.name, vehicleProps)
-						ESX.ShowNotification(_U('vehicle_set_owned', vehicleProps.plate, GetPlayerName(closestPlayer)))
+						--ESX.ShowNotification(_U('vehicle_set_owned', vehicleProps.plate, GetPlayerName(closestPlayer)))
+						exports['mythic_notify']:SendAlert('inform', _U('vehicle_set_owned', vehicleProps.plate, GetPlayerName(closestPlayer)))
 					else
-						ESX.ShowNotification(_U('vehicle_sold_to', vehicleProps.plate, GetPlayerName(closestPlayer)))
+						--ESX.ShowNotification(_U('vehicle_sold_to', vehicleProps.plate, GetPlayerName(closestPlayer)))
+						exports['mythic_notify']:SendAlert('inform', _U('vehicle_sold_to', vehicleProps.plate, GetPlayerName(closestPlayer)))
 					end
 
 				end, GetPlayerServerId(closestPlayer))
@@ -532,14 +549,16 @@ function OpenResellerMenu()
 				local amount = tonumber(data2.value)
 
 				if amount == nil then
-					ESX.ShowNotification(_U('invalid_amount'))
+					--ESX.ShowNotification(_U('invalid_amount'))
+					exports['mythic_notify']:SendAlert('error', _U('invalid_amount'))
 				else
 					menu2.close()
 
 					local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 
 					if closestPlayer == -1 or closestDistance > 5.0 then
-						ESX.ShowNotification(_U('no_players'))
+						--ESX.ShowNotification(_U('no_players'))
+						exports['mythic_notify']:SendAlert('error', _U('no_players'))
 					else
 						
 						local newPlate     = 'RENT' .. string.upper(ESX.GetRandomString(4))
@@ -554,7 +573,8 @@ function OpenResellerMenu()
 						TriggerServerEvent('esx_vehicleshop:setVehicleOwnedPlayerId', GetPlayerServerId(closestPlayer), vehicleProps)
 						end
 
-						ESX.ShowNotification(_U('vehicle_set_rented', vehicleProps.plate, GetPlayerName(closestPlayer)))
+						--ESX.ShowNotification(_U('vehicle_set_rented', vehicleProps.plate, GetPlayerName(closestPlayer)))
+						exports['mythic_notify']:SendAlert('inform', _U('vehicle_set_rented', vehicleProps.plate, GetPlayerName(closestPlayer)))
 
 						TriggerServerEvent('esx_vehicleshop:setVehicleForAllPlayers', vehicleProps, Config.Zones.ShopInside.Pos.x, Config.Zones.ShopInside.Pos.y, Config.Zones.ShopInside.Pos.z, 5.0)
 					end
@@ -731,7 +751,8 @@ function OpenGetStocksMenu()
 				local count = tonumber(data2.value)
 
 				if count == nil then
-					ESX.ShowNotification(_U('quantity_invalid'))
+					--ESX.ShowNotification(_U('quantity_invalid'))
+					exports['mythic_notify']:SendAlert('error', _U('quantity_invalid'))
 				else
 					TriggerServerEvent('esx_vehicleshop:getStockItem', itemName, count)
 					menu2.close()
@@ -778,7 +799,8 @@ function OpenPutStocksMenu()
 				local count = tonumber(data2.value)
 
 				if count == nil then
-					ESX.ShowNotification(_U('quantity_invalid'))
+					--ESX.ShowNotification(_U('quantity_invalid'))
+					exports['mythic_notify']:SendAlert('error', _U('quantity_invalid'))
 				else
 					TriggerServerEvent('esx_vehicleshop:putStockItems', itemName, count)
 					menu2.close()
@@ -986,9 +1008,11 @@ Citizen.CreateThread(function()
 					ESX.TriggerServerCallback('esx_vehicleshop:giveBackVehicle', function(isRentedVehicle)
 						if isRentedVehicle then
 							ESX.Game.DeleteVehicle(CurrentActionData.vehicle)
-							ESX.ShowNotification(_U('delivered'))
+							--ESX.ShowNotification(_U('delivered'))
+							exports['mythic_notify']:SendAlert('inform', _U('delivered'))
 						else
-							ESX.ShowNotification(_U('not_rental'))
+							--ESX.ShowNotification(_U('not_rental'))
+							exports['mythic_notify']:SendAlert('inform', _U('not_rental'))
 						end
 					end, GetVehicleNumberPlateText(CurrentActionData.vehicle))
 
@@ -997,9 +1021,11 @@ Citizen.CreateThread(function()
 					ESX.TriggerServerCallback('esx_vehicleshop:resellVehicle', function(isOwnedVehicle)
 						if isOwnedVehicle then
 							ESX.Game.DeleteVehicle(CurrentActionData.vehicle)
-							ESX.ShowNotification(_U('vehicle_sold'))
+							--ESX.ShowNotification(_U('vehicle_sold'))
+							exports['mythic_notify']:SendAlert('inform', _U('vehicle_sold'))
 						else
-							ESX.ShowNotification(_U('not_yours'))
+							--ESX.ShowNotification(_U('not_yours'))
+							exports['mythic_notify']:SendAlert('inform', _U('not_yours'))
 						end
 					end, GetVehicleNumberPlateText(CurrentActionData.vehicle), CurrentActionData.price)
 

@@ -138,7 +138,8 @@ function OpenBossMenu(society, close, options)
 				local amount = tonumber(data.value)
 
 				if amount == nil then
-					ESX.ShowNotification(_U('invalid_amount'))
+					--ESX.ShowNotification(_U('invalid_amount'))
+					exports['mythic_notify']:SendAlert('error', _U('invalid_amount'))
 				else
 					menu.close()
 					TriggerServerEvent('esx_society:withdrawMoney', society, amount)
@@ -157,7 +158,8 @@ function OpenBossMenu(society, close, options)
 				local amount = tonumber(data.value)
 
 				if amount == nil then
-					ESX.ShowNotification(_U('invalid_amount'))
+					--ESX.ShowNotification(_U('invalid_amount'))
+					exports['mythic_notify']:SendAlert('error', _U('invalid_amount'))
 				else
 					menu.close()
 					TriggerServerEvent('esx_society:depositMoney', society, amount)
@@ -176,7 +178,8 @@ function OpenBossMenu(society, close, options)
 				local amount = tonumber(data.value)
 
 				if amount == nil then
-					ESX.ShowNotification(_U('invalid_amount'))
+					--ESX.ShowNotification(_U('invalid_amount'))
+					exports['mythic_notify']:SendAlert('error', _U('invalid_amount'))
 				else
 					menu.close()
 					TriggerServerEvent('esx_society:washMoney', society, amount)
@@ -253,7 +256,8 @@ function OpenEmployeeList(society)
 				menu.close()
 				OpenPromoteMenu(society, employee)
 			elseif data.value == 'fire' then
-				ESX.ShowNotification(_U('you_have_fired', employee.name))
+				--ESX.ShowNotification(_U('you_have_fired', employee.name))
+				exports['mythic_notify']:SendAlert('inform', _U('you_have_fired', employee.name))
 
 				ESX.TriggerServerCallback('esx_society:setJob', function()
 					OpenEmployeeList(society)
@@ -302,7 +306,8 @@ function OpenRecruitMenu(society)
 				menu2.close()
 
 				if data2.current.value == 'yes' then
-					ESX.ShowNotification(_U('you_have_hired', data.current.name))
+					--ESX.ShowNotification(_U('you_have_hired', data.current.name))
+					exports['mythic_notify']:SendAlert('inform', _U('you_have_hired', data.current.name))
 
 					ESX.TriggerServerCallback('esx_society:setJob', function()
 						OpenRecruitMenu(society)
@@ -342,7 +347,8 @@ function OpenPromoteMenu(society, employee)
 			elements = elements
 		}, function(data, menu)
 			menu.close()
-			ESX.ShowNotification(_U('you_have_promoted', employee.name, data.current.label))
+			--ESX.ShowNotification(_U('you_have_promoted', employee.name, data.current.label))
+			exports['mythic_notify']:SendAlert('inform', _U('you_have_promoted', employee.name, data.current.label))
 
 			ESX.TriggerServerCallback('esx_society:setJob', function()
 				OpenEmployeeList(society)
@@ -384,9 +390,11 @@ function OpenManageGradesMenu(society)
 				local amount = tonumber(data2.value)
 
 				if amount == nil then
-					ESX.ShowNotification(_U('invalid_amount'))
+					--ESX.ShowNotification(_U('invalid_amount'))
+					exports['mythic_notify']:SendAlert('error', _U('invalid_amount'))
 				elseif amount > Config.MaxSalary then
-					ESX.ShowNotification(_U('invalid_amount_max'))
+					--ESX.ShowNotification(_U('invalid_amount_max'))
+					exports['mythic_notify']:SendAlert('error', _U('invalid_amount_max'))
 				else
 					menu2.close()
 

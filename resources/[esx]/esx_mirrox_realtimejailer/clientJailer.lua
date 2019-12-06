@@ -107,7 +107,7 @@ local playerPed = GetPlayerPed(-1)
       if Config.Clothes.police.prison_wear.female ~= nil then
         TriggerEvent('skinchanger:loadClothes', skin, Config.Clothes.police.prison_wear.female)
       else
-		ESX.ShowNotification('no_outfit')
+		--ESX.ShowNotification('no_outfit')
 		exports['mythic_notify']:DoHudText('error', 'Ingen outfit')
       end
     end

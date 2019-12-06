@@ -82,13 +82,16 @@ function WashVehicle()
 			SetVehicleUndriveable(GetVehiclePedIsUsing(PlayerPedId()), false)
 
 			if Config.EnablePrice then
-				ESX.ShowNotification(_U('wash_successful_paid', Config.Price))
+				--ESX.ShowNotification(_U('wash_successful_paid', Config.Price))
+				exports['mythic_notify']:SendAlert('inform', _U('wash_successful_paid', Config.Price))
 			else
-				ESX.ShowNotification(_U('wash_successful'))
+				--ESX.ShowNotification(_U('wash_successful'))
+				exports['mythic_notify']:SendAlert('success', _U('wash_successful'))
 			end
 			Citizen.Wait(5000)
 		else
-			ESX.ShowNotification(_U('wash_failed'))
+			--ESX.ShowNotification(_U('wash_failed'))
+			exports['mythic_notify']:SendAlert('error', _U('wash_failed'))
 			Citizen.Wait(5000)
 		end
 	end)

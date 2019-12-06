@@ -105,7 +105,8 @@ function DoAction(action)
                     end
                 end)
             else
-                ESX.ShowNotification('Du saknar något..')
+                --ESX.ShowNotification('Du saknar något..')
+                exports['mythic_notify']:SendAlert('error', ('Du saknar något..'))
             end
         end)
     end	
@@ -142,7 +143,8 @@ function DoAction(action)
                     end
                 end)
             else
-                ESX.ShowNotification('Du saknar något..')
+                --ESX.ShowNotification('Du saknar något..')
+                exports['mythic_notify']:SendAlert('error', ('Du saknar något..'))
             end
         end)
     end
@@ -179,7 +181,8 @@ function DoAction(action)
                     end
                 end)
             else
-                ESX.ShowNotification('Du saknar något..')
+                --ESX.ShowNotification('Du saknar något..')
+                exports['mythic_notify']:SendAlert('error', ('Du saknar något..'))
             end
         end)
     end	

@@ -62,7 +62,8 @@ function OpenLSMenu(elems, menuName, menuTitle, parent)
 			if k == data.current.modType or isRimMod then
 
 				if data.current.label == _U('by_default') or string.match(data.current.label, _U('installed')) then
-					ESX.ShowNotification(_U('already_own', data.current.label))
+					--ESX.ShowNotification(_U('already_own', data.current.label))
+					exports['mythic_notify']:SendAlert('error', _U('already_own', data.current.label))
 					TriggerEvent('esx_lscustom:installMod')
 				else
 					local vehiclePrice = 2000

@@ -82,7 +82,8 @@ Citizen.CreateThread(function()
 			if post then
 				menu.submit(data, menu)
 			else
-				ESX.ShowNotification('That input is invalid!')
+				--ESX.ShowNotification('That input is invalid!')
+				exports['mythic_notify']:SendAlert('error', _U('entered_instance'))
 			end
 		end
 

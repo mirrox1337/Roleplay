@@ -38,12 +38,15 @@ TeleportToWaypoint = function()
                     Citizen.Wait(5)
                 end
 
-                ESX.ShowNotification("Teleporterad.")
+                --ESX.ShowNotification("Teleporterad.")
+                exports['mythic_notify']:DoHudText('inform', ("Teleporterad."))
             else
-                ESX.ShowNotification("Placera en GPS puck.")
+                --ESX.ShowNotification("Placera en GPS puck.")
+                exports['mythic_notify']:DoHudText('error', ("Placera en GPS puck."))
             end
         else
-            ESX.ShowNotification("Du har inga rättigheter för att utföra detta.")
+            --ESX.ShowNotification("Du har inga rättigheter för att utföra detta.")
+            exports['mythic_notify']:DoHudText('error', ("Du har inga rättigheter för att utföra detta."))
         end
     end)
 end

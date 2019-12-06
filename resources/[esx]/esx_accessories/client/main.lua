@@ -58,7 +58,8 @@ function SetUnsetAccessory(accessory)
 				TriggerEvent('skinchanger:loadClothes', skin, accessorySkin)
 			end)
 		else
-			ESX.ShowNotification(_U('no_' .. _accessory))
+			--ESX.ShowNotification(_U('no_' .. _accessory))
+			exports['mythic_notify']:SendAlert('error', _U('no_' .. _accessory))
 		end
 
 	end, accessory)
@@ -95,7 +96,8 @@ function OpenShopMenu(accessory)
 						TriggerEvent('esx_skin:getLastSkin', function(skin)
 							TriggerEvent('skinchanger:loadSkin', skin)
 						end)
-						ESX.ShowNotification(_U('not_enough_money'))
+						--ESX.ShowNotification(_U('not_enough_money'))
+						exports['mythic_notify']:SendAlert('error', _U('not_enough_money'))
 					end
 				end)
 			end

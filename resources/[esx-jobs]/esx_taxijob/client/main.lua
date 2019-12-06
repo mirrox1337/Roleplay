@@ -705,7 +705,9 @@ Citizen.CreateThread(function()
 								msg = string.format(_U('take_me_to', GetStreetNameFromHashKey(street[1])))
 							end
 
-							ESX.ShowNotification(msg)
+							--ESX.ShowNotification(msg)
+							exports['mythic_notify']:SendAlert('inform', msg)
+							
 
 							DestinationBlip = AddBlipForCoord(TargetCoords.x, TargetCoords.y, TargetCoords.z)
 
