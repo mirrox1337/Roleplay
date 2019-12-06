@@ -47,14 +47,14 @@ function ClotheShopAdd(menu)
 	local chaussure = _menuPool:AddSubMenu(menu, "Skor","",true,true)
 	local lunette = _menuPool:AddSubMenu(menu, "Glasögon","",true,true)
 	local chapeau = _menuPool:AddSubMenu(menu, "Hatt","",true,true)
-	local gil = _menuPool:AddSubMenu(menu, "Skottsäker vest","",true,true)
+	--local gil = _menuPool:AddSubMenu(menu, "Skottsäker vest","",true,true)
 	local sac = _menuPool:AddSubMenu(menu, "Ryggsäck","",true,true)
 	--local montre = _menuPool:AddSubMenu(menu, "Montre","",true,true)
 	local chain = _menuPool:AddSubMenu(menu, "Halsband","",true,true)
 	local boucle = _menuPool:AddSubMenu(menu, "Örhänge","",true,true)
 
  	chaussureFct(chaussure)
- 	gilFct(gil)
+ 	--gilFct(gil)
  	basFct(bas)
  	casqueFct(chapeau)
 	torsomenu(bras)
@@ -121,7 +121,7 @@ function SavedTenues(menu)
 		for i = 1, #skin,1 do
 			local m = _menuPool:AddSubMenu(menu, skin[i].label,"",true,true)
 			p = NativeUI.CreateItem("Sätt på outfit","")
-			k = NativeUI.CreateItem("ÅTERINSÄTTA","")
+			k = NativeUI.CreateItem("Byt Namn på outfit","")
 			l = NativeUI.CreateItem("Ta bort outfit","")
 			m:AddItem(p)
 			m:AddItem(k)
@@ -757,15 +757,15 @@ function basFct(menu)
 		botItem = {
 			"Jeans",
 			"Jeans",
-			"Short",
-			"Survetement",
+			"Shorts",
+			"Träningsbyxor",
 			"Jeans",
-			"Survetement large",
-			"Short",
+			"Träningsbyxor",
+			"Shorts",
 			"Jeans",
-			"Pantalon chino",
-			"Pantalon chino avec ceinture",
-			"Jeans noir",
+			"Chinos",
+			"Chinos med bälte",
+			"Svarta Jeans",
 			"/",
 			"Short","Jeans noir ceinture","Caleçon","Short","Short coloré","Short chino","Caleçon","Pantalon ceinture","Pantalon","Caleçon","Pantalon chino","Pantalon chino ceinture","Jeans noir","Jeans noir","Jeans motif","Pantalon coloré","Jeans noir","Pantalon spécial","Pantalon aviateur","Pantalon cours","Legging","Pantalon large","Pantalon opération","Pantalon classe","Pantalon ouvrier","Pantalon classe","Pantalon de papel","Pantalon de papel","Survetement cours","Pantalon aviateur","Short long","Jeans large","/","Survêtement","Pantalon de combat","Pantalon déterminé","Pantalon classe","Pantalon classe","Pantalon classe","Pantalon luxe","Pantalon luxe","Pantalon luxe","Short motif", "Survêtement","Jupe","Pantalon noël","Pantalon spécial","Pantalon de luttin","Pantalon à motif","Caleçon","Short long","Jeans","Survêtement","Pyjama","Pantalon chill","Pantalon parachutiste","Pantalon cowboy","Pantalon de la mort","Pantalon cowboy","Pantalon skinny","Pantalon skinny","Pantalon skinny","Pantalon skinny","Jeans","Jeans","Pantalon Tron","Survêtement","Pantalon cuir","Pantalon trop petit","Pantalon trop petit","Jeans","Pantalon latex","Pantalon Opération Spécial","Pantalon lumineux"
 
@@ -1115,7 +1115,7 @@ function boucleFct(menu)
 		SetPedPropIndex(playerPed, 2, index6-1, 0, 2)
 		index2 = 1
 		menu.OnListSelect = function(_, _, _)
-			TriggerServerEvent("parow:SetNewMasque",index6-1,index2-1,"Boucle",boucleItem[index6],2)
+			TriggerServerEvent("parow:SetNewMasque",index6-1,index2-1,"Örhänge",boucleItem[index6],2)
 		end
 		menu.OnListChange = function(_, _, index26)
 			index2 = index26
@@ -1141,7 +1141,7 @@ function lunetteFct(menu)
 		"Lunette de soleil",
 		"Aucune",
 		"Lunette de soleil",
-		"Lunette",
+		"Glassögon",
 		"Lunette sport",
 		"Lunette mafieux",
 		"Aucune",
@@ -1151,7 +1151,7 @@ function lunetteFct(menu)
 		"Lunette sport",
 		"Lunette sport",
 		"Lunette teinté",
-		"Lunette",
+		"Glassögon",
 		"Fausse lunette",
 		"Lunette moderne",
 		"Lunette america",
@@ -1173,7 +1173,7 @@ function lunetteFct(menu)
 			
 		end
 		if lunetteItem[i] == nil then
-			lunetteItem[i] = "Solglasögon #"..i
+			lunetteItem[i] = "Glasögon #"..i
 		end
 		x = NativeUI.CreateListItem(lunetteItem[ind], amount, 1, "",5)
 	
@@ -1192,7 +1192,7 @@ function lunetteFct(menu)
 		
 		menu.OnListSelect = function(_, _, _)
 			print(index2)
-			TriggerServerEvent("parow:SetNewMasque",index6-1,index2-1,"Lunette",lunetteItem[index6],1)
+			TriggerServerEvent("parow:SetNewMasque",index6-1,index2-1,"Glasögon",lunetteItem[index6],1)
 
 
 		end
@@ -1248,7 +1248,7 @@ playerPed = GetPlayerPed(-1)
 		"Casquette à l'envers",
 		"Casquette",
 		"",
-		"Chapeau",
+		"Hatt",
 		"Chapeau Cowboy",
 		"Bandana",
 		"Casque de musique",
@@ -1261,12 +1261,12 @@ playerPed = GetPlayerPed(-1)
 		"Chapeau de noël",
 		"Chapeau de lutin",
 		"Corne de noël",
-		"Chapeau",
+		"Hatt",
 		"Chapeau melon",
 		"Chapeau haut",
 		"Bonnet",
-		"Chapeau",
-		"Chapeau",
+		"Hatt",
+		"Hatt",
 		"Chapeau USA",
 		"Chapeau USA",
 		"Chapeau USA",
@@ -1298,9 +1298,9 @@ playerPed = GetPlayerPed(-1)
 		"Casquette",
 		"Casque",
 		"Casquette",
-		"Chapeau",
+		"Hatt",
 		"Casque",
-		"Chapeau",
+		"Hatt",
 		"Casquette"
 		
 	}
@@ -1335,7 +1335,7 @@ playerPed = GetPlayerPed(-1)
 		SetPedPropIndex(playerPed, 0, index6-1, 0, 2)
 		menu.OnListSelect = function(_, _, _)
 			pdka = index2 - 1 
-			TriggerServerEvent("parow:SetNewMasque",index6-1,pdka,	"Chapeau",chapeauItem[index6],0)
+			TriggerServerEvent("parow:SetNewMasque",index6-1,pdka,	"Hatt",chapeauItem[index6],0)
 		end
 		menu.OnListChange = function(_, _, index26)
 			index2 = index26
@@ -1551,9 +1551,9 @@ function RefreshData()
     end)
 end
 function maskMenu(menu)
-    local accessories = { "Masque", "Chapeau", "Lunette", "Boucles d'oreille", "Gilet par balles" }
+    local accessories = { "Mask", "Hatt", "Glasögon", "Örhängen", "Skottsäker Väst" }
     local accessoriesIndex = { "mask", "hat", "glasses", "ears", "gilet" }
-    xss = NativeUI.CreateListItem("Enlever", accessories, 1, "")
+    xss = NativeUI.CreateListItem("Ta av", accessories, 1, "")
     menu:AddItem(xss)
     menu.OnListSelect = function(m, item, index)
         if item == xss then
@@ -1583,7 +1583,7 @@ function maskMenu(menu)
         result = MaskTab
         --(json.encode(result))
         if #result == 0 then
-            u = NativeUI.CreateItem("Tomt", "")
+            u = NativeUI.CreateItem("Du har inga accessoarer", "")
             menu:AddItem(u)
         else
 
@@ -1592,10 +1592,10 @@ function maskMenu(menu)
 				_menuPool:RefreshIndex()
                 local xfvde = _menuPool:AddSubMenu(menu, result[i].label, "", 5, 200)
 
-                xl = NativeUI.CreateItem("Équiper", "")
-                xc = NativeUI.CreateItem("Renommer", "")
-                xv = NativeUI.CreateItem("Donner", "")
-                xb = NativeUI.CreateItem("Jeter", "")
+                xl = NativeUI.CreateItem("Sätt på", "")
+                xc = NativeUI.CreateItem("Byt namn", "")
+                xv = NativeUI.CreateItem("Ge bort", "")
+                xb = NativeUI.CreateItem("Kasta", "")
                 xfvde:AddItem(xl)
                 xfvde:AddItem(xc)
                 xfvde:AddItem(xv)
@@ -1609,7 +1609,7 @@ function maskMenu(menu)
                         dos = k.mask_2
                         typos = result[i].type
                         --(typos)
-                        if typos == "Masque" then
+                        if typos == "Mask" then
 
                             if ped then
                                 local dict = 'missfbi4'
@@ -1631,7 +1631,7 @@ function maskMenu(menu)
                                 Citizen.Wait(200)
                                 ClearPedTasks(playerPed)
                             end
-                        elseif typos == "Lunette" then
+                        elseif typos == "Glassögon" then
 
                             if ped then
                                 local dict = 'clothingspecs'
@@ -1654,7 +1654,7 @@ function maskMenu(menu)
                                 ClearPedTasks(playerPed)
                             end
 
-                        elseif typos == "Chapeau" then
+                        elseif typos == "Hatt" then
 
                             if ped then
                                 local dict = 'missheistdockssetup1hardhat@'
@@ -1676,7 +1676,7 @@ function maskMenu(menu)
                                 Citizen.Wait(200)
                                 ClearPedTasks(playerPed)
                             end
-                        elseif typos == "Boucle" then
+                        elseif typos == "Örhänge" then
 
                             if ped then
                                 local dict = 'mp_masks@standard_car@rps@'
@@ -1728,7 +1728,7 @@ function maskMenu(menu)
                         local closestPed = GetPlayerPed(closestPlayer)
 
                         if IsPedSittingInAnyVehicle(closestPed) then
-                            ESX.ShowNotification('~r~Impossible de donner un objet dans un véhicule')
+                            ESX.ShowNotification('~r~Kan inte ge ett föremål i ett fordon')
                             return
                         end
 
@@ -1744,7 +1744,7 @@ function maskMenu(menu)
                             menumbk:RemoveItemAt(i+1)
 
                         else
-                            ESX.ShowNotification("~r~Aucun joueurs proche")
+                            ESX.ShowNotification("~r~Inga spelare i närheten")
 
                         end
 

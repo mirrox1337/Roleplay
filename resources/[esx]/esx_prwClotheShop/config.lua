@@ -2,8 +2,8 @@ ConfigclotheShop                            = {}
 ConfigclotheShop.DrawDistance = 100.0
 ConfigclotheShop.Size         = {x = 1.8, y = 1.8, z = 0.1}
 ConfigclotheShop.Color        = {r = 23, g = 185, b = 12}
-ConfigclotheShop.Type         = 1
-ConfigclotheShop.Locale = 'fr'
+ConfigclotheShop.Type         = 27
+ConfigclotheShop.Locale = 'sv'
 ConfigclotheShop.Zones = {
 
 Vet = {

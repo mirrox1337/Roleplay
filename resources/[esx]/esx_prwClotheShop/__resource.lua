@@ -4,3 +4,7 @@ server_script '@mysql-async/lib/MySQL.lua'
 client_script "config.lua"
 client_script 'cl_clothes.lua'
 server_script 'sv_clothes.lua'
+
+exports {
+    'OpenAccessMenus'
+}
