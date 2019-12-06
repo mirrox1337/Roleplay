@@ -24,6 +24,7 @@ client_scripts {
     'utils.lua',
     'locales/cs.lua',
     'locales/en.lua',	
+    'locales/sv.lua',
 }
 
 server_scripts {
@@ -47,6 +48,7 @@ server_scripts {
     'utils.lua',
 	'locales/cs.lua',
     'locales/en.lua',
+    'locales/sv.lua',
 }
 
 files {
