@@ -17,7 +17,7 @@ Config.WeaponClasses = {
 }
 
 Config.WoundStates = {
-    'Verker',
+    'Värker',
     'Måttlig Smärta',
     'Extrem Smärta',
     'Outhärdligt Smärta',
