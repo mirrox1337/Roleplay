@@ -1,27 +1,27 @@
-$primary: rgba(0, 0, 0, 0.8);
+$primary: rgba(35, 39, 42, 1);
 $accent: white;
-$border: #771282;
+$border: #40E0D0;
 
-$scroll-thumb: rgba(255, 255, 255, 0.38);
+$scroll-thumb: rgba(44, 47, 51, 1);
 $scroll-background: transparent;
 
-$ui-background: rgba(0, 0, 0, 0.8);
-$inv-background: rgba(0, 0, 0, 0.2);
+$ui-background: rgba(0, 0, 0, 0.65);
+$inv-background: rgba(0, 0, 0, 0.29);
 
-$disabled-control: rgba(150, 54, 54, 0.81) !important;
+$disabled-control: #d11141 !important;
 
-$slot: rgba(0, 0, 0, 0.8);
-$slot-player: rgba(0, 0, 0, 0.8) !important;
-$slot-temporary: rgba(0, 0, 0, 0.8) !important;
-$slot-storage: rgba(0, 0, 0, 0.8)!important;
-$slot-evidence: rgba(0, 0, 0, 0.8) !important;
-$slot-shop: rgba(0, 0, 0, 0.8) !important;
+$slot: rgba(44, 47, 51, 0.38);
+$slot-player: rgba(44, 47, 51, 0.38) !important;
+$slot-temporary: rgba(44, 47, 51, 0.38) !important;
+$slot-storage: rgba(35, 39, 42, 1) !important;
+$slot-evidence: rgba(44, 47, 51, 0.38) !important;
+$slot-shop: rgba(35, 39, 42, 1) !important;
 
-$slot-dragging: rgba(0, 0, 0, 0.8);
-$slot-error: rgba(255, 0, 0, 0.8);
-$slot-used: rgba(0, 0, 0, 0.75);
+$slot-dragging: rgba(44, 47, 51, 0.38);
+$slot-error: #d11141;
+$slot-used: rgba(35, 39, 42, 1) !important;
 
-$hotkey-text: white;
-$hotkey-background: rgba(0, 0, 0, 0.8);
-$item-name-background: rgba(0, 0, 0, 0.8);
-$item-name-text: white;
+$hotkey-text: #ffffff;
+$hotkey-background: rgba(44, 47, 51, 0.38);
+$item-name-background: rgba(35, 39, 42, 1);
+$item-name-text: #ffffff;

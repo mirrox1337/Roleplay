@@ -192,7 +192,7 @@ function IsInAladdinFiskebutikZone(coords)
     AladdinFiskebutik = Config.Shops.AladdinFiskebutik.Locations
     for i = 1, #AladdinFiskebutik, 1 do
         if GetDistanceBetweenCoords(coords, AladdinFiskebutik[i].x, AladdinFiskebutik[i].y, AladdinFiskebutik[i].z, true) < 1.5 then
-            DrawMarker(27, AladdinFiskebutik[i].x, AladdinFiskebutik[i].y, AladdinFiskebutik[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 119, 18, 130, 255, false, false, 2, true, false, false, false)
+            DrawMarker(27, AladdinFiskebutik[i].x, AladdinFiskebutik[i].y, AladdinFiskebutik[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 64, 224, 208, 255, false, false, 2, true, false, false, false)
             return true
         end
     end
@@ -203,7 +203,7 @@ function IsInDealerZone(coords)
     Dealer = Config.Shops.Dealer.Locations
     for i = 1, #Dealer, 1 do
         if GetDistanceBetweenCoords(coords, Dealer[i].x, Dealer[i].y, Dealer[i].z, true) < 1.5 then
-            DrawMarker(27, Dealer[i].x, Dealer[i].y, Dealer[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 119, 18, 130, 255, false, false, 2, true, false, false, false)
+            DrawMarker(27, Dealer[i].x, Dealer[i].y, Dealer[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 64, 224, 208, 255, false, false, 2, true, false, false, false)
             return true
         end
     end
@@ -214,7 +214,7 @@ function IsInMohammedsLivsZone(coords)
     MohammedsLivs = Config.Shops.MohammedsLivs.Locations
     for i = 1, #MohammedsLivs, 1 do
         if GetDistanceBetweenCoords(coords, MohammedsLivs[i].x, MohammedsLivs[i].y, MohammedsLivs[i].z, true) < 1.5 then
-            DrawMarker(27, MohammedsLivs[i].x, MohammedsLivs[i].y, MohammedsLivs[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 119, 18, 130, 255, false, false, 2, true, false, false, false)
+            DrawMarker(27, MohammedsLivs[i].x, MohammedsLivs[i].y, MohammedsLivs[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 64, 224, 208, 255, false, false, 2, true, false, false, false)
             return true
         end
     end
@@ -225,7 +225,7 @@ function IsInPrisonShopZone(coords)
     PrisonShop = Config.Shops.PrisonShop.Locations
     for i = 1, #PrisonShop, 1 do
         if GetDistanceBetweenCoords(coords, PrisonShop[i].x, PrisonShop[i].y, PrisonShop[i].z, true) < 1.5 then
-            DrawMarker(27, PrisonShop[i].x, PrisonShop[i].y, PrisonShop[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 119, 18, 130, 255, false, false, 2, true, false, false, false)
+            DrawMarker(27, PrisonShop[i].x, PrisonShop[i].y, PrisonShop[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 64, 224, 208, 255, false, false, 2, true, false, false, false)
             return true
         end
     end
@@ -256,7 +256,7 @@ function IsInUrbicusBarZone(coords)
     UrbicusBar = Config.Shops.UrbicusBar.Locations
     for i = 1, #UrbicusBar, 1 do
         if GetDistanceBetweenCoords(coords, UrbicusBar[i].x, UrbicusBar[i].y, UrbicusBar[i].z, true) < 1.5 then
-            DrawMarker(27, UrbicusBar[i].x, UrbicusBar[i].y, UrbicusBar[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 119, 18, 130, 255, false, false, 2, true, false, false, false)
+            DrawMarker(27, UrbicusBar[i].x, UrbicusBar[i].y, UrbicusBar[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 64, 224, 208, 255, false, false, 2, true, false, false, false)
             return true
         end
     end
@@ -267,7 +267,7 @@ function IsInSjukhusZone(coords)
     Sjukhus = Config.Shops.Sjukhus.Locations
     for i = 1, #Sjukhus, 1 do
         if GetDistanceBetweenCoords(coords, Sjukhus[i].x, Sjukhus[i].y, Sjukhus[i].z, true) < 1.5 then
-            DrawMarker(27, Sjukhus[i].x, Sjukhus[i].y, Sjukhus[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 119, 18, 130, 255, false, false, 2, true, false, false, false)
+            DrawMarker(27, Sjukhus[i].x, Sjukhus[i].y, Sjukhus[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 64, 224, 208, 255, false, false, 2, true, false, false, false)
             return true
         end
     end
@@ -278,7 +278,7 @@ function IsInGymZone(coords)
     Gym = Config.Shops.Gym.Locations
     for i = 1, #Gym, 1 do
         if GetDistanceBetweenCoords(coords, Gym[i].x, Gym[i].y, Gym[i].z, true) < 1.5 then
-            DrawMarker(27, Gym[i].x, Gym[i].y, Gym[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 119, 18, 130, 255, false, false, 2, true, false, false, false)
+            DrawMarker(27, Gym[i].x, Gym[i].y, Gym[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 0.5, 64, 224, 208, 255, false, false, 2, true, false, false, false)
             return true
         end
     end

@@ -225,7 +225,7 @@ Citizen.CreateThread(function()
 			if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 15.0)then
 				if not holdingup then
 					--DrawMarker(27, v.position.x, v.position.y, v.position.z-0.9, 0, 0, 0, 0, 0, 0, 2.001, 2.0001, 0.5001, 255, 0, 0, 200, 0, 0, 0, 0)
-					DrawMarker(27, v.position.x, v.position.y, v.position.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1, 119, 18, 130, 225, false, true, 2, true, false, false, false)
+					DrawMarker(27, v.position.x, v.position.y, v.position.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1, 64, 224, 208, 225, false, true, 2, true, false, false, false)
 
 					if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 1.0)then
 						if (incircle == false) then

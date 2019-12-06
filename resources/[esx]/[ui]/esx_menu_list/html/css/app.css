@@ -11,7 +11,7 @@
 
 .menu button {
 	font-family: 'Alata', sans-serif;
-	background-color: #007777;
+	background-color: #40E0D0;
 	color: white;
 	border: none;
 }
@@ -24,7 +24,7 @@
 }
 
 .menu>table>thead {
-	background-color: #007777;
+	background-color: #40E0D0;
 	text-align: center;
 	height: 40px;
 	line-height: 40px;
@@ -38,10 +38,10 @@
 
 .menu tbody tr:nth-child(even) {
 	background:   rgba(44, 47, 51, 0.99);
-	color: #007777;
+	color: #40E0D0;
 }
 
 .menu tbody tr:nth-child(odd) {
 	background:   rgba(35, 39, 42, 0.99);
-	color: #007777;
+	color: #40E0D0;
 }
