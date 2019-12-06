@@ -93,7 +93,7 @@ end)
 AddEventHandler('esx:onRemoveInventoryItem', function(source, item, count)
     local player = ESX.GetPlayerFromId(source)
     TriggerClientEvent('disc-inventoryhud:showItemUse', source, {
-        { id = item.name, label = item.label, qty = count, msg = 'Föremål Användes' }
+        { id = item.name, label = item.label, qty = count, msg = _U('used') }
     })
     applyToInventory(player.identifier, 'player', function(inventory)
         if impendingRemovals[source] then
