@@ -83,7 +83,7 @@ Config.Shops = {
         msg = '~INPUT_CONTEXT~ för att handla på den ~r~svarta marknaden~s~',
         job = 'all'
     },
-    ['TwentyFourSeven'] = {
+    ['7-Eleven'] = {
         coords = {
             vector3(373.875, 325.896, 103.566),
             vector3(2557.458, 382.282, 106.622),
@@ -93,37 +93,20 @@ Config.Shops = {
             vector3(1961.464, 3740.672, 32.343),
             vector3(2678.916, 3280.671, 55.241),
             vector3(1729.563, 6414.126, 36.037),
-            vector3(26.18, -1347.37, 29.5),
         },
         items = {
             { name = "bread", price = 25, count = 1 },
             { name = "water", price = 20, count = 1 },
         },
-        markerType = 1,
-        markerColour = { r = 255, g = 255, b = 255 },
+        blipSprite = 52,
+        blipColour = 15,
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
         msg = '~INPUT_CONTEXT~ för att handla på ~g~TwentyFourSeven~s~',
-        enableBlip = false,
+        enableBlip = true,
         job = 'all'
     },
     ['Systembolaget'] = {
-        coords = {
-            vector3(-48.519, -1757.514, 29.421),
-            vector3(1163.373, -323.801, 68.205),
-            vector3(-707.501, -914.260, 19.215),
-            vector3(-1820.523, 792.518, 138.118),
-            vector3(1698.388, 4924.404, 42.063),
-        },
-        items = {
-            { name = "beer", price = 25, count = 1 },
-            { name = "jager", price = 40, count = 1 },
-        },
-        markerType = 1,
-        markerColour = { r = 255, g = 255, b = 255 },
-        msg = '~INPUT_CONTEXT~ för att handla på ~g~Systembolaget~s~',
-        enableBlip = false,
-        job = 'all'
-    },
-    ['Macken'] = {
         coords = {
             vector3(1135.808, -982.281, 46.415),
             vector3(-1222.915, -906.983, 12.326),
@@ -131,16 +114,40 @@ Config.Shops = {
             vector3(-2968.243, 390.910, 15.043),
             vector3(1166.024, 2708.930, 38.157),
             vector3(1392.562, 3604.684, 34.980),
+            vector3(-1393.409, -606.624, 30.319),
+            vector3(-559.906, 287.093, 82.176),
+        },
+        items = {
+            { name = "beer", price = 25, count = 1 },
+            { name = "jager", price = 40, count = 1 },
+        },
+        blipSprite = 93,
+        blipColour = 69,
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        msg = '~INPUT_CONTEXT~ för att handla på ~g~Systembolaget~s~',
+        enableBlip = true,
+        job = 'all'
+    },
+    ['Macken'] = {
+        coords = {
+            vector3(-48.519, -1757.514, 29.421),
+            vector3(1163.373, -323.801, 69.205),
+            vector3(-707.501, -914.260, 19.215),
+            vector3(-1820.523, 792.518, 138.118),
+            vector3(1698.388, 4924.404, 42.063),
         },
         items = {
             { name = "cigaretter", price = 50, count = 1 },
             { name = "lighter", price = 10, count = 1 },
             { name = "snusdosa", price = 40, count = 1 },
         },
-        markerType = 1,
-        markerColour = { r = 255, g = 255, b = 255 },
-        msg = 'Open Shop ~INPUT_CONTEXT~',
-        enableBlip = false,
+        blipSprite = 361,
+        blipColour = 63,
+        markerType = 27,
+        markerColour = { r = 196, g = 42, b = 190 },
+        msg = '~INPUT_CONTEXT~ för att handla på ~g~Macken~s~',
+        enableBlip = true,
         job = 'all'
     },
 }

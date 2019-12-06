@@ -1,13 +1,14 @@
 ﻿Locales['cs'] = {
- -- Client side
-    ['used'] = "Předmět byl použit",
-    ['keyshop'] = "Stiskni ~INPUT_CONTEXT~ pro otevreni obchodu",
-    ['keystash'] = "Stiskni ~INPUT_CONTEXT~ pro otevreni uschovny",
--- Server side
-    ['drop'] = "Zahodit",
-    ['glove'] = "Přihrádka",
-    ['player'] = "Hráč",
-    ['shop'] = "Obchod",
-    ['stash'] = "Úschovna",
-    ['trunk'] = "Kufr",
-} 
+    -- Client side
+       ['used'] = "Item Used",
+       ['keyshop'] = "Press ~INPUT_CONTEXT~ to open Shop",
+       ['keystash'] = "Press ~INPUT_CONTEXT~ to open Stash",
+   -- Server side
+       ['drop'] = "Drop",
+       ['glove'] = "Glove Box",
+       ['player'] = "Player",
+       ['shop'] = "Shop",
+       ['stash'] = "Stash",
+       ['trunk'] = "Trunk-",
+       ['added'] = "Item Added",
+   } 

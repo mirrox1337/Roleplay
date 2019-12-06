@@ -86,8 +86,6 @@ AddEventHandler("esx_cigarett:openCigarettes", function(item)
         Citizen.Wait(0)
       end
       TaskPlayAnim(playerped, dict, "idle_a", 8.0, -16.0, -1, 1, 0, false, false, false)
-    exports['t0sic_loadingbar']:loadingbar ('Öppnar cigarettpaket...', 3000)
-        Citizen.Wait(3000)
       ClearPedTasks(GetPlayerPed(-1))
 
       --ESX.ShowNotification('Du öppnade ditt paket och tog ut cigaretterna')
