@@ -17,7 +17,7 @@
 local targetPed;
 local useLocalPed = true;
 local isRunning = false;
-local scriptVersion = "1.3.5";
+local scriptVersion = "1.3.4";
 local animStates = {}
 local displayingPluginScreen = false;
 local HeadBone = 0x796e;
@@ -125,7 +125,7 @@ local function clientProcessing()
 
 			for _, channel in pairs(voip.myChannels) do
 				if (channel.subscribers[voip.serverId] and channel.subscribers[playerServerId] and voip.myChannels[remotePlayerChannel] and remotePlayerUsingRadio) then
-					if (remotePlayerChannel <= voip.config.radioClickMaxChannel) then
+					if (remotePlayerChannel <= 100) then
 						tbl.radioEffect = true;
 					end
 					tbl.volume = 0;
@@ -322,8 +322,3 @@ AddEventHandler("updateVoipTargetPed", function(newTargetPed, useLocal)
 	targetPed = newTargetPed
 	useLocalPed = useLocal
 end)
-
--- Make exports available on first tick
-exports("addPlayerToRadio", addPlayerToRadio);
-exports("removePlayerFromRadio", removePlayerFromRadio);
-exports("isPlayerInChannel", isPlayerInChannel);

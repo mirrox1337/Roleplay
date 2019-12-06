@@ -196,9 +196,9 @@ function checkPluginStatus() {
 
 function checkPluginVersion() {
 	if (isPluginVersionCorrect()) {
-		document.getElementById('pluginVersion').innerHTML = `Plugin version: <font color="green">${voip.pluginVersion}</font> (up-to-date)`;
+		document.getElementById('pluginVersion').innerHTML = `Plugin Version: <font color="green">${voip.pluginVersion}</font> (up-to-date)`;
 	} else {
-		document.getElementById('pluginVersion').innerHTML = `Plugin version: <font color="red">${voip.pluginVersion}</font> (Required: ${voip.minVersion})`;
+		document.getElementById('pluginVersion').innerHTML = `Plugin Version: <font color="red">${voip.pluginVersion}</font> (Required: ${voip.minVersion})`;
 		voipStatus = INCORRECT_VERSION;
 	}
 }
@@ -214,6 +214,9 @@ function displayPluginScreen(toggle) {
 
 function updateTokovoipInfo(msg) {
 	document.getElementById('tokovoipInfo').style.fontSize = '12px';
+	document.getElementById('tokovoipInfo').style.top = '96.3%';
+	document.getElementById('tokovoipInfo').style.left = '16%';
+	
 	let screenMessage;
 
 	switch (voipStatus) {
@@ -222,22 +225,22 @@ function updateTokovoipInfo(msg) {
 			color = 'red';
 			break;
 		case PLUGIN_INITIALIZING:
-			msg = 'Initializing';
-			color = 'red';
+			msg = 'Initierar';
+			color = 'yellow';
 			break;
 		case WRONG_SERVER:
-			msg = `Connected to the wrong TeamSpeak server, please join the server: <font color="#01b0f0">${voip.plugin_data.TSServer}</font>`;
-			screenMessage = 'Wrong TeamSpeak server';
+			msg = `Du är ansluten till fel TeamSpeak Server, Anslut till: <font color="#007777">${voip.plugin_data.TSServer}</font>`;
+			screenMessage = 'Fel TeamSpeak Server';
 			color = 'red';
 			break;
 		case WRONG_CHANNEL:
-			msg = `Connected to the wrong TeamSpeak channel, please join the channel: <font color="#01b0f0">${voip.plugin_data.TSChannelWait && voip.plugin_data.TSChannelWait !== '' && voip.plugin_data.TSChannelWait || voip.plugin_data.TSChannel}</font>`;
-			screenMessage = 'Wrong TeamSpeak channel';
+			msg = `Du ansluten till fel TeamSpeak Kanal, Anslut till: <font color="#007777">${voip.plugin_data.TSChannelWait && voip.plugin_data.TSChannelWait !== '' && voip.plugin_data.TSChannelWait || voip.plugin_data.TSChannel}</font>`;
+			screenMessage = 'Fel TeamSpeak Kanal';
 			color = 'red';
 			break;
 		case INCORRECT_VERSION:
-			msg = 'Using incorrect plugin version';
-			screenMessage = 'Incorrect plugin version';
+			msg = 'Felaktig Plugin Version';
+			screenMessage = 'Använder felaktig Plugin Version';
 			color = 'red';
 			break;
 		case OK:
@@ -247,13 +250,13 @@ function updateTokovoipInfo(msg) {
 	if (msg) {
 		document.getElementById('tokovoipInfo').innerHTML = `<font color="${color}">[TokoVoip] ${msg}</font>`;
 	}
-	document.getElementById('pluginStatus').innerHTML = `Plugin status: <font color="${color}">${screenMessage || msg}</font>`;
+	document.getElementById('pluginStatus').innerHTML = `Plugin Status: <font color="${color}">${screenMessage || msg}</font>`;
 }
 
 function updateConfig(payload) {
 	voip = payload;
-	document.getElementById('TSServer').innerHTML = `TeamSpeak server: <font color="#01b0f0">${voip.plugin_data.TSServer}</font>`;
-	document.getElementById('TSChannel').innerHTML = `TeamSpeak channel: <font color="#01b0f0">${(voip.plugin_data.TSChannelWait) ? voip.plugin_data.TSChannelWait : voip.plugin_data.TSChannel}</font>`;
+	document.getElementById('TSServer').innerHTML = `TeamSpeak Server IP: <font color="#007777">${voip.plugin_data.TSServer}</font>`;
+	document.getElementById('TSChannel').innerHTML = `TeamSpeak Kanal: <font color="#007777">${(voip.plugin_data.TSChannelWait) ? voip.plugin_data.TSChannelWait : voip.plugin_data.TSChannel}</font>`;
 	document.getElementById('TSDownload').innerHTML = voip.plugin_data.TSDownload;
 	document.getElementById('TSChannelSupport').innerHTML = voip.plugin_data.TSChannelSupport;
 }

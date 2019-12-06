@@ -1,9 +1,14 @@
 TokoVoipConfig = {
 	channels = {
-		{name = "Call PD Radio", subscribers = {}},
-		{name = "EMS Radio", subscribers = {}},
-		{name = "PD/SO/EMS Shared Radio", subscribers = {}},
-		{name = "SO Radio", subscribers = {}},
-		{name = "PD/SO Shared Radio", subscribers = {}}
+		{name = "Polis Sambandskanal", subscribers = {}},
+		{name = "Sjukvård Sambandskanal", subscribers = {}},
+		{name = "Securitas Sambandskanal", subscribers = {}},
+		{name = "Sambandskanal", subscribers = {}},
+		{name = "Polis & Sjukvård Sambandskanal", subscribers = {}},
+		{name = "Polis & Securitas Sambandskanal", subscribers = {}},
+		{name = "Sjukvård & Securitas Sambandskanal", subscribers = {}},
+		{name = "Reserv 1", subscribers = {}},
+		{name = "Reserv 2", subscribers = {}},
+		{name = "Reserv 3", subscribers = {}},
 	}
 };
