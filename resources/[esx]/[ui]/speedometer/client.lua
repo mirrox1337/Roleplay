@@ -2,7 +2,7 @@ local ind = {l = false, r = false}
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(80)
+		Citizen.Wait(200)
 		local Ped = GetPlayerPed(-1)
 		if(IsPedInAnyVehicle(Ped)) then
 			local PedCar = GetVehiclePedIsIn(Ped, false)
@@ -92,7 +92,7 @@ end
 -- Consume fuel factor
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(100)
+		Citizen.Wait(500)
 		local Ped = GetPlayerPed(-1)
 		if(IsPedInAnyVehicle(Ped)) then
 			local PedCar = GetVehiclePedIsIn(Ped, false)
