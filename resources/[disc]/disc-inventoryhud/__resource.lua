@@ -22,7 +22,7 @@ client_scripts {
     'common/drop.lua',
     'common/weapons.lua',
     'utils.lua',
-    'locales/cs.lua',
+    --'locales/cs.lua',
     'locales/en.lua',	
     'locales/sv.lua',
 }
@@ -46,7 +46,7 @@ server_scripts {
     'common/drop.lua',
     'common/weapons.lua',
     'utils.lua',
-	'locales/cs.lua',
+	--'locales/cs.lua',
     'locales/en.lua',
     'locales/sv.lua',
 }

@@ -166,7 +166,7 @@ Config.Stash = {
         msg = '~INPUT_CONTEXT~ för att öppna ~g~Förråd~s~'
     },
     ['Sjukvård Förråd'] = {
-        coords = vector3(342.25, -586.19, 42.35),
+        coords = vector3(349.25, -560.0, 27.8),
         size = vector3(1.0, 1.0, 1.0),
         job = 'ambulance',
         markerType = 27,
