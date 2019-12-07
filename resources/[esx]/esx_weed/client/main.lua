@@ -83,7 +83,7 @@ AddEventHandler('esx_weed:roll', function()
     TaskPlayAnim(GetPlayerPed(-1), "mp_weapons_deal_sting", "crackhead_bag_loop", 1.0, -1.0, 5000, 0, 1, true, true, true) -- animation
     Citizen.Wait(5500)
     --ESX.ShowNotification('Du rullade ihop 5 ~g~jointar')
-    exports['mythic_notify']:DoHudText('inform', ('Du rullade ihop 5 jointar'))
+    exports['mythic_notify']:SendAlert('inform', ('Du rullade ihop 5 jointar'))
     ClearPedTasksImmediately(GetPlayerPed(-1))
 end)
 
@@ -174,7 +174,7 @@ function openWeedMenu(x, y, z, spot)
             end
         else
             --ESX.ShowNotification('Du kan ~r~ej~s~ göra det i ett fordon')
-            exports['mythic_notify']:DoHudText('error', ('Du kan ej göra det i ett fordon'))
+            exports['mythic_notify']:SendAlert('error', ('Du kan ej göra det i ett fordon'))
         end
 
     end,

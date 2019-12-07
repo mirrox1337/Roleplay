@@ -241,7 +241,7 @@ Citizen.CreateThread(function()
 									print(itemState)
 
 								else
-									--exports['mythic_notify']:DoHudText('inform', _U('need_bag'))
+									--exports['mythic_notify']:SendAlert('inform', _U('need_bag'))
 									exports['mythic_notify']:SendAlert('inform', 'Du är inte redo för detta.', 2500, { ['background-color'] = '#bf0c00', ['color'] = '#fff' })
 
 								end				

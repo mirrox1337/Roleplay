@@ -75,7 +75,7 @@ function LoadSellPlace()
 							OpenSellMenu(GetVehiclePedIsUsing(ped))
 						else
 							--ESX.ShowNotification("Du måste sitta i ett ~g~fordon")
-							exports['mythic_notify']:DoHudText('error', ("Du måste sitta i ett fordon"))
+							exports['mythic_notify']:SendAlert('error', ("Du måste sitta i ett fordon"))
 						end
 					end
 				end
@@ -98,7 +98,7 @@ function LoadSellPlace()
 								OpenSellMenu(Config.VehiclePositions[i]["entityId"], Config.VehiclePositions[i]["price"], true, Config.VehiclePositions[i]["owner"])
 							else
 								--ESX.ShowNotification("Du måste sitta i ~g~fordonet~s~!")
-								exports['mythic_notify']:DoHudText('error', ("Du måste sitta i fordonet~s~!"))
+								exports['mythic_notify']:SendAlert('error', ("Du måste sitta i fordonet~s~!"))
 							end
 						end
 					end
@@ -161,11 +161,11 @@ function OpenSellMenu(veh, price, buyVehicle, owner)
 				if valid then
 					DeleteVehicle(veh)
 					--ESX.ShowNotification("Du satte ut fordonet till salu - " .. price .. " :-")
-					exports['mythic_notify']:DoHudText('inform', ("Du satte ut ~g~fordonet~s~ till salu - " .. price .. " :-"))
+					exports['mythic_notify']:SendAlert('inform', ("Du satte ut ~g~fordonet~s~ till salu - " .. price .. " :-"))
 					menu.close()
 				else
 					--ESX.ShowNotification("Du måste äga fordonet! / det finns redan " .. #Config.VehiclePositions .. " fordon till salu!")
-					exports['mythic_notify']:DoHudText('inform', ("Du måste äga fordonet! / det finns redan " .. #Config.VehiclePositions .. " fordon till salu!"))
+					exports['mythic_notify']:SendAlert('inform', ("Du måste äga fordonet! / det finns redan " .. #Config.VehiclePositions .. " fordon till salu!"))
 				end
 	
 			end, vehProps, price)
@@ -174,11 +174,11 @@ function OpenSellMenu(veh, price, buyVehicle, owner)
 				if isPurchasable then
 					DeleteVehicle(veh)
 					--ESX.ShowNotification("Du ~g~köpte~s~ fordonet för " .. price .. " :-")
-					exports['mythic_notify']:DoHudText('inform', ("Du köpte fordonet för " .. price .. " :-"))
+					exports['mythic_notify']:SendAlert('inform', ("Du köpte fordonet för " .. price .. " :-"))
 					menu.close()
 				else
 					--ESX.ShowNotification("Du har ~r~inte~s~ råd, det saknas " .. price - totalMoney .. " :-")
-					exports['mythic_notify']:DoHudText('error', ("Du har inte råd, det saknas " .. price - totalMoney .. " :-"))
+					exports['mythic_notify']:SendAlert('error', ("Du har inte råd, det saknas " .. price - totalMoney .. " :-"))
 				end
 			end, ESX.Game.GetVehicleProperties(veh), price)
 		elseif action == "remove" then
@@ -186,7 +186,7 @@ function OpenSellMenu(veh, price, buyVehicle, owner)
 				if isPurchasable then
 					DeleteVehicle(veh)
 					--ESX.ShowNotification("Du ~g~tog bort~s~ fordonet")
-					exports['mythic_notify']:DoHudText('inform', ("Du tog bort fordonet"))
+					exports['mythic_notify']:SendAlert('inform', ("Du tog bort fordonet"))
 					menu.close()
 				end
 			end, ESX.Game.GetVehicleProperties(veh), 0)

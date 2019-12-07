@@ -101,9 +101,11 @@ AddEventHandler( 'wk:toggleRadar', function()
             radarEnabled = not radarEnabled
 
             if ( radarEnabled ) then 
-                Notify( "~b~Radar startad." )
+                --Notify( "~b~Radar startad." )
+                exports['mythic_notify']:SendAlert('error', 'Radar startad.')
             else 
-                Notify( "~b~Radar avstängd." )
+                --Notify( "~b~Radar avstängd." )
+                exports['mythic_notify']:SendAlert('error', 'Radar avstängd.')
             end 
 
             ResetFrontAntenna()
@@ -117,10 +119,12 @@ AddEventHandler( 'wk:toggleRadar', function()
                 bwdmode = radarInfo.bwdMode
             })
         else 
-            Notify( "~r~Du måste vara i ett polisfordon." )
+            --Notify( "~r~Du måste vara i ett polisfordon." )
+            exports['mythic_notify']:SendAlert('error', 'Du måste vara i ett polisfordon.')
         end 
     else 
-        Notify( "~r~You must be in a vehicle." )
+        --Notify( "~r~You must be in a vehicle." )
+        exports['mythic_notify']:SendAlert('error', 'Du måste sitte i ett fordon.')
     end 
 end )
 
@@ -218,10 +222,12 @@ end
 function ToggleSpeedType()
     if ( radarInfo.speedType == "kmh" ) then 
         radarInfo.speedType = "kmh"
-        Notify( "~b~Speed type set to Km/h." )
+        --Notify( "~b~Speed type set to Km/h." )
+        exports['mythic_notify']:SendAlert('inform', 'Speed type set to km/h.')
     else 
         radarInfo.speedType = "kmh"
-        Notify( "~b~Speed type set to kmh." )
+        --Notify( "~b~Speed type set to kmh." )
+        exports['mythic_notify']:SendAlert('inform', 'Speed type set to kmh.')
     end
 end 
 

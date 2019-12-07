@@ -47,9 +47,9 @@ Citizen.CreateThread(function ()
 				--DrawMarker(1, garageCoords[1], garageCoords[2], garageCoords[3], 0, 0, 0, 0, 0, 0, 5.0, 5.0, 2.0, 0, 157, 0, 155, 0, 0, 2, 0, 0, 0, 0)
 				if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), garageCoords[1], garageCoords[2], garageCoords[3], true) < 5 then
 					if Config.EnablePrice then
-						--ESX.ShowHelpNotification(_U('press_wash_paid', Config.Price))
+						ESX.ShowHelpNotification(_U('press_wash_paid', Config.Price))
 					else
-						--ESX.ShowHelpNotification(_U('press_wash'))
+						ESX.ShowHelpNotification(_U('press_wash'))
 					end
 					if IsControlJustPressed(1, 51) then
 						WashVehicle()

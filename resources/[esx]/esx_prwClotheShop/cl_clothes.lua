@@ -1728,7 +1728,8 @@ function maskMenu(menu)
                         local closestPed = GetPlayerPed(closestPlayer)
 
                         if IsPedSittingInAnyVehicle(closestPed) then
-                            ESX.ShowNotification('~r~Kan inte ge ett föremål i ett fordon')
+							--ESX.ShowNotification('~r~Kan inte ge ett föremål i ett fordon')
+							exports['mythic_notify']:SendAlert('inform', 'Kan inte ge ett föremål i ett fordon')
                             return
                         end
 
@@ -1744,7 +1745,8 @@ function maskMenu(menu)
                             menumbk:RemoveItemAt(i+1)
 
                         else
-                            ESX.ShowNotification("~r~Inga spelare i närheten")
+							--ESX.ShowNotification("~r~Inga spelare i närheten")
+							exports['mythic_notify']:SendAlert('inform', 'Inga spelare i närheten')
 
                         end
 

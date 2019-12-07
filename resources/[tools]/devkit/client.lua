@@ -39,14 +39,14 @@ TeleportToWaypoint = function()
                 end
 
                 --ESX.ShowNotification("Teleporterad.")
-                exports['mythic_notify']:DoHudText('inform', ("Teleporterad."))
+                exports['mythic_notify']:SendAlert('inform', ("Teleporterad."))
             else
                 --ESX.ShowNotification("Placera en GPS puck.")
-                exports['mythic_notify']:DoHudText('error', ("Placera en GPS puck."))
+                exports['mythic_notify']:SendAlert('error', ("Placera en GPS puck."))
             end
         else
             --ESX.ShowNotification("Du har inga rättigheter för att utföra detta.")
-            exports['mythic_notify']:DoHudText('error', ("Du har inga rättigheter för att utföra detta."))
+            exports['mythic_notify']:SendAlert('error', ("Du har inga rättigheter för att utföra detta."))
         end
     end)
 end
