@@ -112,7 +112,7 @@ function OpenBossMenu(society, close, options)
 	end
 
 	if options.wash then
-		table.insert(elements, {label = _U('wash_money'), value = 'wash_money'})
+		--table.insert(elements, {label = _U('wash_money'), value = 'wash_money'})
 	end
 
 	if options.employees then
