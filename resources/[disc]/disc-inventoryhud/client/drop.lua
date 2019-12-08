@@ -27,9 +27,9 @@ Citizen.CreateThread(function()
                 local marker = {
                     name = v.name .. '_drop',
                     type = 2,
-                    coords = vector3(x, y, z + 1.0),
+                    coords = vector3(x, y, z + 0.50),
                     rotate = false,
-                    colour = { r = 119, b = 18, g = 130 },
+                    colour = { r = 50, b = 100, g = 255 },
                     size = vector3(0.5, 0.5, 0.5),
                 }
                 drops[k].active = false

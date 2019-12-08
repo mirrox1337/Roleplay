@@ -221,7 +221,8 @@ Citizen.CreateThread(function ()
 
     for k,v in pairs(Config.Zones) do
       if(v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance) then
-        DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, false, 2, true, false, false, false)
+        DrawMarker(6, v.Pos.x, v.Pos.y, v.Pos.z, 0, 0, 0, -1, 0, 0, v.Size.x, v.Size.y, v.Size.z, 0, 119, 119, 50, 0, 0, 0, 0)
+        --DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, false, 2, true, false, false, false)
       end
     end
   end

@@ -164,11 +164,13 @@ Citizen.CreateThread(function()
                     exports['mythic_notify']:PersistentAlert('start', notifyFishEndInfo, 'inform', 'Du har slutat att fiska.', { ['background-color'] = '#0d5491' })
 
                     DeleteEntity(fishingRod)
-
-                    Fishing = false
                     FishOnBait = false
                     onCircle = false
                     disableNotify = true
+
+                    
+                    Citizen.Wait(5000)
+                    Fishing = false
                     end
                 end
             end
@@ -183,15 +185,15 @@ function StartFishing()
     Fishing = true
     disableNotify = false
 
-    if disableNotify == false then
-        exports['mythic_notify']:PersistentAlert('start', notifyFishEnd, 'inform', 'Tryck [X] för att sluta fiska.', { ['background-color'] = '#0d5491' })
-    end
-
     local FishOnBait = false
 
     local hasRod, hasBait = GetFishingItems()
 
     if hasRod and hasBait then
+
+    if disableNotify == false then
+        exports['mythic_notify']:PersistentAlert('start', notifyFishEnd, 'inform', 'Tryck [X] för att sluta fiska.', { ['background-color'] = '#0d5491' })
+    end
 
         TriggerServerEvent('esx_fishing:useBait')
 

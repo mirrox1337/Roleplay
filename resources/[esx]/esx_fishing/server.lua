@@ -14,9 +14,9 @@ AddEventHandler('esx_fishing:sellFish', function()
 	TriggerClientEvent('notification', _source, 'Du har inga fiskar att sälja.', "error")
 	else
 	xPlayer.removeInventoryItem('fish', fishQuantity)
-	xPlayer.addMoney(fishQuantity * 25)
+	xPlayer.addMoney(fishQuantity * 15)
 	--sendNotification(_source, 'Du sålde ' .. fishQuantity .. ' fiskar för ' .. fishQuantity * randomMoney .. ' SEK', 'success', 3500)
-	TriggerClientEvent('notification', _source, 'Sålde ' .. fishQuantity .. ' fisk(ar) för ' .. fishQuantity * 25 .. ' SEK', "error")
+	TriggerClientEvent('notification', _source, 'Sålde ' .. fishQuantity .. ' fisk(ar) för ' .. fishQuantity * 15 .. ' SEK', "error")
 	end
 
 end)
@@ -39,10 +39,7 @@ AddEventHandler('esx_fishing:giveFish', function()
     local xPlayer = ESX.GetPlayerFromId(_source)
 	local fishQuantity = xPlayer.getInventoryItem('fish').count
 	local randomWeight = math.random(700, 5000)
+
+	xPlayer.addInventoryItem('fish', 1)
 	
-	if fishQuantity <= 200 then
-
-		xPlayer.addInventoryItem('fish', 1)
-	end
-
 end)

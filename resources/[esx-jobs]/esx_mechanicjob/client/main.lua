@@ -72,8 +72,8 @@ function OpenMechanicActionsMenu()
 		{label = _U('vehicle_list'),   value = 'vehicle_list'},
 		{label = _U('work_wear'),      value = 'cloakroom'},
 		{label = _U('civ_wear'),       value = 'cloakroom2'},
-		{label = _U('deposit_stock'),  value = 'put_stock'},
-		{label = _U('withdraw_stock'), value = 'get_stock'}
+		--{label = _U('deposit_stock'),  value = 'put_stock'},
+		--{label = _U('withdraw_stock'), value = 'get_stock'}
 	}
 
 	if Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.grade_name == 'boss' then
@@ -1027,7 +1027,7 @@ Citizen.CreateThread(function()
 			for k,v in pairs(Config.Zones) do
 				if v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance then
 					--DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, nil, nil, false)
-					Marker("", 27, v.Pos.x, v.Pos.y, v.Pos.z)
+					Marker(27, v.Pos.x, v.Pos.y, v.Pos.z)
 					letSleep = false
 				end
 			end
