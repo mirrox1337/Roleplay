@@ -1,7 +1,7 @@
 Citizen.CreateThread(function()
     TriggerEvent('disc-inventoryhud:RegisterInventory', {
-        name = _U('glove'),
-        label = 'Handskfacket',
+        name = 'glovebox',
+        label = _U('glove'),
         slots = 1
     })
 end)

@@ -85,4 +85,3 @@ AddEventHandler('disc-inventoryhud:showItemUse', function(items)
         alerts = data
     })
 end)
-

@@ -46,6 +46,7 @@ RegisterNUICallback('GiveCash', function(data, cb)
     cb('OK')
 end)
 
+
 RegisterNUICallback('CashStore', function(data, cb)
     TriggerServerEvent('disc-inventoryhud:CashStore', data)
     cb('OK')
@@ -55,6 +56,7 @@ RegisterNUICallback('CashTake', function(data, cb)
     TriggerServerEvent('disc-inventoryhud:CashTake', data)
     cb('OK')
 end)
+
 
 RegisterNUICallback('GetNearPlayers', function(data, cb)
     if data.action == 'give' then

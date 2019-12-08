@@ -54,13 +54,15 @@ TriggerEvent('esx:getSharedObject', function(obj)
     ESX = obj
 end)
 
+
 ESX.RegisterServerCallback('disc-inventoryhud:doesInvTypeExists', function(source, cb, type)
     cb(InvType[type] ~= nil)
 end)
 
+
 RegisterCommand('ensureInv', function(source)
     local owner = ESX.GetPlayerFromId(source).identifier
-    MySQL.Async.fetchAll('DELETE FROM disc_inventory WHERE data = @data AND owner = @owner',{['@data'] = "null",['@owner'] = owner})  -- Tgiann "Null" Fix
+    MySQL.Async.fetchAll('DELETE FROM disc_inventory WHERE data = @data AND owner = @owner', { ['@data'] = "null", ['@owner'] = owner })  -- Tgiann "Null" Fix
     ensureInventories(source)
 end)
 
@@ -92,9 +94,3 @@ AddEventHandler('esx:playerDropped', function(source)
     saveInventory(player.identifier, 'player')
     closeAllOpenInventoriesForSource(source)
 end)
-
-
-
-
-
-

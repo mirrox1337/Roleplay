@@ -60,4 +60,3 @@ AddEventHandler('disc-inventoryhud:deletedInventory', function(identifier, type)
         TriggerClientEvent('disc-inventoryhud:updateDrops', -1, drops)
     end
 end)
-

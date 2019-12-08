@@ -330,7 +330,7 @@ $(document).ready(function () {
         $('.near-players-wrapper').find('.popup-body').html('');
         $('.near-players-wrapper').find('.popup-body').html('');
         $('.near-players-list .popup-body').append(`<div class="cashtake" data-id="cash">Cash</div>`);
-        $('.near-players-list .popup-body').append(`<div class="cashtake" data-id="black_money">Black Money</div>`);
+        //$('.near-players-list .popup-body').append(`<div class="cashtake" data-id="black_money">Black Money</div>`);
         $('.near-players-wrapper').fadeIn();
         EndDragging();
     });
@@ -344,7 +344,7 @@ $(document).ready(function () {
         $('.near-players-wrapper').find('.popup-body').html('');
         $('.near-players-wrapper').find('.popup-body').html('');
         $('.near-players-list .popup-body').append(`<div class="cashstore" data-id="cash">Cash</div>`);
-        $('.near-players-list .popup-body').append(`<div class="cashstore" data-id="black_money">Black Money</div>`);
+        //$('.near-players-list .popup-body').append(`<div class="cashstore" data-id="black_money">Black Money</div>`);
         $('.near-players-wrapper').fadeIn();
         EndDragging();
     });
@@ -388,7 +388,7 @@ $(document).ready(function () {
         successAudio.play();
         $('.near-players-wrapper').find('.popup-body').html('');
         $('.near-players-list .popup-body').append(`<div class="cashchoice" data-id="cash">Cash</div>`);
-        $('.near-players-list .popup-body').append(`<div class="cashchoice" data-id="black_money">Black Money</div>`);
+        //$('.near-players-list .popup-body').append(`<div class="cashchoice" data-id="black_money">Black Money</div>`);
         $('.near-players-wrapper').fadeIn();
         EndDragging();
     });
@@ -469,7 +469,7 @@ $(document).ready(function () {
             if (itemData.description !== undefined) {
                 $('.tooltip-div').find('.tooltip-desc').html('Beskrivning: ' + itemData.description);
             } else {
-                $('.tooltip-div').find('.tooltip-desc').html("Detta f�rem�l har ingen Beskrivning");
+                $('.tooltip-div').find('.tooltip-desc').html("Detta föremål har ingen Beskrivning");
             }
 
             if (itemData.weight !== undefined) {
@@ -573,7 +573,7 @@ function AttemptDropInEmptySlot(origin, destination, moveQty) {
             AddItemToSlot(destination, item);
             successAudio.play();
 
-            InventoryLog('1Flyttar ' + item.qty + ' ' + item.label + ' ' + ' Från ' + origin.data('invOwner') + ' Slot ' + origin.data('slot') + ' Till ' + destination.parent().data('invOwner') + ' Slot ' + item.slot);
+            InventoryLog('Flyttar ' + item.qty + ' ' + item.label + ' ' + ' Från ' + origin.data('invOwner') + ' Slot ' + origin.data('slot') + ' Till ' + destination.parent().data('invOwner') + ' Slot ' + item.slot);
             $.post("http://disc-inventoryhud/MoveToEmpty", JSON.stringify({
                 originOwner: origin.parent().data('invOwner'),
                 originSlot: origin.data('slot'),
