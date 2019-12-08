@@ -73,35 +73,35 @@ function OpenCloakroomMenu()
 	local elements = {
 		{ label = _U('citizen_wear'), value = 'citizen_wear' },
 		--{ label = _U('bullet_wear'), value = 'bullet_wear' },
-		{ label = _U('bulletsvart_wear'), value = 'bulletsvart_wear' },
-		{ label = _U('gilet_wear'), value = 'gilet_wear' }
+		--{ label = _U('bulletsvart_wear'), value = 'bulletsvart_wear' },
+		--{ label = _U('gilet_wear'), value = 'gilet_wear' }
 	}
 
 	if grade == 'recruit' then
 		table.insert(elements, {label = _U('police_wear'), value = 'cadet_wear'})
 	elseif grade == 'officer' then
 		table.insert(elements, {label = _U('police_wear'), value = 'officer_wear'})
-		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	elseif grade == 'sergeant' then
 		table.insert(elements, {label = _U('police_wear'), value = 'sergeant_wear'})
-		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	elseif grade == 'intendent' then
 		table.insert(elements, {label = _U('police_wear'), value = 'intendent_wear'})
-		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	elseif grade == 'lieutenant' then
 		table.insert(elements, {label = _U('police_wear'), value = 'lieutenant_wear'})
-		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	elseif grade == 'chef' then
 		table.insert(elements, {label = _U('police_wear'), value = 'chef_wear'})
-		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	elseif grade == 'boss' then
 		table.insert(elements, {label = _U('police_wear'), value = 'boss_wear'})
-		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	end
 
@@ -694,11 +694,11 @@ function OpenPoliceActionsMenu()
 				{label = _U('drag'),      		value = 'drag'},
 				{label = _U('put_in_vehicle'),  value = 'put_in_vehicle'},
                 {label = _U('out_the_vehicle'), value = 'out_the_vehicle'},
-                {label = 'Brottsregister',      value = 'criminalrecords'},
+                --{label = 'Brottsregister',      value = 'criminalrecords'},
                 --{label = 'Kolla efter krut',    value = 'pistol_krut'},
                 {label = _U('fine'),            value = 'fine'},
 				{label = _U('unpaid_bills'),	value = 'unpaid_bills'},
-                {label = 'Ta DNA-Prov',			value = 'dna'},            
+                --{label = 'Ta DNA-Prov',			value = 'dna'},            
 			    --{label = _U('codedmv'),			value = 'codedmv'},
 			    --{label = _U('codedrive'),       value = 'codedrive'},
 			    --{label = _U('codedrivebike'),   value = 'codedrivebike'},

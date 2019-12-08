@@ -107,6 +107,7 @@ Config.Shops = {
         items = {
             { name = "bread", price = 25, count = 1 },
             { name = "water", price = 20, count = 1 },
+            { name = "phone", price = 250, count = 1 },
         },
         blipSprite = 52,
         blipColour = 15,

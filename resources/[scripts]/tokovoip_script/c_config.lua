@@ -19,15 +19,15 @@ TokoVoipConfig = {
 		-- TeamSpeak channel name used by the voip
 		-- If the TSChannelWait is enabled, players who are currently in TSChannelWait will be automatically moved
 		-- to the TSChannel once everything is running
-		TSChannel = "[Lokal] In-Game",
-		TSPassword = "", -- TeamSpeak channel password (can be empty)
+		TSChannel = "RP | NU - Online",
+		TSPassword = "greengang", -- TeamSpeak channel password (can be empty)
 
 		-- Optional: TeamSpeak waiting channel name, players wait in this channel and will be moved to the TSChannel automatically
 		-- If the TSChannel is public and people can join directly, you can leave this empty and not use the auto-move
-		TSChannelWait = "[Lokal] Laddar in",
+		TSChannelWait = "RP | NU - Offline",
 
 		-- Blocking screen informations
-		TSServer = "127.0.0.1", -- TeamSpeak server address to be displayed on blocking screen
+		TSServer = "connect.roleplay.nu", -- TeamSpeak server address to be displayed on blocking screen
 		TSChannelSupport = "S1: Waiting For Support", -- TeamSpeak support channel name displayed on blocking screen
 		TSDownload = "https://github.com/Itokoyamato/TokoVOIP_TS3/releases", -- Download link displayed on blocking screen
 		TSChannelWhitelist = { -- Black screen will not be displayed when users are in those TS channels
