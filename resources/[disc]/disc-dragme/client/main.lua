@@ -58,13 +58,9 @@ function PutInVehicle()
     local isInCar = IsPedSittingInAnyVehicle(PlayerPedId())
     if closestPlayer ~= -1 and closestDistance <= 3.0 and not isInCar and CanDoWhileDead(targetPed) then
         local vehicle = ESX.Game.GetClosestVehicle()
-        if DoesVehicleHaveDoor(vehicle, 5) then
             TriggerServerEvent('dragme:putInVehicle', GetPlayerServerId(closestPlayer))
-        else
-            exports['mythic_notify']:SendAlert('error', 'This car does not have a boot.')
         end
     end
-end
 
 function OutVehicle()
     if Config.Jobs.LimitJobs and not CanDoJob() then
@@ -78,6 +74,7 @@ function OutVehicle()
     end
 end
 
+--[[
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
@@ -90,6 +87,7 @@ Citizen.CreateThread(function()
         end
     end
 end)
+--]]
 
 function CanDoWhileDead(targetPed)
     if Config.OnlyWhileDead then
@@ -98,6 +96,7 @@ function CanDoWhileDead(targetPed)
         return true
     end
 end
+
 
 RegisterCommand("drag", function(src, args, raw)
     if Config.EnableCommands then
@@ -116,6 +115,7 @@ RegisterCommand("putvehicle", function(src, args, raw)
         PutInVehicle()
     end
 end)
+
 
 RegisterNetEvent('dragme:drag')
 AddEventHandler('dragme:drag', function(draggerId)
@@ -193,7 +193,7 @@ AddEventHandler('dragme:putInVehicle', function()
         if DoesEntityExist(vehicle) then
             --SetEntityVisible(GetPlayerPed(-1), false)
             dragStatus.isDragged = false
-            SetCarBootOpen(vehicle)
+            --SetCarBootOpen(vehicle)
             isInVehicle = true
             InVehicle = vehicle
         end
@@ -206,7 +206,7 @@ AddEventHandler('dragme:OutVehicle', function()
     SetEntityCollision(GetPlayerPed(-1), true, true)
     SetPlayerInvincible(GetPlayerPed(-1), false)
     isInVehicle = false
-    SetCarBootOpen(vehicle)
+    --SetCarBootOpen(vehicle)
     vehicle = nil
 end)
 

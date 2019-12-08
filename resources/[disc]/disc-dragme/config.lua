@@ -2,9 +2,9 @@ Config = {}
 
 Config.OnlyWhileDead = false
 
-Config.EnableCommands = true
+Config.EnableCommands = false
 
 Config.Jobs = {
-    LimitJobs = true,
+    LimitJobs = false,
     AllowedJobs = { 'ambulance', 'police' }
 }

@@ -50,14 +50,16 @@ function OpenMobileAmbulanceActionsMenu()
 					{label = _U('ems_menu_revive'), value = 'revive'},
 					{label = _U('ems_menu_small'), value = 'small'},
 					{label = _U('ems_menu_big'), value = 'big'},
-					{label = _U('ems_menu_putincar'), value = 'put_in_vehicle'}
+					{label = _U('ems_menu_drag'), value = 'drag'},
+					{label = _U('ems_menu_putincar'), value = 'put_in_vehicle'},
+					{label = _U('ems_menu_takeoutcar'), value = 'take_out_vehicle'}
 				}
 			}, function(data, menu)
 				if isBusy then return end
 
 				local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 
-				if closestPlayer == -1 or closestDistance > 1.0 then
+				if closestPlayer == -1 or closestDistance > 3.0 then
 					--ESX.ShowNotification(_U('no_players'))
 					exports['mythic_notify']:SendAlert('error', (_U('no_players')))
 				else
@@ -144,6 +146,9 @@ function OpenMobileAmbulanceActionsMenu()
 							end
 						end, 'bandage')
 
+					elseif data.current.value == 'drag' then
+						exports['disc-dragme']:DragMe()
+
 					elseif data.current.value == 'big' then
 
 						ESX.TriggerServerCallback('esx_ambulancejob:getItemAmount', function(quantity)
@@ -178,7 +183,10 @@ function OpenMobileAmbulanceActionsMenu()
 						end, 'medkit')
 
 					elseif data.current.value == 'put_in_vehicle' then
-						TriggerServerEvent('esx_ambulancejob:putInVehicle', GetPlayerServerId(closestPlayer))
+						exports['disc-dragme']:PutInVehicle()
+					elseif data.current.value == 'take_out_vehicle' then
+						exports['disc-dragme']:OutVehicle()
+						exports['disc-dragme']:DragMe()
 					end
 				end
 			end, function(data, menu)

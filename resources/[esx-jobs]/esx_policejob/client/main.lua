@@ -717,13 +717,6 @@ function OpenPoliceActionsMenu()
 					elseif action == 'body_search' then
 						exports['disc-inventoryhud']:inventoryhudSearch(closestPlayer)
 					elseif action == 'handcuff' then
-						RequestAnimDict('missheistfbisetup1')
-
-						TaskPlayAnim(GetPlayerPed(-1), 'missheistfbisetup1' ,'unlock_loop_janitor' ,8.0, -8.0, -1, 0, 0, false, false, false )
-						Citizen.Wait(2900)
-						ClearPedTasksImmediately(GetPlayerPed(-1))
-						TriggerServerEvent('esx_policejob:handcuff', GetPlayerServerId(closestPlayer))
-						TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 5, "cuffs", 0.5)
 						TriggerServerEvent('esx_policejob:handcuff', GetPlayerServerId(closestPlayer))
 					elseif action == 'unhandcuff' then
 						RequestAnimDict('missheistfbisetup1')
@@ -734,11 +727,12 @@ function OpenPoliceActionsMenu()
 						TriggerServerEvent('esx_policejob:unhandcuff', GetPlayerServerId(closestPlayer))
 						TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 5, "cuffs", 0.5)
 					elseif action == 'drag' then
-						TriggerServerEvent('esx_policejob:drag', GetPlayerServerId(closestPlayer))
+						exports['disc-dragme']:DragMe()
 					elseif action == 'put_in_vehicle' then
-						TriggerServerEvent('esx_policejob:putInVehicle', GetPlayerServerId(closestPlayer))
+						exports['disc-dragme']:PutInVehicle()
 					elseif action == 'out_the_vehicle' then
-						TriggerServerEvent('esx_policejob:OutVehicle', GetPlayerServerId(closestPlayer))
+						exports['disc-dragme']:OutVehicle()
+						exports['disc-dragme']:DragMe()
 					elseif action == 'fine' then
 						OpenFineMenu(closestPlayer)
 					elseif action == 'license' then
@@ -1447,6 +1441,57 @@ function OpenPutStocksMenu()
 		end)
 	end)
 end
+
+function openJailMenu(playerid)
+	local elements = {
+	  {label = "Skicka till fängelset",     value = 'Jail'},
+	  {label = "Släpp ut person",     value = 'FreePlayer'},
+	}
+	ESX.UI.Menu.Open(
+	  'default', GetCurrentResourceName(), 'jail_menu',
+	  {
+		title    = 'Sätt i fängelset',
+		align    = 'right',
+		elements = elements,
+	  },
+	  function(data3, menu)
+		  if data3.current.value ~= "FreePlayer" then
+			  maxLength = 4
+			  AddTextEntry('FMMC_KEY_TIP8', "Antal timmar i fängelse")
+			  DisplayOnscreenKeyboard(1, "FMMC_KEY_TIP8", "", "", "", "", "", maxLength)
+        --ESX.ShowNotification("~p~Ange antalet timmar du vill sätta personen i fängelse.")
+        exports['mythic_notify']:SendAlert('inform', "Ange antalet timmar du vill sätta personen i fängelse.")
+			  blockinput = true
+  
+			  while UpdateOnscreenKeyboard() ~= 1 and UpdateOnscreenKeyboard() ~= 2 do
+				  Citizen.Wait( 0 )
+			  end
+  
+			  local jailtime = GetOnscreenKeyboardResult()
+  
+			  UnblockMenuInput()
+  
+			  if string.len(jailtime) >= 1 and tonumber(jailtime) ~= nil then
+				  TriggerServerEvent('esx_mirrox_jailer:PutInJail', playerid, data3.current.value, tonumber(jailtime)*60*60)
+			  else
+				  return false
+			  end
+		  else
+			  TriggerServerEvent('esx_mirrox_jailer:UnJailplayer', playerid)
+		  end
+	  end,
+	  function(data3, menu)
+		menu.close()
+	  end
+	)
+  end
+  
+  function UnblockMenuInput()
+	  Citizen.CreateThread( function()
+		  Citizen.Wait( 150 )
+		  blockinput = false 
+	  end )
+  end
 
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)

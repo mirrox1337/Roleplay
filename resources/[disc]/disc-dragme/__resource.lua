@@ -13,3 +13,9 @@ server_scripts {
     'server/main.lua',
     'config.lua'
 }
+
+exports{
+    'DragMe',
+    'PutInVehicle',
+    'OutVehicle'
+}
