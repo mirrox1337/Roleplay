@@ -674,19 +674,27 @@ function OpenPoliceActionsMenu()
 			{label = _U('citizen_interaction'), value = 'citizen_interaction'},
 			{label = _U('vehicle_interaction'), value = 'vehicle_interaction'},
 			{label = _U('object_spawner'),      value = 'object_spawner'},
-			{label = _U('Västar'),		          value = 'vestmenu'},
-			{label = _U('larm'),		            value = 'larm'},
+			{label = ('Västar'),		          value = 'vestmenu'},
+			{label = ('Överfallslarm'),		            value = 'larm'},
 	}}, function(data, menu)
+
+		if data.current.value == 'larm' then
+			local x,y,z = table.unpack(GetEntityCoords(GetPlayerPed(-1), false))
+			local plyPos = GetEntityCoords(GetPlayerPed(-1),  true)
+			TriggerServerEvent('esx_addons_chrono:startCall', 'police', 'En kollega har aktiverat sitt överfallslarm! ', {x = plyPos.x, y = plyPos.y, z = plyPos.z}, dispatch)
+			--TriggerServerEvent('esx_phone:send', 'police', 'En polis har aktiverat sitt överfallslarm! ', true, {x = plyPos.x, y = plyPos.y, z = plyPos.z})
+		 end
+
 		if data.current.value == 'citizen_interaction' then
 			local elements = {
 				{label = _U('id_card'),         value = 'identity_card'},
 				{label = _U('search'),          value = 'body_search'},
-				{label = 'Sätt På Handbojor',   value = 'handcuff'},
-			    {label = 'Ta Av Handbojor',		value = 'unhandcuff'},
-                {label = _U('drag'),      		value = 'drag'},
-                {label = 'Brottsregister',      value = 'criminalrecords'},
-                {label = _U('put_in_vehicle'),  value = 'put_in_vehicle'},
+				{label = 'Handbojor på/av',   value = 'handcuff'},
+			    --{label = 'Ta Av Handbojor',		value = 'unhandcuff'},
+				{label = _U('drag'),      		value = 'drag'},
+				{label = _U('put_in_vehicle'),  value = 'put_in_vehicle'},
                 {label = _U('out_the_vehicle'), value = 'out_the_vehicle'},
+                {label = 'Brottsregister',      value = 'criminalrecords'},
                 --{label = 'Kolla efter krut',    value = 'pistol_krut'},
                 {label = _U('fine'),            value = 'fine'},
 				{label = _U('unpaid_bills'),	value = 'unpaid_bills'},
@@ -751,6 +759,73 @@ function OpenPoliceActionsMenu()
 			end, function(data2, menu2)
 				menu2.close()
 			end)
+			
+		elseif data.current.value == 'vestmenu' then
+			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vests',
+			{
+			  title    = 'Västar av/på',
+			  align    = 'right',
+			  elements = {
+				{label = 'Ta av väst',              value = 'takeoff'},
+					{label = 'Sätt på skottsäker väst', value = 'skotton'},
+				{label = 'Sätt på reflexväst',	    value = 'reflexon'},
+			  }
+			}, function(data2, menu2)
+	  
+			  if data2.current.value == 'takeoff' then
+				TriggerEvent('skinchanger:getSkin', function(skin)
+				  local clothesSkin = {
+					['bproof_1'] = 0, ['bproof_2'] = 0,
+					['bags_1'] = 0, ['bags_2'] = 0,
+				  }
+		
+				  TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
+				end)
+	  
+				SetPedArmour(PlayerPedId(), 0)
+				
+			  elseif data2.current.value == 'skotton' then
+				TriggerEvent('skinchanger:getSkin', function(skin)
+				  if skin.sex == 0 then
+					  local clothesSkin = {
+						['bags_1'] = 4, ['bags_2'] = 0,
+					  }
+		
+					TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
+				  else
+					local clothesSkin = {
+						['bags_1'] = 2, ['bags_2'] = 0,
+					  }
+		
+					TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
+				  end
+				end)
+	  
+				SetPedArmour(PlayerPedId(), 100)
+	  
+			  elseif data2.current.value == 'reflexon' then
+				TriggerEvent('skinchanger:getSkin', function(skin)
+				  if skin.sex == 0 then
+					  local clothesSkin = {
+						['bags_1'] = 1, ['bags_2'] = 0,
+					  }
+		
+					TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
+				  else
+					local clothesSkin = {
+						['bproof_1'] = 17, ['bproof_2'] = 2,
+					  }
+		
+					TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
+				  end
+				end)
+	  
+				SetPedArmour(PlayerPedId(), 0)
+			  end
+			end, function(data2, menu2)
+			  menu2.close()
+			end)
+
 		elseif data.current.value == 'vehicle_interaction' then
 			local elements  = {}
 			local playerPed = PlayerPedId()
@@ -999,6 +1074,7 @@ function OpenBodySearchMenu(player)
 	end, GetPlayerServerId(player))
 end
 --]]
+
 
 function OpenBodySearchMenu(player)
 
@@ -1602,8 +1678,8 @@ AddEventHandler('esx_policejob:handcuff', function()
 			DisablePlayerFiring(playerPed, true)
 			SetCurrentPedWeapon(playerPed, GetHashKey('WEAPON_UNARMED'), true) -- unarm player
 			SetPedCanPlayGestureAnims(playerPed, false)
-			FreezeEntityPosition(playerPed, true)
-			DisplayRadar(false)
+			--FreezeEntityPosition(playerPed, true)
+			--DisplayRadar(false)
 
 			if Config.EnableHandcuffTimer then
 				if handcuffTimer.active then
@@ -1621,8 +1697,8 @@ AddEventHandler('esx_policejob:handcuff', function()
 			SetEnableHandcuffs(playerPed, false)
 			DisablePlayerFiring(playerPed, false)
 			SetPedCanPlayGestureAnims(playerPed, true)
-			FreezeEntityPosition(playerPed, false)
-			DisplayRadar(true)
+			--FreezeEntityPosition(playerPed, false)
+			--DisplayRadar(true)
 		end
 	end)
 end)
@@ -1637,8 +1713,8 @@ AddEventHandler('esx_policejob:unrestrain', function()
 		SetEnableHandcuffs(playerPed, false)
 		DisablePlayerFiring(playerPed, false)
 		SetPedCanPlayGestureAnims(playerPed, true)
-		FreezeEntityPosition(playerPed, false)
-		DisplayRadar(true)
+		--FreezeEntityPosition(playerPed, false)
+		--DisplayRadar(true)
 
 		-- end timer
 		if Config.EnableHandcuffTimer and handcuffTimer.active then
@@ -1741,16 +1817,16 @@ Citizen.CreateThread(function()
 		local playerPed = PlayerPedId()
 
 		if isHandcuffed then
-			DisableControlAction(0, 1, true) -- Disable pan
-			DisableControlAction(0, 2, true) -- Disable tilt
+--			DisableControlAction(0, 1, true) -- Disable pan
+--			DisableControlAction(0, 2, true) -- Disable tilt
 			DisableControlAction(0, 24, true) -- Attack
 			DisableControlAction(0, 257, true) -- Attack 2
 			DisableControlAction(0, 25, true) -- Aim
 			DisableControlAction(0, 263, true) -- Melee Attack 1
-			DisableControlAction(0, 32, true) -- W
-			DisableControlAction(0, 34, true) -- A
-			DisableControlAction(0, 31, true) -- S
-			DisableControlAction(0, 30, true) -- D
+--			DisableControlAction(0, 32, true) -- W
+--			DisableControlAction(0, 34, true) -- A
+--			DisableControlAction(0, 31, true) -- S
+--			DisableControlAction(0, 30, true) -- D
 
 			DisableControlAction(0, 45, true) -- Reload
 			DisableControlAction(0, 22, true) -- Jump
@@ -1763,10 +1839,10 @@ Citizen.CreateThread(function()
 			DisableControlAction(0, 170, true) -- Animations
 			DisableControlAction(0, 167, true) -- Job
 
-			DisableControlAction(0, 0, true) -- Disable changing view
-			DisableControlAction(0, 26, true) -- Disable looking behind
+--			DisableControlAction(0, 0, true) -- Disable changing view
+--			DisableControlAction(0, 26, true) -- Disable looking behind
 			DisableControlAction(0, 73, true) -- Disable clearing animation
-			DisableControlAction(2, 199, true) -- Disable pause screen
+--			DisableControlAction(2, 199, true) -- Disable pause screen
 
 			DisableControlAction(0, 59, true) -- Disable steering in vehicle
 			DisableControlAction(0, 71, true) -- Disable driving forward in vehicle

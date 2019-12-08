@@ -226,7 +226,7 @@ end)
   Citizen.CreateThread(function()
 	   while true do
 		   Citizen.Wait(100)
-		   if ( IsControlPressed(2, 207) ) then  --change key here
+		   if ( IsControlPressed(2, 166) ) then  --change key here
 			   TriggerEvent("Ragdoll", source)
 		   end
 	   end
