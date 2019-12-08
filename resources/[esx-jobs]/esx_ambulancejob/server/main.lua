@@ -205,9 +205,11 @@ AddEventHandler('esx_ambulancejob:removeItem', function(item)
 	xPlayer.removeInventoryItem(item, 1)
 
 	if item == 'bandage' then
-		xPlayer.showNotification(_U('used_bandage'))
+		--xPlayer.showNotification(_U('used_bandage'))
+		TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text =  'du har använt 1x Bandage'})
 	elseif item == 'medkit' then
-		xPlayer.showNotification(_U('used_medkit'))
+		--xPlayer.showNotification(_U('used_medkit'))
+		TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text =  'du har använt 1x Medecinkit'})
 	end
 end)
 
@@ -226,7 +228,8 @@ AddEventHandler('esx_ambulancejob:giveItem', function(itemName, amount)
 	if xPlayer.canCarryItem(itemName, amount) then
 		xPlayer.addInventoryItem(itemName, amount)
 	else
-		xPlayer.showNotification(_U('max_item'))
+		--xPlayer.showNotification(_U('max_item'))
+		TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text =  'du har redan tillräckligt mycket på dig.'})
 	end
 end)
 
