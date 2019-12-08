@@ -11,4 +11,5 @@ Locales['sv'] = {
     ['stash'] = "Förråd",
     ['trunk'] = "Bagage-",
     ['added'] = "Plockade Upp",
+    ['removed'] = "Kastade",
 } 
