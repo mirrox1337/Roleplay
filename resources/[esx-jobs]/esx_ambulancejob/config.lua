@@ -57,9 +57,9 @@ Config.Hospitals = {
 				InsideShop = vector3(446.7, -1355.6, 43.5),
 				Marker = { type = 36, x = 1.0, y = 1.0, z = 1.0, r = 100, g = 50, b = 200, a = 100, rotate = true },
 				SpawnPoints = {
-					{ coords = vector3(315.82, -545.27, 27.8), heading = 281.75, radius = 4.0 },
-					{ coords = vector3(315.79, -550.81, 27.8), heading = 273.13, radius = 4.0 },
-					{ coords = vector3(323.66, -541.32, 27.8), heading = 181.23, radius = 6.0 }
+					{ coords = vector3(316.82, -545.27, 27.8), heading = 281.75, radius = 4.0 },
+					{ coords = vector3(316.79, -550.81, 27.8), heading = 273.13, radius = 4.0 },
+					{ coords = vector3(323.88, -542.07, 27.8), heading = 181.23, radius = 6.0 }
 				}
 			}
 		},
@@ -79,14 +79,21 @@ Config.Hospitals = {
 			{
 				From = vector3(340.49, -595.32, 27.82),
 				To = { coords = vector3(339.2, -584.08, 74.2), heading = 243.5 },
-				Marker = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false },
+				Marker = { type = 23, x = 1.5, y = 1.5, z = 0.5, r = 25, g = 89, b = 83, a = 100, rotate = false },
+				Prompt = _U('fast_travel')
+			},
+
+			{
+				From = vector3(339.2, -584.08, 73.2),
+				To = { coords = vector3(340.49, -595.32, 27.82), heading = 70.0 },
+				Marker = { type = 23, x = 1.5, y = 1.5, z = 0.5, r = 25, g = 89, b = 83, a = 100, rotate = false },
 				Prompt = _U('fast_travel')
 			},
 
 			{
 				From = vector3(256.5, -1357.7, 36.0),
 				To = { coords = vector3(235.4, -1372.8, 26.3), heading = 0.0 },
-				Marker = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false },
+				Marker = { type = 23, x = 1.5, y = 1.5, z = 0.5, r = 25, g = 89, b = 83, a = 100, rotate = false },
 				Prompt = _U('fast_travel')
 			}
 		},
