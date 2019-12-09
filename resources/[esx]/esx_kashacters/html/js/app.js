@@ -1,16 +1,4 @@
-$(".character-box").hover(
-    function() {
-        $(this).css({
-            "background": "rgba(42, 125, 193, 1.0)",
-            "transition": "200ms",
-        });
-    }, function() {
-        $(this).css({
-            "background": "rgba(0,0,0,0.6)",
-            "transition": "200ms",
-        });
-    }
-);
+
 
 $(".character-box").click(function () {
     $(".character-box").removeClass('active-char');
@@ -19,7 +7,7 @@ $(".character-box").click(function () {
     if ($(this).attr("data-ischar") === "true") {
         $("#delete").css({"display":"block"});
     } else {
-        $("#delete").css({"display":"none"});
+        $("#delete").css({"display":"block"});
     }
 });
 
@@ -38,8 +26,6 @@ $("#deletechar").click(function () {
     Kashacter.CloseUI();
 });
 
-
-
 (() => {
     Kashacter = {};
 
@@ -47,9 +33,17 @@ $("#deletechar").click(function () {
         $('.main-container').css({"display":"block"});
         if(data.characters !== null) {
             $.each(data.characters, function (index, char) {
+
+                if (char.sex == "M") {
+
+                    var sex2 = "Man";
+                } else {
+                    var sex2 = "Kvinna";
+                }
                 if (char.charid !== 0) {
                     var charid = char.identifier.charAt(4);
-                    $('[data-charid=' + charid + ']').html('<h3 class="character-fullname">'+ char.firstname +' '+ char.lastname +'</h3><p class="character-info-dateofbirth"><strong>Personnummer: </strong><span>'+ char.dateofbirth +'</span></p></div>').attr("data-ischar", "true");
+					
+                    $('[data-charid=' + charid + ']').html('<h3 class="character-fullname">'+ char.firstname +' '+ char.lastname +'</h3><hr class="hr_top"><div class="character-info"><p class="character-info-work"><strong><img width= "16px" height= "16px" src="https://cdn.discordapp.com/attachments/475869789164666886/600968581198381056/portfolio.png"> Yrke: </strong><span>'+ char.job +'</span><br></p> <p class="character-info-gender"><strong><img width= "16px" height= "16px" src="https://cdn.discordapp.com/attachments/475869789164666886/600968576110690304/gender.png"> Kön: </strong><span>'+ sex2 +'</span></p><br><p class="character-info-bank"><strong><img width= "16px" height= "16px" src="https://cdn.discordapp.com/attachments/475869789164666886/600968576110690304/gender.png"> Bankkonto: </strong><span>'+ char.bank +'</span></p><p class="character-info-money"><strong><img width= "16px" height= "16px" src="https://cdn.discordapp.com/attachments/475869789164666886/600968573694902302/coin.png"> Kontanter: </strong><span>'+ char.money +'</span></p><br><p class="character-info-dateofbirth"><strong><img width= "16px" height= "16px" src="https://cdn.discordapp.com/attachments/475869789164666886/600968578530934819/id-card.png"> Personnummer: </strong><span>'+ char.dateofbirth +'</span></p> <p class="character-info-number"><strong><img width= "16px" height= "16px" src="https://cdn.discordapp.com/attachments/475869789164666886/600968579440967698/phone-call.png"> Telefonnummer: </strong><span>'+ char.phone_number +'</span></p></div>').attr("data-ischar", "true");
                 }
             });
         }
@@ -57,9 +51,10 @@ $("#deletechar").click(function () {
 
     Kashacter.CloseUI = function() {
         $('.main-container').css({"display":"none"});
+		$('.cover-background').css({"display":"none"});
         $(".character-box").removeClass('active-char');
         $("#delete").css({"display":"none"});
-		$(".character-box").html('<h3 class="character-fullname"><i class="fas fa-plus"></i></h3><div class="character-info"><p class="character-info-new">Create new character</p></div>').attr("data-ischar", "false");
+		$(".character-box").html('<h3 class="character-fullname"><i class="fas fa-plus"></i></h3><div class="character-info"><p class="character-info-new">Ledig plats</p></div>').attr("data-ischar", "false");
     };
     window.onload = function(e) {
         window.addEventListener('message', function(event) {

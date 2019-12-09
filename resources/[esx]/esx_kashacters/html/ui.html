@@ -11,39 +11,46 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
     <body style="background-color: rgba(0,0,0,0); font-family: 'Roboto', sans-serif !important;">
-        <div class="main-container">
+	<div class="cover-background">
+    <div class="main-container">
+        <!-- Server information -->
+		
+        <div src="https://puu.sh/EAJzS.png" class="server_logo"></div>
+        <div class="_overcast_"></div>
+        <div class="character_undercast"></div>
             <div class="character-container">
-                <div class="character-box" data-ischar="false" data-charid="1">
-                    <h3 class="character-fullname"><i class="fas fa-plus"></i></h3>
+                <div class="character-box" id="box1" data-ischar="false" data-charid="1">
+                    <h3 class="character-fullname">Okänd karaktär</h3><hr class="hr_top">
                     <div class="character-info">
-                        <p class="character-info-new">Skapa en ny karaktär <br> <center>Slot: 1</center></p>
+                        <p class="character-info-new">[1] Ledig plats</p>
                     </div>
                 </div>
-                <div class="character-box" data-ischar="false" data-charid="2">
-                    <h3 class="character-fullname"><i class="fas fa-plus"></i></h3>
+                <div class="character-box" id="box2" data-ischar="false" data-charid="2">
+                    <h3 class="character-fullname">Okänd karaktär</h3><hr class="hr_top">
                     <div class="character-info">
-                        <p class="character-info-new">Skapa en ny karaktär <br> <center>Slot: 2</center></p>
+                        <p class="character-info-new">[2] Ledig plats</p>
                     </div>
                 </div>
-                <div class="character-box" data-ischar="false" data-charid="3">
-                    <h3 class="character-fullname"><i class="fas fa-plus"></i></h3>
+                <div class="character-box" id="box3" data-ischar="false" data-charid="3">
+                    <h3 class="character-fullname">Okänd karaktär</h3><hr class="hr_top">
                     <div class="character-info">
-                        <p class="character-info-new">Skapa en ny karaktär <br> <center>Slot: 3</center></p>
+                        <p class="character-info-new">[3] Ledig plats</p>
                     </div>
                 </div>
-                <div class="character-box" data-ischar="false" data-charid="4">
-                    <h3 class="character-fullname"><i class="fas fa-plus"></i></h3>
+                <div class="character-box" id="box4" data-ischar="false" data-charid="4">
+                    <h3 class="character-fullname">Okänd karaktär</h3><hr class="hr_top">
                     <div class="character-info">
-                        <p class="character-info-new">Skapa en ny karaktär <br> <center>Slot: 4</center></p>
+                        <p class="character-info-new">[4] Ledig plats</p>
                     </div>
                 </div>
             </div>
             <div class="character-buttons">
-                <button class="btn btn-play" id="play-char">Spela</button>
-                <button class="btn btn-delete" id="delete" data-toggle="modal" data-target="#delete-char">Radera</button>
+                <button class="btn btn-play" id="play-char" data-target="#play-char">SPELA VALD KARAKTÄR</button>
+                <button class="btn btn-delete" id="delete" data-toggle="modal" data-target="#delete-char">TA BORT VALD KARAKTÄR</button>
             </div>
         </div>
 
+  
         <div id="delete-char" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -53,17 +60,16 @@
                     <div class="modal-body">
                         <h5>Är du helt säker?</h5>
                         <hr>
-                        <p>
-                            Raderar du karaktären så försvinner den helt samt alla dess ägodelar, du kan inte få tillbaka någonting.
-                        </p>
+                        <p>Genom att radera din karaktär så försvinner allt karaktären äger, t.ex. fordon och inventory. Det är omöjligt att ångra denna åtgärd.</p>
                         <hr>
                         <div class="modal-footer">
-                            <button id="deletechar" class="btn btn-delete" data-toggle="modal" data-dismiss="modal">DELETE</button>
+                            <button class="deletechar" id="deletechar" data-toggle="modal" data-dismiss="modal">Ta bort!</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+		</div>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
