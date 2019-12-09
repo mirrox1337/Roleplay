@@ -78,7 +78,7 @@ function OpenCloakroomMenu()
 	}
 
 	if grade == 'recruit' then
-		table.insert(elements, {label = _U('police_wear'), value = 'cadet_wear'})
+		table.insert(elements, {label = _U('police_wear'), value = 'officer_wear'})
 	elseif grade == 'officer' then
 		table.insert(elements, {label = _U('police_wear'), value = 'officer_wear'})
 		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
@@ -258,7 +258,12 @@ function OpenArmoryMenu(station)
 	if PlayerData.job.grade_name == 'boss' then
 		table.insert(elements, {label = _U('buy_weapons'), value = 'buy_weapons'})
 		--table.insert(elements, {label = ('Plocka ut från förrådet'), value = 'get_stock'})
-		table.insert(elements, {label = ('Köp dyrkset'), value = 'buy_lockpick'})
+		--table.insert(elements, {label = ('Köp dyrkset'), value = 'buy_lockpick'})
+		table.insert(elements, {label = ('Pistol-ammunition'), value = 'pistol_ammo'})
+		table.insert(elements, {label = ('Kulsprute-ammunition'), value = 'smg_ammo'})
+		table.insert(elements, {label = ('Prickskytte-ammunition'), value = 'snp_ammo'})
+		table.insert(elements, {label = ('Gevär-ammunition'), value = 'rifle_ammo'})
+		table.insert(elements, {label = ('Hagelpatroner'), value = 'shotgun_ammo'})
 	end
 
 	if Config.EnableArmoryManagement then
@@ -266,11 +271,6 @@ function OpenArmoryMenu(station)
 		--table.insert(elements, {label = _U('put_weapon'),     value = 'put_weapon'})
 		--table.insert(elements, {label = _U('remove_object'),  value = 'get_stock'})
 		--table.insert(elements, {label = _U('deposit_object'), value = 'put_stock'})
-		table.insert(elements, {label = ('Köp pistol ammo'), value = 'pistol_ammo'})
-		table.insert(elements, {label = ('Köp smg ammo'), value = 'smg_ammo'})
-		table.insert(elements, {label = ('Köp shotgun ammo'), value = 'shotgun_ammo'})
-		table.insert(elements, {label = ('Köp rifle ammo'), value = 'rifle_ammo'})
-		table.insert(elements, {label = ('Köp sniper ammo'), value = 'snp_ammo'})
 	end
 
 	ESX.UI.Menu.CloseAll()

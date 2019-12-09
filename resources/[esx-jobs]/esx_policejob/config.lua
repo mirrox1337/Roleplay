@@ -81,132 +81,135 @@ Config.PoliceStations = {
 
 Config.AuthorizedWeapons = {
 	recruit = {
-		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
-		{ weapon = 'WEAPON_STUNGUN', price = 1500 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 80 }
+		--{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
+		--{ weapon = 'WEAPON_STUNGUN', price = 1500 },
+		--{ weapon = 'WEAPON_FLASHLIGHT', price = 80 }
 	},
 
 	officer = {
-		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
-		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
-		{ weapon = 'WEAPON_STUNGUN', price = 500 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		--{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
+		--{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
+		--{ weapon = 'WEAPON_STUNGUN', price = 500 },
+		--{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
 
 	sergeant = {
-		{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
-		{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
-		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
-		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
-		{ weapon = 'WEAPON_STUNGUN', price = 500 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		--{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
+		--{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
+		--{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
+		--{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
+		--{ weapon = 'WEAPON_STUNGUN', price = 500 },
+		--{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
 
 	intendent = {
-		{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
-		{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
-		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
-		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
-		{ weapon = 'WEAPON_STUNGUN', price = 500 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		--{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
+		--{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
+		--{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
+		--{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
+		--{ weapon = 'WEAPON_STUNGUN', price = 500 },
+		--{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
 
 	lieutenant = {
-		{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
-		{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
-		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
-		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
-		{ weapon = 'WEAPON_STUNGUN', price = 500 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		--{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
+		--{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
+		--{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
+		--{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
+		--{ weapon = 'WEAPON_STUNGUN', price = 500 },
+		--{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
 
 	chef = {
-		{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
-		{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
-		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
-		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
-		{ weapon = 'WEAPON_STUNGUN', price = 500 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		--{ weapon = 'WEAPON_APPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 10000 },
+		--{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
+		--{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 70000 },
+		--{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
+		--{ weapon = 'WEAPON_STUNGUN', price = 500 },
+		--{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
 
 	boss = {
-		{ weapon = 'WEAPON_NIGHTSTICK', price = 690},
-		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 9199 },
-		{ weapon = 'WEAPON_SMG', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 15899 },
-		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 12499 },
-		{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 50000 },
-		{ weapon = 'WEAPON_STUNGUN', price = 4999 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 999 },
-		{ weapon = 'WEAPON_FIREEXTINGUISHER', price = 495 },
-		{ weapon = 'WEAPON_FLAREGUN', price = 4499 }
+		{ weapon = 'WEAPON_NIGHTSTICK', price = 500},
+		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 1000, 4000, nil }, price = 5000 },
+		{ weapon = 'WEAPON_SMG', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 10000 },
+		{ weapon = 'WEAPON_PUMPSHOTGUN', components = { 2000, 6000, nil }, price = 13000 },
+		{ weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 6000, 1000, 4000, 8000, nil }, price = 20000 },
+		{ weapon = 'WEAPON_STUNGUN', price = 1000 },
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 500 },
+		{ weapon = 'WEAPON_FIREEXTINGUISHER', price = 500 },
+		{ weapon = 'WEAPON_FLAREGUN', price = 1000 }
 	}
 }
 
 Config.AuthorizedVehicles = {
 	Shared = {
-		{ model = 'police', label = 'Volkswagen Passat', price = 100 },
-		{ model = 'police2', label = 'Volvo V90 CC', price = 100 },
-		{ model = 'police3', label = 'Volvo XC90', price = 100 },
-		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
-		{ model = 'sheriff', label = 'Volkswagen T6', price = 100 },
-		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 100 },
-		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
-		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 100 }
+
 	},
 
 	recruit = {
-
+    { model = 'police', label = 'Volkswagen Passat', price = 1 }
 	},
 
 	officer = {
-		{ model = 'police', label = 'Volkswagen Passat', price = 100 },
-		{ model = 'police2', label = 'Volvo V90 CC', price = 100 },
-		{ model = 'police3', label = 'Volvo XC90', price = 100 },
-		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
-		{ model = 'sheriff', label = 'Volkswagen T6', price = 100 },
-		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 100 },
-		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
-		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 100 }
+		{ model = 'police', label = 'Volkswagen Passat', price = 1 },
+		{ model = 'police2', label = 'Volvo V90 CC', price = 1 },
+		{ model = 'police3', label = 'Volvo XC90', price = 1 }
 	},
 
 	sergeant = {
-		{ model = 'police', label = 'Volkswagen Passat', price = 100 },
-		{ model = 'police2', label = 'Volvo V90 CC', price = 100 },
-		{ model = 'police3', label = 'Volvo XC90', price = 100 },
-		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
-		{ model = 'sheriff', label = 'Volkswagen T6', price = 100 },
-		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 100 },
-		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
-		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 100 }
+		{ model = 'police', label = 'Volkswagen Passat', price = 1 },
+		{ model = 'police2', label = 'Volvo V90 CC', price = 1 },
+		{ model = 'police3', label = 'Volvo XC90', price = 1 },
+		{ model = 'policeb', label = 'BMW 1200R', price = 1 },
+		{ model = 'sheriff', label = 'Volkswagen T6', price = 1 },
+		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 1 },
+		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 1 },
+		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 1 }
 	},
 
 	intendent = {
-		{ model = 'police', label = 'Volkswagen Passat', price = 100 },
-		{ model = 'police2', label = 'Volvo V90 CC', price = 100 },
-		{ model = 'police3', label = 'Volvo XC90', price = 100 },
-		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
-		{ model = 'sheriff', label = 'Volkswagen T6', price = 100 },
-		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 100 },
-		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
-		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 100 }
+		{ model = 'police', label = 'Volkswagen Passat', price = 1 },
+		{ model = 'police2', label = 'Volvo V90 CC', price = 1 },
+		{ model = 'police3', label = 'Volvo XC90', price = 1 },
+		{ model = 'policeb', label = 'BMW 1200R', price = 1 },
+		{ model = 'sheriff', label = 'Volkswagen T6', price = 1 },
+		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 1 },
+		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 1 },
+		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 1 }
 	},
 
 	lieutenant = {
-		{ model = 'police', label = 'Volkswagen Passat', price = 100 },
-		{ model = 'police2', label = 'Volvo V90 CC', price = 100 },
-		{ model = 'police3', label = 'Volvo XC90', price = 100 },
-		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
-		{ model = 'sheriff', label = 'Volkswagen T6', price = 100 },
-		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 100 },
-		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
-		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 100 }
+		{ model = 'police', label = 'Volkswagen Passat', price = 1 },
+		{ model = 'police2', label = 'Volvo V90 CC', price = 1 },
+		{ model = 'police3', label = 'Volvo XC90', price = 1 },
+		{ model = 'policeb', label = 'BMW 1200R', price = 1 },
+		{ model = 'sheriff', label = 'Volkswagen T6', price = 1 },
+		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 1 },
+		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 1 },
+		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 1 }
 	},
 
 	chef = {
-
+    { model = 'police', label = 'Volkswagen Passat', price = 1 },
+    { model = 'police2', label = 'Volvo V90 CC', price = 1 },
+    { model = 'police3', label = 'Volvo XC90', price = 1 },
+    { model = 'policeb', label = 'BMW 1200R', price = 1 },
+    { model = 'sheriff', label = 'Volkswagen T6', price = 1 },
+    { model = 'police4', label = 'BMW 540i xDrive - Civil', price = 1 },
+    { model = 'fbi', label = 'Volvo V90 CC - Civil', price = 1 },
+    { model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 1 }
 	},
 
 	boss = {
+    { model = 'police', label = 'Volkswagen Passat', price = 1 },
+    { model = 'police2', label = 'Volvo V90 CC', price = 1 },
+    { model = 'police3', label = 'Volvo XC90', price = 1 },
+    { model = 'policeb', label = 'BMW 1200R', price = 1 },
+    { model = 'sheriff', label = 'Volkswagen T6', price = 1 },
+    { model = 'police4', label = 'BMW 540i xDrive - Civil', price = 1 },
+    { model = 'fbi', label = 'Volvo V90 CC - Civil', price = 1 },
+    { model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 1 }
 
 	}
 }
@@ -221,15 +224,15 @@ Config.AuthorizedHelicopters = {
 	intendent = {},
 
 	lieutenant = {
-		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 200000 }
+		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 1 }
 	},
 
 	chef = {
-		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 150000 }
+		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 1 }
 	},
 
 	boss = {
-		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 100000 }
+		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 1 }
 	}
 }
 
