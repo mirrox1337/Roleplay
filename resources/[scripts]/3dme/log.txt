@@ -41,3 +41,128 @@
 04/12/2019 22:22:29 : Mirrox - steam:110000109c2ddf3 :  test  
 04/12/2019 22:26:59 : Mirrox - steam:110000109c2ddf3 :  test  
 06/12/2019 08:07:12 : Mirrox - steam:110000109c2ddf3 :  test  
+09/12/2019 14:23:38 : Vixen - steam:11000011594e044 :  tar fram redskap  
+09/12/2019 14:24:10 : Vixen - steam:11000011594e044 :  kollar puls och andning  
+09/12/2019 14:24:48 : Vixen - steam:11000011594e044 :  tar första hjälpen lådan.  
+09/12/2019 14:24:53 : Vixen - steam:11000011594e044 :  kollar efter skador  
+09/12/2019 14:25:27 : Vixen - steam:11000011594e044 :  tar tryckförband  
+09/12/2019 14:25:42 : Vixen - steam:11000011594e044 :  lindar runt såret på benet.  
+09/12/2019 14:26:22 : Vixen - steam:11000011594e044 :  tar PVK  
+09/12/2019 14:26:35 : Vixen - steam:11000011594e044 :  spritar handen på personen  
+09/12/2019 14:27:04 : Vixen - steam:11000011594e044 :  slår lätt på handen, letar efter en fin blodådra  
+09/12/2019 14:27:31 : Vixen - steam:11000011594e044 :  sätter in pvk:n  
+09/12/2019 14:27:46 : Vixen - steam:11000011594e044 :  avslutar med ett blåster runtom.  
+09/12/2019 14:31:51 : Vixen - steam:11000011594e044 :  tar fram en utdagbar bår  
+09/12/2019 14:32:36 : Vixen - steam:11000011594e044 :  får upp personen på vänster sida, lägger under en plastbräda  
+09/12/2019 14:32:55 : Vixen - steam:11000011594e044 :  vänder på personen igen och rättar till plastbrädan  
+09/12/2019 14:33:13 : Vixen - steam:11000011594e044 :  gör samma sak vid benen  
+09/12/2019 14:33:24 : Vixen - steam:11000011594e044 :  sänker ner båren  
+09/12/2019 14:33:40 : Vixen - steam:11000011594e044 :  tar tag i båda handtagen och drar upp personen på båren.  
+09/12/2019 14:33:51 : Vixen - steam:11000011594e044 :  höjer upp den.  
+09/12/2019 14:34:00 : Vixen - steam:11000011594e044 :  sätter på syrgas  
+09/12/2019 14:34:13 : Vixen - steam:11000011594e044 :  för in personen i bilen  
+09/12/2019 14:35:33 : Vixen - steam:11000011594e044 :  tar ut båren  
+09/12/2019 14:36:37 : Vixen - steam:11000011594e044 :  placerar båren i höjd med bordet  
+09/12/2019 14:36:46 : Vixen - steam:11000011594e044 :  tar sprit och papper  
+09/12/2019 14:36:49 : Vixen - steam:11000011594e044 :  torkar av  
+09/12/2019 14:37:31 : Vixen - steam:11000011594e044 :  tar tag i plastbitarna och drar emot kroppen  
+09/12/2019 14:37:38 : Vixen - steam:11000011594e044 :  får upp personen på bordet  
+09/12/2019 14:37:57 : Vixen - steam:11000011594e044 :  tar fram suturkit  
+09/12/2019 14:38:11 : Vixen - steam:11000011594e044 :  klipper upp byxbenet  
+09/12/2019 14:38:35 : Hasse Berg - steam:11000010d336fe7 :  vinkar  
+09/12/2019 14:38:43 : Vixen - steam:11000011594e044 :  ler  
+09/12/2019 14:39:31 : Vixen - steam:11000011594e044 :  tar sårrengörning  
+09/12/2019 14:39:41 : Vixen - steam:11000011594e044 :  gör rent runt knivsåret.  
+09/12/2019 14:40:47 : Vixen - steam:11000011594e044 :  tar en tång och kollar i såret.  
+09/12/2019 14:41:38 : Vixen - steam:11000011594e044 :  kollar så att ingen kroppspulsåder skadats  
+09/12/2019 14:42:07 : eriz - steam:11000010adb7d12 :  stoppar in all tramadol i fickan  
+09/12/2019 14:51:47 : eriz - steam:11000010adb7d12 :  spottar blod  
+09/12/2019 14:51:55 : Vixen - steam:11000011594e044 :  torkar blodet från munnen  
+09/12/2019 14:52:04 : eriz - steam:11000010adb7d12 :  medvetslös  
+09/12/2019 14:52:12 : Vixen - steam:11000011594e044 :  kollar puls  
+09/12/2019 14:52:21 : eriz - steam:11000010adb7d12 :  sväning puls  
+09/12/2019 14:52:28 : eriz - steam:11000010adb7d12 :  tung andning  
+09/12/2019 14:53:02 : Vixen - steam:11000011594e044 :  kollar efter skador  
+09/12/2019 14:53:21 : eriz - steam:11000010adb7d12 :  skrapsår på ryggen  
+09/12/2019 14:53:44 : Vixen - steam:11000011594e044 :  vänder personen i stabilt sidoläge och frigör luftvägar så att andningen blir bättre.  
+09/12/2019 14:54:05 : eriz - steam:11000010adb7d12 :  andas stabilt  
+09/12/2019 14:54:31 : eriz - steam:11000010adb7d12 :  medvetslös  
+09/12/2019 14:54:43 : Vixen - steam:11000011594e044 :  sätter på en pvk  
+09/12/2019 14:55:05 : eriz - steam:11000010adb7d12 :  penis vecklings kastrering  
+09/12/2019 14:55:18 : eriz - steam:11000010adb7d12 :  = pvk  
+09/12/2019 14:55:33 : eriz - steam:11000010adb7d12 :  tappar 1 tramadol från fickan  
+09/12/2019 14:56:02 : Vixen - steam:11000011594e044 :  Kollar sätter på plåster så att pvkn sitter fast  
+09/12/2019 14:56:41 : Vixen - steam:11000011594e044 :  tar fram en utfälldbarbår  
+09/12/2019 14:57:16 : Vixen - steam:11000011594e044 :  tar 2 förflyttningsbrädor  
+09/12/2019 14:57:27 : Vixen - steam:11000011594e044 :  sänger ner båren till marken  
+09/12/2019 14:57:50 : Vixen - steam:11000011594e044 :  tar förflyttningsbrädorna vid ryggen  
+09/12/2019 14:58:03 : Vixen - steam:11000011594e044 :  flyttar över personen bort från mig  
+09/12/2019 14:58:09 : Vixen - steam:11000011594e044 :  drar under den  
+09/12/2019 14:59:08 : Vixen - steam:11000011594e044 :  tar tag i handtagen  
+09/12/2019 14:59:16 : Vixen - steam:11000011594e044 :  drar dem mot kroppen upp på båren  
+09/12/2019 15:00:01 : Vixen - steam:11000011594e044 :  drar båren  
+09/12/2019 15:00:34 : Vixen - steam:11000011594e044 :  placerar i bilen, sätter på syrgas  
+09/12/2019 15:03:11 : Vixen - steam:11000011594e044 :  kopplar loss båren och drar ut båren  
+09/12/2019 15:03:57 : Vixen - steam:11000011594e044 :  placerar båren i höjd med bordet  
+09/12/2019 15:04:25 : Vixen - steam:11000011594e044 :  tar tag i plastbitarna  
+09/12/2019 15:04:39 : Vixen - steam:11000011594e044 :  drar patienten mot kroppen upp på bordet  
+09/12/2019 15:05:16 : Vixen - steam:11000011594e044 :  tar av västen  
+09/12/2019 15:06:04 : Vixen - steam:11000011594e044 :  kollar på ekg  
+09/12/2019 15:06:25 : Vixen - steam:11000011594e044 :  kopplar på ekg  
+09/12/2019 15:06:31 : Vixen - steam:11000011594e044 :  sätter på en pulsmätare  
+09/12/2019 15:07:11 : eriz - steam:11000010adb7d12 :  får stånd  
+09/12/2019 15:07:31 : Vixen - steam:11000011594e044 :  kopplar på syrgasen till en större tub  
+09/12/2019 15:07:44 : Vixen - steam:11000011594e044 :  tar röntgenplåt  
+09/12/2019 15:07:57 : eriz - steam:11000010adb7d12 :  bryten ryggrad  
+09/12/2019 15:08:38 : Vixen - steam:11000011594e044 :  sätter igång maskinen  
+09/12/2019 15:08:45 : Vixen - steam:11000011594e044 :  tar kort  
+09/12/2019 15:09:15 : Vixen - steam:11000011594e044 :  tar ner bilden  
+09/12/2019 15:09:54 : Vixen - steam:11000011594e044 :  kollar på bilden  
+09/12/2019 15:10:22 : Vixen - steam:11000011594e044 :  Kollar vad för typ av inre skador personen har  
+09/12/2019 15:10:37 : eriz - steam:11000010adb7d12 :  bryten ryggrad  
+09/12/2019 15:10:40 : eriz - steam:11000010adb7d12 :  får stånd  
+09/12/2019 15:10:48 : Vixen - steam:11000011594e044 :  kollar vart ryggraden är bryten  
+09/12/2019 15:10:56 : eriz - steam:11000010adb7d12 :  ner mot svanskotan  
+09/12/2019 15:11:23 : Vixen - steam:11000011594e044 :  kollar om det är ett djupt sår på kotan  
+09/12/2019 15:12:03 : Vixen - steam:11000011594e044 :  kollar om det är en fraktura  
+09/12/2019 15:13:28 : eriz - steam:11000010adb7d12 :  NO  
+09/12/2019 15:16:33 : Vixen - steam:11000011594e044 :  vänder patienten  
+09/12/2019 15:16:41 : Vixen - steam:11000011594e044 :  kopplar på narkos  
+09/12/2019 15:17:06 : Vixen - steam:11000011594e044 :  klipper upp byxbenet och tröjan  
+09/12/2019 15:17:21 : Vixen - steam:11000011594e044 :  placerar en operationsduk som täcker hela kroppen  
+09/12/2019 15:17:27 : Vixen - steam:11000011594e044 :  klipper upp vid ryggen  
+09/12/2019 15:17:40 : Vixen - steam:11000011594e044 :  gör rent runtom.  
+09/12/2019 15:18:40 : Vixen - steam:11000011594e044 :  tar en skalpel och tång  
+09/12/2019 15:18:48 : Vixen - steam:11000011594e044 :  gör ett snitt och öppnar upp.  
+09/12/2019 15:19:16 : Vixen - steam:11000011594e044 :  kollar om det finns skada på taggutskotten  
+09/12/2019 15:19:48 : Vixen - steam:11000011594e044 :  kollar om det finns skador på fasetlederna  
+09/12/2019 15:21:22 : Vixen - steam:11000011594e044 :  kollar om disken är skadad  
+09/12/2019 15:24:56 : Vixen - steam:11000011594e044 :  syr ihop  
+09/12/2019 18:33:59 : Vixen - steam:11000011594e044 :  tar kaffekoppen  
+09/12/2019 18:43:52 : OstenBror - steam:11000010c4e86de :  tar ut perifer venkateter  
+09/12/2019 18:45:10 : Hasse Berg - steam:11000010d336fe7 :  ler  
+09/12/2019 18:45:32 : Vixen - steam:11000011594e044 :  ger handen  
+09/12/2019 18:45:51 : OstenBror - steam:11000010c4e86de :  tar handen och försöker hitta blodvenen  
+09/12/2019 18:47:38 : Hasse Berg - steam:11000010d336fe7 :  rotar genom och ser om man hittar något gott  
+09/12/2019 18:49:05 : OstenBror - steam:11000010c4e86de :  tar fram rengörnings alkohol och bomullstussar  
+09/12/2019 18:50:00 : OstenBror - steam:11000010c4e86de :  tar rengörings alkohol och bomullstuss och gör rent på ovansidan handen vid blodven  
+09/12/2019 18:51:08 : OstenBror - steam:11000010c4e86de :  tar ett par latex handskar  
+09/12/2019 18:51:29 : OstenBror - steam:11000010c4e86de :  tar på handskar  
+09/12/2019 18:54:13 : OstenBror - steam:11000010c4e86de :  tar handen och letar efter en bra ven att sätta in PVKn i  
+09/12/2019 18:55:41 : OstenBror - steam:11000010c4e86de :  lägger PVKn nästan ner och trycker in den försiktigt i venen  
+09/12/2019 18:55:44 : Vixen - steam:11000011594e044 :  biter ihop och grimaserar smått.  
+09/12/2019 18:57:08 : Vixen - steam:11000011594e044 :  tittar på pvkn  
+09/12/2019 18:57:23 : OstenBror - steam:11000010c4e86de :  tar fram ett provrör till PVKn  
+09/12/2019 18:58:01 : OstenBror - steam:11000010c4e86de :  fäster provröret till PVKn  
+09/12/2019 19:01:06 : OstenBror - steam:11000010c4e86de :  kopplar bort provrör och stänger igen PVKn  
+09/12/2019 19:01:48 : OstenBror - steam:11000010c4e86de :  tar fram en bomullstuss och ett plåster  
+09/12/2019 19:03:06 : OstenBror - steam:11000010c4e86de :  drar ut PVKn försiktigt och trycker med bomullstussen på injektionshål  
+09/12/2019 19:04:32 : OstenBror - steam:11000010c4e86de :  tar bort bomullstuss för att se om det blöder mycket  
+09/12/2019 19:05:02 : OstenBror - steam:11000010c4e86de :  sätter på ett plåster på injektionshål  
+09/12/2019 19:06:07 : OstenBror - steam:11000010c4e86de :  tar av och slänger handskarna  
+09/12/2019 19:06:15 : Vixen - steam:11000011594e044 :  analyserar blodet  
+09/12/2019 19:11:25 : Vixen - steam:11000011594e044 :  städar undan efter mig  
+09/12/2019 19:12:41 : Vixen - steam:11000011594e044 :  lägger fram anställningspapper  
+09/12/2019 19:13:09 : OstenBror - steam:11000010c4e86de :  sträcker mig över bortet och tar pennan  
+09/12/2019 19:13:31 : OstenBror - steam:11000010c4e86de :  skriver på anställningspapper  
+09/12/2019 19:14:08 : OstenBror - steam:11000010c4e86de :  tar en kopia  
