@@ -60,7 +60,8 @@ Citizen.CreateThread(function()
 
                     SearchBus()
                 else
-                    exports['mythic_notify']:DoCustomHudText('success', 'Du har redan sökt igenom detta stället.', 8500, { ['background-color'] = '#4a4a4a', ['color'] = '#fff' })
+                	exports['mythic_notify']:SendAlert('inform', 'Du har redan sökt igenom detta stället.', 3500, { ['background-color'] = '#bf0c00', ['color'] = '#fff' })
+                    --exports['mythic_notify']:DoCustomHudText('success', 'Du har redan sökt igenom detta stället.', 8500, { ['background-color'] = '#4a4a4a', ['color'] = '#fff' })
                 end
             end
         end
@@ -71,9 +72,10 @@ end)
 
 function SearchBus()
     TaskStartScenarioInPlace(PlayerPedId(), "CODE_HUMAN_MEDIC_KNEEL", 0, true)
-    exports['mythic_notify']:DoCustomHudText('success', 'Söker efter något användbart.', 15000, { ['background-color'] = '#007ecc', ['color'] = '#fff' })
+    exports['mythic_notify']:SendAlert('inform', 'Söker efter något användbart...', 8000, { ['background-color'] = '#bf0c00', ['color'] = '#fff' })
+    --exports['mythic_notify']:DoCustomHudText('success', 'Söker efter något användbart.', 15000, { ['background-color'] = '#007ecc', ['color'] = '#fff' })
 
-    Citizen.Wait(15000)
+    Citizen.Wait(8000)
 
     TriggerServerEvent("chrono-jewlery:retrieveItem")
 
@@ -218,7 +220,7 @@ end)
 Citizen.CreateThread(function()
       
 	while true do
-		Citizen.Wait(0)
+
 		local pos = GetEntityCoords(GetPlayerPed(-1), true)
 
 		for k,v in pairs(Stores)do
@@ -226,46 +228,43 @@ Citizen.CreateThread(function()
 
 			if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 15.0)then
 				if not holdingup then
-					--DrawMarker(27, v.position.x, v.position.y, v.position.z-0.9, 0, 0, 0, 0, 0, 0, 2.001, 2.0001, 0.5001, 255, 0, 0, 200, 0, 0, 0, 0)
-					DrawMarker(27, v.position.x, v.position.y, v.position.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1, 64, 224, 208, 225, false, true, 2, true, false, false, false)
+					DrawMarker(6, v.position.x, v.position.y, v.position.z, 0, 0, 0, -1, 0, 0, 1.5, 1.5, 1.5, 0, 119, 119, 100, 0, 0, 0, 0)
 
 					if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 1.0)then
 						if (incircle == false) then
 							if borsa == 40 or borsa == 41 or borsa == 44 or borsa == 45 then
 								ESX.TriggerServerCallback('chrono-jewelry:itemState', function(itemState)
-								if itemState == 1 then
-									--exports['mythic_notify']:SendAlert('inform', 'Röd', 5000, { ['background-color'] = '#bf0c00', ['color'] = '#fff' })
-									--exports['mythic_notify']:SendAlert('inform', 'Grön', 5000, { ['background-color'] = '#008a25', ['color'] = '#fff' })
+									if itemState == 1 then
+										--exports['mythic_notify']:SendAlert('inform', 'Röd', 5000, { ['background-color'] = '#bf0c00', ['color'] = '#fff' })
+										--exports['mythic_notify']:SendAlert('inform', 'Grön', 5000, { ['background-color'] = '#008a25', ['color'] = '#fff' })
 
-									exports['mythic_notify']:SendAlert('inform', 'Du är redo, skjut för att råna.', 2500, { ['background-color'] = '#008a25', ['color'] = '#fff' })
-									print(itemState)
+										exports['mythic_notify']:SendAlert('inform', 'Du är redo, skjut för att råna.', 2500, { ['background-color'] = '#008a25', ['color'] = '#fff' })
+										print(itemState)
 
-								else
-									--exports['mythic_notify']:SendAlert('inform', _U('need_bag'))
-									exports['mythic_notify']:SendAlert('inform', 'Du är inte redo för detta.', 2500, { ['background-color'] = '#bf0c00', ['color'] = '#fff' })
+									else
+										--exports['mythic_notify']:SendAlert('inform', _U('need_bag'))
+										exports['mythic_notify']:SendAlert('inform', 'Du är inte redo för detta.', 2500, { ['background-color'] = '#bf0c00', ['color'] = '#fff' })
 
-								end				
-							end)
+									end				
+								end)
+							end
 						end
-					end
 
-					incircle = true
+
+						incircle = true
+
 						if IsPedShooting(GetPlayerPed(-1)) and CheckWeapon(GetPlayerPed(-1)) then 
-							if Config.NeedBag then
-							    if borsa == 40 or borsa == 41 or borsa == 44 or borsa == 45 then
-							        ESX.TriggerServerCallback('chrono-jewelry:conteggio', function(CopsConnected)
-								        if CopsConnected >= Config.RequiredCopsRob then
-							                TriggerServerEvent('chrono-jewelry:rob', k)
-							                --PlaySoundFromCoord(soundid, "VEHICLES_HORNS_AMBULANCE_WARNING", pos2.x, pos2.y, pos2.z)
-								        else
-									        --exports['mythic_notify']:DoCustomHudText('success', _U('min_two_police') .. Config.RequiredCopsRob .. _U('min_two_police2'), 8500, { ['background-color'] = '#ad0000', ['color'] = '#fff' })
-									        exports['mythic_notify']:SendAlert('inform', 'Ej tillräckligt med poliser.', 5000, { ['background-color'] = '#bf0c00', ['color'] = '#fff' })
-								        end
-							        end)		
-
-								end
-							else
-							end	
+						    if borsa == 40 or borsa == 41 or borsa == 44 or borsa == 45 then
+						        ESX.TriggerServerCallback('chrono-jewelry:conteggio', function(CopsConnected)
+							        if CopsConnected >= Config.RequiredCopsRob then
+						                TriggerServerEvent('chrono-jewelry:rob', k)
+						                --PlaySoundFromCoord(soundid, "VEHICLES_HORNS_AMBULANCE_WARNING", pos2.x, pos2.y, pos2.z)
+							        else
+								        --exports['mythic_notify']:DoCustomHudText('success', _U('min_two_police') .. Config.RequiredCopsRob .. _U('min_two_police2'), 8500, { ['background-color'] = '#ad0000', ['color'] = '#fff' })
+								        exports['mythic_notify']:SendAlert('inform', 'Ej tillräckligt med poliser.', 5000, { ['background-color'] = '#bf0c00', ['color'] = '#fff' })
+							        end
+						        end)		
+							end
                         end
 
 					elseif(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) > 1.0)then
@@ -354,22 +353,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
---[[
-RegisterNetEvent("lester:createBlip")
-AddEventHandler("lester:createBlip", function(type, x, y, z)
-	local blip = AddBlipForCoord(x, y, z)
-	SetBlipSprite(blip, type)
-	SetBlipColour(blip, 1)
-	SetBlipScale(blip, 0.8)
-	SetBlipAsShortRange(blip, true)
-	if(type == 77)then
-		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentString("Lester")
-		EndTextCommandSetBlipName(blip)
-	end
-end)
-]]--
-
 blip = false
 
 Citizen.CreateThread(function()
@@ -382,38 +365,17 @@ Citizen.CreateThread(function()
 			local coords    = GetEntityCoords(playerPed)
 			
 			if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), 1272.6, -1711.87, 54.77, true) <= 10 and not blip then
-				DrawMarker(20, 1272.6, -1711.87, 54.77, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1.5, 102, 100, 102, 100, false, true, 2, false, false, false, false)
+				DrawMarker(6, 1272.75, -1711.82, 53.77, 0, 0, 0, -1, 0, 0, 1.5, 1.5, 1.5, 0, 119, 119, 255, 0, 0, 0, 0)
 				if GetDistanceBetweenCoords(coords, 1272.52, -1711.94, 54.77, true) < 1.0 then
 					DisplayHelpText(_U('press_to_sell'))
 					if IsControlJustReleased(1, 51) then
-						blip = true
-						ESX.TriggerServerCallback('chrono-jewelry:getItemAmount', function(quantity)
-							if quantity >= Config.MaxJewelsSell then
-								ESX.TriggerServerCallback('chrono-jewelry:conteggio', function(CopsConnected)
-									if CopsConnected >= Config.RequiredCopsSell then
-										RequestAnimDict("anim@heists@humane_labs@finale@keycards")
-										TaskPlayAnim(GetPlayerPed(-1), "anim@heists@humane_labs@finale@keycards" ,"ped_b_enter" ,8.0, -8.0, -1, 0, 0, false, false, false )
-										Citizen.Wait(1000)
-										FreezeEntityPosition(playerPed, true)
-										TriggerEvent('mt:missiontext', _U('goldsell'), 10000)
-										exports['mythic_notify']:DoCustomHudText('success', _U('goldsell'), 10000, { ['background-color'] = '007ecc', ['color'] = '#fff' })
-										Wait(10000)
-										FreezeEntityPosition(playerPed, false)
-										TriggerServerEvent('chrono-jewelry:vendita')
-										blip = false
-									else
-										blip = false
-										exports['mythic_notify']:DoCustomHudText('success', _U('copsforsell') .. Config.RequiredCopsSell .. _U('copsforsell2'), 8500, { ['background-color'] = '#ad0000', ['color'] = '#fff' })
-									end
-								end)
-							else
-								blip = false
-								exports['mythic_notify']:DoCustomHudText('success', _U('notenoughgold') .. Config.MaxJewelsSell .. _U('notenoughgold2'), 8500, { ['background-color'] = '#ad0000', ['color'] = '#fff' })
-							end
-						end, 'jewels')
-					end
+					RequestAnimDict("anim@heists@humane_labs@finale@keycards")
+					TaskPlayAnim(GetPlayerPed(-1), "anim@heists@humane_labs@finale@keycards" ,"ped_b_enter" ,8.0, -8.0, -1, 0, 0, false, false, false )
+					Citizen.Wait(1000)
+					TriggerServerEvent('chrono-jewelry:sell')
 				end
 			end
+		end
 	end
 end)
 

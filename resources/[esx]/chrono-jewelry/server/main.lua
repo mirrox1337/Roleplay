@@ -168,15 +168,21 @@ ESX.RegisterServerCallback('chrono-jewelry:getItemAmount', function(source, cb, 
 	cb(quantity)
 end)
 
-RegisterServerEvent('chrono-jewelry:vendita')
-AddEventHandler('chrono-jewelry:vendita', function()
+RegisterServerEvent('chrono-jewelry:sell')
+AddEventHandler('chrono-jewelry:sell', function()
 
-	local _source = source
-	local xPlayer = ESX.GetPlayerFromId(_source)
-	local reward = math.floor(Config.PriceForOneJewel * Config.MaxJewelsSell)
+    local _source = source
+    local xPlayer = ESX.GetPlayerFromId(_source)
+	local jewelQuantity = xPlayer.getInventoryItem('jewels').count
+	
+	if jewelQuantity == 0 then
+	TriggerClientEvent('notification', _source, 'Du har inga juveler att sälja.', "error")
+	else
+	xPlayer.removeInventoryItem('jewels', jewelQuantity)
+	xPlayer.addMoney(jewelQuantity * Config.PriceForOneJewel)
+	TriggerClientEvent('notification', _source, 'Sålde ' .. jewelQuantity .. ' juveler för ' .. jewelQuantity * Config.PriceForOneJewel .. ' SEK', "error")
+	end
 
-	xPlayer.removeInventoryItem('jewels', Config.MaxJewelsSell)
-	xPlayer.addAccountMoney('money', reward)
 end)
 
 ESX.RegisterServerCallback('chrono-jewelry:conteggio', function(source, cb)
