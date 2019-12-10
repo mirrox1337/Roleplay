@@ -1,7 +1,7 @@
 Config = {}
 Config.Locale = 'sv'
 
-Config.RequiredCopsRob = 0
+Config.RequiredCopsRob = 4
 Config.MinJewels = 5
 Config.MaxJewels = 10
 Config.MaxWindows = 20
