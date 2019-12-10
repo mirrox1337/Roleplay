@@ -1,21 +1,18 @@
 Config = {}
 Config.Locale = 'sv'
 
-Config.RequiredCopsRob = 0
-Config.RequiredCopsSell = 0
+Config.RequiredCopsRob = 4
 Config.MinJewels = 5
-Config.MaxJewels = 20
+Config.MaxJewels = 10
 Config.MaxWindows = 20
 Config.SecBetwNextRob = 10800 -- 3 timmar
-Config.MaxJewelsSell = 20
 Config.PriceForOneJewel = 500
 Config.EnableMarker = true
-Config.NeedBag = true
 Config.Borsoni = {40, 41, 44, 45}
 
 Stores = {
 	["jewelry"] = {
-		position = { ['x'] = -629.99, ['y'] = -236.542, ['z'] = 37.15 },       
+		position = { ['x'] = -629.99, ['y'] = -236.542, ['z'] = 37.10 },       
 		nameofstore = "Juvelbutiken",
 		lastrobbed = 0
 	}

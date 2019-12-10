@@ -67,7 +67,8 @@ function openMenu()
 		},
 		function(data, menu)
 			if data.current.value == 'animations' then
-				TriggerEvent('esx_animations')
+				exports['dpemotes']:OpenEmoteMenu()
+				menu.close()
 			elseif data.current.value == 'id-card' then
 		        ESX.UI.Menu.Open(
 		            'default', GetCurrentResourceName(), 'id_card_menu',
