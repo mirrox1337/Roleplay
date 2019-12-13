@@ -372,7 +372,7 @@ Config.DoorList = {
 	textCoords = vector3(334.11, -592.23, 29.79),
 	authorizedJobs = { 'ambulance' },
 	locked = true,
-	distance = 4,
+	distance = 3,
 	doors = {
 		{
 			objName = 'v_ilev_cor_firedoor',
@@ -399,7 +399,7 @@ Config.DoorList = {
 	textCoords = vector3(346.17, -568.25, 29.59),
 	authorizedJobs = { 'ambulance' },
 	locked = true,
-	distance = 4,
+	distance = 3,
 	doors = {
 		{
 			objName = 'v_ilev_cor_firedoor',
@@ -418,7 +418,7 @@ Config.DoorList = {
 	textCoords = vector3(346.36, -573.11, 29.59),
 	authorizedJobs = { 'ambulance' },
 	locked = true,
-	distance = 4,
+	distance = 3,
 	doors = {
 		{
 			objName = 'v_ilev_cor_firedoor',
@@ -437,7 +437,7 @@ Config.DoorList = {
 	textCoords = vector3(320.0, -560.53, 29.59),
 	authorizedJobs = { 'ambulance' },
 	locked = true,
-	distance = 4,
+	distance = 2,
 	doors = {
 		{
 			objName = 'hei_prop_heist_cutscene_doorc_r',
@@ -456,7 +456,7 @@ Config.DoorList = {
 	textCoords = vector3(317.74, -588.54, 29.79),
 	authorizedJobs = { 'ambulance' },
 	locked = true,
-	distance = 4,
+	distance = 3,
 	doors = {
 		{
 			objName = 'v_ilev_cor_darkdoor',
@@ -472,10 +472,10 @@ Config.DoorList = {
 	}
 },
 {
-	textCoords = vector3(312.72150, -580.42040, 28.81984),
+	textCoords = vector3(313.72150, -580.85, 29.81984),
 	authorizedJobs = { 'ambulance' },
 	locked = true,
-	distance = 4,
+	distance = 3,
 	doors = {
 		{
 			objName = 'v_ilev_cor_firedoor',
@@ -487,6 +487,82 @@ Config.DoorList = {
 			objName = 'v_ilev_cor_firedoor',
 			objYaw = 340.269,
 			objCoords = vector3(314.88360, -581.20760, 28.81984)
+		}
+	}
+},
+{
+	textCoords = vector3(341.87, -571.42, 29.81984),
+	authorizedJobs = { 'ambulance' },
+	locked = true,
+	distance = 2,
+	doors = {
+		{
+			objName = 'v_ilev_cor_firedoor',
+			objYaw = 250.0,
+			objCoords = vector3(341.39200, -572.50710, 28.81897)
+		},
+
+		{
+			objName = 'v_ilev_cor_firedoor',
+			objYaw = 70.0,
+			objCoords = vector3(342.17840, -570.34730, 28.81897)
+		}
+	}
+},
+{
+	textCoords = vector3(336.75, -571.83, 29.81984),
+	authorizedJobs = { 'ambulance' },
+	locked = true,
+	distance = 2,
+	doors = {
+		{
+			objName = 'v_ilev_cor_doorglassb',
+			objYaw = 340.0,
+			objCoords = vector3(337.99130, -572.20840, 28.93973)
+		},
+
+		{
+			objName = 'v_ilev_cor_doorglassa',
+			objYaw = 340.0,
+			objCoords = vector3(335.56880, -571.33120, 28.93973)
+		}
+	}
+},
+{
+	textCoords = vector3(330.15, -569.45, 29.81984),
+	authorizedJobs = { 'ambulance' },
+	locked = true,
+	distance = 3,
+	doors = {
+		{
+			objName = 'v_ilev_cor_doorglassb',
+			objYaw = 340.0,
+			objCoords = vector3(331.38260, -569.80820, 28.93973)
+		},
+
+		{
+			objName = 'v_ilev_cor_doorglassa',
+			objYaw = 340.0,
+			objCoords = vector3(328.95720, -568.92450, 28.93973)
+		}
+	}
+},
+{
+	textCoords = vector3(322.05, -566.45, 29.81984),
+	authorizedJobs = { 'ambulance' },
+	locked = true,
+	distance = 3,
+	doors = {
+		{
+			objName = 'v_ilev_cor_firedoor',
+			objYaw = 340.0,
+			objCoords = vector3(323.12310, -566.95920, 28.82303)
+		},
+
+		{
+			objName = 'v_ilev_cor_firedoor',
+			objYaw = 160.0,
+			objCoords = vector3(320.95690, -566.17060, 28.82303)
 		}
 	}
 },
