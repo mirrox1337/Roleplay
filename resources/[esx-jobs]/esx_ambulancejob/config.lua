@@ -57,9 +57,17 @@ Config.Hospitals = {
 				InsideShop = vector3(446.7, -1355.6, 43.5),
 				Marker = { type = 36, x = 1.0, y = 1.0, z = 1.0, r = 100, g = 50, b = 200, a = 100, rotate = true },
 				SpawnPoints = {
-					{ coords = vector3(316.82, -545.27, 27.8), heading = 281.75, radius = 4.0 },
-					{ coords = vector3(316.79, -550.81, 27.8), heading = 273.13, radius = 4.0 },
-					{ coords = vector3(323.88, -542.07, 27.8), heading = 181.23, radius = 6.0 }
+					{ coords = vector3(317.08, -556.25, 27.8), heading = 270.0, radius = 1.5 },
+					{ coords = vector3(317.08, -553.46, 27.8), heading = 270.0, radius = 1.5 },
+					{ coords = vector3(317.08, -550.66, 27.8), heading = 270.0, radius = 1.5 },
+					{ coords = vector3(317.08, -547.83, 27.8), heading = 270.0, radius = 1.5 },
+					{ coords = vector3(317.08, -544.97, 27.8), heading = 270.0, radius = 1.5 },
+					{ coords = vector3(320.97, -541.74, 27.8), heading = 180.0, radius = 1.5 },
+					{ coords = vector3(323.77, -541.74, 27.8), heading = 180.0, radius = 1.5 },
+					{ coords = vector3(326.66, -541.74, 27.8), heading = 180.0, radius = 1.5 },
+					{ coords = vector3(329.41, -541.74, 27.8), heading = 180.0, radius = 1.5 },
+					{ coords = vector3(332.27, -541.74, 27.8), heading = 180.0, radius = 1.5 },
+					{ coords = vector3(335.1,  -541.74, 27.8), heading = 180.0, radius = 1.5 }
 				}
 			}
 		},
