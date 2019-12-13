@@ -19,63 +19,37 @@ end)
 local nbPizza = 0
 --CONFIGURATION--
 
-local tofu = { x = 359.10974121094, y = 326.10928344727, z = 102.88722229004} --Configuration marker prise de service
-local pizzeriafin = { x = 366.66659545898, y = 331.70611572266, z = 102.50541687012} --Configuration marker fin de service
+local tofu = { x = 359.3, y = 326.57, z = 103.88722229004} --Configuration marker prise de service
+local pizzeriafin = { x = 366.66659545898, y = 331.70611572266, z = 103.50541687012} --Configuration marker fin de service
 local spawnfaggio = { x = 366.66659545898, y = 331.70611572266, z = 102.50541687012 } --Configuration du point de spawn du faggio
 
 local livpt = { --Configuration des points de livraisons (repris ceux de Maykellll1 / NetOut)
-[1] = {name = "Vinewood Hills",x = -1220.50, y = 666.95 , z = 143.10},
-[2] = {name = "Vinewood Hills",x = -1338.97, y = 606.31 , z = 133.37},
-[3] = {name = "Rockford Hills",x = -1051.85, y = 431.66 , z = 76.06 },
-[4] = {name = "Rockford Hills",x = -904.04 , y = 191.49 , z = 68.44 },
-[5] = {name = "Rockford Hills",x = -21.58  , y = -23.70 , z = 72.24 },
-[6] = {name = "Hawick"        ,x = -904.04 , y = 191.49 , z = 68.44 },
-[7] = {name = "Alta"          ,x = 225.39  , y = -283.63, z = 28.25 },
-[8] = {name = "Pillbox Hills" ,x = 5.62    , y = -707.72, z = 44.97 },
-[9] = {name = "Mission Row"   ,x = 284.50  , y = -938.50 , z = 28.35},
-[10] ={name = "Rancho"        ,x = 411.59  , y = -1487.54, z = 29.14},
-[11] ={name = "Davis"         ,x = 85.19   , y = -1958.18, z = 20.12},
-[12] ={name ="Chamberlain Hills",x = -213.00, y =-1617.35 , z =37.35},
-[13] ={name ="Dörren"      ,x = -1015.65, y =-1515.05 ,z = 5.51},
-[14] ={name ="hos en kund" ,x= -1004.788, y=-1154.824,z = 1.64603},
-[15] ={name ="hos en kund" ,x= -1113.937, y=-1193.136,z = 1.827304},
-[16] ={name ="hos en kund" ,x= -1075.903, y=-1026.452,z = 4.031562},
-[17] ={name ="hos en kund" ,x= -1056.485, y=-1001.234,z = 1.639098},
-[18] ={name ="hos en kund" ,x= -1090.886, y=-926.188,z = 2.630009},
-[19] ={name ="hos en kund" ,x= -1075.903, y=-1026.452,z = 4.031562},
-[20] ={name ="hos en kund" ,x= -1181.652, y=-988.6455,z = 1.634243},
-[21] ={name ="hos en kund" ,x= -1151.11, y=-990.905,z = 1.638789},
-[22] ={name ="hos en kund" ,x= -1022.788, y=-896.3149,z = 4.908271},
-[23] ={name ="hos en kund" ,x= -1060.738, y=-826.829,z = 18.69866},
-[24] ={name ="hos en kund" ,x= -968.6487, y=-1329.453,z = 5.144861},
-[25] ={name ="hos en kund" ,x= -1185.5, y=-1386.238,z = 4.112149},
-[26] ={name ="hos en kund" ,x= -1132.848, y=-1456.029,z = 4.372081},
-[27] ={name ="hos en kund" ,x= -1125.602, y=-1544.203,z = 5.391256},
-[28] ={name ="hos en kund" ,x= -1084.74, y=-1558.709,z = 4.10145},
-[29] ={name ="hos en kund" ,x= -1098.367, y=-1679.272,z = 3.853804},
-[30] ={name ="hos en kund" ,x= -1155.863, y=-1574.202,z = 8.344403},
-[31] ={name ="hos en kund" ,x= -1122.675, y=-1557.524,z = 5.277201},
-[32] ={name ="hos en kund" ,x= -1108.679, y=-1527.393,z = 6.265457},
-[33] ={name ="hos en kund" ,x= -1273.549, y=-1382.664,z = 3.81341},
-[34] ={name ="hos en kund" ,x= -1342.454, y=-1234.849,z = 5.420023},
-[35] ={name ="hos en kund" ,x= -1351.21, y=-1128.669,z = 3.626104},
-[36] ={name ="hos en kund" ,x= -1343.232, y=-1043.639,z = 7.303696},
-[37] ={name ="hos en kund" ,x= -729.2556, y=-880.1547,z = 22.22747},
-[38] ={name ="hos en kund" ,x= -831.3006, y=-864.8558,z = 20.22383},
-[39] ={name ="hos en kund" ,x= -810.4093, y=-978.4364,z = 13.74061},
-[40] ={name ="hos en kund" ,x= -683.8874, y=-876.8568,z = 24.02004},
-[41] ={name ="hos en kund" ,x= -1031.316, y=-903.0217,z = 3.692086},
-[42] ={name ="hos en kund" ,x= -1262.703, y=-1123.342,z = 7.092357},
-[43] ={name ="hos en kund" ,x= -1225.079, y=-1208.524,z = 7.619214},
-[44] ={name ="hos en kund" ,x= -1207.095, y=-1263.851,z = 6.378308},
-[45] ={name ="hos en kund" ,x= -1086.787, y=-1278.122,z = 5.09411},
-[46] ={name ="hos en kund" ,x= -886.1298, y=-1232.698,z = 5.006698},
-[47] ={name ="hos en kund" ,x= -753.5927, y=-1512.016,z = 4.370816},
-[48] ={name ="hos en kund" ,x= -696.3545, y=-1386.89,z = 4.846177}
+[1] = {name = "Vinewood Hills",     x = -1218.81, y = 665.49, z = 144.53},
+[2] = {name = "Vinewood Hills",     x = -1337.35, y = 606.14, z = 134.38},
+[3] = {name = "Rockford Hills",     x = -1051.95, y = 431.77, z = 77.06 },
+[4] = {name = "Rockford Hills",     x = -902.46, y = 191.52, z = 69.45 },
+[5] = {name = "Rockford Hills",     x = -23.8,  y = -23.6, z = 73.25 },
+[6] = {name = "Dilton Drive",       x = -34.16,  y = 347.95, z = 114.0 },
+[7] = {name = "Hawick Avenue",      x = -362.15,    y = 57.33, z = 54.43 },
+[8] = {name = "Hawick Avenue",      x = 414.95,  y = -217.18, z = 59.91},
+[9] = {name = "Hawick Avenue",      x = 418.58,  y = -207.29, z = 59.91},
+[10] ={name = "Bouievard",          x = -273.75,   y = 28.39, z = 54.75},
+[11] ={name = "Lake Vinewood Drive",  x = 228.72, y = 765.69, z = 204.98},
+[12] ={name = "Milton Road",        x = -658.51, y = 886.49, z = 229.25},
+[13] ={name = "Milton Road",        x = -494.33, y = 795.94, z = 184.34},
+[14] ={name = "Milton Road",        x = -520.7, y = 594.17, z = 120.84},
+[15] ={name = "Kimble Hill",        x = -445.93, y = 686.22, z = 153.12},
+[16] ={name = "Kimble Hill",        x = -476.66, y = 647.65, z = 144.39},
+[17] ={name = "Normandy Drive",     x = -564.36, y = 684.62, z = 146.63},
+[18] ={name = "Stonia",             x = -949.31, y = 196.64, z = 67.39},
+[19] ={name = "Caesars Place",      x = -888.26, y = 42.62, z = 49.15},
+[20] ={name = "Caesars Place",      x = -896.38, y = -4.96, z = 43.8},
+[21] ={name = "The Epsilon Program",      x = -698.66, y = 46.97, z = 44.03},
+[22] ={name = "Power Street",      x = 292.82, y = -162.71, z = 64.62},
 }
 
 local blips = {
-  {title="Fujiwara Tofu", colour=44, id=88, x = 355.16174316406, y = 331.60290527344, z = 116.34196472168}, --Configuration du point sur la carte
+  {title="Fujiwara Tofu", colour=4, id=88, x = 355.16174316406, y = 331.60290527344, z = 116.34196472168}, --Configuration du point sur la carte
 }
 
 local coefflouze = 0.1 --Coeficient multiplicateur qui en fonction de la distance definit la paie
@@ -122,16 +96,16 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
 
     if isInJobPizz == false then
 
-      DrawMarker(27,tofu.x,tofu.y,tofu.z, 0, 0, 0, 0, 0, 0, 1.5001, 1.5001, 0.6001,0,255,0, 200, 0, 0, 0, 0)
+      DrawMarker(20,tofu.x,tofu.y,tofu.z, 0, 0, 0, 0, 0, 0, 1.0, 0.5, 1.0, 255, 255, 255, 150, 0, 1, 0, 0)
 
       if GetDistanceBetweenCoords(tofu.x, tofu.y, tofu.z, GetEntityCoords(GetPlayerPed(-1),true)) < 1.5 then
-        HelpText("Tryck på ~INPUT_CONTEXT~ för att börja leverera ~r~tufo",0,1,0.5,0.8,0.6,255,255,255,255)
+        HelpText("Tryck på ~INPUT_CONTEXT~ för att börja leverera ~b~Tofu",0,1,0.5,0.8,0.6,255,255,255,255)
 
         if IsControlJustPressed(1,38) then
             notif = true
             isInJobPizz = true
             isToHouse = true
-            livr = math.random(3, 5)
+            livr = math.random(1, 22)
 
             px = livpt[livr].x
             py = livpt[livr].y
@@ -154,16 +128,16 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
 
       while notif == true do
 
-        exports['mythic_notify']:SendAlert('inform', 'Bunta Fujiwara | Kör till ' ..destinol)
+        exports['mythic_notify']:SendAlert('inform', 'Bunta Fujiwara: Leverera till ' ..destinol)
 
         notif = false
 
         i = 1
       end
 
-      DrawMarker(27,livpt[livr].x,livpt[livr].y,livpt[livr].z, 0, 0, 0, 0, 0, 0, 1.5001, 1.5001, 0.6001,0,255,0, 200, 0, 0, 0, 0)
+      DrawMarker(20,livpt[livr].x,livpt[livr].y,livpt[livr].z, 0, 0, 0, 0, 0, 0, 1.0, 0.5, 1.0, 0, 119, 119, 50, 0, 1, 0, 0)
 
-      if GetDistanceBetweenCoords(px,py,pz, GetEntityCoords(GetPlayerPed(-1),true)) < 3 then
+      if GetDistanceBetweenCoords(px,py,pz, GetEntityCoords(GetPlayerPed(-1),true)) < 2 then
         HelpText("Tryck på ~INPUT_CONTEXT~ för att leverera tofu!",0,1,0.5,0.8,0.6,255,255,255,255)
 
         if IsControlJustPressed(1,38) then
@@ -193,7 +167,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
           else
             isToHouse = true
             isToPizzaria = false
-            livr = math.random(3, 5)
+            livr = math.random(1, 22)
 
             px = livpt[livr].x
             py = livpt[livr].y
@@ -220,7 +194,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
         notif2 = false
 
       end
-      DrawMarker(27,tofu.x,tofu.y,tofu.z, 0, 0, 0, 0, 0, 0, 1.5001, 1.5001, 0.6001,0,255,0, 200, 0, 0, 0, 0)
+      DrawMarker(20,tofu.x,tofu.y,tofu.z, 0, 0, 0, 0, 0, 0, 1.0, 0.5, 1.0, 0, 119, 119, 50, 0, 1, 0, 0)
 
       if GetDistanceBetweenCoords(tofu.x,tofu.y,tofu.z, GetEntityCoords(GetPlayerPed(-1),true)) < 3 and afaitunepizzamin == true then
         HelpText("Tryck på ~INPUT_CONTEXT~ för att hämta ut Tofu!",0,1,0.5,0.8,0.6,255,255,255,255)
@@ -237,7 +211,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
 
               isInJobPizz = true
               isToHouse = true
-              livr = math.random(3, 5)
+              livr = math.random(1, 22)
 
               px = livpt[livr].x
               py = livpt[livr].y
@@ -303,10 +277,10 @@ Citizen.CreateThread(function() -- Thread de "fin de service" depuis le point ro
 
     if isInJobPizz == true then
 
-      DrawMarker(27,pizzeriafin.x,pizzeriafin.y,pizzeriafin.z, 0, 0, 0, 0, 0, 0, 1.5001, 1.5001, 0.6001,255,0,0, 200, 0, 0, 0, 0)
+      DrawMarker(20,pizzeriafin.x,pizzeriafin.y,pizzeriafin.z, 0, 0, 0, 0, 0, 0, 1.0, 0.5, 1.0, 255, 0, 0, 50, 0, 1, 0, 0)
 
       if GetDistanceBetweenCoords(pizzeriafin.x, pizzeriafin.y, pizzeriafin.z, GetEntityCoords(GetPlayerPed(-1),true)) < 1.5 then
-        HelpText("Tryck på ~INPUT_CONTEXT~ för att stoppa leveransen av ~r~tofu",0,1,0.5,0.8,0.6,255,255,255,255)
+        HelpText("Tryck på ~INPUT_CONTEXT~ för att sluta leverera ~b~Tofu",0,1,0.5,0.8,0.6,255,255,255,255)
 
         if IsControlJustPressed(1,38) then
           TriggerServerEvent('pizza:deleteAllPizz')
