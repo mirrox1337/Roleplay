@@ -131,7 +131,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
             notif = true
             isInJobPizz = true
             isToHouse = true
-            livr = math.random(1, 8)
+            livr = math.random(3, 5)
 
             px = livpt[livr].x
             py = livpt[livr].y
@@ -141,7 +141,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
 
             spawn_faggio()
             goliv(livpt,livr)
-            nbPizza = math.random(1, 2)
+            nbPizza = math.random(3, 5)
 
             TriggerServerEvent("pizza:itemadd", nbPizza)
         end
@@ -193,7 +193,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
           else
             isToHouse = true
             isToPizzaria = false
-            livr = math.random(1, 8)
+            livr = math.random(3, 5)
 
             px = livpt[livr].x
             py = livpt[livr].y
@@ -237,7 +237,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
 
               isInJobPizz = true
               isToHouse = true
-              livr = math.random(1, 5)
+              livr = math.random(3, 5)
 
               px = livpt[livr].x
               py = livpt[livr].y
@@ -247,7 +247,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
               paie = distance * coefflouze
 
               goliv(livpt,livr)
-              nbPizza = math.random(1, 2)
+              nbPizza = math.random(3, 5)
 
               TriggerServerEvent("pizza:itemadd", nbPizza)
 
