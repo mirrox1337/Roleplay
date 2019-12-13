@@ -1,192 +1,406 @@
-local tofu = { x = 359.10974121094, y = 326.10928344727, z = 102.88722229004} 
-local spawnae86 = { x = 366.66659545898, y = 331.70611572266, z = 102.50541687012 }  
+--Copyright ZAUB1
+--N'hesitez pas a rejoindre mon discord : https://discord.gg/yFuSEGj
+--Et a me contacter directement pour tout bug ou suggestions
 
-local propina = 0
-local posibilidad = 0
-                                              
-local casas = {                                                                         --coordinates--
-	[1] = {name = "Vinewood Hills",x = -1220.50, y = 666.95 , z = 143.10},                
-	[2] = {name = "Vinewood Hills",x = -1338.97, y = 606.31 , z = 133.37},
-	[3] = {name = "Rockford Hills",x = -1051.85, y = 431.66 , z = 76.06 },
-	[4] = {name = "Rockford Hills",x = -904.04 , y = 191.49 , z = 68.44 },
-	[5] = {name = "Rockford Hills",x = -21.58  , y = -23.70 , z = 72.24 },
-	[6] = {name = "Hawick"        ,x = -904.04 , y = 191.49 , z = 68.44 },
-	[7] = {name = "Alta"          ,x = 225.39  , y = -283.63, z = 28.25 },
-	[8] = {name = "Pillbox Hills" ,x = 5.62    , y = -707.72, z = 44.97 },
-	[9] = {name = "Mission Row"   ,x = 284.50  , y = -938.50 , z = 28.35},
-	[10] ={name = "Rancho"        ,x = 411.59  , y = -1487.54, z = 29.14},
-	[11] ={name = "Davis"         ,x = 85.19   , y = -1958.18, z = 20.12},
-	[12] ={name ="Chamberlain Hills",x = -213.00, y =-1617.35 , z =37.35},
-	[13] ={name ="La puerta"      ,x = -1015.65, y =-1515.05 ,z = 5.51}
+--ESX INIT--
+
+ESX = nil
+
+Citizen.CreateThread(function()
+  while ESX == nil do
+    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+    Citizen.Wait(0)
+  end
+end)
+
+
+
+
+local nbPizza = 0
+--CONFIGURATION--
+
+local tofu = { x = 359.10974121094, y = 326.10928344727, z = 102.88722229004} --Configuration marker prise de service
+local pizzeriafin = { x = 366.66659545898, y = 331.70611572266, z = 102.50541687012} --Configuration marker fin de service
+local spawnfaggio = { x = 366.66659545898, y = 331.70611572266, z = 102.50541687012 } --Configuration du point de spawn du faggio
+
+local livpt = { --Configuration des points de livraisons (repris ceux de Maykellll1 / NetOut)
+[1] = {name = "Vinewood Hills",x = -1220.50, y = 666.95 , z = 143.10},
+[2] = {name = "Vinewood Hills",x = -1338.97, y = 606.31 , z = 133.37},
+[3] = {name = "Rockford Hills",x = -1051.85, y = 431.66 , z = 76.06 },
+[4] = {name = "Rockford Hills",x = -904.04 , y = 191.49 , z = 68.44 },
+[5] = {name = "Rockford Hills",x = -21.58  , y = -23.70 , z = 72.24 },
+[6] = {name = "Hawick"        ,x = -904.04 , y = 191.49 , z = 68.44 },
+[7] = {name = "Alta"          ,x = 225.39  , y = -283.63, z = 28.25 },
+[8] = {name = "Pillbox Hills" ,x = 5.62    , y = -707.72, z = 44.97 },
+[9] = {name = "Mission Row"   ,x = 284.50  , y = -938.50 , z = 28.35},
+[10] ={name = "Rancho"        ,x = 411.59  , y = -1487.54, z = 29.14},
+[11] ={name = "Davis"         ,x = 85.19   , y = -1958.18, z = 20.12},
+[12] ={name ="Chamberlain Hills",x = -213.00, y =-1617.35 , z =37.35},
+[13] ={name ="Dörren"      ,x = -1015.65, y =-1515.05 ,z = 5.51},
+[14] ={name ="hos en kund" ,x= -1004.788, y=-1154.824,z = 1.64603},
+[15] ={name ="hos en kund" ,x= -1113.937, y=-1193.136,z = 1.827304},
+[16] ={name ="hos en kund" ,x= -1075.903, y=-1026.452,z = 4.031562},
+[17] ={name ="hos en kund" ,x= -1056.485, y=-1001.234,z = 1.639098},
+[18] ={name ="hos en kund" ,x= -1090.886, y=-926.188,z = 2.630009},
+[19] ={name ="hos en kund" ,x= -1075.903, y=-1026.452,z = 4.031562},
+[20] ={name ="hos en kund" ,x= -1181.652, y=-988.6455,z = 1.634243},
+[21] ={name ="hos en kund" ,x= -1151.11, y=-990.905,z = 1.638789},
+[22] ={name ="hos en kund" ,x= -1022.788, y=-896.3149,z = 4.908271},
+[23] ={name ="hos en kund" ,x= -1060.738, y=-826.829,z = 18.69866},
+[24] ={name ="hos en kund" ,x= -968.6487, y=-1329.453,z = 5.144861},
+[25] ={name ="hos en kund" ,x= -1185.5, y=-1386.238,z = 4.112149},
+[26] ={name ="hos en kund" ,x= -1132.848, y=-1456.029,z = 4.372081},
+[27] ={name ="hos en kund" ,x= -1125.602, y=-1544.203,z = 5.391256},
+[28] ={name ="hos en kund" ,x= -1084.74, y=-1558.709,z = 4.10145},
+[29] ={name ="hos en kund" ,x= -1098.367, y=-1679.272,z = 3.853804},
+[30] ={name ="hos en kund" ,x= -1155.863, y=-1574.202,z = 8.344403},
+[31] ={name ="hos en kund" ,x= -1122.675, y=-1557.524,z = 5.277201},
+[32] ={name ="hos en kund" ,x= -1108.679, y=-1527.393,z = 6.265457},
+[33] ={name ="hos en kund" ,x= -1273.549, y=-1382.664,z = 3.81341},
+[34] ={name ="hos en kund" ,x= -1342.454, y=-1234.849,z = 5.420023},
+[35] ={name ="hos en kund" ,x= -1351.21, y=-1128.669,z = 3.626104},
+[36] ={name ="hos en kund" ,x= -1343.232, y=-1043.639,z = 7.303696},
+[37] ={name ="hos en kund" ,x= -729.2556, y=-880.1547,z = 22.22747},
+[38] ={name ="hos en kund" ,x= -831.3006, y=-864.8558,z = 20.22383},
+[39] ={name ="hos en kund" ,x= -810.4093, y=-978.4364,z = 13.74061},
+[40] ={name ="hos en kund" ,x= -683.8874, y=-876.8568,z = 24.02004},
+[41] ={name ="hos en kund" ,x= -1031.316, y=-903.0217,z = 3.692086},
+[42] ={name ="hos en kund" ,x= -1262.703, y=-1123.342,z = 7.092357},
+[43] ={name ="hos en kund" ,x= -1225.079, y=-1208.524,z = 7.619214},
+[44] ={name ="hos en kund" ,x= -1207.095, y=-1263.851,z = 6.378308},
+[45] ={name ="hos en kund" ,x= -1086.787, y=-1278.122,z = 5.09411},
+[46] ={name ="hos en kund" ,x= -886.1298, y=-1232.698,z = 5.006698},
+[47] ={name ="hos en kund" ,x= -753.5927, y=-1512.016,z = 4.370816},
+[48] ={name ="hos en kund" ,x= -696.3545, y=-1386.89,z = 4.846177}
 }
-																						--coordinates--
+
+local blips = {
+  {title="Fujiwara Tofu", colour=44, id=88, x = 355.16174316406, y = 331.60290527344, z = 116.34196472168}, --Configuration du point sur la carte
+}
+
+local coefflouze = 0.1 --Coeficient multiplicateur qui en fonction de la distance definit la paie
+
+--INIT--
+
 local isInJobPizz = false
-local sigcasa = 0
+local livr = 0
 local plateab = "Fujiwara"
 local isToHouse = false
 local isToPizzaria = false
-local multiplicador_De_dinero = 0.5 
-local paga = 0
+local paie = 0
 
+local leverans = 0
+local pourboire = 0
+local posibilidad = 0
 local px = 0
 local py = 0
 local pz = 0
 
-local blips = {
-	{title="Fujiwara Tofu", colour=4, id=488, x = 355.16174316406, y = 331.60290527344, z = 116.34196472168},  
-}
+--THREADS--
 
--------------------------------------------
---------------------BLIPS------------------
--------------------------------------------
+Citizen.CreateThread(function() --Thread d'ajout du point de la tofu sur la carte
 
-Citizen.CreateThread(function()
+  for _, info in pairs(blips) do
 
-    for _, info in pairs(blips) do
-      info.blip = AddBlipForCoord(info.x, info.y, info.z)
-      SetBlipSprite(info.blip, info.id)
-      SetBlipDisplay(info.blip, 4)
-      SetBlipScale(info.blip, 0.9)
-      SetBlipColour(info.blip, info.colour)
-      SetBlipAsShortRange(info.blip, true)
-	  BeginTextCommandSetBlipName("STRING")
-      AddTextComponentString(info.title)
-      EndTextCommandSetBlipName(info.blip)
-    end
+    info.blip = AddBlipForCoord(info.x, info.y, info.z)
+    SetBlipSprite(info.blip, info.id)
+    SetBlipDisplay(info.blip, 4)
+    SetBlipScale(info.blip, 0.9)
+    SetBlipColour(info.blip, info.colour)
+    SetBlipAsShortRange(info.blip, true)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentString(info.title)
+    EndTextCommandSetBlipName(info.blip)
+  end
+
 end)
 
-function Iracasa(casas,sigcasa)
-	blip_casa = AddBlipForCoord(casas[sigcasa].x,casas[sigcasa].y, casas[sigcasa].z)
-	SetBlipSprite(blip_casa, 1)
-	SetNewWaypoint(casas[sigcasa].x,casas[sigcasa].y)
+Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker vert
+  while true do
+
+    Citizen.Wait(0)
+
+    if isInJobPizz == false then
+
+      DrawMarker(27,tofu.x,tofu.y,tofu.z, 0, 0, 0, 0, 0, 0, 1.5001, 1.5001, 0.6001,0,255,0, 200, 0, 0, 0, 0)
+
+      if GetDistanceBetweenCoords(tofu.x, tofu.y, tofu.z, GetEntityCoords(GetPlayerPed(-1),true)) < 1.5 then
+        HelpText("Tryck på ~INPUT_CONTEXT~ för att börja leverera ~r~tufo",0,1,0.5,0.8,0.6,255,255,255,255)
+
+        if IsControlJustPressed(1,38) then
+            notif = true
+            isInJobPizz = true
+            isToHouse = true
+            livr = math.random(1, 8)
+
+            px = livpt[livr].x
+            py = livpt[livr].y
+            pz = livpt[livr].z
+            distance = round(GetDistanceBetweenCoords(tofu.x, tofu.y, tofu.z, px,py,pz))
+            paie = distance * coefflouze
+
+            spawn_faggio()
+            goliv(livpt,livr)
+            nbPizza = math.random(1, 2)
+
+            TriggerServerEvent("pizza:itemadd", nbPizza)
+        end
+      end
+    end
+
+    if isToHouse == true then
+
+      destinol = livpt[livr].name
+
+      while notif == true do
+
+        exports['mythic_notify']:SendAlert('inform', 'Bunta Fujiwara | Kör till ' ..destinol)
+
+        notif = false
+
+        i = 1
+      end
+
+      DrawMarker(27,livpt[livr].x,livpt[livr].y,livpt[livr].z, 0, 0, 0, 0, 0, 0, 1.5001, 1.5001, 0.6001,0,255,0, 200, 0, 0, 0, 0)
+
+      if GetDistanceBetweenCoords(px,py,pz, GetEntityCoords(GetPlayerPed(-1),true)) < 3 then
+        HelpText("Tryck på ~INPUT_CONTEXT~ för att leverera tofu!",0,1,0.5,0.8,0.6,255,255,255,255)
+
+        if IsControlJustPressed(1,38) then
+
+          notif2 = true
+          posibilidad = math.random(1, 10)
+          afaitunepizzamin = true
+
+          TriggerServerEvent("pizza:itemrm")
+          nbPizza = nbPizza - 1
+
+          if (posibilidad > 1) and (posibilidad < 40) then
+
+            pourboire = math.random(10, 20)
+
+            exports['mythic_notify']:SendAlert('success', 'Här du får en bonus för snabb leverans! : ' .. pourboire .. 'SEK')
+
+            TriggerServerEvent("pizza:pourboire", pourboire)
+
+          end
+
+          RemoveBlip(liv)
+          Wait(250)
+          if nbPizza == 0 then
+            isToHouse = false
+            isToPizzaria = true
+          else
+            isToHouse = true
+            isToPizzaria = false
+            livr = math.random(1, 8)
+
+            px = livpt[livr].x
+            py = livpt[livr].y
+            pz = livpt[livr].z
+
+            distance = round(GetDistanceBetweenCoords(tofu.x, tofu.y, tofu.z, px,py,pz))
+            paie = distance * coefflouze
+
+            goliv(livpt,livr)
+          end
+
+
+        end
+      end
+    end
+
+    if isToPizzaria == true then
+
+      while notif2 == true do
+        SetNewWaypoint(tofu.x,tofu.y)
+
+        exports['mythic_notify']:SendAlert('success', 'Snyggt jobbat! Åk tillbaka till Fujiwara för att få din betalning.')
+
+        notif2 = false
+
+      end
+      DrawMarker(27,tofu.x,tofu.y,tofu.z, 0, 0, 0, 0, 0, 0, 1.5001, 1.5001, 0.6001,0,255,0, 200, 0, 0, 0, 0)
+
+      if GetDistanceBetweenCoords(tofu.x,tofu.y,tofu.z, GetEntityCoords(GetPlayerPed(-1),true)) < 3 and afaitunepizzamin == true then
+        HelpText("Tryck på ~INPUT_CONTEXT~ för att hämta ut Tofu!",0,1,0.5,0.8,0.6,255,255,255,255)
+
+        if IsVehicleModel(GetVehiclePedIsIn(GetPlayerPed(-1), true), GetHashKey("ae86"))  then
+
+          if IsControlJustPressed(1,38) then
+
+            if IsInVehicle() then
+
+              afaitunepizzamin = false
+
+              leverans = math.random(30, 50)
+
+              exports['mythic_notify']:SendAlert('success', 'Bunta Fujiwara | Bra jobbat! Detta är din betalning ' ..leverans.. 'kr')
+
+
+              isInJobPizz = true
+              isToHouse = true
+              livr = math.random(1, 5)
+
+              px = livpt[livr].x
+              py = livpt[livr].y
+              pz = livpt[livr].z
+
+              distance = round(GetDistanceBetweenCoords(tofu.x, tofu.y, tofu.z, px,py,pz))
+              paie = distance * coefflouze
+
+              goliv(livpt,livr)
+              nbPizza = math.random(1, 2)
+
+              TriggerServerEvent("pizza:itemadd", nbPizza)
+
+            else
+
+              notifmoto1 = true
+
+              while notifmoto1 == true do
+
+                exports['mythic_notify']:SendAlert('error', 'Du spillde vatten')
+
+                notifmoto1 = false
+
+              end
+            end
+          end
+        else
+
+          notifmoto2 = true
+
+          while notifmoto2 == true do
+
+            exports['mythic_notify']:SendAlert('error', 'Du spillde vatten')
+            notifmoto2 = false
+
+          end
+        end
+      end
+    end
+    if IsEntityDead(GetPlayerPed(-1)) then
+
+      isInJobPizz = false
+      livr = 0
+      isToHouse = false
+      isToPizzaria = false
+
+      paie = 0
+      px = 0
+      py = 0
+      pz = 0
+      RemoveBlip(liv)
+
+    end
+  end
+end)
+
+
+
+Citizen.CreateThread(function() -- Thread de "fin de service" depuis le point rouge
+  while true do
+
+    Citizen.Wait(0)
+
+    if isInJobPizz == true then
+
+      DrawMarker(27,pizzeriafin.x,pizzeriafin.y,pizzeriafin.z, 0, 0, 0, 0, 0, 0, 1.5001, 1.5001, 0.6001,255,0,0, 200, 0, 0, 0, 0)
+
+      if GetDistanceBetweenCoords(pizzeriafin.x, pizzeriafin.y, pizzeriafin.z, GetEntityCoords(GetPlayerPed(-1),true)) < 1.5 then
+        HelpText("Tryck på ~INPUT_CONTEXT~ för att stoppa leveransen av ~r~tofu",0,1,0.5,0.8,0.6,255,255,255,255)
+
+        if IsControlJustPressed(1,38) then
+          TriggerServerEvent('pizza:deleteAllPizz')
+          isInJobPizz = false
+          livr = 0
+          isToHouse = false
+          isToPizzaria = false
+
+          paie = 0
+          px = 0
+          py = 0
+          pz = 0
+
+          if afaitunepizzamin == true then
+
+            local vehicleu = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+
+            SetEntityAsMissionEntity( vehicleu, true, true )
+            deleteCar( vehicleu )
+
+			exports['mythic_notify']:SendAlert('success', 'Tack för att du jobbat idag! Här får du din lön: ' .. leverans .. 'SEK')
+
+            TriggerServerEvent("pizza:leverans", leverans)
+
+
+            SetWaypointOff()
+
+            afaitunepizzamin = false
+
+          else
+
+            local vehicleu = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+
+            SetEntityAsMissionEntity( vehicleu, true, true )
+            deleteCar( vehicleu )
+
+			exports['mythic_notify']:SendAlert('success', 'Tack ändå, ha en trevlig dag')
+          end
+        end
+      end
+    end
+  end
+end)
+
+--FONCTIONS--
+
+function goliv(livpt,livr) -- Fonction d'ajout du point en fonction de la destination de livraison chosie
+  liv = AddBlipForCoord(livpt[livr].x,livpt[livr].y, livpt[livr].z)
+  SetBlipSprite(liv, 1)
+  SetNewWaypoint(livpt[livr].x,livpt[livr].y)
 end
 
--------------------------------------------
-------------------CITIZENS-----------------
--------------------------------------------
+function spawn_faggio() -- Thread spawn faggio
 
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
-		if isInJobPizz == false then
-			DrawMarker(1,tofu.x,tofu.y,tofu.z, 0, 0, 0, 0, 0, 0, 1.5001, 1.5001, 0.6001,255,255,51, 200, 0, 0, 0, 0)
-			if GetDistanceBetweenCoords(tofu.x, tofu.y, tofu.z, GetEntityCoords(GetPlayerPed(-1),true)) < 1.5 then
-				ESX.ShowHelpNotification('Tryck ~INPUT_PICKUP~ för att köra ~y~Tofu~s~ åt ~y~Fujiwara~s~')
-				if IsControlJustPressed(1,38) then
-					isInJobPizz = true
-					isToHouse = true
-					sigcasa = math.random(1, 13)
-					px = casas[sigcasa].x
-					py = casas[sigcasa].y
-					pz = casas[sigcasa].z
-					distancia = round(GetDistanceBetweenCoords(tofu.x, tofu.y, tofu.z, px,py,pz))
-					paga = distancia * multiplicador_De_dinero
-					spawn_ae86()
-					Iracasa(casas,sigcasa)
-				end
-			end
-		end
-		if isToHouse == true then
-			destinol = casas[sigcasa].name
-			exports['mythic_notify']:SendAlert('success', 'Bunta Fujiwara | Kör till' ..destinol)
-			DrawMarker(1,casas[sigcasa].x,casas[sigcasa].y,casas[sigcasa].z, 0, 0, 0, 0, 0, 0, 1.5001, 1.5001, 0.6001,255,255,51, 200, 0, 0, 0, 0)
-			if GetDistanceBetweenCoords(px,py,pz, GetEntityCoords(GetPlayerPed(-1),true)) < 3 then
-				drawTxt("PREMI E PER CONSEGNARE IL TOFU AL CLIENTE",2, 1, 0.45, 0.03, 0.80,255,255,51,255)
-				if IsControlJustPressed(1,38) then
-					posibilidad = math.random(1, 100)
-					if (posibilidad > 70) and (posibilidad < 90) then
-						propina = math.random(100, 200)
-						TriggerEvent('chatMessage', 'CLIENTE', {255, 0, 0},"TIENI QUESTA MANCIA "..propina.."$")
-						TriggerServerEvent("pop_pizzero:propina", propina)
-					end
-					isToHouse = false
-					isToPizzaria = true
-					RemoveBlip(blip_casa)
-					SetNewWaypoint(tofu.x,tofu.y)
-				end
-			end
-		end
-		if isToPizzaria == true then
-			exports['mythic_notify']:SendAlert('success', 'Snyggt jobbat! Åk tillbaka till Fujiwara för att få din betalning.')
-			DrawMarker(1,spawnae86.x,spawnae86.y,spawnae86.z, 0, 0, 0, 0, 0, 0, 2.5001, 2.5001, 0.6001,255,255,51, 200, 0, 0, 0, 0)  
-				if GetDistanceBetweenCoords(spawnae86.x,spawnae86.y,spawnae86.z, GetEntityCoords(GetPlayerPed(-1),true)) < 3 then
-					ESX.ShowHelpNotification('Tryck ~INPUT_PICKUP~ för att få din ~g~betalning~s~')
-					if IsVehicleModel(GetVehiclePedIsIn(GetPlayerPed(-1), true), GetHashKey("futo"))  then
-						if IsControlJustPressed(1,38) then
-							if IsInVehicle() then
-								exports['mythic_notify']:SendAlert('success', 'Bunta Fujiwara | Bra jobbat! Detta är din betalning' ..paga.. 'kr')
-								TriggerServerEvent("pop_pizzero:propina", paga)
-								isToHouse = false
-								isToPizzaria = false
-								isInJobPizz = false
-								paga = 0
-								px = 0
-								py = 0
-								pz = 0
-								local vehicleu = GetVehiclePedIsIn(GetPlayerPed(-1), false)
-								SetEntityAsMissionEntity( vehicleu, true, true )
-			               		deleteCar( vehicleu )
-							else
-								exports['mythic_notify']:SendAlert('error', 'Du spillde vatten')
-							end
-						end
-					else
-						exports['mythic_notify']:SendAlert('error', 'Du spillde vatten')
-					end
-				end
-		end
-		if IsEntityDead(GetPlayerPed(-1)) then
-			 isInJobPizz = false
-			 sigcasa = 0
-			 isToHouse = false
-			 isToPizzaria = false
-			 paga = 0
-			 px = 0
-			 py = 0
-			 pz = 0
-		end
-	end
-end)
+  Citizen.Wait(0)
 
--------------------------------------------
-----------------FUNCIONES------------------
--------------------------------------------
+  local myPed = GetPlayerPed(-1)
+  local player = PlayerId()
+  local vehicle = GetHashKey('ae86')
 
-function spawn_ae86()
-	Citizen.Wait(0)
+  RequestModel(vehicle)
 
-	local myPed = GetPlayerPed(-1)
-	local player = PlayerId()
-	local vehicle = GetHashKey('futo')
+  while not HasModelLoaded(vehicle) do
+    Wait(1)
+  end
 
-	RequestModel(vehicle)
+  local plateJob = math.random(696, 696)
+  local spawned_car = CreateVehicle(vehicle, spawnfaggio.x,spawnfaggio.y,spawnfaggio.z, 166.18, - 996.786, 25.1887, true, false)
 
-	while not HasModelLoaded(vehicle) do
-		Wait(1)
-	end
+  local plate = "Fujiwara"..plateJob
 
-	local plate = math.random(100, 900)
-	local spawned_car = CreateVehicle(vehicle, spawnae86.x,spawnae86.y,spawnae86.z, 520.66659545898, 331.70611572266, 102.50541687012, true, false)             
+  SetVehicleNumberPlateText(spawned_car, plate)
+  SetVehicleColours(spawned_car, 112, 112)
+  SetVehicleOnGroundProperly(spawned_car)
+  SetVehicleLivery(spawned_car, 2)
+  SetPedIntoVehicle(myPed, spawned_car, - 1)
+  SetModelAsNoLongerNeeded(vehicle)
 
-	local plate = "I3-954"
-    SetVehicleNumberPlateText(spawned_car, plate)
-	SetVehicleOnGroundProperly(spawned_car)
-	SetVehicleLivery(spawned_car, 2)
-	SetPedIntoVehicle(myPed, spawned_car, - 1)
-	SetModelAsNoLongerNeeded(vehicle)
-	Citizen.InvokeNative(0xB736A491E64A32CF, Citizen.PointerValueIntInitialized(spawned_car))
+  Citizen.InvokeNative(0xB736A491E64A32CF, Citizen.PointerValueIntInitialized(spawned_car))
 end
 
 function round(num, numDecimalPlaces)
-	local mult = 5^(numDecimalPlaces or 0)
-	return math.floor(num * mult + 0.5) / mult
+  local mult = 5^(numDecimalPlaces or 0)
+  return math.floor(num * mult + 0.5) / mult
 end
 
 function deleteCar( entity )
-    Citizen.InvokeNative( 0xEA386986E786A54F, Citizen.PointerValueIntInitialized( entity ) )
+  Citizen.InvokeNative( 0xEA386986E786A54F, Citizen.PointerValueIntInitialized( entity ) ) --Native qui del le vehicule
 end
 
-function IsInVehicle()
+function IsInVehicle() --Fonction de verification de la presence ou non en vehicule du joueur
   local ply = GetPlayerPed(-1)
   if IsPedSittingInAnyVehicle(ply) then
     return true
@@ -195,21 +409,8 @@ function IsInVehicle()
   end
 end
 
--------------------------------------------
-----------FUNZIONI ADDIZIONALI------------
--------------------------------------------
-
-function drawTxt(text,font,centre,x,y,scale,r,g,b,a)
-    SetTextFont(font)
-    SetTextProportional(0)
-    SetTextScale(scale, scale)
-    SetTextColour(r, g, b, a)
-    SetTextDropShadow(0, 0, 0, 0,255)
-    SetTextEdge(1, 0, 0, 0, 255)
-    SetTextDropShadow()
-    SetTextOutline()
-    SetTextCentre(centre)
-    SetTextEntry("STRING")
-    AddTextComponentString(text)
-    DrawText(x , y)
+function HelpText(text, state) --Fonction qui permet de creer les "Help Text" (Type "Appuyez sur ...")
+  SetTextComponentFormat("STRING")
+  AddTextComponentString(text)
+  DisplayHelpTextFromStringLabel(0, state, 0, -1)
 end

@@ -1,20 +1,66 @@
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾ 𝐑𝐄𝐀𝐋 𝐎𝐖𝐍𝐄𝐑 𝐎𝐅 𝐓𝐇𝐄 𝐒𝐂𝐑𝐈𝐏𝐓 ︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾
---︾︾ SCRIPT CREADO PARA EL SERVIDOR DE FIVEM DE PLATA O PLOMO COMUNIDAD GAMER.                                                                                                                         ︾︾
---︾︾ SCRIPT CREADO TOTALMENTE POR THEMAYKELLLL1 [ MIGUEL ANGEL LOPEZ REYES ].        																												    ︾︾
---︾︾ PLATA O PLOMO COMUNIDAD GAMER ACEPTA NO VENDER / REGALAR / PASAR ESTOS SCRIPTS A OTRAS PERSONAS O COMUNIDADES.																				        ︾︾
---︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽︽
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------𝙀𝘿𝙄𝙏𝙀𝘿 𝘽𝙔 𝙋𝙐𝙉𝙆𝙀𝙍58-------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------𝘼𝘿𝘼𝙋𝙏𝙀𝘿 𝙏𝙊 𝙁𝙐𝙅𝙄𝙒𝘼𝙍𝘼 𝙏𝙊𝙁𝙐 𝙎𝙃𝙊𝙋--------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Copyright ZAUB1
+--N'hesitez pas a rejoindre mon discord : https://discord.gg/yFuSEGj
+--Et a me contacter directement pour tout bug ou suggestions
 
-RegisterServerEvent('pop_pizzero:propina')
-AddEventHandler('pop_pizzero:propina',function(propina)
-	TriggerEvent('es:getPlayerFromId',source, function(user)
-			user.addMoney((propina))
-	end)
+--ESX INIT--
+
+ESX = nil
+
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+
+--EVENTS--
+
+RegisterServerEvent('pizza:pourboire') --Paie a la livraison d'une pizza + pourboire eventuel
+AddEventHandler('pizza:pourboire', function(pourboire)
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+
+	xPlayer.addMoney(pourboire)
+end)
+
+RegisterServerEvent('pizza:leverans') 
+AddEventHandler('pizza:leverans', function(pourboire)
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+
+	xPlayer.addMoney (math.random(15, 20))
+end)
+
+RegisterServerEvent("pizza:paiefinale") --Paie "bonus" lors de la fin de service
+AddEventHandler("pizza:paiefinale", function()
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+
+	local flouzefin = math.random(20, 25)
+
+	xPlayer.addMoney(flouzefin)
+
+TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'success', text = 'Här är din lilla slutliga bonus: ' .. flouzefin .. 'SEK' })
+
+end)
+
+RegisterServerEvent("pizza:itemadd") --Ajout temporaire de l'item "pizza"
+AddEventHandler("pizza:itemadd", function(nbPizza)
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+
+	--xPlayer.addInventoryItem('pizza', tonumber(nbPizza))
+end)
+
+RegisterServerEvent("pizza:itemrm") --Rm de l'item "pizza"
+AddEventHandler("pizza:itemrm", function()
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+
+	--xPlayer.removeInventoryItem('pizza', 1)
+end)
+
+RegisterServerEvent("pizza:deleteAllPizz") --Rm de l'item "pizza"
+AddEventHandler("pizza:deleteAllPizz", function()
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+		
+	--local pizzanbr = xPlayer.getInventoryItem('pizza').count
+	
+	--xPlayer.removeInventoryItem('pizza', pizzanbr)
 end)
