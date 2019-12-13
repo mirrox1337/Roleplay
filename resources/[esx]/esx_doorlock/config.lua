@@ -631,4 +631,17 @@ Config.DoorList = {
 		}
 	}
 },
+--Bennys
+{
+	textCoords = vector3(-206.02, -1310.66, 31.3),
+	authorizedJobs = { 'cardealer' },
+	locked = true,
+	distance = 12.0,
+	doors = {
+		{
+			objName = 'lr_prop_supermod_door_01',
+			objCoords = vector3(-205.68280, -1310.68300, 30.29771)
+		}
+	}
+},
 }
