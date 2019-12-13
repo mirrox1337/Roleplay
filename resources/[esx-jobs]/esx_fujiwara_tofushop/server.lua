@@ -23,7 +23,11 @@ AddEventHandler('pizza:leverans', function(pourboire)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
-	xPlayer.addMoney (math.random(15, 20))
+	local leverans = math.random(25, 35)
+
+	xPlayer.addMoney(leverans)
+
+	TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'success', text = 'Bunta Fujiwara: Bra jobbat! Detta är din betalning ' ..leverans.. 'kr' })
 end)
 
 RegisterServerEvent("pizza:paiefinale") --Paie "bonus" lors de la fin de service

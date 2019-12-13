@@ -233,10 +233,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
 
               afaitunepizzamin = false
 
-              leverans = math.random(30, 50)
-
-              exports['mythic_notify']:SendAlert('success', 'Bunta Fujiwara | Bra jobbat! Detta är din betalning ' ..leverans.. 'kr')
-
+              TriggerServerEvent("pizza:leverans")
 
               isInJobPizz = true
               isToHouse = true
