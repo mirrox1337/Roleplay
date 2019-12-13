@@ -634,13 +634,39 @@ Config.DoorList = {
 --Bennys
 {
 	textCoords = vector3(-206.02, -1310.66, 31.3),
-	authorizedJobs = { 'cardealer' },
+	authorizedJobs = { 'bennys' },
 	locked = true,
 	distance = 12.0,
 	doors = {
 		{
 			objName = 'lr_prop_supermod_door_01',
 			objCoords = vector3(-205.68280, -1310.68300, 30.29771)
+		}
+	}
+},
+--Mekonomen
+{
+	textCoords = vector3(-356.43, -134.69, 40.5),
+	authorizedJobs = { 'mechanic' },
+	locked = true,
+	distance = 8.0,
+	doors = {
+		{
+			objName = 'prop_com_ls_door_01',
+			objCoords = vector3(-356.09840, -134.76860, 40.04797)
+		}
+	}
+},
+{
+	textCoords = vector3(-347.52, -132.75, 38.95),
+	authorizedJobs = { 'mechanic' },
+	locked = true,
+	distance = 1.5,
+	doors = {
+		{
+			objName = 'v_ilev_cf_officedoor',
+			objYaw = 249.358,
+			objCoords = vector3(-348.04870, -133.83830, 39.15855)
 		}
 	}
 },
