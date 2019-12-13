@@ -330,9 +330,9 @@ Citizen.CreateThread(function() -- Thread de "fin de service" depuis le point ro
             SetEntityAsMissionEntity( vehicleu, true, true )
             deleteCar( vehicleu )
 
-			exports['mythic_notify']:SendAlert('success', 'Tack för att du jobbat idag! Här får du din lön: ' .. leverans .. 'SEK')
+			--exports['mythic_notify']:SendAlert('success', 'Tack för att du jobbat idag! Här får du din lön: ' .. flouzefin .. 'SEK')
 
-            TriggerServerEvent("pizza:leverans", leverans)
+            TriggerServerEvent("pizza:paiefinale", flouzefin)
 
 
             SetWaypointOff()

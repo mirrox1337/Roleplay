@@ -31,11 +31,11 @@ AddEventHandler("pizza:paiefinale", function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
-	local flouzefin = math.random(20, 25)
+	local flouzefin = math.random(25, 35)
 
 	xPlayer.addMoney(flouzefin)
 
-TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'success', text = 'Här är din lilla slutliga bonus: ' .. flouzefin .. 'SEK' })
+TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'success', text = 'Tack för att du jobbat idag! Här får du din lön: ' .. flouzefin .. 'SEK' })
 
 end)
 
