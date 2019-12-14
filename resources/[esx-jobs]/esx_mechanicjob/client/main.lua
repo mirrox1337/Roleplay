@@ -123,14 +123,14 @@ function OpenMechanicActionsMenu()
 			else
 
 				local elements = {
-					{label = _U('flat_bed'),  value = 'flatbed'},
-					{label = _U('tow_truck'), value = 'towtruck2'}
+					{label = _U('flat_bed'),  value = 'flatbed3'},
+					--{label = _U('tow_truck'), value = 'towtruck2'}
 				}
-
+				--[[
 				if Config.EnablePlayerManagement and ESX.PlayerData.job and (ESX.PlayerData.job.grade_name == 'boss' or ESX.PlayerData.job.grade_name == 'chief' or ESX.PlayerData.job.grade_name == 'experimente') then
 					table.insert(elements, {label = 'SlamVan', value = 'slamvan3'})
 				end
-
+				--]]
 				ESX.UI.Menu.CloseAll()
 
 				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'spawn_vehicle', {
@@ -275,9 +275,9 @@ function OpenMobileMechanicActionsMenu()
 		elements = {
 			{label = ('Reparera fordon'), value = 'repair_meny'},
 			{label = _U('billing'),       value = 'billing'},
-			{label = _U('hijack'),        value = 'hijack_vehicle'},
-			{label = _U('imp_veh'),       value = 'del_vehicle'},
-			{label = _U('flat_bed'),      value = 'dep_vehicle'},
+			--{label = _U('hijack'),        value = 'hijack_vehicle'},
+			--{label = _U('imp_veh'),       value = 'del_vehicle'},
+			--{label = _U('flat_bed'),      value = 'dep_vehicle'},
 			{label = _U('place_objects'), value = 'object_spawner'}
 	}}, function(data, menu)
 		if isBusy then return end
