@@ -945,8 +945,8 @@ function OpenPharmacyMenu()
 			{label = _U('pharmacy_take', ('Plåster')), item = 'patch', type = 'slider', value = 1, min = 1, max = 100},
 			{label = _U('pharmacy_take', ('EpiPen')), item = 'adrenaline', type = 'slider', value = 1, min = 1, max = 100},
 			{label = _U('pharmacy_take', ('Morfin')), item = 'morphine', type = 'slider', value = 1, min = 1, max = 100},
-			{label = _U('pharmacy_take', ('Vicodin')), item = 'vicodin', type = 'slider', value = 1, min = 1, max = 100},
-			{label = _U('pharmacy_take', ('Hydrocodone')), item = 'hydrocodone', type = 'slider', value = 1, min = 1, max = 100},
+			{label = _U('pharmacy_take', ('Tramadol')), item = 'vicodin', type = 'slider', value = 1, min = 1, max = 100},
+			{label = _U('pharmacy_take', ('Ipren')), item = 'hydrocodone', type = 'slider', value = 1, min = 1, max = 100},
 		}
 	}, function(data, menu)
 		TriggerServerEvent('esx_ambulancejob:giveItem', data.current.item, data.current.value)
