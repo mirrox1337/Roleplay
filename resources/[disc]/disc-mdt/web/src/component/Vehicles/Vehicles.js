@@ -107,7 +107,7 @@ export default connect()((props) => {
     <Screen>
       <Grid container direction={'column'} alignItems={'center'} spacing={0} justify={'center'}
             className={classes.root}>
-        <TitleBar title={'Fordon'}/>
+        <TitleBar title={'Vehicles'}/>
         <Grid spacing={3} className={classes.grid} container direction={'row'}>
           <Grid item xs={6}>
             <SearchBar search={search}/>
@@ -141,13 +141,13 @@ export default connect()((props) => {
             open={Boolean(anchorEl)}
             onClose={() => setAnchorEl(null)}
           >
-            <MenuItem onClick={handleMenuSelect} id={'bolo'}>{selectedVehicle.bolo ? 'Ta bort efterlysning' : 'Efterlys'}</MenuItem>
+            <MenuItem onClick={handleMenuSelect} id={'bolo'}>{selectedVehicle.bolo ? 'Remove Bolo' : 'Issue Bolo'}</MenuItem>
           </Menu>
           <BoloDialog open={boloModalState} setModalState={setBoloModalState} identifier={selectedVehicle.plate}
                       issue={issueBolo} active={selectedVehicle.bolo}/>
         </Card>
       </DialogModal>}
-      <ImageModal open={photoModalState} setModalState={setPhotoModalState} title={'Foto på fordon'}
+      <ImageModal open={photoModalState} setModalState={setPhotoModalState} title={'Vehicle Photo'}
                   selectedImage={selectedVehicleImage} setImage={setImage}/>
     </Screen>
   );

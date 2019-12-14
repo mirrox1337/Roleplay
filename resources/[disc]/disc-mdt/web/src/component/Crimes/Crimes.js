@@ -72,7 +72,7 @@ export default function Civilians(props) {
     <Screen>
       <Grid container direction={'column'} alignItems={'center'} spacing={3} justify={'center'}
             className={classes.root}>
-        <TitleBar title={'Brott'}/>
+        <TitleBar title={'Crimes'}/>
         <Grid spacing={3} className={classes.grid}>
           <Grid item xs={12}>
             <SearchBar instant search={search}/>

@@ -5,11 +5,11 @@ ESX.RegisterServerCallback('disc-mdt:setBolo', function(source, cb, data)
         ['@bolo'] = data.bolo
     }, function()
         cb(true)
-        local msg = "BOLO for " .. data.plate
+        local msg = "Efterlysning på " .. data.plate
         if data.bolo then
-            msg = msg .. ' Issued'
+            msg = msg .. ' Utfärdad'
         else
-            msg = msg .. ' Removed'
+            msg = msg .. ' Tog Bort'
         end
         TriggerClientEvent('disc-mdt:addNotification', -1, {
             message = msg

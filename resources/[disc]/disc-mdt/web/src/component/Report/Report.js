@@ -105,16 +105,16 @@ export default connect()((props) => {
   };
   return (
     <DialogModal open={props.open} setModalState={props.setModalState}>
-      <Card title={'Rapport'}>
+      <Card title={'Report'}>
         <Grid container justify={'center'} alignItems={'center'} className={classes.grid} spacing={3}>
           <Grid container justify={'flex-start'} alignItems={'center'} className={classes.insideGrid} spacing={3}>
             <Grid item xs={4}>
               <TextField disabled value={form.officer} variant={'outlined'} className={classes.textField}
-                         label={'Polis'}/>
+                         label={'Officer'}/>
             </Grid>
             <Grid item xs={4}>
               <TextField value={location.street} variant={'outlined'} className={classes.textField}
-                         label={'Gata'}/>
+                         label={'Street'}/>
             </Grid>
             <Grid item xs={4}>
               <TextField value={location.area} variant={'outlined'} className={classes.textField}
@@ -122,12 +122,12 @@ export default connect()((props) => {
             </Grid>
             <Grid item xs={4}>
               <TextField disabled value={form.player} variant={'outlined'} className={classes.textField}
-                         label={'Rapporterad'}/>
+                         label={'Reported'}/>
             </Grid>
             <Grid item xs={4}>
               <TextField
                 id="time"
-                label="Händelsetid"
+                label="Incident Time"
                 variant={'outlined'}
                 type="time"
                 value={time}
@@ -140,7 +140,7 @@ export default connect()((props) => {
             <Grid item xs={4}>
               <TextField
                 id="date"
-                label="Datum"
+                label="Date"
                 variant={'outlined'}
                 type="date"
                 value={date}
@@ -151,10 +151,10 @@ export default connect()((props) => {
               />
             </Grid>
             <Grid item xs={6}>
-              <Typography variant={'h6'}>Brott</Typography>
+              <Typography variant={'h6'}>Crimes Committed</Typography>
             </Grid>
             <Grid item xs={6}>
-              <Typography variant={'h6'}>Sammanfattning</Typography>
+              <Typography variant={'h6'}>Report Summary</Typography>
             </Grid>
             <Grid item xs={6}>
               <CrimeSelector handleCrime={handleCrime}

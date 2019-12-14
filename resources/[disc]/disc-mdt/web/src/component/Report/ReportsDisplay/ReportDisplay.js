@@ -25,20 +25,20 @@ export default connect()((props) => {
   }, [props.reports]);
 
   return (
-    <Card title={'Senaste 5 Rapporter'} className={classes.panel} variant={'h6'}>
+    <Card title={'Last 5 Reports'} className={classes.panel} variant={'h6'}>
       {props.reports.length > 0 ? lodash.map(props.reports, (report) =>
         <ExpansionPanel expanded={currentReport === report.id}
                         onChange={(event, expanded) => expanded ? setCurrentReport(report.id) : setCurrentReport(0)}>
           <ExpansionPanelSummary className={classes.panel}>
             <Typography variant={'h6'}>
-              {report.stringDate + ' ' + report.stringTime + ' Rapport #' + report.id}
+              {report.stringDate + ' ' + report.stringTime + ' Report #' + report.id}
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <CrimeSummary crimes={report.report.crimes} notes={report.report.notes} readonly/>
           </ExpansionPanelDetails>
         </ExpansionPanel>,
-      ) : <Typography variant={'body1'}>Inga Rapporter</Typography>}
+      ) : <Typography variant={'body1'}>No Reports</Typography>}
     </Card>
   );
 });

@@ -22,7 +22,7 @@ const theme = (darkmode) => createMuiTheme(
       },
       MuiDivider: {
         root: {
-          backgroundColor: darkmode ? "#40E0D0" : null,
+          backgroundColor: darkmode ? "#b71c1c" : null,
         },
       },
 

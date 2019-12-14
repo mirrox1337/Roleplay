@@ -63,13 +63,13 @@ export default function VehicleCard(props) {
             <Paper className={classes.tablePaper}>
               <Table className={classes.table} size="small" aria-label="a dense table">
                 <TableBody>
-                  <TableRow><TableCell>Ägare</TableCell><TableCell><Typography variant={'body1'}
+                  <TableRow><TableCell>Owner</TableCell><TableCell><Typography variant={'body1'}
                                                                                className={classes.capitalize}>{props.data.firstname + ' ' + props.data.lastname}</Typography></TableCell></TableRow>
-                  <TableRow><TableCell>Modell</TableCell><TableCell><Typography variant={'body1'}
+                  <TableRow><TableCell>Model</TableCell><TableCell><Typography variant={'body1'}
                                                                                className={classes.capitalize}>{props.data.model.toLowerCase()}</Typography></TableCell></TableRow>
-                  <TableRow><TableCell>Primär färg</TableCell><TableCell><Typography variant={'body1'}
+                  <TableRow><TableCell>Primary Color</TableCell><TableCell><Typography variant={'body1'}
                                                                                        className={classes.capitalize}>{props.data.colorPrimary}</Typography></TableCell></TableRow>
-                  <TableRow><TableCell>Sekundär färg</TableCell><TableCell><Typography variant={'body1'}
+                  <TableRow><TableCell>Secondary Color</TableCell><TableCell><Typography variant={'body1'}
                                                                                          className={classes.capitalize}>{props.data.colorSecondary}</Typography></TableCell></TableRow>
                 </TableBody>
               </Table>

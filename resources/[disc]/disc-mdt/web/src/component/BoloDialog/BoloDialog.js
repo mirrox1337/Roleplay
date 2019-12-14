@@ -19,12 +19,12 @@ export default (props) => {
     <Dialog open={props.open} onClose={props.setModalState}>
       <DialogContent>
         <DialogContentText>
-          {props.active ? 'Ta bort efterlysning ' + props.identifier : 'Efterlys' + props.identifier}
+          {props.active ? 'Remove BOLO for ' + props.identifier : 'Issue BOLO for' + props.identifier}
         </DialogContentText>
       </DialogContent>
       <DialogActions>
         <Button onClick={handleCancel} color="primary">
-          Avbryt
+          Cancel
         </Button>
         <Button onClick={handleIssue} color="primary">
           {props.active ? 'Remove' : 'Issue'}
