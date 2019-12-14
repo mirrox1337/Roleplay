@@ -6,7 +6,7 @@ AddEventHandler("onServerResourceStart", function(resName)
 			Wait(1800)
 			if clientrender == true then Wait(5000) end
 			if clientrender == false then
-				local h, m, s = 12, tonumber(os.date("%M")), tonumber(os.date("%S"))
+				local h, m, s = tonumber(os.date("%H")), tonumber(os.date("%M")), tonumber(os.date("%S"))
 				TriggerClientEvent("realtime:event", -1, "ChangeTime", h, m, s)
 			end
 		end
