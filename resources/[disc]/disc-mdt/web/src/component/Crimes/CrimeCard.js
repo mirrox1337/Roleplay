@@ -30,10 +30,10 @@ export default (props) => {
         <Paper className={classes.tablePaper}>
           <Table className={classes.table} size="small" aria-label="a dense table">
             <TableBody>
-              <TableRow><TableCell>Fine</TableCell><TableCell>{props.data.fine}</TableCell></TableRow>
-              <TableRow><TableCell>Jail Time</TableCell><TableCell>{props.data.jailtime}</TableCell></TableRow>
-              <TableRow><TableCell>Type</TableCell><TableCell>{props.data.type}</TableCell></TableRow>
-              <TableRow><TableCell>Description</TableCell><TableCell><Typography variant={'body2'}>{props.data.description}</Typography></TableCell></TableRow>
+              <TableRow><TableCell>Böter</TableCell><TableCell>{props.data.fine}</TableCell></TableRow>
+              <TableRow><TableCell>Fängelsetid Time</TableCell><TableCell>{props.data.jailtime}</TableCell></TableRow>
+              <TableRow><TableCell>Typ</TableCell><TableCell>{props.data.type}</TableCell></TableRow>
+              <TableRow><TableCell>Beskrivning</TableCell><TableCell><Typography variant={'body2'}>{props.data.description}</Typography></TableCell></TableRow>
             </TableBody>
           </Table>
         </Paper>

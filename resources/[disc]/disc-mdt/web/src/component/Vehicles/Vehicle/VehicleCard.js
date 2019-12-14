@@ -63,13 +63,13 @@ export default function VehicleCard(props) {
             <Paper className={classes.tablePaper}>
               <Table className={classes.table} size="small" aria-label="a dense table">
                 <TableBody>
-                  <TableRow><TableCell>Owner</TableCell><TableCell><Typography variant={'body1'}
+                  <TableRow><TableCell>Ägare</TableCell><TableCell><Typography variant={'body1'}
                                                                                className={classes.capitalize}>{props.data.firstname + ' ' + props.data.lastname}</Typography></TableCell></TableRow>
-                  <TableRow><TableCell>Model</TableCell><TableCell><Typography variant={'body1'}
+                  <TableRow><TableCell>Modell</TableCell><TableCell><Typography variant={'body1'}
                                                                                className={classes.capitalize}>{props.data.model.toLowerCase()}</Typography></TableCell></TableRow>
-                  <TableRow><TableCell>Primary Color</TableCell><TableCell><Typography variant={'body1'}
+                  <TableRow><TableCell>Primär Färg</TableCell><TableCell><Typography variant={'body1'}
                                                                                        className={classes.capitalize}>{props.data.colorPrimary}</Typography></TableCell></TableRow>
-                  <TableRow><TableCell>Secondary Color</TableCell><TableCell><Typography variant={'body1'}
+                  <TableRow><TableCell>Sekundär Färg</TableCell><TableCell><Typography variant={'body1'}
                                                                                          className={classes.capitalize}>{props.data.colorSecondary}</Typography></TableCell></TableRow>
                 </TableBody>
               </Table>
@@ -82,9 +82,9 @@ export default function VehicleCard(props) {
               <Table className={classes.table} size="small" aria-label="a dense table">
                 <TableBody>
                   {props.data.bolo && <TableRow
-                    className={props.data.bolo ? classes.alert : null}><TableCell>BOLO</TableCell><TableCell><Typography
+                    className={props.data.bolo ? classes.alert : null}><TableCell>Efterlyst</TableCell><TableCell><Typography
                     variant={'body1'}
-                  >{props.data.bolo ? 'Active' : 'Inactive'}</Typography></TableCell></TableRow>}
+                  >{props.data.bolo ? 'Ja' : 'Nej'}</Typography></TableCell></TableRow>}
                 </TableBody>
               </Table>
             </Paper>

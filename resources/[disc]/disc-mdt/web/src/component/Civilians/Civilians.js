@@ -93,7 +93,7 @@ export default connect()((props) => {
     <Screen>
       <Grid container direction={'column'} alignItems={'center'} spacing={0} justify={'center'}
             className={classes.root}>
-        <TitleBar title={'Civilians'}/>
+        <TitleBar title={'Civilperson'}/>
         <Grid spacing={3} className={classes.grid} container direction={'row'}>
           <Grid item xs={12}>
             <SearchBar search={searchForCivilians}/>
@@ -122,11 +122,11 @@ export default connect()((props) => {
             open={Boolean(anchorEl)}
             onClose={() => setAnchorEl(null)}
           >
-            <MenuItem onClick={handleMenuSelect} id={'report'}>Create A Report</MenuItem>
+            <MenuItem onClick={handleMenuSelect} id={'report'}>Skapa en rapport</MenuItem>
           </Menu>
         </Card>
       </DialogModal>}
-      <ImageModal open={photoModalState} setModalState={setPhotoModalState} title={'Civilian Photo'}
+      <ImageModal open={photoModalState} setModalState={setPhotoModalState} title={'Foto på Person'}
                   selectedImage={selectedCivilianImage} setImage={setImage}/>
       {reportOpen && <Report open={reportOpen} setModalState={setReportState} data={selectedCivilian}/>}
     </Screen>

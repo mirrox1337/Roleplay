@@ -38,11 +38,11 @@ export default withRouter(connect()(function MDTAppBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Grid container className={classes.grid}>
-            <NavButton name={'Home'} link={'/'}/>
-            <NavButton name={'Civilians'} link={'/civilians'}/>
-            <NavButton name={'Vehicles'} link={'/vehicles'}/>
-            <NavButton name={'Crimes'} link={'/crimes'}/>
-            <NavButton name={'Most Wanted'} link={'/mostwanted'}/>
+            <NavButton name={'Hem'} link={'/'}/>
+            <NavButton name={'Civilperson'} link={'/civilians'}/>
+            <NavButton name={'Fordon'} link={'/vehicles'}/>
+            <NavButton name={'Brott'} link={'/crimes'}/>
+            <NavButton name={'Mest Eftertraktade'} link={'/mostwanted'}/>
           </Grid><Switch
           checked={darkMode}
           onChange={() => {

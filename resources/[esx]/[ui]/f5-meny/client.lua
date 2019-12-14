@@ -934,12 +934,12 @@ function OpenCloseVehicle()
   end
 
 
-  ESX.TriggerServerCallback('esx_advancedgarage:getOwnedCars', function(ownedCars)
+  ESX.TriggerServerCallback('esx_vehiclelock:requestPlayerCars', function(isOwnedVehicle)
 
   
 	local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
 	print (vehicleProps.plate)
-	  if ownedCars then
+	  if isOwnedVehicle then
 		local locked = GetVehicleDoorLockStatus(vehicle)
 		local heading = GetEntityHeading(playerPed)
 		if locked == 1 then -- if unlocked

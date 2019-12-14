@@ -28,7 +28,7 @@ export default function SearchBar(props) {
   return (
     <Grid className={classes.grid}>
       <TextField
-        label={props.label ? props.label : 'Search'}
+        label={props.label ? props.label : 'Sök'}
         id="filled-start-adornment"
         className={classes.textField}
         InputProps={{

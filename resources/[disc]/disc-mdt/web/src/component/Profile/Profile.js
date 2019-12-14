@@ -30,11 +30,10 @@ export default (props) => {
               <Paper className={classes.tablePaper}>
                 <Table className={classes.table} size="small" aria-label="a dense table">
                   <TableBody>
-                    <TableRow><TableCell>Date of
-                      Birth</TableCell><TableCell>{user.dateofbirth}</TableCell></TableRow>
-                    <TableRow><TableCell>Height</TableCell><TableCell>{user.height} cm</TableCell></TableRow>
-                    <TableRow><TableCell>Sex</TableCell><TableCell>{user.sex.toLowerCase() === 'm' ? 'Male' : 'Female'}</TableCell></TableRow>
-                    <TableRow><TableCell>Phone Number</TableCell><TableCell>{user.phone_number}</TableCell></TableRow>
+                    <TableRow><TableCell>Födelsedatum</TableCell><TableCell>{user.dateofbirth}</TableCell></TableRow>
+                    <TableRow><TableCell>Längd</TableCell><TableCell>{user.height} cm</TableCell></TableRow>
+                    <TableRow><TableCell>Kön</TableCell><TableCell>{user.sex.toLowerCase() === 'm' ? 'Male' : 'Female'}</TableCell></TableRow>
+                    <TableRow><TableCell>Mobilnummer</TableCell><TableCell>{user.phone_number}</TableCell></TableRow>
                   </TableBody>
                 </Table>
               </Paper>

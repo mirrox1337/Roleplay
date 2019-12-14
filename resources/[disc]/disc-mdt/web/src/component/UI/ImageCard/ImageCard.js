@@ -31,7 +31,7 @@ export default connect()((props) => {
     <Paper className={classes.paper}>
       <Grid container justify={'center'} alignItems={'center'}>
         <Img className={classes.img} src={props.url} loader={<CircularProgress/>}
-             unloader={<Typography variant={'h6'} className={classes.title}>No Image, Upload one</Typography>}/>
+             unloader={<Typography variant={'h6'} className={classes.title}>Ingen foto, Ladda upp ett</Typography>}/>
       </Grid>
     </Paper>
   );

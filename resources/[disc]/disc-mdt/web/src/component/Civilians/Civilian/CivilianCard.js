@@ -55,9 +55,9 @@ export default function CivilianCard(props) {
         <Paper className={classes.tablePaper}>
           <Table className={classes.table} size="small" aria-label="a dense table">
             <TableBody>
-              <TableRow><TableCell>Date of Birth</TableCell><TableCell>{props.data.dateofbirth}</TableCell></TableRow>
-              <TableRow><TableCell>Height</TableCell><TableCell>{props.data.height} cm</TableCell></TableRow>
-              <TableRow><TableCell>Sex</TableCell><TableCell>{props.data.sex.toLowerCase() === 'm' ? 'Male' : 'Female'}</TableCell></TableRow>
+              <TableRow><TableCell>Födelsedatum</TableCell><TableCell>{props.data.dateofbirth}</TableCell></TableRow>
+              <TableRow><TableCell>Längd</TableCell><TableCell>{props.data.height} cm</TableCell></TableRow>
+              <TableRow><TableCell>Kön</TableCell><TableCell>{props.data.sex.toLowerCase() === 'm' ? 'Male' : 'Female'}</TableCell></TableRow>
             </TableBody>
           </Table>
         </Paper>

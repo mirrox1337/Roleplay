@@ -69,7 +69,7 @@ export default connect()((props) => {
                           className={classes.higher}>
                   <List dense>
                     {notifications.length > 1 && <ListItem disabled disableRipple>
-                      <ListItemText>Clear All</ListItemText>
+                      <ListItemText>Rensa</ListItemText>
                       <IconButton onClick={() => props.dispatch(clearNotifications())}><CancelIcon/></IconButton>
                     </ListItem>}
                     {notifications.map((notif, index) =>

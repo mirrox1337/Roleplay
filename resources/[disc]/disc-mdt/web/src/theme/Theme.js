@@ -7,7 +7,7 @@ const theme = (darkmode) => createMuiTheme(
     palette: {
       type: darkmode ? 'dark' : 'light',
       primary: {
-        main: darkmode ? "#b71c1c" : blue[700],
+        main: darkmode ? "#40E0D0" : blue[700],
       },
       secondary: {
         main: darkmode ? grey[400] : '#2c2f33',
@@ -22,7 +22,7 @@ const theme = (darkmode) => createMuiTheme(
       },
       MuiDivider: {
         root: {
-          backgroundColor: darkmode ? "#b71c1c" : null,
+          backgroundColor: darkmode ? "#40E0D0" : null,
         },
       },
 

@@ -19,7 +19,7 @@ export default (props) => {
     <Dialog open={props.open} onClose={props.setModalState}>
       <DialogContent>
         <DialogContentText>
-          {props.active ? 'Remove BOLO for ' + props.identifier : 'Issue BOLO for' + props.identifier}
+          {props.active ? 'Ta bort efterlysning ' + props.identifier : 'Utfärda efterlysning ' + props.identifier}
         </DialogContentText>
       </DialogContent>
       <DialogActions>

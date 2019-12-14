@@ -107,7 +107,7 @@ export default connect()((props) => {
     <Screen>
       <Grid container direction={'column'} alignItems={'center'} spacing={0} justify={'center'}
             className={classes.root}>
-        <TitleBar title={'Vehicles'}/>
+        <TitleBar title={'Fordon'}/>
         <Grid spacing={3} className={classes.grid} container direction={'row'}>
           <Grid item xs={6}>
             <SearchBar search={search}/>

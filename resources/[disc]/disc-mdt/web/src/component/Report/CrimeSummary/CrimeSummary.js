@@ -56,8 +56,8 @@ export default (props) => {
         <Paper className={classes.tablePaper}>
           <Table className={classes.table} size="small" aria-label="a dense table">
             <TableBody>
-              <TableRow><TableCell>Fine Total</TableCell><TableCell>${fines}</TableCell></TableRow>
-              <TableRow><TableCell>Jail Total</TableCell><TableCell>{jail} Months</TableCell></TableRow>
+              <TableRow><TableCell>Total Bötessumma</TableCell><TableCell>${fines}</TableCell></TableRow>
+              <TableRow><TableCell>Total Fängelsetid</TableCell><TableCell>{jail} Månader</TableCell></TableRow>
               {lodash.keysIn(crimeCategory).map(key =>
                 <TableRow><TableCell>{key}</TableCell><TableCell>{crimeCategory[key]}</TableCell></TableRow>,
               )}
