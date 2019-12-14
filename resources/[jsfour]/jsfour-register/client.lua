@@ -20,11 +20,9 @@ AddEventHandler('jsfour-register:open', function()
 	RenderScriptCams(true,  false,  0,  true,  true)
 	SetCamCoord(cam, -288.92544555664, -2443.6701660156, 591.98687744141)
 	PointCamAtCoord(cam, -169.18321228027, -1056.4204101563, 129.99223327637)
-
-	SetEntityCollision(GetPlayerPed(-1),  false,  false)
+	--SetEntityCollision(GetPlayerPed(-1),  false,  false)
 	SetEntityVisible(GetPlayerPed(-1),  false)
 	FreezeEntityPosition(GetPlayerPed(-1), true);
-
 	SetNuiFocus(true, true)
 	open = true
 	SendNUIMessage({
