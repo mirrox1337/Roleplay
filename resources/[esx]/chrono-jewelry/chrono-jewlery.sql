@@ -1,2 +1,0 @@
-INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('safetyhammer', 'Busshammare', 100, 0, 1);
-INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('jewels', 'Juvel', 1, 0, 1);

@@ -92,9 +92,10 @@ function OpenBossMenu(society, close, options)
 	local defaultOptions = {
 		withdraw  = true,
 		deposit   = true,
-		wash      = true,
+		wash      = false,
 		employees = true,
-		grades    = true
+		grades    = true,
+		money 		= true
 	}
 
 	for k,v in pairs(defaultOptions) do
@@ -112,7 +113,7 @@ function OpenBossMenu(society, close, options)
 	end
 
 	if options.wash then
-		--table.insert(elements, {label = _U('wash_money'), value = 'wash_money'})
+		table.insert(elements, {label = _U('wash_money'), value = 'wash_money'})
 	end
 
 	if options.employees then
@@ -122,6 +123,11 @@ function OpenBossMenu(society, close, options)
 	if options.grades then
 		table.insert(elements, {label = _U('salary_management'), value = 'manage_grades'})
 	end
+
+	if options.money then
+		table.insert(elements, {label = 'Kolla företagspengar', value = 'check_money'})
+	end
+
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'boss_actions_' .. society, {
 		title    = _U('boss_menu'),
@@ -193,6 +199,10 @@ function OpenBossMenu(society, close, options)
 			OpenManageEmployeesMenu(society)
 		elseif data.current.value == 'manage_grades' then
 			OpenManageGradesMenu(society)
+		elseif data.current.value == 'check_money' then
+			ESX.TriggerServerCallback('esx_society:getSocietyMoney', function(money)
+				exports['mythic_notify']:SendAlert('inform', 'Ditt företag har en kassa på ' .. money .. ' SEK', success)
+			end, ESX.PlayerData.job.name)
 		end
 
 	end, function(data, menu)
