@@ -5,7 +5,7 @@ Config = {}
 ----------------------------------------------------
 
 -- Väntetid för antispam.
-Config.AntiSpamTimer = 2
+Config.AntiSpamTimer = 3
 
 -- Timer för att se lediga platser.
 Config.TimerCheckPlaces = 3
@@ -45,7 +45,7 @@ Config.Points = {
 
 Config.NoSteam = " Steam kunde inte upptäckas, starta om Steam samt FiveM och försök igen."
 
-Config.EnRoute = " Vänligen anslut endast till TeamSpeak när du ska välja karaktär! \n Du har "
+Config.EnRoute = " Du har "
 
 Config.PointsRP = " poäng samlade"
 
@@ -57,7 +57,7 @@ Config.EmojiBoost = " Grattis! du vann, " .. Config.LoterieBonusPoints .. " " ..
 
 Config.PleaseWait_1 = "Vänligen vänta "
 
-Config.PleaseWait_2 = " sekunder. Anslutningen sker per automatik!"
+Config.PleaseWait_2 = " sekunder. "
 
 Config.Accident = " ERROR: Något gick fel! "
 

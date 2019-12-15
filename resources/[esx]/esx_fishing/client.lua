@@ -202,7 +202,7 @@ function StartFishing()
             Citizen.Wait(5)
         
             local coords = GetEntityCoords(PlayerPedId())
-            local randomTime = math.random(10000, 15000)
+            local randomTime = math.random(15000, 25000)
             
             while Fishing do
                 Citizen.Wait(0)
@@ -220,10 +220,10 @@ function StartFishing()
                     exports['mythic_notify']:PersistentAlert('end', notifyFishEnd)
                     Citizen.Wait(100)
                     if disableNotify == false then
-                         exports['mythic_notify']:PersistentAlert('start', notifyFish, 'inform', 'Tryck [SPACE] för att rela in fisken.', { ['background-color'] = '#0d5491' })
+                         exports['mythic_notify']:PersistentAlert('start', notifyFish, 'inform', 'Tryck [E] för att rela in fisken.', { ['background-color'] = '#0d5491' })
                     end
 
-                    if IsControlPressed(0, Keys['SPACE']) then
+                    if IsControlPressed(0, Keys['E']) then
                         ClearPedTasksImmediately(PlayerPedId())
 
                         local fishingRod = GetClosestObjectOfType(coords, 10.0, GetHashKey("prop_fishing_rod_01"), false, false, false)
