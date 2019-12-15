@@ -358,7 +358,7 @@ function OpenMobileMechanicActionsMenu()
 			local playerPed = PlayerPedId()
 			local vehicle = GetVehiclePedIsIn(playerPed, true)
 
-			local towmodel = GetHashKey('flatbed')
+			local towmodel = GetHashKey('flatbed3')
 			local isVehicleTow = IsVehicleModel(vehicle, towmodel)
 
 			if isVehicleTow then
@@ -1143,7 +1143,7 @@ Citizen.CreateThread(function()
 					else
 
 						if
-							GetEntityModel(vehicle) == GetHashKey('flatbed')   or
+							GetEntityModel(vehicle) == GetHashKey('flatbed3')   or
 							GetEntityModel(vehicle) == GetHashKey('towtruck2') or
 							GetEntityModel(vehicle) == GetHashKey('slamvan3')
 						then
@@ -1177,7 +1177,7 @@ Citizen.CreateThread(function()
 			else
 				local playerPed = PlayerPedId()
 
-				if IsPedInAnyVehicle(playerPed, false) and IsVehicleModel(GetVehiclePedIsIn(playerPed, false), GetHashKey('flatbed')) then
+				if IsPedInAnyVehicle(playerPed, false) and IsVehicleModel(GetVehiclePedIsIn(playerPed, false), GetHashKey('flatbed3')) then
 					StartNPCJob()
 				else
 					exports['mythic_notify']:SendAlert('error',(_U('must_in_flatbed')))
