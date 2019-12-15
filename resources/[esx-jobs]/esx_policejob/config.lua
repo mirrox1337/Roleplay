@@ -163,7 +163,7 @@ Config.AuthorizedVehicles = {
 		{ model = 'police3', label = 'Volvo XC90', price = 100 },
 		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
 		{ model = 'sheriff', label = 'Volkswagen T6', price = 100 },
-		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 100 },
+		{ model = 'police4', label = 'Audi A4 - Civil', price = 100 },
 		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
 		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 100 }
 	},
@@ -174,7 +174,7 @@ Config.AuthorizedVehicles = {
 		{ model = 'police3', label = 'Volvo XC90', price = 100 },
 		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
 		{ model = 'sheriff', label = 'Volkswagen T6', price = 100 },
-		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 100 },
+		{ model = 'police4', label = 'Audi A4 - Civil', price = 100 },
 		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
 		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 100 }
 	},
@@ -185,7 +185,7 @@ Config.AuthorizedVehicles = {
 		{ model = 'police3', label = 'Volvo XC90', price = 100 },
 		{ model = 'policeb', label = 'BMW 1200R', price = 100 },
 		{ model = 'sheriff', label = 'Volkswagen T6', price = 100 },
-		{ model = 'police4', label = 'BMW 540i xDrive - Civil', price = 100 },
+		{ model = 'police4', label = 'Audi A4 - Civil', price = 100 },
 		{ model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
 		{ model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 100 }
 	},
@@ -196,7 +196,7 @@ Config.AuthorizedVehicles = {
     { model = 'police3', label = 'Volvo XC90', price = 100 },
     { model = 'policeb', label = 'BMW 1200R', price = 100 },
     { model = 'sheriff', label = 'Volkswagen T6', price = 100 },
-    { model = 'police4', label = 'BMW 540i xDrive - Civil', price = 100 },
+    { model = 'police4', label = 'Audi A4 - Civil', price = 100 },
     { model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
     { model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 100 }
 	},
@@ -207,7 +207,7 @@ Config.AuthorizedVehicles = {
     { model = 'police3', label = 'Volvo XC90', price = 100 },
     { model = 'policeb', label = 'BMW 1200R', price = 100 },
     { model = 'sheriff', label = 'Volkswagen T6', price = 100 },
-    { model = 'police4', label = 'BMW 540i xDrive - Civil', price = 100 },
+    { model = 'police4', label = 'Audi A4 - Civil', price = 100 },
     { model = 'fbi', label = 'Volvo V90 CC - Civil', price = 100 },
     { model = 'policeold2', label = 'Volkswagen T6 - Civil', price = 100 }
 

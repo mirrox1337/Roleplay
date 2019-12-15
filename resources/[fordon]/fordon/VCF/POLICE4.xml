@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ELS VEHICLE CONFIGURATION FILE -->
-<vcfroot Description="Sample VCF" Author="Luxart" >
+<vcfroot Description="British VCF" Author="ObsidianGames" >
 	<!-- INTERFACE -->
 	<INTERFACE>
 		<LstgActivationType>euro</LstgActivationType>
@@ -27,7 +27,7 @@
 	<MISC>
 		<VehicleIsSlicktop>false</VehicleIsSlicktop>
 		<ArrowboardType>off</ArrowboardType>
-		<UseSteadyBurnLights>rue</UseSteadyBurnLights>
+		<UseSteadyBurnLights>false</UseSteadyBurnLights>
 		<DfltSirenLtsActivateAtLstg>3</DfltSirenLtsActivateAtLstg>
 		<Takedowns AllowUse="true" Mirrored="true" />
 		<SceneLights AllowUse="true" IlluminateSidesOnly="true" />	
@@ -39,11 +39,11 @@
 	</CRUISE>
 	<!-- AUX CORONAS -->
 	<ACORONAS>
-		<Headlights DfltPattern="0" ColorL="white" ColorR="white" />
+		<Headlights DfltPattern="o" ColorL="white" ColorR="white" />
 		<TailLights DfltPattern="0" ColorL="red" ColorR="red" />
 		<IndicatorsF DfltPattern="0" ColorL="white" ColorR="white" />
 		<IndicatorsB DfltPattern="0" ColorL="red" ColorR="red" />
-		<ReverseLights DfltPattern="0" ColorL="blue" ColorR="blue" />
+		<ReverseLights DfltPattern="0" ColorL="white" ColorR="white" />
 	</ACORONAS>
 	<!-- SOUNDS -->
 	<SOUNDS>
@@ -60,7 +60,7 @@
 	<!-- WRNL -->
 	<WRNL LightingFormat="leds" >
 		<PresetPatterns>
-			<Lstg3 Enabled="true" Pattern="2" />
+			<Lstg3 Enabled="true" Pattern="01" />
 		</PresetPatterns>
 		<ForcedPatterns>
 			<MainHorn Enabled="false" Pattern="0" />
@@ -80,8 +80,8 @@
 	<!-- PRML -->
 	<PRML LightingFormat="leds" ExtrasActiveAtLstg2="1and4" >
 		<PresetPatterns>
-			<Lstg2 Enabled="true" Pattern="0" />
-			<Lstg3 Enabled="true" Pattern="0" />
+			<Lstg2 Enabled="true" Pattern="12" />
+			<Lstg3 Enabled="true" Pattern="12" />
 		</PresetPatterns>
 		<ForcedPatterns>
 			<MainHorn Enabled="false" Pattern="0" />
@@ -101,9 +101,9 @@
 	<!-- SECL -->
 	<SECL LightingFormat="leds" DisableAtLstg3="true" >
 		<PresetPatterns>
-			<Lstg1 Enabled="true" Pattern="0" />
-			<Lstg2 Enabled="true" Pattern="0" />
-			<Lstg3 Enabled="true" Pattern="0" />
+			<Lstg1 Enabled="true" Pattern="6" />
+			<Lstg2 Enabled="true" Pattern="6" />
+			<Lstg3 Enabled="true" Pattern="6" />
 		</PresetPatterns>
 		<ForcedPatterns>
 			<MainHorn Enabled="false" Pattern="0" />
