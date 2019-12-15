@@ -12,10 +12,11 @@ files {
     'VCF/police2.xml',
     'VCF/POLICE3.xml',
     'VCF/POLICE4.xml',
-    'VCF/fbi.xml',
+    'VCF/FBI.xml',
     'VCF/SHERIFF.xml',
-    'VCF/policeold2.xml',
-    'VCF/ambulance.xml',
+    'VCF/POLICEOLD1.xml',
+    'VCF/POLICEOLD2.xml',
+    'VCF/AMBULANCE.xml',
 }
 
 data_file 'HANDLING_FILE' 'handling.meta'
