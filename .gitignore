@@ -339,3 +339,5 @@ files/server-tls.crt
 *.db
 *.sfl
 *.rpf
+resources/[base]/richpresence/client.lua
+resources/[base]/richpresence/client.lua
