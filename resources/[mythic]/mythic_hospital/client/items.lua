@@ -3,7 +3,7 @@ AddEventHandler("mythic_hospital:items:gauze", function(item)
     exports['mythic_progbar']:Progress({
         name = "firstaid_action",
         duration = 3500,
-        label = "Sätter på plåster...",
+        label = "Sätter på Gasbinda...",
         useWhileDead = false,
         canCancel = true,
         controlDisables = {
@@ -128,7 +128,7 @@ AddEventHandler("mythic_hospital:items:vicodin", function(item)
     exports['mythic_progbar']:Progress({
         name = "firstaid_action",
         duration = 1000,
-        label = "Tar vicodin",
+        label = "Tar Tramadol",
         useWhileDead = false,
         canCancel = true,
         controlDisables = {
@@ -160,7 +160,7 @@ AddEventHandler("mythic_hospital:items:hydrocodone", function(item)
     exports['mythic_progbar']:Progress({
         name = "firstaid_action",
         duration = 1000,
-        label = "Tar hydrocodone",
+        label = "Tar Ipren",
         useWhileDead = false,
         canCancel = true,
         controlDisables = {
