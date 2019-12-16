@@ -25,7 +25,7 @@ oldvalue = GetVehicleHandlingFloat(vehicle,'CHandlingData','fLowSpeedTractionLos
 end
 
 
-if IsPedInAnyVehicle(playerped) then
+if IsPedInAnyVehicle and not IsPedOnAnyBike(playerped) then
     if tcacting == true then
     --  SetVehicleHandlingField(vehicle,'CHandlingData','fLowSpeedTractionLossMult',newvalue5)  
     --SetVehicleEngineTorqueMultiplier(veh, var1)
@@ -150,7 +150,7 @@ Citizen.CreateThread(function()
             drawTxt(UI.Left_x + 0.023 , UI.Bottom_y - 0.199 , 0.25, Zone, 255, 255, 255, 255, 8) -- Area
            
             --drawTxt(UI.Left_x + 0.003 , UI.Bottom_y - 0.045 , 0.4, speed .. " MPH", 255, 255, 255, 255, 4) -- Speed
-            if tc == true then
+            if tc == true and not IsPedOnAnyBike then
             drawTxt(UI.Left_x + 0.003 , UI.Bottom_y - 0.045 , 0.4, " Traction Control: ~g~ON", 255, 255, 255, 255, 4)
             else
             drawTxt(UI.Left_x + 0.003 , UI.Bottom_y - 0.045 , 0.4, " Traction Control: ~r~OFF", 255, 255, 255, 255, 4)
