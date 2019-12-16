@@ -150,7 +150,7 @@ Citizen.CreateThread(function()
             drawTxt(UI.Left_x + 0.023 , UI.Bottom_y - 0.199 , 0.25, Zone, 255, 255, 255, 255, 8) -- Area
            
             --drawTxt(UI.Left_x + 0.003 , UI.Bottom_y - 0.045 , 0.4, speed .. " MPH", 255, 255, 255, 255, 4) -- Speed
-            if tc == true and not IsPedOnAnyBike then
+            if tc == true then
             drawTxt(UI.Left_x + 0.003 , UI.Bottom_y - 0.045 , 0.4, " Traction Control: ~g~ON", 255, 255, 255, 255, 4)
             else
             drawTxt(UI.Left_x + 0.003 , UI.Bottom_y - 0.045 , 0.4, " Traction Control: ~r~OFF", 255, 255, 255, 255, 4)
