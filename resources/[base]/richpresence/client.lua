@@ -12,16 +12,16 @@ Citizen.CreateThread(function()
 
             -- Uppdaterad Rich Presence av chrono
 
-            SetDiscordAppId(655782756000989197)
-            SetDiscordRichPresenceAsset('logo')
-            SetDiscordRichPresenceAssetText ('http://www.ROLEPLAY.nu')
-            SetDiscordRichPresenceAssetSmallText ('http:/www.ROLEPLAY.nu')
+            SetDiscordAppId(655792767292669982)
+            SetDiscordRichPresenceAsset('dev')
+            SetDiscordRichPresenceAssetText ('Mirrox Dev Server')
+            SetDiscordRichPresenceAssetSmallText ('Mirrox Dev Server')
 
             local playerCount = #GetActivePlayers()
             local playerName = identity.firstname .. ' ' .. identity.lastname
             local maxPlayerSlots = "64"
 
-            SetRichPresence(string.format("%s/%s - %s", playerCount, maxPlayerSlots, playerName))
+            SetRichPresence(string.format("http://ROLEPLAY.nu"))
 
             Citizen.Wait(60000)
         end

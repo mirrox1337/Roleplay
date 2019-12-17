@@ -2,6 +2,38 @@
 <CVehicleModelInfoVariation>
 	<variationData>
 		<Item>
+			<modelName>m2</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">
+            70
+            70
+            74
+            0
+          </indices>
+					<liveries>
+						<Item value="true" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+			</colors>
+			<kits>
+				<Item>1000_m2_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities />
+			</plateProbabilities>
+			<lightSettings value="1000" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
 			<modelName>r32</modelName>
 			<colors>
 				<Item>
@@ -114,7 +146,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1000_r32_modkit</Item>
+				<Item>1001_r32_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -137,7 +169,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1000" />
+			<lightSettings value="1001" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -253,7 +285,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1001_na1_modkit</Item>
+				<Item>1002_na1_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -276,7 +308,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1001" />
+			<lightSettings value="1002" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -572,7 +604,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1002_ae86_modkit</Item>
+				<Item>1003_ae86_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -583,7 +615,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1002" />
+			<lightSettings value="1003" />
 			<sirenSettings value="0" />
 		</Item>
 	</variationData>
