@@ -2,6 +2,92 @@
 <CVehicleModelInfoVariation>
 	<variationData>
 		<Item>
+			<modelName>gtr</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">
+            0
+            0
+            6
+            0
+          </indices>
+					<liveries>
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+				<Item>
+					<indices content="char_array">
+            36
+            0
+            6
+            0
+          </indices>
+					<liveries>
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+				<Item>
+					<indices content="char_array">
+            64
+            0
+            6
+            0
+          </indices>
+					<liveries>
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+				<Item>
+					<indices content="char_array">
+            27
+            0
+            6
+            0
+          </indices>
+					<liveries>
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+			</colors>
+			<kits>
+				<Item>1000_gtr_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities />
+			</plateProbabilities>
+			<lightSettings value="1000" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
 			<modelName>m2</modelName>
 			<colors>
 				<Item>
@@ -24,13 +110,13 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1000_m2_modkit</Item>
+				<Item>1001_m2_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
 				<Probabilities />
 			</plateProbabilities>
-			<lightSettings value="1000" />
+			<lightSettings value="1001" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -146,7 +232,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1001_r32_modkit</Item>
+				<Item>1002_r32_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -169,7 +255,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1001" />
+			<lightSettings value="1002" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -285,7 +371,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1002_na1_modkit</Item>
+				<Item>1003_na1_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -308,7 +394,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1002" />
+			<lightSettings value="1003" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -604,7 +690,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1003_ae86_modkit</Item>
+				<Item>1004_ae86_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -615,7 +701,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1003" />
+			<lightSettings value="1004" />
 			<sirenSettings value="0" />
 		</Item>
 	</variationData>
