@@ -1,3 +1,111 @@
+--Traction Control
+RegisterCommand('tcon', function()
+    tc = true
+    TC()
+end)
+
+RegisterCommand('tcoff', function()
+    tc = false
+    TC()
+end)
+
+function TC()
+playerped = GetPlayerPed(-1)
+local veh = GetVehiclePedIsIn(playerped,false)
+local drivebias = GetVehicleHandlingFloat(veh,"CHandlingData", "fDriveBiasFront")
+
+oldvalue = GetVehicleHandlingFloat(vehicle,'CHandlingData','fLowSpeedTractionLossMult')     
+repeat
+Wait(0)
+if IsPedGettingIntoAVehicle(playerped) then
+Wait(2000)
+veh =   GetVehiclePedIsIn(playerped,false)
+drivebias = GetVehicleHandlingFloat(veh,"CHandlingData", "fDriveBiasFront")
+oldvalue = GetVehicleHandlingFloat(vehicle,'CHandlingData','fLowSpeedTractionLossMult') 
+end
+
+
+if IsPedInAnyVehicle and not IsPedOnAnyBike(playerped) then
+    if tcacting == true then
+    --  SetVehicleHandlingField(vehicle,'CHandlingData','fLowSpeedTractionLossMult',newvalue5)  
+    --SetVehicleEngineTorqueMultiplier(veh, var1)
+    else
+    SetVehicleHandlingField(vehicle,'CHandlingData','fLowSpeedTractionLossMult',oldvalue)   
+    SetVehicleEngineTorqueMultiplier(veh, 1.0)
+    end
+var1 = 1.0      
+mod1 = 0.0  
+newvalue5 = oldvalue
+
+tcacting = false    
+
+
+wh1 = GetVehicleWheelSpeed(veh,0)
+wh1 = (GetVehicleWheelSpeed(veh,1) + wh1) / 2 
+wh2 = (GetVehicleWheelSpeed(veh,1) + wh1) / 2 
+wh3 = GetVehicleWheelSpeed(veh,2)
+wh4 = GetVehicleWheelSpeed(veh,3) 
+throttle = 0.0 
+wheelave = (GetVehicleWheelSpeed(veh,0) + GetVehicleWheelSpeed(veh,1) + GetVehicleWheelSpeed(veh,2) + GetVehicleWheelSpeed(veh,3)) / 4
+steerang = GetVehicleSteeringAngle(veh)
+    if steerang > 1 then
+    mod1 = steerang / 20
+    elseif steerang < -1.0 then
+    steerang = steerang - steerang*2
+    mod1 = steerang / 20
+    end
+    if wh1 > (wheelave + 0.05 + mod1) then
+    var1 = 1.0 / ((wh1 - (wheelave + 0.00 + mod1) )- 0.04) *0.1
+    newvalue5 = oldvalue * var1
+    tcacting = true
+    elseif  wh2 > (wheelave + 0.05 + mod1) then
+    var1 = 1.0 / ((wh2 - (wheelave + 0.00 + mod1) )- 0.04) *0.1
+    newvalue5 = oldvalue * var1 
+    tcacting = true
+    elseif  wh3 > (wheelave + 0.05 + mod1) then
+    var1 = 1.0 / ((wh3 - (wheelave + 0.00 + mod1) )- 0.04) *0.1
+    newvalue5 = oldvalue * var1
+    tcacting = true
+    elseif  wh4 > (wheelave + 0.05 + mod1) then
+    var1 = 1.0 / ((wh4 - (wheelave + 0.00 + mod1) )- 0.04) *0.1
+    newvalue5 = oldvalue * var1
+    tcacting = true
+    end
+    if tcacting == true then
+        if newvalue5 > 0.0 and newvalue5 < oldvalue  then
+        SetVehicleHandlingField(vehicle,'CHandlingData','fLowSpeedTractionLossMult',newvalue5)
+        newvalue5 = oldvalue * var1
+        elseif newvalue5 > oldvalue then
+        newvalue5 = oldvalue * var1
+        SetVehicleHandlingField(vehicle,'CHandlingData','fLowSpeedTractionLossMult',newvalue5)
+        elseif newvalue5 < 0.0 then
+        newvalue5 = 0.01
+        SetVehicleHandlingField(vehicle,'CHandlingData','fLowSpeedTractionLossMult',newvalue5)
+        end
+        if var1 < 1.0 then
+        SetVehicleEngineTorqueMultiplier(veh, var1)
+            if var1 < 0.98 then
+            end
+            if var1 < 0.7 then
+            end
+            if var1 < 0.5 then
+            end
+            if var1 < 0.3 then
+            end
+            if var1 < 0.2 then
+            end
+        else
+        var1 = 1.0
+        SetVehicleEngineTorqueMultiplier(veh, var1)
+        end
+
+    end
+end
+until tc == false
+SetVehicleHandlingField(vehicle,'CHandlingData','fLowSpeedTractionLossMult',oldvalue)
+Wait(500)
+end
+
 --Base HUD
 dir = { [0] = 'N', [90] = 'W', [180] = 'S', [270] = 'E', [360] = 'N'}
  
@@ -42,7 +150,12 @@ Citizen.CreateThread(function()
             drawTxt(UI.Left_x + 0.023 , UI.Bottom_y - 0.199 , 0.25, Zone, 255, 255, 255, 255, 8) -- Area
            
             --drawTxt(UI.Left_x + 0.003 , UI.Bottom_y - 0.045 , 0.4, speed .. " MPH", 255, 255, 255, 255, 4) -- Speed
-            --drawRct(UI.Left_x, UI.Bottom_y - 0.045 , UI.Width, 0.027, 0, 0, 0, 55)
+            if tc == true then
+            drawTxt(UI.Left_x + 0.003 , UI.Bottom_y - 0.045 , 0.4, " Traction Control: ~g~ON", 255, 255, 255, 255, 4)
+            else
+            drawTxt(UI.Left_x + 0.003 , UI.Bottom_y - 0.045 , 0.4, " Traction Control: ~r~OFF", 255, 255, 255, 255, 4)
+            end
+            drawRct(UI.Left_x, UI.Bottom_y - 0.045 , UI.Width, 0.027, 0, 0, 0, 55)
         else
             DisplayRadar(false) -- Deactivates minimap
             drawRct(UI.Left_x, UI.Bottom_y - 0.088 , UI.Width, 0.073, 0, 0, 0, 55) -- Background
@@ -138,6 +251,7 @@ function GetMinimapAnchor()
     Minimap.yunit = yscale
     return Minimap
 end
+
 
 --Hunger/Thirst
 Citizen.CreateThread(function()

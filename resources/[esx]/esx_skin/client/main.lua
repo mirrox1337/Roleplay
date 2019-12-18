@@ -182,41 +182,6 @@ function DeleteSkinCam()
   getroleplay()
 end
 
---local appid = '608856036333322265' -- Namnet på det.
---local asset = 'big' -- Stor bild
-
-function getroleplay()
-  Citizen.CreateThread(function()
-
-    while ESX == nil do
-      Citizen.Wait(200)
-      TriggerEvent('esx:getSharedObject', function (obj) ESX = obj end)
-    end
-
-    ESX.PlayerData = ESX.GetPlayerData()
-    ESX.TriggerServerCallback('getIdentity', function(identity)
-        while true do
-            Citizen.Wait(0)
-
-            -- Uppdaterad Rich Presence av chrono
-
-            SetDiscordAppId(646040557348716549)
-            SetDiscordRichPresenceAsset('big')
-            SetDiscordRichPresenceAssetText ('#')
-            SetDiscordRichPresenceAssetSmallText ('#')
-
-            local playerCount = #GetActivePlayers()
-            local playerName = identity.firstname .. ' ' .. identity.lastname
-            local maxPlayerSlots = "32"
-
-            SetRichPresence(string.format("%s/%s - %s", playerCount, maxPlayerSlots, playerName))
-
-            Citizen.Wait(60000)
-        end
-    end)
-end)
-end
-
 Citizen.CreateThread(function()
   while true do
     Citizen.Wait(0)
