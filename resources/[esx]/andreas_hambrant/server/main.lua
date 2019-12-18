@@ -39,6 +39,7 @@ AddEventHandler('andreas_hambrant:cook', function()
    local sockercount = xPlayer.getInventoryItem('socker').count
    local vattencount = xPlayer.getInventoryItem('water').count
    local kolcount = xPlayer.getInventoryItem('kol').count
+   local corncount = xPlayer.getInventoryItem('corn').count
 
    local waittime = Config.CookTime / 5
 
@@ -49,6 +50,8 @@ AddEventHandler('andreas_hambrant:cook', function()
    xPlayer.removeInventoryItem('water', 1)
    Wait(waittime)
    xPlayer.removeInventoryItem('turbojast', 1)
+   Wait(waittime)
+   xPlayer.removeInventoryItem('corn', 1)
    Wait(waittime)
    xPlayer.addInventoryItem('hembrantdunk', Config.RecieveAmount)
 
@@ -62,8 +65,9 @@ ESX.RegisterServerCallback('andreas_hambrant:checkItems', function(source, cb)
     local sockercount = xPlayer.getInventoryItem('socker').count
     local vattencount = xPlayer.getInventoryItem('water').count
     local kolcount = xPlayer.getInventoryItem('kol').count
+    local corncount = xPlayer.getInventoryItem('corn').count
 
-    if turbojastcount and sockercount and vattencount and kolcount > 0 then
+    if turbojastcount and sockercount and vattencount and kolcount and corncount > 0 then
         cb(true)
     else 
         cb(false)

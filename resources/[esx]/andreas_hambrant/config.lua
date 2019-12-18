@@ -6,6 +6,7 @@ Config.ItemsNeeded = {
     'socker',
     'vatten',
     'kol',
+    'corn',
 }
 
 --== HUR MYCKET DET SKA KOSTA ATT KÖPA INGREDIENSERNA ==--
