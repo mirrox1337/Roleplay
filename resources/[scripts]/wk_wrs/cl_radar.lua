@@ -436,7 +436,7 @@ Citizen.CreateThread( function()
 
         -- LCtrl is pressed and M has just been pressed 
         if ( IsDisabledControlPressed( 1, 311 ) and IsDisabledControlJustPressed( 1, 311 ) ) then 
-            TriggerEvent( 'wk:radarRC' )
+            --TriggerEvent( 'wk:radarRC' )
         end 
 
         -- LCtrl is not being pressed and M has just been pressed 

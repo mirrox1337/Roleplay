@@ -676,7 +676,12 @@ function OpenPoliceActionsMenu()
 			{label = _U('object_spawner'),      value = 'object_spawner'},
 			{label = ('Västar'),		          value = 'vestmenu'},
 			{label = ('Överfallslarm'),		            value = 'larm'},
+			{label = ('Polisradar'),			value = 'radar_toggle'},
 	}}, function(data, menu)
+
+		if data.current.value == 'radar_toggle' then 
+			TriggerEvent( 'wk:toggleRadar' )
+		end
 
 		if data.current.value == 'larm' then
 			local x,y,z = table.unpack(GetEntityCoords(GetPlayerPed(-1), false))
