@@ -37,15 +37,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
--- inga npc snutar
-Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(500)
-        local myCoords = GetEntityCoords(GetPlayerPed(-1))
-        ClearAreaOfCops(myCoords.x, myCoords.y, myCoords.z, 150.0, 0)
-    end
-end)
-
 --Lås på NPC bilar
 Citizen.CreateThread(function()
     while true do
