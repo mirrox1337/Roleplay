@@ -143,10 +143,10 @@ AddEventHandler('esx_basicneeds:onDrink', function(prop_name)
 			local x,y,z = table.unpack(GetEntityCoords(playerPed))
 			local prop = CreateObject(GetHashKey(prop_name), x, y, z + 0.2, true, true, true)
 			local boneIndex = GetPedBoneIndex(playerPed, 18905)
-			AttachEntityToEntity(prop, playerPed, boneIndex, 0.12, 0.028, 0.001, 10.0, 175.0, 0.0, true, true, false, true, 1, true)
+			AttachEntityToEntity(prop, playerPed, boneIndex, 0.13, 0.012, 0.012, 280.00, 170.0, 18.0, true, true, false, true, 1, true)
 
 			ESX.Streaming.RequestAnimDict('mp_player_intdrink', function()
-				TaskPlayAnim(playerPed, 'mp_player_intdrink', 'loop_bottle', 1.0, -1.0, 2000, 0, 1, true, true, true)
+				TaskPlayAnim(playerPed, 'mp_player_intdrink', 'loop_bottle', 8.0, -8, -1, 49, 0, 0, 0, 0)
 
 				Citizen.Wait(3000)
 				IsAnimated = false

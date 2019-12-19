@@ -6484,9 +6484,24 @@
             Returns whether or not the specified player has enough information to start a commerce session for.
             </summary>
         </member>
+        <member name="F:CitizenFX.Core.Native.Hash.CREATE_VEHICLE">
+            <summary>
+            thisScriptCheck - can be destroyed if it belongs to the calling script.  
+            ```
+            
+            ```
+            NativeDB Added Parameter 8: BOOL p7
+            </summary>
+        </member>
         <member name="F:CitizenFX.Core.Native.Hash.DOES_PLAYER_OWN_SKU">
             <summary>
             Requests whether or not the player owns the specified SKU.
+            </summary>
+        </member>
+        <member name="F:CitizenFX.Core.Native.Hash.FREEZE_ENTITY_POSITION">
+            <summary>
+            No, this should be called SET_ENTITY_KINEMATIC. It does more than just "freeze" it's position.  
+            ^Rockstar Devs named it like that, Now cry about it.
             </summary>
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.GET_ALL_VEHICLES">
@@ -6693,6 +6708,55 @@
             Schedules the specified resource to run a tick as soon as possible, bypassing the server's fixed tick rate.
             </summary>
         </member>
+        <member name="F:CitizenFX.Core.Native.Hash.SET_ENTITY_COORDS">
+            <summary>
+            p7 is always 1 in the scripts. Set to 1, an area around the destination coords for the moved entity is cleared from other entities.   
+            Often ends with 1, 0, 0, 1); in the scripts. It works.   
+            Axis - Invert Axis Flags
+            </summary>
+        </member>
+        <member name="F:CitizenFX.Core.Native.Hash.SET_ENTITY_ROTATION">
+            <summary>
+            rotationOrder refers to the order yaw pitch roll is applied  
+            value ranges from 0 to 5. What you use for rotationOrder when setting must be the same as rotationOrder when getting the rotation.   
+            Unsure what value corresponds to what rotation order, more testing will be needed for that.  
+            For the most part R* uses 1 or 2 as the order.  
+            p5 is usually set as true
+            </summary>
+        </member>
+        <member name="F:CitizenFX.Core.Native.Hash.SET_ENTITY_VELOCITY">
+            <summary>
+            Note that the third parameter(denoted as z) is "up and down" with positive ment.
+            </summary>
+        </member>
+        <member name="F:CitizenFX.Core.Native.Hash.SET_PED_INTO_VEHICLE">
+            <summary>
+            Ped: The ped to warp.  
+            vehicle: The vehicle to warp the ped into.  
+            Seat_Index: [-1 is driver seat, -2 first free passenger seat]  
+            Moreinfo of Seat Index  
+            DriverSeat = -1  
+            Passenger = 0  
+            Left Rear = 1  
+            RightRear = 2
+            </summary>
+        </member>
+        <member name="F:CitizenFX.Core.Native.Hash.SET_PLAYER_WANTED_LEVEL">
+            <summary>
+            Call SET_PLAYER_WANTED_LEVEL_NOW for immediate effect  
+            wantedLevel is an integer value representing 0 to 5 stars even though the game supports the 6th wanted level but no police will appear since no definitions are present for it in the game files  
+            disableNoMission-  Disables When Off Mission- appears to always be false
+            </summary>
+        </member>
+        <member name="F:CitizenFX.Core.Native.Hash.SET_VEHICLE_COLOURS">
+            <summary>
+            colorPrimary &amp; colorSecondary are the paint index for the vehicle.  
+            For a list of valid paint indexes, view: pastebin.com/pwHci0xK  
+            -------------------------------------------------------------------------  
+            Use this to get the number of color indices: pastebin.com/RQEeqTSM  
+            Note: minimum color index is 0, maximum color index is (numColorIndices - 1)
+            </summary>
+        </member>
         <member name="F:CitizenFX.Core.Native.Hash.TRIGGER_CLIENT_EVENT_INTERNAL">
             <summary>
             The backing function for TriggerClientEvent.
@@ -6729,6 +6793,14 @@
             Cancels the currently executing event.
             </summary>
         </member>
+        <member name="M:CitizenFX.Core.Native.API.CreateVehicle(System.UInt32,System.Single,System.Single,System.Single,System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            thisScriptCheck - can be destroyed if it belongs to the calling script.
+            ```
+            ```
+            NativeDB Added Parameter 8: BOOL p7
+            </summary>
+        </member>
         <member name="M:CitizenFX.Core.Native.API.DoesPlayerOwnSku(System.String,System.Int32)">
             <summary>
             Requests whether or not the player owns the specified SKU.
@@ -6742,6 +6814,12 @@
             <returns>
             A boolean.
             </returns>
+        </member>
+        <member name="M:CitizenFX.Core.Native.API.FreezeEntityPosition(System.Int32,System.Boolean)">
+            <summary>
+            No, this should be called SET_ENTITY_KINEMATIC. It does more than just "freeze" it's position.
+            ^Rockstar Devs named it like that, Now cry about it.
+            </summary>
         </member>
         <member name="M:CitizenFX.Core.Native.API.GetAllVehicles">
             <summary>
@@ -7067,6 +7145,55 @@
             The resource to tick.
             </param>
         </member>
+        <member name="M:CitizenFX.Core.Native.API.SetEntityCoords(System.Int32,System.Single,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            p7 is always 1 in the scripts. Set to 1, an area around the destination coords for the moved entity is cleared from other entities.
+            Often ends with 1, 0, 0, 1); in the scripts. It works.
+            Axis - Invert Axis Flags
+            </summary>
+        </member>
+        <member name="M:CitizenFX.Core.Native.API.SetEntityRotation(System.Int32,System.Single,System.Single,System.Single,System.Int32,System.Boolean)">
+            <summary>
+            rotationOrder refers to the order yaw pitch roll is applied
+            value ranges from 0 to 5. What you use for rotationOrder when setting must be the same as rotationOrder when getting the rotation.
+            Unsure what value corresponds to what rotation order, more testing will be needed for that.
+            For the most part R* uses 1 or 2 as the order.
+            p5 is usually set as true
+            </summary>
+        </member>
+        <member name="M:CitizenFX.Core.Native.API.SetEntityVelocity(System.Int32,System.Single,System.Single,System.Single)">
+            <summary>
+            Note that the third parameter(denoted as z) is "up and down" with positive ment.
+            </summary>
+        </member>
+        <member name="M:CitizenFX.Core.Native.API.SetPedIntoVehicle(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Ped: The ped to warp.
+            vehicle: The vehicle to warp the ped into.
+            Seat_Index: [-1 is driver seat, -2 first free passenger seat]
+            Moreinfo of Seat Index
+            DriverSeat = -1
+            Passenger = 0
+            Left Rear = 1
+            RightRear = 2
+            </summary>
+        </member>
+        <member name="M:CitizenFX.Core.Native.API.SetPlayerWantedLevel(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Call SET_PLAYER_WANTED_LEVEL_NOW for immediate effect
+            wantedLevel is an integer value representing 0 to 5 stars even though the game supports the 6th wanted level but no police will appear since no definitions are present for it in the game files
+            disableNoMission-  Disables When Off Mission- appears to always be false
+            </summary>
+        </member>
+        <member name="M:CitizenFX.Core.Native.API.SetVehicleColours(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            colorPrimary &amp; colorSecondary are the paint index for the vehicle.
+            For a list of valid paint indexes, view: pastebin.com/pwHci0xK
+            -------------------------------------------------------------------------
+            Use this to get the number of color indices: pastebin.com/RQEeqTSM
+            Note: minimum color index is 0, maximum color index is (numColorIndices - 1)
+            </summary>
+        </member>
         <member name="M:CitizenFX.Core.Native.API.TriggerClientEventInternal(System.String,System.String,System.String,System.Int32)">
             <summary>
             The backing function for TriggerClientEvent.
@@ -7089,6 +7216,107 @@
             <returns>
             A boolean.
             </returns>
+        </member>
+        <member name="P:CitizenFX.Core.Entity.Position">
+            <summary>
+            Gets or sets the position of this <see cref="T:CitizenFX.Core.Entity"/>.
+            </summary>
+            <value>
+            The position in world space.
+            </value>
+        </member>
+        <member name="P:CitizenFX.Core.Entity.Rotation">
+            <summary>
+            Gets or sets the rotation of this <see cref="T:CitizenFX.Core.Entity"/>.
+            </summary>
+            <value>
+            The yaw, pitch, roll rotation values.
+            </value>
+        </member>
+        <member name="P:CitizenFX.Core.Entity.Heading">
+            <summary>
+            Gets or sets the heading of this <see cref="T:CitizenFX.Core.Entity"/>.
+            </summary>
+            <value>
+            The heading in degrees.
+            </value>
+        </member>
+        <member name="P:CitizenFX.Core.Entity.IsPositionFrozen">
+            <summary>
+            Sets a value indicating whether this <see cref="T:CitizenFX.Core.Entity"/> should be frozen.
+            </summary>
+            <value>
+            <c>true</c> if this <see cref="T:CitizenFX.Core.Entity"/> position should be frozen; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CitizenFX.Core.Entity.Velocity">
+            <summary>
+            Gets or sets the velocity of this <see cref="T:CitizenFX.Core.Entity"/>.
+            </summary>
+        </member>
+        <member name="P:CitizenFX.Core.Entity.RotationVelocity">
+            <summary>
+            Gets the rotation velocity of this <see cref="T:CitizenFX.Core.Entity"/>.
+            </summary>
+        </member>
+        <member name="P:CitizenFX.Core.Entity.Model">
+            <summary>
+            Gets the model of the this <see cref="T:CitizenFX.Core.Entity"/>.
+            </summary>
+        </member>
+        <member name="P:CitizenFX.Core.Entity.Owner">
+            <summary>
+            Gets the network owner of the this <see cref="T:CitizenFX.Core.Entity"/>.
+            </summary>
+            <returns>Returns the <see cref="T:CitizenFX.Core.Player"/> of the network owner.</returns>
+        </member>
+        <member name="P:CitizenFX.Core.Entity.NetworkId">
+            <summary>
+            Gets the network ID of the this <see cref="T:CitizenFX.Core.Entity"/>.
+            </summary>
+        </member>
+        <member name="P:CitizenFX.Core.Entity.Type">
+            <summary>
+            Gets the type of this <see cref="T:CitizenFX.Core.Entity"/>.
+            </summary>
+            <returns>Returns 1 if this <see cref="T:CitizenFX.Core.Entity"/> is a Ped.
+            Returns 2 if this <see cref="T:CitizenFX.Core.Entity"/> is a Vehicle.
+            Returns 3 if this <see cref="T:CitizenFX.Core.Entity"/> is a Prop.</returns>
+        </member>
+        <member name="M:CitizenFX.Core.Entity.FromHandle(System.Int32)">
+            <summary>
+            Creates a new instance of an <see cref="T:CitizenFX.Core.Entity"/> from the given handle.
+            </summary>
+            <param name="handle">The entity handle.</param>
+            <returns>Returns a <see cref="T:CitizenFX.Core.Ped"/> if this handle corresponds to a Ped.
+            Returns a <see cref="T:CitizenFX.Core.Vehicle"/> if this handle corresponds to a Vehicle.
+            Returns a <see cref="T:CitizenFX.Core.Prop"/> if this handle corresponds to a Prop.
+            Returns <c>null</c> if no <see cref="T:CitizenFX.Core.Entity"/> exists this the specified <paramref name="handle"/></returns>
+        </member>
+        <member name="M:CitizenFX.Core.Entity.FromNetworkId(System.Int32)">
+            <summary>
+            Creates a new instance of an <see cref="T:CitizenFX.Core.Entity"/> from the given network ID.
+            </summary>
+            <param name="networkId">The entity network ID.</param>
+            <returns>Returns a <see cref="T:CitizenFX.Core.Ped"/> if this network ID corresponds to a Ped.
+            Returns a <see cref="T:CitizenFX.Core.Vehicle"/> if this network ID corresponds to a Vehicle.
+            Returns a <see cref="T:CitizenFX.Core.Prop"/> if this network ID corresponds to a Prop.
+            Returns <c>null</c> if no <see cref="T:CitizenFX.Core.Entity"/> exists this the specified <paramref name="networkId"/></returns>
+        </member>
+        <member name="M:CitizenFX.Core.Entity.Equals(CitizenFX.Core.Entity)">
+            <summary>
+            Checks if two <see cref="T:CitizenFX.Core.Entity"/>s refer to the same <see cref="T:CitizenFX.Core.Entity"/>
+            </summary>
+            <param name="entity">The other <see cref="T:CitizenFX.Core.Entity"/>.</param>
+            <returns><c>true</c> if they are the same <see cref="T:CitizenFX.Core.Entity"/>; otherwise, false</returns>
+        </member>
+        <member name="M:CitizenFX.Core.Ped.FromPlayerHandle(System.String)">
+            <summary>
+            Creates a new instance of an <see cref="T:CitizenFX.Core.Ped"/> from the given player handle.
+            </summary>
+            <param name="handle">The players handle.</param>
+            <returns>Returns the <see cref="T:CitizenFX.Core.Ped"/> of the player.
+            Returns <c>null</c> if no <see cref="T:CitizenFX.Core.Ped"/> exists for the specified player</returns>
         </member>
         <member name="M:CitizenFX.Core.Player.Equals(System.Object)">
             <inheritdoc />
