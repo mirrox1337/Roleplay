@@ -81,27 +81,27 @@ function OpenCloakroomMenu()
 		table.insert(elements, {label = _U('police_wear'), value = 'officer_wear'})
 	elseif grade == 'officer' then
 		table.insert(elements, {label = _U('police_wear'), value = 'officer_wear'})
-		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	elseif grade == 'sergeant' then
 		table.insert(elements, {label = _U('police_wear'), value = 'sergeant_wear'})
-		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	elseif grade == 'intendent' then
 		table.insert(elements, {label = _U('police_wear'), value = 'intendent_wear'})
-		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	elseif grade == 'lieutenant' then
 		table.insert(elements, {label = _U('police_wear'), value = 'lieutenant_wear'})
-		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	elseif grade == 'chef' then
 		table.insert(elements, {label = _U('police_wear'), value = 'chef_wear'})
-		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	elseif grade == 'boss' then
 		table.insert(elements, {label = _U('police_wear'), value = 'boss_wear'})
-		--table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
+		table.insert(elements, {label = _U('mc_wear'), value = 'mc_wear'})
 		table.insert(elements, {label = 'Insats Kläder', value = 'insats_wear'})
 	end
 
@@ -211,6 +211,7 @@ function OpenCloakroomMenu()
 			data.current.value == 'sergeant_wear' or
 			data.current.value == 'insats_wear' or
 			data.current.value == 'lieutenant_wear' or
+			data.current.value == 'mc_wear' or
 			data.current.value == 'chef_wear' or
 			data.current.value == 'boss_wear' or
 			data.current.value == 'bullet_wear' or

@@ -138,6 +138,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_STUNGUN', price = 1000 },
 		{ weapon = 'WEAPON_FLASHLIGHT', price = 500 },
 		{ weapon = 'WEAPON_FIREEXTINGUISHER', price = 500 },
+        { weapon = 'WEAPON_VINTAGEPISTOL', price = 500 },
 		{ weapon = 'WEAPON_FLAREGUN', price = 1000 }
 	}
 }
@@ -379,6 +380,33 @@ Config.Uniforms = {
           ['chain_1'] = 1, ['chain_2'] = 0,
           ['mask_1'] = 121, ['mask_2'] = 0,
           ['bproof_1'] = 14, ['bproof_2'] = 0,
+        }
+      },
+      mc_wear = {
+        male = {
+          ['tshirt_1'] = 15, ['tshirt_2'] = 0,
+          ['torso_1'] = 5, ['torso_2'] = 1,
+          ['decals_1'] = 0, ['decals_2'] = 0,
+          ['arms'] = 36,
+          ['pants_1'] = 59, ['pants_2'] = 1,
+          ['shoes_1'] = 25, ['shoes_2'] = 0,
+          ['helmet_1'] = -1, ['helmet_2'] = 8,
+          ['chain_1'] = 1, ['chain_2'] = 0,
+          ['glasses_1'] = 0, ['glasses_2'] = 0,
+          ['mask_1'] = 121, ['mask_2'] = 0,
+          ['bproof_1'] = 0, ['bproof_2'] = 0
+      },
+      female = {
+        ['tshirt_1'] = 58, ['tshirt_2'] = 0,
+        ['torso_1'] = 244, ['torso_2'] = 25,
+        ['decals_1'] = 8, ['decals_2'] = 1,
+        ['arms'] = 35,
+        ['pants_1'] = 61, ['pants_2'] = 19,
+        ['shoes_1'] = 25, ['shoes_2'] = 0,
+        ['helmet_1'] = 72, ['helmet_2'] = 8,
+        ['chain_1'] = 1, ['chain_2'] = 2,
+        ['glasses_1'] = 0, ['glasses_2'] = 0,
+        ['mask_1'] = 121, ['mask_2'] = 0,
         }
       },
       chef_wear = {

@@ -3,6 +3,7 @@ Locales['sv'] = {
   ['cloakroom'] = 'Omklädningsrum',
   ['citizen_wear'] = 'Civila kläder',
   ['police_wear'] = 'Polisuniform',
+  ['mc_wear'] = 'MC Kläder',
   ['gilet_wear'] = 'Reflektiv väst',
   ['bullet_wear'] = 'Skottsäker väst',
   ['no_outfit'] = 'Det finns ingen uniform som passar dig!',
