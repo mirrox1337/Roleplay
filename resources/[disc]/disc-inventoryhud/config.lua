@@ -47,13 +47,14 @@ Config.Shops = {
     },
     ['Sjukhus Kiosken'] = {
         coords = {
-            vector3(316.88, -588.64, 42.32),
+            vector3(335.19, -585.38, 27.8),
         },
         items = {
             { name = "bread", price = 25, count = 1 },
-            { name = "varmkorv", price = 25, count = 1 },
-            { name = "water", price = 20, count = 1 },
+            { name = "korv", price = 35, count = 1 },
+            { name = "donut", price = 20, count = 1 },
             { name = "cola", price = 20, count = 1 },
+            { name = "water", price = 25, count = 1 },
         },
         blipSprite = 52,
         blipColour = 4,
@@ -62,7 +63,7 @@ Config.Shops = {
         enableBlip = false,
         rotate = true,
         msg = '~INPUT_CONTEXT~ för att handla på ~g~Sjukhus Kiosken~s~',
-        job = 'all'
+        job = 'ambulance'
     },
     ['Dealer'] = {
         coords = {
