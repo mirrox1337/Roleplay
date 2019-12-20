@@ -114,6 +114,10 @@ cfg = {
 
 	displayBlips = false,						-- Show blips for mechanics locations
 
+	compatibilityMode = false,	
+
+	randomTireBurstInterval = 120,	
+
 	classDamageMultiplier = {
 		[0] = 	1.0,		--	0: Compacts
 				1.0,		--	1: Sedans
