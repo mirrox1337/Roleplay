@@ -512,7 +512,7 @@ Config.Properties = {
         name = 'Playboy Mansion',
         price = 535000,
         view = {
-            coords = vector3(-1491.52, 95.32, 55.01),
+            coords = vector3(-1491.52, 95.32, 55.05),
         },
         inside = {
             coords = vector3(-1502.41, 104.79, 55.66),
@@ -547,6 +547,35 @@ Config.Properties = {
                 },
                 cupboard = {
                     coords = vector3(-1505.58, 111.21, 48.05)
+                }
+            }
+        }
+    },
+    --Motell
+    {
+        name = 'Pink Cage Motell',
+        price = 535000,
+        view = {
+            coords = vector3(313.03, -218.56, 54.25),
+        },
+        inside = {
+            coords = vector3(312.46, -220.1, 53.5),
+            heading = 160.0
+        },
+        outside = {
+            coords = vector3(313.03, -218.56, 54.25),
+            heading = 340.0
+        },
+        garage = {
+            coords = vector3(-1533.81, 81.15, 56.77)
+        },
+        rooms = {
+            {
+                clothes = {
+                    coords = vector3(310.0, -225.75, 54.22)
+                },
+                cupboard = {
+                    coords = vector3(310.95, -224.18, 54.22)
                 }
             }
         }

@@ -48,10 +48,10 @@ Citizen.CreateThread(function()
     for propertyIndex, property in pairs(Config.Properties) do
         local marker = {
             name = property.name .. '_prop_enter' .. propertyIndex,
-            type = -1,
+            type = 20,
             coords = property.outside.coords,
-            colour = { r = 55, b = 55, g = 255 },
-            size = vector3(1.0, 1.0, 1.0),
+            colour = { r = 0, b = 119, g = 119 },
+            size = vector3(1.0, 0.1, 1.0),
             msg = _U('enterkey') .. property.name,
             action = function()
                 EnterProperty(property)
@@ -82,10 +82,10 @@ Citizen.CreateThread(function()
 
         local marker = {
             name = property.name .. '_prop_exit' .. propertyIndex,
-            type = -1,
+            type = 20,
             coords = property.inside.coords,
-            colour = { r = 0, b = 0, g = 0 },
-            size = vector3(1.0, 1.0, 1.0),
+            colour = { r = 0, b = 119, g = 119 },
+            size = vector3(1.0, 0.1, 1.0),
             msg = _U('leavekey') .. property.name,
             action = function()
                 ExitProperty(property)
@@ -99,10 +99,10 @@ Citizen.CreateThread(function()
 
         local marker = {
             name = property.name .. '_prop_kitchen' .. propertyIndex,
-            type = -1,
+            type = 20,
             coords = property.kitchen.coords,
-            colour = { r = 0, b = 0, g = 0 },
-            size = vector3(1.0, 1.0, 1.0),
+            colour = { r = 0, b = 119, g = 119 },
+            size = vector3(1.0, 0.1, 1.0),
             msg = _U('kitchenkey'),
             action = function()
                 OpenKitchen(property)
@@ -116,9 +116,9 @@ Citizen.CreateThread(function()
 
         local marker = {
             name = property.name .. '_prop_garage_open' .. propertyIndex,
-            type = -1,
+            type = 36,
             coords = property.garage.coords,
-            colour = { r = 0, b = 0, g = 0 },
+            colour = { r = 0, b = 119, g = 119 },
             size = vector3(3.0, 3.0, 3.0),
             msg = _U('keygarage'),
             action = function()
@@ -133,10 +133,10 @@ Citizen.CreateThread(function()
 
 		local marker = {
             name = property.name .. '_prop_shower' .. propertyIndex,
-            type = -1,
+            type = 20,
             coords = property.shower.coords,
-            colour = { r = 55, b = 55, g = 255 },
-            size = vector3(1.0, 1.0, 1.0),
+            colour = { r = 0, b = 119, g = 119 },
+            size = vector3(1.0, 0.1, 1.0),
             msg = _U('showroom'),
             action = function()
                 TriggerEvent('disc-property:shower')
@@ -153,10 +153,10 @@ Citizen.CreateThread(function()
             if room.clothes ~= nil then
                 local marker = {
                     name = property.name .. '_prop_room_clothes' .. roomIndex,
-                    type = -1,
+                    type = 20,
                     coords = room.clothes.coords,
-                    colour = { r = 0, b = 0, g = 0 },
-                    size = vector3(1.0, 1.0, 1.0),
+                    colour = { r = 0, b = 119, g = 119 },
+                    size = vector3(1.0, 0.1, 1.0),
                     msg = _U('clotheskey'),
                     action = function()
                         OpenClothes(room)
@@ -171,10 +171,10 @@ Citizen.CreateThread(function()
 
             local marker = {
                 name = property.name .. '_prop_room_items' .. roomIndex,
-                type = -1,
+                type = 20,
                 coords = room.cupboard.coords,
-                colour = { r = 0, b = 0, g = 0 },
-                size = vector3(1.0, 1.0, 1.0),
+                colour = { r = 0, b = 119, g = 119 },
+                size = vector3(1.0, 0.1, 1.0),
                 msg = _U('keyroom'),
                 action = function()
                     OpenCupboard(property.name .. '_prop_room_items' .. roomIndex)
