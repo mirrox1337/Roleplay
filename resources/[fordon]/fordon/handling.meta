@@ -43,7 +43,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.600000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" /> 
@@ -103,7 +103,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -223,7 +223,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.050000" />
@@ -285,7 +285,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -353,7 +353,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -415,7 +415,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -477,7 +477,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -535,7 +535,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -596,7 +596,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="120.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -834,7 +834,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="120.000000" />
 			<fOilVolume value="10.000000" />
 			<fSeatOffsetDistX value="-0.100000" />
@@ -891,7 +891,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.100000" />
@@ -948,7 +948,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="70.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -1128,7 +1128,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -1189,7 +1189,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="80.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.250000" />
@@ -1429,7 +1429,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="2.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -1507,7 +1507,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="2.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -1586,7 +1586,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -2012,7 +2012,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.600000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="7.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -2130,7 +2130,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="120.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -2191,7 +2191,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -2248,7 +2248,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -2363,7 +2363,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -2486,7 +2486,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.600000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -2547,7 +2547,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="120.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -2667,7 +2667,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -2729,7 +2729,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -2913,7 +2913,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="40.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.100000" />
@@ -3269,7 +3269,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.050000" />
@@ -3331,7 +3331,7 @@
 			<fCollisionDamageMult value="0.650000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.650000" />
-			<fEngineDamageMult value="1.600000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="4.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -3579,7 +3579,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -3641,7 +3641,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -3702,7 +3702,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -3888,7 +3888,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -3949,7 +3949,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="80.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.050000" />
@@ -4287,7 +4287,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -4349,7 +4349,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.500000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -4713,7 +4713,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -4770,7 +4770,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -4889,7 +4889,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -5260,7 +5260,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -5625,7 +5625,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -5682,7 +5682,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -5800,7 +5800,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.200000" />
@@ -5919,7 +5919,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="30.000000" />
 			<fOilVolume value="4.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -6158,7 +6158,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -6215,7 +6215,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="120.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -6272,7 +6272,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.050000" />
@@ -6637,7 +6637,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -6699,7 +6699,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -6761,7 +6761,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -6823,7 +6823,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -6885,7 +6885,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -6943,7 +6943,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -7004,7 +7004,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -7119,7 +7119,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="80.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -7177,7 +7177,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -7486,7 +7486,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -7785,7 +7785,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="0.300000" />
 			<fDeformationDamageMult value="0.500000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -7842,7 +7842,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -8019,7 +8019,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.050000" />
@@ -8496,7 +8496,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -8738,7 +8738,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -9039,7 +9039,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="0.300000" />
 			<fDeformationDamageMult value="0.500000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -9701,7 +9701,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -9758,7 +9758,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -9933,7 +9933,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -9990,7 +9990,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -10047,7 +10047,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.200000" />
@@ -10104,7 +10104,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.100000" />
@@ -10161,7 +10161,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -10218,7 +10218,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.200000" />
@@ -10275,7 +10275,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.200000" />
@@ -10390,7 +10390,7 @@
 			<fCollisionDamageMult value="0.650000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.650000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -10575,7 +10575,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -10959,7 +10959,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -11199,7 +11199,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -11358,7 +11358,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -11436,7 +11436,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -11835,7 +11835,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -11994,7 +11994,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12072,7 +12072,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12150,7 +12150,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12228,7 +12228,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12306,7 +12306,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12384,7 +12384,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12475,7 +12475,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12566,7 +12566,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12657,7 +12657,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12748,7 +12748,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12839,7 +12839,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -12972,7 +12972,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -13063,7 +13063,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -13154,7 +13154,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -13245,7 +13245,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -13378,7 +13378,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -13511,7 +13511,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -13602,7 +13602,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -13693,7 +13693,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -13784,7 +13784,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -13875,7 +13875,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.200000" />
@@ -13969,7 +13969,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="3.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14102,7 +14102,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14159,7 +14159,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14216,7 +14216,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14273,7 +14273,7 @@
 			<fCollisionDamageMult value="0.800000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14340,7 +14340,7 @@
 			<fCollisionDamageMult value="0.800000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14407,7 +14407,7 @@
 			<fCollisionDamageMult value="0.800000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14474,7 +14474,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14541,7 +14541,7 @@
 			<fCollisionDamageMult value="0.800000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14608,7 +14608,7 @@
 			<fCollisionDamageMult value="0.800000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14675,7 +14675,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14742,7 +14742,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="5000.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14809,7 +14809,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14876,7 +14876,7 @@
 			<fCollisionDamageMult value="0.800000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -14943,7 +14943,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15010,7 +15010,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15077,7 +15077,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15144,7 +15144,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15211,7 +15211,7 @@
 			<fCollisionDamageMult value="0.050000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15377,7 +15377,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="120.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15434,7 +15434,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="70.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15591,7 +15591,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="2.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="250.000000" />
 			<fOilVolume value="10.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15658,7 +15658,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15784,7 +15784,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15910,7 +15910,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="2.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -15994,7 +15994,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="1.500000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="2.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -16120,7 +16120,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -16205,7 +16205,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="1.500000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="2.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -16290,7 +16290,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="1.500000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="2.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -16374,7 +16374,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.100000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="2.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -16479,7 +16479,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -16564,7 +16564,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="3.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -16697,7 +16697,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="3.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="-0.150000" />
@@ -16830,7 +16830,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="3.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="-0.150000" />
@@ -16963,7 +16963,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="3.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -17055,7 +17055,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="3.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -17189,7 +17189,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="3.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -17323,7 +17323,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="3.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="-0.150000" />
@@ -17457,7 +17457,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="3.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -17548,7 +17548,7 @@
 			<fCollisionDamageMult value="2.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="5.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -17639,7 +17639,7 @@
 			<fCollisionDamageMult value="2.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="5.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -17730,7 +17730,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -17870,7 +17870,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -18018,7 +18018,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.600000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -18190,7 +18190,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -18498,7 +18498,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="80.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -18680,7 +18680,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -19174,7 +19174,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -19342,7 +19342,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -19400,7 +19400,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -19457,7 +19457,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="70.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -19515,7 +19515,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -19696,7 +19696,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -19984,7 +19984,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -20427,7 +20427,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.040000" />
@@ -20543,7 +20543,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.600000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -20840,7 +20840,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -20981,7 +20981,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.600000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -21161,7 +21161,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -21571,7 +21571,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -21628,7 +21628,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -23412,7 +23412,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.600000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.050000" />
@@ -23474,7 +23474,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -23535,7 +23535,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.100000" />
@@ -23592,7 +23592,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -23777,7 +23777,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -23834,7 +23834,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.025000" />
@@ -23896,7 +23896,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.075000" />
@@ -23958,7 +23958,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.075000" />
@@ -24020,7 +24020,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.850000" />
-			<fEngineDamageMult value="1.600000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -24082,7 +24082,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -24144,7 +24144,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.025000" />
@@ -24205,7 +24205,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -24263,7 +24263,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -24320,7 +24320,7 @@
 			<fCollisionDamageMult value="1.100000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -24381,7 +24381,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="2.000000" />
 			<fOilVolume value="3.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -24600,7 +24600,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="80.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -24662,7 +24662,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.600000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="80.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -24786,7 +24786,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -24843,7 +24843,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="4.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -24935,7 +24935,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.600000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -25148,7 +25148,7 @@
 			<fCollisionDamageMult value="0.600000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.600000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="70.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="-0.050000" />
@@ -25206,7 +25206,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.100000" />
@@ -25268,7 +25268,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.300000" />
@@ -25330,7 +25330,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -25392,7 +25392,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.600000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -25454,7 +25454,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -25512,7 +25512,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.600000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -25569,7 +25569,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.025000" />
@@ -25627,7 +25627,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -25689,7 +25689,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -25746,7 +25746,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -25825,7 +25825,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.850000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -25887,7 +25887,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.100000" />
@@ -25944,7 +25944,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26022,7 +26022,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="2.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26100,7 +26100,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26178,7 +26178,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26256,7 +26256,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26334,7 +26334,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26412,7 +26412,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26490,7 +26490,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26724,7 +26724,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26802,7 +26802,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26880,7 +26880,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -26959,7 +26959,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="2.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -27011,7 +27011,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -27089,7 +27089,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="2.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -27167,7 +27167,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -27245,7 +27245,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.050000" />
@@ -27306,7 +27306,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -27363,7 +27363,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -27441,7 +27441,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -27519,7 +27519,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.300000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="80.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -27647,7 +27647,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="10.000000" />
 			<fOilVolume value="2.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -27797,7 +27797,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="75.000000" />
 			<fOilVolume value="6.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -27901,7 +27901,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28016,7 +28016,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28078,7 +28078,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28136,7 +28136,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28193,7 +28193,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28250,7 +28250,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28328,7 +28328,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28407,7 +28407,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28469,7 +28469,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28530,7 +28530,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28608,7 +28608,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28687,7 +28687,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28745,7 +28745,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28907,7 +28907,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -28969,7 +28969,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -29031,7 +29031,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -29089,7 +29089,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.850000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -29151,7 +29151,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.850000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -29213,7 +29213,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.850000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -29271,7 +29271,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.850000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -29334,7 +29334,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -29396,7 +29396,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.850000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -29945,7 +29945,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.750000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.025000" />
@@ -30121,7 +30121,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.025000" />
@@ -30183,7 +30183,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.300000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="80.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -30411,7 +30411,7 @@
 			<fCollisionDamageMult value="0.200000" />
 			<fWeaponDamageMult value="0.200000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -30536,7 +30536,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.750000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -30593,7 +30593,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -30650,7 +30650,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="0.400000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -30871,7 +30871,7 @@
 			<fCollisionDamageMult value="0.500000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -31000,7 +31000,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.750000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -31057,7 +31057,7 @@
 			<fCollisionDamageMult value="0.200000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.200000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="0.000000" />
 			<fOilVolume value="0.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -31182,7 +31182,7 @@
 			<fCollisionDamageMult value="0.100000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.025000" />
@@ -31245,7 +31245,7 @@
 			<fCollisionDamageMult value="0.100000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.650000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -31307,7 +31307,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.750000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -31365,7 +31365,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.750000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.025000" />
@@ -31422,7 +31422,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -31529,7 +31529,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -31714,7 +31714,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -31828,7 +31828,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -31896,7 +31896,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.600000" />
 			<fDeformationDamageMult value="0.600000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="-0.100000" />
@@ -32014,7 +32014,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.080000" />
@@ -32070,7 +32070,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.100000" />
@@ -32188,7 +32188,7 @@
 			<fCollisionDamageMult value="1.100000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.100000" />
@@ -32375,7 +32375,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -32443,7 +32443,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.600000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -32511,7 +32511,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.080000" />
@@ -32579,7 +32579,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.600000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.100000" />
@@ -32682,7 +32682,7 @@
 			<fCollisionDamageMult value="1.100000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.100000" />
@@ -32743,7 +32743,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="0.300000" />
 			<fDeformationDamageMult value="0.500000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -32869,7 +32869,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.600000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -32978,7 +32978,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -33046,7 +33046,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.100000" />
@@ -33103,7 +33103,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="0.500000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -33213,7 +33213,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.600000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -33279,7 +33279,7 @@
 			<fCollisionDamageMult value="1.500000" />
 			<fWeaponDamageMult value="0.500000" />
 			<fDeformationDamageMult value="3.000000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="100.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -33422,7 +33422,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -33532,7 +33532,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -33590,7 +33590,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.080000" />
@@ -33766,7 +33766,7 @@
 			<fCollisionDamageMult value="0.200000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.600000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="60.000000" />
 			<fOilVolume value="6.500000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -33832,7 +33832,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.073000" />
@@ -33899,7 +33899,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.023000" />
@@ -33969,7 +33969,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.050000" />
@@ -34036,7 +34036,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.100000" />
@@ -34225,7 +34225,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.023000" />
@@ -34354,7 +34354,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -34413,7 +34413,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.080000" />
@@ -34475,7 +34475,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.200000" />
@@ -34537,7 +34537,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.050000" />
@@ -34598,7 +34598,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.150000" />
@@ -34664,7 +34664,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.200000" />
@@ -34725,7 +34725,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.100000" />
@@ -34784,7 +34784,7 @@
 			<fCollisionDamageMult value="1.000000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="80.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -34842,7 +34842,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.023000" />
@@ -34912,7 +34912,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="80.000000" />
 			<fOilVolume value="8.000000" />
 			<fSeatOffsetDistX value="0.000000" />
@@ -34973,7 +34973,7 @@
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="1.000000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="-0.080000" />
@@ -35035,7 +35035,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.150000" />
@@ -35101,7 +35101,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.023000" />
@@ -35295,7 +35295,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.800000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.023000" />
@@ -35365,7 +35365,7 @@
 			<fCollisionDamageMult value="0.010000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
-			<fEngineDamageMult value="1.500000" />
+			<fEngineDamageMult value="1.000000" />
 			<fPetrolTankVolume value="65.000000" />
 			<fOilVolume value="5.000000" />
 			<fSeatOffsetDistX value="0.200000" />
