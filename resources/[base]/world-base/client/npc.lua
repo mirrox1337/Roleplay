@@ -22,7 +22,7 @@ end
 --Inga Vapen Pickup
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(0)      
+        Citizen.Wait(1)      
         RemoveAllPickupsOfType(14)
         RemoveAllPickupsOfType(0x550447A9)
         RemoveAllPickupsOfType(0xF92F486C)
@@ -148,7 +148,6 @@ Citizen.CreateThread(function()
         RemoveAllPickupsOfType(0xDDE4181A)
         RemoveAllPickupsOfType(0xEBF89D5F)
         RemoveAllPickupsOfType(0xE5121369)
-        SetWeaponDrops()
     end
 end)
 

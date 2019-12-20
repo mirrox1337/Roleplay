@@ -13,6 +13,5 @@ Citizen.CreateThread(function()
 		SetCreateRandomCopsOnScenarios(false)
 		SetNumberOfParkedVehicles(0)
 		SetScenarioPedDensityMultiplierThisFrame(0.1, 0.2)
-		Citizen.Wait(0)
 	end
 end)

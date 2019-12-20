@@ -2,6 +2,43 @@
 <CVehicleModelInfoVariation>
 	<variationData>
 		<Item>
+			<modelName>cam08</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">
+            8 
+            8 
+            134 
+            156
+          </indices>
+					<liveries>
+						<Item value="true" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+			</colors>
+			<kits>
+				<Item>1000_cam08_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1000" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
 			<modelName>gtr</modelName>
 			<colors>
 				<Item>
@@ -78,13 +115,13 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1000_gtr_modkit</Item>
+				<Item>1001_gtr_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
 				<Probabilities />
 			</plateProbabilities>
-			<lightSettings value="1000" />
+			<lightSettings value="1001" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -110,13 +147,13 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1001_m2_modkit</Item>
+				<Item>1002_m2_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
 				<Probabilities />
 			</plateProbabilities>
-			<lightSettings value="1001" />
+			<lightSettings value="1002" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -232,7 +269,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1002_r32_modkit</Item>
+				<Item>1003_r32_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -255,7 +292,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1002" />
+			<lightSettings value="1003" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -371,7 +408,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1003_na1_modkit</Item>
+				<Item>1004_na1_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -394,7 +431,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1003" />
+			<lightSettings value="1004" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -690,7 +727,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1004_ae86_modkit</Item>
+				<Item>1005_ae86_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -701,7 +738,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1004" />
+			<lightSettings value="1005" />
 			<sirenSettings value="0" />
 		</Item>
 	</variationData>
