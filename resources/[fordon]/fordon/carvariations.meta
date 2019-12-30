@@ -2,6 +2,137 @@
 <CVehicleModelInfoVariation>
 	<variationData>
 		<Item>
+			<modelName>325e</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">
+            16 
+            1 
+            156 
+            2
+						22
+						21 
+          </indices>
+					<liveries>
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+				<Item>
+					<indices content="char_array">
+            111 
+            1 
+            1 
+            2
+						6
+						8 
+          </indices>
+					<liveries>
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+				<Item>
+					<indices content="char_array">
+            48 
+            1 
+            25 
+            2
+						110
+						110 
+          </indices>
+					<liveries>
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+				<Item>
+					<indices content="char_array">
+            49 
+            1 
+            156 
+            2
+						22
+						21 
+          </indices>
+					<liveries>
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+				<Item>
+					<indices content="char_array">
+            44 
+            1 
+            6 
+            2
+						6
+						8 
+          </indices>
+					<liveries>
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+						<Item value="false" />
+					</liveries>
+				</Item>
+			</colors>
+			<kits>
+				<Item>1000_325e_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="25" />
+					</Item>
+					<Item>
+						<Name>White Plate 2</Name>
+						<Value value="50" />
+					</Item>
+					<Item>
+						<Name>Blue Plate</Name>
+						<Value value="10" />
+					</Item>
+					<Item>
+						<Name>Yellow Plate</Name>
+						<Value value="15" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1000" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
 			<modelName>rs6</modelName>
 			<colors>
 				<Item>
@@ -78,7 +209,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1000_rs6_modkit</Item>
+				<Item>1001_rs6_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -89,7 +220,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1000" />
+			<lightSettings value="1001" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -117,7 +248,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1001_r820_modkit</Item>
+				<Item>1002_r820_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -128,7 +259,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1001" />
+			<lightSettings value="1002" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -154,7 +285,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1002_cam08_modkit</Item>
+				<Item>1003_cam08_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -165,7 +296,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1002" />
+			<lightSettings value="1003" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -245,13 +376,13 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1003_gtr_modkit</Item>
+				<Item>1004_gtr_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
 				<Probabilities />
 			</plateProbabilities>
-			<lightSettings value="1003" />
+			<lightSettings value="1004" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -277,13 +408,13 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1004_m2_modkit</Item>
+				<Item>1005_m2_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
 				<Probabilities />
 			</plateProbabilities>
-			<lightSettings value="1004" />
+			<lightSettings value="1005" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -399,7 +530,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1005_r32_modkit</Item>
+				<Item>1006_r32_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -422,7 +553,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1005" />
+			<lightSettings value="1006" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -538,7 +669,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1006_na1_modkit</Item>
+				<Item>1007_na1_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -561,7 +692,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1006" />
+			<lightSettings value="1007" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
@@ -857,7 +988,7 @@
 				</Item>
 			</colors>
 			<kits>
-				<Item>1007_ae86_modkit</Item>
+				<Item>1008_ae86_modkit</Item>
 			</kits>
 			<windowsWithExposedEdges />
 			<plateProbabilities>
@@ -868,7 +999,7 @@
 					</Item>
 				</Probabilities>
 			</plateProbabilities>
-			<lightSettings value="1007" />
+			<lightSettings value="1008" />
 			<sirenSettings value="0" />
 		</Item>
 	</variationData>
