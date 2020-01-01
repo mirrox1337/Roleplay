@@ -14,6 +14,7 @@ Citizen.CreateThread( function()
     SendNUIMessage( { resourcename = resourceName } )
 end )
 
+SetNuiFocus(false)
 
 --[[------------------------------------------------------------------------
     Utils 
@@ -74,6 +75,7 @@ local radarInfo =
     fwdFastLocked = false, 
     fwdDir = nil, 
     fwdFastSpeed = 0,
+    fwdPlate = "",
 
     bwdPrevVeh = 0, 
     bwdXmit = false, 
@@ -83,6 +85,7 @@ local radarInfo =
     bwdFastLocked = false, 
     bwdDir = nil, 
     bwdFastSpeed = 0, 
+    bwdPlate = "",
 
     fastResetLimit = 150,
     fastLimit = 55, 
@@ -102,10 +105,10 @@ AddEventHandler( 'wk:toggleRadar', function()
 
             if ( radarEnabled ) then 
                 --Notify( "~b~Radar startad." )
-                exports['mythic_notify']:SendAlert('error', 'Radar startad.')
+                exports['mythic_notify']:SendAlert('inform', 'Radar startad.')
             else 
                 --Notify( "~b~Radar avstängd." )
-                exports['mythic_notify']:SendAlert('error', 'Radar avstängd.')
+                exports['mythic_notify']:SendAlert('inform', 'Radar avstängd.')
             end 
 
             ResetFrontAntenna()
@@ -271,10 +274,12 @@ function ManageVehicleRadar()
 
                     if ( DoesEntityExist( fwdVeh ) and IsEntityAVehicle( fwdVeh ) ) then 
                         local fwdVehSpeed = round( GetVehSpeed( fwdVeh ), 0 )
+                        local fwdPlate = tostring( GetVehicleNumberPlateText(fwdVeh) ) or ""
 
                         local fwdVehHeading = round( GetEntityHeading( fwdVeh ), 0 )
                         local dir = IsEntityInMyHeading( h, fwdVehHeading, 100 )
 
+                        radarInfo.fwdPlate = fwdPlate
                         radarInfo.fwdSpeed = FormatSpeed( fwdVehSpeed )
                         radarInfo.fwdDir = dir 
 
@@ -305,6 +310,7 @@ function ManageVehicleRadar()
 
                     local packedBwdPos = vector3( bwdPos.x, bwdPos.y, bwdPos.z )                
                     local bwdVeh = GetVehicleInDirectionSphere( vehicle, vehiclePos, packedBwdPos )
+                    local bwdPlate = tostring( GetVehicleNumberPlateText(bwdVeh) ) or ""
 
                     if ( DoesEntityExist( bwdVeh ) and IsEntityAVehicle( bwdVeh ) ) then
                         local bwdVehSpeed = round( GetVehSpeed( bwdVeh ), 0 )
@@ -312,6 +318,7 @@ function ManageVehicleRadar()
                         local bwdVehHeading = round( GetEntityHeading( bwdVeh ), 0 )
                         local dir = IsEntityInMyHeading( h, bwdVehHeading, 100 )
 
+                        radarInfo.bwdPlate = bwdPlate
                         radarInfo.bwdSpeed = FormatSpeed( bwdVehSpeed )
                         radarInfo.bwdDir = dir 
 
@@ -335,9 +342,11 @@ function ManageVehicleRadar()
                     fwdspeed = radarInfo.fwdSpeed, 
                     fwdfast = radarInfo.fwdFast, 
                     fwddir = radarInfo.fwdDir, 
+                    fwdPlate = radarInfo.fwdPlate,
                     bwdspeed = radarInfo.bwdSpeed, 
                     bwdfast = radarInfo.bwdFast, 
-                    bwddir = radarInfo.bwdDir 
+                    bwddir = radarInfo.bwdDir,
+                    bwdPlate = radarInfo.bwdPlate,
                 })
             end 
         end 
@@ -425,8 +434,8 @@ Citizen.CreateThread( function()
     while true do 
         ManageVehicleRadar()
 
-        -- Only run 10 times a second, more realistic, also prevents spam 
-        Citizen.Wait( 100 )
+        -- Only run 2 times a second, more realistic, also prevents spam 
+        Citizen.Wait( 500 )
     end
 end )
 

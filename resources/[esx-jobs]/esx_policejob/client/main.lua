@@ -681,7 +681,8 @@ function OpenPoliceActionsMenu()
 	}}, function(data, menu)
 
 		if data.current.value == 'radar_toggle' then 
-			TriggerEvent( 'wk:toggleRadar' )
+			TriggerEvent( 'wk:radarRC' )
+			menu.close()
 		end
 
 		if data.current.value == 'larm' then
