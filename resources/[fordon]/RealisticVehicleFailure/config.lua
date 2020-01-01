@@ -116,7 +116,7 @@ cfg = {
 
 	compatibilityMode = false,	
 
-	randomTireBurstInterval = 120,	
+	randomTireBurstInterval = 0,	
 
 	classDamageMultiplier = {
 		[0] = 	1.0,		--	0: Compacts
