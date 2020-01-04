@@ -1,35 +1,18 @@
---====================================================================================
--- #Author: Jonathan D @Gannon
--- #Version 2.0
---====================================================================================
+ESX = nil
+    
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 math.randomseed(os.time()) 
 
---[[ Pour les numero du style XXX-XXXX
-function getPhoneRandomNumber()
-    local numBase0 = math.random(100,999)
-    local numBase1 = math.random(0,9999)
-    local num = string.format("%03d-%04d", numBase0, numBase1 )
-	return num
-end ]]--
-
---- Exemple pour les numero du style 06XXXXXXXX
  function getPhoneRandomNumber()
      return '073' .. math.random(1000000,9999999)
  end
-
-
---[[
-  Ouverture du téphone lié a un item
-  Un solution ESC basé sur la solution donnée par HalCroves
-  https://forum.fivem.net/t/tutorial-for-gcphone-with-call-and-job-message-other/177904
---]]
 
 local ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) 
     ESX = obj 
     ESX.RegisterServerCallback('gcphone:getItemAmount', function(source, cb, item)
-        print('gcphone:getItemAmount call item : ' .. item)
+        --print('gcphone:getItemAmount call item : ' .. item)
         local xPlayer = ESX.GetPlayerFromId(source)
         local items = xPlayer.getInventoryItem(item)
         if items == nil then
@@ -49,7 +32,7 @@ ESX.RegisterUsableItem('phone', function(source)
     local phoneQ = xPlayer.getInventoryItem('phone').count
     local phoneOffQ = xPlayer.getInventoryItem('phoneoff').count
     if phoneQ > 0 then
-        TriggerClientEvent("esx:showNotification", src, "Du ~r~stängde~s~ av telefonen")
+        TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'Du stängde av telefonen.'})
         xPlayer.addInventoryItem('phoneoff', phoneQ)
         xPlayer.removeInventoryItem('phone', phoneQ)
     elseif phoneOffQ > 0 then
@@ -67,7 +50,7 @@ ESX.RegisterUsableItem('phoneoff', function(source)
     local phoneQ = xPlayer.getInventoryItem('phoneoff').count
     local phoneOffQ = xPlayer.getInventoryItem('phone').count
     if phoneQ > 0 then
-        TriggerClientEvent("esx:showNotification", src, "Du ~g~startade~s~ telefonen")
+        TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'success', text = 'Du startade telefonen.'})
         xPlayer.addInventoryItem('phone', phoneQ)
         xPlayer.removeInventoryItem('phoneoff', phoneQ)
 		end
@@ -167,7 +150,6 @@ AddEventHandler('qalle:jobS', function(phoneNumber, message, position, dipatch2)
     local _source = source
     local xPlayer1 = ESX.GetPlayerFromId(_source)
 
-    --print(xPlayer1.name .. ' skickade ett meddelande till ' .. phoneNumber .. ' med meddelandet: ' .. message)
     local xPlayers = ESX.GetPlayers()
     local dispatch = dipatch2
     for i=1, #xPlayers, 1 do
@@ -180,38 +162,33 @@ AddEventHandler('qalle:jobS', function(phoneNumber, message, position, dipatch2)
                 TriggerClientEvent('qalle:job', xPlayer.source, phoneNumber, message, position, xPlayer1.get('phoneNumber'), dispatch)
             end
         end
-        if phoneNumber == 'police' then
+        if phoneNumber == 'Polisen' then
             if xPlayer.job.name == 'police' then
                 TriggerClientEvent('qalle:job', xPlayer.source, phoneNumber, message, position, xPlayer1.get('phoneNumber'), dispatch)
             end
         end
-        if phoneNumber == 'ambulance' then
+        if phoneNumber == 'Akuten' then
             if xPlayer.job.name == 'ambulance' then
                 TriggerClientEvent('qalle:job', xPlayer.source, phoneNumber, message, position, xPlayer1.get('phoneNumber'), dispatch)
             end
         end
-        if phoneNumber == 'mechanic' then
+        if phoneNumber == 'Mekonomen' then
             if xPlayer.job.name == 'mechanic' then
                 TriggerClientEvent('qalle:job', xPlayer.source, phoneNumber, message, position, xPlayer1.get('phoneNumber'), dispatch)
             end
         end
-        if phoneNumber == 'cardealer' then
+        if phoneNumber == 'Bilhandlaren' then
             if xPlayer.job.name == 'cardealer' then
                 TriggerClientEvent('qalle:job', xPlayer.source, phoneNumber, message, position, xPlayer1.get('phoneNumber'), dispatch)
             end
         end
-        if phoneNumber == 'taxi' then
+        if phoneNumber == 'Taxi' then
             if xPlayer.job.name == 'taxi' then
                 TriggerClientEvent('qalle:job', xPlayer.source, phoneNumber, message, position, xPlayer1.get('phoneNumber'), dispatch)
             end
         end
-        if phoneNumber == 'advokat' then
-            if xPlayer.job.name == 'advokat' then
-                TriggerClientEvent('qalle:job', xPlayer.source, phoneNumber, message, position, xPlayer1.get('phoneNumber'), dispatch)
-            end
-        end        
-        if phoneNumber == 'realestateagent' then
-            if xPlayer.job.name == 'realestateagent' then
+        if phoneNumber == 'Bennys' then
+            if xPlayer.job.name == 'bennys' then
                 TriggerClientEvent('qalle:job', xPlayer.source, phoneNumber, message, position, xPlayer1.get('phoneNumber'), dispatch)
             end
         end
@@ -381,25 +358,25 @@ AddEventHandler('gcPhone:sendMessage', function(phoneNumber, message)
     addMessage(sourcePlayer, identifier, phoneNumber, message)
 end)
 
+RegisterServerEvent('gcPhone:sendMessage2')     
+AddEventHandler('gcPhone:sendMessage2', function(number, message)       
+    local src = source      
+    local sourcePlayer = tonumber(src)      
+    local identifier = getPlayerID(src)         
+    local xPlayer = ESX.GetPlayerFromId(src)        
+    local xPlayers = ESX.GetPlayers()       
+    for i=1, #xPlayers do       
+        local xPlayer2 = ESX.GetPlayerFromId(xPlayers[i])       
+        if xPlayer2.job.name == number then     
+            addMessage(sourcePlayer, identifier, xPlayer2.get('phoneNumber'), message)      
+        end     
+    end     
+end)
+
 RegisterServerEvent('gcPhone:deleteMessage')
 AddEventHandler('gcPhone:deleteMessage', function(msgId)
     deleteMessage(msgId)
-end)		
-RegisterServerEvent('gcPhone:sendMessage2')		
-AddEventHandler('gcPhone:sendMessage2', function(number, message)		
-    local src = source		
-    local sourcePlayer = tonumber(src)		
-    local identifier = getPlayerID(src)   		
-    local xPlayer = ESX.GetPlayerFromId(src)		
-    local xPlayers = ESX.GetPlayers()		
-    for i=1, #xPlayers do		
-        local xPlayer2 = ESX.GetPlayerFromId(xPlayers[i])		
-        if xPlayer2.job.name == number then		
-            addMessage(sourcePlayer, identifier, xPlayer2.get('phoneNumber'), message)		
-        end		
-    end		
-end)		
-
+end)	
 
 RegisterServerEvent('gcPhone:deleteMessageNumber')
 AddEventHandler('gcPhone:deleteMessageNumber', function(number)
@@ -624,26 +601,6 @@ AddEventHandler('gcPhone:rejectCall', function (infoCall)
         AppelsEnCours[id] = nil
     end
 end)
-
-ESX.RegisterServerCallback('esx_phone:getIdentity', function(source, cb)
-    local identity = getIdentity(source)
-
-    cb(identity)
-end)
-function getIdentity(source)
-    local identifier = GetPlayerIdentifiers(source)[1]
-    local result = MySQL.Sync.fetchAll("SELECT * FROM users WHERE identifier = @identifier", {['@identifier'] = identifier})
-    if result[1] ~= nil then
-        local identity = result[1]
-        return {
-            job = identity['job'],
-            firstname = identity['firstname'],
-            lastname = identity['lastname']
-        }
-    else
-        return nil
-    end
-end
 
 RegisterServerEvent('gcPhone:appelsDeleteHistorique')
 AddEventHandler('gcPhone:appelsDeleteHistorique', function (numero)

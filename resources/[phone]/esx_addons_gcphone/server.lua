@@ -44,7 +44,7 @@ function notifyAlertSMS (number, alert)
   if PhoneNumbers[number] ~= nil then
     for k,v in pairs(PhoneNumbers[number].sources) do
       getPhoneNumber(tonumber(k), function (n)
-        TriggerEvent('gcPhone:_internalAddMessage', number, n, 'Larm (' .. alert.numero  .. '): ' .. alert.message, 0, function (smsMess)
+        TriggerEvent('gcPhone:_internalAddMessage', number, n, 'Larm: ' .. alert.message, 0, function (smsMess)
           TriggerClientEvent("gcPhone:receiveMessage", tonumber(k), smsMess)
         end)
         if alert.coords ~= nil then
@@ -104,7 +104,9 @@ AddEventHandler('esx_addons_gcphone:startCall', function (number, message, coord
           type = number,
           numero = phone,
           isAccept = 0,
-          sources = {}
+          sources = {},
+            firstN = math.random(100, 999),
+            secondN = math.random(100, 999)
         }
         for k,v in pairs(PhoneNumbers[number].sources) do
           print('add ' .. k)
@@ -137,7 +139,7 @@ AddEventHandler('esx_addons_gcphone:acceptAlert', function (type, alertId)
       if alert.id == alertId then
         print('esx_addons_gcphone:acceptAlert P2')
         PhoneNumbers[type].alerts[key].isAccept = PhoneNumbers[type].alerts[key].isAccept + 1
-        TriggerClientEvent('esx_addons_gcphone:showMessage', tonumber(key), 'En enhet ' .. PhoneNumbers[type].type .. ' påväg')
+        --TriggerClientEvent('esx_addons_gcphone:showMessage', tonumber(key), 'En enhet ' .. PhoneNumbers[type].type .. ' påväg')
         notifyAlert(type, PhoneNumbers[type].alerts[key])
         break
       end
@@ -164,9 +166,9 @@ AddEventHandler('esx_addons_gcphone:refuseAlert', function (type, alertId)
         end
         if allRefuse == true then
           if PhoneNumbers[type].alerts[key].isAccept == 0 then
-            TriggerClientEvent('esx_addons_gcphone:showMessage', tonumber(key), 'Alla enheter ignorerar samtal')
+            --TriggerClientEvent('esx_addons_gcphone:showMessage', tonumber(key), 'Alla enheter ignorerar samtal')
             for k, src in pairs(PhoneNumbers[type].alerts[key].sources) do 
-              TriggerClientEvent('esx_addons_gcphone:showMessage', tonumber(k), 'Alla enheter ignorerar samtal')
+              --TriggerClientEvent('esx_addons_gcphone:showMessage', tonumber(k), 'Alla enheter ignorerar samtal')
             end
           end
           PhoneNumbers[type].alerts[key] = nil
@@ -225,9 +227,9 @@ AddEventHandler('esx:playerDropped', function(source)
         if allCancel == true then
           print('all cancel auto by disconnect', PhoneNumbers[number].alerts[ka].isAccept)
           if PhoneNumbers[number].alerts[ka].isAccept == 0 then
-            TriggerClientEvent('esx_addons_gcphone:showMessage', tonumber(key), 'Alla enheter ignorerar samtal')
+            --TriggerClientEvent('esx_addons_gcphone:showMessage', tonumber(key), 'Alla enheter ignorerar samtal')
             for k, src in pairs(PhoneNumbers[type].alerts[key].sources) do 
-              TriggerClientEvent('esx_addons_gcphone:showMessage', tonumber(k), 'Alla enheter ignorerar samtal')
+              --TriggerClientEvent('esx_addons_gcphone:showMessage', tonumber(k), 'Alla enheter ignorerar samtal')
             end
           end
           PhoneNumbers[number].alerts[ka] = nil
@@ -247,3 +249,19 @@ function getPhoneNumber (source, callback)
     callback(result[1].phone_number)
   end)
 end
+
+  RegisterServerEvent('esx_phone:send')
+  AddEventHandler('esx_phone:send', function(number, message, _, coords)
+    local source = source
+    if PhoneNumbers[number] ~= nil then
+      getPhoneNumber(source, function (phone) 
+        notifyAlertSMS(number, {
+          message = message,
+          coords = coords,
+          numero = phone,
+        }, PhoneNumbers[number].sources)
+      end)
+    else
+      -- print('esx_phone:send | Appels sur un service non enregistre => numero : ' .. number)
+    end
+  end)

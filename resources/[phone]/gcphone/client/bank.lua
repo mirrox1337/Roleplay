@@ -1,15 +1,6 @@
---====================================================================================
---  Function APP BANK
---====================================================================================
-
---[[
-      Appeller SendNUIMessage({event = 'updateBankbalance', banking = xxxx})
-      à la connection & à chaque changement du compte
---]]
-
--- ES / ESX Implementation
-
+inMenu                      = true
 local bank = 0
+local firstname = ''
 function setBankBalance (value)
       bank = value
       SendNUIMessage({event = 'updateBankbalance', banking = bank})
@@ -46,4 +37,8 @@ end)
 RegisterNetEvent('es:displayBank')
 AddEventHandler('es:displayBank', function(bank)
       setBankBalance(bank)
+end)
+   
+RegisterNUICallback('transfer', function(data)  
+      TriggerServerEvent('es:transfer', data.to, data.amountt)      
 end)

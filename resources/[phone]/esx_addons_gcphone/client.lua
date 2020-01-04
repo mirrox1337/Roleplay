@@ -131,7 +131,8 @@ end)
 
 RegisterNetEvent('esx_addons_gcphone:showMessage')
 AddEventHandler('esx_addons_gcphone:showMessage', function (message)
-  ESX.ShowNotification(message)
+  --ESX.ShowNotification(message)
+  exports['mythic_notify']:SendAlert('inform', message)
 end)
 
 
@@ -141,7 +142,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(10)
     if #alerts ~= 0 then
       local alert = alerts[currentAlert]
-      DrawRect(0.12, 0.10, 0.2, 0.16, 0, 0, 0, 178)
+      DrawRect(0.12, 0.10, 0.35, 0.16, 0, 0, 0, 178)
 
       SetTextFont(0)
       SetTextScale(0.0, 0.35)
@@ -153,7 +154,7 @@ Citizen.CreateThread(function()
       if alert.isAccept == 0 then
         AddTextComponentString('~o~Samtal Pågår')
       else
-        AddTextComponentString('~g~Samtal Pågår')
+        AddTextComponentString('Enhet: ' .. alert.firstN .. '-' .. alert.secondN)
       end
       DrawText(0.12, 0.02)
 
@@ -186,7 +187,7 @@ Citizen.CreateThread(function()
       SetTextEdge(0, 0, 0, 0, 0)
       SetTextColour(255, 255, 255, 255)
       SetTextEntry("STRING")
-      AddTextComponentString('Tryck ~g~X~s~ för att ta samtalet ~r~N~s~ för att ej ta samtalet')
+      AddTextComponentString('Tryck ~g~ PGUP ~s~ för att ta samtalet - Tryck ~r~ PGDOWN ~s~ för att kryssa ner')
       DrawText(0.025, 0.16)
 
       if alert.message ~= nil then
@@ -227,7 +228,7 @@ Citizen.CreateThread(function()
         SetTextEdge(0, 0, 0, 0, 0)
         SetTextColour(255, 255, 255, 255)
         SetTextEntry("STRING")
-        AddTextComponentString('~g~Position: ~b~' .. math.floor(alert.coords.x) .. ' ' .. math.floor(alert.coords.y))
+        AddTextComponentString('~g~Position: ~g~' .. math.floor(alert.coords.x) .. ' ' .. math.floor(alert.coords.y))
         DrawText(0.07, 0.14)
       else
         SetTextFont(0)
@@ -249,7 +250,7 @@ Citizen.CreateThread(function()
         SetTextEdge(0, 0, 0, 0, 0)
         SetTextColour(255, 255, 255, 255)
         SetTextEntry("STRING")
-        AddTextComponentString('~g~Nummer: ~b~' .. alert.numero)
+        --AddTextComponentString('~g~Nummer: ~b~' .. alert.numero)
         DrawText(0.17, 0.14)
       else 
         SetTextFont(0)
@@ -268,15 +269,13 @@ Citizen.CreateThread(function()
           currentAlert = ((currentAlert) % #alerts) + 1
         elseif IsControlJustPressed(1, Keys['LEFT']) then
           currentAlert = ((currentAlert + #alerts - 2) % #alerts) + 1
-        elseif IsControlJustPressed(1, Keys['X']) then
-          print('PRess X')
-          TriggerServerEvent('esx_addons_gcphone:acceptAlert', alert.type, alert.id)
+        elseif IsControlJustPressed(1, Keys['PAGEUP']) then
+            TriggerServerEvent('esx_addons_gcphone:acceptAlert', alert.type, alert.id)
           if alert.coords ~= nil then
             SetNewWaypoint(alert.coords.x, alert.coords.y)
           end
-        elseif IsControlJustPressed(1, Keys['N']) then
-          print('PRess Y')
-          TriggerServerEvent('esx_addons_gcphone:refuseAlert', alert.type, alert.id)
+        elseif IsControlJustPressed(1, Keys['PAGEDOWN']) then
+            TriggerServerEvent('esx_addons_gcphone:refuseAlert', alert.type, alert.id)
           removeAlert(alert.id)
         end
 
@@ -309,7 +308,5 @@ AddEventHandler('esx_addons_gcphone:call', function(data)
     TriggerServerEvent('gcPhone:sendMessage2', number, message)
     Wait(20)
     TriggerServerEvent('qalle:jobS', number, message, {x = coords.x, y = coords.y, z = coords.z}, dispatch)
-    if number == 'police' or number == 'ambulance' or number == 'taxi' or number == 'mechanic' then
-    end
   end
 end)

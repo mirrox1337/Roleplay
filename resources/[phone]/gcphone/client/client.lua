@@ -1,6 +1,15 @@
---====================================================================================
--- #Author: Jonathan D @ Gannon
---====================================================================================
+ESX               = nil
+
+Citizen.CreateThread(function()
+  while ESX == nil do
+    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+    Citizen.Wait(0)
+  end
+
+  Citizen.Wait(5000)
+  PlayerData = ESX.GetPlayerData()
+end)
+
 local Keys = {
   ["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57,
   ["~"] = 243, ["1"] = 157, ["2"] = 158, ["3"] = 160, ["4"] = 164, ["5"] = 165, ["6"] = 159, ["7"] = 161, ["8"] = 162, ["9"] = 163, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177,
@@ -80,7 +89,7 @@ function hasPhone (cb)
 end
 function ShowNoPhoneWarning () 
   if (ESX == nil) then return end
-  ESX.ShowNotification("Du har ingen ~r~telefon~s~ Åk till inet för att köpa en")
+  exports['mythic_notify']:SendAlert('error', 'Du har ingen telefon.')
 end
 
 
@@ -141,37 +150,31 @@ AddEventHandler('qalle:job', function(number, message, position, caller, dispatc
 
   local playerPed   = GetPlayerPed(-1)
   dispatchRequestId = dispatchRequestId
-  if number == 'police' then
+  if number == 'Polisen' then
     numbertext = 'Polisen'
-  elseif number == 'ambulance' then
+  elseif number == 'Akuten' then
     numbertext = 'Akuten'
   elseif number == 'drug' then
     numbertext = 'Drog Larm'
-  elseif number == 'mechanic' then
+  elseif number == 'Mekonomen' then
     numbertext = 'Mekonomen'
-  elseif number == 'cardealer' then
-    numbertext = 'Volvo AB'
-  elseif number == 'taxi' then
+  elseif number == 'Bilhandlaren' then
+    numbertext = 'Bilhandlaren'
+  elseif number == 'Taxi' then
     numbertext = 'Taxi'
-  elseif number == 'realestateagent' then
-    numbertext = 'Hemnet'
-    elseif number == 'bennys' then
-    numbertext = 'MR TUNING'  
-    elseif number == 'falck' then
-    numbertext = 'falck'  
-   elseif number == 'gopostal' then
-    numbertext = 'gopostal' 
+  elseif number == 'Bennys' then
+    numbertext = 'Bennys'  
   end
 
   if number == tonumber(number) then
-    ESX.ShowNotification('Du fick ett meddelande, checka mobilen!')
+    exports['mythic_notify']:SendAlert('inform', 'Du fick ett meddelande!')
     PlaySound(-1, "Menu_Accept", "Phone_SoundSet_Default", 0, 0, 1)
     Citizen.Wait(250)
     job = number
   elseif number ~= tonumber(number) then
 
-    --ESX.ShowNotification('Samtal från ' .. caller)
-    ESX.ShowNotification(numbertext .. ': ' .. message)
+    exports['mythic_notify']:SendAlert('inform', "[Till: " .. numbertext .. " Från: " .. caller .. "] " .. message)
+    DisplayHelpTextFromStringLabel(0, 0, 0, -1)
     PlaySound(-1, "Menu_Accept", "Phone_SoundSet_Default", 0, 0, 1)
     Citizen.Wait(250)
     job = ''
@@ -180,10 +183,10 @@ AddEventHandler('qalle:job', function(number, message, position, caller, dispatc
   end
 
   print("dispatch: " .. tostring(dispatchRequestId))
-  if (dispatchRequestId and number ~= 'cardealer') or number == 'drug' then
+  if (dispatchRequestId) then
 
     CurrentAction            = 'dispatch'
-    CurrentActionMsg         = numbertext .. ' - Tryck ~INPUT_MP_TEXT_CHAT_TEAM~ för svara på samtalet'
+    CurrentActionMsg         = exports['mythic_notify']:SendAlert('warning', numbertext .. ' - Tryck [Y] för svara på samtalet', 8000)
     CurrentDispatchRequestId = dispatchRequestId
 
     CurrentActionData = {
@@ -194,10 +197,6 @@ AddEventHandler('qalle:job', function(number, message, position, caller, dispatc
       job         = job,
       caller = caller
     }
-
-    ESX.SetTimeout(15000, function()
-      CurrentAction = nil
-    end)
 
   end
 end)
@@ -222,28 +221,34 @@ Citizen.CreateThread(function()
 
           if CurrentActionData.phoneNumber == 'drug' then
             SetNewWaypoint(CurrentActionData.position.x,  CurrentActionData.position.y)
-          elseif CurrentActionData.phoneNumber == 'police' then
+          elseif CurrentActionData.phoneNumber == 'Polisen' then
             ESX.TriggerServerCallback('esx_phone:getIdentity', function (identity)
             TriggerServerEvent('esx_phone:stopDispatch2', CurrentDispatchRequestId)
               SetNewWaypoint(CurrentActionData.position.x,  CurrentActionData.position.y)
               TriggerServerEvent('gcPhone:sendMessage', CurrentActionData.caller, 'SOS Operatör: Polis är på väg mot din angivna larmpostion. Vänligen invänta ingripande patrull för att ange uppgifter. Vid personskador, larma ambulans och försäkra dig om att personen har puls och fria luftvägar. Om inte, påbörja hjärt- och lungräddning!')
             end)
-            elseif CurrentActionData.phoneNumber == 'ambulance' then
+            elseif CurrentActionData.phoneNumber == 'Akuten' then
               ESX.TriggerServerCallback('esx_phone:getIdentity', function (identity)
                 TriggerServerEvent('esx_phone:stopDispatch2', CurrentDispatchRequestId)
               SetNewWaypoint(CurrentActionData.position.x,  CurrentActionData.position.y)
               TriggerServerEvent('gcPhone:sendMessage', CurrentActionData.caller, 'SOS Operatör: Ambulans är på väg mot din angivna larmposition. Vid skada på andra part, kontrollera så personen har puls och fria luftvägar. Om inte, påbörja hjärt- och lungräddning!') 
               end)
-            elseif CurrentActionData.phoneNumber == 'taxi' or CurrentActionData.phoneNumber == 'mechanic' or CurrentActionData.phoneNumber == 'realestateagent' then
+            elseif CurrentActionData.phoneNumber == 'Taxi' or CurrentActionData.phoneNumber == 'mechanic' then
               ESX.TriggerServerCallback('esx_phone:getIdentity', function (identity)
                 TriggerServerEvent('esx_phone:stopDispatch', CurrentDispatchRequestId)
                 TriggerServerEvent('gcPhone:sendMessage', CurrentActionData.caller, identity.firstname .. ' kommer så fort som möjligt, var god vänta på platsen.')
                 SetNewWaypoint(CurrentActionData.position.x,  CurrentActionData.position.y)
 
               end)
-            else
+            elseif CurrentActionData.phoneNumber == 'Bilhandlaren' or CurrentActionData.phoneNumber == 'Bennys' then
+                ESX.TriggerServerCallback('esx_phone:getIdentity', function (identity)
+                  TriggerServerEvent('esx_phone:stopDispatch', CurrentDispatchRequestId)
+                  TriggerServerEvent('gcPhone:sendMessage', CurrentActionData.caller, identity.firstname .. ' har läst ditt meddelande och återkopplar så snart som möjligt.')
+                  SetNewWaypoint(CurrentActionData.position.x,  CurrentActionData.position.y)
+            end)
+          else
 
-            end
+          end
 
           CurrentAction = nil
 
@@ -295,7 +300,7 @@ function showFixePhoneHelper (coords)
       coords.x, coords.y, coords.z, 1)
     if dist <= 2.0 then
       SetTextComponentFormat("STRING")
-      AddTextComponentString("~g~" .. data.name .. ' ~o~' .. number .. '~n~~INPUT_PICKUP~~w~ Använd')
+      AddTextComponentString("~g~" .. data.name .. ' ~o~' .. number .. '~n~~INPUT_PICKUP~~w~ för att använda')
       DisplayHelpTextFromStringLabel(0, 0, 0, -1)
       if IsControlJustPressed(1, KeyTakeCall) then
         startFixeCall(number)
@@ -318,13 +323,13 @@ Citizen.CreateThread(function ()
           PhoneInCall[i].coords.x, PhoneInCall[i].coords.y, PhoneInCall[i].coords.z,
           coords.x, coords.y, coords.z, 1)
         if (dist <= soundDistanceMax) then
-          DrawMarker(1, PhoneInCall[i].coords.x, PhoneInCall[i].coords.y, PhoneInCall[i].coords.z,
-              0,0,0, 0,0,0, 0.1,0.1,0.1, 0,255,0,255, 0,0,0,0,0,0,0)
+          DrawMarker(20, PhoneInCall[i].coords.x, PhoneInCall[i].coords.y, PhoneInCall[i].coords.z,
+              0,0,0, 0,0,0, 0.1,0.1,0.1, 0,119,119,255, 0,0,0,0,0,0,0)
           inRangeToActivePhone = true
           inRangedist = dist
           if (dist <= 1.5) then 
             SetTextComponentFormat("STRING")
-            AddTextComponentString("~INPUT_PICKUP~ lyft luren")
+            AddTextComponentString("Tryck ~INPUT_PICKUP~ för att svara")
             DisplayHelpTextFromStringLabel(0, 0, 1, -1)
             if IsControlJustPressed(1, KeyTakeCall) then
               PhonePlayCall(true)
@@ -419,18 +424,19 @@ AddEventHandler("gcPhone:receiveMessage", function(message)
   SendNUIMessage({event = 'newMessage', message = message})
   table.insert(messages, message)
   if message.owner == 0 then
-    local text = 'Nytt ~g~Meddelande~s~, öppna mobilen'
+    local text = 'Nytt meddelande'
     if ShowNumberNotification == true then
-      text = '~o~Nytt meddelande från ~y~'.. message.transmitter
+      text = 'Nytt meddelande från '.. message.transmitter
       for _,contact in pairs(contacts) do
         if contact.number == message.transmitter then
-          text = '~o~Nytt meddelande från ~g~'.. contact.display
+          text = 'Nytt meddelande från '.. contact.display
           break
         end
       end
     end
-    SetNotificationTextEntry("STRING")
-    AddTextComponentString(text)
+    --SetNotificationTextEntry("STRING")
+    --AddTextComponentString(text)
+    exports['mythic_notify']:SendAlert('inform', text)
     DrawNotification(false, false)
     PlaySound(-1, "Menu_Accept", "Phone_SoundSet_Default", 0, 0, 1)
     Citizen.Wait(300)
@@ -765,13 +771,13 @@ RegisterNetEvent('esx_phone:stopDispatch')
 AddEventHandler('esx_phone:stopDispatch', function(dispatchRequestId, playerName, policeDispatch)
   if CurrentDispatchRequestId == dispatchRequestId then
     CurrentAction = nil
-    ESX.ShowNotification('~b~'.. playerName.firstname .. ' tar det samtalet')
+    exports['mythic_notify']:SendAlert('inform', playerName.firstname .. " tar det samtalet. ")
   end
 end)
 RegisterNetEvent('esx_phone:stopDispatch2')
 AddEventHandler('esx_phone:stopDispatch2', function(dispatchRequestId, playerName, policeDispatch)
   if CurrentDispatchRequestId == dispatchRequestId then
-    ESX.ShowNotification('~b~'.. playerName.firstname .. '~w~ åker på det larmet.')
+    exports['mythic_notify']:SendAlert('inform', playerName.firstname .. " åker på det larmet. ")
   end
 end)
 
@@ -800,11 +806,10 @@ AddEventHandler('onClientResourceStart', function(res)
 end)
 
 
-function drawNotification(text)
-	SetNotificationTextEntry("STRING")
-	AddTextComponentString(text)
-	DrawNotification(false, false)
-end
+RegisterNUICallback('setIgnoreFocus', function (data, cb)
+    ignoreFocus = data.ignoreFocus
+  cb()
+end)
 
 
 
