@@ -40,9 +40,9 @@
 
   "background": {
     "Default": "DiPhoneWallpaper.jpg",
-	  "Varg": "wolf__gif__by_furrirama-d9ek9s4.gif",
-	  "Snus": "snus.jpg",
-	  "Volvo": "Volvo.jpg",
+    "Varg": "wolf__gif__by_furrirama-d9ek9s4.gif",
+    "Snus": "snus.jpg",
+    "Volvo": "Volvo.jpg",
     "Trippy": "trippy.jpg",
     "Neon Mask": "NeonMask.jpg",
     "LÄNK": "URL"
@@ -83,7 +83,7 @@
     },
     {
       "display": "Akuten",
-	  "icon": "/html/static/img/icons_app/sjukvard.png",
+    "icon": "/html/static/img/icons_app/sjukvard.png",
       "backgroundColor": "red",
       "subMenu": [{
         "title": "Skicka ett meddelande",
@@ -93,7 +93,7 @@
         }
       }]
     },
-	{
+  {
           "display": "Bennys",
           "icon": "/html/static/img/icons_app/bennys.png",
           "subMenu": [
@@ -237,13 +237,13 @@
       "es_ES__name": "Cámara",
       "icons": "/html/static/img/icons_app/photo.png",
       "routeName": "photo",
-	  "inHomePage": true
+    "inHomePage": true
     },
-	  {
+    {
       "name": "9GAG",
       "icons": "/html/static/img/icons_app/9gag.png",
       "routeName": "9gag",
-	  "inHomePage": true
+    "inHomePage": true
     },
     {
       "name": "KIK",
@@ -275,7 +275,7 @@
   ],
   "defaultLanguage": "sv_SE",
   "language": {
-	  "sv_SE": {
+    "sv_SE": {
       "NAME": "Svenska",
       "PHONE_WARNING_MESSAGE": "Historik",
       "PHONE_WARNING_MESSAGE_MESS": "Nyheter",
