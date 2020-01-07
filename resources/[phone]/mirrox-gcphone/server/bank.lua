@@ -1,8 +1,8 @@
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 
-RegisterServerEvent('es:transfer')
-AddEventHandler('es:transfer', function(to, amountt)
+RegisterServerEvent('sendpara')
+AddEventHandler('sendpara', function(to, amountt)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
     local zPlayer = ESX.GetPlayerFromId(to)
@@ -13,30 +13,30 @@ AddEventHandler('es:transfer', function(to, amountt)
         if tonumber(_source) == tonumber(to) then
             -- advanced notification with bank icon
             TriggerClientEvent('esx:showAdvancedNotification', _source, 'Swish',
-                               'Skicka pengar',
-                               'Du kan inte skicka till dig själv!',
-                               'CHAR_DETONATEPHONE', 9)
+                               '~r~fel',
+                               'Du kan inte skicka betalning till dig själv!',
+                               'CHAR_BANK_MAZE', 9)
         else
             if balance <= 0 or balance < tonumber(amountt) or tonumber(amountt) <=
                 0 then
                 -- advanced notification with bank icon
                 TriggerClientEvent('esx:showAdvancedNotification', _source,
-                                   'Swish', 'Skicka pengar',
-                                   'Inte tillräckligt med pengar att skicka!',
-                                   'CHAR_DETONATEPHONE', 9)
+                                   'Swish', 'Betalning misslyckades',
+                                   'Det finns inte tillräckligt med pengar på ditt konto.',
+                                   'CHAR_BANK_MAZE', 9)
             else
                 xPlayer.removeAccountMoney('bank', tonumber(amountt))
                 zPlayer.addAccountMoney('bank', tonumber(amountt))
                 -- advanced notification with bank icon
                 TriggerClientEvent('esx:showAdvancedNotification', _source,
-                                   'Swish', 'Skicka pengar',
-                                   'Du skickade ~r~' .. amountt ..
-                                       ':- ~s~ till ~r~' .. to .. '.',
-                                   'CHAR_DETONATEPHONE', 9)
+                                   'Swish', 'Swish Betalning',
+                                   'Du skickade ~g~sek' .. amountt ..
+                                       '~s~ till ~r~' .. to .. ' .',
+                                   'CHAR_BANK_MAZE', 9)
                 TriggerClientEvent('esx:showAdvancedNotification', to, 'Swish',
-                                   'Skicka pengar', 'Du fick ~r~' ..
-                                       amountt .. ':- ~s~ från ~r~' .. _source ..
-                                       '.', 'CHAR_DETONATEPHONE', 9)
+                                   'Swish Betalning', 'Du tog emot en betalning på ~g~sek' ..
+                                       amountt .. '~s~ från ~r~' .. _source ..
+                                       ' .', 'CHAR_BANK_MAZE', 9)
             end
 
         end
@@ -48,7 +48,7 @@ end)
 function myfirstname(phone_number, firstname, cb)
   MySQL.Async.fetchAll("SELECT firstname, phone_number FROM users WHERE users.firstname = @firstname AND users.phone_number = @phone_number", {
     ['@phone_number'] = phone_number,
-	['@firstname'] = firstname
+      ['@firstname'] = firstname
   }, function (data)
     cb(data[1])
   end)

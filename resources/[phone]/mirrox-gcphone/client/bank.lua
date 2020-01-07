@@ -1,6 +1,4 @@
-inMenu                      = true
 local bank = 0
-local firstname = ''
 function setBankBalance (value)
       bank = value
       SendNUIMessage({event = 'updateBankbalance', banking = bank})
@@ -38,7 +36,9 @@ RegisterNetEvent('es:displayBank')
 AddEventHandler('es:displayBank', function(bank)
       setBankBalance(bank)
 end)
-   
-RegisterNUICallback('transfer', function(data)  
-      TriggerServerEvent('es:transfer', data.to, data.amountt)      
+
+RegisterNUICallback('sendpara', function (data, cb)
+      print(data.id)
+      cb()
+      SendNUIMessage({event = 'updateBankbalance', banking = bank})
 end)
