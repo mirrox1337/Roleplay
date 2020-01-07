@@ -179,7 +179,6 @@ function DeleteSkinCam()
   SetCamActive(cam, false)
   RenderScriptCams(false, true, 500, true, true)
   cam = nil
-  getroleplay()
 end
 
 Citizen.CreateThread(function()
@@ -299,7 +298,6 @@ AddEventHandler('playerSpawned', function()
           TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
         else
           TriggerEvent('skinchanger:loadSkin', skin)
-            getroleplay()
         end
 
     end)
