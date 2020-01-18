@@ -6666,7 +6666,7 @@
 			<fInitialDragCoeff value="6.000000" />
 			<fDownforceModifier value="1.590000" />
 			<fPercentSubmerged value="78.000000" />
-			<vecCentreOfMassOffset x="0.000000" y="0.000000" z="0.000000" />
+			<vecCentreOfMassOffset x="0.000000" y="0.000000" z="-0.050000" />
 			<vecInertiaMultiplier x="1.000000" y="1.400000" z="1.600000" />
 			<fDriveBiasFront value="0.181000" />
 			<nInitialDriveGears value="6" />
@@ -6693,11 +6693,11 @@
 			<fSuspensionUpperLimit value="0.090000" />
 			<fSuspensionLowerLimit value="-0.140000" />
 			<fSuspensionRaise value="0.000000" />
-			<fSuspensionBiasFront value="0.510000" />
-			<fAntiRollBarForce value="0.800000" />
-			<fAntiRollBarBiasFront value="0.600000" />
-			<fRollCentreHeightFront value="0.340000" />
-			<fRollCentreHeightRear value="0.350000" />
+      		<fSuspensionBiasFront value="0.500000" />
+      		<fAntiRollBarForce value="1.000000" />
+      		<fAntiRollBarBiasFront value="0.610000" />
+      		<fRollCentreHeightFront value="0.500000" />
+      		<fRollCentreHeightRear value="0.450000" />
 			<fCollisionDamageMult value="0.700000" />
 			<fWeaponDamageMult value="0.700000" />
 			<fDeformationDamageMult value="0.700000" />
@@ -6709,8 +6709,8 @@
 			<fSeatOffsetDistZ value="0.000000" />
 			<nMonetaryValue value="35000" />
 			<strModelFlags>440010</strModelFlags>
-			<strHandlingFlags>0</strHandlingFlags>
-			<strDamageFlags>20</strDamageFlags>
+			<strHandlingFlags>20000</strHandlingFlags>
+			<strDamageFlags>0</strDamageFlags>
 			<AIHandling>TRUCK</AIHandling>
 			<SubHandlingData>
 				<Item type="CCarHandlingData">
